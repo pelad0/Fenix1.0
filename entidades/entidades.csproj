@@ -42,6 +42,12 @@
     <Compile Include="clsMedico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\interfaces\interfaces.csproj">
+      <Project>{7944f26d-031e-430e-a21b-fb623b56ba3e}</Project>
+      <Name>interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

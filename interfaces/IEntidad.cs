@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace interfaces
 {
-    public class Class1
+    class IEntidad
     {
+        int Id { get; set; }
     }
 }
