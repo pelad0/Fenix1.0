@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Fenix1._0
 {
     public partial class frmABM : Form
@@ -15,6 +16,11 @@ namespace Fenix1._0
         public frmABM()
         {
             InitializeComponent();
+        }
+
+        private void btnAlta_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

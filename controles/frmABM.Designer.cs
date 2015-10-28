@@ -30,17 +30,19 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
-            this.tpBaja = new System.Windows.Forms.TabPage();
-            this.tpMod = new System.Windows.Forms.TabPage();
             this.btnAlta = new System.Windows.Forms.Button();
-            this.btnBaja = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.tpBaja = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnBaja = new System.Windows.Forms.Button();
+            this.tpMod = new System.Windows.Forms.TabPage();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.textBoxLetras1 = new controles.TextBoxLetras();
+            this.label1 = new System.Windows.Forms.Label();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
-            this.tpMod.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tpMod.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcABM
@@ -60,6 +62,8 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.Controls.Add(this.label1);
+            this.tpAlta.Controls.Add(this.textBoxLetras1);
             this.tpAlta.Controls.Add(this.btnAlta);
             this.tpAlta.Location = new System.Drawing.Point(4, 34);
             this.tpAlta.Name = "tpAlta";
@@ -68,6 +72,16 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
+            // 
+            // btnAlta
+            // 
+            this.btnAlta.Location = new System.Drawing.Point(281, 409);
+            this.btnAlta.Name = "btnAlta";
+            this.btnAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnAlta.TabIndex = 0;
+            this.btnAlta.Text = "Cargar";
+            this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
             // tpBaja
             // 
@@ -82,24 +96,14 @@
             this.tpBaja.Text = "Baja";
             this.tpBaja.UseVisualStyleBackColor = true;
             // 
-            // tpMod
+            // dataGridView1
             // 
-            this.tpMod.Controls.Add(this.btnModificar);
-            this.tpMod.Location = new System.Drawing.Point(4, 34);
-            this.tpMod.Name = "tpMod";
-            this.tpMod.Size = new System.Drawing.Size(636, 447);
-            this.tpMod.TabIndex = 2;
-            this.tpMod.Text = "Modificación";
-            this.tpMod.UseVisualStyleBackColor = true;
-            // 
-            // btnAlta
-            // 
-            this.btnAlta.Location = new System.Drawing.Point(281, 409);
-            this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(75, 23);
-            this.btnAlta.TabIndex = 0;
-            this.btnAlta.Text = "Cargar";
-            this.btnAlta.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(630, 380);
+            this.dataGridView1.TabIndex = 1;
             // 
             // btnBaja
             // 
@@ -110,6 +114,16 @@
             this.btnBaja.Text = "Eliminar";
             this.btnBaja.UseVisualStyleBackColor = true;
             // 
+            // tpMod
+            // 
+            this.tpMod.Controls.Add(this.btnModificar);
+            this.tpMod.Location = new System.Drawing.Point(4, 34);
+            this.tpMod.Name = "tpMod";
+            this.tpMod.Size = new System.Drawing.Size(636, 447);
+            this.tpMod.TabIndex = 2;
+            this.tpMod.Text = "Modificación";
+            this.tpMod.UseVisualStyleBackColor = true;
+            // 
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(281, 408);
@@ -119,14 +133,22 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // textBoxLetras1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(630, 380);
-            this.dataGridView1.TabIndex = 1;
+            this.textBoxLetras1.Location = new System.Drawing.Point(210, 62);
+            this.textBoxLetras1.MaxLength = 40;
+            this.textBoxLetras1.Name = "textBoxLetras1";
+            this.textBoxLetras1.Size = new System.Drawing.Size(216, 23);
+            this.textBoxLetras1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(276, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Obra Social";
             // 
             // frmABM
             // 
@@ -141,9 +163,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
+            this.tpAlta.PerformLayout();
             this.tpBaja.ResumeLayout(false);
-            this.tpMod.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tpMod.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -158,5 +181,7 @@
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.TabPage tpMod;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label label1;
+        private controles.TextBoxLetras textBoxLetras1;
     }
 }
