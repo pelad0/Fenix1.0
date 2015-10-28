@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace controles
 {
-    class TextBoxLetras : TextBox
+    public class TextBoxLetras : TextBox
     {
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
