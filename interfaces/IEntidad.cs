@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace interfaces
 {
-    class IEntidad
+    public class IEntidad
         //coment
     {
         int Id { get; set; }
