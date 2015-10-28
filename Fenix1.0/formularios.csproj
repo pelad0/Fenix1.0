@@ -42,18 +42,46 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="frmABMME.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMME.Designer.cs">
+      <DependentUpon>frmABMME.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmABMOS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmABMOS.Designer.cs">
       <DependentUpon>frmABMOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarMedico.Designer.cs">
+      <DependentUpon>frmEditarMedico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmABMME.resx">
+      <DependentUpon>frmABMME.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmABMOS.resx">
       <DependentUpon>frmABMOS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarMedico.resx">
+      <DependentUpon>frmEditarMedico.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\controles\controles.csproj">
+      <Project>{e8d8754c-05c8-40ad-b894-390565a58e8f}</Project>
+      <Name>controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entidades\entidades.csproj">
+      <Project>{f6d17eae-0212-42e3-b94d-b0966285b853}</Project>
+      <Name>entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

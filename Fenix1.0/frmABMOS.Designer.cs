@@ -32,12 +32,12 @@
             this.tpAlta = new System.Windows.Forms.TabPage();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
+            this.btnSig = new System.Windows.Forms.Button();
+            this.btnAnt = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAnt = new System.Windows.Forms.Button();
-            this.btnSig = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
@@ -95,6 +95,24 @@
             this.tpBaja.Text = "Baja";
             this.tpBaja.UseVisualStyleBackColor = true;
             // 
+            // btnSig
+            // 
+            this.btnSig.Location = new System.Drawing.Point(467, 411);
+            this.btnSig.Name = "btnSig";
+            this.btnSig.Size = new System.Drawing.Size(93, 23);
+            this.btnSig.TabIndex = 3;
+            this.btnSig.Text = "Siguiente>>";
+            this.btnSig.UseVisualStyleBackColor = true;
+            // 
+            // btnAnt
+            // 
+            this.btnAnt.Location = new System.Drawing.Point(76, 411);
+            this.btnAnt.Name = "btnAnt";
+            this.btnAnt.Size = new System.Drawing.Size(90, 23);
+            this.btnAnt.TabIndex = 2;
+            this.btnAnt.Text = "<<Anterior";
+            this.btnAnt.UseVisualStyleBackColor = true;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -131,24 +149,6 @@
             this.btnModificar.TabIndex = 0;
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnAnt
-            // 
-            this.btnAnt.Location = new System.Drawing.Point(76, 411);
-            this.btnAnt.Name = "btnAnt";
-            this.btnAnt.Size = new System.Drawing.Size(90, 23);
-            this.btnAnt.TabIndex = 2;
-            this.btnAnt.Text = "<<Anterior";
-            this.btnAnt.UseVisualStyleBackColor = true;
-            // 
-            // btnSig
-            // 
-            this.btnSig.Location = new System.Drawing.Point(467, 411);
-            this.btnSig.Name = "btnSig";
-            this.btnSig.Size = new System.Drawing.Size(93, 23);
-            this.btnSig.TabIndex = 3;
-            this.btnSig.Text = "Siguiente>>";
-            this.btnSig.UseVisualStyleBackColor = true;
             // 
             // frmABMOS
             // 

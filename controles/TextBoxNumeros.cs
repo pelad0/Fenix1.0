@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace controles
 {
-    class TextBoxNumeros : TextBox
+    public class TextBoxNumeros : TextBox
     {
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
