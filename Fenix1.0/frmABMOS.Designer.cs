@@ -36,6 +36,8 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAnt = new System.Windows.Forms.Button();
+            this.btnSig = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
@@ -66,7 +68,7 @@
             this.tpAlta.Padding = new System.Windows.Forms.Padding(3);
             this.tpAlta.Size = new System.Drawing.Size(636, 447);
             this.tpAlta.TabIndex = 0;
-            this.tpAlta.Text = "Obra Social";
+            this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
             // 
             // btnAlta
@@ -80,6 +82,8 @@
             // 
             // tpBaja
             // 
+            this.tpBaja.Controls.Add(this.btnSig);
+            this.tpBaja.Controls.Add(this.btnAnt);
             this.tpBaja.Controls.Add(this.dataGridView1);
             this.tpBaja.Controls.Add(this.btnBaja);
             this.tpBaja.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,7 +106,7 @@
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(281, 409);
+            this.btnBaja.Location = new System.Drawing.Point(279, 411);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(75, 23);
             this.btnBaja.TabIndex = 0;
@@ -128,6 +132,24 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
+            // btnAnt
+            // 
+            this.btnAnt.Location = new System.Drawing.Point(76, 411);
+            this.btnAnt.Name = "btnAnt";
+            this.btnAnt.Size = new System.Drawing.Size(90, 23);
+            this.btnAnt.TabIndex = 2;
+            this.btnAnt.Text = "<<Anterior";
+            this.btnAnt.UseVisualStyleBackColor = true;
+            // 
+            // btnSig
+            // 
+            this.btnSig.Location = new System.Drawing.Point(467, 411);
+            this.btnSig.Name = "btnSig";
+            this.btnSig.Size = new System.Drawing.Size(93, 23);
+            this.btnSig.TabIndex = 3;
+            this.btnSig.Text = "Siguiente>>";
+            this.btnSig.UseVisualStyleBackColor = true;
+            // 
             // frmABMOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +161,7 @@
             this.Name = "frmABMOS";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Obra Social";
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpBaja.ResumeLayout(false);
@@ -158,5 +181,7 @@
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.TabPage tpMod;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnSig;
+        private System.Windows.Forms.Button btnAnt;
     }
 }
