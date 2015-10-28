@@ -36,8 +36,6 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.textBoxLetras1 = new controles.TextBoxLetras();
-            this.label1 = new System.Windows.Forms.Label();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
@@ -62,8 +60,6 @@
             // 
             // tpAlta
             // 
-            this.tpAlta.Controls.Add(this.label1);
-            this.tpAlta.Controls.Add(this.textBoxLetras1);
             this.tpAlta.Controls.Add(this.btnAlta);
             this.tpAlta.Location = new System.Drawing.Point(4, 34);
             this.tpAlta.Name = "tpAlta";
@@ -133,23 +129,6 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // textBoxLetras1
-            // 
-            this.textBoxLetras1.Location = new System.Drawing.Point(210, 62);
-            this.textBoxLetras1.MaxLength = 40;
-            this.textBoxLetras1.Name = "textBoxLetras1";
-            this.textBoxLetras1.Size = new System.Drawing.Size(216, 23);
-            this.textBoxLetras1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(276, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Obra Social";
-            // 
             // frmABM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,7 +142,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
-            this.tpAlta.PerformLayout();
             this.tpBaja.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tpMod.ResumeLayout(false);
@@ -181,7 +159,5 @@
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.TabPage tpMod;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Label label1;
-        private controles.TextBoxLetras textBoxLetras1;
     }
 }

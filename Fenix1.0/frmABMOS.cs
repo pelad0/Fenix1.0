@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using controles;
+using entidades;
+
 
 namespace Fenix1._0
 {
@@ -16,12 +17,24 @@ namespace Fenix1._0
         public frmABMOS()
         {
             InitializeComponent();
-            //modif
         }
 
-        private void tpAlta_Click(object sender, EventArgs e)
+        
+
+        private void btnAlta_Click(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrWhiteSpace(tbOS.Text))
+            {
+                clsObraSocial OS = new clsObraSocial(tbOS.Text);
+            }
         }
+
+        private void frmABMOS_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+
+
     }
 }

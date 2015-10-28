@@ -30,6 +30,8 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbOS = new controles.TextBoxLetras();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
             this.btnSig = new System.Windows.Forms.Button();
@@ -38,11 +40,15 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnSgte = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tpMod.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tcABM
@@ -62,6 +68,11 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.Controls.Add(this.btnSgte);
+            this.tpAlta.Controls.Add(this.btnAnterior);
+            this.tpAlta.Controls.Add(this.dataGridView2);
+            this.tpAlta.Controls.Add(this.label1);
+            this.tpAlta.Controls.Add(this.tbOS);
             this.tpAlta.Controls.Add(this.btnAlta);
             this.tpAlta.Location = new System.Drawing.Point(4, 34);
             this.tpAlta.Name = "tpAlta";
@@ -70,7 +81,23 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
-            this.tpAlta.Click += new System.EventHandler(this.tpAlta_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(276, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Obra Social";
+            // 
+            // tbOS
+            // 
+            this.tbOS.Location = new System.Drawing.Point(220, 42);
+            this.tbOS.MaxLength = 40;
+            this.tbOS.Name = "tbOS";
+            this.tbOS.Size = new System.Drawing.Size(197, 23);
+            this.tbOS.TabIndex = 1;
             // 
             // btnAlta
             // 
@@ -80,6 +107,7 @@
             this.btnAlta.TabIndex = 0;
             this.btnAlta.Text = "Cargar";
             this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
             // tpBaja
             // 
@@ -151,6 +179,32 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(198, 71);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 270);
+            this.dataGridView2.TabIndex = 3;
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Location = new System.Drawing.Point(162, 361);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(105, 23);
+            this.btnAnterior.TabIndex = 4;
+            this.btnAnterior.Text = "<< Anterior";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            // 
+            // btnSgte
+            // 
+            this.btnSgte.Location = new System.Drawing.Point(369, 361);
+            this.btnSgte.Name = "btnSgte";
+            this.btnSgte.Size = new System.Drawing.Size(105, 23);
+            this.btnSgte.TabIndex = 5;
+            this.btnSgte.Text = "Siguiente >>";
+            this.btnSgte.UseVisualStyleBackColor = true;
+            // 
             // frmABMOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,11 +217,14 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Obra Social";
+            this.Load += new System.EventHandler(this.frmABMOS_Load);
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
+            this.tpAlta.PerformLayout();
             this.tpBaja.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tpMod.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,5 +241,10 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnSig;
         private System.Windows.Forms.Button btnAnt;
+        private System.Windows.Forms.Label label1;
+        private controles.TextBoxLetras tbOS;
+        private System.Windows.Forms.Button btnSgte;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

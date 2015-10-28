@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using controles;
 
 
 namespace Fenix1._0
@@ -20,7 +21,7 @@ namespace Fenix1._0
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
