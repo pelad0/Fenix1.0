@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using controles;
 
 namespace Fenix1._0
 {
@@ -16,6 +17,11 @@ namespace Fenix1._0
         {
             InitializeComponent();
             //modif
+        }
+
+        private void tpAlta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

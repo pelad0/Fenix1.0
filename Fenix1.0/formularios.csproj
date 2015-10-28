@@ -55,6 +55,16 @@
       <DependentUpon>frmABMOS.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\controles\controles.csproj">
+      <Project>{e8d8754c-05c8-40ad-b894-390565a58e8f}</Project>
+      <Name>controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entidades\entidades.csproj">
+      <Project>{f6d17eae-0212-42e3-b94d-b0966285b853}</Project>
+      <Name>entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
