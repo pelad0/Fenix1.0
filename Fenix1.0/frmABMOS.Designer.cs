@@ -40,7 +40,7 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgbOS = new System.Windows.Forms.DataGridView();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSgte = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
@@ -48,7 +48,7 @@
             this.tpBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tpMod.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgbOS)).BeginInit();
             this.SuspendLayout();
             // 
             // tcABM
@@ -70,7 +70,7 @@
             // 
             this.tpAlta.Controls.Add(this.btnSgte);
             this.tpAlta.Controls.Add(this.btnAnterior);
-            this.tpAlta.Controls.Add(this.dataGridView2);
+            this.tpAlta.Controls.Add(this.dgbOS);
             this.tpAlta.Controls.Add(this.label1);
             this.tpAlta.Controls.Add(this.tbOS);
             this.tpAlta.Controls.Add(this.btnAlta);
@@ -179,13 +179,13 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dgbOS
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(198, 71);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(240, 270);
-            this.dataGridView2.TabIndex = 3;
+            this.dgbOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgbOS.Location = new System.Drawing.Point(198, 71);
+            this.dgbOS.Name = "dgbOS";
+            this.dgbOS.Size = new System.Drawing.Size(240, 270);
+            this.dgbOS.TabIndex = 3;
             // 
             // btnAnterior
             // 
@@ -195,6 +195,7 @@
             this.btnAnterior.TabIndex = 4;
             this.btnAnterior.Text = "<< Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnSgte
             // 
@@ -204,6 +205,7 @@
             this.btnSgte.TabIndex = 5;
             this.btnSgte.Text = "Siguiente >>";
             this.btnSgte.UseVisualStyleBackColor = true;
+            this.btnSgte.Click += new System.EventHandler(this.btnSgte_Click);
             // 
             // frmABMOS
             // 
@@ -224,7 +226,7 @@
             this.tpBaja.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tpMod.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgbOS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,6 +247,6 @@
         private controles.TextBoxLetras tbOS;
         private System.Windows.Forms.Button btnSgte;
         private System.Windows.Forms.Button btnAnterior;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgbOS;
     }
 }

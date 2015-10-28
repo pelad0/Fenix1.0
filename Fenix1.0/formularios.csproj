@@ -71,6 +71,10 @@
       <Project>{7944f26d-031e-430e-a21b-fb623b56ba3e}</Project>
       <Name>interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\logica\logica.csproj">
+      <Project>{91e03191-962d-4160-a9cb-891f04364e94}</Project>
+      <Name>logica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
