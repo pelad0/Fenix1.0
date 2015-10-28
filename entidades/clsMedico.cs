@@ -16,9 +16,8 @@ namespace entidades
         string apellido;
         string especialidad;
 
-        public clsMedico(int id, int matricula, long dni, string nombre, string apellido, string especialidad)
+        public clsMedico(int matricula, long dni, string nombre, string apellido, string especialidad)
         {
-            this.idMedico = id;
             this.matricula = matricula;
             this.dni = dni;
             this.nombre = nombre;
