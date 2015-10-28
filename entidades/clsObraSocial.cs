@@ -7,7 +7,7 @@ using interfaces;
 
 namespace entidades
 {
-    class clsObraSocial : IEntidad
+    public class clsObraSocial : IEntidad
     {
         int id;
 
