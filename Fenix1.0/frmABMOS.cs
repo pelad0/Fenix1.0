@@ -15,6 +15,7 @@ namespace Fenix1._0
         public frmABMOS()
         {
             InitializeComponent();
+            //modif
         }
     }
 }
