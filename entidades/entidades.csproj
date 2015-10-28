@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsMedico.cs" />
+    <Compile Include="clsObraSocial.cs" />
+    <Compile Include="clsPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
