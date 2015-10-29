@@ -30,6 +30,16 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.cbOSAlta = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbTelALta = new controles.TextBoxNumeros();
+            this.tbDniAlta = new controles.TextBoxNumeros();
+            this.tbApellidoAlta = new controles.TextBoxLetras();
+            this.tbNombreAlta = new controles.TextBoxLetras();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
             this.btnSig = new System.Windows.Forms.Button();
@@ -38,21 +48,23 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.textBoxLetras1 = new controles.TextBoxLetras();
-            this.textBoxLetras2 = new controles.TextBoxLetras();
-            this.textBoxNumeros1 = new controles.TextBoxNumeros();
-            this.textBoxNumeros2 = new controles.TextBoxNumeros();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.cdOSMod = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbTelMod = new controles.TextBoxNumeros();
+            this.tbDniMod = new controles.TextBoxNumeros();
+            this.tbApellidoMod = new controles.TextBoxLetras();
+            this.tbNombreMod = new controles.TextBoxLetras();
+            this.dgvPacMod = new System.Windows.Forms.DataGridView();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).BeginInit();
             this.tpMod.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPacMod)).BeginInit();
             this.SuspendLayout();
             // 
             // tcABM
@@ -72,16 +84,16 @@
             // 
             // tpAlta
             // 
-            this.tpAlta.Controls.Add(this.comboBox1);
+            this.tpAlta.Controls.Add(this.cbOSAlta);
             this.tpAlta.Controls.Add(this.label5);
             this.tpAlta.Controls.Add(this.label4);
             this.tpAlta.Controls.Add(this.label3);
             this.tpAlta.Controls.Add(this.label2);
             this.tpAlta.Controls.Add(this.label1);
-            this.tpAlta.Controls.Add(this.textBoxNumeros2);
-            this.tpAlta.Controls.Add(this.textBoxNumeros1);
-            this.tpAlta.Controls.Add(this.textBoxLetras2);
-            this.tpAlta.Controls.Add(this.textBoxLetras1);
+            this.tpAlta.Controls.Add(this.tbTelALta);
+            this.tpAlta.Controls.Add(this.tbDniAlta);
+            this.tpAlta.Controls.Add(this.tbApellidoAlta);
+            this.tpAlta.Controls.Add(this.tbNombreAlta);
             this.tpAlta.Controls.Add(this.btnAlta);
             this.tpAlta.Location = new System.Drawing.Point(4, 34);
             this.tpAlta.Name = "tpAlta";
@@ -90,6 +102,87 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
+            // 
+            // cbOSAlta
+            // 
+            this.cbOSAlta.FormattingEnabled = true;
+            this.cbOSAlta.Location = new System.Drawing.Point(258, 308);
+            this.cbOSAlta.Name = "cbOSAlta";
+            this.cbOSAlta.Size = new System.Drawing.Size(121, 23);
+            this.cbOSAlta.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(276, 280);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 15);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Obra Social";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(287, 216);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 15);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Telefono";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(283, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 15);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Documento";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(287, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 15);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Apellido";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(294, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Nombre";
+            // 
+            // tbTelALta
+            // 
+            this.tbTelALta.Location = new System.Drawing.Point(237, 244);
+            this.tbTelALta.Name = "tbTelALta";
+            this.tbTelALta.Size = new System.Drawing.Size(162, 23);
+            this.tbTelALta.TabIndex = 4;
+            // 
+            // tbDniAlta
+            // 
+            this.tbDniAlta.Location = new System.Drawing.Point(237, 180);
+            this.tbDniAlta.Name = "tbDniAlta";
+            this.tbDniAlta.Size = new System.Drawing.Size(162, 23);
+            this.tbDniAlta.TabIndex = 3;
+            // 
+            // tbApellidoAlta
+            // 
+            this.tbApellidoAlta.Location = new System.Drawing.Point(237, 116);
+            this.tbApellidoAlta.Name = "tbApellidoAlta";
+            this.tbApellidoAlta.Size = new System.Drawing.Size(162, 23);
+            this.tbApellidoAlta.TabIndex = 2;
+            // 
+            // tbNombreAlta
+            // 
+            this.tbNombreAlta.Location = new System.Drawing.Point(237, 52);
+            this.tbNombreAlta.Name = "tbNombreAlta";
+            this.tbNombreAlta.Size = new System.Drawing.Size(162, 23);
+            this.tbNombreAlta.TabIndex = 1;
             // 
             // btnAlta
             // 
@@ -160,6 +253,17 @@
             // 
             // tpMod
             // 
+            this.tpMod.Controls.Add(this.dgvPacMod);
+            this.tpMod.Controls.Add(this.cdOSMod);
+            this.tpMod.Controls.Add(this.label6);
+            this.tpMod.Controls.Add(this.label7);
+            this.tpMod.Controls.Add(this.label8);
+            this.tpMod.Controls.Add(this.label9);
+            this.tpMod.Controls.Add(this.label10);
+            this.tpMod.Controls.Add(this.tbTelMod);
+            this.tpMod.Controls.Add(this.tbDniMod);
+            this.tpMod.Controls.Add(this.tbApellidoMod);
+            this.tpMod.Controls.Add(this.tbNombreMod);
             this.tpMod.Controls.Add(this.btnModificar);
             this.tpMod.Location = new System.Drawing.Point(4, 34);
             this.tpMod.Name = "tpMod";
@@ -177,86 +281,94 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // textBoxLetras1
+            // cdOSMod
             // 
-            this.textBoxLetras1.Location = new System.Drawing.Point(237, 52);
-            this.textBoxLetras1.Name = "textBoxLetras1";
-            this.textBoxLetras1.Size = new System.Drawing.Size(162, 23);
-            this.textBoxLetras1.TabIndex = 1;
+            this.cdOSMod.FormattingEnabled = true;
+            this.cdOSMod.Location = new System.Drawing.Point(476, 322);
+            this.cdOSMod.Name = "cdOSMod";
+            this.cdOSMod.Size = new System.Drawing.Size(121, 23);
+            this.cdOSMod.TabIndex = 19;
             // 
-            // textBoxLetras2
+            // label6
             // 
-            this.textBoxLetras2.Location = new System.Drawing.Point(237, 116);
-            this.textBoxLetras2.Name = "textBoxLetras2";
-            this.textBoxLetras2.Size = new System.Drawing.Size(162, 23);
-            this.textBoxLetras2.TabIndex = 2;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(494, 294);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 15);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Obra Social";
             // 
-            // textBoxNumeros1
+            // label7
             // 
-            this.textBoxNumeros1.Location = new System.Drawing.Point(237, 180);
-            this.textBoxNumeros1.Name = "textBoxNumeros1";
-            this.textBoxNumeros1.Size = new System.Drawing.Size(162, 23);
-            this.textBoxNumeros1.TabIndex = 3;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(505, 230);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 15);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Telefono";
             // 
-            // textBoxNumeros2
+            // label8
             // 
-            this.textBoxNumeros2.Location = new System.Drawing.Point(237, 244);
-            this.textBoxNumeros2.Name = "textBoxNumeros2";
-            this.textBoxNumeros2.Size = new System.Drawing.Size(162, 23);
-            this.textBoxNumeros2.TabIndex = 4;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(501, 166);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 15);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Documento";
             // 
-            // label1
+            // label9
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(294, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Nombre";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(505, 102);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 15);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Apellido";
             // 
-            // label2
+            // label10
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(287, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Apellido";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(512, 38);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 15);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Nombre";
             // 
-            // label3
+            // tbTelMod
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(283, 152);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Documento";
+            this.tbTelMod.Location = new System.Drawing.Point(455, 258);
+            this.tbTelMod.Name = "tbTelMod";
+            this.tbTelMod.Size = new System.Drawing.Size(162, 23);
+            this.tbTelMod.TabIndex = 13;
             // 
-            // label4
+            // tbDniMod
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(287, 216);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Telefono";
+            this.tbDniMod.Location = new System.Drawing.Point(455, 194);
+            this.tbDniMod.Name = "tbDniMod";
+            this.tbDniMod.Size = new System.Drawing.Size(162, 23);
+            this.tbDniMod.TabIndex = 12;
             // 
-            // comboBox1
+            // tbApellidoMod
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(258, 308);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 9;
+            this.tbApellidoMod.Location = new System.Drawing.Point(455, 130);
+            this.tbApellidoMod.Name = "tbApellidoMod";
+            this.tbApellidoMod.Size = new System.Drawing.Size(162, 23);
+            this.tbApellidoMod.TabIndex = 11;
             // 
-            // label5
+            // tbNombreMod
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(276, 280);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Obra Social";
+            this.tbNombreMod.Location = new System.Drawing.Point(455, 66);
+            this.tbNombreMod.Name = "tbNombreMod";
+            this.tbNombreMod.Size = new System.Drawing.Size(162, 23);
+            this.tbNombreMod.TabIndex = 10;
+            // 
+            // dgvPacMod
+            // 
+            this.dgvPacMod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPacMod.Location = new System.Drawing.Point(19, 29);
+            this.dgvPacMod.Name = "dgvPacMod";
+            this.dgvPacMod.Size = new System.Drawing.Size(397, 334);
+            this.dgvPacMod.TabIndex = 20;
             // 
             // frmABMPaciente
             // 
@@ -275,6 +387,8 @@
             this.tpBaja.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).EndInit();
             this.tpMod.ResumeLayout(false);
+            this.tpMod.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPacMod)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -295,11 +409,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private controles.TextBoxNumeros textBoxNumeros2;
-        private controles.TextBoxNumeros textBoxNumeros1;
-        private controles.TextBoxLetras textBoxLetras2;
-        private controles.TextBoxLetras textBoxLetras1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private controles.TextBoxNumeros tbTelALta;
+        private controles.TextBoxNumeros tbDniAlta;
+        private controles.TextBoxLetras tbApellidoAlta;
+        private controles.TextBoxLetras tbNombreAlta;
+        private System.Windows.Forms.ComboBox cbOSAlta;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvPacMod;
+        private System.Windows.Forms.ComboBox cdOSMod;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private controles.TextBoxNumeros tbTelMod;
+        private controles.TextBoxNumeros tbDniMod;
+        private controles.TextBoxLetras tbApellidoMod;
+        private controles.TextBoxLetras tbNombreMod;
     }
 }
