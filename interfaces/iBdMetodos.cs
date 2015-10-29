@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace interfaces
 {
-    public interface IEntidad
-        //coment
+    public interface iBdMetodos
     {
-        int Id { get; set; }
+        int ejecutar(String sql);
+        DataTable Consultar();
+
     }
 }
