@@ -52,7 +52,6 @@
     <Compile Include="ManejaRecibo.cs" />
     <Compile Include="ManejaSobreturno.cs" />
     <Compile Include="ManejaTurno.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\entidades\entidades.csproj">
@@ -63,6 +62,9 @@
       <Project>{7944f26d-031e-430e-a21b-fb623b56ba3e}</Project>
       <Name>interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
