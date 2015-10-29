@@ -32,10 +32,10 @@
             this.clbObraSocial = new System.Windows.Forms.CheckedListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tbDniAlta = new controles.TextBoxNumeros();
-            this.tbMatriculaAlta = new controles.TextBoxNumeros();
-            this.tbApellidoAlta = new controles.TextBoxLetras();
-            this.tbNombreAlta = new controles.TextBoxLetras();
+            this.tbDniModi = new controles.TextBoxNumeros();
+            this.tbMatriculaModi = new controles.TextBoxNumeros();
+            this.tbApellidoModi = new controles.TextBoxLetras();
+            this.tbNombreModi = new controles.TextBoxLetras();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(294, 258);
+            this.label9.Location = new System.Drawing.Point(305, 258);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 15);
             this.label9.TabIndex = 20;
@@ -72,44 +72,45 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(215, 38);
+            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(205, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(203, 15);
+            this.label8.Size = new System.Drawing.Size(261, 19);
             this.label8.TabIndex = 19;
             this.label8.Text = "Ingrese los datos del médico\r\n";
             // 
-            // tbDniAlta
+            // tbDniModi
             // 
-            this.tbDniAlta.Location = new System.Drawing.Point(113, 160);
-            this.tbDniAlta.Name = "tbDniAlta";
-            this.tbDniAlta.Size = new System.Drawing.Size(163, 23);
-            this.tbDniAlta.TabIndex = 14;
+            this.tbDniModi.Location = new System.Drawing.Point(113, 160);
+            this.tbDniModi.Name = "tbDniModi";
+            this.tbDniModi.Size = new System.Drawing.Size(163, 23);
+            this.tbDniModi.TabIndex = 14;
             // 
-            // tbMatriculaAlta
+            // tbMatriculaModi
             // 
-            this.tbMatriculaAlta.Location = new System.Drawing.Point(416, 160);
-            this.tbMatriculaAlta.Name = "tbMatriculaAlta";
-            this.tbMatriculaAlta.Size = new System.Drawing.Size(159, 23);
-            this.tbMatriculaAlta.TabIndex = 16;
+            this.tbMatriculaModi.Location = new System.Drawing.Point(416, 160);
+            this.tbMatriculaModi.Name = "tbMatriculaModi";
+            this.tbMatriculaModi.Size = new System.Drawing.Size(159, 23);
+            this.tbMatriculaModi.TabIndex = 16;
             // 
-            // tbApellidoAlta
+            // tbApellidoModi
             // 
-            this.tbApellidoAlta.Location = new System.Drawing.Point(416, 86);
-            this.tbApellidoAlta.Name = "tbApellidoAlta";
-            this.tbApellidoAlta.Size = new System.Drawing.Size(159, 23);
-            this.tbApellidoAlta.TabIndex = 12;
+            this.tbApellidoModi.Location = new System.Drawing.Point(416, 86);
+            this.tbApellidoModi.Name = "tbApellidoModi";
+            this.tbApellidoModi.Size = new System.Drawing.Size(159, 23);
+            this.tbApellidoModi.TabIndex = 12;
             // 
-            // tbNombreAlta
+            // tbNombreModi
             // 
-            this.tbNombreAlta.Location = new System.Drawing.Point(113, 89);
-            this.tbNombreAlta.Name = "tbNombreAlta";
-            this.tbNombreAlta.Size = new System.Drawing.Size(163, 23);
-            this.tbNombreAlta.TabIndex = 10;
+            this.tbNombreModi.Location = new System.Drawing.Point(113, 89);
+            this.tbNombreModi.Name = "tbNombreModi";
+            this.tbNombreModi.Size = new System.Drawing.Size(163, 23);
+            this.tbNombreModi.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(0, 258);
+            this.label5.Location = new System.Drawing.Point(16, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 15);
             this.label5.TabIndex = 18;
@@ -118,7 +119,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(329, 163);
+            this.label4.Location = new System.Drawing.Point(340, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 15);
             this.label4.TabIndex = 17;
@@ -127,7 +128,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 163);
+            this.label3.Location = new System.Drawing.Point(79, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 15);
             this.label3.TabIndex = 15;
@@ -136,7 +137,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(336, 90);
+            this.label2.Location = new System.Drawing.Point(347, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 15);
             this.label2.TabIndex = 13;
@@ -145,7 +146,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 93);
+            this.label1.Location = new System.Drawing.Point(58, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 15);
             this.label1.TabIndex = 11;
@@ -153,7 +154,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(302, 408);
+            this.btnGuardar.Location = new System.Drawing.Point(278, 374);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 23;
@@ -164,16 +165,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 494);
+            this.ClientSize = new System.Drawing.Size(644, 424);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.clbEspecialidad);
             this.Controls.Add(this.clbObraSocial);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.tbDniAlta);
-            this.Controls.Add(this.tbMatriculaAlta);
-            this.Controls.Add(this.tbApellidoAlta);
-            this.Controls.Add(this.tbNombreAlta);
+            this.Controls.Add(this.tbDniModi);
+            this.Controls.Add(this.tbMatriculaModi);
+            this.Controls.Add(this.tbApellidoModi);
+            this.Controls.Add(this.tbNombreModi);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -193,10 +194,10 @@
         private System.Windows.Forms.CheckedListBox clbObraSocial;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private controles.TextBoxNumeros tbDniAlta;
-        private controles.TextBoxNumeros tbMatriculaAlta;
-        private controles.TextBoxLetras tbApellidoAlta;
-        private controles.TextBoxLetras tbNombreAlta;
+        private controles.TextBoxNumeros tbDniModi;
+        private controles.TextBoxNumeros tbMatriculaModi;
+        private controles.TextBoxLetras tbApellidoModi;
+        private controles.TextBoxLetras tbNombreModi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
