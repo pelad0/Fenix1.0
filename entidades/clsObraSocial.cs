@@ -11,7 +11,7 @@ namespace entidades
     {
         int id;
         string nombre;
-
+        
         public clsObraSocial(string nombre)
         {
             this.nombre = nombre;
