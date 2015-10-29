@@ -40,12 +40,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsEspecialidad.cs" />
+    <Compile Include="clsFactura.cs" />
     <Compile Include="clsHistorial.cs" />
     <Compile Include="clsMedico.cs" />
     <Compile Include="clsObraSocial.cs" />
     <Compile Include="clsObraXMedico.cs" />
     <Compile Include="clsPaciente.cs" />
     <Compile Include="clsPlanesXObra.cs" />
+    <Compile Include="clsRecibo.cs" />
     <Compile Include="clsSobreturno.cs" />
     <Compile Include="clsTurno.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
