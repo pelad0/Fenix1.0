@@ -30,6 +30,14 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clbEspecialidad = new System.Windows.Forms.CheckedListBox();
+            this.clbObraSocial = new System.Windows.Forms.CheckedListBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tbDniAlta = new controles.TextBoxNumeros();
             this.tbMatriculaAlta = new controles.TextBoxNumeros();
             this.tbApellidoAlta = new controles.TextBoxLetras();
@@ -41,28 +49,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.dgvMedicosBaja = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dgvMedicosModi = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.clbObraSocial = new System.Windows.Forms.CheckedListBox();
-            this.clbEspecialidad = new System.Windows.Forms.CheckedListBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dgvMedicosModi = new System.Windows.Forms.DataGridView();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tpBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosBaja)).BeginInit();
             this.tpMod.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosModi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tcABM
@@ -107,6 +107,75 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(358, 540);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(111, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Siguiente ->";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(176, 539);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "<- Anterior";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(257, 320);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 15);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Médicos actuales";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 338);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(620, 196);
+            this.dataGridView1.TabIndex = 10;
+            // 
+            // clbEspecialidad
+            // 
+            this.clbEspecialidad.FormattingEnabled = true;
+            this.clbEspecialidad.Location = new System.Drawing.Point(128, 166);
+            this.clbEspecialidad.Name = "clbEspecialidad";
+            this.clbEspecialidad.Size = new System.Drawing.Size(154, 94);
+            this.clbEspecialidad.TabIndex = 9;
+            // 
+            // clbObraSocial
+            // 
+            this.clbObraSocial.FormattingEnabled = true;
+            this.clbObraSocial.Location = new System.Drawing.Point(424, 169);
+            this.clbObraSocial.Name = "clbObraSocial";
+            this.clbObraSocial.Size = new System.Drawing.Size(154, 94);
+            this.clbObraSocial.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(313, 197);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 15);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Obras Sociales";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(215, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(203, 15);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Ingrese los datos del médico\r\n";
             // 
             // tbDniAlta
             // 
@@ -183,9 +252,9 @@
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(284, 279);
+            this.btnAlta.Location = new System.Drawing.Point(266, 280);
             this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnAlta.Size = new System.Drawing.Size(98, 23);
             this.btnAlta.TabIndex = 0;
             this.btnAlta.Text = "Cargar";
             this.btnAlta.UseVisualStyleBackColor = true;
@@ -204,6 +273,15 @@
             this.tpBaja.TabIndex = 1;
             this.tpBaja.Text = "Baja";
             this.tpBaja.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(162, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(301, 15);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Seleccione el médico que desea dar de baja";
             // 
             // dgvMedicosBaja
             // 
@@ -234,32 +312,6 @@
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(281, 408);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 0;
-            this.btnModificar.Text = "Editar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(162, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(301, 15);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Seleccione el médico que desea dar de baja";
-            // 
-            // dgvMedicosModi
-            // 
-            this.dgvMedicosModi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicosModi.Location = new System.Drawing.Point(3, 69);
-            this.dgvMedicosModi.Name = "dgvMedicosModi";
-            this.dgvMedicosModi.Size = new System.Drawing.Size(630, 317);
-            this.dgvMedicosModi.TabIndex = 2;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -269,74 +321,22 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Seleccione el médico que desea modificar";
             // 
-            // label8
+            // dgvMedicosModi
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(215, 12);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(203, 15);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Ingrese los datos del médico\r\n";
+            this.dgvMedicosModi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicosModi.Location = new System.Drawing.Point(3, 69);
+            this.dgvMedicosModi.Name = "dgvMedicosModi";
+            this.dgvMedicosModi.Size = new System.Drawing.Size(630, 317);
+            this.dgvMedicosModi.TabIndex = 2;
             // 
-            // label9
+            // btnModificar
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(313, 197);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 15);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Obras Sociales";
-            // 
-            // clbObraSocial
-            // 
-            this.clbObraSocial.FormattingEnabled = true;
-            this.clbObraSocial.Location = new System.Drawing.Point(424, 169);
-            this.clbObraSocial.Name = "clbObraSocial";
-            this.clbObraSocial.Size = new System.Drawing.Size(154, 94);
-            this.clbObraSocial.TabIndex = 8;
-            // 
-            // clbEspecialidad
-            // 
-            this.clbEspecialidad.FormattingEnabled = true;
-            this.clbEspecialidad.Location = new System.Drawing.Point(128, 166);
-            this.clbEspecialidad.Name = "clbEspecialidad";
-            this.clbEspecialidad.Size = new System.Drawing.Size(154, 94);
-            this.clbEspecialidad.TabIndex = 9;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 338);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(620, 196);
-            this.dataGridView1.TabIndex = 10;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(257, 320);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 15);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Médicos actuales";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(176, 539);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "<- Anterior";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(358, 540);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Siguiente ->";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModificar.Location = new System.Drawing.Point(281, 408);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 0;
+            this.btnModificar.Text = "Editar";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // frmABMME
             // 
@@ -352,13 +352,13 @@
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tpBaja.ResumeLayout(false);
             this.tpBaja.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosBaja)).EndInit();
             this.tpMod.ResumeLayout(false);
             this.tpMod.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosModi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
