@@ -9,14 +9,15 @@ namespace entidades
 {
     public class clsObraSocial : IEntidad
     {
-        private  int id;
+        private int id;
         string nombre;
-
-        public clsObraSocial(int id,string nombre)
+        
+        public clsObraSocial(int id, string nombre)
         {
             this.id = id;
             this.nombre = nombre;
         }
+        
         public clsObraSocial(string nombre)
         {
             this.nombre = nombre;
