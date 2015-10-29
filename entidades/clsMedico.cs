@@ -73,19 +73,8 @@ namespace entidades
             get { return especialidad; }
             set { especialidad = value; }
         }
+        
 
-
-
-        int IEntidad.id
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+       
     }
 }
