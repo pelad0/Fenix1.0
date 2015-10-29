@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using interfaces;
+using entidades;
 
 namespace Datos
 {
@@ -34,7 +35,9 @@ namespace Datos
             throw new NotImplementedException();
         }
 
-        public int Id
+
+
+        public int id
         {
             get
             {
