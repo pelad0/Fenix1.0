@@ -30,17 +30,19 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
-            this.tpBaja = new System.Windows.Forms.TabPage();
-            this.tpMod = new System.Windows.Forms.TabPage();
             this.btnAlta = new System.Windows.Forms.Button();
+            this.tpBaja = new System.Windows.Forms.TabPage();
+            this.dgvEliminar = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
+            this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSig = new System.Windows.Forms.Button();
+            this.btnAnt = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).BeginInit();
             this.tpMod.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tcABM
@@ -69,9 +71,21 @@
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
             // 
+            // btnAlta
+            // 
+            this.btnAlta.Location = new System.Drawing.Point(281, 409);
+            this.btnAlta.Name = "btnAlta";
+            this.btnAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnAlta.TabIndex = 0;
+            this.btnAlta.Text = "Cargar";
+            this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
+            // 
             // tpBaja
             // 
-            this.tpBaja.Controls.Add(this.dataGridView1);
+            this.tpBaja.Controls.Add(this.btnSig);
+            this.tpBaja.Controls.Add(this.btnAnt);
+            this.tpBaja.Controls.Add(this.dgvEliminar);
             this.tpBaja.Controls.Add(this.btnBaja);
             this.tpBaja.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpBaja.Location = new System.Drawing.Point(4, 34);
@@ -81,6 +95,30 @@
             this.tpBaja.TabIndex = 1;
             this.tpBaja.Text = "Baja";
             this.tpBaja.UseVisualStyleBackColor = true;
+            // 
+            // dgvEliminar
+            // 
+            this.dgvEliminar.AllowUserToAddRows = false;
+            this.dgvEliminar.AllowUserToDeleteRows = false;
+            this.dgvEliminar.AllowUserToOrderColumns = true;
+            this.dgvEliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEliminar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvEliminar.Location = new System.Drawing.Point(3, 3);
+            this.dgvEliminar.MultiSelect = false;
+            this.dgvEliminar.Name = "dgvEliminar";
+            this.dgvEliminar.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEliminar.Size = new System.Drawing.Size(630, 380);
+            this.dgvEliminar.TabIndex = 1;
+            // 
+            // btnBaja
+            // 
+            this.btnBaja.Location = new System.Drawing.Point(279, 409);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(75, 23);
+            this.btnBaja.TabIndex = 0;
+            this.btnBaja.Text = "Eliminar";
+            this.btnBaja.UseVisualStyleBackColor = true;
             // 
             // tpMod
             // 
@@ -92,24 +130,6 @@
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
             // 
-            // btnAlta
-            // 
-            this.btnAlta.Location = new System.Drawing.Point(281, 409);
-            this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(75, 23);
-            this.btnAlta.TabIndex = 0;
-            this.btnAlta.Text = "Cargar";
-            this.btnAlta.UseVisualStyleBackColor = true;
-            // 
-            // btnBaja
-            // 
-            this.btnBaja.Location = new System.Drawing.Point(281, 409);
-            this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(75, 23);
-            this.btnBaja.TabIndex = 0;
-            this.btnBaja.Text = "Eliminar";
-            this.btnBaja.UseVisualStyleBackColor = true;
-            // 
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(281, 408);
@@ -119,14 +139,23 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // btnSig
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(630, 380);
-            this.dataGridView1.TabIndex = 1;
+            this.btnSig.Location = new System.Drawing.Point(467, 409);
+            this.btnSig.Name = "btnSig";
+            this.btnSig.Size = new System.Drawing.Size(93, 23);
+            this.btnSig.TabIndex = 6;
+            this.btnSig.Text = "Siguiente>>";
+            this.btnSig.UseVisualStyleBackColor = true;
+            // 
+            // btnAnt
+            // 
+            this.btnAnt.Location = new System.Drawing.Point(76, 409);
+            this.btnAnt.Name = "btnAnt";
+            this.btnAnt.Size = new System.Drawing.Size(90, 23);
+            this.btnAnt.TabIndex = 5;
+            this.btnAnt.Text = "<<Anterior";
+            this.btnAnt.UseVisualStyleBackColor = true;
             // 
             // frmABM
             // 
@@ -142,8 +171,8 @@
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpBaja.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).EndInit();
             this.tpMod.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -154,9 +183,11 @@
         private System.Windows.Forms.TabPage tpAlta;
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.TabPage tpBaja;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEliminar;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.TabPage tpMod;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnSig;
+        private System.Windows.Forms.Button btnAnt;
     }
 }
