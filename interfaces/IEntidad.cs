@@ -9,6 +9,6 @@ namespace interfaces
     public interface IEntidad
         //coment
     {
-        int Id { get; set; }
+        int id { get; set; }
     }
 }
