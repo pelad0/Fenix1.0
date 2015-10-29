@@ -26,5 +26,17 @@ namespace entidades
 
         }
 
-     }
+
+        int IEntidad.id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+    }
 }
