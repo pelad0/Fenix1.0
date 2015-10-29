@@ -45,5 +45,17 @@ namespace Datos
                 throw new NotImplementedException();
             }
         }
+
+        public int id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
