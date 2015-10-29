@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "formularios", "Fenix1.0\formularios.csproj", "{F96DB2D2-96FB-461E-B206-600D4962F541}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "controles", "controles\controles.csproj", "{E8D8754C-05C8-40AD-B894-390565A58E8F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "logica", "logica\logica.csproj", "{91E03191-962D-4160-A9CB-891F04364E94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{3266F192-F242-4FE7-B0CC-F4D346F171B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{91E03191-962D-4160-A9CB-891F04364E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91E03191-962D-4160-A9CB-891F04364E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91E03191-962D-4160-A9CB-891F04364E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3266F192-F242-4FE7-B0CC-F4D346F171B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3266F192-F242-4FE7-B0CC-F4D346F171B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3266F192-F242-4FE7-B0CC-F4D346F171B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3266F192-F242-4FE7-B0CC-F4D346F171B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
