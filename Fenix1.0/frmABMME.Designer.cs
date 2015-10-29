@@ -285,9 +285,12 @@
             // 
             // dgvMedicosBaja
             // 
+            this.dgvMedicosBaja.AllowUserToAddRows = false;
+            this.dgvMedicosBaja.AllowUserToDeleteRows = false;
             this.dgvMedicosBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicosBaja.Location = new System.Drawing.Point(3, 69);
             this.dgvMedicosBaja.Name = "dgvMedicosBaja";
+            this.dgvMedicosBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicosBaja.Size = new System.Drawing.Size(630, 317);
             this.dgvMedicosBaja.TabIndex = 1;
             // 
@@ -323,9 +326,12 @@
             // 
             // dgvMedicosModi
             // 
+            this.dgvMedicosModi.AllowUserToAddRows = false;
+            this.dgvMedicosModi.AllowUserToDeleteRows = false;
             this.dgvMedicosModi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicosModi.Location = new System.Drawing.Point(3, 69);
             this.dgvMedicosModi.Name = "dgvMedicosModi";
+            this.dgvMedicosModi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicosModi.Size = new System.Drawing.Size(630, 317);
             this.dgvMedicosModi.TabIndex = 2;
             // 
