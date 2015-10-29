@@ -42,6 +42,7 @@
     <Compile Include="clsMedico.cs" />
     <Compile Include="clsObraSocial.cs" />
     <Compile Include="clsPaciente.cs" />
+    <Compile Include="clsTurno.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

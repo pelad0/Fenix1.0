@@ -7,27 +7,25 @@ using interfaces;
 
 namespace entidades
 {
-    public class clsObraSocial : IEntidad
+    public class clsTurno :IEntidad
     {
-        private  int id;
-        string nombre;
-        
-        public clsObraSocial(string nombre)
+        int id;
+
+        int idMedico;
+
+        int idPaciente;
+
+        DateTime fecha;
+
+        double costo;
+
+        int idUsuario;
+
+        public clsTurno()
         {
-            this.nombre = nombre;
+
         }
 
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
         int IEntidad.id
         {
