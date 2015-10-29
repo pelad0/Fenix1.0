@@ -30,10 +30,10 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSiguientesAlta = new System.Windows.Forms.Button();
+            this.btnAnteriorAlta = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMedicosActuales = new System.Windows.Forms.DataGridView();
             this.clbEspecialidad = new System.Windows.Forms.CheckedListBox();
             this.clbObraSocial = new System.Windows.Forms.CheckedListBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -56,9 +56,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dgvMedicosModi = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnSiguienteBaja = new System.Windows.Forms.Button();
+            this.btnAnteriorBaja = new System.Windows.Forms.Button();
+            this.btnSiguienteModi = new System.Windows.Forms.Button();
+            this.btnAnteriorModi = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosActuales)).BeginInit();
             this.tpBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosBaja)).BeginInit();
             this.tpMod.SuspendLayout();
@@ -82,10 +86,10 @@
             // 
             // tpAlta
             // 
-            this.tpAlta.Controls.Add(this.button2);
-            this.tpAlta.Controls.Add(this.button1);
+            this.tpAlta.Controls.Add(this.btnSiguientesAlta);
+            this.tpAlta.Controls.Add(this.btnAnteriorAlta);
             this.tpAlta.Controls.Add(this.label10);
-            this.tpAlta.Controls.Add(this.dataGridView1);
+            this.tpAlta.Controls.Add(this.dgvMedicosActuales);
             this.tpAlta.Controls.Add(this.clbEspecialidad);
             this.tpAlta.Controls.Add(this.clbObraSocial);
             this.tpAlta.Controls.Add(this.label9);
@@ -108,23 +112,23 @@
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnSiguientesAlta
             // 
-            this.button2.Location = new System.Drawing.Point(358, 540);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Siguiente ->";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSiguientesAlta.Location = new System.Drawing.Point(358, 540);
+            this.btnSiguientesAlta.Name = "btnSiguientesAlta";
+            this.btnSiguientesAlta.Size = new System.Drawing.Size(111, 23);
+            this.btnSiguientesAlta.TabIndex = 13;
+            this.btnSiguientesAlta.Text = "Siguiente ->";
+            this.btnSiguientesAlta.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAnteriorAlta
             // 
-            this.button1.Location = new System.Drawing.Point(176, 539);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "<- Anterior";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAnteriorAlta.Location = new System.Drawing.Point(165, 539);
+            this.btnAnteriorAlta.Name = "btnAnteriorAlta";
+            this.btnAnteriorAlta.Size = new System.Drawing.Size(106, 23);
+            this.btnAnteriorAlta.TabIndex = 12;
+            this.btnAnteriorAlta.Text = "<- Anterior";
+            this.btnAnteriorAlta.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -135,13 +139,13 @@
             this.label10.TabIndex = 11;
             this.label10.Text = "Médicos actuales";
             // 
-            // dataGridView1
+            // dgvMedicosActuales
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 338);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(620, 196);
-            this.dataGridView1.TabIndex = 10;
+            this.dgvMedicosActuales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicosActuales.Location = new System.Drawing.Point(6, 338);
+            this.dgvMedicosActuales.Name = "dgvMedicosActuales";
+            this.dgvMedicosActuales.Size = new System.Drawing.Size(622, 196);
+            this.dgvMedicosActuales.TabIndex = 10;
             // 
             // clbEspecialidad
             // 
@@ -262,6 +266,8 @@
             // 
             // tpBaja
             // 
+            this.tpBaja.Controls.Add(this.btnSiguienteBaja);
+            this.tpBaja.Controls.Add(this.btnAnteriorBaja);
             this.tpBaja.Controls.Add(this.label6);
             this.tpBaja.Controls.Add(this.dgvMedicosBaja);
             this.tpBaja.Controls.Add(this.btnBaja);
@@ -293,7 +299,7 @@
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(281, 409);
+            this.btnBaja.Location = new System.Drawing.Point(284, 405);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(75, 23);
             this.btnBaja.TabIndex = 0;
@@ -302,6 +308,8 @@
             // 
             // tpMod
             // 
+            this.tpMod.Controls.Add(this.btnSiguienteModi);
+            this.tpMod.Controls.Add(this.btnAnteriorModi);
             this.tpMod.Controls.Add(this.label7);
             this.tpMod.Controls.Add(this.dgvMedicosModi);
             this.tpMod.Controls.Add(this.btnModificar);
@@ -331,12 +339,48 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(281, 408);
+            this.btnModificar.Location = new System.Drawing.Point(273, 408);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 0;
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnSiguienteBaja
+            // 
+            this.btnSiguienteBaja.Location = new System.Drawing.Point(439, 405);
+            this.btnSiguienteBaja.Name = "btnSiguienteBaja";
+            this.btnSiguienteBaja.Size = new System.Drawing.Size(111, 23);
+            this.btnSiguienteBaja.TabIndex = 15;
+            this.btnSiguienteBaja.Text = "Siguiente ->";
+            this.btnSiguienteBaja.UseVisualStyleBackColor = true;
+            // 
+            // btnAnteriorBaja
+            // 
+            this.btnAnteriorBaja.Location = new System.Drawing.Point(89, 405);
+            this.btnAnteriorBaja.Name = "btnAnteriorBaja";
+            this.btnAnteriorBaja.Size = new System.Drawing.Size(106, 23);
+            this.btnAnteriorBaja.TabIndex = 14;
+            this.btnAnteriorBaja.Text = "<- Anterior";
+            this.btnAnteriorBaja.UseVisualStyleBackColor = true;
+            // 
+            // btnSiguienteModi
+            // 
+            this.btnSiguienteModi.Location = new System.Drawing.Point(436, 408);
+            this.btnSiguienteModi.Name = "btnSiguienteModi";
+            this.btnSiguienteModi.Size = new System.Drawing.Size(111, 23);
+            this.btnSiguienteModi.TabIndex = 17;
+            this.btnSiguienteModi.Text = "Siguiente ->";
+            this.btnSiguienteModi.UseVisualStyleBackColor = true;
+            // 
+            // btnAnteriorModi
+            // 
+            this.btnAnteriorModi.Location = new System.Drawing.Point(86, 408);
+            this.btnAnteriorModi.Name = "btnAnteriorModi";
+            this.btnAnteriorModi.Size = new System.Drawing.Size(106, 23);
+            this.btnAnteriorModi.TabIndex = 16;
+            this.btnAnteriorModi.Text = "<- Anterior";
+            this.btnAnteriorModi.UseVisualStyleBackColor = true;
             // 
             // frmABMME
             // 
@@ -352,7 +396,7 @@
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosActuales)).EndInit();
             this.tpBaja.ResumeLayout(false);
             this.tpBaja.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosBaja)).EndInit();
@@ -389,9 +433,13 @@
         private System.Windows.Forms.CheckedListBox clbEspecialidad;
         private System.Windows.Forms.CheckedListBox clbObraSocial;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSiguientesAlta;
+        private System.Windows.Forms.Button btnAnteriorAlta;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMedicosActuales;
+        private System.Windows.Forms.Button btnSiguienteBaja;
+        private System.Windows.Forms.Button btnAnteriorBaja;
+        private System.Windows.Forms.Button btnSiguienteModi;
+        private System.Windows.Forms.Button btnAnteriorModi;
     }
 }
