@@ -10,6 +10,7 @@ namespace entidades
     public class clsPaciente : IEntidad
     {
         int id;
+       
         string nombre;
         string apellido;
         long dni;
@@ -23,6 +24,12 @@ namespace entidades
             this.dni = dni;
             this.obraSocial = obra;
             this.telefono = telefono;
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
         }
 
         public string Nombre
@@ -55,16 +62,6 @@ namespace entidades
             set { telefono = value; }
         }
 
-        int IEntidad.id
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        
     }
 }
