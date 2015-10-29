@@ -7,36 +7,80 @@ using interfaces;
 
 namespace entidades
 {
-    public class clsTurno :IEntidad
+    public class clsTurno : IEntidad
     {
         int id;
-
         int idMedico;
-
         int idPaciente;
-
         DateTime fecha;
-
         double costo;
-
         int idUsuario;
+        bool estado;
+                 
 
-        public clsTurno()
+        public clsTurno(int id,int idMedico,int idPaciente,DateTime fecha,double costo,int idUsuario,bool estado)
         {
-
+            this.id = id;
+            this.idMedico = idMedico;
+            this.idPaciente = idPaciente;
+            this.fecha = fecha;
+            this.costo = costo;
+            this.idUsuario = idUsuario;
+            this.estado = estado;
         }
 
-
-        int IEntidad.id
+        public clsTurno(int idMedico, int idPaciente, DateTime fecha, double costo, int idUsuario,bool estado)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            this.idMedico = idMedico;
+            this.idPaciente = idPaciente;
+            this.fecha = fecha;
+            this.costo = costo;
+            this.idUsuario = idUsuario;
+            this.estado = estado;
+
         }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }      
+
+        public int IdMedico
+        {
+            get { return idMedico; }
+            set { idMedico = value; }
+        }     
+
+        public int IdPaciente
+        {
+            get { return idPaciente; }
+            set { idPaciente = value; }
+        }       
+
+        public DateTime Fecha
+        {
+            get { return fecha; }
+            set { fecha = value; }
+        }        
+
+        public double Costo
+        {
+            get { return costo; }
+            set { costo = value; }
+        }       
+
+        public int IdUsuario
+        {
+            get { return idUsuario; }
+            set { idUsuario = value; }
+        }
+
+        public bool Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+
+               
     }
 }
