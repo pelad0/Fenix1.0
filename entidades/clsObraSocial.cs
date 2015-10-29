@@ -9,7 +9,7 @@ namespace entidades
 {
     public class clsObraSocial : IEntidad
     {
-        int id;
+        private  int id;
         string nombre;
 
         public clsObraSocial(string nombre)
@@ -27,6 +27,18 @@ namespace entidades
         {
             get { return id; }
             set { id = value; }
-        }    
+        }
+
+        int IEntidad.id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

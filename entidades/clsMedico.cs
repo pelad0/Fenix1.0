@@ -9,7 +9,7 @@ namespace entidades
 {
     public class clsMedico : IEntidad
     {
-        int idMedico;
+        int id;
         int matricula;
         long dni;
         string nombre;
@@ -18,7 +18,7 @@ namespace entidades
 
         public clsMedico(int id, int matricula, long dni, string nombre, string apellido, string especialidad)
         {
-            this.idMedico = id;
+            this.id = id;
             this.matricula = matricula;
             this.dni = dni;
             this.nombre = nombre;
@@ -35,10 +35,10 @@ namespace entidades
             this.especialidad = especialidad;
         }
 
-        public int IdMedico
+        public int Id
         {
-            get { return idMedico; }
-            set { idMedico = value; }
+            get { return id; }
+            set { id = value; }
         }
 
         public int Matricula
@@ -72,6 +72,20 @@ namespace entidades
         {
             get { return especialidad; }
             set { especialidad = value; }
+        }
+
+
+
+        int IEntidad.id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
