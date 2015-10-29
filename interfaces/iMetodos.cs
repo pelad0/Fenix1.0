@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using interfaces;
+
 using System.Data;
 
 namespace interfaces
 {
-   public interface iMetodos : IEntidad
+   public interface iMetodos 
     {
         void Alta(IEntidad entidad);
         void Baja(IEntidad entidad);
