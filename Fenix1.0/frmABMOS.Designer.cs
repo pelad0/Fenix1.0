@@ -30,31 +30,31 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.btnSgteAlta = new System.Windows.Forms.Button();
+            this.btnAntAlta = new System.Windows.Forms.Button();
+            this.dgbOSAlta = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tbOS = new controles.TextBoxLetras();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSgteBaja = new System.Windows.Forms.Button();
+            this.btnAntBaja = new System.Windows.Forms.Button();
+            this.dgvOSBaja = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.dgbOS = new System.Windows.Forms.DataGridView();
-            this.btnAnterior = new System.Windows.Forms.Button();
-            this.btnSgte = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSgteMod = new System.Windows.Forms.Button();
+            this.btnAntMod = new System.Windows.Forms.Button();
+            this.dgvOSMod = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxLetras1 = new controles.TextBoxLetras();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tbModifOS = new controles.TextBoxLetras();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgbOSAlta)).BeginInit();
             this.tpBaja.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOSBaja)).BeginInit();
             this.tpMod.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgbOS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOSMod)).BeginInit();
             this.SuspendLayout();
             // 
             // tcABM
@@ -74,9 +74,9 @@
             // 
             // tpAlta
             // 
-            this.tpAlta.Controls.Add(this.btnSgte);
-            this.tpAlta.Controls.Add(this.btnAnterior);
-            this.tpAlta.Controls.Add(this.dgbOS);
+            this.tpAlta.Controls.Add(this.btnSgteAlta);
+            this.tpAlta.Controls.Add(this.btnAntAlta);
+            this.tpAlta.Controls.Add(this.dgbOSAlta);
             this.tpAlta.Controls.Add(this.label1);
             this.tpAlta.Controls.Add(this.tbOS);
             this.tpAlta.Controls.Add(this.btnAlta);
@@ -88,10 +88,41 @@
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
             // 
+            // btnSgteAlta
+            // 
+            this.btnSgteAlta.Location = new System.Drawing.Point(369, 360);
+            this.btnSgteAlta.Name = "btnSgteAlta";
+            this.btnSgteAlta.Size = new System.Drawing.Size(105, 23);
+            this.btnSgteAlta.TabIndex = 5;
+            this.btnSgteAlta.Text = "Siguiente >>";
+            this.btnSgteAlta.UseVisualStyleBackColor = true;
+            this.btnSgteAlta.Click += new System.EventHandler(this.btnSgte_Click);
+            // 
+            // btnAntAlta
+            // 
+            this.btnAntAlta.Location = new System.Drawing.Point(162, 360);
+            this.btnAntAlta.Name = "btnAntAlta";
+            this.btnAntAlta.Size = new System.Drawing.Size(105, 23);
+            this.btnAntAlta.TabIndex = 4;
+            this.btnAntAlta.Text = "<< Anterior";
+            this.btnAntAlta.UseVisualStyleBackColor = true;
+            this.btnAntAlta.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // dgbOSAlta
+            // 
+            this.dgbOSAlta.AllowUserToAddRows = false;
+            this.dgbOSAlta.AllowUserToDeleteRows = false;
+            this.dgbOSAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgbOSAlta.Location = new System.Drawing.Point(198, 70);
+            this.dgbOSAlta.Name = "dgbOSAlta";
+            this.dgbOSAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgbOSAlta.Size = new System.Drawing.Size(240, 270);
+            this.dgbOSAlta.TabIndex = 3;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(276, 24);
+            this.label1.Location = new System.Drawing.Point(276, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 15);
             this.label1.TabIndex = 2;
@@ -99,7 +130,7 @@
             // 
             // tbOS
             // 
-            this.tbOS.Location = new System.Drawing.Point(220, 42);
+            this.tbOS.Location = new System.Drawing.Point(220, 41);
             this.tbOS.MaxLength = 40;
             this.tbOS.Name = "tbOS";
             this.tbOS.Size = new System.Drawing.Size(197, 23);
@@ -107,7 +138,7 @@
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(281, 409);
+            this.btnAlta.Location = new System.Drawing.Point(281, 400);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 23);
             this.btnAlta.TabIndex = 0;
@@ -117,9 +148,9 @@
             // 
             // tpBaja
             // 
-            this.tpBaja.Controls.Add(this.button1);
-            this.tpBaja.Controls.Add(this.button2);
-            this.tpBaja.Controls.Add(this.dataGridView1);
+            this.tpBaja.Controls.Add(this.btnSgteBaja);
+            this.tpBaja.Controls.Add(this.btnAntBaja);
+            this.tpBaja.Controls.Add(this.dgvOSBaja);
             this.tpBaja.Controls.Add(this.btnBaja);
             this.tpBaja.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpBaja.Location = new System.Drawing.Point(4, 34);
@@ -130,35 +161,56 @@
             this.tpBaja.Text = "Baja";
             this.tpBaja.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // btnSgteBaja
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(198, 69);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 270);
-            this.dataGridView1.TabIndex = 1;
+            this.btnSgteBaja.Location = new System.Drawing.Point(369, 360);
+            this.btnSgteBaja.Name = "btnSgteBaja";
+            this.btnSgteBaja.Size = new System.Drawing.Size(105, 23);
+            this.btnSgteBaja.TabIndex = 7;
+            this.btnSgteBaja.Text = "Siguiente >>";
+            this.btnSgteBaja.UseVisualStyleBackColor = true;
+            this.btnSgteBaja.Click += new System.EventHandler(this.btnSgte_Click);
+            // 
+            // btnAntBaja
+            // 
+            this.btnAntBaja.Location = new System.Drawing.Point(162, 360);
+            this.btnAntBaja.Name = "btnAntBaja";
+            this.btnAntBaja.Size = new System.Drawing.Size(105, 23);
+            this.btnAntBaja.TabIndex = 6;
+            this.btnAntBaja.Text = "<< Anterior";
+            this.btnAntBaja.UseVisualStyleBackColor = true;
+            this.btnAntBaja.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // dgvOSBaja
+            // 
+            this.dgvOSBaja.AllowUserToAddRows = false;
+            this.dgvOSBaja.AllowUserToDeleteRows = false;
+            this.dgvOSBaja.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvOSBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOSBaja.Location = new System.Drawing.Point(198, 69);
+            this.dgvOSBaja.MultiSelect = false;
+            this.dgvOSBaja.Name = "dgvOSBaja";
+            this.dgvOSBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOSBaja.Size = new System.Drawing.Size(240, 270);
+            this.dgvOSBaja.TabIndex = 1;
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(279, 411);
+            this.btnBaja.Location = new System.Drawing.Point(279, 400);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(75, 23);
             this.btnBaja.TabIndex = 0;
             this.btnBaja.Text = "Eliminar";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // tpMod
             // 
-            this.tpMod.Controls.Add(this.button3);
-            this.tpMod.Controls.Add(this.button4);
-            this.tpMod.Controls.Add(this.dataGridView2);
+            this.tpMod.Controls.Add(this.btnSgteMod);
+            this.tpMod.Controls.Add(this.btnAntMod);
+            this.tpMod.Controls.Add(this.dgvOSMod);
             this.tpMod.Controls.Add(this.label2);
-            this.tpMod.Controls.Add(this.textBoxLetras1);
+            this.tpMod.Controls.Add(this.tbModifOS);
             this.tpMod.Controls.Add(this.btnModificar);
             this.tpMod.Location = new System.Drawing.Point(4, 34);
             this.tpMod.Name = "tpMod";
@@ -167,103 +219,63 @@
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
             // 
-            // btnModificar
+            // btnSgteMod
             // 
-            this.btnModificar.Location = new System.Drawing.Point(281, 408);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 0;
-            this.btnModificar.Text = "Editar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnSgteMod.Location = new System.Drawing.Point(369, 360);
+            this.btnSgteMod.Name = "btnSgteMod";
+            this.btnSgteMod.Size = new System.Drawing.Size(105, 23);
+            this.btnSgteMod.TabIndex = 8;
+            this.btnSgteMod.Text = "Siguiente >>";
+            this.btnSgteMod.UseVisualStyleBackColor = true;
+            this.btnSgteMod.Click += new System.EventHandler(this.btnSgte_Click);
             // 
-            // dgbOS
+            // btnAntMod
             // 
-            this.dgbOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgbOS.Location = new System.Drawing.Point(198, 71);
-            this.dgbOS.Name = "dgbOS";
-            this.dgbOS.Size = new System.Drawing.Size(240, 270);
-            this.dgbOS.TabIndex = 3;
+            this.btnAntMod.Location = new System.Drawing.Point(162, 360);
+            this.btnAntMod.Name = "btnAntMod";
+            this.btnAntMod.Size = new System.Drawing.Size(105, 23);
+            this.btnAntMod.TabIndex = 7;
+            this.btnAntMod.Text = "<< Anterior";
+            this.btnAntMod.UseVisualStyleBackColor = true;
+            this.btnAntMod.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
-            // btnAnterior
+            // dgvOSMod
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(162, 361);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(105, 23);
-            this.btnAnterior.TabIndex = 4;
-            this.btnAnterior.Text = "<< Anterior";
-            this.btnAnterior.UseVisualStyleBackColor = true;
-            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
-            // 
-            // btnSgte
-            // 
-            this.btnSgte.Location = new System.Drawing.Point(369, 361);
-            this.btnSgte.Name = "btnSgte";
-            this.btnSgte.Size = new System.Drawing.Size(105, 23);
-            this.btnSgte.TabIndex = 5;
-            this.btnSgte.Text = "Siguiente >>";
-            this.btnSgte.UseVisualStyleBackColor = true;
-            this.btnSgte.Click += new System.EventHandler(this.btnSgte_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(369, 364);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Siguiente >>";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(162, 364);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "<< Anterior";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dgvOSMod.AllowUserToAddRows = false;
+            this.dgvOSMod.AllowUserToDeleteRows = false;
+            this.dgvOSMod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOSMod.Location = new System.Drawing.Point(198, 72);
+            this.dgvOSMod.Name = "dgvOSMod";
+            this.dgvOSMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOSMod.Size = new System.Drawing.Size(240, 270);
+            this.dgvOSMod.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(276, 15);
+            this.label2.Location = new System.Drawing.Point(276, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Obra Social";
             // 
-            // textBoxLetras1
+            // tbModifOS
             // 
-            this.textBoxLetras1.Location = new System.Drawing.Point(220, 33);
-            this.textBoxLetras1.MaxLength = 40;
-            this.textBoxLetras1.Name = "textBoxLetras1";
-            this.textBoxLetras1.Size = new System.Drawing.Size(197, 23);
-            this.textBoxLetras1.TabIndex = 3;
+            this.tbModifOS.Location = new System.Drawing.Point(220, 43);
+            this.tbModifOS.MaxLength = 40;
+            this.tbModifOS.Name = "tbModifOS";
+            this.tbModifOS.Size = new System.Drawing.Size(197, 23);
+            this.tbModifOS.TabIndex = 3;
             // 
-            // button3
+            // btnModificar
             // 
-            this.button3.Location = new System.Drawing.Point(369, 384);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Siguiente >>";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(162, 384);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "<< Anterior";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(198, 91);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(240, 270);
-            this.dataGridView2.TabIndex = 6;
+            this.btnModificar.Location = new System.Drawing.Point(281, 400);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 0;
+            this.btnModificar.Text = "Editar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // frmABMOS
             // 
@@ -281,12 +293,12 @@
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgbOSAlta)).EndInit();
             this.tpBaja.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOSBaja)).EndInit();
             this.tpMod.ResumeLayout(false);
             this.tpMod.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgbOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOSMod)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,21 +309,21 @@
         private System.Windows.Forms.TabPage tpAlta;
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.TabPage tpBaja;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvOSBaja;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.TabPage tpMod;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label label1;
         private controles.TextBoxLetras tbOS;
-        private System.Windows.Forms.Button btnSgte;
-        private System.Windows.Forms.Button btnAnterior;
-        private System.Windows.Forms.DataGridView dgbOS;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnSgteAlta;
+        private System.Windows.Forms.Button btnAntAlta;
+        private System.Windows.Forms.DataGridView dgbOSAlta;
+        private System.Windows.Forms.Button btnSgteBaja;
+        private System.Windows.Forms.Button btnAntBaja;
+        private System.Windows.Forms.Button btnSgteMod;
+        private System.Windows.Forms.Button btnAntMod;
+        private System.Windows.Forms.DataGridView dgvOSMod;
         private System.Windows.Forms.Label label2;
-        private controles.TextBoxLetras textBoxLetras1;
+        private controles.TextBoxLetras tbModifOS;
     }
 }

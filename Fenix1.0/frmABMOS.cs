@@ -34,13 +34,18 @@ namespace Fenix1._0
 
         private void frmABMOS_Load(object sender, EventArgs e)
         {
-            //dgvOS.dataSource = listarObraSocial(llamada);
+            //dgvOSAlta.dataSource = listarObraSocial(llamada);
+            //dgvOSBaja.dataSource = dgvOSAlta;
+            //dgvOSModif.dataSource = dgvOSAlta;
         }
 
         private void btnSgte_Click(object sender, EventArgs e)
         {
             llamada++;
             //dgvOS.dataSource = listarObraSocial(llamada);
+            //dgvOSBaja.dataSource = dgvOSAlta;
+            //dgvOSModif.dataSource = dgvOSAlta;
+
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
@@ -49,7 +54,26 @@ namespace Fenix1._0
             {
                 llamada--;
                 //dgvOS.dataSource = listarObraSocial(llamada);
+                //dgvOSBaja.dataSource = dgvOSAlta;
+                //dgvOSModif.dataSource = dgvOSAlta;
             }
         }
+
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
+            if (dgvOSBaja.SelectedRows.Count > 0)
+            {
+                //llamar a quien elimina medico
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvOSMod.SelectedRows.Count > 0 && !string.IsNullOrWhiteSpace(tbModifOS.Text))
+            {
+                //llamar a quien edita medico
+            }
+        }
+
     }
 }

@@ -14,9 +14,10 @@ namespace entidades
         long dni;
         string nombre;
         string apellido;
-        string especialidad;
+        List<string> especialidad;
+        List<string> obraSocial;
 
-        public clsMedico(int id, int matricula, long dni, string nombre, string apellido, string especialidad)
+        public clsMedico(int id, int matricula, long dni, string nombre, string apellido, List<string> especialidad, List<string> obraSocial )
         {
             this.id = id;
             this.matricula = matricula;
@@ -24,15 +25,17 @@ namespace entidades
             this.nombre = nombre;
             this.apellido = apellido;
             this.especialidad = especialidad;
+            this.obraSocial = obraSocial;
         }
 
-        public clsMedico(int matricula, long dni, string nombre, string apellido, string especialidad)
+        public clsMedico(int matricula, long dni, string nombre, string apellido, List<string> especialidad, List<string> obraSocial)
         {
             this.matricula = matricula;
             this.dni = dni;
             this.nombre = nombre;
             this.apellido = apellido;
             this.especialidad = especialidad;
+            this.obraSocial = obraSocial;
         }
 
         public int Id
@@ -68,13 +71,18 @@ namespace entidades
         }
 
 
-        public string Especialidad
+        public List<string> Especialidad
         {
             get { return especialidad; }
             set { especialidad = value; }
         }
-        
 
-       
+        public List<string> ObraSocial
+        {
+            get { return obraSocial; }
+            set { obraSocial = value; }
+        }
+
+
     }
 }
