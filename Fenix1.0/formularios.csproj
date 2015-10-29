@@ -42,6 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="frmABMUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMUsuario.Designer.cs">
+      <DependentUpon>frmABMUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmABMPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmABMUsuario.resx">
+      <DependentUpon>frmABMUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmABMPaciente.resx">
       <DependentUpon>frmABMPaciente.cs</DependentUpon>
     </EmbeddedResource>
