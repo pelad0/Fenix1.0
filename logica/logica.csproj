@@ -39,8 +39,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="clsAlta.cs" />
+    <Compile Include="clsBaja.cs" />
+    <Compile Include="clsModifica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{3266f192-f242-4fe7-b0cc-f4d346f171b6}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entidades\entidades.csproj">
+      <Project>{f6d17eae-0212-42e3-b94d-b0966285b853}</Project>
+      <Name>entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\interfaces\interfaces.csproj">
+      <Project>{7944f26d-031e-430e-a21b-fb623b56ba3e}</Project>
+      <Name>interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
