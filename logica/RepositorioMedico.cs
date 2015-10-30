@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using interfaces;
 using entidades;
 using Datos;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace logica
 {
@@ -13,8 +15,17 @@ namespace logica
     {
         public void Alta(IEntidad medico)
         {
+
             ManejaMedico manejaMedico = new ManejaMedico();
-            manejaMedico.Alta(medico);
+            try
+            {
+                manejaMedico.Alta(medico);
+            }
+            catch(SqlException ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public void Baja(IEntidad medico)
