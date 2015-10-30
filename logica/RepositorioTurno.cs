@@ -29,13 +29,13 @@ namespace logica
             ManejaTurno manejaTurno = new ManejaTurno();
             manejaTurno.Modificacion(turno);
         }
-        public clsTurno buscarPorId(int id)
-        {
-            clsTurno med = new clsTurno();
-            ManejaMedico manejaMedico = new ManejaMedico();
-            med = (clsTurno)manejaMedico.buscaPorId(id);
+        //public clsTurno buscarPorId(int id)
+        //{
+        //    //clsTurno med = new clsTurno();
+        //    ManejaMedico manejaMedico = new ManejaMedico();
+        //    med = (clsTurno)manejaMedico.buscaPorId(id);
 
-            return med;
-        }
+        //    return med;
+        //}
     }
 }

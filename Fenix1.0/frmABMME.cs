@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using entidades;
+using logica;
 
 namespace Fenix1._0
 {
@@ -18,7 +19,7 @@ namespace Fenix1._0
             InitializeComponent();
         }
 
-
+        RepositorioMedico reposMedico;
         List<clsMedico> medicos;
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -51,6 +52,8 @@ namespace Fenix1._0
                 medico.Especialidad = espe;
                 medico.ObraSocial = obra;
 
+
+                reposMedico.Alta(medico);
                 //Aca llamo al metodo del monje.
             }
 
@@ -88,28 +91,44 @@ namespace Fenix1._0
             medicos.Clear();
 
 
-            /*
+            
              
-            foreach (IEntidad ent in metodosMedicos.Todo())
+            //foreach (IEntidad ent in metodosMedicos.Todo())
+            //{
+            //    medicos.Add((clsMedico)ent);
+            //}
+             
+             
+
+
+            //Muesto solamente matricula y apellido de cada médico en cada dgv.
+
+            dgvMedicosAlta.Columns.Add("idTurno", "idTurno");
+            dgvMedicosAlta.Columns["idTurno"].Visible = false;
+            dgvMedicosAlta.Columns.Add("Matricula", "Matricula");
+            dgvMedicosAlta.Columns.Add("Apellido", "Apellido");
+
+            dgvMedicosBaja.Columns.Add("idTurno", "idTurno");
+            dgvMedicosBaja.Columns["idTurno"].Visible = false;
+            dgvMedicosBaja.Columns.Add("Matricula", "Matricula");
+            dgvMedicosBaja.Columns.Add("Apellido", "Apellido");
+
+
+            dgvMedicosModi.Columns.Add("idTurno", "idTurno");
+            dgvMedicosModi.Columns["idTurno"].Visible = false;
+            dgvMedicosModi.Columns.Add("Matricula", "Matricula");
+            dgvMedicosModi.Columns.Add("Apellido", "Apellido");
+
+            foreach (clsMedico med in medicos)
             {
-                medicos.Add((clsMedico)ent);
+                dgvMedicosAlta.Rows.Add(med.Id, med.Matricula, med.Apellido);
+                dgvMedicosBaja.Rows.Add(med.Id, med.Matricula, med.Apellido);
+                dgvMedicosModi.Rows.Add(med.Id, med.Matricula, med.Apellido);
+
+                
             }
-             
-             */
 
-            dgvMedicosAlta.DataSource = null;
-            dgvMedicosAlta.DataSource = medicos;
-            dgvMedicosAlta.Columns[0].Visible = false;
-            dgvMedicosAlta.Columns[2].Visible = false;
-            dgvMedicosAlta.Columns[3].Visible = false;
-            //Como hago para ocultar las columnas de especialidad y obra social???????
-
-            dgvMedicosBaja.DataSource = null;
-            dgvMedicosBaja.DataSource = medicos;
-
-            dgvMedicosModi.DataSource = null;
-            dgvMedicosModi.DataSource = medicos;
-
+              
 
 
         }
@@ -118,8 +137,10 @@ namespace Fenix1._0
 
         private void frmABMME_Load(object sender, EventArgs e)
         {
-            Actualizar();
+            //Actualizar();
         }
+
+        
 
         
         

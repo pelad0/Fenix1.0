@@ -5,10 +5,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F96DB2D2-96FB-461E-B206-600D4962F541}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fenix1._0</RootNamespace>
-    <AssemblyName>Fenix1.0</AssemblyName>
+    <RootNamespace>frmABMME</RootNamespace>
+    <AssemblyName>frmABMME</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,9 +29,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -84,6 +88,7 @@
     <Compile Include="frmHorariosMedico.Designer.cs">
       <DependentUpon>frmHorariosMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +123,10 @@
       <Project>{f6d17eae-0212-42e3-b94d-b0966285b853}</Project>
       <Name>entidades</Name>
     </ProjectReference>
+    <ProjectReference Include="..\logica\logica.csproj">
+      <Project>{91e03191-962d-4160-a9cb-891f04364e94}</Project>
+      <Name>logica</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -134,10 +143,6 @@
     <ProjectReference Include="..\interfaces\interfaces.csproj">
       <Project>{7944f26d-031e-430e-a21b-fb623b56ba3e}</Project>
       <Name>interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\logica\logica.csproj">
-      <Project>{91e03191-962d-4160-a9cb-891f04364e94}</Project>
-      <Name>logica</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

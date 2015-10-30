@@ -28,13 +28,13 @@ namespace logica
             manejapaciente.Modificacion(paciente);
         }
 
-        public clsPaciente buscarPorId(int id)
-        {
-            clsPaciente pac = new clsPaciente();
-            ManejaPaciente manejaPaciente = new ManejaPaciente();
-            pac = (clsPaciente)manejaPaciente.buscaPorId(id);
+        //public clsPaciente buscarPorId(int id)
+        //{
+        //    //clsPaciente pac = new clsPaciente();
+        //    ManejaPaciente manejaPaciente = new ManejaPaciente();
+        //    pac = (clsPaciente)manejaPaciente.buscaPorId(id);
 
-            return pac;
-        }
+        //    return pac;
+        //}
     }
 }

@@ -228,6 +228,9 @@
             // clbEspecialidad
             // 
             this.clbEspecialidad.FormattingEnabled = true;
+            this.clbEspecialidad.Items.AddRange(new object[] {
+            "feo",
+            "lindo"});
             this.clbEspecialidad.Location = new System.Drawing.Point(424, 104);
             this.clbEspecialidad.Name = "clbEspecialidad";
             this.clbEspecialidad.Size = new System.Drawing.Size(154, 94);
@@ -236,6 +239,9 @@
             // clbObraSocial
             // 
             this.clbObraSocial.FormattingEnabled = true;
+            this.clbObraSocial.Items.AddRange(new object[] {
+            "asd",
+            "ffff"});
             this.clbObraSocial.Location = new System.Drawing.Point(703, 104);
             this.clbObraSocial.Name = "clbObraSocial";
             this.clbObraSocial.Size = new System.Drawing.Size(154, 94);
