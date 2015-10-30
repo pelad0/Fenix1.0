@@ -23,8 +23,8 @@ namespace Datos
             clsMedico med = (clsMedico)entidad;
             try
             {
-                manager.ejecutar("Insert into medico(nombre,apellido,dni,especialidad,matricula) values("+med.Nombre+","+med.Apellido+","+med.Dni+","+med.Especialidad+","+med.Matricula+")");
-            }
+                manager.ejecutar("Insert into medico(nombre,apellido,dni,especialidad,matricula) values('"+med.Nombre+ "' , '"+med.Apellido+"',"+med.Dni+",'"+med.Especialidad+"',"+med.Matricula+");SELECT @@identity;"); 
+            }                                                                                  
             catch (Exception ex)
             {
                 throw ex;

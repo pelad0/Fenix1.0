@@ -39,6 +39,12 @@ namespace entidades
             this.estado = estado;
 
         }
+
+        public clsTurno()
+        {
+
+        }
+
         public int Id
         {
             get { return id; }

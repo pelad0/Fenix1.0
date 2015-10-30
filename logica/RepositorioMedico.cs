@@ -22,7 +22,7 @@ namespace logica
             }
             catch(SqlException ex)
             {
-                throw;
+                throw ex;
             }
         }
 

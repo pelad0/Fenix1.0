@@ -26,6 +26,11 @@ namespace entidades
             this.telefono = telefono;
         }
 
+        public clsPaciente()
+        {
+
+        }
+
         public int Id
         {
             get { return id; }
