@@ -10,9 +10,7 @@ namespace Datos
 {
     public class ManejaMedico : iMetodos
     {
-
-
-
+        
         public void Alta(IEntidad entidad)
         {
             throw new NotImplementedException();
