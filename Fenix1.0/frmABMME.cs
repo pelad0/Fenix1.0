@@ -19,7 +19,7 @@ namespace Fenix1._0
             InitializeComponent();
         }
 
-        RepositorioMedico reposMedico;
+        RepositorioMedico reposMedico = new RepositorioMedico();
         List<clsMedico> medicos;
 
         private void btnAlta_Click(object sender, EventArgs e)

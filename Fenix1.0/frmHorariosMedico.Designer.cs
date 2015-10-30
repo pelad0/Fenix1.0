@@ -125,6 +125,7 @@
             this.dtpEntradaMT_Lunes.Name = "dtpEntradaMT_Lunes";
             this.dtpEntradaMT_Lunes.Size = new System.Drawing.Size(82, 23);
             this.dtpEntradaMT_Lunes.TabIndex = 1;
+            this.dtpEntradaMT_Lunes.Tag = "1";
             // 
             // dtpSalidaMT_Lunes
             // 
