@@ -146,6 +146,7 @@
             this.btnHorarios.TabIndex = 19;
             this.btnHorarios.Text = "Especificar horarios";
             this.btnHorarios.UseVisualStyleBackColor = true;
+            this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
             // 
             // dgvMedicosAlta
             // 

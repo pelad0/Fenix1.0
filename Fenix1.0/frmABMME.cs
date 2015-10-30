@@ -31,16 +31,19 @@ namespace Fenix1._0
                 List<string> espe = new List<string>();
                 List<string> obra = new List<string>();
 
+
                 //cargo especialidades
-                foreach (int indexChecked in clbEspecialidad.CheckedIndices)
+                foreach (string index in clbEspecialidad.CheckedItems)
                 {
-                    espe.Add(clbEspecialidad.GetItemCheckState(indexChecked).ToString());
+                    espe.Add(index);
+
                 }
 
+
                 //cargo obras sociales
-                foreach (int indexChecked in clbObraSocial.CheckedIndices)
+                foreach (string index in clbObraSocial.CheckedItems)
                 {
-                    obra.Add(clbObraSocial.GetItemCheckState(indexChecked).ToString());
+                    obra.Add(index);
                 }
 
                 clsMedico medico = new clsMedico();
@@ -138,6 +141,13 @@ namespace Fenix1._0
         private void frmABMME_Load(object sender, EventArgs e)
         {
             //Actualizar();
+        }
+
+        private void btnHorarios_Click(object sender, EventArgs e)
+        {
+            frmHorariosMedico frmHorarios = new frmHorariosMedico();
+            frmHorarios.ShowDialog();
+
         }
 
         
