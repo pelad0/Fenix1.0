@@ -25,7 +25,7 @@ namespace Datos
         //string based = "Parcial1";
         //string server = "NO";
 
-
+       
         public string Server
         {
             get { return server; }
