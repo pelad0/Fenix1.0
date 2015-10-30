@@ -536,6 +536,7 @@
             this.btnTerminar.TabIndex = 36;
             this.btnTerminar.Text = "Terminar";
             this.btnTerminar.UseVisualStyleBackColor = true;
+            this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
             // 
             // frmHorariosMedico
             // 

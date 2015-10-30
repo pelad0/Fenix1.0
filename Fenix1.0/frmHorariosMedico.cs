@@ -87,6 +87,21 @@ namespace Fenix1._0
             }
         }
 
+        private void btnTerminar_Click(object sender, EventArgs e)
+        {
+            if(rbMT.Checked)    //Si solo va a trabajar medio tiempo creo una lista de horarios.
+            {
+
+            }
+            else                //Si trabaja tiempo completo creo dos listas.
+            {
+                
+            }
+
+
+
+        }
+
 
     }
 }

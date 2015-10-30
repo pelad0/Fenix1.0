@@ -30,6 +30,7 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.btnHorarios = new System.Windows.Forms.Button();
             this.dgvMedicosAlta = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -74,7 +75,6 @@
             this.btnAnteriorModi = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnHorarios = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosAlta)).BeginInit();
@@ -138,12 +138,21 @@
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
             // 
+            // btnHorarios
+            // 
+            this.btnHorarios.Location = new System.Drawing.Point(120, 192);
+            this.btnHorarios.Name = "btnHorarios";
+            this.btnHorarios.Size = new System.Drawing.Size(166, 27);
+            this.btnHorarios.TabIndex = 19;
+            this.btnHorarios.Text = "Especificar horarios";
+            this.btnHorarios.UseVisualStyleBackColor = true;
+            // 
             // dgvMedicosAlta
             // 
             this.dgvMedicosAlta.AllowUserToAddRows = false;
             this.dgvMedicosAlta.AllowUserToDeleteRows = false;
             this.dgvMedicosAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicosAlta.Location = new System.Drawing.Point(108, 303);
+            this.dgvMedicosAlta.Location = new System.Drawing.Point(105, 303);
             this.dgvMedicosAlta.Name = "dgvMedicosAlta";
             this.dgvMedicosAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicosAlta.Size = new System.Drawing.Size(274, 196);
@@ -359,10 +368,10 @@
             this.dgvMedicosBaja.AllowUserToAddRows = false;
             this.dgvMedicosBaja.AllowUserToDeleteRows = false;
             this.dgvMedicosBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicosBaja.Location = new System.Drawing.Point(68, 86);
+            this.dgvMedicosBaja.Location = new System.Drawing.Point(86, 86);
             this.dgvMedicosBaja.Name = "dgvMedicosBaja";
             this.dgvMedicosBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicosBaja.Size = new System.Drawing.Size(274, 196);
+            this.dgvMedicosBaja.Size = new System.Drawing.Size(227, 196);
             this.dgvMedicosBaja.TabIndex = 24;
             // 
             // label13
@@ -474,10 +483,10 @@
             this.dgvMedicosModi.AllowUserToAddRows = false;
             this.dgvMedicosModi.AllowUserToDeleteRows = false;
             this.dgvMedicosModi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicosModi.Location = new System.Drawing.Point(66, 85);
+            this.dgvMedicosModi.Location = new System.Drawing.Point(85, 85);
             this.dgvMedicosModi.Name = "dgvMedicosModi";
             this.dgvMedicosModi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicosModi.Size = new System.Drawing.Size(274, 196);
+            this.dgvMedicosModi.Size = new System.Drawing.Size(227, 196);
             this.dgvMedicosModi.TabIndex = 33;
             // 
             // label16
@@ -565,15 +574,6 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Seleccione el médico que desea modificar";
             // 
-            // btnHorarios
-            // 
-            this.btnHorarios.Location = new System.Drawing.Point(116, 204);
-            this.btnHorarios.Name = "btnHorarios";
-            this.btnHorarios.Size = new System.Drawing.Size(166, 27);
-            this.btnHorarios.TabIndex = 19;
-            this.btnHorarios.Text = "Especificar horarios";
-            this.btnHorarios.UseVisualStyleBackColor = true;
-            // 
             // frmABMME
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,6 +585,7 @@
             this.Name = "frmABMME";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmABMME_Load);
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
