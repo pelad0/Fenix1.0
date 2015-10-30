@@ -78,6 +78,12 @@
     <Compile Include="frmEditarMedico.Designer.cs">
       <DependentUpon>frmEditarMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHorariosMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHorariosMedico.Designer.cs">
+      <DependentUpon>frmHorariosMedico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditarMedico.resx">
       <DependentUpon>frmEditarMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHorariosMedico.resx">
+      <DependentUpon>frmHorariosMedico.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
