@@ -71,13 +71,14 @@ namespace logica
             
         }
 
-        public DataTable buscarPorId(int id)
+        public clsMedico buscarPorId(int id)
         {
-            DataTable med;
+            ManejaMedico manejaMedico = new ManejaMedico();
+           
             clsMedico m = new clsMedico();
             try
             {                
-                ManejaMedico manejaMedico = new ManejaMedico();
+                
                 m = (clsMedico)manejaMedico.buscaPorId(id);
 
 
@@ -91,7 +92,7 @@ namespace logica
                 throw ex;
             }
 
-            return med;
+            return m;
         }
 
         public List<clsMedico>Todo(int pag)
