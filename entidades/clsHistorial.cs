@@ -37,6 +37,11 @@ namespace entidades
             set { fecha = value; }
         }
 
+        public clsHistorial()
+        {
+
+        }
+
         public clsHistorial(int idPaciente,string diagnostico,string observaciones,DateTime fecha)
         {
             this.idPaciente = idPaciente;

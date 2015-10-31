@@ -60,7 +60,7 @@ namespace Fenix1._0
 
         private void Desaparecer(string tag)
         {
-            foreach(Control control in pnlMedioTiempo.Controls)
+            foreach(Control control in this.Controls)
             {
                 if(control is DateTimePicker)
                 {
@@ -70,25 +70,12 @@ namespace Fenix1._0
                     }
                 }
             }
-
-            foreach (Control control in pnlTiempoCompleto.Controls)
-            {
-                if (control is DateTimePicker)
-                {
-                    if (control.Tag.ToString() == tag)
-                    {
-                        control.Visible = false;
-                    }
-                }
-            }
-
-
         }
 
 
         private void Aparecer(string tag)
         {
-            foreach (Control control in pnlMedioTiempo.Controls)
+            foreach (Control control in this.Controls)
             {
                 if (control is DateTimePicker)
                 {
@@ -98,23 +85,6 @@ namespace Fenix1._0
                     }
                 }
             }
-
-            foreach (Control control in pnlTiempoCompleto.Controls)
-            {
-                if (control is DateTimePicker)
-                {
-                    if (control.Tag.ToString() == tag)
-                    {
-                        control.Visible = true;
-                    }
-                }
-            }
-
-
-
-
-
-
         }
 
         private void btnTerminar_Click(object sender, EventArgs e)
@@ -129,6 +99,11 @@ namespace Fenix1._0
             }
 
 
+
+        }
+
+        private void cbTodos_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
 
