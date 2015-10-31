@@ -49,9 +49,14 @@ namespace Fenix1._0
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            
-            DialogResult res =
+            frmConfirmaUsuario fcu = new frmConfirmaUsuario(RepositorioUsuario.Todo()[dgvEliminar.CurrentRow.Index].Clave);
+            DialogResult res = fcu.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                RepositorUsuario.Baja(RepositorioUsuario.Todo()[dgvEliminar.CurrentRow.Index]);
+            }
         }
+
 
     }
 }
