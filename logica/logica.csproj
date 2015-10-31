@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioMedico.cs" />
+    <Compile Include="RepositorioObraSocial.cs" />
     <Compile Include="RepositorioPaciente.cs" />
     <Compile Include="RepositorioTurno.cs" />
   </ItemGroup>
