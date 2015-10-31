@@ -14,17 +14,8 @@ namespace entidades
         long dni;
         string nombre;
         string apellido;
-<<<<<<< HEAD
         int especialidad;       //id de especialidad
-=======
-        int especialidad;
 
-        public int Especialidad
-        {
-            get { return especialidad; }
-            set { especialidad = value; }
-        }   
->>>>>>> origin/master
         List<string> obraSocial;
 
         public clsMedico(int id, int matricula, long dni, string nombre, string apellido, int especialidad, List<string> obraSocial )
@@ -84,15 +75,12 @@ namespace entidades
             set { apellido = value; }
         }
 
-<<<<<<< HEAD
         public int Especialidad
         {
             get { return especialidad; }
             set { especialidad = value; }
         }
-=======
 
->>>>>>> origin/master
     
 
         public List<string> ObraSocial
