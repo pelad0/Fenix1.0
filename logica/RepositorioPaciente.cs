@@ -13,13 +13,12 @@ namespace logica
 {
     public class RepositorioPaciente
     {
+        ManejaPaciente manejaPaciente = new ManejaPaciente();
         public void Alta(IEntidad paciente)
         {
             try
-            {
-                ManejaPaciente manejapaciente = new ManejaPaciente();
-                manejapaciente.Alta(paciente);
-
+            {               
+                manejaPaciente.Alta(paciente);
             }
             catch (SqlException ex)
             {
@@ -33,14 +32,14 @@ namespace logica
         }
         public void Baja(IEntidad paciente)
         {
-            ManejaPaciente manejapaciente = new ManejaPaciente();
-            manejapaciente.Baja(paciente);
+            
+            manejaPaciente.Baja(paciente);
         }
 
         public void Modificacion(IEntidad paciente)
         {
-            ManejaPaciente manejapaciente = new ManejaPaciente();
-            manejapaciente.Modificacion(paciente);
+            ManejaPaciente manejaPaciente = new ManejaPaciente();
+            manejaPaciente.Modificacion(paciente);
         }
 
         public clsPaciente buscarPorId(int id)
@@ -49,6 +48,27 @@ namespace logica
             ManejaPaciente manejaPaciente = new ManejaPaciente();
             pac = (clsPaciente)manejaPaciente.buscaPorId(id);
 
+            return pac;
+        }
+
+        public clsPaciente buscarDni(long dni)
+        {
+            clsPaciente pac = new clsPaciente();
+                        
+            DataTable tabla;
+           
+           
+            tabla = manejaPaciente.Todo(pag);
+            foreach (DataRow aux in tabla.Rows)
+            {
+                if (dni == Convert.ToInt64(aux["dni"]))
+                {
+                      clsPaciente med = new clsPaciente();
+                }
+
+              
+
+            }
             return pac;
         }
 
