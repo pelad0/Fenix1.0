@@ -71,13 +71,16 @@ namespace logica
             
         }
 
-        public clsMedico buscarPorId(int id)
+        public DataTable buscarPorId(int id)
         {
-            clsMedico med = new clsMedico();
+            DataTable med;
+            clsMedico m = new clsMedico();
             try
             {                
                 ManejaMedico manejaMedico = new ManejaMedico();
-                med = (clsMedico)manejaMedico.buscaPorId(id);
+                m = (clsMedico)manejaMedico.buscaPorId(id);
+
+
             }
             catch (SqlException ex)
             {
