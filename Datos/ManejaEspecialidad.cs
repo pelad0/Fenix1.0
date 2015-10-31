@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using interfaces;
-
 using entidades;
 using System.Data;
 using System.Threading.Tasks;
@@ -14,6 +13,11 @@ namespace Datos
     {
 
         iBdMetodos manager;
+
+        public ManejaEspecialidad()
+        {
+            manager = new BdMetodos();
+        }
         public void Alta(IEntidad entidad)
         {
             clsEspecialidad ent = (clsEspecialidad)entidad;

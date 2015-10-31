@@ -67,7 +67,9 @@ namespace Fenix1._0
 
         private void Desaparecer(string tag)
         {
-            foreach(Control control in this.Controls)
+
+
+            foreach(Control control in p)
             {
                 if(control is DateTimePicker)
                 {
@@ -77,6 +79,8 @@ namespace Fenix1._0
                     }
                 }
             }
+
+
         }
 
 
