@@ -20,9 +20,12 @@ namespace Fenix1._0
             InitializeComponent();
         }
 
+        int lista = 1;
+        RepositorioPaciente rp = new RepositorioPaciente();
+
         private void frmABMPaciente_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -57,18 +60,17 @@ namespace Fenix1._0
                 }
             }
             int espe;
-            RepositorioPaciente rp = new RepositorioPaciente();
-            ////RepositorioEspecialidades re= new RepositorioEspecialidades();
-            ////List<clsEspecialidad> esp = re.todos();
+            //RepositorioEspecialidades re = new RepositorioEspecialidades();
+            //List<clsEspecialidad> esp = re.todo();
             //foreach (clsEspecialidad es in esp)
             //{
             //    if (es.Descripcion == cbOSAlta.SelectedItem.ToString())
             //    {
-            //        espe=es.Id;
+            //        espe = es.Id;
             //    }
             //}
-            
-            //clsPaciente p= new clsPaciente(tbNombreAlta.Text, tbApellidoAlta.Text, Convert.ToInt64(tbDniAlta.Text), espe, Convert.ToInt64(tbTelALta.Text));
+
+            clsPaciente p = new clsPaciente(tbNombreAlta.Text, tbApellidoAlta.Text, Convert.ToInt64(tbDniAlta.Text), espe, Convert.ToInt64(tbTelALta.Text));
 
             try
             {
@@ -80,6 +82,16 @@ namespace Fenix1._0
                 
                 throw;
             }
+        }
+
+        private void btnAnt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSig_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
