@@ -30,25 +30,35 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbContAlta2 = new System.Windows.Forms.TextBox();
+            this.tbContAlta1 = new System.Windows.Forms.TextBox();
+            this.tbUsuAlta = new System.Windows.Forms.TextBox();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
-            this.btnSig = new System.Windows.Forms.Button();
-            this.btnAnt = new System.Windows.Forms.Button();
             this.dgvEliminar = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
+            this.dgvModif = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbContMod2 = new System.Windows.Forms.TextBox();
+            this.tbContMod = new System.Windows.Forms.TextBox();
+            this.tbUsuMod = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.tbUsuario = new System.Windows.Forms.TextBox();
-            this.tbContrasena1 = new System.Windows.Forms.TextBox();
-            this.tbContrsena2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cbSeguridad = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbSegMod = new System.Windows.Forms.ComboBox();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).BeginInit();
             this.tpMod.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModif)).BeginInit();
             this.SuspendLayout();
             // 
             // tcABM
@@ -68,12 +78,14 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.Controls.Add(this.label7);
+            this.tpAlta.Controls.Add(this.cbSeguridad);
             this.tpAlta.Controls.Add(this.label3);
             this.tpAlta.Controls.Add(this.label2);
             this.tpAlta.Controls.Add(this.label1);
-            this.tpAlta.Controls.Add(this.tbContrsena2);
-            this.tpAlta.Controls.Add(this.tbContrasena1);
-            this.tpAlta.Controls.Add(this.tbUsuario);
+            this.tpAlta.Controls.Add(this.tbContAlta2);
+            this.tpAlta.Controls.Add(this.tbContAlta1);
+            this.tpAlta.Controls.Add(this.tbUsuAlta);
             this.tpAlta.Controls.Add(this.btnAlta);
             this.tpAlta.Location = new System.Drawing.Point(4, 34);
             this.tpAlta.Name = "tpAlta";
@@ -83,9 +95,60 @@
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(245, 212);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 15);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Confirmar Contraseña";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(280, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 15);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Contraseña";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(290, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Usuario";
+            // 
+            // tbContAlta2
+            // 
+            this.tbContAlta2.Location = new System.Drawing.Point(268, 249);
+            this.tbContAlta2.Name = "tbContAlta2";
+            this.tbContAlta2.Size = new System.Drawing.Size(100, 23);
+            this.tbContAlta2.TabIndex = 4;
+            this.tbContAlta2.UseSystemPasswordChar = true;
+            // 
+            // tbContAlta1
+            // 
+            this.tbContAlta1.Location = new System.Drawing.Point(268, 167);
+            this.tbContAlta1.Name = "tbContAlta1";
+            this.tbContAlta1.Size = new System.Drawing.Size(100, 23);
+            this.tbContAlta1.TabIndex = 3;
+            this.tbContAlta1.UseSystemPasswordChar = true;
+            // 
+            // tbUsuAlta
+            // 
+            this.tbUsuAlta.Location = new System.Drawing.Point(268, 85);
+            this.tbUsuAlta.Name = "tbUsuAlta";
+            this.tbUsuAlta.Size = new System.Drawing.Size(100, 23);
+            this.tbUsuAlta.TabIndex = 2;
+            // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(281, 409);
+            this.btnAlta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAlta.Location = new System.Drawing.Point(281, 376);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 23);
             this.btnAlta.TabIndex = 0;
@@ -95,8 +158,6 @@
             // 
             // tpBaja
             // 
-            this.tpBaja.Controls.Add(this.btnSig);
-            this.tpBaja.Controls.Add(this.btnAnt);
             this.tpBaja.Controls.Add(this.dgvEliminar);
             this.tpBaja.Controls.Add(this.btnBaja);
             this.tpBaja.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,50 +169,42 @@
             this.tpBaja.Text = "Baja";
             this.tpBaja.UseVisualStyleBackColor = true;
             // 
-            // btnSig
-            // 
-            this.btnSig.Location = new System.Drawing.Point(467, 409);
-            this.btnSig.Name = "btnSig";
-            this.btnSig.Size = new System.Drawing.Size(93, 23);
-            this.btnSig.TabIndex = 6;
-            this.btnSig.Text = "Siguiente>>";
-            this.btnSig.UseVisualStyleBackColor = true;
-            // 
-            // btnAnt
-            // 
-            this.btnAnt.Location = new System.Drawing.Point(76, 409);
-            this.btnAnt.Name = "btnAnt";
-            this.btnAnt.Size = new System.Drawing.Size(90, 23);
-            this.btnAnt.TabIndex = 5;
-            this.btnAnt.Text = "<<Anterior";
-            this.btnAnt.UseVisualStyleBackColor = true;
-            // 
             // dgvEliminar
             // 
             this.dgvEliminar.AllowUserToAddRows = false;
             this.dgvEliminar.AllowUserToDeleteRows = false;
             this.dgvEliminar.AllowUserToOrderColumns = true;
             this.dgvEliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEliminar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvEliminar.Location = new System.Drawing.Point(3, 3);
+            this.dgvEliminar.Location = new System.Drawing.Point(196, 3);
             this.dgvEliminar.MultiSelect = false;
             this.dgvEliminar.Name = "dgvEliminar";
             this.dgvEliminar.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEliminar.Size = new System.Drawing.Size(630, 380);
+            this.dgvEliminar.Size = new System.Drawing.Size(244, 380);
             this.dgvEliminar.TabIndex = 1;
             // 
             // btnBaja
             // 
+            this.btnBaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBaja.Location = new System.Drawing.Point(279, 409);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(75, 23);
             this.btnBaja.TabIndex = 0;
             this.btnBaja.Text = "Eliminar";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // tpMod
             // 
+            this.tpMod.Controls.Add(this.label8);
+            this.tpMod.Controls.Add(this.cbSegMod);
+            this.tpMod.Controls.Add(this.dgvModif);
+            this.tpMod.Controls.Add(this.label4);
+            this.tpMod.Controls.Add(this.label5);
+            this.tpMod.Controls.Add(this.label6);
+            this.tpMod.Controls.Add(this.tbContMod2);
+            this.tpMod.Controls.Add(this.tbContMod);
+            this.tpMod.Controls.Add(this.tbUsuMod);
             this.tpMod.Controls.Add(this.btnModificar);
             this.tpMod.Location = new System.Drawing.Point(4, 34);
             this.tpMod.Name = "tpMod";
@@ -160,62 +213,113 @@
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
             // 
+            // dgvModif
+            // 
+            this.dgvModif.AllowUserToAddRows = false;
+            this.dgvModif.AllowUserToDeleteRows = false;
+            this.dgvModif.AllowUserToOrderColumns = true;
+            this.dgvModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvModif.Location = new System.Drawing.Point(75, 3);
+            this.dgvModif.MultiSelect = false;
+            this.dgvModif.Name = "dgvModif";
+            this.dgvModif.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvModif.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvModif.Size = new System.Drawing.Size(244, 380);
+            this.dgvModif.TabIndex = 14;
+            this.dgvModif.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModif_CellContentClick);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(398, 229);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 15);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Confirmar Contraseña";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(433, 151);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 15);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Contraseña";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(443, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 15);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Usuario";
+            // 
+            // tbContMod2
+            // 
+            this.tbContMod2.Location = new System.Drawing.Point(421, 264);
+            this.tbContMod2.Name = "tbContMod2";
+            this.tbContMod2.Size = new System.Drawing.Size(100, 23);
+            this.tbContMod2.TabIndex = 10;
+            // 
+            // tbContMod
+            // 
+            this.tbContMod.Location = new System.Drawing.Point(421, 186);
+            this.tbContMod.Name = "tbContMod";
+            this.tbContMod.Size = new System.Drawing.Size(100, 23);
+            this.tbContMod.TabIndex = 9;
+            // 
+            // tbUsuMod
+            // 
+            this.tbUsuMod.Location = new System.Drawing.Point(421, 108);
+            this.tbUsuMod.Name = "tbUsuMod";
+            this.tbUsuMod.Size = new System.Drawing.Size(100, 23);
+            this.tbUsuMod.TabIndex = 8;
+            // 
             // btnModificar
             // 
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.Location = new System.Drawing.Point(281, 408);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 0;
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // tbUsuario
+            // cbSeguridad
             // 
-            this.tbUsuario.Location = new System.Drawing.Point(268, 113);
-            this.tbUsuario.Name = "tbUsuario";
-            this.tbUsuario.Size = new System.Drawing.Size(100, 23);
-            this.tbUsuario.TabIndex = 2;
+            this.cbSeguridad.FormattingEnabled = true;
+            this.cbSeguridad.Location = new System.Drawing.Point(258, 331);
+            this.cbSeguridad.Name = "cbSeguridad";
+            this.cbSeguridad.Size = new System.Drawing.Size(121, 23);
+            this.cbSeguridad.TabIndex = 8;
             // 
-            // tbContrasena1
+            // label7
             // 
-            this.tbContrasena1.Location = new System.Drawing.Point(268, 191);
-            this.tbContrasena1.Name = "tbContrasena1";
-            this.tbContrasena1.Size = new System.Drawing.Size(100, 23);
-            this.tbContrasena1.TabIndex = 3;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(283, 294);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 15);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Seguridad";
             // 
-            // tbContrsena2
+            // label8
             // 
-            this.tbContrsena2.Location = new System.Drawing.Point(268, 269);
-            this.tbContrsena2.Name = "tbContrsena2";
-            this.tbContrsena2.Size = new System.Drawing.Size(100, 23);
-            this.tbContrsena2.TabIndex = 4;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(436, 307);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 15);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Seguridad";
             // 
-            // label1
+            // cbSegMod
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(290, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Usuario";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(280, 156);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Contraseña";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(245, 234);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Confirmar Contraseña";
+            this.cbSegMod.FormattingEnabled = true;
+            this.cbSegMod.Location = new System.Drawing.Point(411, 342);
+            this.cbSegMod.Name = "cbSegMod";
+            this.cbSegMod.Size = new System.Drawing.Size(121, 23);
+            this.cbSegMod.TabIndex = 15;
             // 
             // frmABMUsuario
             // 
@@ -228,12 +332,15 @@
             this.Name = "frmABMUsuario";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmABMUsuario_Load);
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
             this.tpBaja.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).EndInit();
             this.tpMod.ResumeLayout(false);
+            this.tpMod.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModif)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,13 +355,22 @@
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.TabPage tpMod;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnSig;
-        private System.Windows.Forms.Button btnAnt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbContrsena2;
-        private System.Windows.Forms.TextBox tbContrasena1;
-        private System.Windows.Forms.TextBox tbUsuario;
+        private System.Windows.Forms.TextBox tbContAlta2;
+        private System.Windows.Forms.TextBox tbContAlta1;
+        private System.Windows.Forms.TextBox tbUsuAlta;
+        private System.Windows.Forms.DataGridView dgvModif;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbContMod2;
+        private System.Windows.Forms.TextBox tbContMod;
+        private System.Windows.Forms.TextBox tbUsuMod;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbSeguridad;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbSegMod;
     }
 }

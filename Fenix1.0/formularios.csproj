@@ -76,6 +76,12 @@
     <Compile Include="frmABMOS.Designer.cs">
       <DependentUpon>frmABMOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConfirmaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfirmaUsuario.Designer.cs">
+      <DependentUpon>frmConfirmaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditarMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmABMOS.resx">
       <DependentUpon>frmABMOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfirmaUsuario.resx">
+      <DependentUpon>frmConfirmaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditarMedico.resx">
       <DependentUpon>frmEditarMedico.cs</DependentUpon>

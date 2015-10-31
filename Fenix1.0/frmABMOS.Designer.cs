@@ -30,20 +30,14 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
-            this.btnSgteAlta = new System.Windows.Forms.Button();
-            this.btnAntAlta = new System.Windows.Forms.Button();
             this.dgbOSAlta = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tbOS = new controles.TextBoxLetras();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
-            this.btnSgteBaja = new System.Windows.Forms.Button();
-            this.btnAntBaja = new System.Windows.Forms.Button();
             this.dgvOSBaja = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
-            this.btnSgteMod = new System.Windows.Forms.Button();
-            this.btnAntMod = new System.Windows.Forms.Button();
             this.dgvOSMod = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.tbModifOS = new controles.TextBoxLetras();
@@ -74,8 +68,6 @@
             // 
             // tpAlta
             // 
-            this.tpAlta.Controls.Add(this.btnSgteAlta);
-            this.tpAlta.Controls.Add(this.btnAntAlta);
             this.tpAlta.Controls.Add(this.dgbOSAlta);
             this.tpAlta.Controls.Add(this.label1);
             this.tpAlta.Controls.Add(this.tbOS);
@@ -88,26 +80,6 @@
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
             // 
-            // btnSgteAlta
-            // 
-            this.btnSgteAlta.Location = new System.Drawing.Point(369, 360);
-            this.btnSgteAlta.Name = "btnSgteAlta";
-            this.btnSgteAlta.Size = new System.Drawing.Size(105, 23);
-            this.btnSgteAlta.TabIndex = 5;
-            this.btnSgteAlta.Text = "Siguiente >>";
-            this.btnSgteAlta.UseVisualStyleBackColor = true;
-            this.btnSgteAlta.Click += new System.EventHandler(this.btnSgte_Click);
-            // 
-            // btnAntAlta
-            // 
-            this.btnAntAlta.Location = new System.Drawing.Point(162, 360);
-            this.btnAntAlta.Name = "btnAntAlta";
-            this.btnAntAlta.Size = new System.Drawing.Size(105, 23);
-            this.btnAntAlta.TabIndex = 4;
-            this.btnAntAlta.Text = "<< Anterior";
-            this.btnAntAlta.UseVisualStyleBackColor = true;
-            this.btnAntAlta.Click += new System.EventHandler(this.btnAnterior_Click);
-            // 
             // dgbOSAlta
             // 
             this.dgbOSAlta.AllowUserToAddRows = false;
@@ -116,7 +88,7 @@
             this.dgbOSAlta.Location = new System.Drawing.Point(198, 70);
             this.dgbOSAlta.Name = "dgbOSAlta";
             this.dgbOSAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgbOSAlta.Size = new System.Drawing.Size(240, 270);
+            this.dgbOSAlta.Size = new System.Drawing.Size(240, 324);
             this.dgbOSAlta.TabIndex = 3;
             // 
             // label1
@@ -148,8 +120,6 @@
             // 
             // tpBaja
             // 
-            this.tpBaja.Controls.Add(this.btnSgteBaja);
-            this.tpBaja.Controls.Add(this.btnAntBaja);
             this.tpBaja.Controls.Add(this.dgvOSBaja);
             this.tpBaja.Controls.Add(this.btnBaja);
             this.tpBaja.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,26 +131,6 @@
             this.tpBaja.Text = "Baja";
             this.tpBaja.UseVisualStyleBackColor = true;
             // 
-            // btnSgteBaja
-            // 
-            this.btnSgteBaja.Location = new System.Drawing.Point(369, 360);
-            this.btnSgteBaja.Name = "btnSgteBaja";
-            this.btnSgteBaja.Size = new System.Drawing.Size(105, 23);
-            this.btnSgteBaja.TabIndex = 7;
-            this.btnSgteBaja.Text = "Siguiente >>";
-            this.btnSgteBaja.UseVisualStyleBackColor = true;
-            this.btnSgteBaja.Click += new System.EventHandler(this.btnSgte_Click);
-            // 
-            // btnAntBaja
-            // 
-            this.btnAntBaja.Location = new System.Drawing.Point(162, 360);
-            this.btnAntBaja.Name = "btnAntBaja";
-            this.btnAntBaja.Size = new System.Drawing.Size(105, 23);
-            this.btnAntBaja.TabIndex = 6;
-            this.btnAntBaja.Text = "<< Anterior";
-            this.btnAntBaja.UseVisualStyleBackColor = true;
-            this.btnAntBaja.Click += new System.EventHandler(this.btnAnterior_Click);
-            // 
             // dgvOSBaja
             // 
             this.dgvOSBaja.AllowUserToAddRows = false;
@@ -191,7 +141,7 @@
             this.dgvOSBaja.MultiSelect = false;
             this.dgvOSBaja.Name = "dgvOSBaja";
             this.dgvOSBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOSBaja.Size = new System.Drawing.Size(240, 270);
+            this.dgvOSBaja.Size = new System.Drawing.Size(240, 325);
             this.dgvOSBaja.TabIndex = 1;
             // 
             // btnBaja
@@ -206,8 +156,6 @@
             // 
             // tpMod
             // 
-            this.tpMod.Controls.Add(this.btnSgteMod);
-            this.tpMod.Controls.Add(this.btnAntMod);
             this.tpMod.Controls.Add(this.dgvOSMod);
             this.tpMod.Controls.Add(this.label2);
             this.tpMod.Controls.Add(this.tbModifOS);
@@ -219,26 +167,6 @@
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
             // 
-            // btnSgteMod
-            // 
-            this.btnSgteMod.Location = new System.Drawing.Point(369, 360);
-            this.btnSgteMod.Name = "btnSgteMod";
-            this.btnSgteMod.Size = new System.Drawing.Size(105, 23);
-            this.btnSgteMod.TabIndex = 8;
-            this.btnSgteMod.Text = "Siguiente >>";
-            this.btnSgteMod.UseVisualStyleBackColor = true;
-            this.btnSgteMod.Click += new System.EventHandler(this.btnSgte_Click);
-            // 
-            // btnAntMod
-            // 
-            this.btnAntMod.Location = new System.Drawing.Point(162, 360);
-            this.btnAntMod.Name = "btnAntMod";
-            this.btnAntMod.Size = new System.Drawing.Size(105, 23);
-            this.btnAntMod.TabIndex = 7;
-            this.btnAntMod.Text = "<< Anterior";
-            this.btnAntMod.UseVisualStyleBackColor = true;
-            this.btnAntMod.Click += new System.EventHandler(this.btnAnterior_Click);
-            // 
             // dgvOSMod
             // 
             this.dgvOSMod.AllowUserToAddRows = false;
@@ -247,8 +175,9 @@
             this.dgvOSMod.Location = new System.Drawing.Point(198, 72);
             this.dgvOSMod.Name = "dgvOSMod";
             this.dgvOSMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOSMod.Size = new System.Drawing.Size(240, 270);
+            this.dgvOSMod.Size = new System.Drawing.Size(240, 322);
             this.dgvOSMod.TabIndex = 6;
+            this.dgvOSMod.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOSMod_CellContentClick);
             // 
             // label2
             // 
@@ -315,13 +244,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label label1;
         private controles.TextBoxLetras tbOS;
-        private System.Windows.Forms.Button btnSgteAlta;
-        private System.Windows.Forms.Button btnAntAlta;
         private System.Windows.Forms.DataGridView dgbOSAlta;
-        private System.Windows.Forms.Button btnSgteBaja;
-        private System.Windows.Forms.Button btnAntBaja;
-        private System.Windows.Forms.Button btnSgteMod;
-        private System.Windows.Forms.Button btnAntMod;
         private System.Windows.Forms.DataGridView dgvOSMod;
         private System.Windows.Forms.Label label2;
         private controles.TextBoxLetras tbModifOS;
