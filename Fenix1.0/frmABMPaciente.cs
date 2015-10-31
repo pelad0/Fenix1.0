@@ -20,7 +20,7 @@ namespace Fenix1._0
             InitializeComponent();
         }
 
-        int llamada = 0;
+        int pagina = 0;
         RepositorioPaciente rp = new RepositorioPaciente();
         RepositorioObraSocial ros = new RepositorioObraSocial();
         List<string> OS = new List<string>();
@@ -95,10 +95,10 @@ namespace Fenix1._0
 
         private void btnAnt_Click(object sender, EventArgs e)
         {
-            if (llamada > 1)
+            if (pagina > 1)
             {
-                pacientes = rp.Todo(llamada);
-                llamada--;
+                pacientes = rp.Todo(pagina);
+                pagina--;
                 dgvEliminar.DataSource = null;
                 dgvEliminar.DataSource = pacientes;
                 dgvEliminar.Columns[0].Visible = false;
@@ -113,8 +113,8 @@ namespace Fenix1._0
 
         private void btnSig_Click(object sender, EventArgs e)
         {
-            pacientes = rp.Todo(llamada);
-            llamada++;
+            pacientes = rp.Todo(pagina);
+            pagina++;
             dgvEliminar.DataSource = null;
             dgvEliminar.DataSource = pacientes;
             dgvEliminar.Columns[0].Visible = false;
@@ -128,9 +128,9 @@ namespace Fenix1._0
 
         private void iniciar()
         {
-            llamada = 0;
+            pagina = 0;
 
-            pacientes = rp.Todo(llamada);
+            pacientes = rp.Todo(pagina);
 
             dgvEliminar.DataSource = null;
             dgvEliminar.DataSource = pacientes;
@@ -142,7 +142,7 @@ namespace Fenix1._0
             dgvAlta.DataSource = pacientes;
             dgvAlta.Columns[0].Visible = false;
 
-            List<clsObraSocial> obras = ros.Todo();
+            List<clsObraSocial> obras = ros.Todo(pagina);
             foreach (clsObraSocial obra in obras)
             {
                 OS.Add(obra.Nombre);
@@ -250,7 +250,7 @@ namespace Fenix1._0
                 try
                 {
                     dgvAlta.DataSource = null;
-                    dgvAlta.DataSource = rp.buscarPorDni();
+                    dgvAlta.DataSource = rp.buscarDni(Convert.ToInt64(tbBuscar.Text));
                 }
                 catch (Exception ex)
                 {

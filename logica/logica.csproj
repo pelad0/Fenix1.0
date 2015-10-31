@@ -45,6 +45,7 @@
     <Compile Include="RepositorioPaciente.cs" />
     <Compile Include="RepositorioTurno.cs" />
     <Compile Include="RepositorioEspecialidad.cs" />
+    <Compile Include="RepositorioUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
