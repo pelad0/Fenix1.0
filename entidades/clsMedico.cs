@@ -37,6 +37,10 @@ namespace entidades
             this.especialidad = especialidad;
             this.obraSocial = obraSocial;
         }
+        public clsMedico()
+        {
+
+        }
 
         public int Id
         {

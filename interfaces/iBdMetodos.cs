@@ -10,7 +10,7 @@ namespace interfaces
     public interface iBdMetodos
     {
         int ejecutar(String sql);
-        DataTable Consultar();
+        DataTable consultar(string sql);
 
     }
 }
