@@ -19,11 +19,8 @@ namespace Fenix1._0
             InitializeComponent();
         }
 
-<<<<<<< HEAD
         RepositorioMedico reposMedico = new RepositorioMedico();
-=======
-        RepositorioMedico reposMedico=new RepositorioMedico();
->>>>>>> origin/master
+
         List<clsMedico> medicos;
 
         private void btnAlta_Click(object sender, EventArgs e)

@@ -9,6 +9,8 @@ namespace Datos
 {
     public class ManejaTurno: iMetodos
     {
+
+       
         public void Alta(IEntidad entidad)
         {
             throw new NotImplementedException();
