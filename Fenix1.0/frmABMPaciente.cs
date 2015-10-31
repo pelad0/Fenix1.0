@@ -96,36 +96,51 @@ namespace Fenix1._0
         {
             if (llamada > 1)
             {
+                pacientes = rp.Todo(llamada);
                 llamada--;
                 dgvEliminar.DataSource = null;
-                dgvEliminar.DataSource = rp.Todo(llamada);
+                dgvEliminar.DataSource = pacientes;
                 dgvEliminar.Columns[0].Visible = false;
+                dgvPacMod.DataSource = null;
+                dgvPacMod.DataSource = pacientes;
                 dgvPacMod.Columns[0].Visible = false;
-                dgvPacMod.DataSource = rp.Todo(llamada);
-                dgvPacMod.Columns[0].Visible = false;
+                dgvAlta.DataSource = null;
+                dgvAlta.DataSource = pacientes;
+                dgvAlta.Columns[0].Visible = false;
             }
         }
 
         private void btnSig_Click(object sender, EventArgs e)
         {
+            pacientes = rp.Todo(llamada);
             llamada++;
             dgvEliminar.DataSource = null;
-            dgvEliminar.DataSource = rp.Todo(llamada);
+            dgvEliminar.DataSource = pacientes;
             dgvEliminar.Columns[0].Visible = false;
+            dgvPacMod.DataSource = null;
+            dgvPacMod.DataSource = pacientes;
             dgvPacMod.Columns[0].Visible = false;
-            dgvPacMod.DataSource = rp.Todo(llamada);
-            dgvPacMod.Columns[0].Visible = false;
+            dgvAlta.DataSource = null;
+            dgvAlta.DataSource = pacientes;
+            dgvAlta.Columns[0].Visible = false;
         }
 
         private void iniciar()
         {
-            dgvEliminar.DataSource = null;
+            llamada = 1;
+
             pacientes = rp.Todo(llamada);
+
+            dgvEliminar.DataSource = null;
             dgvEliminar.DataSource = pacientes;
             dgvEliminar.Columns[0].Visible = false;
-            dgvPacMod.Columns[0].Visible = false;
+            dgvPacMod.DataSource = null;
             dgvPacMod.DataSource = pacientes;
             dgvPacMod.Columns[0].Visible = false;
+            dgvAlta.DataSource = null;
+            dgvAlta.DataSource = pacientes;
+            dgvAlta.Columns[0].Visible = false;
+
             List<clsObraSocial> obras = ros.Todo();
             foreach (clsObraSocial obra in obras)
             {
@@ -147,7 +162,7 @@ namespace Fenix1._0
         private void btnModificar_Click(object sender, EventArgs e)
         {
             
-            if (dgvPacMod.CurrentRow.Index != -1)
+            if (!string.IsNullOrWhiteSpace(dgvPacMod.CurrentRow.Index.ToString()))
             {
                 DialogResult res = MessageBox.Show("Desea editar la información de " + pacientes[dgvPacMod.CurrentRow.Index].nomCompleto(), "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (res == DialogResult.OK)
@@ -198,7 +213,38 @@ namespace Fenix1._0
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Seleccione algún paciente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
+
+        private void btnDarTurno_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            //buscar paciente por dni
+            if (string.IsNullOrWhiteSpace(tbBuscar.Text))
+            {
+                iniciar();
+            }
+            else
+            {
+                try
+                {
+                    dgvAlta.DataSource = null;
+                    dgvAlta.DataSource = rp.buscarPorDni();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
 
     }
 }
