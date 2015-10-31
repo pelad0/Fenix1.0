@@ -44,9 +44,11 @@
     <Compile Include="clsFactura.cs" />
     <Compile Include="clsHistorial.cs" />
     <Compile Include="clsMedico.cs" />
+    <Compile Include="clsMedicoDatos.cs" />
     <Compile Include="clsObraSocial.cs" />
     <Compile Include="clsObraXMedico.cs" />
     <Compile Include="clsPaciente.cs" />
+    <Compile Include="clsPacienteDatos.cs" />
     <Compile Include="clsPlanesXObra.cs" />
     <Compile Include="clsRecibo.cs" />
     <Compile Include="clsSobreturno.cs" />
