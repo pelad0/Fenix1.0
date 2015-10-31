@@ -17,6 +17,11 @@ namespace entidades
         string obraSocial;
         long telefono;
 
+        public clsPaciente()
+        {
+
+        }
+
         public clsPaciente(string nombre, string apellido, long dni, string obra, long telefono)
         {
             this.nombre = nombre;

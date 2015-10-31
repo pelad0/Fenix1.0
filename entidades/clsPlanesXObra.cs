@@ -30,6 +30,11 @@ namespace entidades
             set { importe = value; }
         }
 
+        public clsPlanesXObra()
+        {
+
+        }
+
         public clsPlanesXObra(int idObra,string nombrePlan,double importe)
         {
             this.idObra = idObra;

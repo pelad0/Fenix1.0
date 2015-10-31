@@ -50,6 +50,11 @@ namespace entidades
             set { detalle = value; }
         }
 
+        public clsRecibo()
+        {
+
+        }
+
         public clsRecibo(int id,int idFactura,double cobertura,double importe,string detalle)
         {
             this.id = id;

@@ -90,6 +90,11 @@ namespace entidades
             set { pagoTarjeta = value; }
         }
 
+        public clsFactura()
+        {
+
+        }
+
         public clsFactura(int id, int numeroFactura,char tipoFactura,string razonSocial,double total, DateTime fecha,int idUsuario,string cliente,double pagoEfectivo, double pagoTarjeta)
         {
             this.id = id;

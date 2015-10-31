@@ -16,6 +16,10 @@ namespace entidades
         int idUsuario;
         bool estado;
                  
+        public clsSobreturno()
+        {
+
+        }
 
         public clsSobreturno(int id,int idMedico,int idPaciente,DateTime fecha,double costo,int idUsuario,bool estado)
         {

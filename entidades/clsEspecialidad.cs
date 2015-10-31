@@ -13,6 +13,11 @@ namespace entidades
         int id;
         string descripcion;
 
+        public clsEspecialidad() 
+        {
+        
+        }
+
         public clsEspecialidad(int id,string descripcion)
         {
             this.id = id;
