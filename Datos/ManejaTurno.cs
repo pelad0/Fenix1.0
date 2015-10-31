@@ -13,6 +13,11 @@ namespace Datos
     {
 
         iBdMetodos manager;
+
+        public ManejaTurno()
+        {
+            manager = new BdMetodos();
+        }
         public void Alta(IEntidad entidad,int idusuario)
         {
             clsTurno tur = (clsTurno)entidad;
