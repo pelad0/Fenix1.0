@@ -90,12 +90,12 @@ namespace logica
             return esp;
         }
 
-        public List<clsEspecialidad> Todo(int pag)
+        public List<clsEspecialidad> Todo()
         {
             DataTable tabla;
             List<clsEspecialidad> lista = new List<clsEspecialidad>();
            
-            tabla = manejaEspecialidad.Todo(pag);
+            tabla = manejaEspecialidad.Todo();
             foreach (DataRow aux in tabla.Rows)
             {
                 clsEspecialidad esp = new clsEspecialidad();
