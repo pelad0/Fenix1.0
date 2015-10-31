@@ -11,6 +11,11 @@ namespace entidades
         int idMedico;
         int idObra;
 
+        public clsObraXMedico()
+        {
+
+        }
+
         public clsObraXMedico(int idMedico, int idObra)
         {
             this.idMedico = idMedico;

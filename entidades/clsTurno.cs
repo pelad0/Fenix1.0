@@ -17,6 +17,10 @@ namespace entidades
         int idUsuario;
         bool estado;
                  
+        public clsTurno()
+        {
+
+        }
 
         public clsTurno(int id,int idMedico,int idPaciente,DateTime fecha,double costo,int idUsuario,bool estado)
         {

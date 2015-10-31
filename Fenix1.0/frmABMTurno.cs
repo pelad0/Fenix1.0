@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using controles;
 
-namespace WindowsFormsApplication1
+
+namespace Fenix1._0
 {
-    public partial class Form1 : Form
+    public partial class frmABMTurno : Form
     {
-        public Form1()
+        public frmABMTurno()
         {
             InitializeComponent();
+        }
+
+        private void btnAlta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

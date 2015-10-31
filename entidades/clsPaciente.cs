@@ -14,10 +14,15 @@ namespace entidades
         string nombre;
         string apellido;
         long dni;
-        string obraSocial;
+        int obraSocial;
         long telefono;
 
-        public clsPaciente(string nombre, string apellido, long dni, string obra, long telefono)
+        public clsPaciente()
+        {
+
+        }
+
+        public clsPaciente(string nombre, string apellido, long dni, int obra, long telefono)
         {
             this.nombre = nombre;
             this.apellido = apellido;
@@ -50,7 +55,7 @@ namespace entidades
             set { dni = value; }
         }
 
-        public string ObraSocial
+        public int ObraSocial
         {
             get { return obraSocial; }
             set { obraSocial = value; }
