@@ -30,7 +30,6 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
-            this.dgbOSAlta = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tbOS = new controles.TextBoxLetras();
             this.btnAlta = new System.Windows.Forms.Button();
@@ -38,17 +37,18 @@
             this.dgvOSBaja = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
-            this.dgvOSMod = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.tbModifOS = new controles.TextBoxLetras();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.dgvOSAlta = new System.Windows.Forms.DataGridView();
+            this.dgvOSModif = new System.Windows.Forms.DataGridView();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgbOSAlta)).BeginInit();
             this.tpBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOSBaja)).BeginInit();
             this.tpMod.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOSMod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOSAlta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOSModif)).BeginInit();
             this.SuspendLayout();
             // 
             // tcABM
@@ -68,7 +68,7 @@
             // 
             // tpAlta
             // 
-            this.tpAlta.Controls.Add(this.dgbOSAlta);
+            this.tpAlta.Controls.Add(this.dgvOSAlta);
             this.tpAlta.Controls.Add(this.label1);
             this.tpAlta.Controls.Add(this.tbOS);
             this.tpAlta.Controls.Add(this.btnAlta);
@@ -79,17 +79,6 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
-            // 
-            // dgbOSAlta
-            // 
-            this.dgbOSAlta.AllowUserToAddRows = false;
-            this.dgbOSAlta.AllowUserToDeleteRows = false;
-            this.dgbOSAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgbOSAlta.Location = new System.Drawing.Point(198, 70);
-            this.dgbOSAlta.Name = "dgbOSAlta";
-            this.dgbOSAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgbOSAlta.Size = new System.Drawing.Size(240, 324);
-            this.dgbOSAlta.TabIndex = 3;
             // 
             // label1
             // 
@@ -137,11 +126,11 @@
             this.dgvOSBaja.AllowUserToDeleteRows = false;
             this.dgvOSBaja.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvOSBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOSBaja.Location = new System.Drawing.Point(198, 69);
+            this.dgvOSBaja.Location = new System.Drawing.Point(198, 72);
             this.dgvOSBaja.MultiSelect = false;
             this.dgvOSBaja.Name = "dgvOSBaja";
             this.dgvOSBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOSBaja.Size = new System.Drawing.Size(240, 325);
+            this.dgvOSBaja.Size = new System.Drawing.Size(240, 320);
             this.dgvOSBaja.TabIndex = 1;
             // 
             // btnBaja
@@ -156,7 +145,7 @@
             // 
             // tpMod
             // 
-            this.tpMod.Controls.Add(this.dgvOSMod);
+            this.tpMod.Controls.Add(this.dgvOSModif);
             this.tpMod.Controls.Add(this.label2);
             this.tpMod.Controls.Add(this.tbModifOS);
             this.tpMod.Controls.Add(this.btnModificar);
@@ -166,18 +155,6 @@
             this.tpMod.TabIndex = 2;
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
-            // 
-            // dgvOSMod
-            // 
-            this.dgvOSMod.AllowUserToAddRows = false;
-            this.dgvOSMod.AllowUserToDeleteRows = false;
-            this.dgvOSMod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOSMod.Location = new System.Drawing.Point(198, 72);
-            this.dgvOSMod.Name = "dgvOSMod";
-            this.dgvOSMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOSMod.Size = new System.Drawing.Size(240, 322);
-            this.dgvOSMod.TabIndex = 6;
-            this.dgvOSMod.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOSMod_CellContentClick);
             // 
             // label2
             // 
@@ -206,6 +183,22 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // dgvOSAlta
+            // 
+            this.dgvOSAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOSAlta.Location = new System.Drawing.Point(198, 72);
+            this.dgvOSAlta.Name = "dgvOSAlta";
+            this.dgvOSAlta.Size = new System.Drawing.Size(240, 320);
+            this.dgvOSAlta.TabIndex = 3;
+            // 
+            // dgvOSModif
+            // 
+            this.dgvOSModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOSModif.Location = new System.Drawing.Point(198, 72);
+            this.dgvOSModif.Name = "dgvOSModif";
+            this.dgvOSModif.Size = new System.Drawing.Size(240, 320);
+            this.dgvOSModif.TabIndex = 5;
+            // 
             // frmABMOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,12 +215,12 @@
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgbOSAlta)).EndInit();
             this.tpBaja.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOSBaja)).EndInit();
             this.tpMod.ResumeLayout(false);
             this.tpMod.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOSMod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOSAlta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOSModif)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,9 +237,9 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label label1;
         private controles.TextBoxLetras tbOS;
-        private System.Windows.Forms.DataGridView dgbOSAlta;
-        private System.Windows.Forms.DataGridView dgvOSMod;
         private System.Windows.Forms.Label label2;
         private controles.TextBoxLetras tbModifOS;
+        private System.Windows.Forms.DataGridView dgvOSAlta;
+        private System.Windows.Forms.DataGridView dgvOSModif;
     }
 }
