@@ -59,7 +59,7 @@ namespace Fenix1._0
                     }
                 }
             }
-            int espe;
+            int espe = 0;
             RepositorioEspecialidad re = new RepositorioEspecialidad();
             List<clsEspecialidad> esp = re.Todo();
             foreach (clsEspecialidad es in esp)
@@ -74,13 +74,12 @@ namespace Fenix1._0
 
             try
             {
-                //rp.Alta(p);
+                rp.Alta(p);
 
             }
             catch (Exception ex)
             {
-                
-                throw;
+                MessageBox.Show("Se ha pruducido el Sgte. error: "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
