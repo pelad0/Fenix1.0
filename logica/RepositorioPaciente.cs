@@ -55,20 +55,9 @@ namespace logica
         {
             clsPaciente pac = new clsPaciente();
                         
-            DataTable tabla;
-           
-           
-            tabla = manejaPaciente.Todo(pag);
-            foreach (DataRow aux in tabla.Rows)
-            {
-                if (dni == Convert.ToInt64(aux["dni"]))
-                {
-                      clsPaciente med = new clsPaciente();
-                }
-
-              
-
-            }
+            
+                      
+            
             return pac;
         }
 
