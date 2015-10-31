@@ -73,7 +73,7 @@ namespace Datos
                 med.Apellido = aux.Rows[0]["apellido"].ToString();
                 med.Dni = Convert.ToInt64(aux.Rows[0]["dni"]);
                 med.Matricula = Convert.ToInt32(aux.Rows[0]["matricula"]);
-                med.Especialidad.Add((aux.Rows[0]["especialidad"].ToString()));
+                med.Especialidad=Convert.ToInt32(aux.Rows[0]["especialidad"]);
             }
             catch (Exception ex)
             {

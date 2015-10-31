@@ -47,7 +47,7 @@
             this.dgvEliminar = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.dgvPacMod = new System.Windows.Forms.DataGridView();
             this.cdOSMod = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,7 +58,9 @@
             this.tbDniMod = new controles.TextBoxNumeros();
             this.tbApellidoMod = new controles.TextBoxLetras();
             this.tbNombreMod = new controles.TextBoxLetras();
-            this.dgvPacMod = new System.Windows.Forms.DataGridView();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
@@ -106,10 +108,11 @@
             // cbOSAlta
             // 
             this.cbOSAlta.FormattingEnabled = true;
-            this.cbOSAlta.Location = new System.Drawing.Point(258, 308);
+            this.cbOSAlta.Location = new System.Drawing.Point(237, 308);
             this.cbOSAlta.Name = "cbOSAlta";
-            this.cbOSAlta.Size = new System.Drawing.Size(121, 23);
+            this.cbOSAlta.Size = new System.Drawing.Size(162, 23);
             this.cbOSAlta.TabIndex = 9;
+            this.cbOSAlta.Tag = "Obra Social";
             // 
             // label5
             // 
@@ -162,6 +165,7 @@
             this.tbTelALta.Name = "tbTelALta";
             this.tbTelALta.Size = new System.Drawing.Size(162, 23);
             this.tbTelALta.TabIndex = 4;
+            this.tbTelALta.Tag = "Telefono";
             // 
             // tbDniAlta
             // 
@@ -169,6 +173,7 @@
             this.tbDniAlta.Name = "tbDniAlta";
             this.tbDniAlta.Size = new System.Drawing.Size(162, 23);
             this.tbDniAlta.TabIndex = 3;
+            this.tbDniAlta.Tag = "Documento";
             // 
             // tbApellidoAlta
             // 
@@ -176,6 +181,7 @@
             this.tbApellidoAlta.Name = "tbApellidoAlta";
             this.tbApellidoAlta.Size = new System.Drawing.Size(162, 23);
             this.tbApellidoAlta.TabIndex = 2;
+            this.tbApellidoAlta.Tag = "Apellido";
             // 
             // tbNombreAlta
             // 
@@ -183,6 +189,7 @@
             this.tbNombreAlta.Name = "tbNombreAlta";
             this.tbNombreAlta.Size = new System.Drawing.Size(162, 23);
             this.tbNombreAlta.TabIndex = 1;
+            this.tbNombreAlta.Tag = "Nombre";
             // 
             // btnAlta
             // 
@@ -231,7 +238,6 @@
             // 
             this.dgvEliminar.AllowUserToAddRows = false;
             this.dgvEliminar.AllowUserToDeleteRows = false;
-            this.dgvEliminar.AllowUserToOrderColumns = true;
             this.dgvEliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEliminar.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvEliminar.Location = new System.Drawing.Point(3, 3);
@@ -239,6 +245,7 @@
             this.dgvEliminar.Name = "dgvEliminar";
             this.dgvEliminar.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEliminar.ShowEditingIcon = false;
             this.dgvEliminar.Size = new System.Drawing.Size(630, 380);
             this.dgvEliminar.TabIndex = 1;
             // 
@@ -253,6 +260,8 @@
             // 
             // tpMod
             // 
+            this.tpMod.Controls.Add(this.button1);
+            this.tpMod.Controls.Add(this.button2);
             this.tpMod.Controls.Add(this.dgvPacMod);
             this.tpMod.Controls.Add(this.cdOSMod);
             this.tpMod.Controls.Add(this.label6);
@@ -272,21 +281,20 @@
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
             // 
-            // btnModificar
+            // dgvPacMod
             // 
-            this.btnModificar.Location = new System.Drawing.Point(281, 408);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 0;
-            this.btnModificar.Text = "Editar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.dgvPacMod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPacMod.Location = new System.Drawing.Point(19, 29);
+            this.dgvPacMod.Name = "dgvPacMod";
+            this.dgvPacMod.Size = new System.Drawing.Size(397, 334);
+            this.dgvPacMod.TabIndex = 20;
             // 
             // cdOSMod
             // 
             this.cdOSMod.FormattingEnabled = true;
-            this.cdOSMod.Location = new System.Drawing.Point(476, 322);
+            this.cdOSMod.Location = new System.Drawing.Point(455, 322);
             this.cdOSMod.Name = "cdOSMod";
-            this.cdOSMod.Size = new System.Drawing.Size(121, 23);
+            this.cdOSMod.Size = new System.Drawing.Size(162, 23);
             this.cdOSMod.TabIndex = 19;
             // 
             // label6
@@ -362,13 +370,32 @@
             this.tbNombreMod.Size = new System.Drawing.Size(162, 23);
             this.tbNombreMod.TabIndex = 10;
             // 
-            // dgvPacMod
+            // btnModificar
             // 
-            this.dgvPacMod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPacMod.Location = new System.Drawing.Point(19, 29);
-            this.dgvPacMod.Name = "dgvPacMod";
-            this.dgvPacMod.Size = new System.Drawing.Size(397, 334);
-            this.dgvPacMod.TabIndex = 20;
+            this.btnModificar.Location = new System.Drawing.Point(180, 403);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 0;
+            this.btnModificar.Text = "Editar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(322, 379);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Siguiente>>";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(19, 379);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 23);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "<<Anterior";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // frmABMPaciente
             // 
@@ -381,6 +408,7 @@
             this.Name = "frmABMPaciente";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmABMPaciente_Load);
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
@@ -426,5 +454,7 @@
         private controles.TextBoxNumeros tbDniMod;
         private controles.TextBoxLetras tbApellidoMod;
         private controles.TextBoxLetras tbNombreMod;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
