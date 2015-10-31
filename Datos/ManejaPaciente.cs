@@ -71,8 +71,8 @@ namespace Datos
             try
             {
 
-                aux = manager.consultar("select * from medico where idmedico=" + id + "and activo=1");
-                pac.Id = Convert.ToInt32(aux.Rows[0]["idPaciente"]);
+                aux = manager.consultar("select * from paciente where id=" + id + "and activo=1");
+                pac.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 pac.Nombre = aux.Rows[0]["nombre"].ToString();
                 pac.Apellido = aux.Rows[0]["apellido"].ToString();
                 pac.Dni = Convert.ToInt64(aux.Rows[0]["dni"]);
