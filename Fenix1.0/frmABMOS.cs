@@ -49,7 +49,7 @@ namespace Fenix1._0
 
         private void iniciar()
         {
-            //OS = ros.Todo();
+            OS = ros.Todo();
             dgvOSAlta.dataSource = OS;
             dgvOSAlta.Columns[0].Visible = false;
             dgvOSBaja.dataSource = OS;
