@@ -132,6 +132,11 @@ namespace Fenix1._0
 
         }
 
+        private void cbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

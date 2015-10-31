@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using entidades;
 using logica;
+using System.Web;
+
 
 namespace Fenix1._0
 {
@@ -16,14 +18,12 @@ namespace Fenix1._0
     {
         public frmABMME()
         {
-            InitializeComponent();
+            InitializeComponent();  
         }
+              
 
-<<<<<<< HEAD
-        RepositorioMedico reposMedico = new RepositorioMedico();
-=======
         RepositorioMedico reposMedico=new RepositorioMedico();
->>>>>>> origin/master
+
         List<clsMedico> medicos;
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -35,8 +35,9 @@ namespace Fenix1._0
                 List<string> espe = new List<string>();
                 List<string> obra = new List<string>();
 
-
+                
                 //cargo especialidades
+
                 foreach (string index in clbEspecialidad.CheckedItems)
                 {
                     espe.Add(index);
@@ -61,7 +62,7 @@ namespace Fenix1._0
 
 
                 reposMedico.Alta(medico);
-                //Aca llamo al metodo del monje.
+                
             }
 
             
@@ -151,6 +152,47 @@ namespace Fenix1._0
         {
             frmHorariosMedico frmHorarios = new frmHorariosMedico();
             frmHorarios.ShowDialog();
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            clsMedico medico = new clsMedico();
+
+            List<string> espe = new List<string>();
+            List<string> obra = new List<string>();
+
+
+            //CARGO LOS DATOS DEL MEDICO SELECCIONADO
+            medico.Id = int.Parse(dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[0].Value.ToString());
+            medico.Matricula = int.Parse(dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[1].Value.ToString());
+            medico.Dni = long.Parse(dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[2].Value.ToString());
+            medico.Nombre = dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[3].Value.ToString();
+            medico.Apellido = dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[4].Value.ToString();
+
+            //CARGO LISTAS DE OBRAS SOCIALES Y ESPECIALIDADES CON VALORES DEL DATA GRID VIEW.
+            //CARGO ESPECIALIDADES.
+
+            foreach (DataGridViewRow row in dgvEspecialidadesModi.Rows)
+            {                
+                espe.Add(row.Cells[0].Value.ToString());
+            }
+
+            //CARGO OBRAS SOCIALES.
+
+            foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
+            {
+                obra.Add(row.Cells[0].Value.ToString());
+            }
+
+            medico.Especialidad = espe;
+            medico.ObraSocial = obra;
+
+
+
+
+
+
 
         }
 
