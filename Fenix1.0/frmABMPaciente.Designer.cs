@@ -330,6 +330,7 @@
             this.button1.TabIndex = 22;
             this.button1.Text = "Siguiente>>";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnSig_Click);
             // 
             // button2
             // 
@@ -339,6 +340,7 @@
             this.button2.TabIndex = 21;
             this.button2.Text = "<<Anterior";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnAnt_Click);
             // 
             // tbTelALta
             // 
