@@ -39,7 +39,6 @@
             this.btnSiguientesAlta = new System.Windows.Forms.Button();
             this.btnAnteriorAlta = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.clbEspecialidad = new System.Windows.Forms.CheckedListBox();
             this.clbObraSocial = new System.Windows.Forms.CheckedListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -75,6 +74,7 @@
             this.btnAnteriorModi = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.cbEspecialidades = new System.Windows.Forms.ComboBox();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosAlta)).BeginInit();
@@ -107,6 +107,7 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.Controls.Add(this.cbEspecialidades);
             this.tpAlta.Controls.Add(this.btnHorarios);
             this.tpAlta.Controls.Add(this.dgvMedicosAlta);
             this.tpAlta.Controls.Add(this.label12);
@@ -116,7 +117,6 @@
             this.tpAlta.Controls.Add(this.btnSiguientesAlta);
             this.tpAlta.Controls.Add(this.btnAnteriorAlta);
             this.tpAlta.Controls.Add(this.label10);
-            this.tpAlta.Controls.Add(this.clbEspecialidad);
             this.tpAlta.Controls.Add(this.clbObraSocial);
             this.tpAlta.Controls.Add(this.label9);
             this.tpAlta.Controls.Add(this.label8);
@@ -225,17 +225,6 @@
             this.label10.Size = new System.Drawing.Size(119, 15);
             this.label10.TabIndex = 11;
             this.label10.Text = "Médicos actuales";
-            // 
-            // clbEspecialidad
-            // 
-            this.clbEspecialidad.FormattingEnabled = true;
-            this.clbEspecialidad.Items.AddRange(new object[] {
-            "feo",
-            "lindo"});
-            this.clbEspecialidad.Location = new System.Drawing.Point(424, 104);
-            this.clbEspecialidad.Name = "clbEspecialidad";
-            this.clbEspecialidad.Size = new System.Drawing.Size(154, 94);
-            this.clbEspecialidad.TabIndex = 9;
             // 
             // clbObraSocial
             // 
@@ -571,6 +560,7 @@
             this.btnModificar.TabIndex = 25;
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // label7
             // 
@@ -580,6 +570,14 @@
             this.label7.Size = new System.Drawing.Size(287, 15);
             this.label7.TabIndex = 3;
             this.label7.Text = "Seleccione el médico que desea modificar";
+            // 
+            // cbEspecialidades
+            // 
+            this.cbEspecialidades.FormattingEnabled = true;
+            this.cbEspecialidades.Location = new System.Drawing.Point(424, 132);
+            this.cbEspecialidades.Name = "cbEspecialidades";
+            this.cbEspecialidades.Size = new System.Drawing.Size(154, 23);
+            this.cbEspecialidades.TabIndex = 20;
             // 
             // frmABMME
             // 
@@ -633,7 +631,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckedListBox clbEspecialidad;
         private System.Windows.Forms.CheckedListBox clbObraSocial;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSiguientesAlta;
@@ -662,5 +659,6 @@
         private System.Windows.Forms.Button btnAnteriorModi;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnHorarios;
+        private System.Windows.Forms.ComboBox cbEspecialidades;
     }
 }

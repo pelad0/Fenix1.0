@@ -72,6 +72,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnTerminar = new System.Windows.Forms.Button();
+            this.cbTodos = new System.Windows.Forms.CheckBox();
             this.pnlMedioTiempo.SuspendLayout();
             this.pnlTiempoCompleto.SuspendLayout();
             this.SuspendLayout();
@@ -539,11 +540,24 @@
             this.btnTerminar.UseVisualStyleBackColor = true;
             this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
             // 
+            // cbTodos
+            // 
+            this.cbTodos.AutoSize = true;
+            this.cbTodos.Location = new System.Drawing.Point(28, 56);
+            this.cbTodos.Name = "cbTodos";
+            this.cbTodos.Size = new System.Drawing.Size(61, 19);
+            this.cbTodos.TabIndex = 37;
+            this.cbTodos.Tag = "1";
+            this.cbTodos.Text = "Lunes";
+            this.cbTodos.UseVisualStyleBackColor = true;
+            this.cbTodos.CheckedChanged += new System.EventHandler(this.cbTodos_CheckedChanged);
+            // 
             // frmHorariosMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 478);
+            this.Controls.Add(this.cbTodos);
             this.Controls.Add(this.btnTerminar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -616,6 +630,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnTerminar;
+        private System.Windows.Forms.CheckBox cbTodos;
 
     }
 }

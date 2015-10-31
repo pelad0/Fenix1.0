@@ -183,6 +183,7 @@
             this.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.Name = "frmEditarMedico";
             this.Text = "frmEditarMedico";
+            this.Load += new System.EventHandler(this.frmEditarMedico_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
