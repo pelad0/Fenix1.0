@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using interfaces;
 using entidades;
 using Datos;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace logica
@@ -42,13 +43,30 @@ namespace logica
             manejapaciente.Modificacion(paciente);
         }
 
-        //public clsPaciente buscarPorId(int id)
-        //{
-        //    //clsPaciente pac = new clsPaciente();
-        //    ManejaPaciente manejaPaciente = new ManejaPaciente();
-        //    pac = (clsPaciente)manejaPaciente.buscaPorId(id);
+        public clsPaciente buscarPorId(int id)
+        {
+            clsPaciente pac = new clsPaciente();
+            ManejaPaciente manejaPaciente = new ManejaPaciente();
+            pac = (clsPaciente)manejaPaciente.buscaPorId(id);
 
-        //    return pac;
-        //}
+            return pac;
+        }
+
+        public List<clsPaciente> Todo(int pag)
+        {
+            DataTable tabla;
+            List<clsPaciente> lista = new List<clsPaciente>();
+            ManejaMedico manejaPaciente = new ManejaMedico();
+            tabla = manejaPaciente.Todo(pag);
+            foreach (DataRow i in tabla.Rows)
+            {
+
+                clsPaciente med = new clsPaciente();
+
+            }
+
+            return lista;
+
+        }
     }
 }
