@@ -93,5 +93,15 @@ namespace Datos
         }
 
 
+
+        public void Alta(IEntidad entidad)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Modificacion(IEntidad entidad)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
