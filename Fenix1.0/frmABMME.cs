@@ -32,17 +32,8 @@ namespace Fenix1._0
 
             if(verificarMedico())       //Se puede dar de alta.
             {
-                List<string> espe = new List<string>();
-                List<string> obra = new List<string>();
-
                 
-                //cargo especialidades
-
-                foreach (string index in clbEspecialidad.CheckedItems)
-                {
-                    espe.Add(index);
-
-                }
+                List<string> obra = new List<string>();                
 
 
                 //cargo obras sociales
@@ -57,7 +48,7 @@ namespace Fenix1._0
                 medico.Dni = long.Parse(tbDniAlta.Text);
                 medico.Nombre = tbNombreAlta.Text;
                 medico.Apellido = tbApellidoAlta.Text;
-                medico.Especialidad = espe;
+                //medico.Especialidad = cbEspecialidades.Text; ACA NECESITO DALE AL MEDICO EL ID DE LA ESPECIALIDAD
                 medico.ObraSocial = obra;
 
 
@@ -72,17 +63,11 @@ namespace Fenix1._0
 
         public bool verificarMedico()       //Chekea todo menos horarios.
         {
-            if(string.IsNullOrEmpty(tbMatriculaAlta.Text.ToString()) != true  || string.IsNullOrEmpty(tbDniAlta.Text.ToString()) != true || string.IsNullOrEmpty(tbNombreAlta.Text) != true || string.IsNullOrEmpty(tbApellidoAlta.Text) != true)
-            {
-                if (clbEspecialidad.CheckedItems.Count > 0 )
-                {
-                    return true;
-                }
-                else
-                {                    
-                    MessageBox.Show("Debe seleccionar al menos una especialidad para el médico.");
-                    return false;
-                }
+            if (string.IsNullOrWhiteSpace(tbMatriculaAlta.Text.ToString()) != true || string.IsNullOrWhiteSpace(tbDniAlta.Text.ToString()) != true || string.IsNullOrWhiteSpace(tbNombreAlta.Text) != true || string.IsNullOrWhiteSpace(tbApellidoAlta.Text) != true || string.IsNullOrWhiteSpace(cbEspecialidades.Text) == false)
+            {                   
+                                 
+                MessageBox.Show("Debe seleccionar al menos una especialidad para el médico.");
+                return false;               
 
             }
             else
@@ -131,9 +116,7 @@ namespace Fenix1._0
             {
                 dgvMedicosAlta.Rows.Add(med.Id, med.Matricula, med.Apellido);
                 dgvMedicosBaja.Rows.Add(med.Id, med.Matricula, med.Apellido);
-                dgvMedicosModi.Rows.Add(med.Id, med.Matricula, med.Apellido);
-
-                
+                dgvMedicosModi.Rows.Add(med.Id, med.Matricula, med.Apellido);                
             }
 
               
@@ -158,35 +141,35 @@ namespace Fenix1._0
         private void btnModificar_Click(object sender, EventArgs e)
         {
             clsMedico medico = new clsMedico();
+           
+            //List<string> obra = new List<string>();
 
-            List<string> espe = new List<string>();
-            List<string> obra = new List<string>();
+
+            //TOMO EL ID DEL MEDICO SELECCIONADO Y TRAIGO SUS DATOS CON METODO BUSCAR POR ID
+            int id = int.Parse(dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[0].Value.ToString());
+
+            medico = reposMedico.buscarPorId(id);
 
 
-            //CARGO LOS DATOS DEL MEDICO SELECCIONADO
-            medico.Id = int.Parse(dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[0].Value.ToString());
-            medico.Matricula = int.Parse(dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[1].Value.ToString());
-            medico.Dni = long.Parse(dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[2].Value.ToString());
-            medico.Nombre = dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[3].Value.ToString();
-            medico.Apellido = dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[4].Value.ToString();
+            //LLAMO AL FORMULARIO QUE EDITA EL MEDICO, CON TODOS LOS DATOS ACTUALES DE EL MEDICO A EDITAR.
 
-            //CARGO LISTAS DE OBRAS SOCIALES Y ESPECIALIDADES CON VALORES DEL DATA GRID VIEW.
-            //CARGO ESPECIALIDADES.
+            frmEditarMedico editarMedico = new frmEditarMedico(medico);
 
-            foreach (DataGridViewRow row in dgvEspecialidadesModi.Rows)
-            {                
-                espe.Add(row.Cells[0].Value.ToString());
-            }
 
+
+
+            //CARGO LISTA DE OBRAS SOCIALES DEL DATA GRID VIEW.
+           
             //CARGO OBRAS SOCIALES.
 
-            foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
-            {
-                obra.Add(row.Cells[0].Value.ToString());
-            }
 
-            medico.Especialidad = espe;
-            medico.ObraSocial = obra;
+
+            //foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
+            //{
+            //    obra.Add(row.Cells[0].Value.ToString());
+            //}
+              
+            //medico.ObraSocial = obra;
 
 
 

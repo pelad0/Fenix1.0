@@ -549,7 +549,7 @@
             this.cbTodos.Tag = "1";
             this.cbTodos.Text = "Lunes";
             this.cbTodos.UseVisualStyleBackColor = true;
-            this.cbTodos.CheckedChanged += new System.EventHandler(this.cbTodos_CheckedChanged);
+            this.cbTodos.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
             // frmHorariosMedico
             // 
