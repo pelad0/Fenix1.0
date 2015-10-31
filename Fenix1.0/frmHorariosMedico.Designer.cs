@@ -546,7 +546,7 @@
             this.cbTodos.Name = "cbTodos";
             this.cbTodos.Size = new System.Drawing.Size(61, 19);
             this.cbTodos.TabIndex = 37;
-            this.cbTodos.Tag = "1";
+            this.cbTodos.Tag = "10";
             this.cbTodos.Text = "Lunes";
             this.cbTodos.UseVisualStyleBackColor = true;
             this.cbTodos.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
