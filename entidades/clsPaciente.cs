@@ -66,6 +66,9 @@ namespace entidades
             set { telefono = value; }
         }
 
-        
+        public string nomCompleto()
+        {
+            return nombre + " " + apellido;
+        }
     }
 }

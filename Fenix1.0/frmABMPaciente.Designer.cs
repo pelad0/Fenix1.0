@@ -36,6 +36,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbTelALta = new controles.TextBoxNumeros();
+            this.tbDniAlta = new controles.TextBoxNumeros();
+            this.tbApellidoAlta = new controles.TextBoxLetras();
+            this.tbNombreAlta = new controles.TextBoxLetras();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
             this.btnSig = new System.Windows.Forms.Button();
@@ -43,20 +47,16 @@
             this.dgvEliminar = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.dgvPacMod = new System.Windows.Forms.DataGridView();
-            this.cdOSMod = new System.Windows.Forms.ComboBox();
+            this.cbOSMod = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tbTelALta = new controles.TextBoxNumeros();
-            this.tbDniAlta = new controles.TextBoxNumeros();
-            this.tbApellidoAlta = new controles.TextBoxLetras();
-            this.tbNombreAlta = new controles.TextBoxLetras();
             this.tbTelMod = new controles.TextBoxNumeros();
             this.tbDniMod = new controles.TextBoxNumeros();
             this.tbApellidoMod = new controles.TextBoxLetras();
@@ -159,6 +159,38 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Nombre";
             // 
+            // tbTelALta
+            // 
+            this.tbTelALta.Location = new System.Drawing.Point(237, 244);
+            this.tbTelALta.Name = "tbTelALta";
+            this.tbTelALta.Size = new System.Drawing.Size(162, 23);
+            this.tbTelALta.TabIndex = 4;
+            this.tbTelALta.Tag = "Telefono";
+            // 
+            // tbDniAlta
+            // 
+            this.tbDniAlta.Location = new System.Drawing.Point(237, 180);
+            this.tbDniAlta.Name = "tbDniAlta";
+            this.tbDniAlta.Size = new System.Drawing.Size(162, 23);
+            this.tbDniAlta.TabIndex = 3;
+            this.tbDniAlta.Tag = "Documento";
+            // 
+            // tbApellidoAlta
+            // 
+            this.tbApellidoAlta.Location = new System.Drawing.Point(237, 116);
+            this.tbApellidoAlta.Name = "tbApellidoAlta";
+            this.tbApellidoAlta.Size = new System.Drawing.Size(162, 23);
+            this.tbApellidoAlta.TabIndex = 2;
+            this.tbApellidoAlta.Tag = "Apellido";
+            // 
+            // tbNombreAlta
+            // 
+            this.tbNombreAlta.Location = new System.Drawing.Point(237, 52);
+            this.tbNombreAlta.Name = "tbNombreAlta";
+            this.tbNombreAlta.Size = new System.Drawing.Size(162, 23);
+            this.tbNombreAlta.TabIndex = 1;
+            this.tbNombreAlta.Tag = "Nombre";
+            // 
             // btnAlta
             // 
             this.btnAlta.Location = new System.Drawing.Point(281, 409);
@@ -234,7 +266,7 @@
             this.tpMod.Controls.Add(this.button1);
             this.tpMod.Controls.Add(this.button2);
             this.tpMod.Controls.Add(this.dgvPacMod);
-            this.tpMod.Controls.Add(this.cdOSMod);
+            this.tpMod.Controls.Add(this.cbOSMod);
             this.tpMod.Controls.Add(this.label6);
             this.tpMod.Controls.Add(this.label7);
             this.tpMod.Controls.Add(this.label8);
@@ -252,21 +284,47 @@
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(322, 379);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Siguiente>>";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnSig_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(19, 379);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 23);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "<<Anterior";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnAnt_Click);
+            // 
             // dgvPacMod
             // 
+            this.dgvPacMod.AllowUserToAddRows = false;
+            this.dgvPacMod.AllowUserToDeleteRows = false;
+            this.dgvPacMod.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvPacMod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPacMod.Location = new System.Drawing.Point(19, 29);
+            this.dgvPacMod.MultiSelect = false;
             this.dgvPacMod.Name = "dgvPacMod";
+            this.dgvPacMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPacMod.Size = new System.Drawing.Size(397, 334);
             this.dgvPacMod.TabIndex = 20;
+            this.dgvPacMod.SelectionChanged += new System.EventHandler(this.dgvPacMod_SelectionChanged);
             // 
-            // cdOSMod
+            // cbOSMod
             // 
-            this.cdOSMod.FormattingEnabled = true;
-            this.cdOSMod.Location = new System.Drawing.Point(455, 322);
-            this.cdOSMod.Name = "cdOSMod";
-            this.cdOSMod.Size = new System.Drawing.Size(162, 23);
-            this.cdOSMod.TabIndex = 19;
+            this.cbOSMod.FormattingEnabled = true;
+            this.cbOSMod.Location = new System.Drawing.Point(455, 322);
+            this.cbOSMod.Name = "cbOSMod";
+            this.cbOSMod.Size = new System.Drawing.Size(162, 23);
+            this.cbOSMod.TabIndex = 19;
             // 
             // label6
             // 
@@ -321,58 +379,7 @@
             this.btnModificar.TabIndex = 0;
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(322, 379);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Siguiente>>";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnSig_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(19, 379);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "<<Anterior";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnAnt_Click);
-            // 
-            // tbTelALta
-            // 
-            this.tbTelALta.Location = new System.Drawing.Point(237, 244);
-            this.tbTelALta.Name = "tbTelALta";
-            this.tbTelALta.Size = new System.Drawing.Size(162, 23);
-            this.tbTelALta.TabIndex = 4;
-            this.tbTelALta.Tag = "Telefono";
-            // 
-            // tbDniAlta
-            // 
-            this.tbDniAlta.Location = new System.Drawing.Point(237, 180);
-            this.tbDniAlta.Name = "tbDniAlta";
-            this.tbDniAlta.Size = new System.Drawing.Size(162, 23);
-            this.tbDniAlta.TabIndex = 3;
-            this.tbDniAlta.Tag = "Documento";
-            // 
-            // tbApellidoAlta
-            // 
-            this.tbApellidoAlta.Location = new System.Drawing.Point(237, 116);
-            this.tbApellidoAlta.Name = "tbApellidoAlta";
-            this.tbApellidoAlta.Size = new System.Drawing.Size(162, 23);
-            this.tbApellidoAlta.TabIndex = 2;
-            this.tbApellidoAlta.Tag = "Apellido";
-            // 
-            // tbNombreAlta
-            // 
-            this.tbNombreAlta.Location = new System.Drawing.Point(237, 52);
-            this.tbNombreAlta.Name = "tbNombreAlta";
-            this.tbNombreAlta.Size = new System.Drawing.Size(162, 23);
-            this.tbNombreAlta.TabIndex = 1;
-            this.tbNombreAlta.Tag = "Nombre";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // tbTelMod
             // 
@@ -450,7 +457,7 @@
         private System.Windows.Forms.ComboBox cbOSAlta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvPacMod;
-        private System.Windows.Forms.ComboBox cdOSMod;
+        private System.Windows.Forms.ComboBox cbOSMod;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
