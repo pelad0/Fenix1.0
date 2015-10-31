@@ -72,7 +72,7 @@ namespace Datos
                 tur.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
                 tur.IdPaciente = Convert.ToInt32(aux.Rows[0]["idpaciente"]);
                 tur.Fecha = Convert.ToDateTime(aux.Rows[0]["fecha"]);
-                tur.Costo = Convert.ToDouble(aux.Rows[0]["matricula"]);
+                tur.Costo = Convert.ToDouble(aux.Rows[0]["costo"]);
                 tur.Estado=Convert.ToBoolean(aux.Rows[0]["estado"]);
             }
             catch(Exception ex)
