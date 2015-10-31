@@ -7,7 +7,7 @@ using interfaces;
 
 namespace entidades
 {
-    public class clsPacienteDatos
+    public class clsPacienteDatos : IEntidad
     {
         int id;
         string nombre;
