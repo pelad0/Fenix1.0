@@ -67,7 +67,7 @@ namespace Datos
         public IEntidad buscaPorId(int id)
         {
             DataTable aux = new DataTable();
-            clsPaciente pac = new clsPaciente();
+            clsPacienteDatos pac = new clsPacienteDatos();
             try
             {
 
@@ -92,7 +92,9 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                aux = manager.consultar("select * from paciente where activo=1");
+                //aux = manager.consultar("select * from paciente where activo=1");
+
+                aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM paciente) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN"+ pagina*10 +"AND" +(pagina*10)+10);
             }
             catch (Exception ex)
             {
@@ -102,6 +104,16 @@ namespace Datos
             return aux;
         }
 
+
+
+       /*
+         SELECT descripcion
+FROM (
+    SELECT descripcion, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum
+    FROM especialidad
+) AS tabla
+WHERE tabla.RowNum BETWEEN 3 AND 4
+        */
 
 
     }

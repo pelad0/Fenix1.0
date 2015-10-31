@@ -64,7 +64,7 @@ namespace Datos
         public IEntidad buscaPorId(int id)
         {
             DataTable aux = new DataTable();
-            clsMedico med = new clsMedico();
+            clsMedicoDatos med = new clsMedicoDatos();
             try
             {
                aux=manager.consultar("select * from medico where idmedico="+id+"and activo=1");
