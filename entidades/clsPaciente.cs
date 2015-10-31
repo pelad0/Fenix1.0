@@ -10,11 +10,10 @@ namespace entidades
     public class clsPaciente : IEntidad
     {
         int id;
-       
         string nombre;
         string apellido;
         long dni;
-        int obraSocial;
+        string obraSocial;
         long telefono;
 
         public clsPaciente()
@@ -22,7 +21,7 @@ namespace entidades
 
         }
 
-        public clsPaciente(string nombre, string apellido, long dni, int obra, long telefono)
+        public clsPaciente(string nombre, string apellido, long dni, string obra, long telefono)
         {
             this.nombre = nombre;
             this.apellido = apellido;
@@ -55,7 +54,7 @@ namespace entidades
             set { dni = value; }
         }
 
-        public int ObraSocial
+        public string ObraSocial
         {
             get { return obraSocial; }
             set { obraSocial = value; }
