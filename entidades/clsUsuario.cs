@@ -12,23 +12,27 @@ namespace entidades
         int id;        
         string ususario;
         string clave;
+        string seguridad;
 
         public clsUsuario()
         {
 
         }
 
-        public clsUsuario(string usuario, string clave)
+        public clsUsuario(string usuario, string clave, string seguridad)
         {
             this.ususario = ususario;
             this.clave = clave;
+            this.seguridad = seguridad;
         }
 
-        public clsUsuario(int id, string usuario, string clave)
+        public clsUsuario(int id, string usuario, string clave, string seguridad)
         {
             this.id = id;
             this.ususario = usuario;
             this.clave = clave;
+            this.seguridad = seguridad;
+
         }
 
         public string Clave
@@ -47,6 +51,12 @@ namespace entidades
         {
           get { return id; }
           set { id = value; }
+        }
+
+        public string Seguridad
+        {
+          get { return seguridad; }
+          set { seguridad = value; }
         }
     }
 }
