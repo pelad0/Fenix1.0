@@ -22,48 +22,47 @@ namespace Fenix1._0
         }
 
         int llamada = 1;
+        RepositorioObraSocial ros = new RepositorioObraSocial();
+        List<clsObraSocial> OS;
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(tbOS.Text))
             {
-                clsObraSocial OS = new clsObraSocial(tbOS.Text);
-                //altaObraSocial(OS);
+                clsObraSocial OSoc = new clsObraSocial(tbOS.Text);
+                try
+                {
+                    ros.Alta(OSoc);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void frmABMOS_Load(object sender, EventArgs e)
         {
-            //dgvOSAlta.dataSource = listarObraSocial(llamada);
-            //dgvOSBaja.dataSource = dgvOSAlta;
-            //dgvOSModif.dataSource = dgvOSAlta;
+            iniciar();
         }
 
-        private void btnSgte_Click(object sender, EventArgs e)
+        private void iniciar()
         {
-            llamada++;
-            //dgvOS.dataSource = listarObraSocial(llamada);
-            //dgvOSBaja.dataSource = dgvOSAlta;
-            //dgvOSModif.dataSource = dgvOSAlta;
-
-        }
-
-        private void btnAnterior_Click(object sender, EventArgs e)
-        {
-            if(llamada>1)
-            {
-                llamada--;
-                //dgvOS.dataSource = listarObraSocial(llamada);
-                //dgvOSBaja.dataSource = dgvOSAlta;
-                //dgvOSModif.dataSource = dgvOSAlta;
-            }
+            //OS = ros.Todo();
+            dgvOSAlta.dataSource = OS;
+            dgvOSAlta.Columns[0].Visible = false;
+            dgvOSBaja.dataSource = OS;
+            dgvOSBaja.Columns[0].Visible = false;
+            dgvOSModif.dataSource = OS;
+            dgvOSModif.Columns[0].Visible = false;
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
             if (dgvOSBaja.SelectedRows.Count > 0)
             {
-                //llamar a quien elimina medico
+                
             }
         }
 
@@ -71,9 +70,13 @@ namespace Fenix1._0
         {
             if (dgvOSMod.SelectedRows.Count > 0 && !string.IsNullOrWhiteSpace(tbModifOS.Text))
             {
-                //llamar a quien edita medico
+                
             }
         }
 
+        private void dgvOSMod_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbModifOS.Text = OS[dgvOSMod.CurrentRow.Index].Nombre;
+        }
     }
 }

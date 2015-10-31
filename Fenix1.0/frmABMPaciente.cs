@@ -20,7 +20,7 @@ namespace Fenix1._0
             InitializeComponent();
         }
 
-        int lista = 1;
+        int llamada = 1;
         RepositorioPaciente rp = new RepositorioPaciente();
         RepositorioObraSocial ros = new RepositorioObraSocial();
         List<string> OS = new List<string>();
@@ -94,33 +94,33 @@ namespace Fenix1._0
 
         private void btnAnt_Click(object sender, EventArgs e)
         {
-            if (lista > 1)
+            if (llamada > 1)
             {
-                lista--;
+                llamada--;
                 dgvEliminar.DataSource = null;
-                dgvEliminar.DataSource = rp.Todo(lista);
+                dgvEliminar.DataSource = rp.Todo(llamada);
                 dgvEliminar.Columns[0].Visible = false;
                 dgvPacMod.Columns[0].Visible = false;
-                dgvPacMod.DataSource = rp.Todo(lista);
+                dgvPacMod.DataSource = rp.Todo(llamada);
                 dgvPacMod.Columns[0].Visible = false;
             }
         }
 
         private void btnSig_Click(object sender, EventArgs e)
         {
-            lista++;
+            llamada++;
             dgvEliminar.DataSource = null;
-            dgvEliminar.DataSource = rp.Todo(lista);
+            dgvEliminar.DataSource = rp.Todo(llamada);
             dgvEliminar.Columns[0].Visible = false;
             dgvPacMod.Columns[0].Visible = false;
-            dgvPacMod.DataSource = rp.Todo(lista);
+            dgvPacMod.DataSource = rp.Todo(llamada);
             dgvPacMod.Columns[0].Visible = false;
         }
 
         private void iniciar()
         {
             dgvEliminar.DataSource = null;
-            pacientes = rp.Todo(lista);
+            pacientes = rp.Todo(llamada);
             dgvEliminar.DataSource = pacientes;
             dgvEliminar.Columns[0].Visible = false;
             dgvPacMod.Columns[0].Visible = false;
