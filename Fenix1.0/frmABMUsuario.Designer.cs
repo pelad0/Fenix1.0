@@ -49,6 +49,10 @@
             this.tbContMod = new System.Windows.Forms.TextBox();
             this.tbUsuMod = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.cbSeguridad = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbSegMod = new System.Windows.Forms.ComboBox();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
@@ -74,6 +78,8 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.Controls.Add(this.label7);
+            this.tpAlta.Controls.Add(this.cbSeguridad);
             this.tpAlta.Controls.Add(this.label3);
             this.tpAlta.Controls.Add(this.label2);
             this.tpAlta.Controls.Add(this.label1);
@@ -92,7 +98,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(245, 234);
+            this.label3.Location = new System.Drawing.Point(245, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 15);
             this.label3.TabIndex = 7;
@@ -101,7 +107,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(280, 156);
+            this.label2.Location = new System.Drawing.Point(280, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 15);
             this.label2.TabIndex = 6;
@@ -110,7 +116,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(290, 78);
+            this.label1.Location = new System.Drawing.Point(290, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 15);
             this.label1.TabIndex = 5;
@@ -118,7 +124,7 @@
             // 
             // tbContAlta2
             // 
-            this.tbContAlta2.Location = new System.Drawing.Point(268, 269);
+            this.tbContAlta2.Location = new System.Drawing.Point(268, 249);
             this.tbContAlta2.Name = "tbContAlta2";
             this.tbContAlta2.Size = new System.Drawing.Size(100, 23);
             this.tbContAlta2.TabIndex = 4;
@@ -126,7 +132,7 @@
             // 
             // tbContAlta1
             // 
-            this.tbContAlta1.Location = new System.Drawing.Point(268, 191);
+            this.tbContAlta1.Location = new System.Drawing.Point(268, 167);
             this.tbContAlta1.Name = "tbContAlta1";
             this.tbContAlta1.Size = new System.Drawing.Size(100, 23);
             this.tbContAlta1.TabIndex = 3;
@@ -134,7 +140,7 @@
             // 
             // tbUsuAlta
             // 
-            this.tbUsuAlta.Location = new System.Drawing.Point(268, 113);
+            this.tbUsuAlta.Location = new System.Drawing.Point(268, 85);
             this.tbUsuAlta.Name = "tbUsuAlta";
             this.tbUsuAlta.Size = new System.Drawing.Size(100, 23);
             this.tbUsuAlta.TabIndex = 2;
@@ -142,7 +148,7 @@
             // btnAlta
             // 
             this.btnAlta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAlta.Location = new System.Drawing.Point(281, 409);
+            this.btnAlta.Location = new System.Drawing.Point(281, 376);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 23);
             this.btnAlta.TabIndex = 0;
@@ -190,6 +196,8 @@
             // 
             // tpMod
             // 
+            this.tpMod.Controls.Add(this.label8);
+            this.tpMod.Controls.Add(this.cbSegMod);
             this.tpMod.Controls.Add(this.dgvModif);
             this.tpMod.Controls.Add(this.label4);
             this.tpMod.Controls.Add(this.label5);
@@ -223,7 +231,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(401, 229);
+            this.label4.Location = new System.Drawing.Point(398, 229);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(147, 15);
             this.label4.TabIndex = 13;
@@ -232,7 +240,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(436, 151);
+            this.label5.Location = new System.Drawing.Point(433, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 15);
             this.label5.TabIndex = 12;
@@ -241,7 +249,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(446, 73);
+            this.label6.Location = new System.Drawing.Point(443, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 15);
             this.label6.TabIndex = 11;
@@ -249,21 +257,21 @@
             // 
             // tbContMod2
             // 
-            this.tbContMod2.Location = new System.Drawing.Point(424, 264);
+            this.tbContMod2.Location = new System.Drawing.Point(421, 264);
             this.tbContMod2.Name = "tbContMod2";
             this.tbContMod2.Size = new System.Drawing.Size(100, 23);
             this.tbContMod2.TabIndex = 10;
             // 
             // tbContMod
             // 
-            this.tbContMod.Location = new System.Drawing.Point(424, 186);
+            this.tbContMod.Location = new System.Drawing.Point(421, 186);
             this.tbContMod.Name = "tbContMod";
             this.tbContMod.Size = new System.Drawing.Size(100, 23);
             this.tbContMod.TabIndex = 9;
             // 
             // tbUsuMod
             // 
-            this.tbUsuMod.Location = new System.Drawing.Point(424, 108);
+            this.tbUsuMod.Location = new System.Drawing.Point(421, 108);
             this.tbUsuMod.Name = "tbUsuMod";
             this.tbUsuMod.Size = new System.Drawing.Size(100, 23);
             this.tbUsuMod.TabIndex = 8;
@@ -279,6 +287,40 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // cbSeguridad
+            // 
+            this.cbSeguridad.FormattingEnabled = true;
+            this.cbSeguridad.Location = new System.Drawing.Point(258, 331);
+            this.cbSeguridad.Name = "cbSeguridad";
+            this.cbSeguridad.Size = new System.Drawing.Size(121, 23);
+            this.cbSeguridad.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(283, 294);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 15);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Seguridad";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(436, 307);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 15);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Seguridad";
+            // 
+            // cbSegMod
+            // 
+            this.cbSegMod.FormattingEnabled = true;
+            this.cbSegMod.Location = new System.Drawing.Point(411, 342);
+            this.cbSegMod.Name = "cbSegMod";
+            this.cbSegMod.Size = new System.Drawing.Size(121, 23);
+            this.cbSegMod.TabIndex = 15;
+            // 
             // frmABMUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,6 +332,7 @@
             this.Name = "frmABMUsuario";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmABMUsuario_Load);
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
@@ -325,5 +368,9 @@
         private System.Windows.Forms.TextBox tbContMod2;
         private System.Windows.Forms.TextBox tbContMod;
         private System.Windows.Forms.TextBox tbUsuMod;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbSeguridad;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbSegMod;
     }
 }

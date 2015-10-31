@@ -20,7 +20,7 @@ namespace Fenix1._0
             InitializeComponent();
         }
 
-        int llamada = 1;
+        int llamada = 0;
         RepositorioPaciente rp = new RepositorioPaciente();
         RepositorioObraSocial ros = new RepositorioObraSocial();
         List<string> OS = new List<string>();
@@ -128,7 +128,7 @@ namespace Fenix1._0
 
         private void iniciar()
         {
-            llamada = 1;
+            llamada = 0;
 
             pacientes = rp.Todo(llamada);
 

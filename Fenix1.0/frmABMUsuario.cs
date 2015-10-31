@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using controles;
-
+using logica;
 
 namespace Fenix1._0
 {
     public partial class frmABMUsuario : Form
     {
+
+        
         public frmABMUsuario()
         {
             InitializeComponent();
@@ -49,12 +51,17 @@ namespace Fenix1._0
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            frmConfirmaUsuario fcu = new frmConfirmaUsuario(RepositorioUsuario.Todo()[dgvEliminar.CurrentRow.Index].Clave);
-            DialogResult res = fcu.ShowDialog();
-            if (res == DialogResult.OK)
-            {
-                RepositorUsuario.Baja(RepositorioUsuario.Todo()[dgvEliminar.CurrentRow.Index]);
-            }
+            //frmConfirmaUsuario fcu = new frmConfirmaUsuario(RepositorioUsuario.Todo()[dgvEliminar.CurrentRow.Index].Clave);
+            //DialogResult res = fcu.ShowDialog();
+            //if (res == DialogResult.OK)
+            //{
+            //    RepositorUsuario.Baja(RepositorioUsuario.Todo()[dgvEliminar.CurrentRow.Index]);
+            //}
+        }
+
+        private void frmABMUsuario_Load(object sender, EventArgs e)
+        {
+
         }
 
 

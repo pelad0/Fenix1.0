@@ -7,10 +7,10 @@ using interfaces;
 
 namespace entidades
 {
-    public class clsUsuario : IEntidad;
+    public class clsUsuario : IEntidad
     {
         int id;        
-        string ususario;
+        string usuario;
         string clave;
         string seguridad;
 
@@ -21,7 +21,7 @@ namespace entidades
 
         public clsUsuario(string usuario, string clave, string seguridad)
         {
-            this.ususario = ususario;
+            this.usuario = usuario;
             this.clave = clave;
             this.seguridad = seguridad;
         }
@@ -29,7 +29,7 @@ namespace entidades
         public clsUsuario(int id, string usuario, string clave, string seguridad)
         {
             this.id = id;
-            this.ususario = usuario;
+            this.usuario = usuario;
             this.clave = clave;
             this.seguridad = seguridad;
 
@@ -43,8 +43,8 @@ namespace entidades
 
         public string Ususario
         {
-          get { return ususario; }
-          set { ususario = value; }
+          get { return usuario; }
+          set { usuario = value; }
         }
 
         public int Id

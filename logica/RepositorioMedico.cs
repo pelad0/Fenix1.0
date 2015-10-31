@@ -73,7 +73,7 @@ namespace logica
 
         public DataTable buscarPorId(int id)
         {
-            DataTable med;
+            DataTable med = new DataTable();
             clsMedico m = new clsMedico();
             try
             {                
