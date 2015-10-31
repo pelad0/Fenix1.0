@@ -25,29 +25,87 @@ namespace logica
             {
                 throw ex;
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
             
         }
 
         public void Baja(IEntidad medico)
         {
-            ManejaMedico manejaMedico = new ManejaMedico();
-            manejaMedico.Baja(medico);
+            try
+            {
+
+                ManejaMedico manejaMedico = new ManejaMedico();
+                manejaMedico.Baja(medico);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
         }
 
 
         public void Modificacion(IEntidad medico)
         {
-            ManejaMedico manejaMedico = new ManejaMedico();
-            manejaMedico.Modificacion(medico);
+            try
+            {
+                ManejaMedico manejaMedico = new ManejaMedico();
+                manejaMedico.Modificacion(medico);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
+            
         }
 
         public clsMedico buscarPorId(int id)
         {
             clsMedico med = new clsMedico();
-            ManejaMedico manejaMedico = new ManejaMedico();
-            med = (clsMedico)manejaMedico.buscaPorId(id);
+            try
+            {                
+                ManejaMedico manejaMedico = new ManejaMedico();
+                med = (clsMedico)manejaMedico.buscaPorId(id);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
             return med;
+        }
+
+        public List<clsMedico>Todo(int pag)
+        {
+            DataTable tabla;
+            List<clsMedico> lista = new List<clsMedico>();
+            ManejaMedico manejaMedico = new ManejaMedico();
+            tabla=manejaMedico.Todo(pag);
+            foreach(DataRow i in tabla.Rows)
+            {
+
+                clsMedico med = new clsMedico();
+
+            }
+
+            return lista;
+
         }
 
     }

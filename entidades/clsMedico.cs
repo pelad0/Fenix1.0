@@ -14,7 +14,7 @@ namespace entidades
         long dni;
         string nombre;
         string apellido;
-        int especialidad;       //id de especialidad
+        int especialidad;
 
         List<string> obraSocial;
 
@@ -74,6 +74,7 @@ namespace entidades
             get { return apellido; }
             set { apellido = value; }
         }
+
 
         public int Especialidad
         {
