@@ -66,6 +66,7 @@ namespace Fenix1._0
             try
             {
                 rp.Alta(p);
+                iniciar();
             }
             catch (Exception ex)
             {
@@ -148,6 +149,19 @@ namespace Fenix1._0
             }
             cbOSAlta.DataSource = OS;
             cbOSMod.DataSource = OS;
+
+            tbBuscar.Clear();
+            tbNombreAlta.Clear();
+            tbApellidoAlta.Clear();
+            tbDniAlta.Clear();
+            tbTelALta.Clear();
+            cbOSAlta.SelectedIndex = -1;
+
+            tbNombreMod.Clear();
+            tbApellidoMod.Clear();
+            tbDniMod.Clear();
+            tbTelMod.Clear();
+            cbOSMod.SelectedIndex = -1;
         }
 
         private void dgvPacMod_SelectionChanged(object sender, EventArgs e)
@@ -244,7 +258,6 @@ namespace Fenix1._0
                 }
             }
         }
-
 
     }
 }

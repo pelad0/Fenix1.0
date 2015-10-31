@@ -30,6 +30,9 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbBuscar = new controles.TextBoxNumeros();
             this.btnDarTurno = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -65,9 +68,6 @@
             this.tbDniMod = new controles.TextBoxNumeros();
             this.tbApellidoMod = new controles.TextBoxLetras();
             this.tbNombreMod = new controles.TextBoxLetras();
-            this.tbBuscar = new controles.TextBoxNumeros();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlta)).BeginInit();
@@ -119,6 +119,33 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(294, 24);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 28;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(38, 28);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(112, 15);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Buscar por DNI:";
+            // 
+            // tbBuscar
+            // 
+            this.tbBuscar.Location = new System.Drawing.Point(172, 25);
+            this.tbBuscar.MaxLength = 8;
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(100, 23);
+            this.tbBuscar.TabIndex = 26;
             // 
             // btnDarTurno
             // 
@@ -467,33 +494,6 @@
             this.tbNombreMod.Name = "tbNombreMod";
             this.tbNombreMod.Size = new System.Drawing.Size(162, 23);
             this.tbNombreMod.TabIndex = 10;
-            // 
-            // tbBuscar
-            // 
-            this.tbBuscar.Location = new System.Drawing.Point(156, 25);
-            this.tbBuscar.MaxLength = 8;
-            this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(100, 23);
-            this.tbBuscar.TabIndex = 26;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(38, 28);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(112, 15);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Buscar por DNI:";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(295, 24);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 28;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // frmABMPaciente
             // 
