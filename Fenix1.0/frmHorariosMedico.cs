@@ -42,14 +42,21 @@ namespace Fenix1._0
             {
                 string tag = (sender as CheckBox).Tag.ToString();
 
-                if ((sender as CheckBox).Checked == true)        //Si esta checkeado los quiero aparecer, sino desaparecerlos.
+                if (tag == "10" && (sender as CheckBox).Checked == true)        //PREGUNTO SI ES EL CBTODOS.
                 {
-                    Aparecer(tag);
-                                        
+                    MarcarTodosCB();
                 }
-                else                                            //Los desaparesco.
+                else
                 {
-                    Desaparecer(tag);
+                    if ((sender as CheckBox).Checked == true)        //Si esta checkeado los quiero aparecer, sino desaparecerlos.
+                    {
+                        Aparecer(tag);
+
+                    }
+                    else                                            //Los desaparesco.
+                    {
+                        Desaparecer(tag);
+                    }
                 }
 
             }
@@ -87,6 +94,29 @@ namespace Fenix1._0
             }
         }
 
+        public void MarcarTodosCB()
+        {
+            foreach(Control control in this.Controls)
+            {
+                if(control is CheckBox && control.Tag.ToString() != "10")
+                {
+                    (control as CheckBox).Checked = true;
+                }
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         private void btnTerminar_Click(object sender, EventArgs e)
         {
             if(rbMT.Checked)    //Si solo va a trabajar medio tiempo creo una lista de horarios.
@@ -102,10 +132,10 @@ namespace Fenix1._0
 
         }
 
-        private void cbTodos_CheckedChanged(object sender, EventArgs e)
-        {
 
-        }
+        
+
+       
 
 
     }
