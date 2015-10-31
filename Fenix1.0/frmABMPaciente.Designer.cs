@@ -36,10 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbTelALta = new controles.TextBoxNumeros();
-            this.tbDniAlta = new controles.TextBoxNumeros();
-            this.tbApellidoAlta = new controles.TextBoxLetras();
-            this.tbNombreAlta = new controles.TextBoxLetras();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
             this.btnSig = new System.Windows.Forms.Button();
@@ -54,13 +50,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.tbTelALta = new controles.TextBoxNumeros();
+            this.tbDniAlta = new controles.TextBoxNumeros();
+            this.tbApellidoAlta = new controles.TextBoxLetras();
+            this.tbNombreAlta = new controles.TextBoxLetras();
             this.tbTelMod = new controles.TextBoxNumeros();
             this.tbDniMod = new controles.TextBoxNumeros();
             this.tbApellidoMod = new controles.TextBoxLetras();
             this.tbNombreMod = new controles.TextBoxLetras();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
@@ -159,38 +159,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Nombre";
             // 
-            // tbTelALta
-            // 
-            this.tbTelALta.Location = new System.Drawing.Point(237, 244);
-            this.tbTelALta.Name = "tbTelALta";
-            this.tbTelALta.Size = new System.Drawing.Size(162, 23);
-            this.tbTelALta.TabIndex = 4;
-            this.tbTelALta.Tag = "Telefono";
-            // 
-            // tbDniAlta
-            // 
-            this.tbDniAlta.Location = new System.Drawing.Point(237, 180);
-            this.tbDniAlta.Name = "tbDniAlta";
-            this.tbDniAlta.Size = new System.Drawing.Size(162, 23);
-            this.tbDniAlta.TabIndex = 3;
-            this.tbDniAlta.Tag = "Documento";
-            // 
-            // tbApellidoAlta
-            // 
-            this.tbApellidoAlta.Location = new System.Drawing.Point(237, 116);
-            this.tbApellidoAlta.Name = "tbApellidoAlta";
-            this.tbApellidoAlta.Size = new System.Drawing.Size(162, 23);
-            this.tbApellidoAlta.TabIndex = 2;
-            this.tbApellidoAlta.Tag = "Apellido";
-            // 
-            // tbNombreAlta
-            // 
-            this.tbNombreAlta.Location = new System.Drawing.Point(237, 52);
-            this.tbNombreAlta.Name = "tbNombreAlta";
-            this.tbNombreAlta.Size = new System.Drawing.Size(162, 23);
-            this.tbNombreAlta.TabIndex = 1;
-            this.tbNombreAlta.Tag = "Nombre";
-            // 
             // btnAlta
             // 
             this.btnAlta.Location = new System.Drawing.Point(281, 409);
@@ -259,6 +227,7 @@
             this.btnBaja.TabIndex = 0;
             this.btnBaja.Text = "Eliminar";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // tpMod
             // 
@@ -271,11 +240,11 @@
             this.tpMod.Controls.Add(this.label8);
             this.tpMod.Controls.Add(this.label9);
             this.tpMod.Controls.Add(this.label10);
+            this.tpMod.Controls.Add(this.btnModificar);
             this.tpMod.Controls.Add(this.tbTelMod);
             this.tpMod.Controls.Add(this.tbDniMod);
             this.tpMod.Controls.Add(this.tbApellidoMod);
             this.tpMod.Controls.Add(this.tbNombreMod);
-            this.tpMod.Controls.Add(this.btnModificar);
             this.tpMod.Location = new System.Drawing.Point(4, 34);
             this.tpMod.Name = "tpMod";
             this.tpMod.Size = new System.Drawing.Size(636, 447);
@@ -344,6 +313,65 @@
             this.label10.TabIndex = 14;
             this.label10.Text = "Nombre";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(180, 403);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 0;
+            this.btnModificar.Text = "Editar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(322, 379);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Siguiente>>";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(19, 379);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 23);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "<<Anterior";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // tbTelALta
+            // 
+            this.tbTelALta.Location = new System.Drawing.Point(237, 244);
+            this.tbTelALta.Name = "tbTelALta";
+            this.tbTelALta.Size = new System.Drawing.Size(162, 23);
+            this.tbTelALta.TabIndex = 4;
+            this.tbTelALta.Tag = "Telefono";
+            // 
+            // tbDniAlta
+            // 
+            this.tbDniAlta.Location = new System.Drawing.Point(237, 180);
+            this.tbDniAlta.Name = "tbDniAlta";
+            this.tbDniAlta.Size = new System.Drawing.Size(162, 23);
+            this.tbDniAlta.TabIndex = 3;
+            this.tbDniAlta.Tag = "Documento";
+            // 
+            // tbApellidoAlta
+            // 
+            this.tbApellidoAlta.Location = new System.Drawing.Point(237, 116);
+            this.tbApellidoAlta.Name = "tbApellidoAlta";
+            this.tbApellidoAlta.Size = new System.Drawing.Size(162, 23);
+            this.tbApellidoAlta.TabIndex = 2;
+            this.tbApellidoAlta.Tag = "Apellido";
+            // 
+            // tbNombreAlta
+            // 
+            this.tbNombreAlta.Location = new System.Drawing.Point(237, 52);
+            this.tbNombreAlta.Name = "tbNombreAlta";
+            this.tbNombreAlta.Size = new System.Drawing.Size(162, 23);
+            this.tbNombreAlta.TabIndex = 1;
+            this.tbNombreAlta.Tag = "Nombre";
+            // 
             // tbTelMod
             // 
             this.tbTelMod.Location = new System.Drawing.Point(455, 258);
@@ -372,33 +400,6 @@
             this.tbNombreMod.Size = new System.Drawing.Size(162, 23);
             this.tbNombreMod.TabIndex = 10;
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(180, 403);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 0;
-            this.btnModificar.Text = "Editar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(322, 379);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Siguiente>>";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(19, 379);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "<<Anterior";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // frmABMPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,6 +411,7 @@
             this.Name = "frmABMPaciente";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Pacientes";
             this.Load += new System.EventHandler(this.frmABMPaciente_Load);
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);

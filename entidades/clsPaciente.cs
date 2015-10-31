@@ -10,7 +10,6 @@ namespace entidades
     public class clsPaciente : IEntidad
     {
         int id;
-       
         string nombre;
         string apellido;
         long dni;

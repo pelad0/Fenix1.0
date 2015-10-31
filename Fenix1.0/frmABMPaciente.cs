@@ -85,10 +85,19 @@ namespace Fenix1._0
 
         private void btnAnt_Click(object sender, EventArgs e)
         {
-
+            if (lista > 1)
+            {
+                lista--;
+                
+            }
         }
 
         private void btnSig_Click(object sender, EventArgs e)
+        {
+            lista++;
+        }
+
+        private void btnBaja_Click(object sender, EventArgs e)
         {
 
         }
