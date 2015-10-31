@@ -73,7 +73,7 @@ activo bit default 1
             try
             {
 
-                aux = manager.consultar("select * from obrasocial where id=" + id + "and activo=1");
+                aux = manager.consultar("select * from obrasocial where id=" + id + " and activo=1");
                
             }
             catch (Exception ex)

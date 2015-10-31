@@ -68,7 +68,7 @@ namespace Datos
                 clsSobreturno tur = new clsSobreturno();
                 try
                 {
-                    aux = manager.consultar("select * from sobreturno where id=" + id + "and activo=1");
+                    aux = manager.consultar("select * from sobreturno where id=" + id + " and activo=1");
                     tur.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                     tur.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
                     tur.IdPaciente = Convert.ToInt32(aux.Rows[0]["idpaciente"]);
@@ -89,7 +89,7 @@ namespace Datos
                 try
                 {
                   //  aux = manager.consultar("select * from turno where activo=1");
-                    aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM sobreturno) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN" + pagina * 10 + "AND" + (pagina * 10) + 10);
+                    aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM sobreturno) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN" + pagina * 10 + " AND " + (pagina * 10) + 10);
                 }
                 catch (Exception ex)
                 {
