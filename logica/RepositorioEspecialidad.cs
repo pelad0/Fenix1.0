@@ -11,76 +11,16 @@ using System.Data.SqlClient;
 
 namespace logica
 {
-    public class RepositorioMedico
+    public class RepositorioEspecialidad
     {
-        public void Alta(IEntidad medico)
-        {
 
-            ManejaMedico manejaMedico = new ManejaMedico();
+        ManejaEspecialidad manejaEspecialidad = new ManejaEspecialidad();
+        public void Alta(IEntidad especialidad)
+        {
+                        
             try
             {
-                manejaMedico.Alta(medico);
-            }
-            catch(SqlException ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            
-        }
-
-        public void Baja(IEntidad medico)
-        {
-            try
-            {
-
-                ManejaMedico manejaMedico = new ManejaMedico();
-                manejaMedico.Baja(medico);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-           
-        }
-
-
-        public void Modificacion(IEntidad medico)
-        {
-            try
-            {
-                ManejaMedico manejaMedico = new ManejaMedico();
-                manejaMedico.Modificacion(medico);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-           
-            
-        }
-
-        public DataTable buscarPorId(int id)
-        {
-            DataTable med;
-            clsMedico m = new clsMedico();
-            try
-            {                
-                ManejaMedico manejaMedico = new ManejaMedico();
-                m = (clsMedico)manejaMedico.buscaPorId(id);
-
-
+                manejaEspecialidad.Alta(especialidad);
             }
             catch (SqlException ex)
             {
@@ -91,25 +31,81 @@ namespace logica
                 throw ex;
             }
 
-            return med;
         }
 
-        public List<clsMedico>Todo(int pag)
+        public void Baja(IEntidad especialidad)
+        {
+            try
+            {
+                                
+                manejaEspecialidad.Baja(especialidad);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
+        public void Modificacion(IEntidad especialidad)
+        {
+            try
+            {
+               manejaEspecialidad.Modificacion(especialidad);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
+
+        public clsEspecialidad buscarPorId(int id)
+        {
+            clsEspecialidad esp = new clsEspecialidad();
+            try
+            {
+                
+                esp = (clsEspecialidad)manejaEspecialidad.buscaPorId(id);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return esp;
+        }
+
+        public List<clsEspecialidad> Todo()
         {
             DataTable tabla;
-            List<clsMedico> lista = new List<clsMedico>();
-            ManejaMedico manejaMedico = new ManejaMedico();
-            tabla=manejaMedico.Todo(pag);
-            foreach(DataRow i in tabla.Rows)
+            List<clsEspecialidad> lista = new List<clsEspecialidad>();
+           
+            tabla = manejaEspecialidad.Todo();
+            foreach (DataRow aux in tabla.Rows)
             {
-
-                clsMedico med = new clsMedico();
-
+                clsEspecialidad esp = new clsEspecialidad();
+                esp.Id = Convert.ToInt32(aux["id"].ToString());
+                esp.Descripcion = aux["descripcion"].ToString();
+                lista.Add(esp);
             }
 
             return lista;
 
         }
-
     }
 }

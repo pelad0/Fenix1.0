@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using interfaces;
-
 using entidades;
 using System.Data;
 using System.Threading.Tasks;
@@ -14,6 +13,11 @@ namespace Datos
     {
 
         iBdMetodos manager;
+
+        public ManejaEspecialidad()
+        {
+            manager = new BdMetodos();
+        }
         public void Alta(IEntidad entidad)
         {
             clsEspecialidad ent = (clsEspecialidad)entidad;
@@ -71,7 +75,7 @@ namespace Datos
             return esp;
         }
 
-        public System.Data.DataTable Todo(int pagina)
+        public System.Data.DataTable Todo()
         {
             DataTable aux = new DataTable();
             try
@@ -87,5 +91,11 @@ namespace Datos
 
         }
 
+
+
+        public DataTable Todo(int pagina)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -32,10 +32,7 @@ namespace Fenix1._0
 
             if(verificarMedico())       //Se puede dar de alta.
             {
-                
                 List<string> obra = new List<string>();                
-
-
                 //cargo obras sociales
                 foreach (string index in clbObraSocial.CheckedItems)
                 {

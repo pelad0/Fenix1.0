@@ -20,9 +20,12 @@ namespace Fenix1._0
             InitializeComponent();
         }
 
+        int lista = 1;
+        RepositorioPaciente rp = new RepositorioPaciente();
+
         private void frmABMPaciente_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -56,30 +59,38 @@ namespace Fenix1._0
                     }
                 }
             }
-            int espe;
-            RepositorioPaciente rp = new RepositorioPaciente();
-            ////RepositorioEspecialidades re= new RepositorioEspecialidades();
-            ////List<clsEspecialidad> esp = re.todos();
-            //foreach (clsEspecialidad es in esp)
-            //{
-            //    if (es.Descripcion == cbOSAlta.SelectedItem.ToString())
-            //    {
-            //        espe=es.Id;
-            //    }
-            //}
-            
-            //clsPaciente p= new clsPaciente(tbNombreAlta.Text, tbApellidoAlta.Text, Convert.ToInt64(tbDniAlta.Text), espe, Convert.ToInt64(tbTelALta.Text));
+            int espe = 0;
+            RepositorioEspecialidad re = new RepositorioEspecialidad();
+            List<clsEspecialidad> esp = re.Todo();
+            foreach (clsEspecialidad es in esp)
+            {
+                if (es.Descripcion == cbOSAlta.SelectedItem.ToString())
+                {
+                    espe = es.Id;
+                }
+            }
+
+            clsPaciente p = new clsPaciente(tbNombreAlta.Text, tbApellidoAlta.Text, Convert.ToInt64(tbDniAlta.Text), espe, Convert.ToInt64(tbTelALta.Text));
 
             try
             {
-                //rp.Alta(p);
+                rp.Alta(p);
 
             }
             catch (Exception ex)
             {
-                
-                throw;
+                MessageBox.Show("Se ha pruducido el Sgte. error: "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnAnt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSig_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
