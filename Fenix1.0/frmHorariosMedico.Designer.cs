@@ -54,8 +54,12 @@
             this.cbDomingo = new System.Windows.Forms.CheckBox();
             this.dtpSalidaMT_Domingo = new System.Windows.Forms.DateTimePicker();
             this.pnlMedioTiempo = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbRepetirMT = new System.Windows.Forms.CheckBox();
             this.pnlTiempoCompleto = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.dtpEntradaTC_Lunes = new System.Windows.Forms.DateTimePicker();
+            this.cbRepetirTC = new System.Windows.Forms.CheckBox();
             this.dtpSalidaTC_Domingo = new System.Windows.Forms.DateTimePicker();
             this.dtpSalidaTC_Lunes = new System.Windows.Forms.DateTimePicker();
             this.dtpEntradaTC_Martes = new System.Windows.Forms.DateTimePicker();
@@ -113,7 +117,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(311, 57);
+            this.label9.Location = new System.Drawing.Point(305, 57);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 15);
             this.label9.TabIndex = 10;
@@ -121,118 +125,145 @@
             // 
             // dtpEntradaMT_Lunes
             // 
-            this.dtpEntradaMT_Lunes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEntradaMT_Lunes.Location = new System.Drawing.Point(3, 5);
+            this.dtpEntradaMT_Lunes.CustomFormat = "HH:mm";
+            this.dtpEntradaMT_Lunes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEntradaMT_Lunes.Location = new System.Drawing.Point(5, 5);
             this.dtpEntradaMT_Lunes.Name = "dtpEntradaMT_Lunes";
-            this.dtpEntradaMT_Lunes.Size = new System.Drawing.Size(82, 23);
+            this.dtpEntradaMT_Lunes.ShowUpDown = true;
+            this.dtpEntradaMT_Lunes.Size = new System.Drawing.Size(66, 23);
             this.dtpEntradaMT_Lunes.TabIndex = 1;
+            this.dtpEntradaMT_Lunes.Tag = "1";
             // 
             // dtpSalidaMT_Lunes
             // 
-            this.dtpSalidaMT_Lunes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSalidaMT_Lunes.Location = new System.Drawing.Point(131, 5);
+            this.dtpSalidaMT_Lunes.CustomFormat = "HH:mm";
+            this.dtpSalidaMT_Lunes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSalidaMT_Lunes.Location = new System.Drawing.Point(132, 5);
             this.dtpSalidaMT_Lunes.Name = "dtpSalidaMT_Lunes";
-            this.dtpSalidaMT_Lunes.Size = new System.Drawing.Size(82, 23);
+            this.dtpSalidaMT_Lunes.ShowUpDown = true;
+            this.dtpSalidaMT_Lunes.Size = new System.Drawing.Size(66, 23);
             this.dtpSalidaMT_Lunes.TabIndex = 12;
             this.dtpSalidaMT_Lunes.Tag = "1";
             // 
             // dtpEntradaMT_Martes
             // 
-            this.dtpEntradaMT_Martes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEntradaMT_Martes.Location = new System.Drawing.Point(3, 59);
+            this.dtpEntradaMT_Martes.CustomFormat = "HH:mm";
+            this.dtpEntradaMT_Martes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEntradaMT_Martes.Location = new System.Drawing.Point(5, 59);
             this.dtpEntradaMT_Martes.Name = "dtpEntradaMT_Martes";
-            this.dtpEntradaMT_Martes.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaMT_Martes.TabIndex = 13;
+            this.dtpEntradaMT_Martes.ShowUpDown = true;
+            this.dtpEntradaMT_Martes.Size = new System.Drawing.Size(66, 23);
+            this.dtpEntradaMT_Martes.TabIndex = 1;
             this.dtpEntradaMT_Martes.Tag = "2";
             // 
             // dtpSalidaMT_Martes
             // 
-            this.dtpSalidaMT_Martes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSalidaMT_Martes.Location = new System.Drawing.Point(131, 59);
+            this.dtpSalidaMT_Martes.CustomFormat = "HH:mm";
+            this.dtpSalidaMT_Martes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSalidaMT_Martes.Location = new System.Drawing.Point(133, 59);
             this.dtpSalidaMT_Martes.Name = "dtpSalidaMT_Martes";
-            this.dtpSalidaMT_Martes.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaMT_Martes.TabIndex = 14;
+            this.dtpSalidaMT_Martes.ShowUpDown = true;
+            this.dtpSalidaMT_Martes.Size = new System.Drawing.Size(66, 23);
+            this.dtpSalidaMT_Martes.TabIndex = 2;
             this.dtpSalidaMT_Martes.Tag = "2";
             // 
             // dtpEntradaMT_Miercoles
             // 
-            this.dtpEntradaMT_Miercoles.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEntradaMT_Miercoles.Location = new System.Drawing.Point(3, 111);
+            this.dtpEntradaMT_Miercoles.CustomFormat = "HH:mm";
+            this.dtpEntradaMT_Miercoles.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEntradaMT_Miercoles.Location = new System.Drawing.Point(5, 111);
             this.dtpEntradaMT_Miercoles.Name = "dtpEntradaMT_Miercoles";
-            this.dtpEntradaMT_Miercoles.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaMT_Miercoles.TabIndex = 15;
+            this.dtpEntradaMT_Miercoles.ShowUpDown = true;
+            this.dtpEntradaMT_Miercoles.Size = new System.Drawing.Size(66, 23);
+            this.dtpEntradaMT_Miercoles.TabIndex = 1;
             this.dtpEntradaMT_Miercoles.Tag = "3";
             // 
             // dtpSalidaMT_Miercoles
             // 
-            this.dtpSalidaMT_Miercoles.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSalidaMT_Miercoles.Location = new System.Drawing.Point(131, 111);
+            this.dtpSalidaMT_Miercoles.CustomFormat = "HH:mm";
+            this.dtpSalidaMT_Miercoles.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSalidaMT_Miercoles.Location = new System.Drawing.Point(133, 111);
             this.dtpSalidaMT_Miercoles.Name = "dtpSalidaMT_Miercoles";
-            this.dtpSalidaMT_Miercoles.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaMT_Miercoles.TabIndex = 16;
+            this.dtpSalidaMT_Miercoles.ShowUpDown = true;
+            this.dtpSalidaMT_Miercoles.Size = new System.Drawing.Size(66, 23);
+            this.dtpSalidaMT_Miercoles.TabIndex = 2;
             this.dtpSalidaMT_Miercoles.Tag = "3";
             // 
             // dtpEntradaMT_Jueves
             // 
-            this.dtpEntradaMT_Jueves.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEntradaMT_Jueves.Location = new System.Drawing.Point(3, 163);
+            this.dtpEntradaMT_Jueves.CustomFormat = "HH:mm";
+            this.dtpEntradaMT_Jueves.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEntradaMT_Jueves.Location = new System.Drawing.Point(5, 163);
             this.dtpEntradaMT_Jueves.Name = "dtpEntradaMT_Jueves";
-            this.dtpEntradaMT_Jueves.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaMT_Jueves.TabIndex = 17;
+            this.dtpEntradaMT_Jueves.ShowUpDown = true;
+            this.dtpEntradaMT_Jueves.Size = new System.Drawing.Size(66, 23);
+            this.dtpEntradaMT_Jueves.TabIndex = 1;
             this.dtpEntradaMT_Jueves.Tag = "4";
             // 
             // dtpSalidaMT_Jueves
             // 
-            this.dtpSalidaMT_Jueves.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSalidaMT_Jueves.Location = new System.Drawing.Point(131, 163);
+            this.dtpSalidaMT_Jueves.CustomFormat = "HH:mm";
+            this.dtpSalidaMT_Jueves.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSalidaMT_Jueves.Location = new System.Drawing.Point(133, 163);
             this.dtpSalidaMT_Jueves.Name = "dtpSalidaMT_Jueves";
-            this.dtpSalidaMT_Jueves.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaMT_Jueves.TabIndex = 18;
+            this.dtpSalidaMT_Jueves.ShowUpDown = true;
+            this.dtpSalidaMT_Jueves.Size = new System.Drawing.Size(66, 23);
+            this.dtpSalidaMT_Jueves.TabIndex = 2;
             this.dtpSalidaMT_Jueves.Tag = "4";
             // 
             // dtpEntradaMT_Viernes
             // 
-            this.dtpEntradaMT_Viernes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEntradaMT_Viernes.Location = new System.Drawing.Point(3, 215);
+            this.dtpEntradaMT_Viernes.CustomFormat = "HH:mm";
+            this.dtpEntradaMT_Viernes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEntradaMT_Viernes.Location = new System.Drawing.Point(5, 215);
             this.dtpEntradaMT_Viernes.Name = "dtpEntradaMT_Viernes";
-            this.dtpEntradaMT_Viernes.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaMT_Viernes.TabIndex = 19;
+            this.dtpEntradaMT_Viernes.ShowUpDown = true;
+            this.dtpEntradaMT_Viernes.Size = new System.Drawing.Size(66, 23);
+            this.dtpEntradaMT_Viernes.TabIndex = 1;
             this.dtpEntradaMT_Viernes.Tag = "5";
             // 
             // dtpSalidaMT_Viernes
             // 
-            this.dtpSalidaMT_Viernes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSalidaMT_Viernes.Location = new System.Drawing.Point(131, 215);
+            this.dtpSalidaMT_Viernes.CustomFormat = "HH:mm";
+            this.dtpSalidaMT_Viernes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSalidaMT_Viernes.Location = new System.Drawing.Point(133, 215);
             this.dtpSalidaMT_Viernes.Name = "dtpSalidaMT_Viernes";
-            this.dtpSalidaMT_Viernes.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaMT_Viernes.TabIndex = 20;
+            this.dtpSalidaMT_Viernes.ShowUpDown = true;
+            this.dtpSalidaMT_Viernes.Size = new System.Drawing.Size(66, 23);
+            this.dtpSalidaMT_Viernes.TabIndex = 2;
             this.dtpSalidaMT_Viernes.Tag = "5";
             // 
             // dtpEntradaMT_Sabado
             // 
-            this.dtpEntradaMT_Sabado.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEntradaMT_Sabado.Location = new System.Drawing.Point(3, 267);
+            this.dtpEntradaMT_Sabado.CustomFormat = "HH:mm";
+            this.dtpEntradaMT_Sabado.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEntradaMT_Sabado.Location = new System.Drawing.Point(5, 267);
             this.dtpEntradaMT_Sabado.Name = "dtpEntradaMT_Sabado";
-            this.dtpEntradaMT_Sabado.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaMT_Sabado.TabIndex = 21;
+            this.dtpEntradaMT_Sabado.ShowUpDown = true;
+            this.dtpEntradaMT_Sabado.Size = new System.Drawing.Size(66, 23);
+            this.dtpEntradaMT_Sabado.TabIndex = 1;
             this.dtpEntradaMT_Sabado.Tag = "6";
             // 
             // dtpSalidaMT_Sabado
             // 
-            this.dtpSalidaMT_Sabado.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSalidaMT_Sabado.Location = new System.Drawing.Point(131, 267);
+            this.dtpSalidaMT_Sabado.CustomFormat = "HH:mm";
+            this.dtpSalidaMT_Sabado.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSalidaMT_Sabado.Location = new System.Drawing.Point(133, 267);
             this.dtpSalidaMT_Sabado.Name = "dtpSalidaMT_Sabado";
-            this.dtpSalidaMT_Sabado.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaMT_Sabado.TabIndex = 22;
+            this.dtpSalidaMT_Sabado.ShowUpDown = true;
+            this.dtpSalidaMT_Sabado.Size = new System.Drawing.Size(66, 23);
+            this.dtpSalidaMT_Sabado.TabIndex = 2;
             this.dtpSalidaMT_Sabado.Tag = "6";
             // 
             // dtpEntradaMT_Domingo
             // 
-            this.dtpEntradaMT_Domingo.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpEntradaMT_Domingo.Location = new System.Drawing.Point(3, 319);
+            this.dtpEntradaMT_Domingo.CustomFormat = "HH:mm";
+            this.dtpEntradaMT_Domingo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEntradaMT_Domingo.Location = new System.Drawing.Point(5, 319);
             this.dtpEntradaMT_Domingo.Name = "dtpEntradaMT_Domingo";
-            this.dtpEntradaMT_Domingo.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaMT_Domingo.TabIndex = 23;
+            this.dtpEntradaMT_Domingo.ShowUpDown = true;
+            this.dtpEntradaMT_Domingo.Size = new System.Drawing.Size(66, 23);
+            this.dtpEntradaMT_Domingo.TabIndex = 1;
             this.dtpEntradaMT_Domingo.Tag = "7";
             // 
             // cbLunes
@@ -335,15 +366,19 @@
             // 
             // dtpSalidaMT_Domingo
             // 
-            this.dtpSalidaMT_Domingo.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSalidaMT_Domingo.Location = new System.Drawing.Point(131, 319);
+            this.dtpSalidaMT_Domingo.CustomFormat = "HH:mm";
+            this.dtpSalidaMT_Domingo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSalidaMT_Domingo.Location = new System.Drawing.Point(133, 319);
             this.dtpSalidaMT_Domingo.Name = "dtpSalidaMT_Domingo";
-            this.dtpSalidaMT_Domingo.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaMT_Domingo.TabIndex = 31;
+            this.dtpSalidaMT_Domingo.ShowUpDown = true;
+            this.dtpSalidaMT_Domingo.Size = new System.Drawing.Size(66, 23);
+            this.dtpSalidaMT_Domingo.TabIndex = 2;
             this.dtpSalidaMT_Domingo.Tag = "7";
             // 
             // pnlMedioTiempo
             // 
+            this.pnlMedioTiempo.Controls.Add(this.label3);
+            this.pnlMedioTiempo.Controls.Add(this.cbRepetirMT);
             this.pnlMedioTiempo.Controls.Add(this.dtpEntradaMT_Lunes);
             this.pnlMedioTiempo.Controls.Add(this.dtpSalidaMT_Domingo);
             this.pnlMedioTiempo.Controls.Add(this.dtpSalidaMT_Lunes);
@@ -358,14 +393,37 @@
             this.pnlMedioTiempo.Controls.Add(this.dtpSalidaMT_Viernes);
             this.pnlMedioTiempo.Controls.Add(this.dtpSalidaMT_Sabado);
             this.pnlMedioTiempo.Controls.Add(this.dtpEntradaMT_Sabado);
-            this.pnlMedioTiempo.Location = new System.Drawing.Point(164, 89);
+            this.pnlMedioTiempo.Location = new System.Drawing.Point(165, 89);
             this.pnlMedioTiempo.Name = "pnlMedioTiempo";
-            this.pnlMedioTiempo.Size = new System.Drawing.Size(215, 346);
+            this.pnlMedioTiempo.Size = new System.Drawing.Size(203, 346);
             this.pnlMedioTiempo.TabIndex = 32;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(76, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 15);
+            this.label3.TabIndex = 38;
+            this.label3.Tag = "1";
+            this.label3.Text = "Repetir";
+            // 
+            // cbRepetirMT
+            // 
+            this.cbRepetirMT.AutoSize = true;
+            this.cbRepetirMT.Location = new System.Drawing.Point(95, 12);
+            this.cbRepetirMT.Name = "cbRepetirMT";
+            this.cbRepetirMT.Size = new System.Drawing.Size(15, 14);
+            this.cbRepetirMT.TabIndex = 38;
+            this.cbRepetirMT.Tag = "1";
+            this.cbRepetirMT.UseVisualStyleBackColor = true;
+            this.cbRepetirMT.CheckedChanged += new System.EventHandler(this.cbRepetirMT_CheckedChanged);
             // 
             // pnlTiempoCompleto
             // 
+            this.pnlTiempoCompleto.Controls.Add(this.label4);
             this.pnlTiempoCompleto.Controls.Add(this.dtpEntradaTC_Lunes);
+            this.pnlTiempoCompleto.Controls.Add(this.cbRepetirTC);
             this.pnlTiempoCompleto.Controls.Add(this.dtpSalidaTC_Domingo);
             this.pnlTiempoCompleto.Controls.Add(this.dtpSalidaTC_Lunes);
             this.pnlTiempoCompleto.Controls.Add(this.dtpEntradaTC_Martes);
@@ -381,140 +439,189 @@
             this.pnlTiempoCompleto.Controls.Add(this.dtpEntradaTC_Sabado);
             this.pnlTiempoCompleto.Location = new System.Drawing.Point(420, 89);
             this.pnlTiempoCompleto.Name = "pnlTiempoCompleto";
-            this.pnlTiempoCompleto.Size = new System.Drawing.Size(215, 346);
+            this.pnlTiempoCompleto.Size = new System.Drawing.Size(200, 346);
             this.pnlTiempoCompleto.TabIndex = 33;
             this.pnlTiempoCompleto.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(74, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 15);
+            this.label4.TabIndex = 39;
+            this.label4.Tag = "1";
+            this.label4.Text = "Repetir";
+            // 
             // dtpEntradaTC_Lunes
             // 
-            this.dtpEntradaTC_Lunes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpEntradaTC_Lunes.CustomFormat = "HH:mm";
+            this.dtpEntradaTC_Lunes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEntradaTC_Lunes.Location = new System.Drawing.Point(3, 5);
             this.dtpEntradaTC_Lunes.Name = "dtpEntradaTC_Lunes";
-            this.dtpEntradaTC_Lunes.Size = new System.Drawing.Size(82, 23);
+            this.dtpEntradaTC_Lunes.ShowUpDown = true;
+            this.dtpEntradaTC_Lunes.Size = new System.Drawing.Size(65, 23);
             this.dtpEntradaTC_Lunes.TabIndex = 11;
             this.dtpEntradaTC_Lunes.Tag = "1";
             // 
+            // cbRepetirTC
+            // 
+            this.cbRepetirTC.AutoSize = true;
+            this.cbRepetirTC.Location = new System.Drawing.Point(93, 14);
+            this.cbRepetirTC.Name = "cbRepetirTC";
+            this.cbRepetirTC.Size = new System.Drawing.Size(15, 14);
+            this.cbRepetirTC.TabIndex = 40;
+            this.cbRepetirTC.Tag = "1";
+            this.cbRepetirTC.UseVisualStyleBackColor = true;
+            this.cbRepetirTC.CheckedChanged += new System.EventHandler(this.cbRepetirMT_CheckedChanged);
+            // 
             // dtpSalidaTC_Domingo
             // 
-            this.dtpSalidaTC_Domingo.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpSalidaTC_Domingo.CustomFormat = "HH:mm";
+            this.dtpSalidaTC_Domingo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSalidaTC_Domingo.Location = new System.Drawing.Point(131, 319);
             this.dtpSalidaTC_Domingo.Name = "dtpSalidaTC_Domingo";
-            this.dtpSalidaTC_Domingo.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaTC_Domingo.TabIndex = 31;
+            this.dtpSalidaTC_Domingo.ShowUpDown = true;
+            this.dtpSalidaTC_Domingo.Size = new System.Drawing.Size(65, 23);
+            this.dtpSalidaTC_Domingo.TabIndex = 2;
             this.dtpSalidaTC_Domingo.Tag = "7";
             // 
             // dtpSalidaTC_Lunes
             // 
-            this.dtpSalidaTC_Lunes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpSalidaTC_Lunes.CustomFormat = "HH:mm";
+            this.dtpSalidaTC_Lunes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSalidaTC_Lunes.Location = new System.Drawing.Point(131, 5);
             this.dtpSalidaTC_Lunes.Name = "dtpSalidaTC_Lunes";
-            this.dtpSalidaTC_Lunes.Size = new System.Drawing.Size(82, 23);
+            this.dtpSalidaTC_Lunes.ShowUpDown = true;
+            this.dtpSalidaTC_Lunes.Size = new System.Drawing.Size(65, 23);
             this.dtpSalidaTC_Lunes.TabIndex = 12;
             this.dtpSalidaTC_Lunes.Tag = "1";
             // 
             // dtpEntradaTC_Martes
             // 
-            this.dtpEntradaTC_Martes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpEntradaTC_Martes.CustomFormat = "HH:mm";
+            this.dtpEntradaTC_Martes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEntradaTC_Martes.Location = new System.Drawing.Point(3, 59);
             this.dtpEntradaTC_Martes.Name = "dtpEntradaTC_Martes";
-            this.dtpEntradaTC_Martes.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaTC_Martes.TabIndex = 13;
+            this.dtpEntradaTC_Martes.ShowUpDown = true;
+            this.dtpEntradaTC_Martes.Size = new System.Drawing.Size(65, 23);
+            this.dtpEntradaTC_Martes.TabIndex = 1;
             this.dtpEntradaTC_Martes.Tag = "2";
             // 
             // dtpSalidaTC_Martes
             // 
-            this.dtpSalidaTC_Martes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpSalidaTC_Martes.CustomFormat = "HH:mm";
+            this.dtpSalidaTC_Martes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSalidaTC_Martes.Location = new System.Drawing.Point(131, 59);
             this.dtpSalidaTC_Martes.Name = "dtpSalidaTC_Martes";
-            this.dtpSalidaTC_Martes.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaTC_Martes.TabIndex = 14;
+            this.dtpSalidaTC_Martes.ShowUpDown = true;
+            this.dtpSalidaTC_Martes.Size = new System.Drawing.Size(65, 23);
+            this.dtpSalidaTC_Martes.TabIndex = 2;
             this.dtpSalidaTC_Martes.Tag = "2";
             // 
             // dtpEntradaTC_Miercoles
             // 
-            this.dtpEntradaTC_Miercoles.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpEntradaTC_Miercoles.CustomFormat = "HH:mm";
+            this.dtpEntradaTC_Miercoles.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEntradaTC_Miercoles.Location = new System.Drawing.Point(3, 111);
             this.dtpEntradaTC_Miercoles.Name = "dtpEntradaTC_Miercoles";
-            this.dtpEntradaTC_Miercoles.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaTC_Miercoles.TabIndex = 15;
+            this.dtpEntradaTC_Miercoles.ShowUpDown = true;
+            this.dtpEntradaTC_Miercoles.Size = new System.Drawing.Size(65, 23);
+            this.dtpEntradaTC_Miercoles.TabIndex = 1;
             this.dtpEntradaTC_Miercoles.Tag = "3";
             // 
             // dtpSalidaTC_Miercoles
             // 
-            this.dtpSalidaTC_Miercoles.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpSalidaTC_Miercoles.CustomFormat = "HH:mm";
+            this.dtpSalidaTC_Miercoles.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSalidaTC_Miercoles.Location = new System.Drawing.Point(131, 111);
             this.dtpSalidaTC_Miercoles.Name = "dtpSalidaTC_Miercoles";
-            this.dtpSalidaTC_Miercoles.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaTC_Miercoles.TabIndex = 16;
+            this.dtpSalidaTC_Miercoles.ShowUpDown = true;
+            this.dtpSalidaTC_Miercoles.Size = new System.Drawing.Size(65, 23);
+            this.dtpSalidaTC_Miercoles.TabIndex = 2;
             this.dtpSalidaTC_Miercoles.Tag = "3";
             // 
             // dtpEntradaTC_Jueves
             // 
-            this.dtpEntradaTC_Jueves.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpEntradaTC_Jueves.CustomFormat = "HH:mm";
+            this.dtpEntradaTC_Jueves.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEntradaTC_Jueves.Location = new System.Drawing.Point(3, 163);
             this.dtpEntradaTC_Jueves.Name = "dtpEntradaTC_Jueves";
-            this.dtpEntradaTC_Jueves.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaTC_Jueves.TabIndex = 17;
+            this.dtpEntradaTC_Jueves.ShowUpDown = true;
+            this.dtpEntradaTC_Jueves.Size = new System.Drawing.Size(65, 23);
+            this.dtpEntradaTC_Jueves.TabIndex = 1;
             this.dtpEntradaTC_Jueves.Tag = "4";
             // 
             // dtpSalidaTC_Jueves
             // 
-            this.dtpSalidaTC_Jueves.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpSalidaTC_Jueves.CustomFormat = "HH:mm";
+            this.dtpSalidaTC_Jueves.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSalidaTC_Jueves.Location = new System.Drawing.Point(131, 163);
             this.dtpSalidaTC_Jueves.Name = "dtpSalidaTC_Jueves";
-            this.dtpSalidaTC_Jueves.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaTC_Jueves.TabIndex = 18;
+            this.dtpSalidaTC_Jueves.ShowUpDown = true;
+            this.dtpSalidaTC_Jueves.Size = new System.Drawing.Size(65, 23);
+            this.dtpSalidaTC_Jueves.TabIndex = 2;
             this.dtpSalidaTC_Jueves.Tag = "4";
             // 
             // dtpEntradaTC_Viernes
             // 
-            this.dtpEntradaTC_Viernes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpEntradaTC_Viernes.CustomFormat = "HH:mm";
+            this.dtpEntradaTC_Viernes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEntradaTC_Viernes.Location = new System.Drawing.Point(3, 215);
             this.dtpEntradaTC_Viernes.Name = "dtpEntradaTC_Viernes";
-            this.dtpEntradaTC_Viernes.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaTC_Viernes.TabIndex = 19;
+            this.dtpEntradaTC_Viernes.ShowUpDown = true;
+            this.dtpEntradaTC_Viernes.Size = new System.Drawing.Size(65, 23);
+            this.dtpEntradaTC_Viernes.TabIndex = 1;
             this.dtpEntradaTC_Viernes.Tag = "5";
             // 
             // dtpEntradaTC_Domingo
             // 
-            this.dtpEntradaTC_Domingo.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpEntradaTC_Domingo.CustomFormat = "HH:mm";
+            this.dtpEntradaTC_Domingo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEntradaTC_Domingo.Location = new System.Drawing.Point(3, 319);
             this.dtpEntradaTC_Domingo.Name = "dtpEntradaTC_Domingo";
-            this.dtpEntradaTC_Domingo.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaTC_Domingo.TabIndex = 23;
+            this.dtpEntradaTC_Domingo.ShowUpDown = true;
+            this.dtpEntradaTC_Domingo.Size = new System.Drawing.Size(65, 23);
+            this.dtpEntradaTC_Domingo.TabIndex = 1;
             this.dtpEntradaTC_Domingo.Tag = "7";
             // 
             // dtpSalidaTC_Viernes
             // 
-            this.dtpSalidaTC_Viernes.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpSalidaTC_Viernes.CustomFormat = "HH:mm";
+            this.dtpSalidaTC_Viernes.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSalidaTC_Viernes.Location = new System.Drawing.Point(131, 215);
             this.dtpSalidaTC_Viernes.Name = "dtpSalidaTC_Viernes";
-            this.dtpSalidaTC_Viernes.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaTC_Viernes.TabIndex = 20;
+            this.dtpSalidaTC_Viernes.ShowUpDown = true;
+            this.dtpSalidaTC_Viernes.Size = new System.Drawing.Size(65, 23);
+            this.dtpSalidaTC_Viernes.TabIndex = 2;
             this.dtpSalidaTC_Viernes.Tag = "5";
             // 
             // dtpSalidaTC_Sabado
             // 
-            this.dtpSalidaTC_Sabado.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpSalidaTC_Sabado.CustomFormat = "HH:mm";
+            this.dtpSalidaTC_Sabado.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSalidaTC_Sabado.Location = new System.Drawing.Point(131, 267);
             this.dtpSalidaTC_Sabado.Name = "dtpSalidaTC_Sabado";
-            this.dtpSalidaTC_Sabado.Size = new System.Drawing.Size(82, 23);
-            this.dtpSalidaTC_Sabado.TabIndex = 22;
+            this.dtpSalidaTC_Sabado.ShowUpDown = true;
+            this.dtpSalidaTC_Sabado.Size = new System.Drawing.Size(65, 23);
+            this.dtpSalidaTC_Sabado.TabIndex = 2;
             this.dtpSalidaTC_Sabado.Tag = "6";
             // 
             // dtpEntradaTC_Sabado
             // 
-            this.dtpEntradaTC_Sabado.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpEntradaTC_Sabado.CustomFormat = "HH:mm";
+            this.dtpEntradaTC_Sabado.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEntradaTC_Sabado.Location = new System.Drawing.Point(3, 267);
             this.dtpEntradaTC_Sabado.Name = "dtpEntradaTC_Sabado";
-            this.dtpEntradaTC_Sabado.Size = new System.Drawing.Size(82, 23);
-            this.dtpEntradaTC_Sabado.TabIndex = 21;
+            this.dtpEntradaTC_Sabado.ShowUpDown = true;
+            this.dtpEntradaTC_Sabado.Size = new System.Drawing.Size(65, 23);
+            this.dtpEntradaTC_Sabado.TabIndex = 1;
             this.dtpEntradaTC_Sabado.Tag = "6";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(563, 57);
+            this.label1.Location = new System.Drawing.Point(558, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 15);
             this.label1.TabIndex = 35;
@@ -542,12 +649,14 @@
             // cbTodos
             // 
             this.cbTodos.AutoSize = true;
+            this.cbTodos.Checked = true;
+            this.cbTodos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbTodos.Location = new System.Drawing.Point(28, 56);
             this.cbTodos.Name = "cbTodos";
             this.cbTodos.Size = new System.Drawing.Size(61, 19);
             this.cbTodos.TabIndex = 37;
             this.cbTodos.Tag = "10";
-            this.cbTodos.Text = "Lunes";
+            this.cbTodos.Text = "Todos";
             this.cbTodos.UseVisualStyleBackColor = true;
             this.cbTodos.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
@@ -577,7 +686,9 @@
             this.Name = "frmHorariosMedico";
             this.Text = "frmHorariosMedico";
             this.pnlMedioTiempo.ResumeLayout(false);
+            this.pnlMedioTiempo.PerformLayout();
             this.pnlTiempoCompleto.ResumeLayout(false);
+            this.pnlTiempoCompleto.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -630,6 +741,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnTerminar;
         private System.Windows.Forms.CheckBox cbTodos;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox cbRepetirMT;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox cbRepetirTC;
 
     }
 }

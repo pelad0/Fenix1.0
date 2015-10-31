@@ -56,6 +56,7 @@ namespace Fenix1._0
                     else                                            //Los desaparesco.
                     {
                         Desaparecer(tag);
+                        cbTodos.Checked = false;
                     }
                 }
 
@@ -69,11 +70,22 @@ namespace Fenix1._0
         {
 
 
-            foreach(Control control in p)
+            foreach(Control control in pnlMedioTiempo.Controls)
             {
-                if(control is DateTimePicker)
+                if (control is DateTimePicker || control is CheckBox || control is Label)
                 {
                     if(control.Tag.ToString() == tag)
+                    {
+                        control.Visible = false;
+                    }
+                }
+            }
+
+            foreach (Control control in pnlTiempoCompleto.Controls)
+            {
+                if (control is DateTimePicker || control is CheckBox || control is Label)
+                {
+                    if (control.Tag.ToString() == tag)
                     {
                         control.Visible = false;
                     }
@@ -86,9 +98,21 @@ namespace Fenix1._0
 
         private void Aparecer(string tag)
         {
-            foreach (Control control in this.Controls)
+            foreach (Control control in pnlMedioTiempo.Controls)
             {
-                if (control is DateTimePicker)
+                if (control is DateTimePicker || control is CheckBox || control is Label)
+                {
+                    if (control.Tag.ToString() == tag)
+                    {
+                        control.Visible = true;
+                    }
+                }
+            }
+
+
+            foreach (Control control in pnlTiempoCompleto.Controls)
+            {
+                if (control is DateTimePicker || control is CheckBox || control is Label)
                 {
                     if (control.Tag.ToString() == tag)
                     {
@@ -136,6 +160,55 @@ namespace Fenix1._0
 
         }
 
+        private void cbRepetirMT_CheckedChanged(object sender, EventArgs e)
+        {
+            DateTime entradaMT = dtpEntradaMT_Lunes.Value;
+            DateTime salidaMT = dtpSalidaMT_Lunes.Value;
+
+            DateTime entradaTC = dtpEntradaTC_Lunes.Value;
+            DateTime salidaTC = dtpSalidaTC_Lunes.Value;
+
+
+            if((sender as CheckBox).Checked)
+            {
+                if((sender as CheckBox).Name == "cbRepetirMT")
+                {
+                    foreach(Control control in pnlMedioTiempo.Controls)
+                    {
+                        if(control.Tag.ToString() != "1" && (control is DateTimePicker))
+                        {
+                            if ((control as DateTimePicker).TabIndex == 1)
+                                (control as DateTimePicker).Value = entradaMT;
+                            else
+                                (control as DateTimePicker).Value = salidaMT;
+                        }
+                    }           
+
+
+                }
+
+                else
+                {
+                    foreach (Control control in pnlTiempoCompleto.Controls)    
+                    {
+                        if (control.Tag.ToString() != "1" && (control is DateTimePicker))
+                        {
+                            if ((control as DateTimePicker).TabIndex == 1)
+                                (control as DateTimePicker).Value = entradaTC;
+                            else
+                                (control as DateTimePicker).Value = salidaTC;
+                        }
+                    }
+                }
+
+
+                
+            }
+
+
+        }
+
+      
 
         
 
