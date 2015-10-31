@@ -250,7 +250,7 @@ namespace Fenix1._0
                 try
                 {
                     dgvAlta.DataSource = null;
-                    dgvAlta.DataSource = rp.buscarPorDni();
+                    dgvAlta.DataSource = rp.buscarDni(Convert.ToInt64(tbBuscar.Text));
                 }
                 catch (Exception ex)
                 {

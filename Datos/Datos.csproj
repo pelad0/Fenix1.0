@@ -52,6 +52,7 @@
     <Compile Include="ManejaRecibo.cs" />
     <Compile Include="ManejaSobreturno.cs" />
     <Compile Include="ManejaTurno.cs" />
+    <Compile Include="ManejaUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\entidades\entidades.csproj">
