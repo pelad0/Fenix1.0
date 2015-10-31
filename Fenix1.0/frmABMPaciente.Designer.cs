@@ -224,6 +224,7 @@
             this.btnSig.TabIndex = 6;
             this.btnSig.Text = "Siguiente>>";
             this.btnSig.UseVisualStyleBackColor = true;
+            this.btnSig.Click += new System.EventHandler(this.btnSig_Click);
             // 
             // btnAnt
             // 
@@ -233,6 +234,7 @@
             this.btnAnt.TabIndex = 5;
             this.btnAnt.Text = "<<Anterior";
             this.btnAnt.UseVisualStyleBackColor = true;
+            this.btnAnt.Click += new System.EventHandler(this.btnAnt_Click);
             // 
             // dgvEliminar
             // 
