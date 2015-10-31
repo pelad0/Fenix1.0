@@ -60,15 +60,15 @@ namespace Fenix1._0
                 }
             }
             int espe;
-            //RepositorioEspecialidades re = new RepositorioEspecialidades();
-            //List<clsEspecialidad> esp = re.todo();
-            //foreach (clsEspecialidad es in esp)
-            //{
-            //    if (es.Descripcion == cbOSAlta.SelectedItem.ToString())
-            //    {
-            //        espe = es.Id;
-            //    }
-            //}
+            RepositorioEspecialidad re = new RepositorioEspecialidad();
+            List<clsEspecialidad> esp = re.Todo();
+            foreach (clsEspecialidad es in esp)
+            {
+                if (es.Descripcion == cbOSAlta.SelectedItem.ToString())
+                {
+                    espe = es.Id;
+                }
+            }
 
             clsPaciente p = new clsPaciente(tbNombreAlta.Text, tbApellidoAlta.Text, Convert.ToInt64(tbDniAlta.Text), espe, Convert.ToInt64(tbTelALta.Text));
 

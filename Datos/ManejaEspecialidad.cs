@@ -75,7 +75,7 @@ namespace Datos
             return esp;
         }
 
-        public System.Data.DataTable Todo(int pagina)
+        public System.Data.DataTable Todo()
         {
             DataTable aux = new DataTable();
             try
@@ -91,5 +91,11 @@ namespace Datos
 
         }
 
+
+
+        public DataTable Todo(int pagina)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
