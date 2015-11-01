@@ -58,7 +58,7 @@ activo bit default 1
 
             try
             {
-                manager.ejecutar("update obrasocial set nombre=" + ob.Nombre +" where id="+ob.Id+" and activo=1");
+                manager.ejecutar("update obrasocial set nombre='" + ob.Nombre +"' where id="+ob.Id+" and activo=1");
             }
             catch (Exception ex)
             {
@@ -108,7 +108,7 @@ activo bit default 1
             try
             {
 
-                aux = manager.consultar("select * from obrasocial where nombre=" + nombre + " and activo=1");
+                aux = manager.consultar("select * from obrasocial where nombre='" + nombre + "' and activo=1");
                 pac.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 pac.Nombre = aux.Rows[0]["nombre"].ToString();
             }

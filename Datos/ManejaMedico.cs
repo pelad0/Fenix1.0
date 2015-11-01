@@ -105,6 +105,22 @@ namespace Datos
             return aux;
         }
 
+        public DataTable Busca(int nombre)
+        {
+            DataTable aux = new DataTable();
+          
+            try
+            {
+
+                aux = manager.consultar("select * from medico where especialidad=" + nombre + " and activo=1");
+               
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return aux;
+        }
    
     }
 }
