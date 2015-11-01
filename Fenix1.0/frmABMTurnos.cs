@@ -13,9 +13,9 @@ using entidades;
 
 namespace Fenix1._0
 {
-    public partial class frmABM : Form
+    public partial class frmABMTurnos : Form
     {
-        public frmABM()
+        public frmABMTurnos()
         {
             InitializeComponent();
         }
@@ -27,9 +27,7 @@ namespace Fenix1._0
 
         private void frmABM_Load(object sender, EventArgs e)
         {
-            iniciar();
-
-            
+            iniciar();            
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -48,13 +46,13 @@ namespace Fenix1._0
 
         private void cbEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //foreach (clsMedico med in rm.)
-            //{
-		 
-            //}
-            //cbMedicos.DataSource= ;
+            List<string> medicos = new List<string>();
+            foreach (clsMedico med in rm.Busca(cbEspecialidades.SelectedItem.ToString()))
+            {
+		        medicos.Add(med.Apellido+" "+med.Nombre);
+            }
+            cbMedicos.DataSource= medicos;
         }
-
 
     }
 }

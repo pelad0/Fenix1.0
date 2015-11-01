@@ -41,6 +41,7 @@ namespace Fenix1._0
                     {
                         ros.Alta(OSoc);
                         iniciar();
+                        tbOS.Focus();
                     }
                     catch (Exception ex)
                     {
@@ -88,8 +89,10 @@ namespace Fenix1._0
                 {
                     try
                     {
-                        ros.Modificacion(OS[dgvOSModif.CurrentRow.Index]);
+                        OS[pos].Nombre = tbModifOS.Text;
+                        ros.Modificacion(OS[pos]);
                         iniciar();
+                        tbModifOS.Focus();
                         MessageBox.Show(anterior+" cambió a: "+OS[pos].Nombre, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     catch (Exception ex)

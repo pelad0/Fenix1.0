@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEditarHorarios = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // clbEspecialidad
@@ -154,7 +155,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(278, 374);
+            this.btnGuardar.Location = new System.Drawing.Point(282, 417);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 23;
@@ -162,11 +163,21 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnEditarHorarios
+            // 
+            this.btnEditarHorarios.Location = new System.Drawing.Point(255, 337);
+            this.btnEditarHorarios.Name = "btnEditarHorarios";
+            this.btnEditarHorarios.Size = new System.Drawing.Size(127, 29);
+            this.btnEditarHorarios.TabIndex = 24;
+            this.btnEditarHorarios.Text = "EditarHorarios";
+            this.btnEditarHorarios.UseVisualStyleBackColor = true;
+            // 
             // frmEditarMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 424);
+            this.ClientSize = new System.Drawing.Size(644, 452);
+            this.Controls.Add(this.btnEditarHorarios);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.clbEspecialidad);
             this.Controls.Add(this.clbObraSocial);
@@ -206,5 +217,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnEditarHorarios;
     }
 }

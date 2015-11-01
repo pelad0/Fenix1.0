@@ -45,7 +45,7 @@ namespace Fenix1._0
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Error");
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
             }
