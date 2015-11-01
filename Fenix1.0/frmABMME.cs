@@ -19,6 +19,10 @@ namespace Fenix1._0
 
         clsHorario HorariosMT;
         clsHorario HorariosTC;
+        RepositorioMedico reposMedico = new RepositorioMedico();
+        List<clsMedico> medicos;
+        int pagina = 0;
+
 
         public frmABMME()
         {
@@ -38,12 +42,6 @@ namespace Fenix1._0
             HorariosMT = horariomt;
             HorariosTC = horariotc;
         }
-        
-
-
-        RepositorioMedico reposMedico=new RepositorioMedico();
-
-        List<clsMedico> medicos;
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
@@ -67,9 +65,10 @@ namespace Fenix1._0
                 medico.Apellido = tbApellidoAlta.Text;
                 medico.Especialidad = cbEspecialidades.Text; 
                 medico.ObraSocial = obra;
-
-
                 reposMedico.Alta(medico);
+
+
+                //ACA TENGO QUE PASAR HORARIOS.
                 
             }
 
@@ -98,17 +97,21 @@ namespace Fenix1._0
 
         public void Actualizar()
         {
+
+            dgvMedicosAlta.DataSource = null;
+            dgvMedicosBaja.DataSource = null;
+            dgvMedicosModi.DataSource = null;
+            tbEspecialidadAlta.Clear();
+            tbEspecialidadBaja.Clear();
+            tbEspecialidadModi.Clear(); 
+            dgvObrasSocialesAlta.DataSource = null;
+            dgvObrasSocialesBaja.DataSource = null;
+            dgvObrasSocialesModi.DataSource = null;
+           
+
             medicos.Clear();
 
-
-            
-             
-            //foreach (IEntidad ent in metodosMedicos.Todo())
-            //{
-            //    medicos.Add((clsMedico)ent);
-            //}
-             
-             
+            medicos = reposMedico.Todo(pagina);
 
 
             //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.
@@ -196,6 +199,254 @@ namespace Fenix1._0
 
         }
 
+        private void btnAnteriorAlta_Click(object sender, EventArgs e)
+        {
+
+            if (pagina == 0)
+            {
+                MessageBox.Show("No hay registros anteriores para mostrar", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+            }
+
+            else
+            {
+                pagina--;
+
+
+                dgvMedicosAlta.DataSource = null;
+                tbEspecialidadAlta.Clear();
+                dgvObrasSocialesAlta.DataSource = null;
+
+
+
+                medicos.Clear();
+
+                medicos = reposMedico.Todo(pagina);
+
+
+                //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.
+
+                dgvMedicosAlta.Columns.Add("idTurno", "idTurno");
+                dgvMedicosAlta.Columns["idTurno"].Visible = false;
+                dgvMedicosAlta.Columns.Add("Matricula", "Matricula");
+                dgvMedicosAlta.Columns.Add("Apellido", "Apellido");
+
+                foreach (clsMedico med in medicos)
+                {
+                    dgvMedicosAlta.Rows.Add(med.Id, med.Matricula, med.Apellido);
+                
+                }
+
+
+            }
+
+
+        }
+
+        private void btnSiguientesAlta_Click(object sender, EventArgs e)
+        {
+            pagina++;
+
+
+            dgvMedicosAlta.DataSource = null;
+            tbEspecialidadAlta.Clear();
+            dgvObrasSocialesAlta.DataSource = null;
+
+            
+
+            medicos.Clear();
+
+            medicos = reposMedico.Todo(pagina);
+
+
+            //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.
+
+            dgvMedicosAlta.Columns.Add("idTurno", "idTurno");
+            dgvMedicosAlta.Columns["idTurno"].Visible = false;
+            dgvMedicosAlta.Columns.Add("Matricula", "Matricula");
+            dgvMedicosAlta.Columns.Add("Apellido", "Apellido");
+
+            foreach (clsMedico med in medicos)
+            {
+                dgvMedicosAlta.Rows.Add(med.Id, med.Matricula, med.Apellido);
+
+            }
+
+
+
+        }
+
+        private void btnAnteriorBaja_Click(object sender, EventArgs e)
+        {
+            if (pagina == 0)
+            {
+                MessageBox.Show("No hay registros anteriores para mostrar", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+            }
+
+            else
+            {
+                pagina--;
+               
+                dgvMedicosBaja.DataSource = null;
+                tbEspecialidadBaja.Clear();  
+                dgvObrasSocialesBaja.DataSource = null;
+     
+
+
+                medicos.Clear();
+
+                medicos = reposMedico.Todo(pagina);
+
+
+                //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.
+
+       
+
+                dgvMedicosBaja.Columns.Add("idTurno", "idTurno");
+                dgvMedicosBaja.Columns["idTurno"].Visible = false;
+                dgvMedicosBaja.Columns.Add("Matricula", "Matricula");
+                dgvMedicosBaja.Columns.Add("Apellido", "Apellido");
+
+
+         
+                foreach (clsMedico med in medicos)
+                {
+                    dgvMedicosBaja.Rows.Add(med.Id, med.Matricula, med.Apellido);
+                }
+
+
+            }
+        }
+
+        private void btnSiguienteBaja_Click(object sender, EventArgs e)
+        {
+            pagina++;
+
+            dgvMedicosBaja.DataSource = null;
+            tbEspecialidadBaja.Clear();
+            dgvObrasSocialesBaja.DataSource = null;
+
+
+
+            medicos.Clear();
+
+            medicos = reposMedico.Todo(pagina);
+
+
+            //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.
+
+
+
+            dgvMedicosBaja.Columns.Add("idTurno", "idTurno");
+            dgvMedicosBaja.Columns["idTurno"].Visible = false;
+            dgvMedicosBaja.Columns.Add("Matricula", "Matricula");
+            dgvMedicosBaja.Columns.Add("Apellido", "Apellido");
+
+
+
+            foreach (clsMedico med in medicos)
+            {
+                dgvMedicosBaja.Rows.Add(med.Id, med.Matricula, med.Apellido);
+            }
+
+
+
+        }
+
+        private void btnAnteriorModi_Click(object sender, EventArgs e)
+        {
+            if (pagina == 0)
+            {
+                MessageBox.Show("No hay registros anteriores para mostrar", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+            }
+            else
+            {
+                pagina--;
+
+                dgvMedicosModi.DataSource = null;
+                tbEspecialidadModi.Clear();           
+                dgvObrasSocialesModi.DataSource = null;
+
+
+                medicos.Clear();
+
+                medicos = reposMedico.Todo(pagina);
+
+
+                //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.            
+
+
+                dgvMedicosModi.Columns.Add("idTurno", "idTurno");
+                dgvMedicosModi.Columns["idTurno"].Visible = false;
+                dgvMedicosModi.Columns.Add("Matricula", "Matricula");
+                dgvMedicosModi.Columns.Add("Apellido", "Apellido");
+
+                foreach (clsMedico med in medicos)
+                {
+                    dgvMedicosModi.Rows.Add(med.Id, med.Matricula, med.Apellido);
+                }
+            }
+        }
+
+        private void btnSiguienteModi_Click(object sender, EventArgs e)
+        {
+            pagina++;
+
+            dgvMedicosModi.DataSource = null;
+            tbEspecialidadModi.Clear();
+            dgvObrasSocialesModi.DataSource = null;
+
+
+            medicos.Clear();
+
+            medicos = reposMedico.Todo(pagina);
+
+
+            //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.            
+
+
+            dgvMedicosModi.Columns.Add("idTurno", "idTurno");
+            dgvMedicosModi.Columns["idTurno"].Visible = false;
+            dgvMedicosModi.Columns.Add("Matricula", "Matricula");
+            dgvMedicosModi.Columns.Add("Apellido", "Apellido");
+
+            foreach (clsMedico med in medicos)
+            {
+                dgvMedicosModi.Rows.Add(med.Id, med.Matricula, med.Apellido);
+            }
+        }
+
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
+
+            clsMedico med = new clsMedico();
+
+
+            int id = int.Parse(dgvMedicosBaja.Rows[dgvMedicosBaja.CurrentRow.Index].Cells[0].Value.ToString());
+
+            med = reposMedico.buscarPorId(id);
+
+            reposMedico.Baja(med);
+
+            MessageBox.Show("Médico dado de alta");
+
+        }
+
+        private void dgvMedicosAlta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            clsObraXMedico obraXmed = new clsObraXMedico();
+
+            int idMed = int.Parse(dgvMedicosAlta.Rows[dgvMedicosAlta.CurrentRow.Index].Cells[0].Value.ToString());
+
+            RepositorioObraPorMedico repoObraPorMed = new RepositorioObraPorMedico();
+
+            obraXmed = repoObraPorMed.buscarPorId()
+
+            
+        }
         
 
         

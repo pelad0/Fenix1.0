@@ -63,6 +63,7 @@ namespace logica
                 throw ex;
             }
         }
+
         public clsObraXMedico buscarPorId(int id)
         {
 
