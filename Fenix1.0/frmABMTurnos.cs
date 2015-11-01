@@ -13,9 +13,9 @@ using entidades;
 
 namespace Fenix1._0
 {
-    public partial class frmABM : Form
+    public partial class frmABMTurnos : Form
     {
-        public frmABM()
+        public frmABMTurnos()
         {
             InitializeComponent();
         }

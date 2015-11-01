@@ -1,6 +1,6 @@
 ﻿namespace Fenix1._0
 {
-    partial class frmABM
+    partial class frmABMTurnos
     {
         /// <summary>
         /// Required designer variable.
