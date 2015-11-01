@@ -19,7 +19,7 @@ namespace logica
         public void Alta(IEntidad paciente)
         {
             try
-            {               
+            {              
 
                 manejaPaciente.Alta(metodoS(paciente));
             }
@@ -143,10 +143,10 @@ namespace logica
 
         }
 
-        private clsPacienteDatos metodoS(IEntidad pac2)
+        private IEntidad metodoS(IEntidad pac2)
         {
             clsPaciente pac = (clsPaciente)pac2;
-            clsPacienteDatos aux;
+            clsObraSocial aux;
             clsPacienteDatos paciente = new clsPacienteDatos();
 
             try
@@ -155,8 +155,8 @@ namespace logica
                 paciente.Nombre = pac.Nombre;
                 paciente.Apellido = pac.Apellido;
                 paciente.Dni = pac.Dni;
-                aux = (clsPacienteDatos)manejaPaciente.buscaPorId(pac2.Id);
-                paciente.ObraSocial = aux.ObraSocial;
+                aux = (clsObraSocial)manejaOs.buscaPorNombre(pac.ObraSocial);
+                paciente.ObraSocial = aux.Id;
             }
             catch (SqlException ex)
             {
