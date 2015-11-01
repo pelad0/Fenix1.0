@@ -440,6 +440,11 @@ namespace Fenix1._0
 
         }
 
+        private void frmHorariosMedico_Load(object sender, EventArgs e)
+        {
+
+        }
+
       
 
         

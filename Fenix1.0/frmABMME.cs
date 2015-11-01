@@ -111,7 +111,7 @@ namespace Fenix1._0
              
 
 
-            //Muesto solamente matricula y apellido de cada médico en cada dgv.
+            //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.
 
             dgvMedicosAlta.Columns.Add("idTurno", "idTurno");
             dgvMedicosAlta.Columns["idTurno"].Visible = false;

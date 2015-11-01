@@ -40,9 +40,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioHistorial.cs" />
     <Compile Include="RepositorioMedico.cs" />
+    <Compile Include="RepositorioObraPorMedico.cs" />
     <Compile Include="RepositorioObraSocial.cs" />
     <Compile Include="RepositorioPaciente.cs" />
+    <Compile Include="RepositorioRecibo.cs" />
     <Compile Include="RepositorioSobreturno.cs" />
     <Compile Include="RepositorioTurno.cs" />
     <Compile Include="RepositorioEspecialidad.cs" />

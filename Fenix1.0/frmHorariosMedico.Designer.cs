@@ -698,6 +698,7 @@
             this.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.Name = "frmHorariosMedico";
             this.Text = "frmHorariosMedico";
+            this.Load += new System.EventHandler(this.frmHorariosMedico_Load);
             this.pnlMedioTiempo.ResumeLayout(false);
             this.pnlMedioTiempo.PerformLayout();
             this.pnlTiempoCompleto.ResumeLayout(false);

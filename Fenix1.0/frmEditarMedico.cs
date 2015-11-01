@@ -33,8 +33,7 @@ namespace Fenix1._0
             tbDniModi.Text = med.Dni.ToString();
             tbMatriculaModi.Text = med.Matricula.ToString();
 
-            //CARGO TODAS LAS ESPECIALIDADES Y  OBRAS SOCUALES. COMPARO CON LAS QUE TRAIGO PARA VER
-            // CUALES YA ESTAN CHECKEADAS Y CUALES NO
+            //CARGO OBRAS SOCUALES. COMPARO CON LAS QUE TRAIGO PARA VER CUALES YA ESTAN CHECKEADAS Y CUALES NO
 
             
 
