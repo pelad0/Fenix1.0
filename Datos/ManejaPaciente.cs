@@ -111,7 +111,7 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                manager.consultar("select * from paciente where dni="+dni+" and activo=1");
+                aux= manager.consultar("select * from paciente where dni="+dni+" and activo=1");
                 pac.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 pac.Nombre = aux.Rows[0]["nombre"].ToString();
                 pac.Apellido = aux.Rows[0]["apellido"].ToString();
