@@ -40,6 +40,7 @@ namespace Fenix1._0
                     try
                     {
                         ros.Alta(OSoc);
+                        iniciar();
                     }
                     catch (Exception ex)
                     {
@@ -110,18 +111,18 @@ namespace Fenix1._0
 
         private void iniciar()
         {
-            OS = ros.Todo(pagina);
+            OS = ros.Todo(0);
             dgvOSAlta.DataSource = null;
             dgvOSAlta.DataSource = OS;
-            dgvOSAlta.Columns[0].Visible = false;
+            dgvOSAlta.Columns[1].Visible = false;
 
             dgvOSBaja.DataSource = null;
             dgvOSBaja.DataSource = OS;
-            dgvOSBaja.Columns[0].Visible = false;
+            dgvOSBaja.Columns[1].Visible = false;
 
             dgvOSModif.DataSource = null;
             dgvOSModif.DataSource = OS;
-            dgvOSModif.Columns[0].Visible = false;
+            dgvOSModif.Columns[1].Visible = false;
 
             tbModifOS.Clear();
             tbOS.Clear();

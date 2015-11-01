@@ -234,18 +234,18 @@ namespace Fenix1._0
                 }
                 else if (ctrl is TextBoxNumeros)
                 {
-                    if (string.IsNullOrWhiteSpace((ctrl as TextBoxNumeros).Text) || (ctrl as TextBoxLetras).Text.Length < 8)
+                    if ((string.IsNullOrWhiteSpace((ctrl as TextBoxNumeros).Text) || (ctrl as TextBoxNumeros).Text.Length < 8) && (ctrl as TextBoxNumeros).Tag != "no")
                     {
-                        MessageBox.Show("Completar el campo con la cantidad de digitos correcta." + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Completar el campo "+ (ctrl as TextBoxNumeros).Tag +" con la cantidad de digitos correcta.", "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         (ctrl as TextBoxNumeros).Focus();
                         return false;
                     }
                 }
                 else if (ctrl is ComboBox)
                 {
-                    if (string.IsNullOrWhiteSpace((ctrl as ComboBox).SelectedItem.ToString()))
+                    if (string.IsNullOrWhiteSpace((ctrl as ComboBox).Text))
                     {
-                        MessageBox.Show("Seleccione un valor para" + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione un valor para" + (ctrl as ComboBox).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         cbOSAlta.Focus();
                         return false;
                     }

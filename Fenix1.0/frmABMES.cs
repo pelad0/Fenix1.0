@@ -35,10 +35,19 @@ namespace Fenix1._0
             
             if(!string.IsNullOrWhiteSpace(tbEspecialidadAlta.Text))
             {
-                clsEspecialidad es = new clsEspecialidad(tbEspecialidadAlta.Text);
+
+                try
+                {
+                    clsEspecialidad es = new clsEspecialidad(tbEspecialidadAlta.Text);
 
 
-                reposEspe.Alta(es);
+                    reposEspe.Alta(es);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+                
             }
             else
             {
