@@ -82,7 +82,7 @@ namespace Datos
             {
                 
 
-                aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY Idmedico) AS RowNum FROM obraxmedico) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN" + pagina * 10 + " AND " + (pagina * 10) + 10);
+                aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY Idmedico) AS RowNum FROM obraxmedico) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN " + pagina * 10 + " AND " + (pagina * 10) + 10);
             }
             catch (Exception ex)
             {
@@ -92,16 +92,21 @@ namespace Datos
             return aux;
         }
 
-        public int Id
+        public DataTable TodasObras(int id)
         {
-            get
+            DataTable aux = new DataTable();
+            
+            try
             {
-                throw new NotImplementedException();
+
+                aux = manager.consultar("select * from obraxmedico where idmedico=" + id + " and activo=1");
+                
             }
-            set
+            catch (Exception ex)
             {
-                throw new NotImplementedException();
+                throw ex;
             }
+            return aux;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Datos
             clsHistorial hist = (clsHistorial)entidad;
             try
             {
-                manager.ejecutar("Insert into historial(Id,diagnostico,observaciones,fecha) values('" + hist.Id1 + "','" + hist.Diagnostico + "'," + hist.Observaciones + "," + hist.Fecha +");SELECT @@identity;");
+                manager.ejecutar("Insert into historial(Id,diagnostico,observaciones,fecha) values('" + hist.Id + "','" + hist.Diagnostico + "'," + hist.Observaciones + "," + hist.Fecha +");SELECT @@identity;");
             }
             catch (Exception ex)
             {
@@ -36,7 +36,7 @@ namespace Datos
             clsHistorial hist = (clsHistorial)entidad;
             try
             {
-                manager.ejecutar("update historial set activo=0 where id=" + hist.Id1);
+                manager.ejecutar("update historial set activo=0 where id=" + hist.Id);
             }
             catch (Exception ex)
             {
@@ -49,7 +49,7 @@ namespace Datos
             clsHistorial hist = (clsHistorial)entidad;
             try
             {
-                manager.ejecutar("update historial set diagnostico=" + hist.Diagnostico + ",observaciones=" + hist.Observaciones + ",fecha=" + hist.Fecha + "where id=" + hist.Id1);
+                manager.ejecutar("update historial set diagnostico=" + hist.Diagnostico + ",observaciones=" + hist.Observaciones + ",fecha=" + hist.Fecha + "where id=" + hist.Id);
             }
             catch (Exception ex)
             {
@@ -63,8 +63,8 @@ namespace Datos
             clsHistorial hist = new clsHistorial();
             try
             {
-                aux = manager.consultar("select * from historial where Id=" + id + " and activo=1");
-                hist.Id1 = Convert.ToInt32(aux.Rows[0]["Id"]);
+                aux = manager.consultar("select * from historial where id=" + id + " and activo=1");
+                hist.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 hist.Diagnostico = aux.Rows[0]["diagnostico"].ToString();
                 hist.Observaciones= aux.Rows[0]["observaciones"].ToString();
                 hist.Fecha = Convert.ToDateTime(aux.Rows[0]["fecha"]);
@@ -83,7 +83,7 @@ namespace Datos
             try
             {
                 
-                aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM historial) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN" + pagina * 10 + " AND " + (pagina * 10) + 10);
+                aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM historial) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN " + pagina * 10 + " AND " + (pagina * 10) + 10);
             }
             catch (Exception ex)
             {

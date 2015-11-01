@@ -9,7 +9,6 @@ namespace entidades
 {
     public class clsHistorial : IEntidad
     {
-
         string diagnostico;
 
         public string Diagnostico
@@ -45,13 +44,15 @@ namespace entidades
             this.fecha = fecha;
         }
 
-        private int Id;
+        private int id;
 
-        public int Id1
+        public int Id
         {
-            get { return Id; }
-            set { Id = value; }
+            get { return id; }
+            set { id = value; }
         }
+
+       
 
     }
 }

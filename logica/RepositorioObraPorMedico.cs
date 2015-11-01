@@ -86,6 +86,27 @@ namespace logica
             return omed;
         }
 
+        public List<clsObraXMedico> TodasObras(int id)
+        {
+            DataTable tabla;
+            List<clsObraXMedico> lista = new List<clsObraXMedico>();
+
+            tabla = manejaobraxmedico.Todo(id);
+
+            foreach (DataRow aux in tabla.Rows)
+            {
+                clsObraXMedico ob = new clsObraXMedico();
+
+                ob.IdMedico = Convert.ToInt32(aux["idmedico"]);
+                ob.IdObra = Convert.ToInt32(aux["idobra"]);
+
+                lista.Add(ob);
+            }
+
+            return lista;
+
+        }
+
         public List<clsObraXMedico> Todo(int pag)
         {
             DataTable tabla;

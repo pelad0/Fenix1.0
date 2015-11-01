@@ -95,7 +95,7 @@ namespace logica
             {
                 clsHistorial hist = new clsHistorial();
 
-                hist.Id1 = Convert.ToInt32(aux["Id"]);
+                hist.Id = Convert.ToInt32(aux["id"]);
                 hist.Diagnostico = aux["diagnostico"].ToString();
                 hist.Observaciones = aux["observaciones"].ToString();
                 hist.Fecha = Convert.ToDateTime(aux["fecha"]);
