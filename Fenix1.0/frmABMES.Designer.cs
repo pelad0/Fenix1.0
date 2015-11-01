@@ -30,8 +30,6 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
-            this.btnSiguienteAlta = new System.Windows.Forms.Button();
-            this.btnAnteriorAlta = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvEspecialidadesAlta = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,24 +37,22 @@
             this.btnAltaEspecialidad = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSiguienteBaja = new System.Windows.Forms.Button();
-            this.btnAnteriorBaja = new System.Windows.Forms.Button();
-            this.dgvEliminar = new System.Windows.Forms.DataGridView();
+            this.dgvEspecialidadesBaja = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnSiguienteModi = new System.Windows.Forms.Button();
-            this.btnAnteriorModi = new System.Windows.Forms.Button();
-            this.dgvModificar = new System.Windows.Forms.DataGridView();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.tbEspecialidaModi = new controles.TextBoxLetras();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dgvEspecialidadesModificar = new System.Windows.Forms.DataGridView();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidadesAlta)).BeginInit();
             this.tpBaja.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidadesBaja)).BeginInit();
             this.tpMod.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvModificar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidadesModificar)).BeginInit();
             this.SuspendLayout();
             // 
             // tcABM
@@ -76,8 +72,6 @@
             // 
             // tpAlta
             // 
-            this.tpAlta.Controls.Add(this.btnSiguienteAlta);
-            this.tpAlta.Controls.Add(this.btnAnteriorAlta);
             this.tpAlta.Controls.Add(this.label2);
             this.tpAlta.Controls.Add(this.dgvEspecialidadesAlta);
             this.tpAlta.Controls.Add(this.label1);
@@ -91,24 +85,6 @@
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
             // 
-            // btnSiguienteAlta
-            // 
-            this.btnSiguienteAlta.Location = new System.Drawing.Point(339, 405);
-            this.btnSiguienteAlta.Name = "btnSiguienteAlta";
-            this.btnSiguienteAlta.Size = new System.Drawing.Size(71, 23);
-            this.btnSiguienteAlta.TabIndex = 9;
-            this.btnSiguienteAlta.Text = "Sig-->";
-            this.btnSiguienteAlta.UseVisualStyleBackColor = true;
-            // 
-            // btnAnteriorAlta
-            // 
-            this.btnAnteriorAlta.Location = new System.Drawing.Point(243, 405);
-            this.btnAnteriorAlta.Name = "btnAnteriorAlta";
-            this.btnAnteriorAlta.Size = new System.Drawing.Size(71, 23);
-            this.btnAnteriorAlta.TabIndex = 8;
-            this.btnAnteriorAlta.Text = "<--Ant";
-            this.btnAnteriorAlta.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -121,7 +97,7 @@
             // dgvEspecialidadesAlta
             // 
             this.dgvEspecialidadesAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEspecialidadesAlta.Location = new System.Drawing.Point(243, 116);
+            this.dgvEspecialidadesAlta.Location = new System.Drawing.Point(241, 118);
             this.dgvEspecialidadesAlta.Name = "dgvEspecialidadesAlta";
             this.dgvEspecialidadesAlta.Size = new System.Drawing.Size(167, 283);
             this.dgvEspecialidadesAlta.TabIndex = 3;
@@ -155,9 +131,7 @@
             // tpBaja
             // 
             this.tpBaja.Controls.Add(this.label3);
-            this.tpBaja.Controls.Add(this.btnSiguienteBaja);
-            this.tpBaja.Controls.Add(this.btnAnteriorBaja);
-            this.tpBaja.Controls.Add(this.dgvEliminar);
+            this.tpBaja.Controls.Add(this.dgvEspecialidadesBaja);
             this.tpBaja.Controls.Add(this.btnBaja);
             this.tpBaja.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpBaja.Location = new System.Drawing.Point(4, 34);
@@ -177,54 +151,37 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Lista de especialidades";
             // 
-            // btnSiguienteBaja
+            // dgvEspecialidadesBaja
             // 
-            this.btnSiguienteBaja.Location = new System.Drawing.Point(376, 355);
-            this.btnSiguienteBaja.Name = "btnSiguienteBaja";
-            this.btnSiguienteBaja.Size = new System.Drawing.Size(68, 23);
-            this.btnSiguienteBaja.TabIndex = 6;
-            this.btnSiguienteBaja.Text = "Sig -->";
-            this.btnSiguienteBaja.UseVisualStyleBackColor = true;
-            // 
-            // btnAnteriorBaja
-            // 
-            this.btnAnteriorBaja.Location = new System.Drawing.Point(206, 355);
-            this.btnAnteriorBaja.Name = "btnAnteriorBaja";
-            this.btnAnteriorBaja.Size = new System.Drawing.Size(65, 23);
-            this.btnAnteriorBaja.TabIndex = 5;
-            this.btnAnteriorBaja.Text = "<-- Ant";
-            this.btnAnteriorBaja.UseVisualStyleBackColor = true;
-            // 
-            // dgvEliminar
-            // 
-            this.dgvEliminar.AllowUserToAddRows = false;
-            this.dgvEliminar.AllowUserToDeleteRows = false;
-            this.dgvEliminar.AllowUserToOrderColumns = true;
-            this.dgvEliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEliminar.Location = new System.Drawing.Point(238, 54);
-            this.dgvEliminar.MultiSelect = false;
-            this.dgvEliminar.Name = "dgvEliminar";
-            this.dgvEliminar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEliminar.Size = new System.Drawing.Size(167, 283);
-            this.dgvEliminar.TabIndex = 1;
+            this.dgvEspecialidadesBaja.AllowUserToAddRows = false;
+            this.dgvEspecialidadesBaja.AllowUserToDeleteRows = false;
+            this.dgvEspecialidadesBaja.AllowUserToOrderColumns = true;
+            this.dgvEspecialidadesBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEspecialidadesBaja.Location = new System.Drawing.Point(238, 54);
+            this.dgvEspecialidadesBaja.MultiSelect = false;
+            this.dgvEspecialidadesBaja.Name = "dgvEspecialidadesBaja";
+            this.dgvEspecialidadesBaja.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvEspecialidadesBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEspecialidadesBaja.Size = new System.Drawing.Size(167, 283);
+            this.dgvEspecialidadesBaja.TabIndex = 1;
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(286, 355);
+            this.btnBaja.Location = new System.Drawing.Point(280, 355);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(75, 23);
             this.btnBaja.TabIndex = 0;
             this.btnBaja.Text = "Eliminar";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // tpMod
             // 
+            this.tpMod.Controls.Add(this.btnGuardar);
+            this.tpMod.Controls.Add(this.label5);
             this.tpMod.Controls.Add(this.tbEspecialidaModi);
             this.tpMod.Controls.Add(this.label4);
-            this.tpMod.Controls.Add(this.btnSiguienteModi);
-            this.tpMod.Controls.Add(this.btnAnteriorModi);
-            this.tpMod.Controls.Add(this.dgvModificar);
+            this.tpMod.Controls.Add(this.dgvEspecialidadesModificar);
             this.tpMod.Controls.Add(this.btnModificar);
             this.tpMod.Location = new System.Drawing.Point(4, 34);
             this.tpMod.Name = "tpMod";
@@ -232,6 +189,32 @@
             this.tpMod.TabIndex = 2;
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(483, 87);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 12;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(480, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 15);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Nuevo nombre";
+            // 
+            // tbEspecialidaModi
+            // 
+            this.tbEspecialidaModi.Location = new System.Drawing.Point(445, 43);
+            this.tbEspecialidaModi.Name = "tbEspecialidaModi";
+            this.tbEspecialidaModi.Size = new System.Drawing.Size(167, 23);
+            this.tbEspecialidaModi.TabIndex = 10;
             // 
             // label4
             // 
@@ -242,53 +225,29 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Lista de especialidades";
             // 
-            // btnSiguienteModi
+            // dgvEspecialidadesModificar
             // 
-            this.btnSiguienteModi.Location = new System.Drawing.Point(381, 395);
-            this.btnSiguienteModi.Name = "btnSiguienteModi";
-            this.btnSiguienteModi.Size = new System.Drawing.Size(68, 23);
-            this.btnSiguienteModi.TabIndex = 8;
-            this.btnSiguienteModi.Text = "Sig -->";
-            this.btnSiguienteModi.UseVisualStyleBackColor = true;
-            // 
-            // btnAnteriorModi
-            // 
-            this.btnAnteriorModi.Location = new System.Drawing.Point(211, 395);
-            this.btnAnteriorModi.Name = "btnAnteriorModi";
-            this.btnAnteriorModi.Size = new System.Drawing.Size(65, 23);
-            this.btnAnteriorModi.TabIndex = 7;
-            this.btnAnteriorModi.Text = "<-- Ant";
-            this.btnAnteriorModi.UseVisualStyleBackColor = true;
-            // 
-            // dgvModificar
-            // 
-            this.dgvModificar.AllowUserToAddRows = false;
-            this.dgvModificar.AllowUserToDeleteRows = false;
-            this.dgvModificar.AllowUserToOrderColumns = true;
-            this.dgvModificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvModificar.Location = new System.Drawing.Point(242, 106);
-            this.dgvModificar.MultiSelect = false;
-            this.dgvModificar.Name = "dgvModificar";
-            this.dgvModificar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvModificar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvModificar.Size = new System.Drawing.Size(167, 283);
-            this.dgvModificar.TabIndex = 2;
+            this.dgvEspecialidadesModificar.AllowUserToAddRows = false;
+            this.dgvEspecialidadesModificar.AllowUserToDeleteRows = false;
+            this.dgvEspecialidadesModificar.AllowUserToOrderColumns = true;
+            this.dgvEspecialidadesModificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEspecialidadesModificar.Location = new System.Drawing.Point(242, 43);
+            this.dgvEspecialidadesModificar.MultiSelect = false;
+            this.dgvEspecialidadesModificar.Name = "dgvEspecialidadesModificar";
+            this.dgvEspecialidadesModificar.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvEspecialidadesModificar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEspecialidadesModificar.Size = new System.Drawing.Size(167, 283);
+            this.dgvEspecialidadesModificar.TabIndex = 2;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(289, 395);
+            this.btnModificar.Location = new System.Drawing.Point(286, 368);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 0;
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // tbEspecialidaModi
-            // 
-            this.tbEspecialidaModi.Location = new System.Drawing.Point(242, 62);
-            this.tbEspecialidaModi.Name = "tbEspecialidaModi";
-            this.tbEspecialidaModi.Size = new System.Drawing.Size(167, 23);
-            this.tbEspecialidaModi.TabIndex = 10;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // frmABMES
             // 
@@ -301,16 +260,17 @@
             this.Name = "frmABMES";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmABMES_Load);
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidadesAlta)).EndInit();
             this.tpBaja.ResumeLayout(false);
             this.tpBaja.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidadesBaja)).EndInit();
             this.tpMod.ResumeLayout(false);
             this.tpMod.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvModificar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidadesModificar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,23 +281,19 @@
         private System.Windows.Forms.TabPage tpAlta;
         private System.Windows.Forms.Button btnAltaEspecialidad;
         private System.Windows.Forms.TabPage tpBaja;
-        private System.Windows.Forms.DataGridView dgvEliminar;
+        private System.Windows.Forms.DataGridView dgvEspecialidadesBaja;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.TabPage tpMod;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnSiguienteBaja;
-        private System.Windows.Forms.Button btnAnteriorBaja;
         private System.Windows.Forms.DataGridView dgvEspecialidadesAlta;
         private System.Windows.Forms.Label label1;
         private controles.TextBoxLetras tbEspecialidadAlta;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnSiguienteAlta;
-        private System.Windows.Forms.Button btnAnteriorAlta;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvModificar;
+        private System.Windows.Forms.DataGridView dgvEspecialidadesModificar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSiguienteModi;
-        private System.Windows.Forms.Button btnAnteriorModi;
         private controles.TextBoxLetras tbEspecialidaModi;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }
