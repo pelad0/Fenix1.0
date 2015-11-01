@@ -20,7 +20,7 @@ namespace Datos
 
         public void Alta(IEntidad entidad)
         {
-            clsPaciente pac = (clsPaciente)entidad;
+            clsPacienteDatos pac = (clsPacienteDatos)entidad;
 
             try
             {
@@ -38,7 +38,7 @@ namespace Datos
 
         public void Baja(IEntidad entidad)
         {
-            clsPaciente pac = (clsPaciente)entidad;
+            clsPacienteDatos pac = (clsPacienteDatos)entidad;
             try
             {
                 manager.ejecutar("update paciente set activo=0 where id=" + pac.Id);
@@ -52,7 +52,7 @@ namespace Datos
 
         public void Modificacion(IEntidad entidad)
         {
-            clsPaciente pac = (clsPaciente)entidad;
+            clsPacienteDatos pac = (clsPacienteDatos)entidad;
 
             try
             {
