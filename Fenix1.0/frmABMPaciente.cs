@@ -79,26 +79,6 @@ namespace Fenix1._0
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tbBuscar.Text))
-            {
-                iniciar();
-            }
-            else
-            {
-                try
-                {
-                    dgvAlta.DataSource = null;
-                    dgvAlta.DataSource = rp.buscarDni( Convert.ToInt64(tbBuscar.Text) );
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(dgvPacMod.CurrentRow.Index.ToString()))
@@ -132,6 +112,26 @@ namespace Fenix1._0
             else
             {
                 MessageBox.Show("Seleccione algún paciente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbBuscar.Text))
+            {
+                iniciar();
+            }
+            else
+            {
+                try
+                {
+                    dgvAlta.DataSource = null;
+                    dgvAlta.DataSource = rp.buscarDni(Convert.ToInt64(tbBuscar.Text));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
