@@ -7,9 +7,8 @@ using interfaces;
 
 namespace entidades
 {
-    public class clsHistorial: IEntidad
+    public class clsHistorial : IEntidad
     {
-
         string diagnostico;
 
         public string Diagnostico
@@ -52,6 +51,8 @@ namespace entidades
             get { return id; }
             set { id = value; }
         }
+
+       
 
     }
 }
