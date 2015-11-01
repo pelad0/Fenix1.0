@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 using interfaces;
 using entidades;
 using Datos;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace logica
 {
     public class RepositorioTurno
     {
+        ManejaTurno manejaTurno = new ManejaTurno();
+        
         public void Alta(IEntidad turno,int id)
         {
             try
             {
-                ManejaTurno manejaTurno = new ManejaTurno();
+               
                 manejaTurno.Alta(turno, id);
             }
             catch (SqlException ex)
@@ -31,23 +34,81 @@ namespace logica
         }
 
         public void Baja(IEntidad turno)
-        {
-            ManejaTurno manejaTurno = new ManejaTurno();
-            manejaTurno.Baja(turno);
+        {          
+          
+            try
+            {
+
+                manejaTurno.Baja(turno);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public void Modificacion(IEntidad turno)
+        public void Modificacion(IEntidad turno,int id)
         {
-            ManejaTurno manejaTurno = new ManejaTurno();
-            manejaTurno.Modificacion(turno);
+            try
+            {
+
+                manejaTurno.Modificacion(turno, id);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public clsTurno buscarPorId(int id)
         {
-            clsTurno med = new clsTurno();
-            ManejaMedico manejaMedico = new ManejaMedico();
-            med = (clsTurno)manejaMedico.buscaPorId(id);
+            clsTurno med;         
 
+            try
+            {
+
+                med = (clsTurno)manejaMedico.buscaPorId(id);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
             return med;
+        }
+
+        public List<clsTurno> Todo(int pag)
+        {
+            DataTable tabla;
+            List<clsTurno> lista = new List<clsTurno>();
+
+
+            tabla = manejaTurno.Todo(pag);
+            foreach (DataRow aux in tabla.Rows)
+            {
+                clsTurno turno = new clsTurno();
+                turno.Id = Convert.ToInt32(aux["id"]);
+                turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
+                turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
+                turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                turno.Estado = Convert.ToBoolean(aux["estado"]);
+
+                lista.Add(turno);
+            }
+
+            return lista;
+
         }
     }
 }

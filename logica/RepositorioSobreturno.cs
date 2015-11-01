@@ -11,16 +11,15 @@ using System.Data.SqlClient;
 
 namespace logica
 {
-    public class RepositorioEspecialidad
-    {
-
-        ManejaEspecialidad manejaEspecialidad = new ManejaEspecialidad();
-        public void Alta(IEntidad especialidad)
+    public class RepositorioSobreturno
+    {       
+        ManejaSobreturno manejaTurno = new ManejaSobreturno();
+        public void Alta(IEntidad turno, int id)
         {
-                        
             try
             {
-                manejaEspecialidad.Alta(especialidad);
+
+                manejaTurno.Alta(turno, id);
             }
             catch (SqlException ex)
             {
@@ -33,12 +32,13 @@ namespace logica
 
         }
 
-        public void Baja(IEntidad especialidad)
+        public void Baja(IEntidad turno)
         {
+
             try
             {
-                                
-                manejaEspecialidad.Baja(especialidad);
+
+                manejaTurno.Baja(turno);
             }
             catch (SqlException ex)
             {
@@ -48,14 +48,14 @@ namespace logica
             {
                 throw ex;
             }
-
         }
 
-        public void Modificacion(IEntidad especialidad)
+        public void Modificacion(IEntidad turno, int id)
         {
             try
             {
-               manejaEspecialidad.Modificacion(especialidad);
+
+                manejaTurno.Modificacion(turno, id);
             }
             catch (SqlException ex)
             {
@@ -65,17 +65,15 @@ namespace logica
             {
                 throw ex;
             }
-
-
         }
-
-        public clsEspecialidad buscarPorId(int id)
+        public clsSobreturno buscarPorId(int id)
         {
-            clsEspecialidad esp = new clsEspecialidad();
+            clsSobreturno med;
+
             try
             {
-                
-                esp = (clsEspecialidad)manejaEspecialidad.buscaPorId(id);
+
+                med = (clsSobreturno)manejaTurno.buscaPorId(id);
             }
             catch (SqlException ex)
             {
@@ -85,22 +83,27 @@ namespace logica
             {
                 throw ex;
             }
-
-            return esp;
+            return med;
         }
 
-        public List<clsEspecialidad> Todo()
+        public List<clsSobreturno> Todo(int pag)
         {
             DataTable tabla;
-            List<clsEspecialidad> lista = new List<clsEspecialidad>();
-           
-            tabla = manejaEspecialidad.Todo();
+            List<clsSobreturno> lista = new List<clsSobreturno>();
+
+
+            tabla = manejaTurno.Todo(pag);
             foreach (DataRow aux in tabla.Rows)
             {
-                clsEspecialidad esp = new clsEspecialidad();
-                esp.Id = Convert.ToInt32(aux["id"].ToString());
-                esp.Descripcion = aux["descripcion"].ToString();
-                lista.Add(esp);
+                clsSobreturno turno = new clsSobreturno();
+                turno.Id = Convert.ToInt32(aux["id"]);
+                turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
+                turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
+                turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                turno.Estado = Convert.ToBoolean(aux["estado"]);
+
+                lista.Add(turno);
             }
 
             return lista;

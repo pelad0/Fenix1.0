@@ -61,8 +61,8 @@ namespace logica
 
         public clsObraSocial buscarPorId(int id)
         {
-           
-            clsObraSocial os = new clsObraSocial();
+
+            clsObraSocial os;
             try
             {
                 os =(clsObraSocial) manejaOs.buscaPorId(id);
@@ -86,9 +86,13 @@ namespace logica
             List<clsObraSocial> lista = new List<clsObraSocial>();
            
             tabla = manejaOs.Todo(pag);
-            foreach (DataRow i in tabla.Rows)
+            foreach (DataRow aux in tabla.Rows)
             {
-                              
+                clsObraSocial os = new clsObraSocial();
+                os.Id = Convert.ToInt32(aux["id"]);
+                os.Nombre=aux["nombre"].ToString();
+
+                lista.Add(os);
 
             }
 

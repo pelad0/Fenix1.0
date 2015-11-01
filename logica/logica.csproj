@@ -43,6 +43,7 @@
     <Compile Include="RepositorioMedico.cs" />
     <Compile Include="RepositorioObraSocial.cs" />
     <Compile Include="RepositorioPaciente.cs" />
+    <Compile Include="RepositorioSobreturno.cs" />
     <Compile Include="RepositorioTurno.cs" />
     <Compile Include="RepositorioEspecialidad.cs" />
     <Compile Include="RepositorioUsuario.cs" />

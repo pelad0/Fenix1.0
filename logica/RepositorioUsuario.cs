@@ -50,7 +50,7 @@ namespace logica
         {
             try
             {
-                manejaUsuario.Modicacion(usuario);
+                manejaUsuario.Modificacion(usuario);
             }
             catch (SqlException ex)
             {
@@ -67,7 +67,7 @@ namespace logica
             clsUsuario usu = new clsUsuario();
             try
             {
-                usu=manejaUsuario.buscarPorId(id);
+                usu=(clsUsuario)manejaUsuario.buscaPorId(id);
             }
             catch (SqlException ex)
             {
@@ -87,10 +87,18 @@ namespace logica
             List<clsUsuario> lista = new List<clsUsuario>();
            
             tabla = manejaUsuario.Todo(pag);
-            foreach (DataRow i in tabla.Rows)
+            foreach (DataRow aux in tabla.Rows)
             {
 
-                clsMedico med = new clsMedico();
+                clsUsuario usu = new clsUsuario();
+                usu.Id = Convert.ToInt32(aux["id"]);
+                usu.Ususario = aux["usuario"].ToString();
+                usu.Clave = aux["clave"].ToString();
+                usu.Seguridad = aux["seguridad"].ToString();
+
+                lista.Add(usu);
+                
+
 
             }
 

@@ -14,11 +14,14 @@ namespace logica
     public class RepositorioPaciente
     {
         ManejaPaciente manejaPaciente = new ManejaPaciente();
+        ManejaObraSocial manejaOs = new ManejaObraSocial();
+
         public void Alta(IEntidad paciente)
         {
             try
             {               
-                manejaPaciente.Alta(paciente);
+
+                manejaPaciente.Alta(metodoS(paciente));
             }
             catch (SqlException ex)
             {
@@ -29,25 +32,53 @@ namespace logica
                 throw ex;
             }
            
-        }
+        }           
+
         public void Baja(IEntidad paciente)
         {
             
-            manejaPaciente.Baja(paciente);
+          try
+            {               
+
+                manejaPaciente.Baja(metodoS(paciente));
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         public void Modificacion(IEntidad paciente)
         {
-            
-            manejaPaciente.Modificacion(paciente);
+            try
+            {               
+
+                manejaPaciente.Modificacion(metodoS(paciente));
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public clsPaciente buscarPorId(int id)
         {
-            clsPaciente pac = new clsPaciente();
+            clsPacienteDatos paciente = new clsPacienteDatos();
+            clsPaciente pac;
             try
             {
-                pac = (clsPaciente)manejaPaciente.buscaPorId(id);
+                paciente = (clsPacienteDatos)manejaPaciente.buscaPorId(id);
+                pac=metodoL(paciente);
+
             }
             catch (SqlException ex)
             {
@@ -64,11 +95,13 @@ namespace logica
 
         public clsPaciente buscarDni(int dni)
         {
-            clsPacienteDatos pac = new clsPacienteDatos();
-
+            clsPacienteDatos paciente = new clsPacienteDatos();
+            clsPaciente pac;
             try
             {
-                pac=(clsPacienteDatos)manejaPaciente.BuscarPorDni(dni);
+                paciente = (clsPacienteDatos)manejaPaciente.BuscarPorDni(dni);
+                pac = metodoL(paciente);
+
             }
             catch (SqlException ex)
             {
@@ -87,15 +120,83 @@ namespace logica
         {
             DataTable tabla;
             List<clsPaciente> lista = new List<clsPaciente>();
+            clsObraSocial aux2;
            
             tabla = manejaPaciente.Todo(pag);
-            foreach (DataRow i in tabla.Rows)
+            foreach (DataRow aux in tabla.Rows)
             {
-                clsPaciente med = new clsPaciente();
+                clsPaciente pac = new clsPaciente();
+
+                pac.Id = Convert.ToInt32(aux["id"]);
+                pac.Nombre = aux["nombre"].ToString();
+                pac.Apellido = aux["apellido"].ToString();
+                pac.Dni = Convert.ToInt64(aux["dni"]);
+                aux2 = (clsObraSocial)manejaOs.buscaPorId(pac.Id);
+                pac.ObraSocial = aux2.Nombre;
+                pac.Telefono = Convert.ToInt32(aux["telefono"]);
+
+
+                lista.Add(pac);
             }
 
             return lista;
 
+        }
+
+        private clsPacienteDatos metodoS(IEntidad pac2)
+        {
+            clsPaciente pac = (clsPaciente)pac2;
+            clsPacienteDatos aux;
+            clsPacienteDatos paciente = new clsPacienteDatos();
+
+            try
+            {
+                paciente.Id = pac.Id;
+                paciente.Nombre = pac.Nombre;
+                paciente.Apellido = pac.Apellido;
+                paciente.Dni = pac.Dni;
+                aux = (clsPacienteDatos)manejaPaciente.buscaPorId(pac2.Id);
+                paciente.ObraSocial = aux.ObraSocial;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+            return paciente;
+        }
+
+        private clsPaciente metodoL(IEntidad pac2)
+        {
+            clsPacienteDatos pac = (clsPacienteDatos)pac2;
+            clsObraSocial aux;
+            clsPaciente paciente = new clsPaciente();
+           
+            try
+            {
+                paciente.Id = pac.Id;
+                paciente.Nombre = pac.Nombre;
+                paciente.Apellido = pac.Apellido;
+                paciente.Dni = pac.Dni;
+                aux = (clsObraSocial)manejaOs.buscaPorId(pac2.Id);
+                paciente.ObraSocial = aux.Nombre;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+            return paciente;
         }
     }
 }
