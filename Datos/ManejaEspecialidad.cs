@@ -23,7 +23,7 @@ namespace Datos
             clsEspecialidad ent = (clsEspecialidad)entidad;
             try
             {
-                manager.ejecutar("Insert into especialidad(descripcion) values('"+ent.Descripcion+");SELECT @@identity;");
+                manager.ejecutar("Insert into especialidad(descripcion) values('"+ent.Descripcion+"');SELECT @@identity;");
             }
             catch (Exception ex)
             {
@@ -36,7 +36,7 @@ namespace Datos
             clsEspecialidad esp = (clsEspecialidad)entidad;
             try
             {
-                manager.ejecutar("update especialidad set activo=0 where id=" + esp.Descripcion);
+                manager.ejecutar("update especialidad set activo=0 where id=" + esp.Id);
             }
             catch (Exception ex)
             {
@@ -49,7 +49,7 @@ namespace Datos
             clsEspecialidad esp = (clsEspecialidad)entidad;
             try
             {
-                manager.ejecutar("update especialidad set descripcion="+esp.Descripcion);
+                manager.ejecutar("update especialidad set descripcion='"+esp.Descripcion+"'");
             }
             catch (Exception ex)
             {
@@ -99,7 +99,7 @@ namespace Datos
             clsEspecialidad esp = new clsEspecialidad();
             try
             {
-                aux = manager.consultar("select * from especialidad where descripcion=" + nombre + "and activo=1");
+                aux = manager.consultar("select * from especialidad where descripcion='" + nombre + "' and activo=1");
                 esp.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 esp.Descripcion = aux.Rows[0]["descripcion"].ToString();
 
