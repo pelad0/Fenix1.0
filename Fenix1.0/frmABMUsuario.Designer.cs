@@ -30,6 +30,8 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbSeguridad = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +43,8 @@
             this.dgvEliminar = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbSegMod = new System.Windows.Forms.ComboBox();
             this.dgvModif = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,10 +53,6 @@
             this.tbContMod = new System.Windows.Forms.TextBox();
             this.tbUsuMod = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.cbSeguridad = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cbSegMod = new System.Windows.Forms.ComboBox();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
@@ -94,6 +94,23 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(283, 294);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 15);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Seguridad";
+            // 
+            // cbSeguridad
+            // 
+            this.cbSeguridad.FormattingEnabled = true;
+            this.cbSeguridad.Location = new System.Drawing.Point(258, 331);
+            this.cbSeguridad.Name = "cbSeguridad";
+            this.cbSeguridad.Size = new System.Drawing.Size(121, 23);
+            this.cbSeguridad.TabIndex = 8;
             // 
             // label3
             // 
@@ -213,6 +230,24 @@
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(436, 307);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 15);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Seguridad";
+            // 
+            // cbSegMod
+            // 
+            this.cbSegMod.FormattingEnabled = true;
+            this.cbSegMod.Location = new System.Drawing.Point(411, 342);
+            this.cbSegMod.Name = "cbSegMod";
+            this.cbSegMod.Size = new System.Drawing.Size(121, 23);
+            this.cbSegMod.TabIndex = 15;
+            this.cbSegMod.Tag = "Seguridad";
+            // 
             // dgvModif
             // 
             this.dgvModif.AllowUserToAddRows = false;
@@ -261,6 +296,8 @@
             this.tbContMod2.Name = "tbContMod2";
             this.tbContMod2.Size = new System.Drawing.Size(100, 23);
             this.tbContMod2.TabIndex = 10;
+            this.tbContMod2.Tag = "Confirmar Contraseña";
+            this.tbContMod2.UseSystemPasswordChar = true;
             // 
             // tbContMod
             // 
@@ -268,6 +305,8 @@
             this.tbContMod.Name = "tbContMod";
             this.tbContMod.Size = new System.Drawing.Size(100, 23);
             this.tbContMod.TabIndex = 9;
+            this.tbContMod.Tag = "Contraseña";
+            this.tbContMod.UseSystemPasswordChar = true;
             // 
             // tbUsuMod
             // 
@@ -275,6 +314,7 @@
             this.tbUsuMod.Name = "tbUsuMod";
             this.tbUsuMod.Size = new System.Drawing.Size(100, 23);
             this.tbUsuMod.TabIndex = 8;
+            this.tbUsuMod.Tag = "Usuario";
             // 
             // btnModificar
             // 
@@ -286,40 +326,6 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // cbSeguridad
-            // 
-            this.cbSeguridad.FormattingEnabled = true;
-            this.cbSeguridad.Location = new System.Drawing.Point(258, 331);
-            this.cbSeguridad.Name = "cbSeguridad";
-            this.cbSeguridad.Size = new System.Drawing.Size(121, 23);
-            this.cbSeguridad.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(283, 294);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 15);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Seguridad";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(436, 307);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 15);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Seguridad";
-            // 
-            // cbSegMod
-            // 
-            this.cbSegMod.FormattingEnabled = true;
-            this.cbSegMod.Location = new System.Drawing.Point(411, 342);
-            this.cbSegMod.Name = "cbSegMod";
-            this.cbSegMod.Size = new System.Drawing.Size(121, 23);
-            this.cbSegMod.TabIndex = 15;
             // 
             // frmABMUsuario
             // 

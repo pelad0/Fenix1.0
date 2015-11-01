@@ -77,6 +77,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnTerminar = new System.Windows.Forms.Button();
             this.cbTodos = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.pnlMedioTiempo.SuspendLayout();
             this.pnlTiempoCompleto.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +86,7 @@
             // 
             this.rbMT.AutoSize = true;
             this.rbMT.Checked = true;
-            this.rbMT.Location = new System.Drawing.Point(217, 12);
+            this.rbMT.Location = new System.Drawing.Point(217, 27);
             this.rbMT.Name = "rbMT";
             this.rbMT.Size = new System.Drawing.Size(109, 19);
             this.rbMT.TabIndex = 7;
@@ -97,7 +98,7 @@
             // rbTC
             // 
             this.rbTC.AutoSize = true;
-            this.rbTC.Location = new System.Drawing.Point(462, 12);
+            this.rbTC.Location = new System.Drawing.Point(461, 26);
             this.rbTC.Name = "rbTC";
             this.rbTC.Size = new System.Drawing.Size(130, 19);
             this.rbTC.TabIndex = 8;
@@ -377,6 +378,7 @@
             // 
             // pnlMedioTiempo
             // 
+            this.pnlMedioTiempo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMedioTiempo.Controls.Add(this.label3);
             this.pnlMedioTiempo.Controls.Add(this.cbRepetirMT);
             this.pnlMedioTiempo.Controls.Add(this.dtpEntradaMT_Lunes);
@@ -421,6 +423,7 @@
             // 
             // pnlTiempoCompleto
             // 
+            this.pnlTiempoCompleto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTiempoCompleto.Controls.Add(this.label4);
             this.pnlTiempoCompleto.Controls.Add(this.dtpEntradaTC_Lunes);
             this.pnlTiempoCompleto.Controls.Add(this.cbRepetirTC);
@@ -660,11 +663,21 @@
             this.cbTodos.UseVisualStyleBackColor = true;
             this.cbTodos.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(324, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(140, 15);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Formato: 0hs - 24hs";
+            // 
             // frmHorariosMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 478);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.cbTodos);
             this.Controls.Add(this.btnTerminar);
             this.Controls.Add(this.label1);
@@ -745,6 +758,7 @@
         private System.Windows.Forms.CheckBox cbRepetirMT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox cbRepetirTC;
+        private System.Windows.Forms.Label label5;
 
     }
 }

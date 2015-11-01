@@ -51,7 +51,7 @@
             this.tpBaja = new System.Windows.Forms.TabPage();
             this.btnSig = new System.Windows.Forms.Button();
             this.btnAnt = new System.Windows.Forms.Button();
-            this.dgvEliminar = new System.Windows.Forms.DataGridView();
+            this.dgvBaja = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
@@ -72,7 +72,7 @@
             this.tpAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlta)).BeginInit();
             this.tpBaja.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBaja)).BeginInit();
             this.tpMod.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacMod)).BeginInit();
             this.SuspendLayout();
@@ -291,7 +291,7 @@
             // 
             this.tpBaja.Controls.Add(this.btnSig);
             this.tpBaja.Controls.Add(this.btnAnt);
-            this.tpBaja.Controls.Add(this.dgvEliminar);
+            this.tpBaja.Controls.Add(this.dgvBaja);
             this.tpBaja.Controls.Add(this.btnBaja);
             this.tpBaja.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpBaja.Location = new System.Drawing.Point(4, 34);
@@ -322,20 +322,20 @@
             this.btnAnt.UseVisualStyleBackColor = true;
             this.btnAnt.Click += new System.EventHandler(this.btnAnt_Click);
             // 
-            // dgvEliminar
+            // dgvBaja
             // 
-            this.dgvEliminar.AllowUserToAddRows = false;
-            this.dgvEliminar.AllowUserToDeleteRows = false;
-            this.dgvEliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEliminar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvEliminar.Location = new System.Drawing.Point(3, 3);
-            this.dgvEliminar.MultiSelect = false;
-            this.dgvEliminar.Name = "dgvEliminar";
-            this.dgvEliminar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEliminar.ShowEditingIcon = false;
-            this.dgvEliminar.Size = new System.Drawing.Size(630, 380);
-            this.dgvEliminar.TabIndex = 1;
+            this.dgvBaja.AllowUserToAddRows = false;
+            this.dgvBaja.AllowUserToDeleteRows = false;
+            this.dgvBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBaja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvBaja.Location = new System.Drawing.Point(3, 3);
+            this.dgvBaja.MultiSelect = false;
+            this.dgvBaja.Name = "dgvBaja";
+            this.dgvBaja.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBaja.ShowEditingIcon = false;
+            this.dgvBaja.Size = new System.Drawing.Size(630, 380);
+            this.dgvBaja.TabIndex = 1;
             // 
             // btnBaja
             // 
@@ -513,7 +513,7 @@
             this.tpAlta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlta)).EndInit();
             this.tpBaja.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBaja)).EndInit();
             this.tpMod.ResumeLayout(false);
             this.tpMod.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacMod)).EndInit();
@@ -527,7 +527,7 @@
         private System.Windows.Forms.TabPage tpAlta;
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.TabPage tpBaja;
-        private System.Windows.Forms.DataGridView dgvEliminar;
+        private System.Windows.Forms.DataGridView dgvBaja;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.TabPage tpMod;
         private System.Windows.Forms.Button btnModificar;

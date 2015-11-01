@@ -16,11 +16,30 @@ namespace Fenix1._0
 {
     public partial class frmABMME : Form
     {
+
+        clsHorario HorariosMT;
+        clsHorario HorariosTC;
+
         public frmABMME()
         {
             InitializeComponent();  
         }
-              
+
+        public frmABMME(clsHorario horariomt)       //Constructor que solo recibe horarios de MedioTiempo.
+        {
+            InitializeComponent();
+            HorariosMT = horariomt;
+
+        }
+        
+        public frmABMME(clsHorario horariomt, clsHorario horariotc)     //Contructor que recibe los dos horarios.
+        {
+            InitializeComponent();
+            HorariosMT = horariomt;
+            HorariosTC = horariotc;
+        }
+        
+
 
         RepositorioMedico reposMedico=new RepositorioMedico();
 
@@ -32,7 +51,8 @@ namespace Fenix1._0
 
             if(verificarMedico())       //Se puede dar de alta.
             {
-                List<string> obra = new List<string>();                
+                List<string> obra = new List<string>();             
+   
                 //cargo obras sociales
                 foreach (string index in clbObraSocial.CheckedItems)
                 {
@@ -45,7 +65,7 @@ namespace Fenix1._0
                 medico.Dni = long.Parse(tbDniAlta.Text);
                 medico.Nombre = tbNombreAlta.Text;
                 medico.Apellido = tbApellidoAlta.Text;
-                //medico.Especialidad = cbEspecialidades.Text; ACA NECESITO DALE AL MEDICO EL ID DE LA ESPECIALIDAD
+                medico.Especialidad = cbEspecialidades.Text; 
                 medico.ObraSocial = obra;
 
 

@@ -9,61 +9,163 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using controles;
 using logica;
+using entidades;
+using frmABMME;
 
 namespace Fenix1._0
 {
     public partial class frmABMUsuario : Form
     {
-
+        RepositorioUsuario ru = new RepositorioUsuario();
+        List<clsUsuario> usuarios = new List<clsUsuario>();
         
         public frmABMUsuario()
         {
             InitializeComponent();
         }
 
+        private void frmABMUsuario_Load(object sender, EventArgs e)
+        {
+            iniciar();
+        }
+
+        private void dgvModif_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(dgvEliminar.CurrentRow.ToString()))
+            {
+
+                clsUsuario u = usuarios[dgvModif.CurrentRow.Index];
+                tbUsuMod.Text = u.Ususario;
+                tbContMod.Text = u.Clave;
+                tbContMod2.Text = u.Clave;
+            }
+        }
+
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(tbUsuAlta.Text) && !string.IsNullOrWhiteSpace(tbContAlta1.Text) && !string.IsNullOrWhiteSpace(tbContAlta2.Text))
+            if (!string.IsNullOrWhiteSpace(tbUsuAlta.Text) && !string.IsNullOrWhiteSpace(tbContAlta1.Text) && !string.IsNullOrWhiteSpace(tbContAlta2.Text) && cbSeguridad.SelectedIndex > -1)
             {
                 if (tbContAlta1.Text == tbContAlta2.Text)
                 {
+                    clsUsuario u = new clsUsuario(tbUsuAlta.Text, tbContAlta1.Text, cbSeguridad.SelectedItem.ToString());
                     try
                     {
-                        RepositorUsuario.Alta(tbUsuAlta.Text, tbContAlta1.Text);
+                        ru.Alta(u);
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Se ha pruducido el Sgte. error: "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    finally
+                    {
+                        iniciar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Las contraseñas ingresadas no coinciden.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
-        }
-
-        private void dgvModif_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-         
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
+            else
+            {
+                MessageBox.Show("Complete todos los campos correctamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            //frmConfirmaUsuario fcu = new frmConfirmaUsuario(RepositorioUsuario.Todo()[dgvEliminar.CurrentRow.Index].Clave);
-            //DialogResult res = fcu.ShowDialog();
-            //if (res == DialogResult.OK)
-            //{
-            //    RepositorUsuario.Baja(RepositorioUsuario.Todo()[dgvEliminar.CurrentRow.Index]);
-            //}
+            if (string.IsNullOrWhiteSpace(dgvEliminar.CurrentRow.ToString()))
+            {
+                frmConfirmaUsuario fcu = new frmConfirmaUsuario(usuarios[dgvEliminar.CurrentRow.Index].Clave);
+                DialogResult res = fcu.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    try
+                    {
+                        ru.Baja(usuarios[dgvEliminar.CurrentRow.Index]);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        iniciar();
+                    }
+                }
+            }
         }
 
-        private void frmABMUsuario_Load(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            if (comprobarDatosModif())
+            {
+                clsUsuario u = usuarios[dgvModif.CurrentRow.Index];
+                frmConfirmaUsuario fcu = new frmConfirmaUsuario(u.Clave);
+                DialogResult res = fcu.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    u.Clave = tbContMod.Text;
+                    u.Ususario = tbUsuMod.Text;
+                    u.Seguridad = cbSegMod.SelectedItem.ToString();
+                    try
+                    {
+                        ru.Modificacion(u);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        iniciar();
+                    }
+                }
+            }
         }
 
+        private bool comprobarDatosModif()
+        {
+            foreach (Control c in tpMod.Controls)
+            {
+                if (c is TextBox)
+                {
+                    if (string.IsNullOrWhiteSpace((c as TextBox).Text))
+                    {
+                        MessageBox.Show("Campo " + (c as TextBox).Tag + " incompleto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+                else if (c is ComboBox)
+                {
+                    if ((c as ComboBox).SelectedIndex > -1)
+                    {
+                        MessageBox.Show("Campo " + (c as ComboBox).Tag + " incompleto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        private void iniciar()
+        {
+            usuarios.Clear();
+            usuarios = ru.Todo(0);
+            dgvEliminar.DataSource = null;
+            dgvEliminar.DataSource = usuarios;
+            dgvEliminar.Columns[0].Visible = false;
+
+            dgvModif.DataSource = null;
+            dgvModif.DataSource = usuarios;
+            dgvModif.Columns[0].Visible = false;
+
+            tbContAlta1.Clear();
+            tbContAlta2.Clear();
+            tbUsuAlta.Clear();
+            cbSeguridad.SelectedIndex = -1;
+            cbSegMod.SelectedIndex = -1;
+        }
 
     }
 }

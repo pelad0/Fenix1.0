@@ -31,64 +31,106 @@ namespace Fenix1._0
             iniciar();
         }
 
+        private void dgvPacMod_SelectionChanged(object sender, EventArgs e)
+        {
+            int pos = dgvPacMod.CurrentRow.Index;
+            tbNombreMod.Text = pacientes[pos].Nombre;
+            tbApellidoMod.Text = pacientes[pos].Apellido;
+            tbDniMod.Text = pacientes[pos].Dni.ToString();
+            tbTelMod.Text = pacientes[pos].Telefono.ToString();
+            cbOSMod.SelectedItem = pacientes[pos].ObraSocial;
+        }
+
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            foreach (Control ctrl in tpAlta.Controls)
+            if (comprobarCamposAlta())
             {
-                if (ctrl is TextBoxLetras)
+                clsPaciente p = new clsPaciente(tbNombreAlta.Text, tbApellidoAlta.Text, Convert.ToInt64(tbDniAlta.Text), cbOSAlta.SelectedItem.ToString(), Convert.ToInt64(tbTelALta.Text));
+                try
                 {
-                    if (string.IsNullOrWhiteSpace((ctrl as TextBoxLetras).Text) || (ctrl as TextBoxLetras).Text.Length < 3)
-                    {
-                        MessageBox.Show("Completar el campo "+(ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        (ctrl as TextBoxLetras).Focus();
-                        return;
-                    }
+                    rp.Alta(p);
+                    iniciar();
                 }
-                else if(ctrl is TextBoxNumeros)
+                catch (Exception ex)
                 {
-                    if (string.IsNullOrWhiteSpace((ctrl as TextBoxNumeros).Text) || (ctrl as TextBoxLetras).Text.Length < 8)
-                    {
-                        MessageBox.Show("Completar el campo con la cantidad de digitos correcta." + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        (ctrl as TextBoxNumeros).Focus();
-                        return;
-                    }
-                }else if(ctrl is ComboBox)
-                {
-                    if(string.IsNullOrWhiteSpace((ctrl as ComboBox).SelectedItem.ToString()))
-                    {
-                        MessageBox.Show("Seleccione un valor para" + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        cbOSAlta.Focus();
-                        return;
-                    }
+                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    iniciar();
                 }
-            }
-            clsPaciente p = new clsPaciente(tbNombreAlta.Text, tbApellidoAlta.Text, Convert.ToInt64(tbDniAlta.Text), cbOSAlta.SelectedItem.ToString(), Convert.ToInt64(tbTelALta.Text));
-            try
-            {
-                rp.Alta(p);
-                iniciar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se ha pruducido el Sgte. error: "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            if (dgvEliminar.CurrentRow.Index != -1)
+            if (dgvBaja.CurrentRow.Index != -1)
             {
-                DialogResult res = MessageBox.Show("Desea eliminar a " + pacientes[dgvEliminar.CurrentRow.Index].nomCompleto() + " del registro de pacientes?", "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult res = MessageBox.Show("Desea eliminar a " + pacientes[dgvBaja.CurrentRow.Index].nomCompleto() + " del registro de pacientes?", "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (res == DialogResult.OK)
                 {
                     try
                     {
-                        rp.Baja(pacientes[dgvEliminar.CurrentRow.Index]);
+                        rp.Baja(pacientes[dgvBaja.CurrentRow.Index]);
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        iniciar();
                     }
+                }
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(dgvPacMod.CurrentRow.Index.ToString()))
+            {
+                DialogResult res = MessageBox.Show("Desea editar la información de " + pacientes[dgvPacMod.CurrentRow.Index].nomCompleto(), "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (res == DialogResult.OK)
+                {
+                    if (comprobarCamposModif())
+                    {
+                        clsPaciente pac = pacientes[dgvPacMod.CurrentRow.Index];
+                        pac.Nombre = tbNombreMod.Text;
+                        pac.Apellido = tbApellidoMod.Text;
+                        pac.Dni = Convert.ToInt64(tbDniMod.Text);
+                        pac.Telefono = Convert.ToInt64(tbTelMod.Text);
+                        pac.ObraSocial = cbOSMod.SelectedItem.ToString();
+                        try
+                        {
+                            rp.Modificacion(pac);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            iniciar();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione algún paciente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbBuscar.Text))
+            {
+                iniciar();
+            }
+            else
+            {
+                try
+                {
+                    dgvAlta.DataSource = null;
+                    dgvAlta.DataSource = rp.buscarDni(Convert.ToInt64(tbBuscar.Text));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -97,14 +139,17 @@ namespace Fenix1._0
         {
             if (pagina > 1)
             {
-                pacientes = rp.Todo(pagina);
                 pagina--;
-                dgvEliminar.DataSource = null;
-                dgvEliminar.DataSource = pacientes;
-                dgvEliminar.Columns[0].Visible = false;
+                pacientes = rp.Todo(pagina);
+
+                dgvBaja.DataSource = null;
+                dgvBaja.DataSource = pacientes;
+                dgvBaja.Columns[0].Visible = false;
+
                 dgvPacMod.DataSource = null;
                 dgvPacMod.DataSource = pacientes;
                 dgvPacMod.Columns[0].Visible = false;
+
                 dgvAlta.DataSource = null;
                 dgvAlta.DataSource = pacientes;
                 dgvAlta.Columns[0].Visible = false;
@@ -115,15 +160,23 @@ namespace Fenix1._0
         {
             pacientes = rp.Todo(pagina);
             pagina++;
-            dgvEliminar.DataSource = null;
-            dgvEliminar.DataSource = pacientes;
-            dgvEliminar.Columns[0].Visible = false;
+
+            dgvBaja.DataSource = null;
+            dgvBaja.DataSource = pacientes;
+            dgvBaja.Columns[0].Visible = false;
+
             dgvPacMod.DataSource = null;
             dgvPacMod.DataSource = pacientes;
             dgvPacMod.Columns[0].Visible = false;
+
             dgvAlta.DataSource = null;
             dgvAlta.DataSource = pacientes;
             dgvAlta.Columns[0].Visible = false;
+        }
+
+        private void btnDarTurno_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void iniciar()
@@ -132,17 +185,19 @@ namespace Fenix1._0
 
             pacientes = rp.Todo(pagina);
 
-            dgvEliminar.DataSource = null;
-            dgvEliminar.DataSource = pacientes;
-            dgvEliminar.Columns[0].Visible = false;
-            dgvPacMod.DataSource = null;
-            dgvPacMod.DataSource = pacientes;
-            dgvPacMod.Columns[0].Visible = false;
             dgvAlta.DataSource = null;
             dgvAlta.DataSource = pacientes;
             dgvAlta.Columns[0].Visible = false;
 
-            List<clsObraSocial> obras = ros.Todo(pagina);
+            dgvBaja.DataSource = null;
+            dgvBaja.DataSource = pacientes;
+            dgvBaja.Columns[0].Visible = false;
+
+            dgvPacMod.DataSource = null;
+            dgvPacMod.DataSource = pacientes;
+            dgvPacMod.Columns[0].Visible = false;
+
+            List<clsObraSocial> obras = ros.Todo(0);
             foreach (clsObraSocial obra in obras)
             {
                 OS.Add(obra.Nombre);
@@ -164,99 +219,74 @@ namespace Fenix1._0
             cbOSMod.SelectedIndex = -1;
         }
 
-        private void dgvPacMod_SelectionChanged(object sender, EventArgs e)
+        private bool comprobarCamposAlta()
         {
-            tbNombreMod.Text = pacientes[dgvPacMod.CurrentRow.Index].Nombre;
-            tbApellidoMod.Text = pacientes[dgvPacMod.CurrentRow.Index].Apellido;
-            tbDniMod.Text = pacientes[dgvPacMod.CurrentRow.Index].Dni.ToString();
-            tbTelMod.Text = pacientes[dgvPacMod.CurrentRow.Index].Telefono.ToString();
-            cbOSMod.SelectedItem = pacientes[dgvPacMod.CurrentRow.Index].ObraSocial;
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            
-            if (!string.IsNullOrWhiteSpace(dgvPacMod.CurrentRow.Index.ToString()))
+            foreach (Control ctrl in tpAlta.Controls)
             {
-                DialogResult res = MessageBox.Show("Desea editar la información de " + pacientes[dgvPacMod.CurrentRow.Index].nomCompleto(), "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (res == DialogResult.OK)
+                if (ctrl is TextBoxLetras)
                 {
-                    foreach (Control ctrl in tpMod.Controls)
+                    if (string.IsNullOrWhiteSpace((ctrl as TextBoxLetras).Text) || (ctrl as TextBoxLetras).Text.Length < 3)
                     {
-                        if (ctrl is TextBoxLetras)
-                        {
-                            if (string.IsNullOrWhiteSpace((ctrl as TextBoxLetras).Text) || (ctrl as TextBoxLetras).Text.Length < 3)
-                            {
-                                MessageBox.Show("Completar el campo " + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                (ctrl as TextBoxLetras).Focus();
-                                return;
-                            }
-                        }
-                        else if (ctrl is TextBoxNumeros)
-                        {
-                            if (string.IsNullOrWhiteSpace((ctrl as TextBoxNumeros).Text) || (ctrl as TextBoxLetras).Text.Length < 8)
-                            {
-                                MessageBox.Show("Completar el campo con la cantidad de digitos correcta." + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                (ctrl as TextBoxNumeros).Focus();
-                                return;
-                            }
-                        }
-                        else if (ctrl is ComboBox)
-                        {
-                            if (string.IsNullOrWhiteSpace((ctrl as ComboBox).SelectedItem.ToString()))
-                            {
-                                MessageBox.Show("Seleccione un valor para" + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                cbOSAlta.Focus();
-                                return;
-                            }
-                        }
+                        MessageBox.Show("Completar el campo " + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        (ctrl as TextBoxLetras).Focus();
+                        return false;
                     }
-                    clsPaciente pac = pacientes[dgvPacMod.CurrentRow.Index];
-                    pac.Nombre = tbNombreMod.Text;
-                    pac.Apellido = tbApellidoMod.Text;
-                    pac.Dni = Convert.ToInt64(tbDniMod.Text);
-                    pac.Telefono = Convert.ToInt64(tbTelMod.Text);
-                    pac.ObraSocial = cbOSMod.SelectedItem.ToString();
-                    try
+                }
+                else if (ctrl is TextBoxNumeros)
+                {
+                    if (string.IsNullOrWhiteSpace((ctrl as TextBoxNumeros).Text) || (ctrl as TextBoxLetras).Text.Length < 8)
                     {
-                        rp.Modificacion(pac);
+                        MessageBox.Show("Completar el campo con la cantidad de digitos correcta." + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        (ctrl as TextBoxNumeros).Focus();
+                        return false;
                     }
-                    catch (Exception ex)
+                }
+                else if (ctrl is ComboBox)
+                {
+                    if (string.IsNullOrWhiteSpace((ctrl as ComboBox).SelectedItem.ToString()))
                     {
-                        MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione un valor para" + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cbOSAlta.Focus();
+                        return false;
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("Seleccione algún paciente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            return true;
         }
 
-        private void btnDarTurno_Click(object sender, EventArgs e)
+        private bool comprobarCamposModif()
         {
-
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            //buscar paciente por dni
-            if (string.IsNullOrWhiteSpace(tbBuscar.Text))
+            foreach (Control ctrl in tpMod.Controls)
             {
-                iniciar();
-            }
-            else
-            {
-                try
+                if (ctrl is TextBoxLetras)
                 {
-                    dgvAlta.DataSource = null;
-                    dgvAlta.DataSource = rp.buscarDni(Convert.ToInt64(tbBuscar.Text));
+                    if (string.IsNullOrWhiteSpace((ctrl as TextBoxLetras).Text) || (ctrl as TextBoxLetras).Text.Length < 3)
+                    {
+                        MessageBox.Show("Completar el campo " + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        (ctrl as TextBoxLetras).Focus();
+                        return false;
+                    }
                 }
-                catch (Exception ex)
+                else if (ctrl is TextBoxNumeros)
                 {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (string.IsNullOrWhiteSpace((ctrl as TextBoxNumeros).Text) || (ctrl as TextBoxLetras).Text.Length < 8)
+                    {
+                        MessageBox.Show("Completar el campo con la cantidad de digitos correcta." + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        (ctrl as TextBoxNumeros).Focus();
+                        return false;
+                    }
+                }
+                else if (ctrl is ComboBox)
+                {
+                    if (string.IsNullOrWhiteSpace((ctrl as ComboBox).SelectedItem.ToString()))
+                    {
+                        MessageBox.Show("Seleccione un valor para" + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cbOSAlta.Focus();
+                        return false;
+                    }
                 }
             }
+            return true;
         }
 
     }
