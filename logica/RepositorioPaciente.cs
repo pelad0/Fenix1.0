@@ -93,13 +93,13 @@ namespace logica
             return pac;
         }
 
-        public clsPaciente buscarDni(int dni)
+        public clsPaciente buscarDni(long dni)
         {
             clsPacienteDatos paciente = new clsPacienteDatos();
             clsPaciente pac;
             try
             {
-                paciente = (clsPacienteDatos)manejaPaciente.BuscarPorDni(dni);
+                paciente = (clsPacienteDatos)manejaPaciente.BuscarPorDni((int)dni);//pasar a long
                 pac = metodoL(paciente);
 
             }

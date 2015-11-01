@@ -36,6 +36,7 @@ namespace Datos
             }
         }
 
+
         public void Baja(IEntidad entidad)
         {
             clsPaciente pac = (clsPaciente)entidad;
