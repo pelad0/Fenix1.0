@@ -93,6 +93,24 @@ namespace Datos
         }
 
 
+        public IEntidad buscaPorNombre(string nombre)
+        {
+            DataTable aux = new DataTable();
+            clsEspecialidad esp = new clsEspecialidad();
+            try
+            {
+                aux = manager.consultar("select * from especialidad where descripcion=" + nombre + "and activo=1");
+                esp.Id = Convert.ToInt32(aux.Rows[0]["id"]);
+                esp.Descripcion = aux.Rows[0]["descripcion"].ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return esp;
+        }
+
 
         public DataTable Todo(int pagina)
         {

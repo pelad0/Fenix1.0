@@ -101,6 +101,22 @@ activo bit default 1
             return aux;
         }
 
-       
+        public IEntidad buscaPorNombre(string nombre)
+        {
+            DataTable aux = new DataTable();
+            clsObraSocial pac = new clsObraSocial();
+            try
+            {
+
+                aux = manager.consultar("select * from obrasocial where nombre=" + nombre + " and activo=1");
+                pac.Id = Convert.ToInt32(aux.Rows[0]["id"]);
+                pac.Nombre = aux.Rows[0]["nombre"].ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return pac;
+        }
     }
 }
