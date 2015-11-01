@@ -14,6 +14,21 @@ namespace entidades
         int numeroFactura;
         char tipoFactura;
         string razonSocial;
+        string terminal;
+        string cuitcliente;
+
+        public string Cuitcliente
+        {
+            get { return cuitcliente; }
+            set { cuitcliente = value; }
+        }
+
+
+        public string Terminal
+        {
+            get { return terminal; }
+            set { terminal = value; }
+        }
         double total;
         DateTime fecha;
         int idUsuario;
