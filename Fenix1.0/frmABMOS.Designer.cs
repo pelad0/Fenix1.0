@@ -28,8 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.dgvOSAlta = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tbOS = new controles.TextBoxLetras();
             this.btnAlta = new System.Windows.Forms.Button();
@@ -37,17 +47,16 @@
             this.dgvOSBaja = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
+            this.dgvOSModif = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.tbModifOS = new controles.TextBoxLetras();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.dgvOSAlta = new System.Windows.Forms.DataGridView();
-            this.dgvOSModif = new System.Windows.Forms.DataGridView();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOSAlta)).BeginInit();
             this.tpBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOSBaja)).BeginInit();
             this.tpMod.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOSAlta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOSModif)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +88,34 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
+            // 
+            // dgvOSAlta
+            // 
+            this.dgvOSAlta.AllowUserToAddRows = false;
+            this.dgvOSAlta.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvOSAlta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvOSAlta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvOSAlta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOSAlta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvOSAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOSAlta.Location = new System.Drawing.Point(198, 72);
+            this.dgvOSAlta.Name = "dgvOSAlta";
+            this.dgvOSAlta.ReadOnly = true;
+            this.dgvOSAlta.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvOSAlta.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvOSAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOSAlta.Size = new System.Drawing.Size(240, 320);
+            this.dgvOSAlta.TabIndex = 3;
             // 
             // label1
             // 
@@ -124,11 +161,30 @@
             // 
             this.dgvOSBaja.AllowUserToAddRows = false;
             this.dgvOSBaja.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvOSBaja.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvOSBaja.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvOSBaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOSBaja.CausesValidation = false;
+            this.dgvOSBaja.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOSBaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOSBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOSBaja.Location = new System.Drawing.Point(198, 72);
             this.dgvOSBaja.MultiSelect = false;
             this.dgvOSBaja.Name = "dgvOSBaja";
+            this.dgvOSBaja.ReadOnly = true;
+            this.dgvOSBaja.RowHeadersVisible = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvOSBaja.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvOSBaja.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvOSBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOSBaja.Size = new System.Drawing.Size(240, 320);
             this.dgvOSBaja.TabIndex = 1;
@@ -155,6 +211,33 @@
             this.tpMod.TabIndex = 2;
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
+            // 
+            // dgvOSModif
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvOSModif.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvOSModif.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvOSModif.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOSModif.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvOSModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOSModif.Location = new System.Drawing.Point(198, 72);
+            this.dgvOSModif.Name = "dgvOSModif";
+            this.dgvOSModif.ReadOnly = true;
+            this.dgvOSModif.RowHeadersVisible = false;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvOSModif.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvOSModif.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvOSModif.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOSModif.Size = new System.Drawing.Size(240, 320);
+            this.dgvOSModif.TabIndex = 5;
+            this.dgvOSModif.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOSMod_CellContentClick);
             // 
             // label2
             // 
@@ -183,22 +266,6 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // dgvOSAlta
-            // 
-            this.dgvOSAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOSAlta.Location = new System.Drawing.Point(198, 72);
-            this.dgvOSAlta.Name = "dgvOSAlta";
-            this.dgvOSAlta.Size = new System.Drawing.Size(240, 320);
-            this.dgvOSAlta.TabIndex = 3;
-            // 
-            // dgvOSModif
-            // 
-            this.dgvOSModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOSModif.Location = new System.Drawing.Point(198, 72);
-            this.dgvOSModif.Name = "dgvOSModif";
-            this.dgvOSModif.Size = new System.Drawing.Size(240, 320);
-            this.dgvOSModif.TabIndex = 5;
-            // 
             // frmABMOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,11 +282,11 @@
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOSAlta)).EndInit();
             this.tpBaja.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOSBaja)).EndInit();
             this.tpMod.ResumeLayout(false);
             this.tpMod.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOSAlta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOSModif)).EndInit();
             this.ResumeLayout(false);
 

@@ -17,7 +17,10 @@ namespace Fenix1._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmABMME());
+            //Application.Run(new frmABMME());
+            Application.Run(new frmABMOS());
+            //Application.Run(new frmABMUsuario());
+            //Application.Run(new frmABMPaciente());
         }
     }
 }
