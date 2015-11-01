@@ -24,6 +24,11 @@ namespace Fenix1._0
         int pagina = 0;
 
 
+        List<clsObraXMedico> obraXmed = new List<clsObraXMedico>();
+        RepositorioObraPorMedico repoObraPorMed = new RepositorioObraPorMedico();
+        RepositorioObraSocial reposObraSocial = new RepositorioObraSocial();
+        RepositorioEspecialidad reposEspecialidad = new RepositorioEspecialidad();
+
         public frmABMME()
         {
             InitializeComponent();  
@@ -106,8 +111,7 @@ namespace Fenix1._0
             tbEspecialidadModi.Clear(); 
             dgvObrasSocialesAlta.DataSource = null;
             dgvObrasSocialesBaja.DataSource = null;
-            dgvObrasSocialesModi.DataSource = null;
-           
+            dgvObrasSocialesModi.DataSource = null;                      
 
             medicos.Clear();
 
@@ -139,7 +143,18 @@ namespace Fenix1._0
                 dgvMedicosModi.Rows.Add(med.Id, med.Matricula, med.Apellido);                
             }
 
-              
+
+            //Cargo obras sociales y especialidades.
+
+            //clbObraSocial.Items.Clear();
+            //cbEspecialidades.Items.Clear();
+
+
+            //clsEspecialidad especialidad;
+
+            //especialidad =
+
+            
 
 
         }
@@ -435,15 +450,25 @@ namespace Fenix1._0
         }
 
         private void dgvMedicosAlta_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {            
+            
+            dgvObrasSocialesAlta.Columns.Add("Nombre", "Nombre");
 
-            clsObraXMedico obraXmed = new clsObraXMedico();
+            int idMed = int.Parse(dgvMedicosAlta.Rows[dgvMedicosAlta.CurrentRow.Index].Cells[0].Value.ToString());            
 
-            int idMed = int.Parse(dgvMedicosAlta.Rows[dgvMedicosAlta.CurrentRow.Index].Cells[0].Value.ToString());
+            obraXmed = repoObraPorMed.TodasObras(idMed);            
 
-            RepositorioObraPorMedico repoObraPorMed = new RepositorioObraPorMedico();
+            clsObraSocial obraSocial;
 
-            obraXmed = repoObraPorMed.buscarPorId()
+            foreach(clsObraXMedico obramed in obraXmed)
+            {
+                obraSocial = reposObraSocial.buscarPorId(obramed.IdObra);
+
+                dgvObrasSocialesAlta.Rows.Add(obraSocial.Nombre);
+                
+            }
+
+
 
             
         }

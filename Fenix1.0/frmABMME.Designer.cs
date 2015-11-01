@@ -43,10 +43,6 @@
             this.clbObraSocial = new System.Windows.Forms.CheckedListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tbDniAlta = new controles.TextBoxNumeros();
-            this.tbMatriculaAlta = new controles.TextBoxNumeros();
-            this.tbApellidoAlta = new controles.TextBoxLetras();
-            this.tbNombreAlta = new controles.TextBoxLetras();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -75,6 +71,10 @@
             this.btnAnteriorModi = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.tbDniAlta = new controles.TextBoxNumeros();
+            this.tbMatriculaAlta = new controles.TextBoxNumeros();
+            this.tbApellidoAlta = new controles.TextBoxLetras();
+            this.tbNombreAlta = new controles.TextBoxLetras();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosAlta)).BeginInit();
@@ -237,9 +237,6 @@
             // clbObraSocial
             // 
             this.clbObraSocial.FormattingEnabled = true;
-            this.clbObraSocial.Items.AddRange(new object[] {
-            "asd",
-            "ffff"});
             this.clbObraSocial.Location = new System.Drawing.Point(703, 104);
             this.clbObraSocial.Name = "clbObraSocial";
             this.clbObraSocial.Size = new System.Drawing.Size(154, 94);
@@ -262,34 +259,6 @@
             this.label8.Size = new System.Drawing.Size(203, 15);
             this.label8.TabIndex = 6;
             this.label8.Text = "Ingrese los datos del médico\r\n";
-            // 
-            // tbDniAlta
-            // 
-            this.tbDniAlta.Location = new System.Drawing.Point(703, 63);
-            this.tbDniAlta.Name = "tbDniAlta";
-            this.tbDniAlta.Size = new System.Drawing.Size(154, 23);
-            this.tbDniAlta.TabIndex = 3;
-            // 
-            // tbMatriculaAlta
-            // 
-            this.tbMatriculaAlta.Location = new System.Drawing.Point(128, 132);
-            this.tbMatriculaAlta.Name = "tbMatriculaAlta";
-            this.tbMatriculaAlta.Size = new System.Drawing.Size(154, 23);
-            this.tbMatriculaAlta.TabIndex = 4;
-            // 
-            // tbApellidoAlta
-            // 
-            this.tbApellidoAlta.Location = new System.Drawing.Point(424, 63);
-            this.tbApellidoAlta.Name = "tbApellidoAlta";
-            this.tbApellidoAlta.Size = new System.Drawing.Size(154, 23);
-            this.tbApellidoAlta.TabIndex = 2;
-            // 
-            // tbNombreAlta
-            // 
-            this.tbNombreAlta.Location = new System.Drawing.Point(128, 63);
-            this.tbNombreAlta.Name = "tbNombreAlta";
-            this.tbNombreAlta.Size = new System.Drawing.Size(154, 23);
-            this.tbNombreAlta.TabIndex = 1;
             // 
             // label5
             // 
@@ -583,6 +552,34 @@
             this.label7.Size = new System.Drawing.Size(287, 15);
             this.label7.TabIndex = 3;
             this.label7.Text = "Seleccione el médico que desea modificar";
+            // 
+            // tbDniAlta
+            // 
+            this.tbDniAlta.Location = new System.Drawing.Point(703, 63);
+            this.tbDniAlta.Name = "tbDniAlta";
+            this.tbDniAlta.Size = new System.Drawing.Size(154, 23);
+            this.tbDniAlta.TabIndex = 3;
+            // 
+            // tbMatriculaAlta
+            // 
+            this.tbMatriculaAlta.Location = new System.Drawing.Point(128, 132);
+            this.tbMatriculaAlta.Name = "tbMatriculaAlta";
+            this.tbMatriculaAlta.Size = new System.Drawing.Size(154, 23);
+            this.tbMatriculaAlta.TabIndex = 4;
+            // 
+            // tbApellidoAlta
+            // 
+            this.tbApellidoAlta.Location = new System.Drawing.Point(424, 63);
+            this.tbApellidoAlta.Name = "tbApellidoAlta";
+            this.tbApellidoAlta.Size = new System.Drawing.Size(154, 23);
+            this.tbApellidoAlta.TabIndex = 2;
+            // 
+            // tbNombreAlta
+            // 
+            this.tbNombreAlta.Location = new System.Drawing.Point(128, 63);
+            this.tbNombreAlta.Name = "tbNombreAlta";
+            this.tbNombreAlta.Size = new System.Drawing.Size(154, 23);
+            this.tbNombreAlta.TabIndex = 1;
             // 
             // frmABMME
             // 
