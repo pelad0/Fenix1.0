@@ -36,8 +36,7 @@ namespace logica
         public void Baja(IEntidad especialidad)
         {
             try
-            {
-                                
+            {                                
                 manejaEspecialidad.Baja(especialidad);
             }
             catch (SqlException ex)

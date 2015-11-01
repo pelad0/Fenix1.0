@@ -19,15 +19,21 @@ namespace Fenix1._0
 
         clsHorario HorariosMT;
         clsHorario HorariosTC;
-        RepositorioMedico reposMedico = new RepositorioMedico();
-        List<clsMedico> medicos;
+   
+      
         int pagina = 0;
 
 
         List<clsObraXMedico> obraXmed = new List<clsObraXMedico>();
+        List<clsEspecialidad> listaEspecialidades = new List<clsEspecialidad>();
+        List<clsMedico> medicos;
+        List<clsObraSocial> listaObraSocial = new List<clsObraSocial>();
+
+
         RepositorioObraPorMedico repoObraPorMed = new RepositorioObraPorMedico();
         RepositorioObraSocial reposObraSocial = new RepositorioObraSocial();
         RepositorioEspecialidad reposEspecialidad = new RepositorioEspecialidad();
+        RepositorioMedico reposMedico = new RepositorioMedico();
 
         public frmABMME()
         {
@@ -146,13 +152,29 @@ namespace Fenix1._0
 
             //Cargo obras sociales y especialidades.
 
-            //clbObraSocial.Items.Clear();
-            //cbEspecialidades.Items.Clear();
+            clbObraSocial.Items.Clear();
+            cbEspecialidades.Items.Clear();
 
 
-            //clsEspecialidad especialidad;
+            
+            // CARGO ESPECIALIDADES.
+            listaEspecialidades = reposEspecialidad.Todo();
 
-            //especialidad =
+            foreach(clsEspecialidad es in listaEspecialidades)
+            {
+                cbEspecialidades.Items.Add(es.Descripcion);
+            }
+
+
+            listaObraSocial = reposObraSocial.Todo(0);
+
+            foreach(clsObraSocial obr in listaObraSocial)
+            {
+                clbObraSocial.Items.Add(obr.Nombre);
+            }
+
+
+
 
             
 
@@ -450,8 +472,11 @@ namespace Fenix1._0
         }
 
         private void dgvMedicosAlta_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {            
-            
+        {
+            dgvObrasSocialesAlta.DataSource = null;
+            tbEspecialidadAlta.Clear();
+
+
             dgvObrasSocialesAlta.Columns.Add("Nombre", "Nombre");
 
             int idMed = int.Parse(dgvMedicosAlta.Rows[dgvMedicosAlta.CurrentRow.Index].Cells[0].Value.ToString());            
@@ -468,9 +493,72 @@ namespace Fenix1._0
                 
             }
 
+            clsMedico med;
+
+            med = reposMedico.buscarPorId(idMed);
+
+            tbEspecialidadAlta.Text = med.Especialidad; 
+
 
 
             
+        }
+
+        private void dgvMedicosBaja_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            dgvObrasSocialesBaja.DataSource = null;
+            tbEspecialidadBaja.Clear();
+
+            dgvObrasSocialesBaja.Columns.Add("Nombre", "Nombre");
+
+            int idMed = int.Parse(dgvObrasSocialesBaja.Rows[dgvObrasSocialesBaja.CurrentRow.Index].Cells[0].Value.ToString());
+
+            obraXmed = repoObraPorMed.TodasObras(idMed);
+
+            clsObraSocial obraSocial;
+
+            foreach(clsObraXMedico obramed in obraXmed)
+            {
+                obraSocial = reposObraSocial.buscarPorId(obramed.IdObra);
+                dgvObrasSocialesBaja.Rows.Add(obraSocial.Nombre);
+            }
+
+            clsMedico med;
+
+            med = reposMedico.buscarPorId(idMed);
+
+            tbEspecialidadAlta.Text = med.Especialidad; 
+
+
+
+
+        }
+
+        private void dgvMedicosModi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {          
+            dgvObrasSocialesModi.DataSource = null;
+            tbEspecialidadModi.Clear();
+
+            dgvObrasSocialesModi.Columns.Add("Nombre", "Nombre");
+
+            int idMed = int.Parse(dgvObrasSocialesModi.Rows[dgvObrasSocialesModi.CurrentRow.Index].Cells[0].Value.ToString());
+
+            obraXmed = repoObraPorMed.TodasObras(idMed);
+
+            clsObraSocial obraSocial;
+
+            foreach (clsObraXMedico obramed in obraXmed)
+            {
+                obraSocial = reposObraSocial.buscarPorId(obramed.IdObra);
+                dgvObrasSocialesModi.Rows.Add(obraSocial.Nombre);
+            }
+
+            clsMedico med;
+
+            med = reposMedico.buscarPorId(idMed);
+
+            tbEspecialidadModi.Text = med.Especialidad; 
         }
         
 
