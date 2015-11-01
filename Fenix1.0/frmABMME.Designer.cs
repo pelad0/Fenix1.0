@@ -171,6 +171,7 @@
             this.dgvMedicosAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicosAlta.Location = new System.Drawing.Point(105, 303);
             this.dgvMedicosAlta.Name = "dgvMedicosAlta";
+            this.dgvMedicosAlta.ReadOnly = true;
             this.dgvMedicosAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicosAlta.Size = new System.Drawing.Size(274, 196);
             this.dgvMedicosAlta.TabIndex = 18;
@@ -201,6 +202,7 @@
             this.dgvObrasSocialesAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvObrasSocialesAlta.Location = new System.Drawing.Point(456, 303);
             this.dgvObrasSocialesAlta.Name = "dgvObrasSocialesAlta";
+            this.dgvObrasSocialesAlta.ReadOnly = true;
             this.dgvObrasSocialesAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObrasSocialesAlta.Size = new System.Drawing.Size(167, 196);
             this.dgvObrasSocialesAlta.TabIndex = 14;
@@ -354,9 +356,11 @@
             this.dgvMedicosBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicosBaja.Location = new System.Drawing.Point(86, 86);
             this.dgvMedicosBaja.Name = "dgvMedicosBaja";
+            this.dgvMedicosBaja.ReadOnly = true;
             this.dgvMedicosBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicosBaja.Size = new System.Drawing.Size(227, 196);
             this.dgvMedicosBaja.TabIndex = 24;
+            this.dgvMedicosBaja.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicosBaja_CellContentClick);
             // 
             // label13
             // 
@@ -383,6 +387,7 @@
             this.dgvObrasSocialesBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvObrasSocialesBaja.Location = new System.Drawing.Point(416, 86);
             this.dgvObrasSocialesBaja.Name = "dgvObrasSocialesBaja";
+            this.dgvObrasSocialesBaja.ReadOnly = true;
             this.dgvObrasSocialesBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObrasSocialesBaja.Size = new System.Drawing.Size(167, 196);
             this.dgvObrasSocialesBaja.TabIndex = 20;
@@ -472,9 +477,11 @@
             this.dgvMedicosModi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicosModi.Location = new System.Drawing.Point(85, 85);
             this.dgvMedicosModi.Name = "dgvMedicosModi";
+            this.dgvMedicosModi.ReadOnly = true;
             this.dgvMedicosModi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicosModi.Size = new System.Drawing.Size(227, 196);
             this.dgvMedicosModi.TabIndex = 33;
+            this.dgvMedicosModi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicosModi_CellContentClick);
             // 
             // label16
             // 
@@ -501,6 +508,7 @@
             this.dgvObrasSocialesModi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvObrasSocialesModi.Location = new System.Drawing.Point(414, 85);
             this.dgvObrasSocialesModi.Name = "dgvObrasSocialesModi";
+            this.dgvObrasSocialesModi.ReadOnly = true;
             this.dgvObrasSocialesModi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObrasSocialesModi.Size = new System.Drawing.Size(167, 196);
             this.dgvObrasSocialesModi.TabIndex = 29;

@@ -21,6 +21,7 @@ namespace Fenix1._0
         RepositorioEspecialidad reposEspe = new RepositorioEspecialidad();
 
         clsEspecialidad esEditar;
+    
 
 
 
@@ -34,9 +35,8 @@ namespace Fenix1._0
             
             if(!string.IsNullOrWhiteSpace(tbEspecialidadAlta.Text))
             {
-                clsEspecialidad es = new clsEspecialidad();
+                clsEspecialidad es = new clsEspecialidad(tbEspecialidadAlta.Text);
 
-                es.Descripcion = tbEspecialidadAlta.Text;
 
                 reposEspe.Alta(es);
             }
@@ -60,7 +60,7 @@ namespace Fenix1._0
 
         private void frmABMES_Load(object sender, EventArgs e)
         {
-            Actualizar();
+            //Actualizar();
         }
 
 
