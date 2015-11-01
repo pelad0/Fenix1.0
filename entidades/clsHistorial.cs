@@ -7,7 +7,7 @@ using interfaces;
 
 namespace entidades
 {
-    public class clsHistorial : IEntidad
+    public class clsHistorial: IEntidad
     {
 
         string diagnostico;
