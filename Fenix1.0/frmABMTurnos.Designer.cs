@@ -32,12 +32,18 @@
             this.tpAlta = new System.Windows.Forms.TabPage();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
+            this.btnSig = new System.Windows.Forms.Button();
+            this.btnAnt = new System.Windows.Forms.Button();
             this.dgvEliminar = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnSig = new System.Windows.Forms.Button();
-            this.btnAnt = new System.Windows.Forms.Button();
+            this.cbEspecialidades = new System.Windows.Forms.ComboBox();
+            this.cbMedicos = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
@@ -62,6 +68,12 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.Controls.Add(this.label3);
+            this.tpAlta.Controls.Add(this.label2);
+            this.tpAlta.Controls.Add(this.label1);
+            this.tpAlta.Controls.Add(this.comboBox3);
+            this.tpAlta.Controls.Add(this.cbMedicos);
+            this.tpAlta.Controls.Add(this.cbEspecialidades);
             this.tpAlta.Controls.Add(this.btnAlta);
             this.tpAlta.Location = new System.Drawing.Point(4, 34);
             this.tpAlta.Name = "tpAlta";
@@ -95,6 +107,24 @@
             this.tpBaja.TabIndex = 1;
             this.tpBaja.Text = "Baja";
             this.tpBaja.UseVisualStyleBackColor = true;
+            // 
+            // btnSig
+            // 
+            this.btnSig.Location = new System.Drawing.Point(467, 409);
+            this.btnSig.Name = "btnSig";
+            this.btnSig.Size = new System.Drawing.Size(93, 23);
+            this.btnSig.TabIndex = 6;
+            this.btnSig.Text = "Siguiente>>";
+            this.btnSig.UseVisualStyleBackColor = true;
+            // 
+            // btnAnt
+            // 
+            this.btnAnt.Location = new System.Drawing.Point(76, 409);
+            this.btnAnt.Name = "btnAnt";
+            this.btnAnt.Size = new System.Drawing.Size(90, 23);
+            this.btnAnt.TabIndex = 5;
+            this.btnAnt.Text = "<<Anterior";
+            this.btnAnt.UseVisualStyleBackColor = true;
             // 
             // dgvEliminar
             // 
@@ -139,23 +169,57 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // btnSig
+            // cbEspecialidades
             // 
-            this.btnSig.Location = new System.Drawing.Point(467, 409);
-            this.btnSig.Name = "btnSig";
-            this.btnSig.Size = new System.Drawing.Size(93, 23);
-            this.btnSig.TabIndex = 6;
-            this.btnSig.Text = "Siguiente>>";
-            this.btnSig.UseVisualStyleBackColor = true;
+            this.cbEspecialidades.FormattingEnabled = true;
+            this.cbEspecialidades.Location = new System.Drawing.Point(52, 45);
+            this.cbEspecialidades.Name = "cbEspecialidades";
+            this.cbEspecialidades.Size = new System.Drawing.Size(121, 23);
+            this.cbEspecialidades.TabIndex = 1;
+            this.cbEspecialidades.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidades_SelectedIndexChanged);
             // 
-            // btnAnt
+            // cbMedicos
             // 
-            this.btnAnt.Location = new System.Drawing.Point(76, 409);
-            this.btnAnt.Name = "btnAnt";
-            this.btnAnt.Size = new System.Drawing.Size(90, 23);
-            this.btnAnt.TabIndex = 5;
-            this.btnAnt.Text = "<<Anterior";
-            this.btnAnt.UseVisualStyleBackColor = true;
+            this.cbMedicos.FormattingEnabled = true;
+            this.cbMedicos.Location = new System.Drawing.Point(209, 43);
+            this.cbMedicos.Name = "cbMedicos";
+            this.cbMedicos.Size = new System.Drawing.Size(121, 23);
+            this.cbMedicos.TabIndex = 2;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(364, 44);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 23);
+            this.comboBox3.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(60, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Especialidades";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(241, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Medicos";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(400, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "label3";
             // 
             // frmABM
             // 
@@ -168,8 +232,10 @@
             this.Name = "frmABM";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmABM_Load);
             this.tcABM.ResumeLayout(false);
             this.tpAlta.ResumeLayout(false);
+            this.tpAlta.PerformLayout();
             this.tpBaja.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).EndInit();
             this.tpMod.ResumeLayout(false);
@@ -189,5 +255,11 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnSig;
         private System.Windows.Forms.Button btnAnt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbMedicos;
+        private System.Windows.Forms.ComboBox cbEspecialidades;
     }
 }
