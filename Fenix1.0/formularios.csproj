@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="frmABMTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMTurnos.Designer.cs">
+      <DependentUpon>frmABMTurnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmABMUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmABMTurnos.resx">
+      <DependentUpon>frmABMTurnos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </EmbeddedResource>
