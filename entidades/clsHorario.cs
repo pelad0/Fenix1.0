@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using interfaces;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace entidades
 {
-    public class clsHorario
+    public class clsHorario : IEntidad
     {
         int idMedico;
+
+        public int IdMedico
+        {
+            get { return idMedico; }
+            set { idMedico = value; }
+        }
         DateTime lunesEntrada;
         DateTime lunesSalida;
         DateTime martesEntrada;
@@ -165,5 +172,17 @@ namespace entidades
             set { domingoSalida = value; }
         }
 
+
+        public int Id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
