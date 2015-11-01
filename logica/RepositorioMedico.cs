@@ -93,6 +93,8 @@ namespace logica
             return m;
         }
 
+       
+
         public List<clsMedico>Todo(int pag)
         {
             DataTable tabla;
@@ -132,10 +134,50 @@ namespace logica
 
         }
 
+        public List<clsMedico> Consulta(string pag)
+        {
+            DataTable tabla;
+            List<clsMedico> lista = new List<clsMedico>();
+            clsEspecialidad aux2;
+            try
+            {
+                tabla = manejaMedico.Todo(pag);
+
+                foreach (DataRow aux in tabla.Rows)
+                {
+
+                    clsMedico med = new clsMedico();
+                    med.Id = Convert.ToInt32(aux["id"]);
+                    med.Nombre = aux["nombre"].ToString();
+                    med.Apellido = aux["apellido"].ToString();
+                    med.Dni = Convert.ToInt64(aux["dni"]);
+                    med.Matricula = Convert.ToInt32(aux["matricula"]);
+                    aux2 = (clsEspecialidad)manejaEspecialidad.buscaPorId(med.Id);
+                    med.Especialidad = aux2.Descripcion;
+
+                    lista.Add(med);
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+            return lista;
+
+        }
+
         private clsMedicoDatos metodoS(IEntidad med2)
         {
             clsMedico med = (clsMedico)med2;
-            clsMedicoDatos aux;
+            clsEspecialidad aux;
             clsMedicoDatos medico = new clsMedicoDatos();
 
             try
@@ -146,8 +188,8 @@ namespace logica
                 medico.Dni = med.Dni;
                 medico.Matricula = med.Matricula;
                 medico.ObraSocial = med.ObraSocial;
-                aux = (clsMedicoDatos)manejaMedico.buscaPorId(med.Id);
-                medico.Especialidad = aux.Especialidad;
+                aux = (clsEspecialidad)manejaEspecialidad.buscaPorNombre(med.Especialidad);
+                medico.Especialidad = aux.Id;
             }
             catch (SqlException ex)
             {
