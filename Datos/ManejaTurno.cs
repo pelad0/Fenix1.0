@@ -67,12 +67,12 @@ namespace Datos
             clsTurno tur = new clsTurno();
             try
             {
-               aux=manager.consultar("select * from medico where idmedico="+id+"and activo=1");
-                tur.Id = Convert.ToInt32(aux.Rows[0]["idPaciente"]);
+               aux=manager.consultar("select * from turno where id="+id+"and activo=1");
+                tur.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 tur.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
                 tur.IdPaciente = Convert.ToInt32(aux.Rows[0]["idpaciente"]);
                 tur.Fecha = Convert.ToDateTime(aux.Rows[0]["fecha"]);
-                tur.Costo = Convert.ToDouble(aux.Rows[0]["matricula"]);
+                tur.Costo = Convert.ToDouble(aux.Rows[0]["costo"]);
                 tur.Estado=Convert.ToBoolean(aux.Rows[0]["estado"]);
             }
             catch(Exception ex)
@@ -87,7 +87,8 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                aux = manager.consultar("select * from turno where activo=1");
+              //  aux = manager.consultar("select * from turno where activo=1");
+                aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM turno) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN" + pagina * 10 + " AND " + (pagina * 10) + 10);
             }
             catch (Exception ex)
             {

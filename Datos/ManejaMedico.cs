@@ -64,11 +64,11 @@ namespace Datos
         public IEntidad buscaPorId(int id)
         {
             DataTable aux = new DataTable();
-            clsMedico med = new clsMedico();
+            clsMedicoDatos med = new clsMedicoDatos();
             try
             {
-               aux=manager.consultar("select * from medico where idmedico="+id+"and activo=1");
-                med.Id = Convert.ToInt32(aux.Rows[0]["idPaciente"]);
+               aux=manager.consultar("select * from medico where id="+id+"and activo=1");
+                med.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 med.Nombre = aux.Rows[0]["nombre"].ToString();
                 med.Apellido = aux.Rows[0]["apellido"].ToString();
                 med.Dni = Convert.ToInt64(aux.Rows[0]["dni"]);
@@ -94,7 +94,8 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                aux = manager.consultar("select * from medico where activo=1");
+              //  aux = manager.consultar("select * from medico where activo=1");
+                aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM medico) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN" + pagina * 10 + " AND " + (pagina * 10) + 10);
             }
             catch (Exception ex)
             {

@@ -21,7 +21,7 @@ namespace Fenix1._0
             InitializeComponent();
         }
 
-        int llamada = 1;
+        int pagina = 0;
         RepositorioObraSocial ros = new RepositorioObraSocial();
         List<clsObraSocial> OS;
 
@@ -49,12 +49,14 @@ namespace Fenix1._0
 
         private void iniciar()
         {
-            OS = ros.Todo();
-            dgvOSAlta.dataSource = OS;
+            OS = ros.Todo(pagina);
+            dgvOSAlta.DataSource = OS;
             dgvOSAlta.Columns[0].Visible = false;
-            dgvOSBaja.dataSource = OS;
+
+            dgvOSBaja.DataSource = OS;
             dgvOSBaja.Columns[0].Visible = false;
-            dgvOSModif.dataSource = OS;
+            
+            dgvOSModif.DataSource = OS;
             dgvOSModif.Columns[0].Visible = false;
         }
 
@@ -68,7 +70,7 @@ namespace Fenix1._0
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (dgvOSMod.SelectedRows.Count > 0 && !string.IsNullOrWhiteSpace(tbModifOS.Text))
+            if (dgvOSModif.SelectedRows.Count > 0 && !string.IsNullOrWhiteSpace(tbModifOS.Text))
             {
                 
             }
@@ -76,7 +78,7 @@ namespace Fenix1._0
 
         private void dgvOSMod_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbModifOS.Text = OS[dgvOSMod.CurrentRow.Index].Nombre;
+            tbModifOS.Text = OS[dgvOSModif.CurrentRow.Index].Nombre;
         }
     }
 }

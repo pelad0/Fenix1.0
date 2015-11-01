@@ -11,26 +11,14 @@ using System.Data.SqlClient;
 
 namespace logica
 {
-    public class RepositorioObraSocial
+    public class RepositorioUsuario
     {
-        ManejaObraSocial manejaOs = new ManejaObraSocial();
-        public void Alta(IEntidad obraSocial)
-        {            
-            try
-            {
-                manejaOs.Alta(obraSocial);
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-        }
-         
-        public void Baja(IEntidad obraSocial)
+        ManejaUsuario manejaUsuario = new ManejaUsuario();
+        public void Alta(IEntidad usuario)
         {
             try
             {
-                manejaOs.Baja(obraSocial);
+                manejaUsuario.Alta(usuario);
             }
             catch (SqlException ex)
             {
@@ -42,11 +30,11 @@ namespace logica
             }
         }
 
-        public void Modificacion(IEntidad obraSocial)
+        public void Baja(IEntidad usuario)
         {
             try
             {
-                manejaOs.Baja(obraSocial);
+                manejaUsuario.Baja(usuario);
             }
             catch (SqlException ex)
             {
@@ -58,14 +46,11 @@ namespace logica
             }
         }
 
-
-        public clsObraSocial buscarPorId(int id)
+        public void Modificacion(IEntidad usuario)
         {
-           
-            clsObraSocial os = new clsObraSocial();
             try
             {
-                os =(clsObraSocial) manejaOs.buscaPorId(id);
+                manejaUsuario.Modicacion(usuario);
             }
             catch (SqlException ex)
             {
@@ -75,25 +60,43 @@ namespace logica
             {
                 throw ex;
             }
-            return os;
-            
         }
 
+        public clsUsuario buscarPorId(int id)
+        {
+            clsUsuario usu = new clsUsuario();
+            try
+            {
+                usu=manejaUsuario.buscarPorId(id);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
-        public List<clsObraSocial> Todo(int pag)
+            return usu;
+        }
+
+        public List<clsUsuario> Todo(int pag)
         {
             DataTable tabla;
-            List<clsObraSocial> lista = new List<clsObraSocial>();
+            List<clsUsuario> lista = new List<clsUsuario>();
            
-            tabla = manejaOs.Todo(pag);
+            tabla = manejaUsuario.Todo(pag);
             foreach (DataRow i in tabla.Rows)
             {
-                              
+
+                clsMedico med = new clsMedico();
 
             }
 
             return lista;
 
         }
+
     }
 }

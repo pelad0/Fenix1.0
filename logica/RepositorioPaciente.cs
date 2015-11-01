@@ -13,13 +13,12 @@ namespace logica
 {
     public class RepositorioPaciente
     {
+        ManejaPaciente manejaPaciente = new ManejaPaciente();
         public void Alta(IEntidad paciente)
         {
             try
-            {
-                ManejaPaciente manejapaciente = new ManejaPaciente();
-                manejapaciente.Alta(paciente);
-
+            {               
+                manejaPaciente.Alta(paciente);
             }
             catch (SqlException ex)
             {
@@ -33,22 +32,54 @@ namespace logica
         }
         public void Baja(IEntidad paciente)
         {
-            ManejaPaciente manejapaciente = new ManejaPaciente();
-            manejapaciente.Baja(paciente);
+            
+            manejaPaciente.Baja(paciente);
         }
 
         public void Modificacion(IEntidad paciente)
         {
-            ManejaPaciente manejapaciente = new ManejaPaciente();
-            manejapaciente.Modificacion(paciente);
+            
+            manejaPaciente.Modificacion(paciente);
         }
 
         public clsPaciente buscarPorId(int id)
         {
             clsPaciente pac = new clsPaciente();
-            ManejaPaciente manejaPaciente = new ManejaPaciente();
-            pac = (clsPaciente)manejaPaciente.buscaPorId(id);
+            try
+            {
+                pac = (clsPaciente)manejaPaciente.buscaPorId(id);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
 
+            return pac;
+        }
+
+        public clsPaciente buscarDni(int dni)
+        {
+            clsPacienteDatos pac = new clsPacienteDatos();
+
+            try
+            {
+                pac=(clsPacienteDatos)manejaPaciente.BuscarPorDni(dni);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+                      
+            
             return pac;
         }
 
@@ -56,13 +87,11 @@ namespace logica
         {
             DataTable tabla;
             List<clsPaciente> lista = new List<clsPaciente>();
-            ManejaMedico manejaPaciente = new ManejaMedico();
+           
             tabla = manejaPaciente.Todo(pag);
             foreach (DataRow i in tabla.Rows)
             {
-
                 clsPaciente med = new clsPaciente();
-
             }
 
             return lista;
