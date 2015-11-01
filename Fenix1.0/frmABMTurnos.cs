@@ -54,5 +54,10 @@ namespace Fenix1._0
             cbMedicos.DataSource= medicos;
         }
 
+        private void btnTurnoXDia_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
