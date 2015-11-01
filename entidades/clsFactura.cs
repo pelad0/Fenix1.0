@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using interfaces;
 
+
 namespace entidades
 {
-    public class clsFactura
+    public class clsFactura : IEntidad
     {
         int id;
         int numeroFactura;
