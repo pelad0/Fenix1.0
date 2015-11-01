@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using interfaces;
 
 namespace entidades
 {
-    public class clsHistorial
+    public class clsHistorial : IEntidad
     {
-        int idPaciente;
 
-        public int IdPaciente
-        {
-            get { return idPaciente; }
-            set { idPaciente = value; }
-        }
         string diagnostico;
 
         public string Diagnostico
@@ -44,10 +39,19 @@ namespace entidades
 
         public clsHistorial(int idPaciente,string diagnostico,string observaciones,DateTime fecha)
         {
-            this.idPaciente = idPaciente;
+            this.Id = idPaciente;
             this.diagnostico = diagnostico;
             this.observaciones = observaciones;
             this.fecha = fecha;
         }
+
+        private int Id;
+
+        public int Id1
+        {
+            get { return Id; }
+            set { Id = value; }
+        }
+
     }
 }
