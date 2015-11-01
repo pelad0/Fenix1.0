@@ -83,7 +83,7 @@ namespace Datos
             try
             {
                 
-                aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM historial) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN" + pagina * 10 + " AND " + (pagina * 10) + 10);
+                aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM historial) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN " + pagina * 10 + " AND " + (pagina * 10) + 10);
             }
             catch (Exception ex)
             {

@@ -23,7 +23,7 @@ namespace Datos
 
             try
             {
-                manager.ejecutar("Insert into obrasocial(nombre) values("+ob.Nombre+");SELECT @@identity;");
+                manager.ejecutar("Insert into obrasocial(nombre) values('"+ob.Nombre+"');SELECT @@identity;");
             }
             catch (Exception ex)
             {
@@ -74,7 +74,8 @@ activo bit default 1
             {
 
                 aux = manager.consultar("select * from obrasocial where id=" + id + " and activo=1");
-               
+                pac.Id = Convert.ToInt32(aux.Rows[0]["id"]);
+                pac.Nombre = aux.Rows[0]["nombre"].ToString();
             }
             catch (Exception ex)
             {
@@ -88,7 +89,7 @@ activo bit default 1
             DataTable aux = new DataTable();
             try
             {
-               aux = manager.consultar("select * from paciente where activo=1");
+               aux = manager.consultar("select * from obrasocial where activo=1");
 
                // aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM obrasocial) AS tabla WHERE activo=1 and tabla.RowNum BETWEEN" + pagina * 10 + "AND" + (pagina * 10) + 10);
             }
