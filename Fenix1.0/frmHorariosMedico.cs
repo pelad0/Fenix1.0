@@ -19,13 +19,13 @@ namespace Fenix1._0
             InitializeComponent();
         }
 
-        clsHorario horario;
+        clsHorario horario = new clsHorario();
         clsHorario horarioTC;
-        
+
 
         private void rbMT_CheckedChanged(object sender, EventArgs e)
         {
-            if(rbMT.Checked)
+            if (rbMT.Checked)
             {
                 pnlMedioTiempo.Visible = true;
                 pnlTiempoCompleto.Visible = false;
@@ -34,17 +34,27 @@ namespace Fenix1._0
 
         private void rbTC_CheckedChanged(object sender, EventArgs e)
         {
-            if(rbTC.Checked)
+            if (rbAmbos.Checked)
             {
                 pnlMedioTiempo.Visible = true;
                 pnlTiempoCompleto.Visible = true;
             }
         }
 
+        private void rbTarde_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbTarde.Checked)
+            {
+                pnlMedioTiempo.Visible = false;
+                pnlTiempoCompleto.Visible = true;
+            }
+        }
+
+
         private void cbLunes_CheckedChanged(object sender, EventArgs e)
         {
-            
-            if(sender is CheckBox)
+
+            if (sender is CheckBox)
             {
                 string tag = (sender as CheckBox).Tag.ToString();
 
@@ -76,11 +86,11 @@ namespace Fenix1._0
         {
 
 
-            foreach(Control control in pnlMedioTiempo.Controls)
+            foreach (Control control in pnlMedioTiempo.Controls)
             {
                 if (control is DateTimePicker || control is CheckBox || control is Label)
                 {
-                    if(control.Tag.ToString() == tag)
+                    if (control.Tag.ToString() == tag)
                     {
                         control.Visible = false;
                     }
@@ -130,9 +140,9 @@ namespace Fenix1._0
 
         public void MarcarTodosCB()
         {
-            foreach(Control control in this.Controls)
+            foreach (Control control in this.Controls)
             {
-                if(control is CheckBox && control.Tag.ToString() != "10")
+                if (control is CheckBox && control.Tag.ToString() != "10")
                 {
                     (control as CheckBox).Checked = true;
                 }
@@ -141,19 +151,9 @@ namespace Fenix1._0
         }
 
 
-
-
-
-
-
-
-
-
-
-
         private void btnTerminar_Click(object sender, EventArgs e)
         {
-            if (rbTC.Checked)    //Si el medico trabaja tiempo completo algún día.
+            if (rbAmbos.Checked)    //Si el medico trabaja tiempo completo algún día.
             {
                 if (cbLunes.Checked == false && cbMartes.Checked == false && cbMiercoles.Checked == false && cbJueves.Checked == false && cbViernes.Checked == false && cbSabado.Checked == false && cbDomingo.Checked == false)
                 {
@@ -269,17 +269,16 @@ namespace Fenix1._0
 
                     if (errores == true)
                     {
-                        MessageBox.Show("Alguno de sus horarios de entrada es mayor al horario de salida", "Error de horario", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Alguno de sus horarios de entrada es mayor al horario de salida", "Error de horario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
 
                         MessageBox.Show("Horarios cargados.");
                         this.Hide();
-                        frmABMME ABMME = new frmABMME(horario);
+                        frmABMME ABMME = new frmABMME(horario, horarioTC);
                         ABMME.ShowDialog();
                         this.Close();
-                        //Formulario de AMBME con parametros de lista.
                     }
                 }
 
@@ -287,21 +286,123 @@ namespace Fenix1._0
             }
             else
             {
-                if (cbLunes.Checked == false && cbMartes.Checked == false && cbMiercoles.Checked == false && cbJueves.Checked == false && cbViernes.Checked == false && cbSabado.Checked == false && cbDomingo.Checked == false)
-                {
-                    MessageBox.Show("Debe seleccionar al menos un dia de trabajo para el Médico");
-                }
-                else        //Si tiene algun horario de medio tiempo seleccionado.
-                {
+                DateTime dateNow;
+                dateNow = DateTime.Now;
 
+                if (rbMT.Checked)    //SI EL MEDICO TRABAJA SOLO MAÑANA
+                {
+                    if (cbLunes.Checked == false && cbMartes.Checked == false && cbMiercoles.Checked == false && cbJueves.Checked == false && cbViernes.Checked == false && cbSabado.Checked == false && cbDomingo.Checked == false)
+                    {
+                        MessageBox.Show("Debe seleccionar al menos un dia de trabajo para el Médico");
+                    }
+                    else        //Si tiene algun horario de medio tiempo seleccionado.
+                    {
+
+                        bool errores = false;
+
+                        if (cbLunes.Checked == true)
+                        {
+                            if (dtpEntradaMT_Lunes.Value < dtpSalidaMT_Lunes.Value)
+                            {
+                                horario.LunesEntrada = dtpEntradaMT_Lunes.Value;                                
+                                horario.LunesSalida = dtpSalidaMT_Lunes.Value;
+                            }
+                            else
+                                errores = true;
+                        }
+
+                        if (cbMartes.Checked == true)
+                        {
+                            if (dtpEntradaMT_Martes.Value < dtpSalidaMT_Martes.Value)
+                            {
+                                horario.MartesEntrada = dtpEntradaMT_Martes.Value;
+                                horario.MartesSalida = dtpSalidaMT_Martes.Value;
+                            }
+                            else
+                                errores = true;
+                        }
+
+                        if (cbMiercoles.Checked == true)
+                        {
+                            if (dtpEntradaMT_Miercoles.Value < dtpSalidaMT_Miercoles.Value)
+                            {
+                                horario.MiercolesEntrada = dtpEntradaMT_Miercoles.Value;
+                                horario.MiercolesSalida = dtpSalidaMT_Miercoles.Value;
+                            }
+                            else
+                                errores = true;
+                        }
+
+                        if (cbJueves.Checked == true)
+                        {
+                            if (dtpEntradaMT_Jueves.Value < dtpSalidaMT_Jueves.Value)
+                            {
+                                horario.JuevesEntrada = dtpEntradaMT_Jueves.Value;
+                                horario.JuevesSalida = dtpSalidaMT_Jueves.Value;
+                            }
+                            else
+                                errores = true;
+                        }
+
+                        if (cbViernes.Checked == true)
+                        {
+                            if (dtpEntradaMT_Viernes.Value < dtpSalidaMT_Viernes.Value)
+                            {
+                                horario.ViernesEntrada = dtpEntradaMT_Viernes.Value;
+                                horario.ViernesSalida = dtpSalidaMT_Viernes.Value;
+                            }
+                            else
+                                errores = true;
+                        }
+
+                        if (cbSabado.Checked == true)
+                        {
+                            if (dtpEntradaMT_Sabado.Value < dtpSalidaMT_Sabado.Value)
+                            {
+                                horario.SabadoEntrada = dtpEntradaMT_Sabado.Value;
+                                horario.SabadoSalida = dtpSalidaMT_Sabado.Value;
+                            }
+                            else
+                                errores = true;
+                        }
+
+                        if (cbDomingo.Checked == true)
+                        {
+                            if (dtpEntradaMT_Domingo.Value < dtpSalidaMT_Domingo.Value)
+                            {
+                                horario.DomingoEntrada = dtpEntradaMT_Domingo.Value;
+                                horario.DomingoSalida = dtpSalidaMT_Domingo.Value;
+                            }
+                            else
+                                errores = true;
+                        }
+
+                        if (errores)
+                        {
+                            MessageBox.Show("Alguno de sus horarios de entrada es mayor al horario de salida", "Error de horario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("Horarios cargados.");
+                            this.Hide();
+                            frmABMME ABMME = new frmABMME(horario);
+                            ABMME.ShowDialog();
+                            this.Close();
+                            //Formulario de AMBME con parametros de clases.
+                        }
+                    }
+                }
+                else            //SI EK MEDICO TRABAJA SOLO TARDE.
+                {
                     bool errores = false;
 
                     if (cbLunes.Checked == true)
                     {
-                        if (dtpEntradaMT_Lunes.Value < dtpSalidaMT_Lunes.Value)
+                        if (dtpEntradaTC_Lunes.Value < dtpSalidaTC_Lunes.Value)
                         {
-                            horario.LunesEntrada = dtpEntradaMT_Lunes.Value;
-                            horario.LunesSalida = dtpSalidaMT_Lunes.Value;
+                            horario.LunesEntrada = dtpEntradaTC_Lunes.Value;
+                            horario.LunesSalida = dtpSalidaTC_Lunes.Value;
                         }
                         else
                             errores = true;
@@ -309,10 +410,10 @@ namespace Fenix1._0
 
                     if (cbMartes.Checked == true)
                     {
-                        if (dtpEntradaMT_Martes.Value < dtpSalidaMT_Martes.Value)
+                        if (dtpEntradaTC_Martes.Value < dtpSalidaTC_Martes.Value)
                         {
-                            horario.MartesEntrada = dtpEntradaMT_Martes.Value;
-                            horario.MartesSalida = dtpSalidaMT_Martes.Value;
+                            horario.MartesEntrada = dtpEntradaTC_Martes.Value;
+                            horario.MartesSalida = dtpSalidaTC_Martes.Value;
                         }
                         else
                             errores = true;
@@ -320,10 +421,10 @@ namespace Fenix1._0
 
                     if (cbMiercoles.Checked == true)
                     {
-                        if (dtpEntradaMT_Miercoles.Value < dtpSalidaMT_Miercoles.Value)
+                        if (dtpEntradaTC_Miercoles.Value < dtpSalidaTC_Miercoles.Value)
                         {
-                            horario.MiercolesEntrada = dtpEntradaMT_Miercoles.Value;
-                            horario.MiercolesSalida = dtpSalidaMT_Miercoles.Value;
+                            horario.MiercolesEntrada = dtpEntradaTC_Miercoles.Value;
+                            horario.MiercolesSalida = dtpSalidaTC_Miercoles.Value;
                         }
                         else
                             errores = true;
@@ -331,10 +432,10 @@ namespace Fenix1._0
 
                     if (cbJueves.Checked == true)
                     {
-                        if (dtpEntradaMT_Jueves.Value < dtpSalidaMT_Jueves.Value)
+                        if (dtpEntradaTC_Jueves.Value < dtpSalidaTC_Jueves.Value)
                         {
-                            horario.JuevesEntrada = dtpEntradaMT_Jueves.Value;
-                            horario.JuevesSalida = dtpSalidaMT_Jueves.Value;
+                            horario.JuevesEntrada = dtpEntradaTC_Jueves.Value;
+                            horario.JuevesSalida = dtpSalidaTC_Jueves.Value;
                         }
                         else
                             errores = true;
@@ -342,10 +443,10 @@ namespace Fenix1._0
 
                     if (cbViernes.Checked == true)
                     {
-                        if (dtpEntradaMT_Viernes.Value < dtpSalidaMT_Viernes.Value)
+                        if (dtpEntradaTC_Viernes.Value < dtpSalidaTC_Viernes.Value)
                         {
-                            horario.ViernesEntrada = dtpEntradaMT_Viernes.Value;
-                            horario.ViernesSalida = dtpSalidaMT_Viernes.Value;
+                            horario.ViernesEntrada = dtpEntradaTC_Viernes.Value;
+                            horario.ViernesSalida = dtpSalidaTC_Viernes.Value;
                         }
                         else
                             errores = true;
@@ -353,10 +454,10 @@ namespace Fenix1._0
 
                     if (cbSabado.Checked == true)
                     {
-                        if (dtpEntradaMT_Sabado.Value < dtpSalidaMT_Sabado.Value)
+                        if (dtpEntradaTC_Sabado.Value < dtpSalidaTC_Sabado.Value)
                         {
-                            horario.SabadoEntrada = dtpEntradaMT_Sabado.Value;
-                            horario.SabadoSalida = dtpSalidaMT_Sabado.Value;
+                            horario.SabadoEntrada = dtpEntradaTC_Sabado.Value;
+                            horario.SabadoSalida = dtpSalidaTC_Sabado.Value;
                         }
                         else
                             errores = true;
@@ -364,18 +465,18 @@ namespace Fenix1._0
 
                     if (cbDomingo.Checked == true)
                     {
-                        if (dtpEntradaMT_Domingo.Value < dtpSalidaMT_Domingo.Value)
+                        if (dtpEntradaTC_Domingo.Value < dtpSalidaTC_Domingo.Value)
                         {
-                            horario.DomingoEntrada = dtpEntradaMT_Domingo.Value;
-                            horario.DomingoSalida = dtpSalidaMT_Domingo.Value;
+                            horario.DomingoEntrada = dtpEntradaTC_Domingo.Value;
+                            horario.DomingoSalida = dtpSalidaTC_Domingo.Value;
                         }
                         else
                             errores = true;
                     }
 
-                    if (errores == true)
+                    if (errores)
                     {
-                        MessageBox.Show("Alguno de sus horarios de entrada es mayor al horario de salida", "Error de horario", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Alguno de sus horarios de entrada es mayor al horario de salida", "Error de horario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -385,12 +486,14 @@ namespace Fenix1._0
                         frmABMME ABMME = new frmABMME(horario);
                         ABMME.ShowDialog();
                         this.Close();
-                        //Formulario de AMBME con parametros de lista.
                     }
                 }
             }
-            
+
+
         }
+
+
 
         private void cbRepetirMT_CheckedChanged(object sender, EventArgs e)
         {
@@ -401,27 +504,27 @@ namespace Fenix1._0
             DateTime salidaTC = dtpSalidaTC_Lunes.Value;
 
 
-            if((sender as CheckBox).Checked)
+            if ((sender as CheckBox).Checked)
             {
-                if((sender as CheckBox).Name == "cbRepetirMT")
+                if ((sender as CheckBox).Name == "cbRepetirMT")
                 {
-                    foreach(Control control in pnlMedioTiempo.Controls)
+                    foreach (Control control in pnlMedioTiempo.Controls)
                     {
-                        if(control.Tag.ToString() != "1" && (control is DateTimePicker))
+                        if (control.Tag.ToString() != "1" && (control is DateTimePicker))
                         {
                             if ((control as DateTimePicker).TabIndex == 1)
                                 (control as DateTimePicker).Value = entradaMT;
                             else
                                 (control as DateTimePicker).Value = salidaMT;
                         }
-                    }           
+                    }
 
 
                 }
 
                 else
                 {
-                    foreach (Control control in pnlTiempoCompleto.Controls)    
+                    foreach (Control control in pnlTiempoCompleto.Controls)
                     {
                         if (control.Tag.ToString() != "1" && (control is DateTimePicker))
                         {
@@ -434,7 +537,7 @@ namespace Fenix1._0
                 }
 
 
-                
+
             }
 
 
@@ -445,11 +548,12 @@ namespace Fenix1._0
 
         }
 
-      
 
-        
 
-       
+
+
+
+
 
 
     }

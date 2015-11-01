@@ -91,9 +91,7 @@ namespace logica
             }
 
             return m;
-        }
-
-       
+        }       
 
         public List<clsMedico>Todo(int pag)
         {
@@ -244,7 +242,6 @@ namespace logica
             else
                 throw new ArgumentException("el tipo '" + e.GetType().ToString() + "' no esta soportado en un repositorio del tipo '" + this.GetType().ToString());
         }
-
                
               
          

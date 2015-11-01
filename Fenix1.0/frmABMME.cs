@@ -90,17 +90,26 @@ namespace Fenix1._0
 
         public bool verificarMedico()       //Chekea todo menos horarios.
         {
-            if (string.IsNullOrWhiteSpace(tbMatriculaAlta.Text.ToString()) != true || string.IsNullOrWhiteSpace(tbDniAlta.Text.ToString()) != true || string.IsNullOrWhiteSpace(tbNombreAlta.Text) != true || string.IsNullOrWhiteSpace(tbApellidoAlta.Text) != true || string.IsNullOrWhiteSpace(cbEspecialidades.Text) == false)
-            {                   
-                                 
-                MessageBox.Show("Debe seleccionar al menos una especialidad para el médico.");
+            if (string.IsNullOrWhiteSpace(tbMatriculaAlta.Text.ToString()) == true || string.IsNullOrWhiteSpace(tbDniAlta.Text.ToString()) == true || string.IsNullOrWhiteSpace(tbNombreAlta.Text) == true || string.IsNullOrWhiteSpace(tbApellidoAlta.Text) == true || string.IsNullOrWhiteSpace(cbEspecialidades.Text) == true)
+            {
+
+                MessageBox.Show("Debe completar todos los campos para continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;               
 
             }
             else
             {
-                MessageBox.Show("Debe completar todos los campos para continuar");
-                return false;
+
+                if(tbDniAlta.Text.Length != 8)
+                {
+                    MessageBox.Show("DNI incorrencto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+                
             }
 
 
@@ -190,8 +199,10 @@ namespace Fenix1._0
 
         private void btnHorarios_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmHorariosMedico frmHorarios = new frmHorariosMedico();
             frmHorarios.ShowDialog();
+            this.Close();
 
         }
 
@@ -560,6 +571,8 @@ namespace Fenix1._0
 
             tbEspecialidadModi.Text = med.Especialidad; 
         }
+
+        
         
 
         
