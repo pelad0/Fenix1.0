@@ -46,7 +46,7 @@ namespace logica
         {
             try
             {
-                manejaOs.Baja(obraSocial);
+                manejaOs.Modificacion(obraSocial);
             }
             catch (SqlException ex)
             {
