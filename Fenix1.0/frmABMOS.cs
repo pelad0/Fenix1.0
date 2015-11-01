@@ -11,7 +11,6 @@ using entidades;
 using controles;
 using logica;
 
-
 namespace Fenix1._0
 {
     public partial class frmABMOS : Form
@@ -25,54 +24,82 @@ namespace Fenix1._0
         RepositorioObraSocial ros = new RepositorioObraSocial();
         List<clsObraSocial> OS;
 
-        private void btnAlta_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(tbOS.Text))
-            {
-                clsObraSocial OSoc = new clsObraSocial(tbOS.Text);
-                try
-                {
-                    ros.Alta(OSoc);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void frmABMOS_Load(object sender, EventArgs e)
         {
             iniciar();
         }
 
-        private void iniciar()
+        private void btnAlta_Click(object sender, EventArgs e)
         {
-            OS = ros.Todo(pagina);
-            dgvOSAlta.DataSource = OS;
-            dgvOSAlta.Columns[0].Visible = false;
-
-            dgvOSBaja.DataSource = OS;
-            dgvOSBaja.Columns[0].Visible = false;
-            
-            dgvOSModif.DataSource = OS;
-            dgvOSModif.Columns[0].Visible = false;
+            if (!string.IsNullOrWhiteSpace(tbOS.Text))
+            {
+                DialogResult res = MessageBox.Show("Agregar a " + tbOS.Text + " al sistema?", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (res == DialogResult.OK)
+                {
+                    clsObraSocial OSoc = new clsObraSocial(tbOS.Text);
+                    try
+                    {
+                        ros.Alta(OSoc);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            if (dgvOSBaja.SelectedRows.Count > 0)
+            if (!string.IsNullOrWhiteSpace(OS[dgvOSBaja.CurrentRow.Index].Nombre))
             {
-                
+                string exOS = OS[dgvOSBaja.CurrentRow.Index].Nombre;
+                DialogResult res = MessageBox.Show("Desea eliminar a "+ exOS +" del registro?", "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (res == DialogResult.OK)
+                {
+                    try
+                    {
+                        ros.Baja(OS[dgvOSBaja.CurrentRow.Index]);
+                        iniciar();
+                        MessageBox.Show(exOS+" se elimino con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione Obra Social a eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (dgvOSModif.SelectedRows.Count > 0 && !string.IsNullOrWhiteSpace(tbModifOS.Text))
+            if (!string.IsNullOrWhiteSpace(tbModifOS.Text))
             {
-                
+                int pos = dgvOSModif.CurrentRow.Index;
+                string anterior = OS[pos].Nombre;
+
+                DialogResult res = MessageBox.Show("Desea editar la información de " + anterior + "?", "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (res == DialogResult.OK)
+                {
+                    try
+                    {
+                        ros.Modificacion(OS[dgvOSModif.CurrentRow.Index]);
+                        iniciar();
+                        MessageBox.Show(anterior+" cambió a: "+OS[pos].Nombre, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione Obra Social a modificar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -80,5 +107,25 @@ namespace Fenix1._0
         {
             tbModifOS.Text = OS[dgvOSModif.CurrentRow.Index].Nombre;
         }
+
+        private void iniciar()
+        {
+            OS = ros.Todo(pagina);
+            dgvOSAlta.DataSource = null;
+            dgvOSAlta.DataSource = OS;
+            dgvOSAlta.Columns[0].Visible = false;
+
+            dgvOSBaja.DataSource = null;
+            dgvOSBaja.DataSource = OS;
+            dgvOSBaja.Columns[0].Visible = false;
+
+            dgvOSModif.DataSource = null;
+            dgvOSModif.DataSource = OS;
+            dgvOSModif.Columns[0].Visible = false;
+
+            tbModifOS.Clear();
+            tbOS.Clear();
+        }
+
     }
 }
