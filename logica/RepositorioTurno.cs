@@ -74,7 +74,7 @@ namespace logica
             try
             {
 
-                med = (clsTurno)manejaMedico.buscaPorId(id);
+                med = (clsTurno)manejaTurno.buscaPorId(id);
             }
             catch (SqlException ex)
             {
