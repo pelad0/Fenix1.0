@@ -98,23 +98,35 @@ namespace logica
             DataTable tabla;
             List<clsMedico> lista = new List<clsMedico>();
             clsEspecialidad aux2;
-            tabla=manejaMedico.Todo(pag);
-            foreach(DataRow aux in tabla.Rows)
+            try
             {
+                tabla = manejaMedico.Todo(pag);
+                foreach (DataRow aux in tabla.Rows)
+                {
 
-                clsMedico med = new clsMedico();
-                med.Id = Convert.ToInt32(aux["id"]);
-                med.Nombre = aux["nombre"].ToString();
-                med.Apellido = aux["apellido"].ToString();
-                med.Dni = Convert.ToInt64(aux["dni"]);
-                med.Matricula = Convert.ToInt32(aux["matricula"]);
-                aux2=(clsEspecialidad)manejaEspecialidad.buscaPorId(med.Id);
-                med.Especialidad=aux2.Descripcion;
-                
-                lista.Add(med);
+                    clsMedico med = new clsMedico();
+                    med.Id = Convert.ToInt32(aux["id"]);
+                    med.Nombre = aux["nombre"].ToString();
+                    med.Apellido = aux["apellido"].ToString();
+                    med.Dni = Convert.ToInt64(aux["dni"]);
+                    med.Matricula = Convert.ToInt32(aux["matricula"]);
+                    aux2 = (clsEspecialidad)manejaEspecialidad.buscaPorId(med.Id);
+                    med.Especialidad = aux2.Descripcion;
+
+                    lista.Add(med);
 
 
+                }
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
 
             return lista;
 
@@ -178,6 +190,14 @@ namespace logica
 
 
             return medico;
+        }
+
+        private clsMedico getCast(IEntidad e)
+        {
+            if (e.GetType().Equals(typeof(clsMedico)))
+                return (clsMedico)e;
+            else
+                throw new ArgumentException("el tipo '" + e.GetType().ToString() + "' no esta soportado en un repositorio del tipo '" + this.GetType().ToString());
         }
 
                
