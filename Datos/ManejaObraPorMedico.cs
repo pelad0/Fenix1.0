@@ -92,16 +92,21 @@ namespace Datos
             return aux;
         }
 
-        public int Id
+        public DataTable TodasObras(int id)
         {
-            get
+            DataTable aux = new DataTable();
+            
+            try
             {
-                throw new NotImplementedException();
+
+                aux = manager.consultar("select * from obraxmedico where idmedico=" + id + " and activo=1");
+                
             }
-            set
+            catch (Exception ex)
             {
-                throw new NotImplementedException();
+                throw ex;
             }
+            return aux;
         }
     }
 }
