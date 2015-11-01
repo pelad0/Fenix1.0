@@ -23,7 +23,7 @@ namespace Datos
 
             try
             {
-                manager.ejecutar("Insert into obrasocial(nombre) values("+ob.Nombre+");SELECT @@identity;");
+                manager.ejecutar("Insert into obrasocial(nombre) values('"+ob.Nombre+"');SELECT @@identity;");
             }
             catch (Exception ex)
             {
