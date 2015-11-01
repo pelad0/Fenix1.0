@@ -67,6 +67,7 @@ namespace logica
                 throw ex;
             }
         }
+
         public clsTurno buscarPorId(int id)
         {
             clsTurno med;         
