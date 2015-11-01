@@ -58,7 +58,7 @@ activo bit default 1
 
             try
             {
-                manager.ejecutar("update obrasocial set nombre=" + ob.Nombre );
+                manager.ejecutar("update obrasocial set nombre=" + ob.Nombre +" where id="+ob.Id+" and activo=1");
             }
             catch (Exception ex)
             {

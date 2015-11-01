@@ -111,7 +111,7 @@ namespace Fenix1._0
 
         private void iniciar()
         {
-            OS = ros.Todo(pagina);
+            OS = ros.Todo(0);
             dgvOSAlta.DataSource = null;
             dgvOSAlta.DataSource = OS;
             dgvOSAlta.Columns[1].Visible = false;
