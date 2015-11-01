@@ -43,7 +43,8 @@
     <Compile Include="ManejaEspecialidad.cs" />
     <Compile Include="ManejaFactura.cs" />
     <Compile Include="ManejaHistorial.cs" />
-    <Compile Include="ManejaHorario.cs" />
+    <Compile Include="ManejaHorarioMañana.cs" />
+    <Compile Include="ManejaHorarioTarde.cs" />
     <Compile Include="ManejaMedico.cs" />
     <Compile Include="ManejaObraPorMedico.cs" />
     <Compile Include="ManejaObraSocial.cs" />
