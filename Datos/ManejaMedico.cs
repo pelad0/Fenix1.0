@@ -67,7 +67,7 @@ namespace Datos
             clsMedicoDatos med = new clsMedicoDatos();
             try
             {
-               aux=manager.consultar("select * from medico where id="+id+"and activo=1");
+               aux=manager.consultar("select * from medico where id="+id+" and activo=1");
                 med.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 med.Nombre = aux.Rows[0]["nombre"].ToString();
                 med.Apellido = aux.Rows[0]["apellido"].ToString();
