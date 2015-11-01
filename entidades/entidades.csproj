@@ -43,6 +43,7 @@
     <Compile Include="clsEspecialidad.cs" />
     <Compile Include="clsFactura.cs" />
     <Compile Include="clsHistorial.cs" />
+    <Compile Include="clsHorario.cs" />
     <Compile Include="clsMedico.cs" />
     <Compile Include="clsMedicoDatos.cs" />
     <Compile Include="clsObraSocial.cs" />

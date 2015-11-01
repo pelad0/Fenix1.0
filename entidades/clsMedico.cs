@@ -15,14 +15,11 @@ namespace entidades
         string nombre;
         string apellido;
         string especialidad;
-
-        public string Especialidad
-        {
-            get { return especialidad; }
-            set { especialidad = value; }
-        }
-
         List<string> obraSocial;
+
+        
+
+        
 
         public clsMedico(int id, int matricula, long dni, string nombre, string apellido, string especialidad, List<string> obraSocial )
         {
@@ -77,6 +74,12 @@ namespace entidades
         {
             get { return apellido; }
             set { apellido = value; }
+        }
+
+        public string Especialidad
+        {
+            get { return especialidad; }
+            set { especialidad = value; }
         }
 
         public List<string> ObraSocial

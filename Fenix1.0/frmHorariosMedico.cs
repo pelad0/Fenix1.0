@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using logica;
+using entidades;
 
 namespace Fenix1._0
 {
@@ -16,6 +18,10 @@ namespace Fenix1._0
         {
             InitializeComponent();
         }
+
+        clsHorario horario;
+        clsHorario horarioTC;
+        
 
         private void rbMT_CheckedChanged(object sender, EventArgs e)
         {
@@ -147,17 +153,243 @@ namespace Fenix1._0
 
         private void btnTerminar_Click(object sender, EventArgs e)
         {
-            if(rbMT.Checked)    //Si solo va a trabajar medio tiempo creo una lista de horarios.
+            if (rbTC.Checked)    //Si el medico trabaja tiempo completo algún día.
             {
+                if (cbLunes.Checked == false && cbMartes.Checked == false && cbMiercoles.Checked == false && cbJueves.Checked == false && cbViernes.Checked == false && cbSabado.Checked == false && cbDomingo.Checked == false)
+                {
+                    MessageBox.Show("Debe seleccionar al menos un dia de trabajo para el Médico");
+                }
+                else        //Si tiene algun horario de medio tiempo seleccionado.
+                {
+
+
+                    bool errores = false;
+
+                    if (cbLunes.Checked == true)
+                    {
+                        if ((dtpEntradaMT_Lunes.Value < dtpSalidaMT_Lunes.Value) && (dtpEntradaTC_Lunes.Value < dtpSalidaTC_Lunes.Value))
+                        {
+                            horario.LunesEntrada = dtpEntradaMT_Lunes.Value;
+                            horario.LunesSalida = dtpSalidaMT_Lunes.Value;
+
+                            horarioTC.LunesEntrada = dtpEntradaTC_Lunes.Value;
+                            horarioTC.LunesSalida = dtpSalidaTC_Lunes.Value;
+
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbMartes.Checked == true)
+                    {
+                        if ((dtpEntradaMT_Martes.Value < dtpSalidaMT_Martes.Value) && (dtpEntradaTC_Martes.Value < dtpSalidaTC_Martes.Value))
+                        {
+                            horario.MartesEntrada = dtpEntradaMT_Martes.Value;
+                            horario.MartesSalida = dtpSalidaMT_Martes.Value;
+
+                            horarioTC.MartesEntrada = dtpEntradaTC_Martes.Value;
+                            horarioTC.MartesSalida = dtpSalidaTC_Martes.Value;
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbMiercoles.Checked == true)
+                    {
+                        if ((dtpEntradaMT_Miercoles.Value < dtpSalidaMT_Miercoles.Value) && (dtpEntradaTC_Miercoles.Value < dtpSalidaTC_Miercoles.Value))
+                        {
+                            horario.MiercolesEntrada = dtpEntradaMT_Miercoles.Value;
+                            horario.MiercolesSalida = dtpSalidaMT_Miercoles.Value;
+
+                            horarioTC.MiercolesEntrada = dtpEntradaTC_Miercoles.Value;
+                            horarioTC.MiercolesSalida = dtpSalidaTC_Miercoles.Value;
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbJueves.Checked == true)
+                    {
+                        if ((dtpEntradaMT_Jueves.Value < dtpSalidaMT_Jueves.Value) && (dtpEntradaTC_Jueves.Value < dtpSalidaTC_Jueves.Value))
+                        {
+                            horario.JuevesEntrada = dtpEntradaMT_Jueves.Value;
+                            horario.JuevesSalida = dtpSalidaMT_Jueves.Value;
+
+                            horarioTC.JuevesEntrada = dtpEntradaTC_Jueves.Value;
+                            horarioTC.JuevesSalida = dtpSalidaTC_Jueves.Value;
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbViernes.Checked == true)
+                    {
+                        if ((dtpEntradaMT_Viernes.Value < dtpSalidaMT_Viernes.Value) && (dtpEntradaTC_Viernes.Value < dtpSalidaTC_Viernes.Value))
+                        {
+                            horario.ViernesEntrada = dtpEntradaMT_Viernes.Value;
+                            horario.ViernesSalida = dtpSalidaMT_Viernes.Value;
+
+                            horarioTC.ViernesEntrada = dtpEntradaTC_Viernes.Value;
+                            horarioTC.ViernesSalida = dtpSalidaTC_Viernes.Value;
+
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbSabado.Checked == true)
+                    {
+                        if ((dtpEntradaMT_Sabado.Value < dtpSalidaMT_Sabado.Value) && (dtpEntradaTC_Sabado.Value < dtpSalidaTC_Sabado.Value))
+                        {
+                            horario.SabadoEntrada = dtpEntradaMT_Sabado.Value;
+                            horario.SabadoSalida = dtpSalidaMT_Sabado.Value;
+
+                            horarioTC.SabadoEntrada = dtpEntradaTC_Sabado.Value;
+                            horarioTC.SabadoSalida = dtpSalidaTC_Sabado.Value;
+
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbDomingo.Checked == true)
+                    {
+                        if ((dtpEntradaMT_Domingo.Value < dtpSalidaMT_Domingo.Value) && (dtpEntradaTC_Domingo.Value < dtpSalidaTC_Domingo.Value))
+                        {
+                            horario.DomingoEntrada = dtpEntradaMT_Domingo.Value;
+                            horario.DomingoSalida = dtpSalidaMT_Domingo.Value;
+
+                            horarioTC.DomingoEntrada = dtpEntradaTC_Domingo.Value;
+                            horarioTC.DomingoSalida = dtpSalidaTC_Domingo.Value;
+
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (errores == true)
+                    {
+                        MessageBox.Show("Alguno de sus horarios de entrada es mayor al horario de salida", "Error de horario", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Horarios cargados.");
+                        this.Hide();
+                        frmABMME ABMME = new frmABMME(horario);
+                        ABMME.ShowDialog();
+                        this.Close();
+                        //Formulario de AMBME con parametros de lista.
+                    }
+                }
+
 
             }
-            else                //Si trabaja tiempo completo creo dos listas.
+            else
             {
-                
+                if (cbLunes.Checked == false && cbMartes.Checked == false && cbMiercoles.Checked == false && cbJueves.Checked == false && cbViernes.Checked == false && cbSabado.Checked == false && cbDomingo.Checked == false)
+                {
+                    MessageBox.Show("Debe seleccionar al menos un dia de trabajo para el Médico");
+                }
+                else        //Si tiene algun horario de medio tiempo seleccionado.
+                {
+
+                    bool errores = false;
+
+                    if (cbLunes.Checked == true)
+                    {
+                        if (dtpEntradaMT_Lunes.Value < dtpSalidaMT_Lunes.Value)
+                        {
+                            horario.LunesEntrada = dtpEntradaMT_Lunes.Value;
+                            horario.LunesSalida = dtpSalidaMT_Lunes.Value;
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbMartes.Checked == true)
+                    {
+                        if (dtpEntradaMT_Martes.Value < dtpSalidaMT_Martes.Value)
+                        {
+                            horario.MartesEntrada = dtpEntradaMT_Martes.Value;
+                            horario.MartesSalida = dtpSalidaMT_Martes.Value;
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbMiercoles.Checked == true)
+                    {
+                        if (dtpEntradaMT_Miercoles.Value < dtpSalidaMT_Miercoles.Value)
+                        {
+                            horario.MiercolesEntrada = dtpEntradaMT_Miercoles.Value;
+                            horario.MiercolesSalida = dtpSalidaMT_Miercoles.Value;
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbJueves.Checked == true)
+                    {
+                        if (dtpEntradaMT_Jueves.Value < dtpSalidaMT_Jueves.Value)
+                        {
+                            horario.JuevesEntrada = dtpEntradaMT_Jueves.Value;
+                            horario.JuevesSalida = dtpSalidaMT_Jueves.Value;
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbViernes.Checked == true)
+                    {
+                        if (dtpEntradaMT_Viernes.Value < dtpSalidaMT_Viernes.Value)
+                        {
+                            horario.ViernesEntrada = dtpEntradaMT_Viernes.Value;
+                            horario.ViernesSalida = dtpSalidaMT_Viernes.Value;
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbSabado.Checked == true)
+                    {
+                        if (dtpEntradaMT_Sabado.Value < dtpSalidaMT_Sabado.Value)
+                        {
+                            horario.SabadoEntrada = dtpEntradaMT_Sabado.Value;
+                            horario.SabadoSalida = dtpSalidaMT_Sabado.Value;
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (cbDomingo.Checked == true)
+                    {
+                        if (dtpEntradaMT_Domingo.Value < dtpSalidaMT_Domingo.Value)
+                        {
+                            horario.DomingoEntrada = dtpEntradaMT_Domingo.Value;
+                            horario.DomingoSalida = dtpSalidaMT_Domingo.Value;
+                        }
+                        else
+                            errores = true;
+                    }
+
+                    if (errores == true)
+                    {
+                        MessageBox.Show("Alguno de sus horarios de entrada es mayor al horario de salida", "Error de horario", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Horarios cargados.");
+                        this.Hide();
+                        frmABMME ABMME = new frmABMME(horario);
+                        ABMME.ShowDialog();
+                        this.Close();
+                        //Formulario de AMBME con parametros de lista.
+                    }
+                }
             }
-
-
-
+            
         }
 
         private void cbRepetirMT_CheckedChanged(object sender, EventArgs e)
