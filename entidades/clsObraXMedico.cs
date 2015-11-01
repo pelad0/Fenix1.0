@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using interfaces;
 
 namespace entidades
 {
-    public class clsObraXMedico
+    public class clsObraXMedico : IEntidad
     {
         int idMedico;
         int idObra;
@@ -33,6 +34,18 @@ namespace entidades
             set { idObra = value; }
         }
 
-       
+
+
+        public int Id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
