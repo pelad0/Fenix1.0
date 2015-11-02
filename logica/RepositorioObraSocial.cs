@@ -84,17 +84,28 @@ namespace logica
         {
             DataTable tabla;
             List<clsObraSocial> lista = new List<clsObraSocial>();
-           
-            tabla = manejaOs.Todo(pag);
-            foreach (DataRow aux in tabla.Rows)
+            try
             {
-                clsObraSocial os = new clsObraSocial();
-                os.Id = Convert.ToInt32(aux["id"]);
-                os.Nombre=aux["nombre"].ToString();
+                tabla = manejaOs.Todo(pag);
+                foreach (DataRow aux in tabla.Rows)
+                {
+                    clsObraSocial os = new clsObraSocial();
+                    os.Id = Convert.ToInt32(aux["id"]);
+                    os.Nombre = aux["nombre"].ToString();
 
-                lista.Add(os);
+                    lista.Add(os);
 
+                }
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
 
             return lista;
 

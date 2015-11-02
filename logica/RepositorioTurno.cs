@@ -91,43 +91,67 @@ namespace logica
             DataTable tabla;
             List<clsTurno> lista = new List<clsTurno>();
 
-
-            tabla = manejaTurno.Todo(pag);
-            foreach (DataRow aux in tabla.Rows)
+            try
             {
-                clsTurno turno = new clsTurno();
-                turno.Id = Convert.ToInt32(aux["id"]);
-                turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
-                turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
-                turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
-                turno.Fecha = Convert.ToDateTime(aux["fecha"]);
-                turno.Estado = Convert.ToBoolean(aux["estado"]);
+                tabla = manejaTurno.Todo(pag);
+                foreach (DataRow aux in tabla.Rows)
+                {
+                    clsTurno turno = new clsTurno();
+                    turno.Id = Convert.ToInt32(aux["id"]);
+                    turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
+                    turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
+                    turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                    turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                    turno.Estado = Convert.ToBoolean(aux["estado"]);
 
-                lista.Add(turno);
+                    lista.Add(turno);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
             return lista;
 
         }
 
-        public List<clsTurno> obtenerTurno(int id,DateTime fecha)
+        public List<clsTurno> obtenerTurno(int id,DateTime fecha)//implementar
         {
             DataTable tabla;
             List<clsTurno> lista = new List<clsTurno>();
 
-
-            tabla = manejaTurno.Todo(id);
-            foreach (DataRow aux in tabla.Rows)
+            try
             {
-                clsTurno turno = new clsTurno();
-                turno.Id = Convert.ToInt32(aux["id"]);
-                turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
-                turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
-                turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
-                turno.Fecha = Convert.ToDateTime(aux["fecha"]);
-                turno.Estado = Convert.ToBoolean(aux["estado"]);
+                tabla = manejaTurno.Todo(id);
+                foreach (DataRow aux in tabla.Rows)
+                {
+                    if (Convert.ToDateTime(aux["fecha"]).CompareTo(fecha) == 0)
+                    {
+                        clsTurno turno = new clsTurno();
+                        turno.Id = Convert.ToInt32(aux["id"]);
+                        turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
+                        turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
+                        turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                        turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                        turno.Estado = Convert.ToBoolean(aux["estado"]);
 
-                lista.Add(turno);
+                        lista.Add(turno);
+                    }
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
             return lista;
