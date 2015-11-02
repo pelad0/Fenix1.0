@@ -38,7 +38,7 @@ namespace logica
         {
             
           try
-            {               
+            {             
 
                 manejaPaciente.Baja(metodoS(paciente));
             }
@@ -56,7 +56,7 @@ namespace logica
         public void Modificacion(IEntidad paciente)
         {
             try
-            {               
+            {              
 
                 manejaPaciente.Modificacion(metodoS(paciente));
             }
@@ -131,9 +131,9 @@ namespace logica
                 pac.Nombre = aux["nombre"].ToString();
                 pac.Apellido = aux["apellido"].ToString();
                 pac.Dni = Convert.ToInt64(aux["dni"]);
-                aux2 = (clsObraSocial)manejaOs.buscaPorId(Convert.ToInt32(aux["obrasocial"]));
+                aux2 = (clsObraSocial)manejaOs.buscaPorId(Convert.ToInt32(aux["obra"]));
                 pac.ObraSocial = aux2.Nombre;
-                pac.Telefono = Convert.ToInt32(aux["telefono"]);
+                pac.Telefono = Convert.ToInt64(aux["telefono"]);
 
 
                 lista.Add(pac);
@@ -155,6 +155,7 @@ namespace logica
                 paciente.Nombre = pac.Nombre;
                 paciente.Apellido = pac.Apellido;
                 paciente.Dni = pac.Dni;
+                paciente.Telefono = pac.Telefono;
                 aux = (clsObraSocial)manejaOs.buscaPorNombre(pac.ObraSocial);
                 paciente.ObraSocial = aux.Id;
             }
@@ -183,6 +184,7 @@ namespace logica
                 paciente.Nombre = pac.Nombre;
                 paciente.Apellido = pac.Apellido;
                 paciente.Dni = pac.Dni;
+                paciente.Telefono = pac.Telefono;
                 aux = (clsObraSocial)manejaOs.buscaPorId(pac2.Id);
                 paciente.ObraSocial = aux.Nombre;
             }

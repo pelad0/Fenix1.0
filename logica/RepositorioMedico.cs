@@ -110,7 +110,7 @@ namespace logica
                     med.Apellido = aux["apellido"].ToString();
                     med.Dni = Convert.ToInt64(aux["dni"]);
                     med.Matricula = Convert.ToInt32(aux["matricula"]);
-                    aux2 = (clsEspecialidad)manejaEspecialidad.buscaPorId(med.Id);
+                    aux2 = (clsEspecialidad)manejaEspecialidad.buscaPorId(Convert.ToInt32(aux["especialidad"]));
                     med.Especialidad = aux2.Descripcion;
 
                     lista.Add(med);

@@ -71,10 +71,8 @@ namespace logica
         public clsTurno buscarPorId(int id)
         {
             clsTurno med;         
-
             try
             {
-
                 med = (clsTurno)manejaTurno.buscaPorId(id);
             }
             catch (SqlException ex)
@@ -111,5 +109,30 @@ namespace logica
             return lista;
 
         }
+
+        public List<clsTurno> obtenerTurno(int id,DateTime fecha)
+        {
+            DataTable tabla;
+            List<clsTurno> lista = new List<clsTurno>();
+
+
+            tabla = manejaTurno.Todo(id);
+            foreach (DataRow aux in tabla.Rows)
+            {
+                clsTurno turno = new clsTurno();
+                turno.Id = Convert.ToInt32(aux["id"]);
+                turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
+                turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
+                turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                turno.Estado = Convert.ToBoolean(aux["estado"]);
+
+                lista.Add(turno);
+            }
+
+            return lista;
+
+        }
+        
     }
 }

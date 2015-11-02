@@ -35,6 +35,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.btnTurnoXDia = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbMedicos = new System.Windows.Forms.ComboBox();
+            this.cbEspecialidades = new System.Windows.Forms.ComboBox();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tpBaja = new System.Windows.Forms.TabPage();
             this.btnSig = new System.Windows.Forms.Button();
@@ -43,12 +49,6 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.cbEspecialidades = new System.Windows.Forms.ComboBox();
-            this.cbMedicos = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
@@ -73,10 +73,10 @@
             // 
             // tpAlta
             // 
-            this.tpAlta.Controls.Add(this.label3);
+            this.tpAlta.Controls.Add(this.btnTurnoXDia);
+            this.tpAlta.Controls.Add(this.dtpFecha);
             this.tpAlta.Controls.Add(this.label2);
             this.tpAlta.Controls.Add(this.label1);
-            this.tpAlta.Controls.Add(this.comboBox3);
             this.tpAlta.Controls.Add(this.cbMedicos);
             this.tpAlta.Controls.Add(this.cbEspecialidades);
             this.tpAlta.Controls.Add(this.btnAlta);
@@ -87,6 +87,58 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
+            // 
+            // btnTurnoXDia
+            // 
+            this.btnTurnoXDia.Location = new System.Drawing.Point(264, 91);
+            this.btnTurnoXDia.Name = "btnTurnoXDia";
+            this.btnTurnoXDia.Size = new System.Drawing.Size(75, 23);
+            this.btnTurnoXDia.TabIndex = 7;
+            this.btnTurnoXDia.Text = "Turnos";
+            this.btnTurnoXDia.UseVisualStyleBackColor = true;
+            this.btnTurnoXDia.Click += new System.EventHandler(this.btnTurnoXDia_Click);
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Location = new System.Drawing.Point(368, 44);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 23);
+            this.dtpFecha.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(241, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Medicos";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(60, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Especialidades";
+            // 
+            // cbMedicos
+            // 
+            this.cbMedicos.FormattingEnabled = true;
+            this.cbMedicos.Location = new System.Drawing.Point(209, 44);
+            this.cbMedicos.Name = "cbMedicos";
+            this.cbMedicos.Size = new System.Drawing.Size(121, 23);
+            this.cbMedicos.TabIndex = 2;
+            // 
+            // cbEspecialidades
+            // 
+            this.cbEspecialidades.FormattingEnabled = true;
+            this.cbEspecialidades.Location = new System.Drawing.Point(52, 44);
+            this.cbEspecialidades.Name = "cbEspecialidades";
+            this.cbEspecialidades.Size = new System.Drawing.Size(121, 23);
+            this.cbEspecialidades.TabIndex = 1;
+            this.cbEspecialidades.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidades_SelectedIndexChanged);
             // 
             // btnAlta
             // 
@@ -203,59 +255,7 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // cbEspecialidades
-            // 
-            this.cbEspecialidades.FormattingEnabled = true;
-            this.cbEspecialidades.Location = new System.Drawing.Point(52, 44);
-            this.cbEspecialidades.Name = "cbEspecialidades";
-            this.cbEspecialidades.Size = new System.Drawing.Size(121, 23);
-            this.cbEspecialidades.TabIndex = 1;
-            this.cbEspecialidades.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidades_SelectedIndexChanged);
-            // 
-            // cbMedicos
-            // 
-            this.cbMedicos.FormattingEnabled = true;
-            this.cbMedicos.Location = new System.Drawing.Point(209, 44);
-            this.cbMedicos.Name = "cbMedicos";
-            this.cbMedicos.Size = new System.Drawing.Size(121, 23);
-            this.cbMedicos.TabIndex = 2;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(364, 44);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 23);
-            this.comboBox3.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Especialidades";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(241, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Medicos";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(400, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "label3";
-            // 
-            // frmABM
+            // frmABMTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -263,7 +263,7 @@
             this.Controls.Add(this.tcABM);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmABM";
+            this.Name = "frmABMTurnos";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmABM_Load);
@@ -289,11 +289,11 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnSig;
         private System.Windows.Forms.Button btnAnt;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox cbMedicos;
         private System.Windows.Forms.ComboBox cbEspecialidades;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Button btnTurnoXDia;
     }
 }
