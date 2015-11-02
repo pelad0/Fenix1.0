@@ -175,6 +175,12 @@ namespace logica
 
         }
 
+        public clsMedico BuscarPorDni(long dni) 
+        {
+            clsMedico med=new clsMedico();
+            return med;
+        }
+
         private clsMedicoDatos metodoS(IEntidad med2)
         {
             clsMedico med = (clsMedico)med2;
