@@ -127,11 +127,10 @@ namespace logica
 
             try
             {
-                tabla = manejaTurno.Busca(id);
+                tabla = manejaTurno.Busca(id,fecha.ToShortDateString());
                 foreach (DataRow aux in tabla.Rows)
                 {
-                    if (Convert.ToDateTime(aux["fecha"]).CompareTo(fecha) == 0)
-                    {
+                                      
                         clsTurno turno = new clsTurno();
                         turno.Id = Convert.ToInt32(aux["id"]);
                         turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
@@ -141,7 +140,7 @@ namespace logica
                         turno.Estado = Convert.ToBoolean(aux["estado"]);
 
                         lista.Add(turno);
-                    }
+                    
 
                 }
             }

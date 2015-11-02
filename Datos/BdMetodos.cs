@@ -18,17 +18,17 @@ namespace Datos
          //string con = "vicente";
          //string based = "Parcial3";
          //string server = "VICEN-PC\\SQLEXPRESS";
-         ////tocar estos datoooooooooooooooooooooooooooooooooooooooooooooooooooooos
+         //////tocar estos datoooooooooooooooooooooooooooooooooooooooooooooooooooooos
 
-         string usuario = "pelad0";
-         string con = "admin";
-         string based = "Fenix";
-         string server = "NO";
+         //string usuario = "pelad0";
+         //string con = "admin";
+         //string based = "Fenix";
+         //string server = "NO";
 
-         //string usuario = "LaboIII";
-         //string con = "1234";
-         //string based = "ParcialLabo3";
-         //string server = "MARIANO\\SQLEXPRESS";
+         string usuario = "LaboIII";
+         string con = "1234";
+         string based = "ParcialLabo3";
+         string server = "MARIANO\\SQLEXPRESS";
 
 
         public string Server
