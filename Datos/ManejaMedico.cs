@@ -21,9 +21,18 @@ namespace Datos
         public void Alta(IEntidad entidad)
         {
             clsMedicoDatos med = (clsMedicoDatos)entidad;
+            DataTable aux= new DataTable();
             try
             {
+                aux=manager.consultar("select * from medico where dni="+med.Dni);
+                if(aux.Rows.Count==0)
+                {
                 manager.ejecutar("Insert into medico(nombre,apellido,dni,especialidad,matricula) values('" + med.Nombre + "','" + med.Apellido + "'," + med.Dni + "," + med.Especialidad + "," + med.Matricula + ");SELECT @@identity;");
+                }
+                else
+                {
+                    manager.ejecutar("update medico set activo=1 where dni="+med.Dni);
+                }
             }
             catch (Exception ex)
             {
