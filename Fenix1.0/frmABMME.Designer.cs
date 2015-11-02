@@ -75,6 +75,7 @@
             this.btnAnteriorModi = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnAdministrarEspe = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosAlta)).BeginInit();
@@ -104,6 +105,7 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.Controls.Add(this.btnAdministrarEspe);
             this.tpAlta.Controls.Add(this.tbEspecialidadAlta);
             this.tpAlta.Controls.Add(this.cbEspecialidades);
             this.tpAlta.Controls.Add(this.btnHorarios);
@@ -594,6 +596,16 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Seleccione el médico que desea modificar";
             // 
+            // btnAdministrarEspe
+            // 
+            this.btnAdministrarEspe.Location = new System.Drawing.Point(424, 175);
+            this.btnAdministrarEspe.Name = "btnAdministrarEspe";
+            this.btnAdministrarEspe.Size = new System.Drawing.Size(154, 44);
+            this.btnAdministrarEspe.TabIndex = 23;
+            this.btnAdministrarEspe.Text = "Administrar especialidades";
+            this.btnAdministrarEspe.UseVisualStyleBackColor = true;
+            this.btnAdministrarEspe.Click += new System.EventHandler(this.btnAdministrarEspe_Click);
+            // 
             // frmABMME
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -672,5 +684,6 @@
         private System.Windows.Forms.TextBox tbEspecialidadAlta;
         private System.Windows.Forms.TextBox tbEspecialidadBaja;
         private System.Windows.Forms.TextBox tbEspecialidadModi;
+        private System.Windows.Forms.Button btnAdministrarEspe;
     }
 }
