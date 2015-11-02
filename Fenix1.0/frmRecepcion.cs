@@ -11,11 +11,12 @@ using entidades;
 
 namespace Fenix1._0
 {
-    public partial class frmAdmin : Form
+    public partial class frmRecepcion : Form
     {
         clsUsuario u = new clsUsuario();
         frmInicio i;
-        public frmAdmin(clsUsuario u, frmInicio i)
+
+        public frmRecepcion(clsUsuario u, frmInicio i)
         {
             InitializeComponent();
             this.u = u;
@@ -40,13 +41,7 @@ namespace Fenix1._0
             o.ShowDialog();
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            frmABMUsuario u = new frmABMUsuario();
-            u.ShowDialog();
-        }
-
-        private void frmAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        private void frmRecepcion_FormClosed(object sender, FormClosedEventArgs e)
         {
             i.Show();
         }

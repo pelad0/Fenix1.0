@@ -76,6 +76,11 @@ namespace Fenix1._0
         {
             if (!string.IsNullOrWhiteSpace(usuarios[dgvEliminar.CurrentRow.Index].Usuario))
             {
+                if (usuarios[dgvEliminar.CurrentRow.Index].Usuario == "admin")
+                {
+                    MessageBox.Show("No esta permitido que se elimine admin.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 frmConfirmaUsuario fcu = new frmConfirmaUsuario(usuarios[dgvEliminar.CurrentRow.Index].Clave);
                 DialogResult res = fcu.ShowDialog();
                 if (res == DialogResult.OK)
