@@ -118,7 +118,7 @@ namespace logica
 
         }
 
-        public List<clsHistorial> Listar(int id)
+        public List<clsHistorial> listar(int id)
         {
             DataTable tabla;
             List<clsHistorial> lista = new List<clsHistorial>();
