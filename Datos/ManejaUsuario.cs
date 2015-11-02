@@ -22,7 +22,7 @@ namespace Datos
             clsUsuario us = (clsUsuario)entidad;
             try
             {
-                manager.ejecutar("Insert into usuario(user,pass,seguridad) values('"+us.Id+"','"+us.Usuario+"','"+us.Seguridad+"');SELECT @@identity;");
+                manager.ejecutar("Insert into usuario(usuario,pass,seguridad) values('"+us.Usuario+"','"+us.Clave+"','"+us.Seguridad+"');SELECT @@identity;");
             }
             catch (Exception ex)
             {
@@ -49,7 +49,7 @@ namespace Datos
             clsUsuario us = (clsUsuario)entidad;
             try
             {
-                manager.ejecutar("update usuario set user="+us.Usuario+",pass="+us.Clave+",seguridad="+us.Seguridad+" where id="+us.Id);
+                manager.ejecutar("update usuario set user='"+us.Usuario+"',pass='"+us.Clave+"',seguridad='"+us.Seguridad+"' where id="+us.Id);
 
             }
             catch (Exception ex)
