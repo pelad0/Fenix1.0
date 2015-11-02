@@ -20,12 +20,12 @@ namespace Datos
          string server = "VICEN-PC\\SQLEXPRESS";
          //////tocar estos datoooooooooooooooooooooooooooooooooooooooooooooooooooooos
 
-         string usuario = "pelad0";
-         string con = "admin";
-         string based = "Fenix";
-         string server = "NO";
+         //string usuario = "pelad0";
+         //string con = "admin";
+         //string based = "Fenix";
+         //string server = "NO";
 
-         //string usuario = "LaboIII";
+         ////string usuario = "LaboIII";
          //string con = "1234";
          //string based = "ParcialLabo4";
          //string server = "MARIANO\\SQLEXPRESS";
