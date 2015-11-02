@@ -49,6 +49,7 @@ namespace Fenix1._0
                                 
                                 case "Medico":
                                     frmABMHistorial h = new frmABMHistorial();
+                                    h.ShowDialog();
                                     break;
                             }
                         }

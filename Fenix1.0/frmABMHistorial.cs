@@ -28,8 +28,7 @@ namespace Fenix1._0
         
         private void frmABMHistorial_Load(object sender, EventArgs e)
         {
-            pacientes = rp.Todo(pagina);
-            dgvAlta.DataSource = pacientes;
+            iniciar();
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -62,14 +61,6 @@ namespace Fenix1._0
             }
         }
 
-        private void btnBaja_Click(object sender, EventArgs e)
-        {
-            if (true)
-            {
-                
-            }
-        }
-
         private void btnSigAlta_Click(object sender, EventArgs e)
         {
             if (rp.Todo(pagina + 1).Count > 0)
@@ -80,36 +71,28 @@ namespace Fenix1._0
             }
         }
 
-        private void iniciar()
-        {
-            pacientes.Clear();
-            pacientes = rp.Todo(pagina);
-            dgvAlta.DataSource = null;
-            dgvAlta.DataSource = pacientes;
-
-            dgvPacBaja.DataSource = null;
-            dgvPacBaja.DataSource = pacientes;
-
-            dgvHistBaja.DataSource = null;
-            
-
-            rtbDiagAlta.Clear();
-            rtbObserAlta.Clear();
-
-            dtpFechaAlta.Value = System.DateTime.Today;
-            lblPac.Text = "Paciente";
-        }
-
         private void dgvAlta_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             lblPac.Text = pacientes[dgvAlta.CurrentRow.Index].nomCompleto();
+        }
+
+        private void dgvPacBaja_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(pacientes[dgvPacBaja.CurrentRow.Index].Nombre))
+            {
+                historiales.Clear();
+                historiales = rh.listar(pacientes[dgvPacBaja.CurrentRow.Index].Id);
+                dgvHistBaja.DataSource = null;
+                dgvHistBaja.DataSource = historiales;
+                dgvHistBaja.Columns[3].Visible = false;
+            }
         }
 
         private bool confirmaAlta()
         {
             if (string.IsNullOrWhiteSpace(rtbDiagAlta.Text))
             {
-                MessageBox.Show("Completar campo Diagnostico", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                MessageBox.Show("Completar campo Diagnostico", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (string.IsNullOrWhiteSpace(rtbObserAlta.Text))
@@ -125,21 +108,26 @@ namespace Fenix1._0
             return true;
         }
 
-
-        private void dgvPacBaja_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void iniciar()
         {
-            if (!string.IsNullOrWhiteSpace(pacientes[dgvPacBaja.CurrentRow.Index].Nombre))
-            {
-                historiales.Clear();
-                historiales = rh.listar(pacientes[dgvPacBaja.CurrentRow.Index].Id);
-                dgvHistBaja.DataSource = null;
-                dgvHistBaja.DataSource = historiales;
-            }
+            pacientes.Clear();
+            pacientes = rp.Todo(pagina);
+            dgvAlta.DataSource = null;
+            dgvAlta.DataSource = pacientes;
+            dgvAlta.Columns[0].Visible = false;
+
+            dgvPacBaja.DataSource = null;
+            dgvPacBaja.DataSource = pacientes;
+            dgvPacBaja.Columns[0].Visible = false;
+
+            dgvHistBaja.DataSource = null;
+
+            rtbDiagAlta.Clear();
+            rtbObserAlta.Clear();
+
+            dtpFechaAlta.Value = System.DateTime.Today;
+            lblPac.Text = "Paciente";
         }
 
-        private void dgvHistBaja_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
