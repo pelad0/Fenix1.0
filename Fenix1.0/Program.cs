@@ -19,9 +19,10 @@ namespace Fenix1._0
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmABMME());
             //Application.Run(new frmABMOS());
-            Application.Run(new frmABMUsuario());
+            //Application.Run(new frmABMUsuario());
             //Application.Run(new frmABMPaciente());
             //Application.Run(new frmABMTurnos());
+            Application.Run(new frmABMES());
         }
     }
 }
