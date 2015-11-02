@@ -337,6 +337,7 @@
             this.dgvModif.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvModif.Size = new System.Drawing.Size(244, 380);
             this.dgvModif.TabIndex = 14;
+            this.dgvModif.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModif_CellClick);
             this.dgvModif.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModif_CellContentClick);
             // 
             // label4
