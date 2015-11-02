@@ -345,7 +345,7 @@
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAlta.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvAlta.Location = new System.Drawing.Point(6, 6);
+            this.dgvAlta.Location = new System.Drawing.Point(3, 6);
             this.dgvAlta.MultiSelect = false;
             this.dgvAlta.Name = "dgvAlta";
             this.dgvAlta.ReadOnly = true;

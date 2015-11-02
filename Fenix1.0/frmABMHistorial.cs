@@ -100,7 +100,7 @@ namespace Fenix1._0
                 MessageBox.Show("Completar campo Observaciones", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(pacientes[dgvAlta.CurrentRow.Index].Nombre))
+            if (lblPac.Text == "Paciente")
             {
                 MessageBox.Show("Seleccione un paciente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
