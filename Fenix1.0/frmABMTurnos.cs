@@ -24,6 +24,7 @@ namespace Fenix1._0
         RepositorioSobreturno rst = new RepositorioSobreturno();
         List<clsMedico> medicos = new List<clsMedico>();
         List<clsTurno> turnos = new List<clsTurno>();
+        List<clsSobreturno> sobreTurno = new List<clsSobreturno>();
         List<string> especialidades = new List<string>();
         clsHorario mañana = new clsHorario();
         clsHorario tarde = new clsHorario();
@@ -38,12 +39,6 @@ namespace Fenix1._0
         private void frmABM_Load(object sender, EventArgs e)
         {
             iniciar();            
-        }
-
-        private void btnAlta_Click(object sender, EventArgs e)
-        {
-            clsTurno t =new clsTurno();
-            rt.Alta(t,u.Id);
         }
 
         private void cbEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,6 +56,7 @@ namespace Fenix1._0
             clsMedico med = medicos[cbMedicos.SelectedIndex];
             turnos.Clear();
             turnos = rt.obtenerTurno(med.Id, dtpFecha.Value);//no tocar
+            
             mañana = rm.BuscarHorarioMañana(med.Id);
             tarde = rm.BuscarHorarioTarde(med.Id);
 
@@ -102,6 +98,76 @@ namespace Fenix1._0
         {
 
         }
+
+        public void horariosMañana(bool estado)
+        {
+            if (estado)
+            {
+                foreach (Button btn in pnlBotones.Controls)
+                {
+                    if (btn.Tag.ToString() == "mañana")
+                    {
+                        btn.Enabled = true;
+                        btn.BackColor = Color.LimeGreen;
+                    }
+                    else
+                    {
+                        btn.Enabled = false;
+                        btn.BackColor = Color.Gray;
+                    }
+                }
+            }
+        }
+
+        public void horariosTarde(bool estado)
+        {
+            if (estado)
+            {
+                foreach (Button btn in pnlBotones.Controls)
+                {
+                    if (btn.Tag.ToString() == "tarde")
+                    {
+                        btn.Enabled = true;
+                        btn.BackColor = Color.LimeGreen;
+                    }
+                    else
+                    {
+                        btn.Enabled = false;
+                        btn.BackColor = Color.Gray;
+                    }
+                }
+            }
+        }
+
+        public void turnosDados(List<clsTurno> turnos)
+        {
+            foreach (clsTurno turno in turnos)
+            {
+                foreach (Button btn in this.Controls)
+                {
+                    if (turno.Fecha.ToShortTimeString().Contains(btn.Text))
+                    {
+                        btn.BackColor = Color.Gold;
+                    }
+                }
+            }
+        }
+
+        public void sobreTurnosDados(List<clsSobreturno> sobreTurnos)
+        {
+            foreach (clsSobreturno sturno in sobreTurnos)
+            {
+                foreach (Button btn in this.Controls)
+                {
+                    if (sturno.Fecha.ToShortTimeString().Contains(btn.Text))
+                    {
+                        btn.BackColor = Color.Red;
+                        btn.Enabled = false;
+                    }
+                }
+            }
+        }
+
 
     }
 }
