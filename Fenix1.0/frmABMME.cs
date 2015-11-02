@@ -84,7 +84,7 @@ namespace Fenix1._0
 
                 reposMedico.Alta(medico);
 
-                int dni = medico.Dni;
+                long dni = medico.Dni;
 
                 medico = reposMedico.BuscarPorDni(dni);
 
