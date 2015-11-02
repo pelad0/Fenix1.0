@@ -49,7 +49,7 @@ namespace Datos
             clsHistorial hist = (clsHistorial)entidad;
             try
             {
-                manager.ejecutar("update historial set diagnostico=" + hist.Diagnostico + ",observaciones=" + hist.Observaciones + ",fecha=" + hist.Fecha + "where id=" + hist.Id);
+                manager.ejecutar("update historial set diagnostico='" + hist.Diagnostico + "',observaciones='" + hist.Observaciones + "',fecha='" + hist.Fecha + "'where id=" + hist.Id);
             }
             catch (Exception ex)
             {
@@ -99,7 +99,7 @@ namespace Datos
            
             try
             {
-                aux = manager.consultar("select * from historial where id=" + id + " and activo=1");
+                aux = manager.consultar("select * from historial where idpaciente=" + id + " and activo=1");
                
 
             }
