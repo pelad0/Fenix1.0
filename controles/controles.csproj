@@ -42,6 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ctrlTurnos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlTurnos.Designer.cs">
+      <DependentUpon>ctrlTurnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmABM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ctrlTurnos.resx">
+      <DependentUpon>ctrlTurnos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmABM.resx">
       <DependentUpon>frmABM.cs</DependentUpon>
     </EmbeddedResource>
