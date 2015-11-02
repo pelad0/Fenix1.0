@@ -69,6 +69,7 @@
             this.tcABM.Size = new System.Drawing.Size(644, 471);
             this.tcABM.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcABM.TabIndex = 0;
+            this.tcABM.Click += new System.EventHandler(this.tcABM_Click);
             // 
             // tpAlta
             // 
@@ -96,10 +97,14 @@
             // 
             // dgvEspecialidadesAlta
             // 
+            this.dgvEspecialidadesAlta.AllowUserToAddRows = false;
+            this.dgvEspecialidadesAlta.AllowUserToDeleteRows = false;
             this.dgvEspecialidadesAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEspecialidadesAlta.Location = new System.Drawing.Point(241, 118);
+            this.dgvEspecialidadesAlta.Location = new System.Drawing.Point(268, 117);
             this.dgvEspecialidadesAlta.Name = "dgvEspecialidadesAlta";
-            this.dgvEspecialidadesAlta.Size = new System.Drawing.Size(167, 283);
+            this.dgvEspecialidadesAlta.ReadOnly = true;
+            this.dgvEspecialidadesAlta.RowHeadersVisible = false;
+            this.dgvEspecialidadesAlta.Size = new System.Drawing.Size(105, 283);
             this.dgvEspecialidadesAlta.TabIndex = 3;
             // 
             // label1
@@ -141,6 +146,7 @@
             this.tpBaja.TabIndex = 1;
             this.tpBaja.Text = "Baja";
             this.tpBaja.UseVisualStyleBackColor = true;
+            this.tpBaja.Click += new System.EventHandler(this.tpBaja_Click);
             // 
             // label3
             // 
@@ -157,12 +163,14 @@
             this.dgvEspecialidadesBaja.AllowUserToDeleteRows = false;
             this.dgvEspecialidadesBaja.AllowUserToOrderColumns = true;
             this.dgvEspecialidadesBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEspecialidadesBaja.Location = new System.Drawing.Point(238, 54);
+            this.dgvEspecialidadesBaja.Location = new System.Drawing.Point(264, 52);
             this.dgvEspecialidadesBaja.MultiSelect = false;
             this.dgvEspecialidadesBaja.Name = "dgvEspecialidadesBaja";
+            this.dgvEspecialidadesBaja.ReadOnly = true;
+            this.dgvEspecialidadesBaja.RowHeadersVisible = false;
             this.dgvEspecialidadesBaja.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvEspecialidadesBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEspecialidadesBaja.Size = new System.Drawing.Size(167, 283);
+            this.dgvEspecialidadesBaja.Size = new System.Drawing.Size(105, 283);
             this.dgvEspecialidadesBaja.TabIndex = 1;
             // 
             // btnBaja
@@ -231,12 +239,14 @@
             this.dgvEspecialidadesModificar.AllowUserToDeleteRows = false;
             this.dgvEspecialidadesModificar.AllowUserToOrderColumns = true;
             this.dgvEspecialidadesModificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEspecialidadesModificar.Location = new System.Drawing.Point(242, 43);
+            this.dgvEspecialidadesModificar.Location = new System.Drawing.Point(268, 62);
             this.dgvEspecialidadesModificar.MultiSelect = false;
             this.dgvEspecialidadesModificar.Name = "dgvEspecialidadesModificar";
+            this.dgvEspecialidadesModificar.ReadOnly = true;
+            this.dgvEspecialidadesModificar.RowHeadersVisible = false;
             this.dgvEspecialidadesModificar.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvEspecialidadesModificar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEspecialidadesModificar.Size = new System.Drawing.Size(167, 283);
+            this.dgvEspecialidadesModificar.Size = new System.Drawing.Size(105, 283);
             this.dgvEspecialidadesModificar.TabIndex = 2;
             // 
             // btnModificar
