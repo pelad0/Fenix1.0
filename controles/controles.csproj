@@ -70,6 +70,16 @@
       <DependentUpon>frmABM.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\entidades\entidades.csproj">
+      <Project>{f6d17eae-0212-42e3-b94d-b0966285b853}</Project>
+      <Name>entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\interfaces\interfaces.csproj">
+      <Project>{7944f26d-031e-430e-a21b-fb623b56ba3e}</Project>
+      <Name>interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

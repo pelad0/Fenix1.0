@@ -90,7 +90,7 @@ namespace logica
             DataTable tabla;
             List<clsObraXMedico> lista = new List<clsObraXMedico>();
 
-            tabla = manejaobraxmedico.Todo(id);
+            tabla = manejaobraxmedico.TodasObras(id);
 
             foreach (DataRow aux in tabla.Rows)
             {
