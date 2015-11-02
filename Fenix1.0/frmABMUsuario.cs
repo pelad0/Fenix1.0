@@ -31,7 +31,7 @@ namespace Fenix1._0
 
         private void dgvModif_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(dgvEliminar.CurrentRow.ToString()))
+            if (!string.IsNullOrWhiteSpace(usuarios[dgvModif.CurrentRow.Index].Usuario))
             {
 
                 clsUsuario u = usuarios[dgvModif.CurrentRow.Index];
@@ -85,8 +85,6 @@ namespace Fenix1._0
                         string nombre = usuarios[dgvEliminar.CurrentRow.Index].Usuario;
                         ru.Baja(usuarios[dgvEliminar.CurrentRow.Index]);
                         MessageBox.Show(nombre + " se elimino con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-
                     }
                     catch (Exception ex)
                     {
@@ -142,7 +140,7 @@ namespace Fenix1._0
                 }
                 else if (c is ComboBox)
                 {
-                    if ((c as ComboBox).SelectedIndex > -1)
+                    if ((c as ComboBox).SelectedIndex < 0)
                     {
                         MessageBox.Show("Campo " + (c as ComboBox).Tag + " incompleto.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
