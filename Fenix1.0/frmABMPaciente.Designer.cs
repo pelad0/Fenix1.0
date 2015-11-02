@@ -576,7 +576,7 @@
             // tbTelMod
             // 
             this.tbTelMod.Location = new System.Drawing.Point(450, 249);
-            this.tbTelMod.MaxLength = 15;
+            this.tbTelMod.MaxLength = 10;
             this.tbTelMod.Name = "tbTelMod";
             this.tbTelMod.Size = new System.Drawing.Size(162, 23);
             this.tbTelMod.TabIndex = 4;
