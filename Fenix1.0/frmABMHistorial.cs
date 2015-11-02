@@ -62,6 +62,14 @@ namespace Fenix1._0
             }
         }
 
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
+            if (true)
+            {
+                
+            }
+        }
+
         private void btnSigAlta_Click(object sender, EventArgs e)
         {
             if (rp.Todo(pagina + 1).Count > 0)
@@ -117,10 +125,6 @@ namespace Fenix1._0
             return true;
         }
 
-        private void btnBaja_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void dgvPacBaja_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -131,6 +135,11 @@ namespace Fenix1._0
                 dgvHistBaja.DataSource = null;
                 dgvHistBaja.DataSource = historiales;
             }
+        }
+
+        private void dgvHistBaja_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
