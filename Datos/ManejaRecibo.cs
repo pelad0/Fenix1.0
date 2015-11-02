@@ -49,7 +49,7 @@ namespace Datos
             clsRecibo rec = (clsRecibo)entidad;
             try
             {
-                manager.ejecutar("update recibo set idfactura=" + rec.IdFactura + ",cobertura=" + rec.Cobertura + ",importe=" + rec.Importe +",detalle="+rec.Detalle+ "where id=" + rec.Id);
+                manager.ejecutar("update recibo set idfactura=" + rec.IdFactura + ",cobertura=" + rec.Cobertura + ",importe=" + rec.Importe +",detalle='"+rec.Detalle+ "' where id=" + rec.Id);
             }
             catch (Exception ex)
             {
