@@ -24,7 +24,7 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                aux = manager.consultar("select * from medico where dni=" + pac.Dni);
+                aux = manager.consultar("select * from paciente where dni=" + pac.Dni);
                 if (aux.Rows.Count == 0)
                 {
                     manager.ejecutar("Insert into paciente(nombre,apellido,dni,obra,telefono) values('" + pac.Nombre + "','" + pac.Apellido + "'," + pac.Dni + "," + pac.ObraSocial + "," + pac.Telefono + ");SELECT @@identity;");
