@@ -263,35 +263,30 @@ namespace logica
                 throw new ArgumentException("el tipo '" + e.GetType().ToString() + "' no esta soportado en un repositorio del tipo '" + this.GetType().ToString());
         }
 
-        public List<clsHorario> BuscarHorarioMañana(int id)
+        public clsHorario BuscarHorarioMañana(int id)
         {
-            DataTable tabla;
-            List<clsHorario> lista = new List<clsHorario>();
+            DataTable aux;
+            clsHorario esp = new clsHorario();
             try
             {
+                aux = manejaMedico.BuscarHorarioMañana(id);
 
-                tabla = manejaMedico.BuscarHorarioMañana(id);
-              
+                esp.IdMedico = Convert.ToInt32(aux.Rows[0]["id"]);
+                esp.LunesEntrada = Convert.ToDateTime(aux.Rows[0]["lunesentrada"]);
+                esp.LunesSalida = Convert.ToDateTime(aux.Rows[0]["lunessalida"]);
+                esp.MartesEntrada = Convert.ToDateTime(aux.Rows[0]["martesentrada"]);
+                esp.MartesSalida = Convert.ToDateTime(aux.Rows[0]["martessalida"]);
+                esp.MiercolesEntrada = Convert.ToDateTime(aux.Rows[0]["miercolesentrada"]);
+                esp.MiercolesSalida = Convert.ToDateTime(aux.Rows[0]["miercolessalida"]);
+                esp.JuevesEntrada = Convert.ToDateTime(aux.Rows[0]["juevesentrada"]);
+                esp.JuevesSalida = Convert.ToDateTime(aux.Rows[0]["juevessalida"]);
+                esp.ViernesEntrada = Convert.ToDateTime(aux.Rows[0]["viernesentrada"]);
+                esp.ViernesSalida = Convert.ToDateTime(aux.Rows[0]["viernessalida"]);
+                esp.SabadoEntrada = Convert.ToDateTime(aux.Rows[0]["sabadoentrada"]);
+                esp.SabadoSalida = Convert.ToDateTime(aux.Rows[0]["sabadosalida"]);
+                esp.DomingoEntrada = Convert.ToDateTime(aux.Rows[0]["domingoentrada"]);
+                esp.DomingoSalida = Convert.ToDateTime(aux.Rows[0]["domingosalida"]);
 
-                foreach (DataRow aux in tabla.Rows)
-                {
-                    clsHorario esp = new clsHorario();
-                    esp.IdMedico = Convert.ToInt32(aux["id"]);
-                    esp.LunesEntrada = Convert.ToDateTime(aux["lunesentrada"]);
-                    esp.LunesSalida = Convert.ToDateTime(aux["lunessalida"]);
-                    esp.MartesEntrada = Convert.ToDateTime(aux["martesentrada"]);
-                    esp.MartesSalida = Convert.ToDateTime(aux["martessalida"]);
-                    esp.MiercolesEntrada = Convert.ToDateTime(aux["miercolesentrada"]);
-                    esp.MiercolesSalida = Convert.ToDateTime(aux["miercolessalida"]);
-                    esp.JuevesEntrada = Convert.ToDateTime(aux["juevesentrada"]);
-                    esp.JuevesSalida = Convert.ToDateTime(aux["juevessalida"]);
-                    esp.ViernesEntrada = Convert.ToDateTime(aux["viernesentrada"]);
-                    esp.ViernesSalida = Convert.ToDateTime(aux["viernessalida"]);
-                    esp.SabadoEntrada = Convert.ToDateTime(aux["sabadoentrada"]);
-                    esp.SabadoSalida = Convert.ToDateTime(aux["sabadosalida"]);
-                    esp.DomingoEntrada = Convert.ToDateTime(aux["domingoentrada"]);
-                    esp.DomingoSalida = Convert.ToDateTime(aux["domingosalida"]);
-                }
             }
             catch (SqlException ex)
             {
@@ -302,37 +297,32 @@ namespace logica
                 throw ex;
             }
 
-            return lista;
+            return esp;
         }
-        public List<clsHorario> BuscarHorarioTarde(int id)
+        public clsHorario BuscarHorarioTarde(int id)
         {
-            DataTable tabla;
-            List<clsHorario> lista = new List<clsHorario>();
+            DataTable aux;
+            clsHorario esp = new clsHorario();
             try
             {
-
-                tabla = manejaMedico.BuscarHorarioTarde(id);
-
-
-                foreach (DataRow aux in tabla.Rows)
-                {
-                    clsHorario esp = new clsHorario();
-                    esp.IdMedico = Convert.ToInt32(aux["id"]);
-                    esp.LunesEntrada = Convert.ToDateTime(aux["lunesentrada"]);
-                    esp.LunesSalida = Convert.ToDateTime(aux["lunessalida"]);
-                    esp.MartesEntrada = Convert.ToDateTime(aux["martesentrada"]);
-                    esp.MartesSalida = Convert.ToDateTime(aux["martessalida"]);
-                    esp.MiercolesEntrada = Convert.ToDateTime(aux["miercolesentrada"]);
-                    esp.MiercolesSalida = Convert.ToDateTime(aux["miercolessalida"]);
-                    esp.JuevesEntrada = Convert.ToDateTime(aux["juevesentrada"]);
-                    esp.JuevesSalida = Convert.ToDateTime(aux["juevessalida"]);
-                    esp.ViernesEntrada = Convert.ToDateTime(aux["viernesentrada"]);
-                    esp.ViernesSalida = Convert.ToDateTime(aux["viernessalida"]);
-                    esp.SabadoEntrada = Convert.ToDateTime(aux["sabadoentrada"]);
-                    esp.SabadoSalida = Convert.ToDateTime(aux["sabadosalida"]);
-                    esp.DomingoEntrada = Convert.ToDateTime(aux["domingoentrada"]);
-                    esp.DomingoSalida = Convert.ToDateTime(aux["domingosalida"]);
-                }
+                    aux= manejaMedico.BuscarHorarioTarde(id);                            
+                   
+                    esp.IdMedico = Convert.ToInt32(aux.Rows[0]["id"]);
+                    esp.LunesEntrada = Convert.ToDateTime(aux.Rows[0]["lunesentrada"]);
+                    esp.LunesSalida = Convert.ToDateTime(aux.Rows[0]["lunessalida"]);
+                    esp.MartesEntrada = Convert.ToDateTime(aux.Rows[0]["martesentrada"]);
+                    esp.MartesSalida = Convert.ToDateTime(aux.Rows[0]["martessalida"]);
+                    esp.MiercolesEntrada = Convert.ToDateTime(aux.Rows[0]["miercolesentrada"]);
+                    esp.MiercolesSalida = Convert.ToDateTime(aux.Rows[0]["miercolessalida"]);
+                    esp.JuevesEntrada = Convert.ToDateTime(aux.Rows[0]["juevesentrada"]);
+                    esp.JuevesSalida = Convert.ToDateTime(aux.Rows[0]["juevessalida"]);
+                    esp.ViernesEntrada = Convert.ToDateTime(aux.Rows[0]["viernesentrada"]);
+                    esp.ViernesSalida = Convert.ToDateTime(aux.Rows[0]["viernessalida"]);
+                    esp.SabadoEntrada = Convert.ToDateTime(aux.Rows[0]["sabadoentrada"]);
+                    esp.SabadoSalida = Convert.ToDateTime(aux.Rows[0]["sabadosalida"]);
+                    esp.DomingoEntrada = Convert.ToDateTime(aux.Rows[0]["domingoentrada"]);
+                    esp.DomingoSalida = Convert.ToDateTime(aux.Rows[0]["domingosalida"]);
+                
             }
             catch (SqlException ex)
             {
@@ -343,7 +333,7 @@ namespace logica
                 throw ex;
             }
 
-            return lista;
+            return esp;
         }
 
          
