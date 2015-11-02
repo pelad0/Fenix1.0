@@ -32,6 +32,7 @@ namespace Datos
                 else
                 {
                     manager.ejecutar("update medico set activo=1 where dni="+med.Dni);
+                    manager.ejecutar("update medico set nombre=" + med.Nombre + ",apellido=" + med.Apellido + ",dni=" + med.Dni + ",especialidad=" + med.Especialidad + ",matricula=" + med.Matricula + "where dni=" + med.Dni);
                 }
             }
             catch (Exception ex)

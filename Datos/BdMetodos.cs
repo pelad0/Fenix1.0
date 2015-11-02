@@ -27,7 +27,7 @@ namespace Datos
 
          string usuario = "LaboIII";
          string con = "1234";
-         string based = "ParcialLabo3";
+         string based = "ParcialLabo4";
          string server = "MARIANO\\SQLEXPRESS";
 
 
