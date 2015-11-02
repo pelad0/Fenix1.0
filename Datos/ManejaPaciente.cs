@@ -31,9 +31,12 @@ namespace Datos
                 }
                 else
                 {
-                    manager.ejecutar("update paciente set activo=1 where dni=" + pac.Dni);
-                    manager.ejecutar("update paciente set nombre='" + pac.Nombre + "'," + "apellido='" + pac.Apellido + "'," + "dni=" + pac.Dni + "," + "obra='" + pac.ObraSocial + "'," + "telefono=" + pac.Telefono + " where dni=" + pac.Dni);
-                } 
+                    if (Convert.ToInt32(aux.Rows[0]["activo"]) == 0)
+                    {
+                        manager.ejecutar("update paciente set activo=1 where dni=" + pac.Dni);
+                        manager.ejecutar("update paciente set nombre='" + pac.Nombre + "'," + "apellido='" + pac.Apellido + "'," + "dni=" + pac.Dni + "," + "obra='" + pac.ObraSocial + "'," + "telefono=" + pac.Telefono + " where dni=" + pac.Dni);
+                    }
+                }
                 //manager.ejecutar("update paciente set nombre='" + pac.Nombre + "'," + "apellido='" + pac.Apellido + "'," + "dni=" + pac.Dni + "," + "obra='" + pac.ObraSocial + "'," + "telefono=" + pac.Telefono);
             //execute scalar 
             }
