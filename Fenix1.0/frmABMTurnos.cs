@@ -15,22 +15,25 @@ namespace Fenix1._0
 {
     public partial class frmABMTurnos : Form
     {
-        public frmABMTurnos( clsUsuario usu)
-        {
-            InitializeComponent();
-            u = usu;
-        }
-
         int pagina = 0;
         clsUsuario u = new clsUsuario();
+        clsPaciente pac = new clsPaciente();
         RepositorioEspecialidad re = new RepositorioEspecialidad();
         RepositorioMedico rm = new RepositorioMedico();
         RepositorioTurno rt = new RepositorioTurno();
+        RepositorioSobreturno rst = new RepositorioSobreturno();
         List<clsMedico> medicos = new List<clsMedico>();
         List<clsTurno> turnos = new List<clsTurno>();
         List<string> especialidades = new List<string>();
         clsHorario mañana = new clsHorario();
         clsHorario tarde = new clsHorario();
+
+        public frmABMTurnos( clsUsuario usu, clsPaciente pac)
+        {
+            InitializeComponent();
+            this.u = usu;
+            this.pac = pac;
+        }
 
         private void frmABM_Load(object sender, EventArgs e)
         {
