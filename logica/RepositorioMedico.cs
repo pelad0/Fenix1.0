@@ -263,14 +263,14 @@ namespace logica
                 throw new ArgumentException("el tipo '" + e.GetType().ToString() + "' no esta soportado en un repositorio del tipo '" + this.GetType().ToString());
         }
 
-        public List<clsHorario> BuscaHorarioMañana(int id)
+        public List<clsHorario> BuscarHorarioMañana(int id)
         {
             DataTable tabla;
             List<clsHorario> lista = new List<clsHorario>();
             try
             {
 
-                tabla = manejaMedico.BuscaHorarioMañana(id);
+                tabla = manejaMedico.BuscarHorarioMañana(id);
               
 
                 foreach (DataRow aux in tabla.Rows)
@@ -304,14 +304,14 @@ namespace logica
 
             return lista;
         }
-        public List<clsHorario> BuscaHorarioTarde(int id)
+        public List<clsHorario> BuscarHorarioTarde(int id)
         {
             DataTable tabla;
             List<clsHorario> lista = new List<clsHorario>();
             try
             {
 
-                tabla = manejaMedico.BuscaHorarioTarde(id);
+                tabla = manejaMedico.BuscarHorarioTarde(id);
 
 
                 foreach (DataRow aux in tabla.Rows)
