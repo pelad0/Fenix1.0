@@ -93,7 +93,7 @@ namespace logica
             return m;
         }       
 
-        public List<clsMedico>Todo(int pag)//
+        public List<clsMedico>Todo(int pag)///
         {
             DataTable tabla;
             List<clsMedico> lista = new List<clsMedico>();
