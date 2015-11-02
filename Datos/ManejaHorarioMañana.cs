@@ -22,7 +22,7 @@ namespace Datos
             clsHorario ent = (clsHorario)entidad;
             try
             {
-                manager.ejecutar("Insert into horarioMañana(idmedico,lunesentrada,lunessalida,martesentrada,martessalida,miercolesentrada,miercolessalida,juevesentrada,juevessalida,viernesentrada,viernessalida,sabadoentrada,sabadosalida,domingoentrada,domingosalida) values("+ent.IdMedico+",'"+ent.LunesEntrada+"','"+ent.LunesSalida+"','"+ent.MartesEntrada+"','"+ent.MartesSalida+"','"+ent.MiercolesEntrada+"','"+ent.MiercolesSalida+"','"+ent.JuevesEntrada+"','"+ent.JuevesSalida+"','"+ent.ViernesEntrada+"','"+ent.ViernesSalida+"','"+ent.SabadoEntrada+"','"+ent.SabadoSalida+"','"+ent.DomingoEntrada+"','"+ent.DomingoSalida+"');SELECT @@identity;");
+                manager.ejecutar("Insert into horarioMañana(idmedico,lunesentrada,lunessalida,martesentrada,martessalida,miercolesentrada,miercolessalida,juevesentrada,juevessalida,viernesentrada,viernessalida,sabadoentrada,sabadosalida,domingoentrada,domingosalida) values("+ent.IdMedico+",'"+ent.LunesEntrada+"','"+ent.LunesSalida+"','"+ent.MartesEntrada+"','"+ent.MartesSalida+"','"+ent.MiercolesEntrada+"','"+ent.MiercolesSalida+"','"+ent.JuevesEntrada+"','"+ent.JuevesSalida+"','"+ent.ViernesEntrada+"','"+ent.ViernesSalida+"','"+ent.SabadoEntrada+"','"+ent.SabadoSalida+"','"+ent.DomingoEntrada+"','"+ent.DomingoSalida+"')");
             }
             catch (Exception ex)
             {
