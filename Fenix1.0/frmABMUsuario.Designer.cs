@@ -287,6 +287,10 @@
             // cbSegMod
             // 
             this.cbSegMod.FormattingEnabled = true;
+            this.cbSegMod.Items.AddRange(new object[] {
+            "Administracion",
+            "Recepcion",
+            "Medico"});
             this.cbSegMod.Location = new System.Drawing.Point(411, 342);
             this.cbSegMod.Name = "cbSegMod";
             this.cbSegMod.Size = new System.Drawing.Size(121, 23);

@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="frmABMHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMHistorial.Designer.cs">
+      <DependentUpon>frmABMHistorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmABMTurnos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,10 +106,19 @@
     <Compile Include="frmHorariosMedico.Designer.cs">
       <DependentUpon>frmHorariosMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmABMHistorial.resx">
+      <DependentUpon>frmABMHistorial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmABMTurnos.resx">
       <DependentUpon>frmABMTurnos.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHorariosMedico.resx">
       <DependentUpon>frmHorariosMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
