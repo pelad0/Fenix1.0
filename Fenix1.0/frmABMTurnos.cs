@@ -15,14 +15,17 @@ namespace Fenix1._0
 {
     public partial class frmABMTurnos : Form
     {
-        public frmABMTurnos()
+        public frmABMTurnos( clsUsuario usu)
         {
             InitializeComponent();
+            u = usu;
         }
 
+        clsUsuario u = new clsUsuario();
         RepositorioEspecialidad re = new RepositorioEspecialidad();
         RepositorioMedico rm = new RepositorioMedico();
         RepositorioTurno rt = new RepositorioTurno();
+        List<clsMedico> medicos = new List<clsMedico>();
         List<string> especialidades = new List<string>();
 
         private void frmABM_Load(object sender, EventArgs e)
@@ -32,7 +35,8 @@ namespace Fenix1._0
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
-
+            clsTurno t =new clsTurno();
+            rt.Alta(t,u.Id);//asi es el alta
         }
 
         private void iniciar()
@@ -42,6 +46,9 @@ namespace Fenix1._0
                 especialidades.Add(esp.Descripcion);
             }
             cbEspecialidades.DataSource = especialidades;
+            cbMedicos.DataSource = null;
+            medicos.Clear();
+            medicos = rm.Busca(cbEspecialidades.SelectedItem.ToString());
         }
 
         private void cbEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
@@ -56,7 +63,10 @@ namespace Fenix1._0
 
         private void btnTurnoXDia_Click(object sender, EventArgs e)
         {
-            
+            clsMedico med = medicos[cbMedicos.SelectedIndex];
+
+            //rt.ObtenerTurnos(med.Id, dtpFecha.Value);//no tocar
+
         }
 
     }
