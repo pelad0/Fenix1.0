@@ -21,6 +21,7 @@ namespace Fenix1._0
             u = usu;
         }
 
+        int pagina = 0;
         clsUsuario u = new clsUsuario();
         RepositorioEspecialidad re = new RepositorioEspecialidad();
         RepositorioMedico rm = new RepositorioMedico();
@@ -28,6 +29,8 @@ namespace Fenix1._0
         List<clsMedico> medicos = new List<clsMedico>();
         List<clsTurno> turnos = new List<clsTurno>();
         List<string> especialidades = new List<string>();
+        clsHorario mañana = new clsHorario();
+        clsHorario tarde = new clsHorario();
 
         private void frmABM_Load(object sender, EventArgs e)
         {
@@ -37,19 +40,7 @@ namespace Fenix1._0
         private void btnAlta_Click(object sender, EventArgs e)
         {
             clsTurno t =new clsTurno();
-            rt.Alta(t,u.Id);//asi es el alta
-        }
-
-        private void iniciar()
-        {
-            foreach (clsEspecialidad esp in re.Todo())
-            {
-                especialidades.Add(esp.Descripcion);
-            }
-            cbEspecialidades.DataSource = especialidades;
-            cbMedicos.DataSource = null;
-            medicos.Clear();
-            medicos = rm.Busca(cbEspecialidades.SelectedItem.ToString());
+            rt.Alta(t,u.Id);
         }
 
         private void cbEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
@@ -66,8 +57,47 @@ namespace Fenix1._0
         {
             clsMedico med = medicos[cbMedicos.SelectedIndex];
             turnos.Clear();
-            //turnos = rt.ObtenerTurnos(med.Id, dtpFecha.Value.ToShortDateString());//no tocar
-            
+            turnos = rt.obtenerTurno(med.Id, dtpFecha.Value);//no tocar
+            mañana = rm.BuscarHorarioMañana(med.Id);
+            tarde = rm.BuscarHorarioTarde(med.Id);
+
+        }
+
+        private void btnAnt_Click(object sender, EventArgs e)
+        {
+            if (pagina > 0)
+            {
+                pagina--;
+                iniciar();
+            }
+        }
+
+        private void btnSig_Click(object sender, EventArgs e)
+        {
+            if (rt.Todo(pagina + 1).Count>0)
+            {
+                pagina++;
+                iniciar();
+            }
+        }
+
+        private void iniciar()
+        {
+            foreach (clsEspecialidad esp in re.Todo())
+            {
+                especialidades.Add(esp.Descripcion);
+            }
+            cbEspecialidades.DataSource = especialidades;
+            cbMedicos.DataSource = null;
+            medicos.Clear();
+            medicos = rm.Busca(cbEspecialidades.SelectedItem.ToString());
+            dgvEliminar.DataSource = null;
+            dgvEliminar.DataSource = rt.Todo(pagina);
+        }
+
+        private void dgvEliminar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
     }
