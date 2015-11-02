@@ -9,8 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using entidades;
 using logica;
+using frmABMME;
+using Fenix1._0;
 
-namespace frmABMME
+
+namespace Fenix1._0
 {
     public partial class frmInicio : Form
     {
@@ -37,7 +40,7 @@ namespace frmABMME
                             switch (seg)
                             {
                                 case "Administracion":
-
+                                        
                                     break;
 
                                 case "Recepcion":
@@ -45,7 +48,7 @@ namespace frmABMME
                                     break;
                                 
                                 case "Medico":
-                                
+                                    frmABMHistorial h = new frmABMHistorial();
                                     break;
                             }
                         }

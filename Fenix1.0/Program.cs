@@ -1,4 +1,5 @@
-﻿using System;
+﻿using frmABMME;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,12 +18,13 @@ namespace Fenix1._0
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmABMME());
-            Application.Run(new frmABMOS());
+            //Application.Run(new frmABMOS());
             //Application.Run(new frmABMUsuario());
             //Application.Run(new frmABMPaciente());
             //Application.Run(new frmABMTurnos());
             //Application.Run(new frmABMES());
             //Application.Run(new frmInicio());
+            Application.Run(new frmABMHistorial());
         }
     }
 }

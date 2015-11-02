@@ -10,33 +10,11 @@ namespace entidades
     public class clsHistorial : IEntidad
     {
         string diagnostico;
-
-        public string Diagnostico
-        {
-            get { return diagnostico; }
-            set { diagnostico = value; }
-        }
         string observaciones;
-
-        public string Observaciones
-        {
-            get { return observaciones; }
-            set { observaciones = value; }
-        }
         DateTime fecha;
+        private int id;
 
-        public DateTime Fecha
-        {
-            get { return fecha; }
-            set { fecha = value; }
-        }
-
-        public clsHistorial()
-        {
-
-        }
-
-        public clsHistorial(int idPaciente,string diagnostico,string observaciones,DateTime fecha)
+        public clsHistorial(int idPaciente, string diagnostico, string observaciones, DateTime fecha)
         {
             this.Id = idPaciente;
             this.diagnostico = diagnostico;
@@ -44,15 +22,33 @@ namespace entidades
             this.fecha = fecha;
         }
 
-        private int id;
+        public clsHistorial()
+        {
+
+        }
+
+        public string Diagnostico
+        {
+            get { return diagnostico; }
+            set { diagnostico = value; }
+        }
+
+        public string Observaciones
+        {
+            get { return observaciones; }
+            set { observaciones = value; }
+        }
+
+        public DateTime Fecha
+        {
+            get { return fecha; }
+            set { fecha = value; }
+        }
 
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
-
-       
-
     }
 }
