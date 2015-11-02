@@ -57,7 +57,7 @@ namespace Datos
 
             try
             {
-                manager.ejecutar("update paciente set nombre="+pac.Nombre+","+"apellido="+pac.Apellido+","+"dni="+pac.Dni+","+"obra="+pac.ObraSocial+","+"telefono="+pac.Telefono);
+                manager.ejecutar("update paciente set nombre='"+pac.Nombre+"',"+"apellido='"+pac.Apellido+"',"+"dni="+pac.Dni+","+"obra='"+pac.ObraSocial+"',"+"telefono="+pac.Telefono);
             }
             catch (Exception ex)
             {

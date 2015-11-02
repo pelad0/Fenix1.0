@@ -38,7 +38,7 @@ namespace logica
         {
             
           try
-            {               
+            {             
 
                 manejaPaciente.Baja(metodoS(paciente));
             }
@@ -56,7 +56,7 @@ namespace logica
         public void Modificacion(IEntidad paciente)
         {
             try
-            {               
+            {              
 
                 manejaPaciente.Modificacion(metodoS(paciente));
             }
