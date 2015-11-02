@@ -131,7 +131,7 @@ namespace logica
                 pac.Nombre = aux["nombre"].ToString();
                 pac.Apellido = aux["apellido"].ToString();
                 pac.Dni = Convert.ToInt64(aux["dni"]);
-                aux2 = (clsObraSocial)manejaOs.buscaPorId(Convert.ToInt32(aux["obrasocial"]));
+                aux2 = (clsObraSocial)manejaOs.buscaPorId(Convert.ToInt32(aux["obra"]));
                 pac.ObraSocial = aux2.Nombre;
                 pac.Telefono = Convert.ToInt32(aux["telefono"]);
 
