@@ -133,7 +133,6 @@ namespace logica
         
         }
 
-
         public clsHorario buscarPorId(int id,int var) 
         {
             clsHorario hr;

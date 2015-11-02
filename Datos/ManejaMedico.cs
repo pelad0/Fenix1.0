@@ -121,6 +121,34 @@ namespace Datos
             }
             return aux;
         }
+
+        public IEntidad BuscarPorDni(long dni)
+        {
+            DataTable aux = new DataTable();
+            clsMedicoDatos med = new clsMedicoDatos();
+            try
+            {
+                aux = manager.consultar("select * from medico where dni=" + dni + " and activo=1");
+                med.Id = Convert.ToInt32(aux.Rows[0]["id"]);
+                med.Nombre = aux.Rows[0]["nombre"].ToString();
+                med.Apellido = aux.Rows[0]["apellido"].ToString();
+                med.Dni = Convert.ToInt64(aux.Rows[0]["dni"]);
+                med.Matricula = Convert.ToInt32(aux.Rows[0]["matricula"]);
+                med.Especialidad = Convert.ToInt32(aux.Rows[0]["especialidad"]);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            /*
+             
+            clsPaciente P = new clsPaciente();
+            try
+            {
+                aux =manejar.Consultar("select * from paciente where idPaciente="+id);
+                */
+            return med;
+        }
    
     }
 }

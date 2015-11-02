@@ -120,14 +120,14 @@ namespace logica
 
         }
 
-        public List<clsSobreturno> obtenerTurno(int id, DateTime fecha)//implementar
+        public List<clsSobreturno> obtenerTurno(int id, DateTime fecha)
         {
             DataTable tabla;
             List<clsSobreturno> lista = new List<clsSobreturno>();
 
             try
             {
-                tabla = manejaTurno.Todo(id);
+                tabla = manejaTurno.Busca(id);
                 foreach (DataRow aux in tabla.Rows)
                 {
                      if (Convert.ToDateTime(aux["fecha"]).CompareTo(fecha) == 0)

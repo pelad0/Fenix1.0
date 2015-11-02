@@ -32,11 +32,11 @@ namespace logica
             }
         }
 
-        public void Baja(IEntidad recibo)
+        public void Baja(IEntidad factura)
         {
             try
             {
-                //manejafactura.Baja(factura);
+                manejafactura.Baja(factura);
             }
             catch (SqlException ex)
             {
@@ -48,11 +48,11 @@ namespace logica
             }
         }
 
-        public void Modificacion(IEntidad recibo)
+        public void Modificacion(IEntidad factura)
         {
             try
             {
-                //manejafactura.Modificacion(factura);
+                manejafactura.Modificacion(factura);
             }
             catch (SqlException ex)
             {

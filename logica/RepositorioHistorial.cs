@@ -88,20 +88,31 @@ namespace logica
         {
             DataTable tabla;
             List<clsHistorial> lista = new List<clsHistorial>();
-
-            tabla = manejahistorial.Todo(pag);
-
-            foreach (DataRow aux in tabla.Rows)
+            try
             {
-                clsHistorial hist = new clsHistorial();
+                tabla = manejahistorial.Todo(pag);
 
-                hist.Id = Convert.ToInt32(aux["id"]);
-                hist.Diagnostico = aux["diagnostico"].ToString();
-                hist.Observaciones = aux["observaciones"].ToString();
-                hist.Fecha = Convert.ToDateTime(aux["fecha"]);
-                
-                lista.Add(hist);
+                foreach (DataRow aux in tabla.Rows)
+                {
+                    clsHistorial hist = new clsHistorial();
+
+                    hist.Id = Convert.ToInt32(aux["id"]);
+                    hist.Diagnostico = aux["diagnostico"].ToString();
+                    hist.Observaciones = aux["observaciones"].ToString();
+                    hist.Fecha = Convert.ToDateTime(aux["fecha"]);
+
+                    lista.Add(hist);
+                }
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
 
             return lista;
 

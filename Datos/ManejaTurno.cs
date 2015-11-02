@@ -67,7 +67,7 @@ namespace Datos
             clsTurno tur = new clsTurno();
             try
             {
-               aux=manager.consultar("select * from turno where id="+id+"and activo=1");
+                aux=manager.consultar("select * from turno where id="+id+"and activo=1");
                 tur.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 tur.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
                 tur.IdPaciente = Convert.ToInt32(aux.Rows[0]["idpaciente"]);
@@ -99,7 +99,20 @@ namespace Datos
         }
 
 
+        public DataTable Busca(int id)
+        {
+            DataTable aux = new DataTable();
+            try
+            {
+                aux = manager.consultar("select * from turno where id=" + id + "and activo=1");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
+            return aux;
+        }
         public void Alta(IEntidad entidad)
         {
             throw new NotImplementedException();

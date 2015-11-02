@@ -132,7 +132,7 @@ namespace logica
 
         }
 
-        public List<clsMedico> Busca(string pag)
+        public List<clsMedico> Busca(string pag)//buscar por especialidad
         {
             DataTable tabla;
             List<clsMedico> lista = new List<clsMedico>();
@@ -175,12 +175,15 @@ namespace logica
 
         }
 
-        public clsMedico BuscarPorDni(long dni) 
+        public clsMedico BuscarPorDni(long dni) //busca un medico por dni
         {
-           clsMedico med = new clsMedico();
+            
+            clsMedico m;
+            clsMedicoDatos med;
             try
             {
-               //med=manejaMedico.BuscaPorDni(dni);
+                med = (clsMedicoDatos)manejaMedico.BuscarPorDni(dni);
+                m = metodoL(med);
             }
             catch (SqlException ex)
             {
@@ -191,7 +194,7 @@ namespace logica
                 throw ex;
             }
 
-            return med;
+            return m;
         }
 
         private clsMedicoDatos metodoS(IEntidad med2)
@@ -236,7 +239,7 @@ namespace logica
                 medico.Apellido = med.Apellido;
                 medico.Dni = med.Dni;
                 medico.Matricula = med.Matricula;
-                aux = (clsEspecialidad)manejaEspecialidad.buscaPorId(med.Id);
+                aux = (clsEspecialidad)manejaEspecialidad.buscaPorId(med.Especialidad);
                 medico.Especialidad = aux.Descripcion;
             }
             catch (SqlException ex)
