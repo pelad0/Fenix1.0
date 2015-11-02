@@ -22,7 +22,7 @@ namespace Datos
 
             try
             {
-                manager.ejecutar("Insert into obramedico(idmedico,idobra) values('" + ob.IdMedico + "," + ob.IdObra + ");SELECT @@identity;");
+                manager.ejecutar("Insert into obraXmedico(idmedico,idobra) values('" + ob.IdMedico + "," + ob.IdObra + ")");
             }
             catch (Exception ex)
             {
