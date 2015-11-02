@@ -35,6 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.btnTurnoXDia = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbMedicos = new System.Windows.Forms.ComboBox();
@@ -47,8 +49,6 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnTurnoXDia = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
@@ -74,7 +74,7 @@
             // tpAlta
             // 
             this.tpAlta.Controls.Add(this.btnTurnoXDia);
-            this.tpAlta.Controls.Add(this.dateTimePicker1);
+            this.tpAlta.Controls.Add(this.dtpFecha);
             this.tpAlta.Controls.Add(this.label2);
             this.tpAlta.Controls.Add(this.label1);
             this.tpAlta.Controls.Add(this.cbMedicos);
@@ -87,6 +87,23 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
+            // 
+            // btnTurnoXDia
+            // 
+            this.btnTurnoXDia.Location = new System.Drawing.Point(264, 91);
+            this.btnTurnoXDia.Name = "btnTurnoXDia";
+            this.btnTurnoXDia.Size = new System.Drawing.Size(75, 23);
+            this.btnTurnoXDia.TabIndex = 7;
+            this.btnTurnoXDia.Text = "Turnos";
+            this.btnTurnoXDia.UseVisualStyleBackColor = true;
+            this.btnTurnoXDia.Click += new System.EventHandler(this.btnTurnoXDia_Click);
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Location = new System.Drawing.Point(368, 44);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 23);
+            this.dtpFecha.TabIndex = 6;
             // 
             // label2
             // 
@@ -238,23 +255,6 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(368, 44);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 6;
-            // 
-            // btnTurnoXDia
-            // 
-            this.btnTurnoXDia.Location = new System.Drawing.Point(264, 91);
-            this.btnTurnoXDia.Name = "btnTurnoXDia";
-            this.btnTurnoXDia.Size = new System.Drawing.Size(75, 23);
-            this.btnTurnoXDia.TabIndex = 7;
-            this.btnTurnoXDia.Text = "Turnos";
-            this.btnTurnoXDia.UseVisualStyleBackColor = true;
-            this.btnTurnoXDia.Click += new System.EventHandler(this.btnTurnoXDia_Click);
-            // 
             // frmABMTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,7 +293,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbMedicos;
         private System.Windows.Forms.ComboBox cbEspecialidades;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnTurnoXDia;
     }
 }
