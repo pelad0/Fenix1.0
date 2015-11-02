@@ -20,7 +20,7 @@ namespace Fenix1._0
         clsHorario HorariosMT;
         clsHorario HorariosTC;
 
-        int horaTrabajo = 0;       //Si es 1 trabaja solo mañana, si es dos trabaja solo tarde.
+        int horaTrabajo = 0;       //Si es 1 trabaja solo mañana, si es 2 trabaja solo tarde, si es 3 ambos.
    
       
         int pagina = 0;
@@ -28,7 +28,7 @@ namespace Fenix1._0
 
         List<clsObraXMedico> obraXmed = new List<clsObraXMedico>();
         List<clsEspecialidad> listaEspecialidades = new List<clsEspecialidad>();
-        List<clsMedico> medicos;
+        List<clsMedico> medicos = new List<clsMedico>();
         List<clsObraSocial> listaObraSocial = new List<clsObraSocial>();
 
 
@@ -56,103 +56,118 @@ namespace Fenix1._0
             InitializeComponent();
             HorariosMT = horariomt;
             HorariosTC = horariotc;
+            horaTrabajo = 3;
      
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            //Falta verificar horarios de medico.
+            try
+            {
 
-            if(verificarMedico())       //Se puede dar de alta.
-            {          
-                clsMedico medico = new clsMedico();
-
-                medico.Matricula = int.Parse(tbMatriculaAlta.Text);
-                medico.Dni = long.Parse(tbDniAlta.Text);
-                medico.Nombre = tbNombreAlta.Text;
-                medico.Apellido = tbApellidoAlta.Text;
-                medico.Especialidad = cbEspecialidades.Text; 
-
-                reposMedico.Alta(medico);
-
-
-                //CREO LA RELACION HORARIO POR MEDICO.
-
-                long dni = medico.Dni;
-
-                medico = reposMedico.BuscarPorDni(dni);
-
-
-
-                if(horaTrabajo == 0)    //QUE TRABAJA MAÑANA Y TARDE.
+                if (verificarMedico())       //Se puede dar de alta.
                 {
-                    HorariosMT.IdMedico = medico.Id;
-                    HorariosTC.IdMedico = medico.Id;
-                    reposHorario.Alta(HorariosMT, HorariosTC);
-                }
-                else
-                {
-                    if (horaTrabajo == 1)       //QUE TRABAJA MAÑANA.
+                    clsMedico medico = new clsMedico();
+
+                    medico.Matricula = int.Parse(tbMatriculaAlta.Text);
+                    medico.Dni = long.Parse(tbDniAlta.Text);
+                    medico.Nombre = tbNombreAlta.Text;
+                    medico.Apellido = tbApellidoAlta.Text;
+                    medico.Especialidad = cbEspecialidades.Text;
+
+                    reposMedico.Alta(medico);
+
+
+                    //CREO LA RELACION HORARIO POR MEDICO.
+
+                    long dni = medico.Dni;
+
+                    medico = reposMedico.BuscarPorDni(dni);     //NECESITO ESTE METODO PARA PODER CONSEGUIR EL ID DEL MEDICO.....
+
+
+
+                    if (horaTrabajo == 3)    //QUE TRABAJA MAÑANA Y TARDE.
                     {
                         HorariosMT.IdMedico = medico.Id;
-                        reposHorario.Alta(HorariosMT, 1);
-                    }
-                    else                        //QUE TRABAJA TARDE.
-                    {
                         HorariosTC.IdMedico = medico.Id;
-                        reposHorario.Alta(HorariosMT, 2);
+                        reposHorario.Alta(HorariosMT, HorariosTC);
                     }
-                    
-                }
-
-
-                //CREO LA RELACION HORARIO OBRA POR MEDICO.
-
-                List<string> listaNombresObra = new List<string>();
-
-                foreach(Object item in clbObraSocial.CheckedItems)      //CARGO TODAS LAS OBRAS SOCIALES SELECCIONADAS.
-                {
-                    listaNombresObra.Add(item.ToString());
-                }               
-
-                List<clsObraSocial> obr = new List<clsObraSocial>();        //Variable con todas mis obras
-
-                obr = reposObraSocial.Todo(0);          //le doy todas las obras
-
-                foreach(clsObraSocial obrita in obr)        //por cada obra existente
-                {
-                    foreach(string obra in listaNombresObra)        //por cada obra seleccionada
+                    else
                     {
-                        if(obrita.Nombre == obra)           //si el nombre es igual obtengo el id y creo la relacion
+                        if (horaTrabajo == 1)       //QUE TRABAJA MAÑANA.
                         {
-                            clsObraXMedico obraPormed = new clsObraXMedico();
-                            obraPormed.IdMedico = medico.Id;
-                            obraPormed.IdObra = obrita.Id;
-
-                            repoObraPorMed.Alta(obraPormed);
+                            HorariosMT.IdMedico = medico.Id;
+                            reposHorario.Alta(HorariosMT, 1);
                         }
+                        else                        //QUE TRABAJA TARDE.
+                        {
+                            if (horaTrabajo == 2)
+                            {
+                                HorariosTC.IdMedico = medico.Id;
+                                reposHorario.Alta(HorariosMT, 2);
+                            }
+
+                        }
+
                     }
 
-                  
+
+                    //CREO LA RELACION HORARIO OBRA POR MEDICO.
+
+                    List<string> listaNombresObra = new List<string>();
+
+                    foreach (Object item in clbObraSocial.CheckedItems)      //CARGO TODAS LAS OBRAS SOCIALES SELECCIONADAS.
+                    {
+                        listaNombresObra.Add(item.ToString());
+                    }
+
+                    List<clsObraSocial> obr = new List<clsObraSocial>();        //Variable con todas mis obras
+
+                    obr = reposObraSocial.Todo(0);          //le doy todas las obras
+
+                    foreach (clsObraSocial obrita in obr)        //por cada obra existente
+                    {
+                        foreach (string obra in listaNombresObra)        //por cada obra seleccionada
+                        {
+                            if (obrita.Nombre == obra)           //si el nombre es igual obtengo el id y creo la relacion
+                            {
+                                clsObraXMedico obraPormed = new clsObraXMedico();
+                                obraPormed.IdMedico = medico.Id;
+                                obraPormed.IdObra = obrita.Id;
+
+                                repoObraPorMed.Alta(obraPormed);
+                            }
+                        }
+
+
+                    }
+
+                    MessageBox.Show("Médico dado de alta");
+
                 }
 
-                MessageBox.Show("Médico dado de alta");               
-                
+
             }
-
-            
-
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar al médico.");
+            }
             
         }
 
         public bool verificarMedico()       //Chekea todo menos horarios.
         {
             if (string.IsNullOrWhiteSpace(tbMatriculaAlta.Text.ToString()) == true || string.IsNullOrWhiteSpace(tbDniAlta.Text.ToString()) == true || string.IsNullOrWhiteSpace(tbNombreAlta.Text) == true || string.IsNullOrWhiteSpace(tbApellidoAlta.Text) == true || string.IsNullOrWhiteSpace(cbEspecialidades.Text) == true)
-            {
+            {               
 
                 MessageBox.Show("Debe completar todos los campos para continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;               
 
+            }
+            if (horaTrabajo == 0)
+            {
+                MessageBox.Show("Horarios de trabajo no establecidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else
             {
@@ -174,70 +189,82 @@ namespace Fenix1._0
 
         public void Actualizar()
         {
-
-            dgvMedicosAlta.DataSource = null;
-            dgvMedicosBaja.DataSource = null;
-            dgvMedicosModi.DataSource = null;
-            tbEspecialidadAlta.Clear();
-            tbEspecialidadBaja.Clear();
-            tbEspecialidadModi.Clear(); 
-            dgvObrasSocialesAlta.DataSource = null;
-            dgvObrasSocialesBaja.DataSource = null;
-            dgvObrasSocialesModi.DataSource = null;                      
-
-            medicos.Clear();
-
-            medicos = reposMedico.Todo(pagina);
-
-
-            //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.
-
-            dgvMedicosAlta.Columns.Add("idTurno", "idTurno");
-            dgvMedicosAlta.Columns["idTurno"].Visible = false;
-            dgvMedicosAlta.Columns.Add("Matricula", "Matricula");
-            dgvMedicosAlta.Columns.Add("Apellido", "Apellido");
-
-            dgvMedicosBaja.Columns.Add("idTurno", "idTurno");
-            dgvMedicosBaja.Columns["idTurno"].Visible = false;
-            dgvMedicosBaja.Columns.Add("Matricula", "Matricula");
-            dgvMedicosBaja.Columns.Add("Apellido", "Apellido");
-
-
-            dgvMedicosModi.Columns.Add("idTurno", "idTurno");
-            dgvMedicosModi.Columns["idTurno"].Visible = false;
-            dgvMedicosModi.Columns.Add("Matricula", "Matricula");
-            dgvMedicosModi.Columns.Add("Apellido", "Apellido");
-
-            foreach (clsMedico med in medicos)
+            try
             {
-                dgvMedicosAlta.Rows.Add(med.Id, med.Matricula, med.Apellido);
-                dgvMedicosBaja.Rows.Add(med.Id, med.Matricula, med.Apellido);
-                dgvMedicosModi.Rows.Add(med.Id, med.Matricula, med.Apellido);                
+                dgvMedicosAlta.DataSource = null;
+                dgvMedicosBaja.DataSource = null;
+                dgvMedicosModi.DataSource = null;
+                tbEspecialidadAlta.Clear();
+                tbEspecialidadBaja.Clear();
+                tbEspecialidadModi.Clear();
+                dgvObrasSocialesAlta.DataSource = null;
+                dgvObrasSocialesBaja.DataSource = null;
+                dgvObrasSocialesModi.DataSource = null;
+
+                
+                medicos.Clear();
+                
+               
+
+
+                medicos = reposMedico.Todo(pagina);
+
+
+                //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.
+
+                dgvMedicosAlta.Columns.Add("idTurno", "idTurno");
+                dgvMedicosAlta.Columns["idTurno"].Visible = false;
+                dgvMedicosAlta.Columns.Add("Matricula", "Matricula");
+                dgvMedicosAlta.Columns.Add("Apellido", "Apellido");
+
+                dgvMedicosBaja.Columns.Add("idTurno", "idTurno");
+                dgvMedicosBaja.Columns["idTurno"].Visible = false;
+                dgvMedicosBaja.Columns.Add("Matricula", "Matricula");
+                dgvMedicosBaja.Columns.Add("Apellido", "Apellido");
+
+
+                dgvMedicosModi.Columns.Add("idTurno", "idTurno");
+                dgvMedicosModi.Columns["idTurno"].Visible = false;
+                dgvMedicosModi.Columns.Add("Matricula", "Matricula");
+                dgvMedicosModi.Columns.Add("Apellido", "Apellido");
+
+                foreach (clsMedico med in medicos)
+                {
+                    dgvMedicosAlta.Rows.Add(med.Id, med.Matricula, med.Apellido);
+                    dgvMedicosBaja.Rows.Add(med.Id, med.Matricula, med.Apellido);
+                    dgvMedicosModi.Rows.Add(med.Id, med.Matricula, med.Apellido);
+                }
+
+
+                //Cargo obras sociales y especialidades.
+
+                clbObraSocial.Items.Clear();
+                cbEspecialidades.Items.Clear();
+
+
+
+                // CARGO ESPECIALIDADES.
+                listaEspecialidades = reposEspecialidad.Todo();
+
+                foreach (clsEspecialidad es in listaEspecialidades)
+                {
+                    cbEspecialidades.Items.Add(es.Descripcion);
+                }
+
+                //CARGO OBRAS SOCIALES
+                listaObraSocial = reposObraSocial.Todo(0);
+
+                foreach (clsObraSocial obr in listaObraSocial)
+                {
+                    clbObraSocial.Items.Add(obr.Nombre);
+                }
             }
+            catch(Exception ex)
+            {
 
-
-            //Cargo obras sociales y especialidades.
-
-            clbObraSocial.Items.Clear();
-            cbEspecialidades.Items.Clear();
-
+            }
 
             
-            // CARGO ESPECIALIDADES.
-            listaEspecialidades = reposEspecialidad.Todo();
-
-            foreach(clsEspecialidad es in listaEspecialidades)
-            {
-                cbEspecialidades.Items.Add(es.Descripcion);
-            }
-
-
-            listaObraSocial = reposObraSocial.Todo(0);
-
-            foreach(clsObraSocial obr in listaObraSocial)
-            {
-                clbObraSocial.Items.Add(obr.Nombre);
-            }
 
 
 
@@ -251,7 +278,7 @@ namespace Fenix1._0
 
         private void frmABMME_Load(object sender, EventArgs e)
         {
-            //Actualizar();
+            Actualizar();
         }
 
         private void btnHorarios_Click(object sender, EventArgs e)

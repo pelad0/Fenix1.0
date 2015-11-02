@@ -151,8 +151,6 @@
             // 
             this.cbEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEspecialidades.FormattingEnabled = true;
-            this.cbEspecialidades.Items.AddRange(new object[] {
-            "sdg"});
             this.cbEspecialidades.Location = new System.Drawing.Point(424, 132);
             this.cbEspecialidades.Name = "cbEspecialidades";
             this.cbEspecialidades.Size = new System.Drawing.Size(154, 23);
@@ -173,11 +171,11 @@
             this.dgvMedicosAlta.AllowUserToAddRows = false;
             this.dgvMedicosAlta.AllowUserToDeleteRows = false;
             this.dgvMedicosAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicosAlta.Location = new System.Drawing.Point(105, 303);
+            this.dgvMedicosAlta.Location = new System.Drawing.Point(120, 303);
             this.dgvMedicosAlta.Name = "dgvMedicosAlta";
             this.dgvMedicosAlta.ReadOnly = true;
             this.dgvMedicosAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicosAlta.Size = new System.Drawing.Size(274, 196);
+            this.dgvMedicosAlta.Size = new System.Drawing.Size(235, 196);
             this.dgvMedicosAlta.TabIndex = 18;
             this.dgvMedicosAlta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicosAlta_CellContentClick);
             // 
@@ -242,6 +240,7 @@
             // 
             // clbObraSocial
             // 
+            this.clbObraSocial.CheckOnClick = true;
             this.clbObraSocial.FormattingEnabled = true;
             this.clbObraSocial.Location = new System.Drawing.Point(703, 104);
             this.clbObraSocial.Name = "clbObraSocial";
@@ -277,6 +276,7 @@
             // tbMatriculaAlta
             // 
             this.tbMatriculaAlta.Location = new System.Drawing.Point(128, 132);
+            this.tbMatriculaAlta.MaxLength = 3;
             this.tbMatriculaAlta.Name = "tbMatriculaAlta";
             this.tbMatriculaAlta.Size = new System.Drawing.Size(154, 23);
             this.tbMatriculaAlta.TabIndex = 4;

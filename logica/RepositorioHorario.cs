@@ -38,7 +38,7 @@ namespace logica
             try
             {
                 if(var==1)
-                  manejamañana.Alta(Hr);
+                  manejamañana.Alta(Hr);                   
                 else
                    manejatarde.Alta(Hr);
 

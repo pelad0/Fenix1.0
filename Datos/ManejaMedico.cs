@@ -20,7 +20,7 @@ namespace Datos
 
         public void Alta(IEntidad entidad)
         {
-            clsMedico med = (clsMedico)entidad;
+            clsMedicoDatos med = (clsMedicoDatos)entidad;
             try
             {
                 manager.ejecutar("Insert into medico(nombre,apellido,dni,especialidad,matricula) values('" + med.Nombre + "','" + med.Apellido + "'," + med.Dni + "," + med.Especialidad + "," + med.Matricula + ");SELECT @@identity;");
