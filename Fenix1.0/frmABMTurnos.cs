@@ -26,6 +26,7 @@ namespace Fenix1._0
         RepositorioMedico rm = new RepositorioMedico();
         RepositorioTurno rt = new RepositorioTurno();
         List<clsMedico> medicos = new List<clsMedico>();
+        List<clsTurno> turnos = new List<clsTurno>();
         List<string> especialidades = new List<string>();
 
         private void frmABM_Load(object sender, EventArgs e)
@@ -64,9 +65,9 @@ namespace Fenix1._0
         private void btnTurnoXDia_Click(object sender, EventArgs e)
         {
             clsMedico med = medicos[cbMedicos.SelectedIndex];
-
-            //rt.ObtenerTurnos(med.Id, dtpFecha.Value);//no tocar
-
+            turnos.Clear();
+            //turnos = rt.ObtenerTurnos(med.Id, dtpFecha.Value.ToShortDateString());//no tocar
+            
         }
 
     }

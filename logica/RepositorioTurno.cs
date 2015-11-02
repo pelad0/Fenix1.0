@@ -127,7 +127,7 @@ namespace logica
 
             try
             {
-                tabla = manejaTurno.Busca(id,fecha.ToShortDateString());
+                tabla = manejaTurno.BuscarTurnoPorMedico(id,fecha.ToShortDateString());
                 foreach (DataRow aux in tabla.Rows)
                 {
                                       

@@ -152,6 +152,11 @@ namespace Fenix1._0
                     }
                 }
             }
+            if (string.IsNullOrWhiteSpace(usuarios[dgvModif.CurrentRow.Index].Usuario))
+            {
+                MessageBox.Show("Seleccione usuario  modificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            } 
             return true;
         }
 
@@ -174,6 +179,10 @@ namespace Fenix1._0
             tbUsuAlta.Clear();
             cbSeguridad.SelectedIndex = -1;
             cbSegMod.SelectedIndex = -1;
+
+            tbUsuAlta.Focus();
+
+
         }
 
         private void dgvModif_CellClick(object sender, DataGridViewCellEventArgs e)
