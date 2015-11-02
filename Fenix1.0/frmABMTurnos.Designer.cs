@@ -93,7 +93,7 @@
             this.btnTurnoXDia.Location = new System.Drawing.Point(281, 91);
             this.btnTurnoXDia.Name = "btnTurnoXDia";
             this.btnTurnoXDia.Size = new System.Drawing.Size(75, 23);
-            this.btnTurnoXDia.TabIndex = 7;
+            this.btnTurnoXDia.TabIndex = 4;
             this.btnTurnoXDia.Text = "Turnos";
             this.btnTurnoXDia.UseVisualStyleBackColor = true;
             this.btnTurnoXDia.Click += new System.EventHandler(this.btnTurnoXDia_Click);
@@ -103,7 +103,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(368, 44);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 23);
-            this.dtpFecha.TabIndex = 6;
+            this.dtpFecha.TabIndex = 3;
             // 
             // label2
             // 
@@ -125,6 +125,7 @@
             // 
             // cbMedicos
             // 
+            this.cbMedicos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMedicos.FormattingEnabled = true;
             this.cbMedicos.Location = new System.Drawing.Point(209, 44);
             this.cbMedicos.Name = "cbMedicos";
@@ -133,6 +134,7 @@
             // 
             // cbEspecialidades
             // 
+            this.cbEspecialidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEspecialidades.FormattingEnabled = true;
             this.cbEspecialidades.Location = new System.Drawing.Point(52, 44);
             this.cbEspecialidades.Name = "cbEspecialidades";

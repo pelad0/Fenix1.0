@@ -225,6 +225,7 @@ namespace Fenix1._0
             tbDniMod.Clear();
             tbTelMod.Clear();
             cbOSMod.SelectedIndex = -1;
+            tbNombreAlta.Focus();
         }
 
         private bool comprobarCamposAlta()
