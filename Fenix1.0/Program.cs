@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Fenix1._0
 {
     static class Program
@@ -17,12 +16,13 @@ namespace Fenix1._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmABMME());
-            //Application.Run(new frmABMOS());
+            //Application.Run(new frmABMME());
+            Application.Run(new frmABMOS());
             //Application.Run(new frmABMUsuario());
             //Application.Run(new frmABMPaciente());
             //Application.Run(new frmABMTurnos());
             //Application.Run(new frmABMES());
+            //Application.Run(new frmInicio());
         }
     }
 }

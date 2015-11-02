@@ -20,7 +20,7 @@ namespace Fenix1._0
         }
 
         clsHorario horario = new clsHorario();
-        clsHorario horarioTC;
+        clsHorario horarioTC = new clsHorario();
 
 
         private void rbMT_CheckedChanged(object sender, EventArgs e)

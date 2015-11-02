@@ -150,7 +150,7 @@ namespace Fenix1._0
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error al cargar al médico.");
+                MessageBox.Show("Error al cargar al médico: "+ex.Message);
             }
             
         }
@@ -261,7 +261,7 @@ namespace Fenix1._0
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show("Test"+ex.Message);
             }
 
             

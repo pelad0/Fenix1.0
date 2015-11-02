@@ -20,7 +20,6 @@ namespace Fenix1._0
             InitializeComponent();
         }
 
-        int pagina = 0;
         RepositorioObraSocial ros = new RepositorioObraSocial();
         List<clsObraSocial> OS;
 

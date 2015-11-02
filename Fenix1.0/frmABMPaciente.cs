@@ -242,7 +242,7 @@ namespace Fenix1._0
                 }
                 else if (ctrl is TextBoxNumeros)
                 {
-                    if ((string.IsNullOrWhiteSpace((ctrl as TextBoxNumeros).Text) || (ctrl as TextBoxNumeros).Text.Length < 8) && (ctrl as TextBoxNumeros).Tag != "no")
+                    if ((string.IsNullOrWhiteSpace((ctrl as TextBoxNumeros).Text) || (ctrl as TextBoxNumeros).Text.Length < 8) && (ctrl as TextBoxNumeros).Tag.ToString() != "no")
                     {
                         MessageBox.Show("Completar el campo "+ (ctrl as TextBoxNumeros).Tag +" con la cantidad de digitos correcta.", "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         (ctrl as TextBoxNumeros).Focus();

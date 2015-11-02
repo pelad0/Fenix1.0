@@ -61,7 +61,7 @@ namespace Fenix1._0
                     {                        
                         for (int i = 0; i < clbObraSocial.Items.Count; i++)
                         {
-                            if(clbObraSocial.Items[i] == obraSocial.Nombre)
+                            if(clbObraSocial.Items[i].ToString() == obraSocial.Nombre)
                             {
                                 clbObraSocial.SetItemChecked(i, true);
                             }
