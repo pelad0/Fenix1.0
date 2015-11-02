@@ -70,7 +70,7 @@ namespace Datos
                     us.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                     us.Seguridad = aux.Rows[0]["seguridad"].ToString();
                     us.Clave = aux.Rows[0]["pass"].ToString();
-                    us.Usuario = aux.Rows[0]["user"].ToString();
+                    us.Usuario = aux.Rows[0]["usuario"].ToString();
                    
                 }
                 catch (Exception ex)
