@@ -99,6 +99,20 @@ namespace Datos
                 return aux;
             }
 
+            public DataTable Busca(int id)
+            {
+                DataTable aux = new DataTable();
+                try
+                {
+                    aux = manager.consultar("select * from turno where id=" + id + "and activo=1");
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+                return aux;
+            }
 
 
             public void Alta(IEntidad entidad)

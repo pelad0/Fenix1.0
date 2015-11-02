@@ -127,7 +127,7 @@ namespace logica
 
             try
             {
-                tabla = manejaTurno.Todo(id);
+                tabla = manejaTurno.Busca(id);
                 foreach (DataRow aux in tabla.Rows)
                 {
                      if (Convert.ToDateTime(aux["fecha"]).CompareTo(fecha) == 0)
