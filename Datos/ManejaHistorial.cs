@@ -4,7 +4,6 @@ using System.Linq;
 using interfaces;
 using System.Text;
 using entidades;
-using interfaces;
 using System.Data;
 using System.Threading.Tasks;
 
@@ -23,7 +22,7 @@ namespace Datos
             clsHistorial hist = (clsHistorial)entidad;
             try
             {
-                manager.ejecutar("Insert into historial(idpaciente,diagnostico,observaciones,fecha) values(" + hist.Id + ",'" + hist.Diagnostico + "','" + hist.Observaciones + "','" + hist.Fecha +"');SELECT @@identity;");
+                manager.ejecutar("Insert into historial(idpaciente,diagnostico,observaciones,fecha) values(" + hist.Id + ",'" + hist.Diagnostico + "','" + hist.Observaciones + "','" + hist.Fecha +"'");
             }
             catch (Exception ex)
             {
