@@ -116,6 +116,7 @@
             this.dgvOSAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOSAlta.Size = new System.Drawing.Size(240, 320);
             this.dgvOSAlta.TabIndex = 3;
+            this.dgvOSAlta.TabStop = false;
             // 
             // label1
             // 
@@ -139,7 +140,7 @@
             this.btnAlta.Location = new System.Drawing.Point(281, 400);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 23);
-            this.btnAlta.TabIndex = 0;
+            this.btnAlta.TabIndex = 2;
             this.btnAlta.Text = "Cargar";
             this.btnAlta.UseVisualStyleBackColor = true;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
@@ -188,13 +189,14 @@
             this.dgvOSBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOSBaja.Size = new System.Drawing.Size(240, 320);
             this.dgvOSBaja.TabIndex = 1;
+            this.dgvOSBaja.TabStop = false;
             // 
             // btnBaja
             // 
             this.btnBaja.Location = new System.Drawing.Point(279, 400);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(75, 23);
-            this.btnBaja.TabIndex = 0;
+            this.btnBaja.TabIndex = 1;
             this.btnBaja.Text = "Eliminar";
             this.btnBaja.UseVisualStyleBackColor = true;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
@@ -236,7 +238,8 @@
             this.dgvOSModif.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvOSModif.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOSModif.Size = new System.Drawing.Size(240, 320);
-            this.dgvOSModif.TabIndex = 5;
+            this.dgvOSModif.TabIndex = 0;
+            this.dgvOSModif.TabStop = false;
             this.dgvOSModif.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOSMod_CellContentClick);
             // 
             // label2
@@ -254,14 +257,14 @@
             this.tbModifOS.MaxLength = 40;
             this.tbModifOS.Name = "tbModifOS";
             this.tbModifOS.Size = new System.Drawing.Size(197, 23);
-            this.tbModifOS.TabIndex = 3;
+            this.tbModifOS.TabIndex = 1;
             // 
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(281, 400);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 0;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
