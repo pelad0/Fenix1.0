@@ -125,18 +125,23 @@ namespace logica
             tabla = manejaPaciente.Todo(pag);
             foreach (DataRow aux in tabla.Rows)
             {
-                clsPaciente pac = new clsPaciente();
-
-                pac.Id = Convert.ToInt32(aux["id"]);
-                pac.Nombre = aux["nombre"].ToString();
-                pac.Apellido = aux["apellido"].ToString();
-                pac.Dni = Convert.ToInt64(aux["dni"]);
                 aux2 = (clsObraSocial)manejaOs.buscaPorId(Convert.ToInt32(aux["obra"]));
-                pac.ObraSocial = aux2.Nombre;
-                pac.Telefono = Convert.ToInt64(aux["telefono"]);
+                if(aux2!=null)
+                {
+                    clsPaciente pac = new clsPaciente();
+
+                    pac.Id = Convert.ToInt32(aux["id"]);
+                    pac.Nombre = aux["nombre"].ToString();
+                    pac.Apellido = aux["apellido"].ToString();
+                    pac.Dni = Convert.ToInt64(aux["dni"]);
+
+                    pac.ObraSocial = aux2.Nombre;
+                    pac.Telefono = Convert.ToInt64(aux["telefono"]);
 
 
-                lista.Add(pac);
+                    lista.Add(pac);
+                }
+                
             }
 
             return lista;
