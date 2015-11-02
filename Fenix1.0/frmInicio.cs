@@ -44,12 +44,12 @@ namespace Fenix1._0
                                     break;
 
                                 case "Recepcion":
-
+                                        
                                     break;
                                 
                                 case "Medico":
-                                    frmABMHistorial h = new frmABMHistorial();
-                                    h.ShowDialog();
+                                        frmABMHistorial h = new frmABMHistorial();
+                                        h.ShowDialog();
                                     break;
                             }
                         }
