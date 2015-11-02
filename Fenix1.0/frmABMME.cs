@@ -700,6 +700,13 @@ namespace Fenix1._0
 
         }
 
+        private void btnAdministrarEspe_Click(object sender, EventArgs e)
+        {
+            frmABMES frmes = new frmABMES();
+            frmes.ShowDialog();
+
+        }
+
         
         
 
