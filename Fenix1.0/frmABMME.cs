@@ -284,15 +284,8 @@ namespace Fenix1._0
                         dgvObrasSocialesModi.Rows.Remove(row);
                     }
                 }
-
-
                 
-
-
-
-                
-                medicos.Clear();
-                
+                medicos.Clear();        
                
 
 
@@ -710,11 +703,15 @@ namespace Fenix1._0
             tbEspecialidadAlta.Clear();
 
 
+
+            //CARGO OBRAS SOCIALES
+
             dgvObrasSocialesAlta.Columns.Add("Nombre", "Nombre");
 
             int idMed = int.Parse(dgvMedicosAlta.Rows[dgvMedicosAlta.CurrentRow.Index].Cells[0].Value.ToString());            
 
-            obraXmed = repoObraPorMed.TodasObras(idMed);            
+
+            obraXmed = repoObraPorMed.Todo(0); 
 
             clsObraSocial obraSocial;
 
