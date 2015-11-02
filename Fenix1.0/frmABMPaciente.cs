@@ -31,16 +31,6 @@ namespace Fenix1._0
             iniciar();
         }
 
-        private void dgvPacMod_SelectionChanged(object sender, EventArgs e)
-        {
-            int pos = dgvPacMod.CurrentRow.Index;
-            tbNombreMod.Text = pacientes[pos].Nombre;
-            tbApellidoMod.Text = pacientes[pos].Apellido;
-            tbDniMod.Text = pacientes[pos].Dni.ToString();
-            tbTelMod.Text = pacientes[pos].Telefono.ToString();
-            cbOSMod.SelectedItem = pacientes[pos].ObraSocial;
-        }
-
         private void btnAlta_Click(object sender, EventArgs e)
         {
             if (comprobarCamposAlta())
@@ -69,11 +59,13 @@ namespace Fenix1._0
                     try
                     {
                         rp.Baja(pacientes[dgvBaja.CurrentRow.Index]);
-                        iniciar();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
                         iniciar();
                     }
                 }
@@ -166,20 +158,23 @@ namespace Fenix1._0
 
         private void btnSig_Click(object sender, EventArgs e)
         {
-            pacientes = rp.Todo(pagina);
-            pagina++;
+            if (rp.Todo(pagina + 1).Count > 0)
+            {
+                pagina++;
+                pacientes = rp.Todo(pagina);
 
-            dgvBaja.DataSource = null;
-            dgvBaja.DataSource = pacientes;
-            dgvBaja.Columns[0].Visible = false;
+                dgvBaja.DataSource = null;
+                dgvBaja.DataSource = pacientes;
+                dgvBaja.Columns[0].Visible = false;
 
-            dgvPacMod.DataSource = null;
-            dgvPacMod.DataSource = pacientes;
-            dgvPacMod.Columns[0].Visible = false;
+                dgvPacMod.DataSource = null;
+                dgvPacMod.DataSource = pacientes;
+                dgvPacMod.Columns[0].Visible = false;
 
-            dgvAlta.DataSource = null;
-            dgvAlta.DataSource = pacientes;
-            dgvAlta.Columns[0].Visible = false;
+                dgvAlta.DataSource = null;
+                dgvAlta.DataSource = pacientes;
+                dgvAlta.Columns[0].Visible = false;
+            }
         }
 
         private void btnDarTurno_Click(object sender, EventArgs e)
@@ -286,7 +281,7 @@ namespace Fenix1._0
                 }
                 else if (ctrl is ComboBox)
                 {
-                    if (string.IsNullOrWhiteSpace((ctrl as ComboBox).SelectedItem.ToString()))
+                    if (string.IsNullOrWhiteSpace((ctrl as ComboBox).Text))
                     {
                         MessageBox.Show("Seleccione un valor para" + (ctrl as ComboBox).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         cbOSAlta.Focus();
@@ -295,6 +290,20 @@ namespace Fenix1._0
                 }
             }
             return true;
+        }
+
+        private void dgvPacMod_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(pacientes[dgvPacMod.CurrentRow.Index].Nombre))
+            {
+                int pos = dgvPacMod.CurrentRow.Index;
+                tbNombreMod.Text = pacientes[pos].Nombre;
+                tbApellidoMod.Text = pacientes[pos].Apellido;
+                tbDniMod.Text = pacientes[pos].Dni.ToString();
+                tbTelMod.Text = pacientes[pos].Telefono.ToString();
+                cbOSMod.SelectedItem = pacientes[pos].ObraSocial;
+            }
+
         }
 
     }

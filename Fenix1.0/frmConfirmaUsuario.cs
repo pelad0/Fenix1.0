@@ -28,6 +28,12 @@ namespace frmABMME
                     DialogResult = DialogResult.OK;
                     this.Close();
                 }
+                else
+                {
+                    MessageBox.Show("Clave incorrecta.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    tbConfirm.Clear();
+                    tbConfirm.Focus();
+                }
             }
         }
     }
