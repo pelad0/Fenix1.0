@@ -29,9 +29,8 @@ namespace Fenix1._0
         List<clsMedico> medicos = new List<clsMedico>();
         List<clsTurno> turnos = new List<clsTurno>();
         List<string> especialidades = new List<string>();
-        List<DateTime> mañana = new List<DateTime>();
-        List<DateTime> tarde = new List<DateTime>();
-        
+        clsHorario mañana = new clsHorario();
+        clsHorario tarde = new clsHorario();
 
         private void frmABM_Load(object sender, EventArgs e)
         {
@@ -59,10 +58,9 @@ namespace Fenix1._0
             clsMedico med = medicos[cbMedicos.SelectedIndex];
             turnos.Clear();
             turnos = rt.obtenerTurno(med.Id, dtpFecha.Value);//no tocar
+            mañana = rm.BuscarHorarioMañana(med.Id);
+            tarde = rm.BuscarHorarioTarde(med.Id);
 
-            mañana = rm.buscarHorarioMañana(med.Id);
-            tarde = rm.buscarHorarioTarde(med.Id);
-            
         }
 
         private void btnAnt_Click(object sender, EventArgs e)
