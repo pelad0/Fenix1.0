@@ -239,7 +239,7 @@ namespace logica
                 medico.Apellido = med.Apellido;
                 medico.Dni = med.Dni;
                 medico.Matricula = med.Matricula;
-                aux = (clsEspecialidad)manejaEspecialidad.buscaPorId(med.Id);
+                aux = (clsEspecialidad)manejaEspecialidad.buscaPorId(med.Especialidad);
                 medico.Especialidad = aux.Descripcion;
             }
             catch (SqlException ex)
