@@ -35,7 +35,7 @@ namespace Fenix1._0
             {
 
                 clsUsuario u = usuarios[dgvModif.CurrentRow.Index];
-                tbUsuMod.Text = u.Ususario;
+                tbUsuMod.Text = u.Usuario;
                 tbContMod.Text = u.Clave;
                 tbContMod2.Text = u.Clave;
             }
@@ -74,7 +74,7 @@ namespace Fenix1._0
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(usuarios[dgvEliminar.CurrentRow.Index].Ususario))
+            if (!string.IsNullOrWhiteSpace(usuarios[dgvEliminar.CurrentRow.Index].Usuario))
             {
                 frmConfirmaUsuario fcu = new frmConfirmaUsuario(usuarios[dgvEliminar.CurrentRow.Index].Clave);
                 DialogResult res = fcu.ShowDialog();
@@ -82,7 +82,7 @@ namespace Fenix1._0
                 {
                     try
                     {
-                        string nombre = usuarios[dgvEliminar.CurrentRow.Index].Ususario;
+                        string nombre = usuarios[dgvEliminar.CurrentRow.Index].Usuario;
                         ru.Baja(usuarios[dgvEliminar.CurrentRow.Index]);
                         MessageBox.Show(nombre + " se elimino con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
@@ -110,7 +110,7 @@ namespace Fenix1._0
                 if (res == DialogResult.OK)
                 {
                     u.Clave = tbContMod.Text;
-                    u.Ususario = tbUsuMod.Text;
+                    u.Usuario = tbUsuMod.Text;
                     u.Seguridad = cbSegMod.SelectedItem.ToString();
                     try
                     {
@@ -159,10 +159,12 @@ namespace Fenix1._0
             dgvEliminar.DataSource = null;
             dgvEliminar.DataSource = usuarios;
             dgvEliminar.Columns[0].Visible = false;
+            dgvEliminar.Columns[2].Visible = false;
 
             dgvModif.DataSource = null;
             dgvModif.DataSource = usuarios;
             dgvModif.Columns[0].Visible = false;
+            dgvModif.Columns[2].Visible = false;
 
             tbContAlta1.Clear();
             tbContAlta2.Clear();
@@ -173,11 +175,11 @@ namespace Fenix1._0
 
         private void dgvModif_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(usuarios[dgvModif.CurrentRow.Index].Ususario))
+            if (!string.IsNullOrWhiteSpace(usuarios[dgvModif.CurrentRow.Index].Usuario))
             {
 
                 clsUsuario u = usuarios[dgvModif.CurrentRow.Index];
-                tbUsuMod.Text = u.Ususario;
+                tbUsuMod.Text = u.Usuario;
                 tbContMod.Text = u.Clave;
                 tbContMod2.Text = u.Clave;
                 cbSegMod.SelectedItem = u.Seguridad;
