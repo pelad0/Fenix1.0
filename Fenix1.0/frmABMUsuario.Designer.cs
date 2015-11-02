@@ -111,7 +111,7 @@
             this.label7.Location = new System.Drawing.Point(283, 294);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 15);
-            this.label7.TabIndex = 9;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Seguridad";
             // 
             // cbSeguridad
@@ -124,7 +124,7 @@
             this.cbSeguridad.Location = new System.Drawing.Point(258, 331);
             this.cbSeguridad.Name = "cbSeguridad";
             this.cbSeguridad.Size = new System.Drawing.Size(121, 23);
-            this.cbSeguridad.TabIndex = 8;
+            this.cbSeguridad.TabIndex = 4;
             // 
             // label3
             // 
@@ -132,7 +132,7 @@
             this.label3.Location = new System.Drawing.Point(245, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 15);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Confirmar Contraseña";
             // 
             // label2
@@ -141,7 +141,7 @@
             this.label2.Location = new System.Drawing.Point(280, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 15);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Contraseña";
             // 
             // label1
@@ -150,7 +150,7 @@
             this.label1.Location = new System.Drawing.Point(290, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 15);
-            this.label1.TabIndex = 5;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
             // 
             // tbContAlta2
@@ -158,7 +158,7 @@
             this.tbContAlta2.Location = new System.Drawing.Point(268, 249);
             this.tbContAlta2.Name = "tbContAlta2";
             this.tbContAlta2.Size = new System.Drawing.Size(100, 23);
-            this.tbContAlta2.TabIndex = 4;
+            this.tbContAlta2.TabIndex = 3;
             this.tbContAlta2.UseSystemPasswordChar = true;
             // 
             // tbContAlta1
@@ -166,7 +166,7 @@
             this.tbContAlta1.Location = new System.Drawing.Point(268, 167);
             this.tbContAlta1.Name = "tbContAlta1";
             this.tbContAlta1.Size = new System.Drawing.Size(100, 23);
-            this.tbContAlta1.TabIndex = 3;
+            this.tbContAlta1.TabIndex = 2;
             this.tbContAlta1.UseSystemPasswordChar = true;
             // 
             // tbUsuAlta
@@ -174,7 +174,7 @@
             this.tbUsuAlta.Location = new System.Drawing.Point(268, 85);
             this.tbUsuAlta.Name = "tbUsuAlta";
             this.tbUsuAlta.Size = new System.Drawing.Size(100, 23);
-            this.tbUsuAlta.TabIndex = 2;
+            this.tbUsuAlta.TabIndex = 1;
             // 
             // btnAlta
             // 
@@ -183,7 +183,7 @@
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 23);
             this.btnAlta.TabIndex = 0;
-            this.btnAlta.Text = "Cargar";
+            this.btnAlta.Text = "5";
             this.btnAlta.UseVisualStyleBackColor = true;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
@@ -243,7 +243,8 @@
             this.dgvEliminar.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEliminar.Size = new System.Drawing.Size(244, 380);
-            this.dgvEliminar.TabIndex = 1;
+            this.dgvEliminar.TabIndex = 0;
+            this.dgvEliminar.TabStop = false;
             // 
             // btnBaja
             // 
@@ -252,6 +253,7 @@
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(75, 23);
             this.btnBaja.TabIndex = 0;
+            this.btnBaja.TabStop = false;
             this.btnBaja.Text = "Eliminar";
             this.btnBaja.UseVisualStyleBackColor = true;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
@@ -281,7 +283,7 @@
             this.label8.Location = new System.Drawing.Point(436, 307);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 15);
-            this.label8.TabIndex = 16;
+            this.label8.TabIndex = 0;
             this.label8.Text = "Seguridad";
             // 
             // cbSegMod
@@ -294,7 +296,7 @@
             this.cbSegMod.Location = new System.Drawing.Point(411, 342);
             this.cbSegMod.Name = "cbSegMod";
             this.cbSegMod.Size = new System.Drawing.Size(121, 23);
-            this.cbSegMod.TabIndex = 15;
+            this.cbSegMod.TabIndex = 4;
             this.cbSegMod.Tag = "Seguridad";
             // 
             // dgvModif
@@ -350,7 +352,7 @@
             this.label4.Location = new System.Drawing.Point(398, 229);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(147, 15);
-            this.label4.TabIndex = 13;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Confirmar Contraseña";
             // 
             // label5
@@ -359,7 +361,7 @@
             this.label5.Location = new System.Drawing.Point(433, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 15);
-            this.label5.TabIndex = 12;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Contraseña";
             // 
             // label6
@@ -368,7 +370,7 @@
             this.label6.Location = new System.Drawing.Point(443, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 15);
-            this.label6.TabIndex = 11;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Usuario";
             // 
             // tbContMod2
@@ -376,7 +378,7 @@
             this.tbContMod2.Location = new System.Drawing.Point(421, 264);
             this.tbContMod2.Name = "tbContMod2";
             this.tbContMod2.Size = new System.Drawing.Size(100, 23);
-            this.tbContMod2.TabIndex = 10;
+            this.tbContMod2.TabIndex = 3;
             this.tbContMod2.Tag = "Confirmar Contraseña";
             this.tbContMod2.UseSystemPasswordChar = true;
             // 
@@ -385,7 +387,7 @@
             this.tbContMod.Location = new System.Drawing.Point(421, 186);
             this.tbContMod.Name = "tbContMod";
             this.tbContMod.Size = new System.Drawing.Size(100, 23);
-            this.tbContMod.TabIndex = 9;
+            this.tbContMod.TabIndex = 2;
             this.tbContMod.Tag = "Contraseña";
             this.tbContMod.UseSystemPasswordChar = true;
             // 
@@ -394,7 +396,7 @@
             this.tbUsuMod.Location = new System.Drawing.Point(421, 108);
             this.tbUsuMod.Name = "tbUsuMod";
             this.tbUsuMod.Size = new System.Drawing.Size(100, 23);
-            this.tbUsuMod.TabIndex = 8;
+            this.tbUsuMod.TabIndex = 1;
             this.tbUsuMod.Tag = "Usuario";
             // 
             // btnModificar
@@ -403,7 +405,7 @@
             this.btnModificar.Location = new System.Drawing.Point(278, 408);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(81, 23);
-            this.btnModificar.TabIndex = 0;
+            this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);

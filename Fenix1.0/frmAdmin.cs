@@ -48,6 +48,7 @@ namespace Fenix1._0
 
         private void frmAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
+            i.limpiar();
             i.Show();
         }
     }

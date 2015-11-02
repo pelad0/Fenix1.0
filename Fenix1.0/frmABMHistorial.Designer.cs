@@ -112,6 +112,7 @@
             this.btnSigBaja.Name = "btnSigBaja";
             this.btnSigBaja.Size = new System.Drawing.Size(93, 23);
             this.btnSigBaja.TabIndex = 6;
+            this.btnSigBaja.TabStop = false;
             this.btnSigBaja.Text = "Siguiente>>";
             this.btnSigBaja.UseVisualStyleBackColor = true;
             this.btnSigBaja.Click += new System.EventHandler(this.btnSigAlta_Click);
@@ -122,6 +123,7 @@
             this.btnAntBaja.Name = "btnAntBaja";
             this.btnAntBaja.Size = new System.Drawing.Size(90, 23);
             this.btnAntBaja.TabIndex = 5;
+            this.btnAntBaja.TabStop = false;
             this.btnAntBaja.Text = "<<Anterior";
             this.btnAntBaja.UseVisualStyleBackColor = true;
             this.btnAntBaja.Click += new System.EventHandler(this.btnAntAlta_Click);
@@ -245,7 +247,7 @@
             this.dtpFechaAlta.Location = new System.Drawing.Point(308, 371);
             this.dtpFechaAlta.Name = "dtpFechaAlta";
             this.dtpFechaAlta.Size = new System.Drawing.Size(96, 23);
-            this.dtpFechaAlta.TabIndex = 12;
+            this.dtpFechaAlta.TabIndex = 3;
             // 
             // lblPac
             // 
@@ -289,7 +291,7 @@
             this.rtbDiagAlta.Location = new System.Drawing.Point(57, 258);
             this.rtbDiagAlta.Name = "rtbDiagAlta";
             this.rtbDiagAlta.Size = new System.Drawing.Size(257, 96);
-            this.rtbDiagAlta.TabIndex = 10;
+            this.rtbDiagAlta.TabIndex = 1;
             this.rtbDiagAlta.Text = "";
             // 
             // rtbObserAlta
@@ -297,7 +299,7 @@
             this.rtbObserAlta.Location = new System.Drawing.Point(323, 258);
             this.rtbObserAlta.Name = "rtbObserAlta";
             this.rtbObserAlta.Size = new System.Drawing.Size(257, 96);
-            this.rtbObserAlta.TabIndex = 9;
+            this.rtbObserAlta.TabIndex = 2;
             this.rtbObserAlta.Text = "";
             // 
             // btnSigAlta
@@ -306,6 +308,7 @@
             this.btnSigAlta.Name = "btnSigAlta";
             this.btnSigAlta.Size = new System.Drawing.Size(93, 23);
             this.btnSigAlta.TabIndex = 8;
+            this.btnSigAlta.TabStop = false;
             this.btnSigAlta.Text = "Siguiente>>";
             this.btnSigAlta.UseVisualStyleBackColor = true;
             this.btnSigAlta.Click += new System.EventHandler(this.btnSigAlta_Click);
@@ -316,6 +319,7 @@
             this.btnAntAlta.Name = "btnAntAlta";
             this.btnAntAlta.Size = new System.Drawing.Size(90, 23);
             this.btnAntAlta.TabIndex = 7;
+            this.btnAntAlta.TabStop = false;
             this.btnAntAlta.Text = "<<Anterior";
             this.btnAntAlta.UseVisualStyleBackColor = true;
             this.btnAntAlta.Click += new System.EventHandler(this.btnAntAlta_Click);
@@ -371,7 +375,7 @@
             this.btnAlta.Location = new System.Drawing.Point(281, 409);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 23);
-            this.btnAlta.TabIndex = 0;
+            this.btnAlta.TabIndex = 4;
             this.btnAlta.Text = "Cargar";
             this.btnAlta.UseVisualStyleBackColor = true;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
