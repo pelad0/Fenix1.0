@@ -133,6 +133,7 @@ namespace Fenix1._0
 
         private void frmABMHistorial_FormClosed(object sender, FormClosedEventArgs e)
         {
+            i.limpiar();
             i.Show();
         }
 

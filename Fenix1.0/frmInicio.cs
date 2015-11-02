@@ -62,5 +62,12 @@ namespace Fenix1._0
                 }
             }
         }
+
+        public void limpiar()
+        {
+            tbClave.Clear();
+            tbUsuario.Clear();
+            tbUsuario.Focus();
+        }
     }
 }

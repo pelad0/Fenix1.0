@@ -139,7 +139,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(294, 24);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 28;
+            this.btnBuscar.TabIndex = 0;
             this.btnBuscar.TabStop = false;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -151,7 +151,7 @@
             this.label11.Location = new System.Drawing.Point(38, 28);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(112, 15);
-            this.label11.TabIndex = 27;
+            this.label11.TabIndex = 0;
             this.label11.Text = "Buscar por DNI:";
             // 
             // tbBuscar
@@ -160,7 +160,8 @@
             this.tbBuscar.MaxLength = 8;
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(100, 23);
-            this.tbBuscar.TabIndex = 6;
+            this.tbBuscar.TabIndex = 0;
+            this.tbBuscar.TabStop = false;
             this.tbBuscar.Tag = "no";
             // 
             // btnDarTurno
@@ -168,7 +169,7 @@
             this.btnDarTurno.Location = new System.Drawing.Point(171, 409);
             this.btnDarTurno.Name = "btnDarTurno";
             this.btnDarTurno.Size = new System.Drawing.Size(97, 30);
-            this.btnDarTurno.TabIndex = 25;
+            this.btnDarTurno.TabIndex = 0;
             this.btnDarTurno.TabStop = false;
             this.btnDarTurno.Text = "Dar Turno";
             this.btnDarTurno.UseVisualStyleBackColor = true;
@@ -179,7 +180,7 @@
             this.button3.Location = new System.Drawing.Point(326, 375);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(93, 23);
-            this.button3.TabIndex = 24;
+            this.button3.TabIndex = 0;
             this.button3.TabStop = false;
             this.button3.Text = "Siguiente>>";
             this.button3.UseVisualStyleBackColor = true;
@@ -190,7 +191,7 @@
             this.button4.Location = new System.Drawing.Point(19, 375);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 23);
-            this.button4.TabIndex = 23;
+            this.button4.TabIndex = 0;
             this.button4.TabStop = false;
             this.button4.Text = "<<Anterior";
             this.button4.UseVisualStyleBackColor = true;
@@ -238,11 +239,12 @@
             this.dgvAlta.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlta.Size = new System.Drawing.Size(400, 309);
-            this.dgvAlta.TabIndex = 10;
+            this.dgvAlta.TabIndex = 0;
             this.dgvAlta.TabStop = false;
             // 
             // cbOSAlta
             // 
+            this.cbOSAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOSAlta.FormattingEnabled = true;
             this.cbOSAlta.Location = new System.Drawing.Point(448, 308);
             this.cbOSAlta.Name = "cbOSAlta";
@@ -256,7 +258,7 @@
             this.label5.Location = new System.Drawing.Point(487, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 15);
-            this.label5.TabIndex = 8;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Obra Social";
             // 
             // label4
@@ -265,7 +267,7 @@
             this.label4.Location = new System.Drawing.Point(498, 219);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 15);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Telefono";
             // 
             // label3
@@ -274,7 +276,7 @@
             this.label3.Location = new System.Drawing.Point(494, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 15);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Documento";
             // 
             // label2
@@ -283,7 +285,7 @@
             this.label2.Location = new System.Drawing.Point(498, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 15);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Apellido";
             // 
             // label1
@@ -292,7 +294,7 @@
             this.label1.Location = new System.Drawing.Point(505, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 15);
-            this.label1.TabIndex = 5;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
             // tbTelALta
@@ -361,6 +363,7 @@
             this.btnSig.Name = "btnSig";
             this.btnSig.Size = new System.Drawing.Size(93, 23);
             this.btnSig.TabIndex = 6;
+            this.btnSig.TabStop = false;
             this.btnSig.Text = "Siguiente>>";
             this.btnSig.UseVisualStyleBackColor = true;
             this.btnSig.Click += new System.EventHandler(this.btnSig_Click);
@@ -371,6 +374,7 @@
             this.btnAnt.Name = "btnAnt";
             this.btnAnt.Size = new System.Drawing.Size(90, 23);
             this.btnAnt.TabIndex = 5;
+            this.btnAnt.TabStop = false;
             this.btnAnt.Text = "<<Anterior";
             this.btnAnt.UseVisualStyleBackColor = true;
             this.btnAnt.Click += new System.EventHandler(this.btnAnt_Click);
@@ -412,6 +416,7 @@
             this.dgvBaja.ShowEditingIcon = false;
             this.dgvBaja.Size = new System.Drawing.Size(630, 380);
             this.dgvBaja.TabIndex = 1;
+            this.dgvBaja.TabStop = false;
             // 
             // btnBaja
             // 
@@ -419,6 +424,7 @@
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(75, 23);
             this.btnBaja.TabIndex = 0;
+            this.btnBaja.TabStop = false;
             this.btnBaja.Text = "Eliminar";
             this.btnBaja.UseVisualStyleBackColor = true;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
@@ -452,6 +458,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 23);
             this.button1.TabIndex = 22;
+            this.button1.TabStop = false;
             this.button1.Text = "Siguiente>>";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnSig_Click);
@@ -462,6 +469,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 23);
             this.button2.TabIndex = 21;
+            this.button2.TabStop = false;
             this.button2.Text = "<<Anterior";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnAnt_Click);
@@ -508,10 +516,12 @@
             this.dgvPacMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPacMod.Size = new System.Drawing.Size(400, 340);
             this.dgvPacMod.TabIndex = 20;
+            this.dgvPacMod.TabStop = false;
             this.dgvPacMod.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacMod_CellClick);
             // 
             // cbOSMod
             // 
+            this.cbOSMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOSMod.FormattingEnabled = true;
             this.cbOSMod.Location = new System.Drawing.Point(450, 313);
             this.cbOSMod.Name = "cbOSMod";
@@ -524,7 +534,7 @@
             this.label6.Location = new System.Drawing.Point(489, 285);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 15);
-            this.label6.TabIndex = 17;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Obra Social";
             // 
             // label7
@@ -533,7 +543,7 @@
             this.label7.Location = new System.Drawing.Point(500, 221);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 15);
-            this.label7.TabIndex = 18;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Telefono";
             // 
             // label8
@@ -542,7 +552,7 @@
             this.label8.Location = new System.Drawing.Point(496, 157);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 15);
-            this.label8.TabIndex = 16;
+            this.label8.TabIndex = 0;
             this.label8.Text = "Documento";
             // 
             // label9
@@ -551,7 +561,7 @@
             this.label9.Location = new System.Drawing.Point(500, 93);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 15);
-            this.label9.TabIndex = 15;
+            this.label9.TabIndex = 0;
             this.label9.Text = "Apellido";
             // 
             // label10
@@ -560,7 +570,7 @@
             this.label10.Location = new System.Drawing.Point(507, 29);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 15);
-            this.label10.TabIndex = 14;
+            this.label10.TabIndex = 0;
             this.label10.Text = "Nombre";
             // 
             // btnModificar
@@ -568,7 +578,7 @@
             this.btnModificar.Location = new System.Drawing.Point(180, 403);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 0;
+            this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);

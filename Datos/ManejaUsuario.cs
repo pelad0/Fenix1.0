@@ -49,7 +49,7 @@ namespace Datos
             clsUsuario us = (clsUsuario)entidad;
             try
             {
-                manager.ejecutar("update usuario set user='"+us.Usuario+"',pass='"+us.Clave+"',seguridad='"+us.Seguridad+"' where id="+us.Id);
+                manager.ejecutar("update usuario set usuario='"+us.Usuario+"',pass='"+us.Clave+"',seguridad='"+us.Seguridad+"' where id="+us.Id);
 
             }
             catch (Exception ex)

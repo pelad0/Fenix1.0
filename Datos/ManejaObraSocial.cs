@@ -20,10 +20,18 @@ namespace Datos
         public void Alta(IEntidad entidad)
         {
             clsObraSocial ob = (clsObraSocial)entidad;
-
+            DataTable aux = new DataTable();
             try
             {
-                manager.ejecutar("Insert into obrasocial(nombre) values('"+ob.Nombre+"');SELECT @@identity;");
+                aux = manager.consultar("select * from obrasocial where nombre='" + ob.Nombre + "'");
+                if (aux.Rows.Count == 0)
+                {
+                    manager.ejecutar("Insert into obrasocial(nombre) values('" + ob.Nombre + "');SELECT @@identity;");
+                }
+                else
+                {
+                    manager.ejecutar("update obrasocial set (nombre='" + ob.Nombre + "',activo=0) where nombre=" + ob.Nombre);
+                }
             }
             catch (Exception ex)
             {
