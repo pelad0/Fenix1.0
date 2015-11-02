@@ -18,7 +18,11 @@ namespace Fenix1._0
     public partial class frmEditarMedico : Form
     {
 
-        clsMedico med;
+        clsMedico med = new clsMedico();
+        List<clsObraXMedico> obraXmed = new List<clsObraXMedico>();
+        List<clsObraSocial> listaObras = new List<clsObraSocial>();
+        RepositorioObraPorMedico repoObraPorMed = new RepositorioObraPorMedico();
+        RepositorioObraSocial reposObraSocial = new RepositorioObraSocial();
 
         public frmEditarMedico(clsMedico med)
         {
@@ -32,8 +36,45 @@ namespace Fenix1._0
             tbApellidoModi.Text = med.Apellido;
             tbDniModi.Text = med.Dni.ToString();
             tbMatriculaModi.Text = med.Matricula.ToString();
+            tbEspecialidadModi.Text = med.Especialidad;
+            
 
-            //CARGO OBRAS SOCUALES. COMPARO CON LAS QUE TRAIGO PARA VER CUALES YA ESTAN CHECKEADAS Y CUALES NO
+            obraXmed = repoObraPorMed.TodasObras(med.Id);
+
+            clsObraSocial obraSocial;
+
+            //CARGO TODAS LAS OBRAS SOCIALES PARA DESPUES COMPARARLAS CON LAS CHECKEADAS.
+
+            listaObras = reposObraSocial.Todo(0);
+
+
+            //CARGO TODAS LAS OBRAS SOCIALES Y TAMBIEN ME FIJO SI ESTAN EN EL MEDICO A EDITAR, SI ESO PASA, LAS CHECKEO EN TRUE.
+            foreach (clsObraXMedico obramed in obraXmed)
+            {
+                obraSocial = reposObraSocial.buscarPorId(obramed.IdObra);
+
+                foreach(clsObraSocial obr in listaObras)
+                {
+                    clbObraSocial.Items.Add(obr.Nombre);
+
+                    if(obraSocial.Nombre == obr.Nombre)
+                    {                        
+                        for (int i = 0; i < clbObraSocial.Items.Count; i++)
+                        {
+                            if(clbObraSocial.Items[i] == obraSocial.Nombre)
+                            {
+                                clbObraSocial.SetItemChecked(i, true);
+                            }
+                        }
+
+                    }
+                    
+                }
+
+              
+            }
+
+
 
             
 
@@ -41,6 +82,11 @@ namespace Fenix1._0
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditarHorarios_Click(object sender, EventArgs e)
         {
 
         }

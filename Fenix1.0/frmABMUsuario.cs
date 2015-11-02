@@ -74,7 +74,7 @@ namespace Fenix1._0
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(dgvEliminar.CurrentRow.ToString()))
+            if (!string.IsNullOrWhiteSpace(usuarios[dgvEliminar.CurrentRow.Index].Ususario))
             {
                 frmConfirmaUsuario fcu = new frmConfirmaUsuario(usuarios[dgvEliminar.CurrentRow.Index].Clave);
                 DialogResult res = fcu.ShowDialog();
@@ -82,7 +82,11 @@ namespace Fenix1._0
                 {
                     try
                     {
+                        string nombre = usuarios[dgvEliminar.CurrentRow.Index].Ususario;
                         ru.Baja(usuarios[dgvEliminar.CurrentRow.Index]);
+                        MessageBox.Show(nombre + " se elimino con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
                     }
                     catch (Exception ex)
                     {
@@ -165,6 +169,28 @@ namespace Fenix1._0
             tbUsuAlta.Clear();
             cbSeguridad.SelectedIndex = -1;
             cbSegMod.SelectedIndex = -1;
+        }
+
+        private void dgvModif_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(usuarios[dgvModif.CurrentRow.Index].Ususario))
+            {
+
+                clsUsuario u = usuarios[dgvModif.CurrentRow.Index];
+                tbUsuMod.Text = u.Ususario;
+                tbContMod.Text = u.Clave;
+                tbContMod2.Text = u.Clave;
+                cbSegMod.SelectedItem = u.Seguridad;
+            }
+            else
+            {
+                tbUsuMod.Clear();
+                tbContMod.Clear();
+                tbContMod2.Clear();
+                cbSegMod.SelectedIndex = -1;
+
+            }
+
         }
 
     }

@@ -386,7 +386,7 @@ namespace Fenix1._0
 
                             MessageBox.Show("Horarios cargados.");
                             this.Hide();
-                            frmABMME ABMME = new frmABMME(horario);
+                            frmABMME ABMME = new frmABMME(horario, 1);
                             ABMME.ShowDialog();
                             this.Close();
                             //Formulario de AMBME con parametros de clases.
@@ -483,7 +483,7 @@ namespace Fenix1._0
 
                         MessageBox.Show("Horarios cargados.");
                         this.Hide();
-                        frmABMME ABMME = new frmABMME(horario);
+                        frmABMME ABMME = new frmABMME(horario, 2);
                         ABMME.ShowDialog();
                         this.Close();
                     }

@@ -19,6 +19,8 @@ namespace Fenix1._0
 
         clsHorario HorariosMT;
         clsHorario HorariosTC;
+
+        int horaTrabajo = 0;       //Si es 1 trabaja solo mañana, si es dos trabaja solo tarde.
    
       
         int pagina = 0;
@@ -34,16 +36,18 @@ namespace Fenix1._0
         RepositorioObraSocial reposObraSocial = new RepositorioObraSocial();
         RepositorioEspecialidad reposEspecialidad = new RepositorioEspecialidad();
         RepositorioMedico reposMedico = new RepositorioMedico();
+        RepositorioHorario reposHorario = new RepositorioHorario();
 
         public frmABMME()
         {
             InitializeComponent();  
         }
 
-        public frmABMME(clsHorario horariomt)       //Constructor que solo recibe horarios de MedioTiempo.
+        public frmABMME(clsHorario horariomt, int horita)       //Constructor que solo recibe horarios de MedioTiempo.
         {
             InitializeComponent();
             HorariosMT = horariomt;
+            horaTrabajo = horita;
 
         }
         
@@ -52,6 +56,7 @@ namespace Fenix1._0
             InitializeComponent();
             HorariosMT = horariomt;
             HorariosTC = horariotc;
+     
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -76,10 +81,29 @@ namespace Fenix1._0
                 medico.Apellido = tbApellidoAlta.Text;
                 medico.Especialidad = cbEspecialidades.Text; 
                 medico.ObraSocial = obra;
+
                 reposMedico.Alta(medico);
 
+                int dni = medico.Dni;
 
-                //ACA TENGO QUE PASAR HORARIOS.
+                medico = reposMedico.BuscarPorDni(dni);
+
+                if(horaTrabajo == 0)    //QUE TRABAJA MAÑANA Y TARDE.
+                {
+                    reposHorario.Alta(HorariosMT, HorariosTC);
+                }
+                if(horaTrabajo == 1)
+                {
+                    reposHorario.Alta(HorariosMT, 1);
+                }
+                else
+                {
+                    reposHorario.Alta(HorariosMT, 2);
+                }
+         
+         
+
+                
                 
             }
 
@@ -222,14 +246,6 @@ namespace Fenix1._0
             //LLAMO AL FORMULARIO QUE EDITA EL MEDICO, CON TODOS LOS DATOS ACTUALES DE EL MEDICO A EDITAR.
 
             frmEditarMedico editarMedico = new frmEditarMedico(medico);
-
-
-
-
-            //CARGO LISTA DE OBRAS SOCIALES DEL DATA GRID VIEW.
-           
-            //CARGO OBRAS SOCIALES.
-
 
 
             //foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
@@ -570,6 +586,11 @@ namespace Fenix1._0
             med = reposMedico.buscarPorId(idMed);
 
             tbEspecialidadModi.Text = med.Especialidad; 
+        }
+
+        private void tpAlta_Click(object sender, EventArgs e)
+        {
+
         }
 
         

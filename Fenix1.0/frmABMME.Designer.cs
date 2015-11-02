@@ -134,6 +134,7 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
+            this.tpAlta.Click += new System.EventHandler(this.tpAlta_Click);
             // 
             // tbEspecialidadAlta
             // 
