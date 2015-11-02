@@ -28,67 +28,193 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tcABM = new System.Windows.Forms.TabControl();
-            this.tpAlta = new System.Windows.Forms.TabPage();
-            this.btnSigAlta = new System.Windows.Forms.Button();
-            this.btnAntAlta = new System.Windows.Forms.Button();
-            this.dgvAlta = new System.Windows.Forms.DataGridView();
-            this.btnAlta = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tpBaja = new System.Windows.Forms.TabPage();
-            this.btnSigBaja = new System.Windows.Forms.Button();
-            this.btnAntBaja = new System.Windows.Forms.Button();
             this.dgvPacBaja = new System.Windows.Forms.DataGridView();
-            this.btnBaja = new System.Windows.Forms.Button();
-            this.tpMod = new System.Windows.Forms.TabPage();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.dgvHistBaja = new System.Windows.Forms.DataGridView();
+            this.btnAntBaja = new System.Windows.Forms.Button();
+            this.btnSigBaja = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tpAlta = new System.Windows.Forms.TabPage();
+            this.btnAlta = new System.Windows.Forms.Button();
+            this.dgvAlta = new System.Windows.Forms.DataGridView();
+            this.btnAntAlta = new System.Windows.Forms.Button();
+            this.btnSigAlta = new System.Windows.Forms.Button();
             this.rtbObserAlta = new System.Windows.Forms.RichTextBox();
             this.rtbDiagAlta = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblPac = new System.Windows.Forms.Label();
-            this.dgvHistBaja = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tcABM.SuspendLayout();
-            this.tpAlta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlta)).BeginInit();
+            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
+            this.tcABM = new System.Windows.Forms.TabControl();
             this.tpBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacBaja)).BeginInit();
-            this.tpMod.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistBaja)).BeginInit();
+            this.tpAlta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlta)).BeginInit();
+            this.tcABM.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tcABM
+            // tpBaja
             // 
-            this.tcABM.Controls.Add(this.tpAlta);
-            this.tcABM.Controls.Add(this.tpBaja);
-            this.tcABM.Controls.Add(this.tpMod);
-            this.tcABM.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcABM.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcABM.ItemSize = new System.Drawing.Size(213, 30);
-            this.tcABM.Location = new System.Drawing.Point(0, 0);
-            this.tcABM.Name = "tcABM";
-            this.tcABM.SelectedIndex = 0;
-            this.tcABM.Size = new System.Drawing.Size(644, 485);
-            this.tcABM.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tcABM.TabIndex = 0;
+            this.tpBaja.Controls.Add(this.label5);
+            this.tpBaja.Controls.Add(this.label4);
+            this.tpBaja.Controls.Add(this.btnSigBaja);
+            this.tpBaja.Controls.Add(this.btnAntBaja);
+            this.tpBaja.Controls.Add(this.dgvHistBaja);
+            this.tpBaja.Controls.Add(this.dgvPacBaja);
+            this.tpBaja.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpBaja.Location = new System.Drawing.Point(4, 34);
+            this.tpBaja.Name = "tpBaja";
+            this.tpBaja.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBaja.Size = new System.Drawing.Size(636, 447);
+            this.tpBaja.TabIndex = 1;
+            this.tpBaja.Text = "Historiales";
+            this.tpBaja.UseVisualStyleBackColor = true;
+            // 
+            // dgvPacBaja
+            // 
+            this.dgvPacBaja.AllowUserToAddRows = false;
+            this.dgvPacBaja.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvPacBaja.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            this.dgvPacBaja.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvPacBaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPacBaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            this.dgvPacBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPacBaja.DefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvPacBaja.Location = new System.Drawing.Point(3, 33);
+            this.dgvPacBaja.MultiSelect = false;
+            this.dgvPacBaja.Name = "dgvPacBaja";
+            this.dgvPacBaja.ReadOnly = true;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPacBaja.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvPacBaja.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            this.dgvPacBaja.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvPacBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPacBaja.Size = new System.Drawing.Size(630, 148);
+            this.dgvPacBaja.TabIndex = 1;
+            this.dgvPacBaja.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacBaja_CellContentClick);
+            // 
+            // dgvHistBaja
+            // 
+            this.dgvHistBaja.AllowUserToAddRows = false;
+            this.dgvHistBaja.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvHistBaja.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvHistBaja.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvHistBaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistBaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvHistBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistBaja.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvHistBaja.Location = new System.Drawing.Point(3, 216);
+            this.dgvHistBaja.MultiSelect = false;
+            this.dgvHistBaja.Name = "dgvHistBaja";
+            this.dgvHistBaja.ReadOnly = true;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistBaja.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvHistBaja.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvHistBaja.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvHistBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHistBaja.Size = new System.Drawing.Size(630, 223);
+            this.dgvHistBaja.TabIndex = 1;
+            this.dgvHistBaja.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistBaja_CellContentClick);
+            // 
+            // btnAntBaja
+            // 
+            this.btnAntBaja.Location = new System.Drawing.Point(76, 187);
+            this.btnAntBaja.Name = "btnAntBaja";
+            this.btnAntBaja.Size = new System.Drawing.Size(90, 23);
+            this.btnAntBaja.TabIndex = 5;
+            this.btnAntBaja.Text = "<<Anterior";
+            this.btnAntBaja.UseVisualStyleBackColor = true;
+            this.btnAntBaja.Click += new System.EventHandler(this.btnAntAlta_Click);
+            // 
+            // btnSigBaja
+            // 
+            this.btnSigBaja.Location = new System.Drawing.Point(467, 187);
+            this.btnSigBaja.Name = "btnSigBaja";
+            this.btnSigBaja.Size = new System.Drawing.Size(93, 23);
+            this.btnSigBaja.TabIndex = 6;
+            this.btnSigBaja.Text = "Siguiente>>";
+            this.btnSigBaja.UseVisualStyleBackColor = true;
+            this.btnSigBaja.Click += new System.EventHandler(this.btnSigAlta_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(276, 191);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Historiales";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(283, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 15);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Pacientes";
             // 
             // tpAlta
             // 
@@ -111,15 +237,60 @@
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
             // 
-            // btnSigAlta
+            // btnAlta
             // 
-            this.btnSigAlta.Location = new System.Drawing.Point(467, 182);
-            this.btnSigAlta.Name = "btnSigAlta";
-            this.btnSigAlta.Size = new System.Drawing.Size(93, 23);
-            this.btnSigAlta.TabIndex = 8;
-            this.btnSigAlta.Text = "Siguiente>>";
-            this.btnSigAlta.UseVisualStyleBackColor = true;
-            this.btnSigAlta.Click += new System.EventHandler(this.btnSigAlta_Click);
+            this.btnAlta.Location = new System.Drawing.Point(281, 409);
+            this.btnAlta.Name = "btnAlta";
+            this.btnAlta.Size = new System.Drawing.Size(75, 23);
+            this.btnAlta.TabIndex = 0;
+            this.btnAlta.Text = "Cargar";
+            this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
+            // 
+            // dgvAlta
+            // 
+            this.dgvAlta.AllowUserToAddRows = false;
+            this.dgvAlta.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvAlta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            this.dgvAlta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvAlta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            this.dgvAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlta.DefaultCellStyle = dataGridViewCellStyle28;
+            this.dgvAlta.Location = new System.Drawing.Point(6, 6);
+            this.dgvAlta.MultiSelect = false;
+            this.dgvAlta.Name = "dgvAlta";
+            this.dgvAlta.ReadOnly = true;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlta.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvAlta.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            this.dgvAlta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAlta.Size = new System.Drawing.Size(630, 173);
+            this.dgvAlta.TabIndex = 2;
+            this.dgvAlta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlta_CellClick);
             // 
             // btnAntAlta
             // 
@@ -131,172 +302,15 @@
             this.btnAntAlta.UseVisualStyleBackColor = true;
             this.btnAntAlta.Click += new System.EventHandler(this.btnAntAlta_Click);
             // 
-            // dgvAlta
+            // btnSigAlta
             // 
-            this.dgvAlta.AllowUserToAddRows = false;
-            this.dgvAlta.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvAlta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAlta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvAlta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAlta.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAlta.Location = new System.Drawing.Point(6, 6);
-            this.dgvAlta.MultiSelect = false;
-            this.dgvAlta.Name = "dgvAlta";
-            this.dgvAlta.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlta.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvAlta.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvAlta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAlta.Size = new System.Drawing.Size(630, 173);
-            this.dgvAlta.TabIndex = 2;
-            this.dgvAlta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlta_CellClick);
-            // 
-            // btnAlta
-            // 
-            this.btnAlta.Location = new System.Drawing.Point(281, 409);
-            this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(75, 23);
-            this.btnAlta.TabIndex = 0;
-            this.btnAlta.Text = "Cargar";
-            this.btnAlta.UseVisualStyleBackColor = true;
-            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
-            // 
-            // tpBaja
-            // 
-            this.tpBaja.Controls.Add(this.label5);
-            this.tpBaja.Controls.Add(this.label4);
-            this.tpBaja.Controls.Add(this.btnSigBaja);
-            this.tpBaja.Controls.Add(this.btnAntBaja);
-            this.tpBaja.Controls.Add(this.dgvHistBaja);
-            this.tpBaja.Controls.Add(this.dgvPacBaja);
-            this.tpBaja.Controls.Add(this.btnBaja);
-            this.tpBaja.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpBaja.Location = new System.Drawing.Point(4, 34);
-            this.tpBaja.Name = "tpBaja";
-            this.tpBaja.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBaja.Size = new System.Drawing.Size(636, 447);
-            this.tpBaja.TabIndex = 1;
-            this.tpBaja.Text = "Baja";
-            this.tpBaja.UseVisualStyleBackColor = true;
-            // 
-            // btnSigBaja
-            // 
-            this.btnSigBaja.Location = new System.Drawing.Point(467, 409);
-            this.btnSigBaja.Name = "btnSigBaja";
-            this.btnSigBaja.Size = new System.Drawing.Size(93, 23);
-            this.btnSigBaja.TabIndex = 6;
-            this.btnSigBaja.Text = "Siguiente>>";
-            this.btnSigBaja.UseVisualStyleBackColor = true;
-            this.btnSigBaja.Click += new System.EventHandler(this.btnSigAlta_Click);
-            // 
-            // btnAntBaja
-            // 
-            this.btnAntBaja.Location = new System.Drawing.Point(76, 409);
-            this.btnAntBaja.Name = "btnAntBaja";
-            this.btnAntBaja.Size = new System.Drawing.Size(90, 23);
-            this.btnAntBaja.TabIndex = 5;
-            this.btnAntBaja.Text = "<<Anterior";
-            this.btnAntBaja.UseVisualStyleBackColor = true;
-            this.btnAntBaja.Click += new System.EventHandler(this.btnAntAlta_Click);
-            // 
-            // dgvPacBaja
-            // 
-            this.dgvPacBaja.AllowUserToAddRows = false;
-            this.dgvPacBaja.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvPacBaja.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvPacBaja.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvPacBaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPacBaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvPacBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPacBaja.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvPacBaja.Location = new System.Drawing.Point(3, 30);
-            this.dgvPacBaja.MultiSelect = false;
-            this.dgvPacBaja.Name = "dgvPacBaja";
-            this.dgvPacBaja.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPacBaja.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvPacBaja.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvPacBaja.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvPacBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPacBaja.Size = new System.Drawing.Size(630, 156);
-            this.dgvPacBaja.TabIndex = 1;
-            this.dgvPacBaja.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacBaja_CellContentClick);
-            // 
-            // btnBaja
-            // 
-            this.btnBaja.Location = new System.Drawing.Point(279, 409);
-            this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(75, 23);
-            this.btnBaja.TabIndex = 0;
-            this.btnBaja.Text = "Eliminar";
-            this.btnBaja.UseVisualStyleBackColor = true;
-            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
-            // 
-            // tpMod
-            // 
-            this.tpMod.Controls.Add(this.btnModificar);
-            this.tpMod.Location = new System.Drawing.Point(4, 34);
-            this.tpMod.Name = "tpMod";
-            this.tpMod.Size = new System.Drawing.Size(636, 447);
-            this.tpMod.TabIndex = 2;
-            this.tpMod.Text = "Modificación";
-            this.tpMod.UseVisualStyleBackColor = true;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(281, 408);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 0;
-            this.btnModificar.Text = "Editar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnSigAlta.Location = new System.Drawing.Point(467, 182);
+            this.btnSigAlta.Name = "btnSigAlta";
+            this.btnSigAlta.Size = new System.Drawing.Size(93, 23);
+            this.btnSigAlta.TabIndex = 8;
+            this.btnSigAlta.Text = "Siguiente>>";
+            this.btnSigAlta.UseVisualStyleBackColor = true;
+            this.btnSigAlta.Click += new System.EventHandler(this.btnSigAlta_Click);
             // 
             // rtbObserAlta
             // 
@@ -323,23 +337,6 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Diagnóstico";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(393, 224);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 15);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Observaciones";
-            // 
-            // dtpFechaAlta
-            // 
-            this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAlta.Location = new System.Drawing.Point(308, 371);
-            this.dtpFechaAlta.Name = "dtpFechaAlta";
-            this.dtpFechaAlta.Size = new System.Drawing.Size(96, 23);
-            this.dtpFechaAlta.TabIndex = 12;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -348,6 +345,15 @@
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 11;
             this.label3.Text = "Fecha";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(393, 224);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 15);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Observaciones";
             // 
             // lblPac
             // 
@@ -359,67 +365,27 @@
             this.lblPac.Text = "Paciente";
             this.lblPac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgvHistBaja
+            // dtpFechaAlta
             // 
-            this.dgvHistBaja.AllowUserToAddRows = false;
-            this.dgvHistBaja.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvHistBaja.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvHistBaja.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvHistBaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistBaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvHistBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistBaja.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvHistBaja.Location = new System.Drawing.Point(3, 225);
-            this.dgvHistBaja.MultiSelect = false;
-            this.dgvHistBaja.Name = "dgvHistBaja";
-            this.dgvHistBaja.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistBaja.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvHistBaja.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvHistBaja.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvHistBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistBaja.Size = new System.Drawing.Size(630, 156);
-            this.dgvHistBaja.TabIndex = 1;
+            this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAlta.Location = new System.Drawing.Point(308, 371);
+            this.dtpFechaAlta.Name = "dtpFechaAlta";
+            this.dtpFechaAlta.Size = new System.Drawing.Size(96, 23);
+            this.dtpFechaAlta.TabIndex = 12;
             // 
-            // label4
+            // tcABM
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(276, 198);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Historiales";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(283, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 15);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Pacientes";
+            this.tcABM.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tcABM.Controls.Add(this.tpAlta);
+            this.tcABM.Controls.Add(this.tpBaja);
+            this.tcABM.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tcABM.ItemSize = new System.Drawing.Size(213, 30);
+            this.tcABM.Location = new System.Drawing.Point(0, 0);
+            this.tcABM.Name = "tcABM";
+            this.tcABM.SelectedIndex = 0;
+            this.tcABM.Size = new System.Drawing.Size(644, 485);
+            this.tcABM.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tcABM.TabIndex = 0;
             // 
             // frmABMHistorial
             // 
@@ -434,34 +400,28 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial";
             this.Load += new System.EventHandler(this.frmABMHistorial_Load);
-            this.tcABM.ResumeLayout(false);
-            this.tpAlta.ResumeLayout(false);
-            this.tpAlta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlta)).EndInit();
             this.tpBaja.ResumeLayout(false);
             this.tpBaja.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacBaja)).EndInit();
-            this.tpMod.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistBaja)).EndInit();
+            this.tpAlta.ResumeLayout(false);
+            this.tpAlta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlta)).EndInit();
+            this.tcABM.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tcABM;
-        private System.Windows.Forms.TabPage tpAlta;
-        private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.TabPage tpBaja;
-        private System.Windows.Forms.DataGridView dgvPacBaja;
-        private System.Windows.Forms.Button btnBaja;
-        private System.Windows.Forms.TabPage tpMod;
-        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSigBaja;
         private System.Windows.Forms.Button btnAntBaja;
-        private System.Windows.Forms.Button btnSigAlta;
-        private System.Windows.Forms.Button btnAntAlta;
-        private System.Windows.Forms.DataGridView dgvAlta;
+        private System.Windows.Forms.DataGridView dgvHistBaja;
+        private System.Windows.Forms.DataGridView dgvPacBaja;
+        private System.Windows.Forms.TabPage tpAlta;
         private System.Windows.Forms.DateTimePicker dtpFechaAlta;
         private System.Windows.Forms.Label lblPac;
         private System.Windows.Forms.Label label2;
@@ -469,8 +429,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtbDiagAlta;
         private System.Windows.Forms.RichTextBox rtbObserAlta;
-        private System.Windows.Forms.DataGridView dgvHistBaja;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSigAlta;
+        private System.Windows.Forms.Button btnAntAlta;
+        private System.Windows.Forms.DataGridView dgvAlta;
+        private System.Windows.Forms.Button btnAlta;
+        private System.Windows.Forms.TabControl tcABM;
+
     }
 }
