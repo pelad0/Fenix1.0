@@ -221,6 +221,7 @@
             this.button12.Tag = "tarde";
             this.button12.Text = "14:30";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
