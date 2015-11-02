@@ -22,7 +22,7 @@ namespace Fenix1._0
             //Application.Run(new frmABMPaciente());
             //Application.Run(new frmABMTurnos());
             //Application.Run(new frmABMES());
-            //Application.Run(new frmInicio());
+            Application.Run(new frmInicio());
             //Application.Run(new frmABMHistorial());
 
 

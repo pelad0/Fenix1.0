@@ -15,9 +15,11 @@ namespace Fenix1._0
 {
     public partial class frmABMHistorial : Form
     {
-        public frmABMHistorial()
+        frmInicio i;
+        public frmABMHistorial(frmInicio i)
         {
             InitializeComponent();
+            this.i = i;
         }
 
         List<clsPaciente> pacientes = new List<clsPaciente>();
@@ -127,6 +129,11 @@ namespace Fenix1._0
 
             dtpFechaAlta.Value = System.DateTime.Today;
             lblPac.Text = "Paciente";
+        }
+
+        private void frmABMHistorial_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            i.Show();
         }
 
     }

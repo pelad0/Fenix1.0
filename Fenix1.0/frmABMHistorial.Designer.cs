@@ -402,6 +402,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmABMHistorial_FormClosed);
             this.Load += new System.EventHandler(this.frmABMHistorial_Load);
             this.tpBaja.ResumeLayout(false);
             this.tpBaja.PerformLayout();

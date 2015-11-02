@@ -15,9 +15,13 @@ namespace Fenix1._0
 {
     public partial class frmABMPaciente : Form
     {
-        public frmABMPaciente()
+        clsUsuario u = new clsUsuario();
+
+        public frmABMPaciente(clsUsuario u)
         {
             InitializeComponent();
+            this.u = u;
+
         }
 
         int pagina = 0;
@@ -179,7 +183,8 @@ namespace Fenix1._0
 
         private void btnDarTurno_Click(object sender, EventArgs e)
         {
-
+            frmABMTurnos t = new frmABMTurnos(u);
+            t.ShowDialog();
         }
 
         private void iniciar()
