@@ -175,6 +175,7 @@
             this.btnSig.TabIndex = 6;
             this.btnSig.Text = "Siguiente>>";
             this.btnSig.UseVisualStyleBackColor = true;
+            this.btnSig.Click += new System.EventHandler(this.btnSig_Click);
             // 
             // btnAnt
             // 
@@ -184,6 +185,7 @@
             this.btnAnt.TabIndex = 5;
             this.btnAnt.Text = "<<Anterior";
             this.btnAnt.UseVisualStyleBackColor = true;
+            this.btnAnt.Click += new System.EventHandler(this.btnAnt_Click);
             // 
             // dgvEliminar
             // 
@@ -228,6 +230,7 @@
             this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEliminar.Size = new System.Drawing.Size(630, 380);
             this.dgvEliminar.TabIndex = 1;
+            this.dgvEliminar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEliminar_CellContentClick);
             // 
             // btnBaja
             // 
