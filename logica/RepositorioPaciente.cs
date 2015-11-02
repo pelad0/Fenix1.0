@@ -155,6 +155,7 @@ namespace logica
                 paciente.Nombre = pac.Nombre;
                 paciente.Apellido = pac.Apellido;
                 paciente.Dni = pac.Dni;
+                paciente.Telefono = pac.Telefono;
                 aux = (clsObraSocial)manejaOs.buscaPorNombre(pac.ObraSocial);
                 paciente.ObraSocial = aux.Id;
             }
@@ -183,6 +184,7 @@ namespace logica
                 paciente.Nombre = pac.Nombre;
                 paciente.Apellido = pac.Apellido;
                 paciente.Dni = pac.Dni;
+                paciente.Telefono = pac.Telefono;
                 aux = (clsObraSocial)manejaOs.buscaPorId(pac2.Id);
                 paciente.ObraSocial = aux.Nombre;
             }
