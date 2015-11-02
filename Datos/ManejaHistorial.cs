@@ -22,7 +22,7 @@ namespace Datos
             clsHistorial hist = (clsHistorial)entidad;
             try
             {
-                manager.ejecutar("Insert into historial(idpaciente,diagnostico,observaciones,fecha) values(" + hist.Id + ",'" + hist.Diagnostico + "','" + hist.Observaciones + "','" + hist.Fecha +"'");
+                manager.ejecutar("Insert into historial(idpaciente,diagnostico,observaciones,fecha) values(" + hist.Id + ",'" + hist.Diagnostico + "','" + hist.Observaciones + "','" + hist.Fecha +"')");
             }
             catch (Exception ex)
             {
