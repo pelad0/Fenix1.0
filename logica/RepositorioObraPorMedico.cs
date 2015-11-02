@@ -19,7 +19,6 @@ namespace logica
         {
             try
             {
-
                 manejaobraxmedico.Alta(omed);
             }
             catch (SqlException ex)
