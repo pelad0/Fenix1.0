@@ -25,10 +25,10 @@ namespace Datos
          string based = "Fenix";
          string server = "NO";
 
-         //string usuario = "LaboIII";
-         //string con = "1234";
-         //string based = "ParcialLabo3";
-         //string server = "MARIANO\\SQLEXPRESS";
+         string usuario = "LaboIII";
+         string con = "1234";
+         string based = "ParcialLabo3";
+         string server = "MARIANO\\SQLEXPRESS";
 
 
         public string Server

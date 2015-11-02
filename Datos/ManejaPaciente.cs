@@ -32,7 +32,9 @@ namespace Datos
                 else
                 {
                     manager.ejecutar("update paciente set activo=1 where dni=" + pac.Dni);
-                }
+                } 
+                //manager.ejecutar("update paciente set nombre='" + pac.Nombre + "'," + "apellido='" + pac.Apellido + "'," + "dni=" + pac.Dni + "," + "obra='" + pac.ObraSocial + "'," + "telefono=" + pac.Telefono);
+            //execute scalar 
             }
             catch (Exception ex)
             {
@@ -65,7 +67,7 @@ namespace Datos
 
             try
             {
-                manager.ejecutar("update paciente set nombre='"+pac.Nombre+"',"+"apellido='"+pac.Apellido+"',"+"dni="+pac.Dni+","+"obra='"+pac.ObraSocial+"',"+"telefono="+pac.Telefono);
+                manager.ejecutar("update paciente set nombre='"+pac.Nombre+"',"+"apellido='"+pac.Apellido+"',"+"dni="+pac.Dni+","+"obra='"+pac.ObraSocial+"',"+"telefono="+pac.Telefono+" where id="+pac.Id);
             }
             catch (Exception ex)
             {
