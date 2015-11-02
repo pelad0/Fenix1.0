@@ -22,7 +22,7 @@ namespace Datos
             clsUsuario us = (clsUsuario)entidad;
             try
             {
-                manager.ejecutar("Insert into usuario(user,pass,seguridad) values("+us.Id+","+us.Usuario+","+us.Seguridad+");SELECT @@identity;");
+                manager.ejecutar("Insert into usuario(user,pass,seguridad) values('"+us.Id+"','"+us.Usuario+"','"+us.Seguridad+"');SELECT @@identity;");
             }
             catch (Exception ex)
             {
