@@ -183,7 +183,7 @@ namespace Fenix1._0
 
         private void btnDarTurno_Click(object sender, EventArgs e)
         {
-            frmABMTurnos t = new frmABMTurnos(u);
+            frmABMTurnos t = new frmABMTurnos(u, pacientes[dgvAlta.CurrentRow.Index]);
             t.ShowDialog();
         }
 
