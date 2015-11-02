@@ -184,6 +184,7 @@ namespace Fenix1._0
                     esEditar.Descripcion = tbEspecialidaModi.Text;
                     reposEspe.Modificacion(esEditar);
                     MessageBox.Show("Especialidad modificada");
+                    tbEspecialidaModi.Clear();
                     Actualizar();
 
                 }

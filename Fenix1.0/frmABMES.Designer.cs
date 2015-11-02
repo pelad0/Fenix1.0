@@ -28,6 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +48,6 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.tbEspecialidaModi = new controles.TextBoxLetras();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvEspecialidadesModificar = new System.Windows.Forms.DataGridView();
@@ -99,12 +105,32 @@
             // 
             this.dgvEspecialidadesAlta.AllowUserToAddRows = false;
             this.dgvEspecialidadesAlta.AllowUserToDeleteRows = false;
+            this.dgvEspecialidadesAlta.AllowUserToResizeColumns = false;
+            this.dgvEspecialidadesAlta.AllowUserToResizeRows = false;
+            this.dgvEspecialidadesAlta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecialidadesAlta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEspecialidadesAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEspecialidadesAlta.Location = new System.Drawing.Point(268, 117);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEspecialidadesAlta.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEspecialidadesAlta.Location = new System.Drawing.Point(208, 114);
+            this.dgvEspecialidadesAlta.MultiSelect = false;
             this.dgvEspecialidadesAlta.Name = "dgvEspecialidadesAlta";
             this.dgvEspecialidadesAlta.ReadOnly = true;
             this.dgvEspecialidadesAlta.RowHeadersVisible = false;
-            this.dgvEspecialidadesAlta.Size = new System.Drawing.Size(105, 283);
+            this.dgvEspecialidadesAlta.Size = new System.Drawing.Size(231, 283);
             this.dgvEspecialidadesAlta.TabIndex = 3;
             // 
             // label1
@@ -162,15 +188,34 @@
             this.dgvEspecialidadesBaja.AllowUserToAddRows = false;
             this.dgvEspecialidadesBaja.AllowUserToDeleteRows = false;
             this.dgvEspecialidadesBaja.AllowUserToOrderColumns = true;
+            this.dgvEspecialidadesBaja.AllowUserToResizeColumns = false;
+            this.dgvEspecialidadesBaja.AllowUserToResizeRows = false;
+            this.dgvEspecialidadesBaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecialidadesBaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEspecialidadesBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEspecialidadesBaja.Location = new System.Drawing.Point(264, 52);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEspecialidadesBaja.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvEspecialidadesBaja.Location = new System.Drawing.Point(205, 54);
             this.dgvEspecialidadesBaja.MultiSelect = false;
             this.dgvEspecialidadesBaja.Name = "dgvEspecialidadesBaja";
             this.dgvEspecialidadesBaja.ReadOnly = true;
             this.dgvEspecialidadesBaja.RowHeadersVisible = false;
             this.dgvEspecialidadesBaja.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvEspecialidadesBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEspecialidadesBaja.Size = new System.Drawing.Size(105, 283);
+            this.dgvEspecialidadesBaja.Size = new System.Drawing.Size(231, 283);
             this.dgvEspecialidadesBaja.TabIndex = 1;
             // 
             // btnBaja
@@ -186,7 +231,6 @@
             // tpMod
             // 
             this.tpMod.Controls.Add(this.btnGuardar);
-            this.tpMod.Controls.Add(this.label5);
             this.tpMod.Controls.Add(this.tbEspecialidaModi);
             this.tpMod.Controls.Add(this.label4);
             this.tpMod.Controls.Add(this.dgvEspecialidadesModificar);
@@ -200,7 +244,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(483, 87);
+            this.btnGuardar.Location = new System.Drawing.Point(284, 72);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 12;
@@ -208,18 +252,9 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(480, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 15);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Nuevo nombre";
-            // 
             // tbEspecialidaModi
             // 
-            this.tbEspecialidaModi.Location = new System.Drawing.Point(445, 43);
+            this.tbEspecialidaModi.Location = new System.Drawing.Point(244, 43);
             this.tbEspecialidaModi.Name = "tbEspecialidaModi";
             this.tbEspecialidaModi.Size = new System.Drawing.Size(167, 23);
             this.tbEspecialidaModi.TabIndex = 10;
@@ -237,21 +272,47 @@
             // 
             this.dgvEspecialidadesModificar.AllowUserToAddRows = false;
             this.dgvEspecialidadesModificar.AllowUserToDeleteRows = false;
-            this.dgvEspecialidadesModificar.AllowUserToOrderColumns = true;
+            this.dgvEspecialidadesModificar.AllowUserToResizeColumns = false;
+            this.dgvEspecialidadesModificar.AllowUserToResizeRows = false;
+            this.dgvEspecialidadesModificar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecialidadesModificar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEspecialidadesModificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEspecialidadesModificar.Location = new System.Drawing.Point(268, 62);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEspecialidadesModificar.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvEspecialidadesModificar.Location = new System.Drawing.Point(208, 104);
             this.dgvEspecialidadesModificar.MultiSelect = false;
             this.dgvEspecialidadesModificar.Name = "dgvEspecialidadesModificar";
             this.dgvEspecialidadesModificar.ReadOnly = true;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecialidadesModificar.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvEspecialidadesModificar.RowHeadersVisible = false;
             this.dgvEspecialidadesModificar.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvEspecialidadesModificar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEspecialidadesModificar.Size = new System.Drawing.Size(105, 283);
+            this.dgvEspecialidadesModificar.Size = new System.Drawing.Size(231, 283);
             this.dgvEspecialidadesModificar.TabIndex = 2;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(286, 368);
+            this.btnModificar.Location = new System.Drawing.Point(284, 393);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 0;
@@ -303,7 +364,6 @@
         private System.Windows.Forms.DataGridView dgvEspecialidadesModificar;
         private System.Windows.Forms.Label label4;
         private controles.TextBoxLetras tbEspecialidaModi;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnGuardar;
     }
 }

@@ -28,6 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
             this.btnAdministrarEspe = new System.Windows.Forms.Button();
@@ -182,13 +194,32 @@
             // 
             this.dgvMedicosAlta.AllowUserToAddRows = false;
             this.dgvMedicosAlta.AllowUserToDeleteRows = false;
+            this.dgvMedicosAlta.AllowUserToResizeRows = false;
+            this.dgvMedicosAlta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedicosAlta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMedicosAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicosAlta.Location = new System.Drawing.Point(120, 303);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMedicosAlta.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMedicosAlta.Location = new System.Drawing.Point(93, 303);
+            this.dgvMedicosAlta.MultiSelect = false;
             this.dgvMedicosAlta.Name = "dgvMedicosAlta";
             this.dgvMedicosAlta.ReadOnly = true;
             this.dgvMedicosAlta.RowHeadersVisible = false;
             this.dgvMedicosAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicosAlta.Size = new System.Drawing.Size(221, 196);
+            this.dgvMedicosAlta.Size = new System.Drawing.Size(308, 196);
             this.dgvMedicosAlta.TabIndex = 18;
             this.dgvMedicosAlta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicosAlta_CellContentClick);
             // 
@@ -214,13 +245,32 @@
             // 
             this.dgvObrasSocialesAlta.AllowUserToAddRows = false;
             this.dgvObrasSocialesAlta.AllowUserToDeleteRows = false;
+            this.dgvObrasSocialesAlta.AllowUserToResizeRows = false;
+            this.dgvObrasSocialesAlta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvObrasSocialesAlta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvObrasSocialesAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvObrasSocialesAlta.Location = new System.Drawing.Point(456, 303);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObrasSocialesAlta.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvObrasSocialesAlta.Location = new System.Drawing.Point(461, 303);
+            this.dgvObrasSocialesAlta.MultiSelect = false;
             this.dgvObrasSocialesAlta.Name = "dgvObrasSocialesAlta";
             this.dgvObrasSocialesAlta.ReadOnly = true;
             this.dgvObrasSocialesAlta.RowHeadersVisible = false;
             this.dgvObrasSocialesAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvObrasSocialesAlta.Size = new System.Drawing.Size(167, 196);
+            this.dgvObrasSocialesAlta.Size = new System.Drawing.Size(149, 196);
             this.dgvObrasSocialesAlta.TabIndex = 14;
             // 
             // btnSiguientesAlta
@@ -400,13 +450,32 @@
             // 
             this.dgvMedicosBaja.AllowUserToAddRows = false;
             this.dgvMedicosBaja.AllowUserToDeleteRows = false;
+            this.dgvMedicosBaja.AllowUserToResizeRows = false;
+            this.dgvMedicosBaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedicosBaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvMedicosBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicosBaja.Location = new System.Drawing.Point(86, 86);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMedicosBaja.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvMedicosBaja.Location = new System.Drawing.Point(31, 86);
+            this.dgvMedicosBaja.MultiSelect = false;
             this.dgvMedicosBaja.Name = "dgvMedicosBaja";
             this.dgvMedicosBaja.ReadOnly = true;
             this.dgvMedicosBaja.RowHeadersVisible = false;
             this.dgvMedicosBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicosBaja.Size = new System.Drawing.Size(221, 196);
+            this.dgvMedicosBaja.Size = new System.Drawing.Size(308, 196);
             this.dgvMedicosBaja.TabIndex = 24;
             this.dgvMedicosBaja.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicosBaja_CellContentClick);
             // 
@@ -432,13 +501,32 @@
             // 
             this.dgvObrasSocialesBaja.AllowUserToAddRows = false;
             this.dgvObrasSocialesBaja.AllowUserToDeleteRows = false;
+            this.dgvObrasSocialesBaja.AllowUserToResizeRows = false;
+            this.dgvObrasSocialesBaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvObrasSocialesBaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvObrasSocialesBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvObrasSocialesBaja.Location = new System.Drawing.Point(416, 86);
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObrasSocialesBaja.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvObrasSocialesBaja.Location = new System.Drawing.Point(423, 86);
+            this.dgvObrasSocialesBaja.MultiSelect = false;
             this.dgvObrasSocialesBaja.Name = "dgvObrasSocialesBaja";
             this.dgvObrasSocialesBaja.ReadOnly = true;
             this.dgvObrasSocialesBaja.RowHeadersVisible = false;
             this.dgvObrasSocialesBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvObrasSocialesBaja.Size = new System.Drawing.Size(167, 196);
+            this.dgvObrasSocialesBaja.Size = new System.Drawing.Size(149, 196);
             this.dgvObrasSocialesBaja.TabIndex = 20;
             // 
             // label15
@@ -523,13 +611,32 @@
             // 
             this.dgvMedicosModi.AllowUserToAddRows = false;
             this.dgvMedicosModi.AllowUserToDeleteRows = false;
+            this.dgvMedicosModi.AllowUserToResizeRows = false;
+            this.dgvMedicosModi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedicosModi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvMedicosModi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedicosModi.Location = new System.Drawing.Point(85, 85);
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMedicosModi.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvMedicosModi.Location = new System.Drawing.Point(44, 85);
+            this.dgvMedicosModi.MultiSelect = false;
             this.dgvMedicosModi.Name = "dgvMedicosModi";
             this.dgvMedicosModi.ReadOnly = true;
             this.dgvMedicosModi.RowHeadersVisible = false;
             this.dgvMedicosModi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicosModi.Size = new System.Drawing.Size(221, 196);
+            this.dgvMedicosModi.Size = new System.Drawing.Size(308, 196);
             this.dgvMedicosModi.TabIndex = 33;
             this.dgvMedicosModi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicosModi_CellContentClick);
             // 
@@ -555,13 +662,32 @@
             // 
             this.dgvObrasSocialesModi.AllowUserToAddRows = false;
             this.dgvObrasSocialesModi.AllowUserToDeleteRows = false;
+            this.dgvObrasSocialesModi.AllowUserToResizeRows = false;
+            this.dgvObrasSocialesModi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvObrasSocialesModi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvObrasSocialesModi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvObrasSocialesModi.Location = new System.Drawing.Point(414, 85);
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObrasSocialesModi.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvObrasSocialesModi.Location = new System.Drawing.Point(422, 85);
+            this.dgvObrasSocialesModi.MultiSelect = false;
             this.dgvObrasSocialesModi.Name = "dgvObrasSocialesModi";
             this.dgvObrasSocialesModi.ReadOnly = true;
             this.dgvObrasSocialesModi.RowHeadersVisible = false;
             this.dgvObrasSocialesModi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvObrasSocialesModi.Size = new System.Drawing.Size(167, 196);
+            this.dgvObrasSocialesModi.Size = new System.Drawing.Size(149, 196);
             this.dgvObrasSocialesModi.TabIndex = 29;
             // 
             // label18

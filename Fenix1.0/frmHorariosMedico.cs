@@ -26,6 +26,8 @@ namespace Fenix1._0
         clsHorario horario = new clsHorario();
         clsHorario horarioTC = new clsHorario();
 
+        DateTime tiempo = new DateTime();
+
 
         private void rbMT_CheckedChanged(object sender, EventArgs e)
         {
@@ -546,7 +548,42 @@ namespace Fenix1._0
 
         private void frmHorariosMedico_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void dtpEntradaMT_Lunes_ValueChanged(object sender, EventArgs e)
+        {
+
+            if((sender as DateTimePicker).Value.Minute != tiempo.Second)    //PREGUNTO SI ME TOCARON EL MINUTO O LA HORA
+            {
+                DateTime dt = (sender as DateTimePicker).Value;
+
+                if (dt.Minute < 15)
+                {
+                    int dif = 30 - dt.Minute;
+                    dt = dt.AddMinutes(dif);
+                    (sender as DateTimePicker).Value = dt;
+
+                }
+                if(dt.Minute > 30)
+                {
+                    int dif = 60 - dt.Minute;
+                    dt = dt.AddMinutes(dif);
+                    (sender as DateTimePicker).Value = dt;
+                }
+
+            }
+
+
+            
+
+
+
+        }
+
+        private void dtpEntradaMT_Lunes_MouseEnter(object sender, EventArgs e)
+        {
+            tiempo = (sender as DateTimePicker).Value;
         }
 
 

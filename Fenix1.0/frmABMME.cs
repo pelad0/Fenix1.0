@@ -443,13 +443,14 @@ namespace Fenix1._0
                 if (dgvObrasSocialesAlta.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
                 {
                     dgvObrasSocialesAlta.Columns.Remove("Nombre");
+                    foreach (DataGridViewRow row in dgvObrasSocialesAlta.Rows)
+                    {
+                        dgvObrasSocialesAlta.Rows.Remove(row);
+                    }
                 }
 
 
-                foreach (DataGridViewRow row in dgvObrasSocialesAlta.Rows)
-                {
-                    dgvObrasSocialesAlta.Rows.Remove(row);
-                }
+                
 
 
 
@@ -696,7 +697,16 @@ namespace Fenix1._0
 
         private void dgvMedicosAlta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvObrasSocialesAlta.DataSource = null;
+
+            if (dgvObrasSocialesAlta.Columns.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
+            {
+                dgvObrasSocialesAlta.Columns.Remove("Nombre");
+                foreach (DataGridViewRow row in dgvObrasSocialesAlta.Rows)
+                {
+                    dgvObrasSocialesAlta.Rows.Remove(row);
+                }
+            }
+
             tbEspecialidadAlta.Clear();
 
 

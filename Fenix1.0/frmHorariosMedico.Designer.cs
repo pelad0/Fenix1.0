@@ -138,6 +138,8 @@
             this.dtpEntradaMT_Lunes.TabIndex = 1;
             this.dtpEntradaMT_Lunes.Tag = "1";
             this.dtpEntradaMT_Lunes.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpEntradaMT_Lunes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaMT_Lunes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaMT_Lunes
             // 
@@ -152,6 +154,8 @@
             this.dtpSalidaMT_Lunes.TabIndex = 12;
             this.dtpSalidaMT_Lunes.Tag = "1";
             this.dtpSalidaMT_Lunes.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpSalidaMT_Lunes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaMT_Lunes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaMT_Martes
             // 
@@ -166,6 +170,8 @@
             this.dtpEntradaMT_Martes.TabIndex = 1;
             this.dtpEntradaMT_Martes.Tag = "2";
             this.dtpEntradaMT_Martes.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpEntradaMT_Martes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaMT_Martes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaMT_Martes
             // 
@@ -180,6 +186,8 @@
             this.dtpSalidaMT_Martes.TabIndex = 2;
             this.dtpSalidaMT_Martes.Tag = "2";
             this.dtpSalidaMT_Martes.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpSalidaMT_Martes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaMT_Martes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaMT_Miercoles
             // 
@@ -194,6 +202,8 @@
             this.dtpEntradaMT_Miercoles.TabIndex = 1;
             this.dtpEntradaMT_Miercoles.Tag = "3";
             this.dtpEntradaMT_Miercoles.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpEntradaMT_Miercoles.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaMT_Miercoles.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaMT_Miercoles
             // 
@@ -208,6 +218,8 @@
             this.dtpSalidaMT_Miercoles.TabIndex = 2;
             this.dtpSalidaMT_Miercoles.Tag = "3";
             this.dtpSalidaMT_Miercoles.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpSalidaMT_Miercoles.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaMT_Miercoles.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaMT_Jueves
             // 
@@ -222,6 +234,8 @@
             this.dtpEntradaMT_Jueves.TabIndex = 1;
             this.dtpEntradaMT_Jueves.Tag = "4";
             this.dtpEntradaMT_Jueves.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpEntradaMT_Jueves.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaMT_Jueves.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaMT_Jueves
             // 
@@ -236,6 +250,8 @@
             this.dtpSalidaMT_Jueves.TabIndex = 2;
             this.dtpSalidaMT_Jueves.Tag = "4";
             this.dtpSalidaMT_Jueves.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpSalidaMT_Jueves.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaMT_Jueves.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaMT_Viernes
             // 
@@ -250,6 +266,8 @@
             this.dtpEntradaMT_Viernes.TabIndex = 1;
             this.dtpEntradaMT_Viernes.Tag = "5";
             this.dtpEntradaMT_Viernes.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpEntradaMT_Viernes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaMT_Viernes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaMT_Viernes
             // 
@@ -264,6 +282,8 @@
             this.dtpSalidaMT_Viernes.TabIndex = 2;
             this.dtpSalidaMT_Viernes.Tag = "5";
             this.dtpSalidaMT_Viernes.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpSalidaMT_Viernes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaMT_Viernes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaMT_Sabado
             // 
@@ -278,6 +298,8 @@
             this.dtpEntradaMT_Sabado.TabIndex = 1;
             this.dtpEntradaMT_Sabado.Tag = "6";
             this.dtpEntradaMT_Sabado.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpEntradaMT_Sabado.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaMT_Sabado.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaMT_Sabado
             // 
@@ -292,6 +314,8 @@
             this.dtpSalidaMT_Sabado.TabIndex = 2;
             this.dtpSalidaMT_Sabado.Tag = "6";
             this.dtpSalidaMT_Sabado.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpSalidaMT_Sabado.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaMT_Sabado.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaMT_Domingo
             // 
@@ -306,6 +330,8 @@
             this.dtpEntradaMT_Domingo.TabIndex = 1;
             this.dtpEntradaMT_Domingo.Tag = "7";
             this.dtpEntradaMT_Domingo.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpEntradaMT_Domingo.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaMT_Domingo.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // cbLunes
             // 
@@ -418,6 +444,8 @@
             this.dtpSalidaMT_Domingo.TabIndex = 2;
             this.dtpSalidaMT_Domingo.Tag = "7";
             this.dtpSalidaMT_Domingo.Value = new System.DateTime(2015, 11, 1, 13, 0, 0, 0);
+            this.dtpSalidaMT_Domingo.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaMT_Domingo.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // pnlMedioTiempo
             // 
@@ -512,6 +540,8 @@
             this.dtpEntradaTC_Lunes.TabIndex = 11;
             this.dtpEntradaTC_Lunes.Tag = "1";
             this.dtpEntradaTC_Lunes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpEntradaTC_Lunes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaTC_Lunes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // cbRepetirTC
             // 
@@ -537,6 +567,8 @@
             this.dtpSalidaTC_Domingo.TabIndex = 2;
             this.dtpSalidaTC_Domingo.Tag = "7";
             this.dtpSalidaTC_Domingo.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpSalidaTC_Domingo.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaTC_Domingo.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaTC_Lunes
             // 
@@ -551,6 +583,8 @@
             this.dtpSalidaTC_Lunes.TabIndex = 12;
             this.dtpSalidaTC_Lunes.Tag = "1";
             this.dtpSalidaTC_Lunes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpSalidaTC_Lunes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaTC_Lunes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaTC_Martes
             // 
@@ -565,6 +599,8 @@
             this.dtpEntradaTC_Martes.TabIndex = 1;
             this.dtpEntradaTC_Martes.Tag = "2";
             this.dtpEntradaTC_Martes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpEntradaTC_Martes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaTC_Martes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaTC_Martes
             // 
@@ -579,6 +615,8 @@
             this.dtpSalidaTC_Martes.TabIndex = 2;
             this.dtpSalidaTC_Martes.Tag = "2";
             this.dtpSalidaTC_Martes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpSalidaTC_Martes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaTC_Martes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaTC_Miercoles
             // 
@@ -593,6 +631,8 @@
             this.dtpEntradaTC_Miercoles.TabIndex = 1;
             this.dtpEntradaTC_Miercoles.Tag = "3";
             this.dtpEntradaTC_Miercoles.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpEntradaTC_Miercoles.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaTC_Miercoles.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaTC_Miercoles
             // 
@@ -607,6 +647,8 @@
             this.dtpSalidaTC_Miercoles.TabIndex = 2;
             this.dtpSalidaTC_Miercoles.Tag = "3";
             this.dtpSalidaTC_Miercoles.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpSalidaTC_Miercoles.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaTC_Miercoles.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaTC_Jueves
             // 
@@ -621,6 +663,8 @@
             this.dtpEntradaTC_Jueves.TabIndex = 1;
             this.dtpEntradaTC_Jueves.Tag = "4";
             this.dtpEntradaTC_Jueves.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpEntradaTC_Jueves.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaTC_Jueves.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaTC_Jueves
             // 
@@ -635,6 +679,8 @@
             this.dtpSalidaTC_Jueves.TabIndex = 2;
             this.dtpSalidaTC_Jueves.Tag = "4";
             this.dtpSalidaTC_Jueves.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpSalidaTC_Jueves.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaTC_Jueves.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaTC_Viernes
             // 
@@ -649,6 +695,8 @@
             this.dtpEntradaTC_Viernes.TabIndex = 1;
             this.dtpEntradaTC_Viernes.Tag = "5";
             this.dtpEntradaTC_Viernes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpEntradaTC_Viernes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaTC_Viernes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaTC_Domingo
             // 
@@ -663,6 +711,8 @@
             this.dtpEntradaTC_Domingo.TabIndex = 1;
             this.dtpEntradaTC_Domingo.Tag = "7";
             this.dtpEntradaTC_Domingo.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpEntradaTC_Domingo.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaTC_Domingo.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaTC_Viernes
             // 
@@ -677,6 +727,8 @@
             this.dtpSalidaTC_Viernes.TabIndex = 2;
             this.dtpSalidaTC_Viernes.Tag = "5";
             this.dtpSalidaTC_Viernes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpSalidaTC_Viernes.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaTC_Viernes.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpSalidaTC_Sabado
             // 
@@ -691,6 +743,8 @@
             this.dtpSalidaTC_Sabado.TabIndex = 2;
             this.dtpSalidaTC_Sabado.Tag = "6";
             this.dtpSalidaTC_Sabado.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpSalidaTC_Sabado.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpSalidaTC_Sabado.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // dtpEntradaTC_Sabado
             // 
@@ -705,6 +759,8 @@
             this.dtpEntradaTC_Sabado.TabIndex = 1;
             this.dtpEntradaTC_Sabado.Tag = "6";
             this.dtpEntradaTC_Sabado.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
+            this.dtpEntradaTC_Sabado.ValueChanged += new System.EventHandler(this.dtpEntradaMT_Lunes_ValueChanged);
+            this.dtpEntradaTC_Sabado.MouseEnter += new System.EventHandler(this.dtpEntradaMT_Lunes_MouseEnter);
             // 
             // label1
             // 
