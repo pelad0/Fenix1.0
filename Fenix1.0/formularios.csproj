@@ -118,6 +118,12 @@
     <Compile Include="frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecepcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecepcion.Designer.cs">
+      <DependentUpon>frmRecepcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -143,6 +149,9 @@
     <EmbeddedResource Include="frmABMOS.resx">
       <DependentUpon>frmABMOS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConfirmaUsuario.resx">
       <DependentUpon>frmConfirmaUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecepcion.resx">
+      <DependentUpon>frmRecepcion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

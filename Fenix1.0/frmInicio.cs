@@ -40,15 +40,20 @@ namespace Fenix1._0
                             switch (seg)
                             {
                                 case "Administracion":
-                                        
+                                        frmAdmin a = new frmAdmin(u, this);
+                                        this.Hide();
+                                        a.ShowDialog();
                                     break;
 
                                 case "Recepcion":
-                                        
+                                        frmRecepcion r = new frmRecepcion(u, this);
+                                        this.Hide();
+                                        r.ShowDialog();
                                     break;
                                 
                                 case "Medico":
-                                        frmABMHistorial h = new frmABMHistorial();
+                                        frmABMHistorial h = new frmABMHistorial(this);
+                                        this.Hide();
                                         h.ShowDialog();
                                     break;
                             }
