@@ -22,7 +22,7 @@ namespace Datos
             clsHorario ent = (clsHorario)entidad;
             try
             {
-                manager.ejecutar("Insert into horarioMañana(idmedico,lunesentrada,lunessalida,martesentrada,martessalida,miercolesentrada,miercolessalida,juevesentrada,juevessalida,viernesentrada,viernessalida,sabadoentrada,sabadosalida,domingoentrada,domingosalida) values("+ent.IdMedico+","+ent.LunesEntrada+","+ent.LunesSalida+","+ent.MartesEntrada+","+ent.MartesSalida+","+ent.MiercolesEntrada+","+ent.MiercolesSalida+","+ent.JuevesEntrada+","+ent.JuevesSalida+","+ent.ViernesEntrada+","+ent.ViernesSalida+","+ent.SabadoEntrada+","+ent.SabadoSalida+","+ent.DomingoEntrada+","+ent.DomingoSalida+");SELECT @@identity;");
+                manager.ejecutar("Insert into horarioMañana(idmedico,lunesentrada,lunessalida,martesentrada,martessalida,miercolesentrada,miercolessalida,juevesentrada,juevessalida,viernesentrada,viernessalida,sabadoentrada,sabadosalida,domingoentrada,domingosalida) values("+ent.IdMedico+",'"+ent.LunesEntrada+"','"+ent.LunesSalida+"','"+ent.MartesEntrada+"','"+ent.MartesSalida+"','"+ent.MiercolesEntrada+"','"+ent.MiercolesSalida+"','"+ent.JuevesEntrada+"','"+ent.JuevesSalida+"','"+ent.ViernesEntrada+"','"+ent.ViernesSalida+"','"+ent.SabadoEntrada+"','"+ent.SabadoSalida+"','"+ent.DomingoEntrada+"','"+ent.DomingoSalida+"');SELECT @@identity;");
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace Datos
             clsHorario esp = (clsHorario)entidad;
             try
             {
-                manager.ejecutar("update horarioManiana set lunesentrada=" + esp.LunesEntrada+",lunessalida="+esp.LunesSalida+",martesentrada="+esp.MartesEntrada+",martessalida="+esp.MartesSalida+",miercolesentrada="+esp.MiercolesEntrada+",miercolessalida="+esp.MiercolesSalida+",juevesentrada="+esp.JuevesEntrada+",juevessalida="+esp.JuevesSalida+",viernesentrada="+esp.ViernesEntrada+",viernessalida="+esp.ViernesSalida+",sabadoentrada="+esp.SabadoEntrada+",sabadosalida="+esp.SabadoSalida+",domingoentrada="+esp.DomingoEntrada+",domingosalida="+esp.DomingoSalida);
+                manager.ejecutar("update horarioManiana set lunesentrada='" + esp.LunesEntrada+"',lunessalida='"+esp.LunesSalida+"',martesentrada='"+esp.MartesEntrada+"',martessalida='"+esp.MartesSalida+"',miercolesentrada='"+esp.MiercolesEntrada+"',miercolessalida='"+esp.MiercolesSalida+"',juevesentrada='"+esp.JuevesEntrada+"',juevessalida='"+esp.JuevesSalida+"',viernesentrada='"+esp.ViernesEntrada+"',viernessalida='"+esp.ViernesSalida+"',sabadoentrada='"+esp.SabadoEntrada+"',sabadosalida='"+esp.SabadoSalida+"',domingoentrada='"+esp.DomingoEntrada+"',domingosalida='"+esp.DomingoSalida+",");
             }
             catch (Exception ex)
             {
