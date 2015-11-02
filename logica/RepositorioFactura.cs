@@ -36,7 +36,7 @@ namespace logica
         {
             try
             {
-                manejafactura.Baja(factura);
+                //manejafactura.Baja(factura);
             }
             catch (SqlException ex)
             {
@@ -52,7 +52,7 @@ namespace logica
         {
             try
             {
-                manejafactura.Modificacion(factura);
+                //manejafactura.Modificacion(factura);
             }
             catch (SqlException ex)
             {

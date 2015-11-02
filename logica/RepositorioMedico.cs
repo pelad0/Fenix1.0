@@ -177,10 +177,10 @@ namespace logica
 
         public clsMedico BuscarPorDni(long dni) 
         {
-           clsMedico med;
+           clsMedico med = new clsMedico();
             try
             {
-               med=manejaMedico.BuscaPorDni(dni);
+               //med=manejaMedico.BuscaPorDni(dni);
             }
             catch (SqlException ex)
             {
