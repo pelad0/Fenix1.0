@@ -92,7 +92,7 @@ namespace logica
 
                 clsUsuario usu = new clsUsuario();
                 usu.Id = Convert.ToInt32(aux["id"]);
-                usu.Ususario = aux["usuario"].ToString();
+                usu.Usuario = aux["usuario"].ToString();
                 usu.Clave = aux["clave"].ToString();
                 usu.Seguridad = aux["seguridad"].ToString();
 

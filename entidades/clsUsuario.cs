@@ -41,7 +41,7 @@ namespace entidades
           set { clave = value; }
         }
 
-        public string Ususario
+        public string Usuario
         {
           get { return usuario; }
           set { usuario = value; }
