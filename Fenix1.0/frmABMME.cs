@@ -105,7 +105,7 @@ namespace Fenix1._0
                         {
                             if (horaTrabajo == 2)
                             {
-                                HorariosTC.IdMedico = medico.Id;
+                                HorariosMT.IdMedico = medico.Id;
                                 reposHorario.Alta(HorariosMT, 2);
                             }
 
@@ -145,6 +145,7 @@ namespace Fenix1._0
                     }
 
                     MessageBox.Show("Médico dado de alta");
+                    LimpiarControles();
 
                 }
 
@@ -707,6 +708,14 @@ namespace Fenix1._0
 
         }
 
+        public void LimpiarControles()
+        {
+            tbNombreAlta.Clear();
+            tbApellidoAlta.Clear();
+            tbDniAlta.Clear();
+            tbMatriculaAlta.Clear();
+           
+        }
         
         
 
