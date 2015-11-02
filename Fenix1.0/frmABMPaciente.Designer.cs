@@ -362,8 +362,7 @@
             this.btnSig.Location = new System.Drawing.Point(467, 409);
             this.btnSig.Name = "btnSig";
             this.btnSig.Size = new System.Drawing.Size(93, 23);
-            this.btnSig.TabIndex = 6;
-            this.btnSig.TabStop = false;
+            this.btnSig.TabIndex = 4;
             this.btnSig.Text = "Siguiente>>";
             this.btnSig.UseVisualStyleBackColor = true;
             this.btnSig.Click += new System.EventHandler(this.btnSig_Click);
@@ -373,8 +372,7 @@
             this.btnAnt.Location = new System.Drawing.Point(76, 409);
             this.btnAnt.Name = "btnAnt";
             this.btnAnt.Size = new System.Drawing.Size(90, 23);
-            this.btnAnt.TabIndex = 5;
-            this.btnAnt.TabStop = false;
+            this.btnAnt.TabIndex = 3;
             this.btnAnt.Text = "<<Anterior";
             this.btnAnt.UseVisualStyleBackColor = true;
             this.btnAnt.Click += new System.EventHandler(this.btnAnt_Click);
@@ -416,15 +414,13 @@
             this.dgvBaja.ShowEditingIcon = false;
             this.dgvBaja.Size = new System.Drawing.Size(630, 380);
             this.dgvBaja.TabIndex = 1;
-            this.dgvBaja.TabStop = false;
             // 
             // btnBaja
             // 
             this.btnBaja.Location = new System.Drawing.Point(279, 409);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(75, 23);
-            this.btnBaja.TabIndex = 0;
-            this.btnBaja.TabStop = false;
+            this.btnBaja.TabIndex = 2;
             this.btnBaja.Text = "Eliminar";
             this.btnBaja.UseVisualStyleBackColor = true;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
@@ -515,8 +511,7 @@
             this.dgvPacMod.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPacMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPacMod.Size = new System.Drawing.Size(400, 340);
-            this.dgvPacMod.TabIndex = 20;
-            this.dgvPacMod.TabStop = false;
+            this.dgvPacMod.TabIndex = 7;
             this.dgvPacMod.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacMod_CellClick);
             // 
             // cbOSMod

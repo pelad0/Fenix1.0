@@ -30,7 +30,7 @@ namespace Datos
                 }
                 else
                 {
-                    manager.ejecutar("update obrasocial set (nombre='" + ob.Nombre + "',activo=0) where nombre=" + ob.Nombre);
+                    manager.ejecutar("update obrasocial set activo=1 where nombre='" + ob.Nombre+"'");
                 }
             }
             catch (Exception ex)
@@ -82,8 +82,11 @@ activo bit default 1
             {
 
                 aux = manager.consultar("select * from obrasocial where id=" + id + " and activo=1");
-                pac.Id = Convert.ToInt32(aux.Rows[0]["id"]);
-                pac.Nombre = aux.Rows[0]["nombre"].ToString();
+                if (aux.Rows.Count != 0)
+                {
+                    pac.Id = Convert.ToInt32(aux.Rows[0]["id"]);
+                    pac.Nombre = aux.Rows[0]["nombre"].ToString();
+                }
             }
             catch (Exception ex)
             {
