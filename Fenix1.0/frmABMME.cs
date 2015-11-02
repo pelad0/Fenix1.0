@@ -17,8 +17,8 @@ namespace Fenix1._0
     public partial class frmABMME : Form
     {
 
-        clsHorario HorariosMT;
-        clsHorario HorariosTC;
+        clsHorario HorariosMT = new clsHorario();
+        clsHorario HorariosTC = new clsHorario();
 
         int horaTrabajo = 0;       //Si es 1 trabaja solo mañana, si es 2 trabaja solo tarde, si es 3 ambos.
    
@@ -43,22 +43,24 @@ namespace Fenix1._0
             InitializeComponent();  
         }
 
-        public frmABMME(clsHorario horariomt, int horita)       //Constructor que solo recibe horarios de MedioTiempo.
+
+        public void CargarHorarios(clsHorario horariomt, int horita)        //Constructor que solo recibe horarios de MedioTiempo.
         {
-            InitializeComponent();
             HorariosMT = horariomt;
             horaTrabajo = horita;
-
+            MessageBox.Show("Horarios cargados");
         }
-        
-        public frmABMME(clsHorario horariomt, clsHorario horariotc)     //Contructor que recibe los dos horarios.
+
+        public void CargarHorarios(clsHorario horariomt, clsHorario horariotc)      //Contructor que recibe los dos horarios.
         {
-            InitializeComponent();
             HorariosMT = horariomt;
             HorariosTC = horariotc;
             horaTrabajo = 3;
-     
+            MessageBox.Show("Horarios cargados");
+
         }
+
+  
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
@@ -263,13 +265,7 @@ namespace Fenix1._0
             {
                 MessageBox.Show("Test"+ex.Message);
             }
-
-            
-
-
-
-
-            
+                   
 
 
         }
@@ -283,10 +279,10 @@ namespace Fenix1._0
 
         private void btnHorarios_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmHorariosMedico frmHorarios = new frmHorariosMedico();
+
+            frmHorariosMedico frmHorarios = new frmHorariosMedico(this);
             frmHorarios.ShowDialog();
-            this.Close();
+           
 
         }
 
@@ -328,7 +324,7 @@ namespace Fenix1._0
 
             if (pagina == 0)
             {
-                MessageBox.Show("No hay registros anteriores para mostrar", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No hay registros anteriores para mostrar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
 
@@ -337,9 +333,34 @@ namespace Fenix1._0
                 pagina--;
 
 
-                dgvMedicosAlta.DataSource = null;
+                //LIMPIO TODO DEL DGVMEDICOSALTA.
+                foreach (DataGridViewRow row in dgvMedicosAlta.Rows)
+                {
+                    dgvMedicosAlta.Rows.Remove(row);
+                }
+
+                dgvMedicosAlta.Columns.Remove("idTurno");
+                dgvMedicosAlta.Columns.Remove("Matricula");
+                dgvMedicosAlta.Columns.Remove("Apellido");
+
+                //LIMPIO EL TBESPECIALIDAD
+
                 tbEspecialidadAlta.Clear();
-                dgvObrasSocialesAlta.DataSource = null;
+
+
+                //LIMPIO TODO DEL DGVOBRASSOCIALES
+
+
+                if (dgvObrasSocialesAlta.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
+                {
+                    dgvObrasSocialesAlta.Columns.Remove("Nombre");
+                }
+
+
+                foreach (DataGridViewRow row in dgvObrasSocialesAlta.Rows)
+                {
+                    dgvObrasSocialesAlta.Rows.Remove(row);
+                }
 
 
 
@@ -369,14 +390,40 @@ namespace Fenix1._0
 
         private void btnSiguientesAlta_Click(object sender, EventArgs e)
         {
-            pagina++;
+            pagina++;            
 
 
-            dgvMedicosAlta.DataSource = null;
+
+            //LIMPIO TODO DEL DGVMEDICOSALTA.
+            foreach (DataGridViewRow row in dgvMedicosAlta.Rows)
+            {
+                dgvMedicosAlta.Rows.Remove(row);               
+            }
+
+            dgvMedicosAlta.Columns.Remove("idTurno");
+            dgvMedicosAlta.Columns.Remove("Matricula");
+            dgvMedicosAlta.Columns.Remove("Apellido");
+
+            //LIMPIO EL TBESPECIALIDAD
+
             tbEspecialidadAlta.Clear();
-            dgvObrasSocialesAlta.DataSource = null;
 
-            
+
+            //LIMPIO TODO DEL DGVOBRASSOCIALES
+
+
+            if(dgvObrasSocialesAlta.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
+            {
+                dgvObrasSocialesAlta.Columns.Remove("Nombre");  
+            }
+  
+
+            foreach (DataGridViewRow row in dgvObrasSocialesAlta.Rows)
+            {
+                dgvObrasSocialesAlta.Rows.Remove(row);
+            }
+
+                    
 
             medicos.Clear();
 
