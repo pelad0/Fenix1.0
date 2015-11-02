@@ -36,7 +36,7 @@ namespace Datos
             clsPlanesXObra ob = (clsPlanesXObra)entidad;
             try
             {
-                manager.ejecutar("update planesxobra set activo=0 where nombreplan=" + ob.NombrePlan + "and idobra=" + ob.IdObra);
+                manager.ejecutar("update planesxobra set activo=0 where nombreplan='" + ob.NombrePlan + "' and idobra=" + ob.IdObra);
             }
             catch (Exception ex)
             {
