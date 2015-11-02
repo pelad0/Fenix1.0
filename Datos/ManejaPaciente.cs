@@ -78,7 +78,7 @@ namespace Datos
                 pac.Apellido = aux.Rows[0]["apellido"].ToString();
                 pac.Dni = Convert.ToInt64(aux.Rows[0]["dni"]);
                 pac.ObraSocial = Convert.ToInt32(aux.Rows[0]["obra"]);
-                pac.Telefono = Convert.ToInt32(aux.Rows[0]["telefono"]);
+                pac.Telefono = Convert.ToInt64(aux.Rows[0]["telefono"]);
             }
             catch (Exception ex)
             {
@@ -118,7 +118,7 @@ namespace Datos
                 pac.Dni = Convert.ToInt64(aux.Rows[0]["dni"]);
                 
                 pac.ObraSocial = Convert.ToInt32(aux.Rows[0]["obra"]);
-                pac.Telefono = Convert.ToInt32(aux.Rows[0]["telefono"]);
+                pac.Telefono = Convert.ToInt64(aux.Rows[0]["telefono"]);
             }
             
             catch(Exception ex)
