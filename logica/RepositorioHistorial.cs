@@ -117,5 +117,39 @@ namespace logica
             return lista;
 
         }
+
+        public List<clsHistorial> listar(int id)
+        {
+            DataTable tabla;
+            List<clsHistorial> lista = new List<clsHistorial>();
+            try
+            {
+                tabla = manejahistorial.Busca(id);
+
+                foreach (DataRow aux in tabla.Rows)
+                {
+                    clsHistorial hist = new clsHistorial();
+
+                    hist.Id = Convert.ToInt32(aux["id"]);
+                    hist.Diagnostico = aux["diagnostico"].ToString();
+                    hist.Observaciones = aux["observaciones"].ToString();
+                    hist.Fecha = Convert.ToDateTime(aux["fecha"]);
+
+                    lista.Add(hist);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+            return lista;
+
+        }
     }
 }
