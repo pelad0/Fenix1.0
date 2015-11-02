@@ -21,6 +21,8 @@ namespace Fenix1._0
         RepositorioEspecialidad reposEspe = new RepositorioEspecialidad();
 
         clsEspecialidad esEditar;
+
+        Boolean editar = false;
     
 
 
@@ -39,9 +41,10 @@ namespace Fenix1._0
                 try
                 {
                     clsEspecialidad es = new clsEspecialidad(tbEspecialidadAlta.Text);
-
-
                     reposEspe.Alta(es);
+                    Actualizar();
+                    tbEspecialidadAlta.Clear();
+                    tbEspecialidadAlta.Focus();
                 }
                 catch(Exception ex)
                 {
@@ -60,24 +63,66 @@ namespace Fenix1._0
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(dgvEspecialidadesBaja.Rows[dgvEspecialidadesBaja.CurrentRow.Index].Cells[0].Value.ToString());
 
+
+
+            int id = int.Parse(dgvEspecialidadesModificar.Rows[dgvEspecialidadesModificar.CurrentRow.Index].Cells[0].Value.ToString());
+             
             esEditar = reposEspe.buscarPorId(id);
+
+            tbEspecialidaModi.Text = esEditar.Descripcion;
+
+            editar = true;
 
 
         }
 
         private void frmABMES_Load(object sender, EventArgs e)
         {
-            //Actualizar();
+            Actualizar();
+     
         }
 
 
         public void Actualizar()
         {
-            dgvEspecialidadesAlta.DataSource = null;
-            dgvEspecialidadesBaja.DataSource = null;
-            dgvEspecialidadesModificar.DataSource = null;
+            if (dgvEspecialidadesAlta.Rows.Count > 0)
+            {
+                dgvEspecialidadesAlta.Columns.Remove("idEspecialidad");
+                dgvEspecialidadesAlta.Columns.Remove("Descripcion");
+
+                foreach (DataGridViewRow row in dgvEspecialidadesAlta.Rows)
+                {
+                    dgvEspecialidadesAlta.Rows.Remove(row);
+                }
+
+            }
+
+
+            if (dgvEspecialidadesBaja.Rows.Count > 0)
+            {
+                dgvEspecialidadesBaja.Columns.Remove("idEspecialidad");
+                dgvEspecialidadesBaja.Columns.Remove("Descripcion");
+
+                foreach (DataGridViewRow row in dgvEspecialidadesBaja.Rows)
+                {
+                    dgvEspecialidadesBaja.Rows.Remove(row);
+                }
+
+            }
+
+            if (dgvEspecialidadesModificar.Rows.Count > 0)
+            {
+                dgvEspecialidadesModificar.Columns.Remove("idEspecialidad");
+                dgvEspecialidadesModificar.Columns.Remove("Descripcion");
+
+                foreach (DataGridViewRow row in dgvEspecialidadesModificar.Rows)
+                {
+                    dgvEspecialidadesModificar.Rows.Remove(row);
+                }
+
+            }
+
            
 
 
@@ -106,7 +151,7 @@ namespace Fenix1._0
 
             }
 
-
+           
 
 
         }
@@ -114,7 +159,8 @@ namespace Fenix1._0
         
 
         private void btnBaja_Click(object sender, EventArgs e)
-        {
+        {         
+            
             clsEspecialidad esBaja = new clsEspecialidad();
 
             int id = int.Parse(dgvEspecialidadesBaja.Rows[dgvEspecialidadesBaja.CurrentRow.Index].Cells[0].Value.ToString());
@@ -124,22 +170,46 @@ namespace Fenix1._0
             reposEspe.Baja(esBaja);
 
             MessageBox.Show("Especialidad dada de baja");
+
+            Actualizar();
             
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(tbEspecialidaModi.Text))
+            if(editar == true)
             {
-                esEditar.Descripcion = tbEspecialidaModi.Text;
-                reposEspe.Modificacion(esEditar);
+                if (!string.IsNullOrWhiteSpace(tbEspecialidaModi.Text))
+                {
+                    esEditar.Descripcion = tbEspecialidaModi.Text;
+                    reposEspe.Modificacion(esEditar);
+                    MessageBox.Show("Especialidad modificada");
+                    Actualizar();
 
+                }
+                else
+                {
+                    MessageBox.Show("Debe llenar todos los campos para continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else
-            {
-                MessageBox.Show("Debe llenar todos los campos para continuar", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            }
+                MessageBox.Show("Debe seleccionar una especialidad para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
         }
+
+        private void tpBaja_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void tcABM_Click(object sender, EventArgs e)
+        {
+            dgvEspecialidadesAlta.Rows[0].Selected = false;
+            dgvEspecialidadesBaja.Rows[0].Selected = false;
+            dgvEspecialidadesModificar.Rows[0].Selected = false;
+        }
+
+   
 
      
 

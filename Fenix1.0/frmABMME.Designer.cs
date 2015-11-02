@@ -30,6 +30,7 @@
         {
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.btnAdministrarEspe = new System.Windows.Forms.Button();
             this.tbEspecialidadAlta = new System.Windows.Forms.TextBox();
             this.cbEspecialidades = new System.Windows.Forms.ComboBox();
             this.btnHorarios = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@
             this.btnAnteriorModi = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnAdministrarEspe = new System.Windows.Forms.Button();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicosAlta)).BeginInit();
@@ -138,6 +138,16 @@
             this.tpAlta.UseVisualStyleBackColor = true;
             this.tpAlta.Click += new System.EventHandler(this.tpAlta_Click);
             // 
+            // btnAdministrarEspe
+            // 
+            this.btnAdministrarEspe.Location = new System.Drawing.Point(424, 175);
+            this.btnAdministrarEspe.Name = "btnAdministrarEspe";
+            this.btnAdministrarEspe.Size = new System.Drawing.Size(154, 44);
+            this.btnAdministrarEspe.TabIndex = 23;
+            this.btnAdministrarEspe.Text = "Administrar especialidades";
+            this.btnAdministrarEspe.UseVisualStyleBackColor = true;
+            this.btnAdministrarEspe.Click += new System.EventHandler(this.btnAdministrarEspe_Click);
+            // 
             // tbEspecialidadAlta
             // 
             this.tbEspecialidadAlta.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -176,8 +186,9 @@
             this.dgvMedicosAlta.Location = new System.Drawing.Point(120, 303);
             this.dgvMedicosAlta.Name = "dgvMedicosAlta";
             this.dgvMedicosAlta.ReadOnly = true;
+            this.dgvMedicosAlta.RowHeadersVisible = false;
             this.dgvMedicosAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicosAlta.Size = new System.Drawing.Size(235, 196);
+            this.dgvMedicosAlta.Size = new System.Drawing.Size(221, 196);
             this.dgvMedicosAlta.TabIndex = 18;
             this.dgvMedicosAlta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicosAlta_CellContentClick);
             // 
@@ -207,6 +218,7 @@
             this.dgvObrasSocialesAlta.Location = new System.Drawing.Point(456, 303);
             this.dgvObrasSocialesAlta.Name = "dgvObrasSocialesAlta";
             this.dgvObrasSocialesAlta.ReadOnly = true;
+            this.dgvObrasSocialesAlta.RowHeadersVisible = false;
             this.dgvObrasSocialesAlta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObrasSocialesAlta.Size = new System.Drawing.Size(167, 196);
             this.dgvObrasSocialesAlta.TabIndex = 14;
@@ -344,7 +356,7 @@
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(424, 235);
+            this.btnAlta.Location = new System.Drawing.Point(445, 235);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(98, 23);
             this.btnAlta.TabIndex = 0;
@@ -392,8 +404,9 @@
             this.dgvMedicosBaja.Location = new System.Drawing.Point(86, 86);
             this.dgvMedicosBaja.Name = "dgvMedicosBaja";
             this.dgvMedicosBaja.ReadOnly = true;
+            this.dgvMedicosBaja.RowHeadersVisible = false;
             this.dgvMedicosBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicosBaja.Size = new System.Drawing.Size(227, 196);
+            this.dgvMedicosBaja.Size = new System.Drawing.Size(221, 196);
             this.dgvMedicosBaja.TabIndex = 24;
             this.dgvMedicosBaja.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicosBaja_CellContentClick);
             // 
@@ -423,6 +436,7 @@
             this.dgvObrasSocialesBaja.Location = new System.Drawing.Point(416, 86);
             this.dgvObrasSocialesBaja.Name = "dgvObrasSocialesBaja";
             this.dgvObrasSocialesBaja.ReadOnly = true;
+            this.dgvObrasSocialesBaja.RowHeadersVisible = false;
             this.dgvObrasSocialesBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObrasSocialesBaja.Size = new System.Drawing.Size(167, 196);
             this.dgvObrasSocialesBaja.TabIndex = 20;
@@ -513,8 +527,9 @@
             this.dgvMedicosModi.Location = new System.Drawing.Point(85, 85);
             this.dgvMedicosModi.Name = "dgvMedicosModi";
             this.dgvMedicosModi.ReadOnly = true;
+            this.dgvMedicosModi.RowHeadersVisible = false;
             this.dgvMedicosModi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicosModi.Size = new System.Drawing.Size(227, 196);
+            this.dgvMedicosModi.Size = new System.Drawing.Size(221, 196);
             this.dgvMedicosModi.TabIndex = 33;
             this.dgvMedicosModi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicosModi_CellContentClick);
             // 
@@ -544,6 +559,7 @@
             this.dgvObrasSocialesModi.Location = new System.Drawing.Point(414, 85);
             this.dgvObrasSocialesModi.Name = "dgvObrasSocialesModi";
             this.dgvObrasSocialesModi.ReadOnly = true;
+            this.dgvObrasSocialesModi.RowHeadersVisible = false;
             this.dgvObrasSocialesModi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObrasSocialesModi.Size = new System.Drawing.Size(167, 196);
             this.dgvObrasSocialesModi.TabIndex = 29;
@@ -595,16 +611,6 @@
             this.label7.Size = new System.Drawing.Size(287, 15);
             this.label7.TabIndex = 3;
             this.label7.Text = "Seleccione el médico que desea modificar";
-            // 
-            // btnAdministrarEspe
-            // 
-            this.btnAdministrarEspe.Location = new System.Drawing.Point(424, 175);
-            this.btnAdministrarEspe.Name = "btnAdministrarEspe";
-            this.btnAdministrarEspe.Size = new System.Drawing.Size(154, 44);
-            this.btnAdministrarEspe.TabIndex = 23;
-            this.btnAdministrarEspe.Text = "Administrar especialidades";
-            this.btnAdministrarEspe.UseVisualStyleBackColor = true;
-            this.btnAdministrarEspe.Click += new System.EventHandler(this.btnAdministrarEspe_Click);
             // 
             // frmABMME
             // 
