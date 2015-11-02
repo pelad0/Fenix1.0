@@ -69,6 +69,7 @@ namespace Fenix1._0
                     try
                     {
                         rp.Baja(pacientes[dgvBaja.CurrentRow.Index]);
+                        iniciar();
                     }
                     catch (Exception ex)
                     {
@@ -120,13 +121,20 @@ namespace Fenix1._0
             if (string.IsNullOrWhiteSpace(tbBuscar.Text))
             {
                 iniciar();
+                tbBuscar.Focus();
             }
             else
             {
                 try
                 {
                     dgvAlta.DataSource = null;
-                    dgvAlta.DataSource = rp.buscarDni(Convert.ToInt64(tbBuscar.Text));
+                    pacientes.Clear();
+                    pacientes.Add(rp.buscarDni(Convert.ToInt64(tbBuscar.Text)));
+                    dgvAlta.DataSource = pacientes;
+                    dgvAlta.Columns[0].Visible = false;
+                    tbBuscar.Clear();
+                    tbNombreAlta.Focus();
+
                 }
                 catch (Exception ex)
                 {
@@ -269,9 +277,9 @@ namespace Fenix1._0
                 }
                 else if (ctrl is TextBoxNumeros)
                 {
-                    if (string.IsNullOrWhiteSpace((ctrl as TextBoxNumeros).Text) || (ctrl as TextBoxLetras).Text.Length < 8)
+                    if (string.IsNullOrWhiteSpace((ctrl as TextBoxNumeros).Text) || (ctrl as TextBoxNumeros).Text.Length < 8)
                     {
-                        MessageBox.Show("Completar el campo con la cantidad de digitos correcta." + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Completar el campo con la cantidad de digitos correcta." + (ctrl as TextBoxNumeros).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         (ctrl as TextBoxNumeros).Focus();
                         return false;
                     }
@@ -280,7 +288,7 @@ namespace Fenix1._0
                 {
                     if (string.IsNullOrWhiteSpace((ctrl as ComboBox).SelectedItem.ToString()))
                     {
-                        MessageBox.Show("Seleccione un valor para" + (ctrl as TextBoxLetras).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione un valor para" + (ctrl as ComboBox).Tag, "Campo Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         cbOSAlta.Focus();
                         return false;
                     }
