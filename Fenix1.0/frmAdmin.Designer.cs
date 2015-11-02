@@ -39,7 +39,7 @@
             this.btnPacientes.Location = new System.Drawing.Point(29, 26);
             this.btnPacientes.Name = "btnPacientes";
             this.btnPacientes.Size = new System.Drawing.Size(144, 23);
-            this.btnPacientes.TabIndex = 0;
+            this.btnPacientes.TabIndex = 1;
             this.btnPacientes.Text = "Pacientes";
             this.btnPacientes.UseVisualStyleBackColor = true;
             this.btnPacientes.Click += new System.EventHandler(this.btnPacientes_Click);
@@ -49,7 +49,7 @@
             this.btnMedicos.Location = new System.Drawing.Point(173, 26);
             this.btnMedicos.Name = "btnMedicos";
             this.btnMedicos.Size = new System.Drawing.Size(144, 23);
-            this.btnMedicos.TabIndex = 0;
+            this.btnMedicos.TabIndex = 2;
             this.btnMedicos.Text = "Medicos";
             this.btnMedicos.UseVisualStyleBackColor = true;
             this.btnMedicos.Click += new System.EventHandler(this.btnMedicos_Click);
@@ -59,7 +59,7 @@
             this.btnObraSocial.Location = new System.Drawing.Point(317, 26);
             this.btnObraSocial.Name = "btnObraSocial";
             this.btnObraSocial.Size = new System.Drawing.Size(144, 23);
-            this.btnObraSocial.TabIndex = 0;
+            this.btnObraSocial.TabIndex = 3;
             this.btnObraSocial.Text = "Obras Sociales";
             this.btnObraSocial.UseVisualStyleBackColor = true;
             this.btnObraSocial.Click += new System.EventHandler(this.btnObraSocial_Click);
@@ -69,7 +69,7 @@
             this.btnUsuarios.Location = new System.Drawing.Point(461, 26);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(144, 23);
-            this.btnUsuarios.TabIndex = 0;
+            this.btnUsuarios.TabIndex = 4;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
