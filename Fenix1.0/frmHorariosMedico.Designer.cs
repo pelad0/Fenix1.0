@@ -511,6 +511,7 @@
             this.dtpEntradaTC_Lunes.Size = new System.Drawing.Size(65, 23);
             this.dtpEntradaTC_Lunes.TabIndex = 11;
             this.dtpEntradaTC_Lunes.Tag = "1";
+            this.dtpEntradaTC_Lunes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // cbRepetirTC
             // 
@@ -535,6 +536,7 @@
             this.dtpSalidaTC_Domingo.Size = new System.Drawing.Size(65, 23);
             this.dtpSalidaTC_Domingo.TabIndex = 2;
             this.dtpSalidaTC_Domingo.Tag = "7";
+            this.dtpSalidaTC_Domingo.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpSalidaTC_Lunes
             // 
@@ -548,6 +550,7 @@
             this.dtpSalidaTC_Lunes.Size = new System.Drawing.Size(65, 23);
             this.dtpSalidaTC_Lunes.TabIndex = 12;
             this.dtpSalidaTC_Lunes.Tag = "1";
+            this.dtpSalidaTC_Lunes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpEntradaTC_Martes
             // 
@@ -561,6 +564,7 @@
             this.dtpEntradaTC_Martes.Size = new System.Drawing.Size(65, 23);
             this.dtpEntradaTC_Martes.TabIndex = 1;
             this.dtpEntradaTC_Martes.Tag = "2";
+            this.dtpEntradaTC_Martes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpSalidaTC_Martes
             // 
@@ -574,6 +578,7 @@
             this.dtpSalidaTC_Martes.Size = new System.Drawing.Size(65, 23);
             this.dtpSalidaTC_Martes.TabIndex = 2;
             this.dtpSalidaTC_Martes.Tag = "2";
+            this.dtpSalidaTC_Martes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpEntradaTC_Miercoles
             // 
@@ -587,6 +592,7 @@
             this.dtpEntradaTC_Miercoles.Size = new System.Drawing.Size(65, 23);
             this.dtpEntradaTC_Miercoles.TabIndex = 1;
             this.dtpEntradaTC_Miercoles.Tag = "3";
+            this.dtpEntradaTC_Miercoles.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpSalidaTC_Miercoles
             // 
@@ -600,6 +606,7 @@
             this.dtpSalidaTC_Miercoles.Size = new System.Drawing.Size(65, 23);
             this.dtpSalidaTC_Miercoles.TabIndex = 2;
             this.dtpSalidaTC_Miercoles.Tag = "3";
+            this.dtpSalidaTC_Miercoles.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpEntradaTC_Jueves
             // 
@@ -613,6 +620,7 @@
             this.dtpEntradaTC_Jueves.Size = new System.Drawing.Size(65, 23);
             this.dtpEntradaTC_Jueves.TabIndex = 1;
             this.dtpEntradaTC_Jueves.Tag = "4";
+            this.dtpEntradaTC_Jueves.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpSalidaTC_Jueves
             // 
@@ -626,6 +634,7 @@
             this.dtpSalidaTC_Jueves.Size = new System.Drawing.Size(65, 23);
             this.dtpSalidaTC_Jueves.TabIndex = 2;
             this.dtpSalidaTC_Jueves.Tag = "4";
+            this.dtpSalidaTC_Jueves.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpEntradaTC_Viernes
             // 
@@ -639,6 +648,7 @@
             this.dtpEntradaTC_Viernes.Size = new System.Drawing.Size(65, 23);
             this.dtpEntradaTC_Viernes.TabIndex = 1;
             this.dtpEntradaTC_Viernes.Tag = "5";
+            this.dtpEntradaTC_Viernes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpEntradaTC_Domingo
             // 
@@ -652,6 +662,7 @@
             this.dtpEntradaTC_Domingo.Size = new System.Drawing.Size(65, 23);
             this.dtpEntradaTC_Domingo.TabIndex = 1;
             this.dtpEntradaTC_Domingo.Tag = "7";
+            this.dtpEntradaTC_Domingo.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpSalidaTC_Viernes
             // 
@@ -665,6 +676,7 @@
             this.dtpSalidaTC_Viernes.Size = new System.Drawing.Size(65, 23);
             this.dtpSalidaTC_Viernes.TabIndex = 2;
             this.dtpSalidaTC_Viernes.Tag = "5";
+            this.dtpSalidaTC_Viernes.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpSalidaTC_Sabado
             // 
@@ -678,6 +690,7 @@
             this.dtpSalidaTC_Sabado.Size = new System.Drawing.Size(65, 23);
             this.dtpSalidaTC_Sabado.TabIndex = 2;
             this.dtpSalidaTC_Sabado.Tag = "6";
+            this.dtpSalidaTC_Sabado.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // dtpEntradaTC_Sabado
             // 
@@ -691,6 +704,7 @@
             this.dtpEntradaTC_Sabado.Size = new System.Drawing.Size(65, 23);
             this.dtpEntradaTC_Sabado.TabIndex = 1;
             this.dtpEntradaTC_Sabado.Tag = "6";
+            this.dtpEntradaTC_Sabado.Value = new System.DateTime(2015, 11, 1, 21, 0, 0, 0);
             // 
             // label1
             // 
@@ -780,6 +794,7 @@
             this.Controls.Add(this.rbMT);
             this.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.Name = "frmHorariosMedico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHorariosMedico";
             this.Load += new System.EventHandler(this.frmHorariosMedico_Load);
             this.pnlMedioTiempo.ResumeLayout(false);

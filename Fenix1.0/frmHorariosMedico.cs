@@ -14,9 +14,13 @@ namespace Fenix1._0
 {
     public partial class frmHorariosMedico : Form
     {
-        public frmHorariosMedico()
+
+        frmABMME FormMaestro;
+
+        public frmHorariosMedico(frmABMME frmQueViene)
         {
             InitializeComponent();
+            FormMaestro = frmQueViene;
         }
 
         clsHorario horario = new clsHorario();
@@ -273,12 +277,11 @@ namespace Fenix1._0
                     }
                     else
                     {
-
-                        MessageBox.Show("Horarios cargados.");
-                        this.Hide();
-                        frmABMME ABMME = new frmABMME(horario, horarioTC);
-                        ABMME.ShowDialog();
+                        FormMaestro.CargarHorarios(horario, horarioTC);
+                       
                         this.Close();
+
+                        //AQUÍ TERMINA EL DOBLE TURNO..
                     }
                 }
 
@@ -384,12 +387,11 @@ namespace Fenix1._0
                         else
                         {
 
-                            MessageBox.Show("Horarios cargados.");
-                            this.Hide();
-                            frmABMME ABMME = new frmABMME(horario, 1);
-                            ABMME.ShowDialog();
+                            FormMaestro.CargarHorarios(horario, 1);
+                      
                             this.Close();
-                            //Formulario de AMBME con parametros de clases.
+
+                            //AQUÍ TERMINA EL TRABAJA SOLO MAÑANA
                         }
                     }
                 }
@@ -480,12 +482,11 @@ namespace Fenix1._0
                     }
                     else
                     {
-
-                        MessageBox.Show("Horarios cargados.");
-                        this.Hide();
-                        frmABMME ABMME = new frmABMME(horario, 2);
-                        ABMME.ShowDialog();
+                        FormMaestro.CargarHorarios(horario, 2);
+                       
                         this.Close();
+
+                        //AQUÍ TERMINA EL TRABAJA SOLO TARDE.
                     }
                 }
             }

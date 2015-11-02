@@ -199,6 +199,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
             this.Name = "frmEditarMedico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditarMedico";
             this.Load += new System.EventHandler(this.frmEditarMedico_Load);
             this.ResumeLayout(false);
