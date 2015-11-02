@@ -90,7 +90,7 @@
             // 
             // btnTurnoXDia
             // 
-            this.btnTurnoXDia.Location = new System.Drawing.Point(264, 91);
+            this.btnTurnoXDia.Location = new System.Drawing.Point(281, 91);
             this.btnTurnoXDia.Name = "btnTurnoXDia";
             this.btnTurnoXDia.Size = new System.Drawing.Size(75, 23);
             this.btnTurnoXDia.TabIndex = 7;
