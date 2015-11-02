@@ -9,13 +9,7 @@ namespace entidades
 {
     public class clsHorario : IEntidad
     {
-        int idMedico;
-
-        public int IdMedico
-        {
-            get { return idMedico; }
-            set { idMedico = value; }
-        }
+        int idMedico;        
         DateTime lunesEntrada;
         DateTime lunesSalida;
         DateTime martesEntrada;
@@ -73,7 +67,11 @@ namespace entidades
 
         }
 
-
+        public int IdMedico
+        {
+            get { return idMedico; }
+            set { idMedico = value; }
+        }
 
         public DateTime LunesEntrada
         {

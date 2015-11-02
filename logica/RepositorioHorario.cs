@@ -22,8 +22,7 @@ namespace logica
             try
             {
                 manejamañana.Alta(Hm);
-                manejatarde.Alta(Ht);
-                
+                manejatarde.Alta(Ht);                
             }
             catch (SqlException ex)
             {
