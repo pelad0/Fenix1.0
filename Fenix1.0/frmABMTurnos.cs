@@ -56,7 +56,7 @@ namespace Fenix1._0
 
         private void btnTurnoXDia_Click(object sender, EventArgs e)
         {
-
+            
         }
 
     }
