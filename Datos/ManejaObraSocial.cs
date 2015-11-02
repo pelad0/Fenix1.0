@@ -30,7 +30,7 @@ namespace Datos
                 }
                 else
                 {
-                    manager.ejecutar("update obrasocial set (nombre='" + ob.Nombre + "',activo=0) where id=" + ob.Id);
+                    manager.ejecutar("update obrasocial set (nombre='" + ob.Nombre + "',activo=0) where nombre=" + ob.Nombre);
                 }
             }
             catch (Exception ex)
