@@ -194,15 +194,101 @@ namespace Fenix1._0
         {
             try
             {
-                dgvMedicosAlta.DataSource = null;
-                dgvMedicosBaja.DataSource = null;
-                dgvMedicosModi.DataSource = null;
+
+                if(dgvMedicosAlta.Rows.Count > 0)
+                {
+                    dgvMedicosAlta.Columns.Remove("idTurno");
+                    dgvMedicosAlta.Columns.Remove("Matricula");
+                    dgvMedicosAlta.Columns.Remove("Apellido");
+
+                    foreach (DataGridViewRow row in dgvMedicosAlta.Rows)
+                    {
+                        dgvMedicosAlta.Rows.Remove(row);
+                    }
+
+                }
+
+                
+                if(dgvMedicosBaja.Rows.Count > 0)
+                {
+                    dgvMedicosBaja.Columns.Remove("idTurno");
+                    dgvMedicosBaja.Columns.Remove("Matricula");
+                    dgvMedicosBaja.Columns.Remove("Apellido");
+
+                    foreach (DataGridViewRow row in dgvMedicosBaja.Rows)
+                    {
+                        dgvMedicosBaja.Rows.Remove(row);
+                    }
+                }
+
+                
+
+                if(dgvMedicosModi.Rows.Count > 0)
+                {
+                    dgvMedicosModi.Columns.Remove("idTurno");
+                    dgvMedicosModi.Columns.Remove("Matricula");
+                    dgvMedicosModi.Columns.Remove("Apellido");
+
+                    foreach (DataGridViewRow row in dgvMedicosModi.Rows)
+                    {
+                        dgvMedicosModi.Rows.Remove(row);
+                    }
+                }
+
+                
+
+               
+
+
                 tbEspecialidadAlta.Clear();
                 tbEspecialidadBaja.Clear();
                 tbEspecialidadModi.Clear();
-                dgvObrasSocialesAlta.DataSource = null;
-                dgvObrasSocialesBaja.DataSource = null;
-                dgvObrasSocialesModi.DataSource = null;
+
+
+
+
+                if (dgvObrasSocialesAlta.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
+                {
+                    dgvObrasSocialesAlta.Columns.Remove("Nombre");
+
+                    foreach (DataGridViewRow row in dgvObrasSocialesAlta.Rows)
+                    {
+                        dgvObrasSocialesAlta.Rows.Remove(row);
+                    }
+                }
+
+
+                
+
+
+                if (dgvObrasSocialesBaja.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
+                {
+                    dgvObrasSocialesBaja.Columns.Remove("Nombre");
+
+                    foreach (DataGridViewRow row in dgvObrasSocialesBaja.Rows)
+                    {
+                        dgvObrasSocialesBaja.Rows.Remove(row);
+                    }
+                }
+
+
+                
+
+
+                if (dgvObrasSocialesModi.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
+                {
+                    dgvObrasSocialesModi.Columns.Remove("Nombre");
+
+                    foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
+                    {
+                        dgvObrasSocialesModi.Rows.Remove(row);
+                    }
+                }
+
+
+                
+
+
 
                 
                 medicos.Clear();
@@ -261,6 +347,8 @@ namespace Fenix1._0
                 {
                     clbObraSocial.Items.Add(obr.Nombre);
                 }
+
+
             }
             catch(Exception ex)
             {
@@ -705,6 +793,8 @@ namespace Fenix1._0
         {
             frmABMES frmes = new frmABMES();
             frmes.ShowDialog();
+            ActualizarObrasSociales();
+
 
         }
 
@@ -714,11 +804,23 @@ namespace Fenix1._0
             tbApellidoAlta.Clear();
             tbDniAlta.Clear();
             tbMatriculaAlta.Clear();
+
+            Actualizar();
            
         }
         
         
+        public void ActualizarObrasSociales()
+        {
+            cbEspecialidades.Items.Clear();
 
+            listaEspecialidades = reposEspecialidad.Todo();
+
+            foreach (clsEspecialidad es in listaEspecialidades)
+            {
+                cbEspecialidades.Items.Add(es.Descripcion);
+            }
+        }
         
         
     }

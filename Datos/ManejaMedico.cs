@@ -159,6 +159,32 @@ namespace Datos
                 */
             return med;
         }
+        public DataTable BuscarHorarioMañana(int id)
+        {
+            DataTable aux = new DataTable();
+            try
+            {
+                aux = manager.consultar("select * from horarioManiana where idmedico="+id+" and activo=1");
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            return aux;
+        }
+        public DataTable BuscarHorarioTarde(int id)
+        {
+            DataTable aux = new DataTable();
+            try
+            {
+                aux = manager.consultar("select * from horariotarde where idmedico=" + id+" and activo=1");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return aux;
+        }
    
     }
 }
