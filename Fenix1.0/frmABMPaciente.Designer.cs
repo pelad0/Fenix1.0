@@ -244,6 +244,7 @@
             // 
             // cbOSAlta
             // 
+            this.cbOSAlta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOSAlta.FormattingEnabled = true;
             this.cbOSAlta.Location = new System.Drawing.Point(448, 308);
             this.cbOSAlta.Name = "cbOSAlta";
@@ -515,10 +516,12 @@
             this.dgvPacMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPacMod.Size = new System.Drawing.Size(400, 340);
             this.dgvPacMod.TabIndex = 20;
+            this.dgvPacMod.TabStop = false;
             this.dgvPacMod.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacMod_CellClick);
             // 
             // cbOSMod
             // 
+            this.cbOSMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOSMod.FormattingEnabled = true;
             this.cbOSMod.Location = new System.Drawing.Point(450, 313);
             this.cbOSMod.Name = "cbOSMod";

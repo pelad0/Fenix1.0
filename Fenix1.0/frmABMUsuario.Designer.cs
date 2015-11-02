@@ -182,8 +182,8 @@
             this.btnAlta.Location = new System.Drawing.Point(281, 376);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 23);
-            this.btnAlta.TabIndex = 0;
-            this.btnAlta.Text = "5";
+            this.btnAlta.TabIndex = 5;
+            this.btnAlta.Text = "Cargar";
             this.btnAlta.UseVisualStyleBackColor = true;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
