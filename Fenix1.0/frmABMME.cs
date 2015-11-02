@@ -64,15 +64,7 @@ namespace Fenix1._0
             //Falta verificar horarios de medico.
 
             if(verificarMedico())       //Se puede dar de alta.
-            {
-                List<string> obra = new List<string>();             
-   
-                //cargo obras sociales
-                foreach (string index in clbObraSocial.CheckedItems)
-                {
-                    obra.Add(index);
-                }
-
+            {          
                 clsMedico medico = new clsMedico();
 
                 medico.Matricula = int.Parse(tbMatriculaAlta.Text);
@@ -80,30 +72,71 @@ namespace Fenix1._0
                 medico.Nombre = tbNombreAlta.Text;
                 medico.Apellido = tbApellidoAlta.Text;
                 medico.Especialidad = cbEspecialidades.Text; 
-                medico.ObraSocial = obra;
 
                 reposMedico.Alta(medico);
+
+
+                //CREO LA RELACION HORARIO POR MEDICO.
 
                 long dni = medico.Dni;
 
                 medico = reposMedico.BuscarPorDni(dni);
 
+
+
                 if(horaTrabajo == 0)    //QUE TRABAJA MAÑANA Y TARDE.
                 {
+                    HorariosMT.IdMedico = medico.Id;
+                    HorariosTC.IdMedico = medico.Id;
                     reposHorario.Alta(HorariosMT, HorariosTC);
-                }
-                if(horaTrabajo == 1)
-                {
-                    reposHorario.Alta(HorariosMT, 1);
                 }
                 else
                 {
-                    reposHorario.Alta(HorariosMT, 2);
+                    if (horaTrabajo == 1)       //QUE TRABAJA MAÑANA.
+                    {
+                        HorariosMT.IdMedico = medico.Id;
+                        reposHorario.Alta(HorariosMT, 1);
+                    }
+                    else                        //QUE TRABAJA TARDE.
+                    {
+                        HorariosTC.IdMedico = medico.Id;
+                        reposHorario.Alta(HorariosMT, 2);
+                    }
+                    
                 }
-         
-         
 
-                
+
+                //CREO LA RELACION HORARIO OBRA POR MEDICO.
+
+                List<string> listaNombresObra = new List<string>();
+
+                foreach(Object item in clbObraSocial.CheckedItems)      //CARGO TODAS LAS OBRAS SOCIALES SELECCIONADAS.
+                {
+                    listaNombresObra.Add(item.ToString());
+                }               
+
+                List<clsObraSocial> obr = new List<clsObraSocial>();        //Variable con todas mis obras
+
+                obr = reposObraSocial.Todo(0);          //le doy todas las obras
+
+                foreach(clsObraSocial obrita in obr)        //por cada obra existente
+                {
+                    foreach(string obra in listaNombresObra)        //por cada obra seleccionada
+                    {
+                        if(obrita.Nombre == obra)           //si el nombre es igual obtengo el id y creo la relacion
+                        {
+                            clsObraXMedico obraPormed = new clsObraXMedico();
+                            obraPormed.IdMedico = medico.Id;
+                            obraPormed.IdObra = obrita.Id;
+
+                            repoObraPorMed.Alta(obraPormed);
+                        }
+                    }
+
+                  
+                }
+
+                MessageBox.Show("Médico dado de alta");               
                 
             }
 

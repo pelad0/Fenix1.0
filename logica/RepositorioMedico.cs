@@ -194,7 +194,6 @@ namespace logica
                 medico.Apellido = med.Apellido;
                 medico.Dni = med.Dni;
                 medico.Matricula = med.Matricula;
-                medico.ObraSocial = med.ObraSocial;
                 aux = (clsEspecialidad)manejaEspecialidad.buscaPorNombre(med.Especialidad);
                 medico.Especialidad = aux.Id;
             }
@@ -224,7 +223,6 @@ namespace logica
                 medico.Apellido = med.Apellido;
                 medico.Dni = med.Dni;
                 medico.Matricula = med.Matricula;
-                medico.ObraSocial = med.ObraSocial;
                 aux = (clsEspecialidad)manejaEspecialidad.buscaPorId(med.Id);
                 medico.Especialidad = aux.Descripcion;
             }
