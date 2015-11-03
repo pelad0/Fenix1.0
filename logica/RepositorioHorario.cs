@@ -116,9 +116,9 @@ namespace logica
             try
             {
                 if (var == 1)
-                    manejamañana.Alta(Hr);
+                    manejamañana.Modificacion(Hr);
                 else
-                    manejatarde.Alta(Hr);
+                    manejatarde.Modificacion(Hr);
 
             }
             catch (SqlException ex)
