@@ -49,7 +49,7 @@ namespace Datos
             clsHorario esp = (clsHorario)entidad;
             try
             {
-                manager.ejecutar("update horarioTarde set lunesentrada=" + esp.LunesEntrada+",lunessalida="+esp.LunesSalida+",martesentrada="+esp.MartesEntrada+",martessalida="+esp.MartesSalida+",miercolesentrada="+esp.MiercolesEntrada+",miercolessalida="+esp.MiercolesSalida+",juevesentrada="+esp.JuevesEntrada+",juevessalida="+esp.JuevesSalida+",viernesentrada="+esp.ViernesEntrada+",viernessalida="+esp.ViernesSalida+",sabadoentrada="+esp.SabadoEntrada+",sabadosalida="+esp.SabadoSalida+",domingoentrada="+esp.DomingoEntrada+",domingosalida="+esp.DomingoSalida);
+                manager.ejecutar("update horarioTarde set lunesentrada='" + esp.LunesEntrada+"',lunessalida='"+esp.LunesSalida+"',martesentrada='"+esp.MartesEntrada+"',martessalida='"+esp.MartesSalida+"',miercolesentrada='"+esp.MiercolesEntrada+"',miercolessalida='"+esp.MiercolesSalida+"',juevesentrada='"+esp.JuevesEntrada+"',juevessalida='"+esp.JuevesSalida+"',viernesentrada='"+esp.ViernesEntrada+"',viernessalida='"+esp.ViernesSalida+"',sabadoentrada='"+esp.SabadoEntrada+"',sabadosalida='"+esp.SabadoSalida+"',domingoentrada='"+esp.DomingoEntrada+"',domingosalida='"+esp.DomingoSalida+"' where idmedico="+esp.IdMedico);
             }
             catch (Exception ex)
             {
