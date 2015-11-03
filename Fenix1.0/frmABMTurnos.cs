@@ -117,6 +117,7 @@ namespace Fenix1._0
                     }
                 }
             }
+
             sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value.Date);
             foreach (clsSobreturno sobTur in sobreTurno)
             {
@@ -264,6 +265,12 @@ namespace Fenix1._0
                 darTurno(btn);
                 pnlBotones.Enabled = false;
             }
+            if ((sender as Button).Tag.ToString() == "sobreTurno")
+            {
+                Button btn = (sender as Button);
+                darTurno(btn);
+                pnlBotones.Enabled = false;
+            }
         }
 
         private void darTurno(Button btn)
@@ -278,6 +285,26 @@ namespace Fenix1._0
                 try
                 {
                     rt.Alta(t);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void darSobreTurno(Button btn)
+        {
+            DialogResult res = MessageBox.Show("Confirme Sobre Turno: Medico " + med.Apellido + " paciente, " + pac.nomCompleto() + " " + fecha.ToLongDateString() + " " + btn.Text, "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0, 2)), Convert.ToInt32(btn.Text.Substring(3, 2)), 0);
+                clsSobreturno t = new clsSobreturno( ) //(med.Id, pac.Id, d, u.Id);
+                List<clsTurno> lt = rt.obtenerTurno(med.Id, t.Fecha);
+
+                try
+                {
+                    rst.Alta(t);
                 }
                 catch (Exception ex)
                 {

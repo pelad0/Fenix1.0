@@ -32,7 +32,7 @@ namespace entidades
             this.estado = estado;
         }
 
-        public clsSobreturno(int idMedico, int idPaciente, DateTime fecha, double costo, int idUsuario,bool estado)
+        public clsSobreturno(int idMedico, int idPaciente, DateTime fecha, int idUsuario,bool estado)
         {
             this.idMedico = idMedico;
             this.idPaciente = idPaciente;
