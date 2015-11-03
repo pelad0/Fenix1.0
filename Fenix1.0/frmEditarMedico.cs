@@ -30,6 +30,7 @@ namespace Fenix1._0
         RepositorioObraSocial reposObraSocial = new RepositorioObraSocial();
         RepositorioEspecialidad reposEspe = new RepositorioEspecialidad();
         RepositorioHorario reposHorario = new RepositorioHorario();
+        RepositorioMedico repoMedico = new RepositorioMedico(); 
 
 
         clsHorario horarioMT = new clsHorario();
@@ -127,6 +128,8 @@ namespace Fenix1._0
                     medNuevo.Nombre = tbNombreModi.Text;
                     medNuevo.Apellido = tbApellidoModi.Text;
                     medNuevo.Especialidad = cbEspecialidadModi.Text;
+                    medNuevo.Dni = long.Parse(tbDniModi.Text.ToString());
+                    medNuevo.Matricula = int.Parse(tbMatriculaModi.Text.ToString());
 
 
                     //ROMPO RELACIONES DE MEDICO CON LAS OBRAS SOCIALES
@@ -243,8 +246,12 @@ namespace Fenix1._0
 
                     }
 
+
+
+                    repoMedico.Modificacion(medNuevo);
+
                     MessageBox.Show("Médico modificado con éxito");
-                
+                    this.Close();
 
 
 
