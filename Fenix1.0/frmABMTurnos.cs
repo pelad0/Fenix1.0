@@ -91,6 +91,7 @@ namespace Fenix1._0
             {
                 horariosMañana(true);
             }
+
             if (string.IsNullOrWhiteSpace(tarde.LunesEntrada.ToString()))
             {
                 horariosTarde(false);
@@ -119,6 +120,7 @@ namespace Fenix1._0
             }
 
             sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value.Date);
+
             foreach (clsSobreturno sobTur in sobreTurno)
             {
                 foreach (Button btn in pnlBotones.Controls)
@@ -167,6 +169,8 @@ namespace Fenix1._0
             botonesDisponibles();
 
             pnlBotones.Enabled = true;
+
+            btnTurnoXDia.Focus();
         }
 
 
@@ -268,9 +272,10 @@ namespace Fenix1._0
             if ((sender as Button).Tag.ToString() == "sobreTurno")
             {
                 Button btn = (sender as Button);
-                darTurno(btn);
+                darSobreTurno(btn);
                 pnlBotones.Enabled = false;
             }
+            botonesDisponibles();
         }
 
         private void darTurno(Button btn)
@@ -295,7 +300,7 @@ namespace Fenix1._0
 
         private void darSobreTurno(Button btn)
         {
-            DialogResult res = MessageBox.Show("Confirme Sobre Turno: Medico " + med.Apellido + " paciente, " + pac.nomCompleto() + " " + fecha.ToLongDateString() + " " + btn.Text, "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult res = MessageBox.Show("Confirme SOBRE Turno: Medico " + med.Apellido + " paciente, " + pac.nomCompleto() + " " + fecha.ToLongDateString() + " " + btn.Text, "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (res == DialogResult.OK)
             {
                 DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0, 2)), Convert.ToInt32(btn.Text.Substring(3, 2)), 0);
@@ -310,6 +315,7 @@ namespace Fenix1._0
                 {
                     MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                
             }
         }
 

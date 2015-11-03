@@ -45,6 +45,7 @@
             this.tar4 = new System.Windows.Forms.Button();
             this.mañ9 = new System.Windows.Forms.Button();
             this.tar13 = new System.Windows.Forms.Button();
+            this.mañ4 = new System.Windows.Forms.Button();
             this.tar12 = new System.Windows.Forms.Button();
             this.tar8 = new System.Windows.Forms.Button();
             this.tar7 = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.tar1 = new System.Windows.Forms.Button();
             this.mañ3 = new System.Windows.Forms.Button();
             this.mañ6 = new System.Windows.Forms.Button();
+            this.mañ2 = new System.Windows.Forms.Button();
             this.mañ1 = new System.Windows.Forms.Button();
             this.btnTurnoXDia = new System.Windows.Forms.Button();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -71,8 +73,9 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.mañ2 = new System.Windows.Forms.Button();
-            this.mañ4 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.pnlBotones.SuspendLayout();
@@ -115,6 +118,9 @@
             // 
             // pnlBotones
             // 
+            this.pnlBotones.Controls.Add(this.label5);
+            this.pnlBotones.Controls.Add(this.label4);
+            this.pnlBotones.Controls.Add(this.label3);
             this.pnlBotones.Controls.Add(this.tar10);
             this.pnlBotones.Controls.Add(this.tar5);
             this.pnlBotones.Controls.Add(this.mañ10);
@@ -279,6 +285,21 @@
             this.tar13.Text = "20:00";
             this.tar13.UseVisualStyleBackColor = false;
             this.tar13.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // mañ4
+            // 
+            this.mañ4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mañ4.BackColor = System.Drawing.Color.Gray;
+            this.mañ4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mañ4.Location = new System.Drawing.Point(377, 41);
+            this.mañ4.Margin = new System.Windows.Forms.Padding(4);
+            this.mañ4.Name = "mañ4";
+            this.mañ4.Size = new System.Drawing.Size(112, 39);
+            this.mañ4.TabIndex = 24;
+            this.mañ4.Tag = "turno";
+            this.mañ4.Text = "09:30";
+            this.mañ4.UseVisualStyleBackColor = false;
+            this.mañ4.Click += new System.EventHandler(this.button1_Click);
             // 
             // tar12
             // 
@@ -460,6 +481,21 @@
             this.mañ6.UseVisualStyleBackColor = false;
             this.mañ6.Click += new System.EventHandler(this.button1_Click);
             // 
+            // mañ2
+            // 
+            this.mañ2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mañ2.BackColor = System.Drawing.Color.Gray;
+            this.mañ2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mañ2.Location = new System.Drawing.Point(135, 41);
+            this.mañ2.Margin = new System.Windows.Forms.Padding(4);
+            this.mañ2.Name = "mañ2";
+            this.mañ2.Size = new System.Drawing.Size(112, 39);
+            this.mañ2.TabIndex = 13;
+            this.mañ2.Tag = "turno";
+            this.mañ2.Text = "08:30";
+            this.mañ2.UseVisualStyleBackColor = false;
+            this.mañ2.Click += new System.EventHandler(this.button1_Click);
+            // 
             // mañ1
             // 
             this.mañ1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -605,7 +641,7 @@
             this.dgvEliminar.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEliminar.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEliminar.Size = new System.Drawing.Size(630, 380);
+            this.dgvEliminar.Size = new System.Drawing.Size(630, 164);
             this.dgvEliminar.TabIndex = 1;
             this.dgvEliminar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEliminar_CellContentClick);
             // 
@@ -637,35 +673,35 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // mañ2
+            // label3
             // 
-            this.mañ2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mañ2.BackColor = System.Drawing.Color.Gray;
-            this.mañ2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ2.Location = new System.Drawing.Point(135, 41);
-            this.mañ2.Margin = new System.Windows.Forms.Padding(4);
-            this.mañ2.Name = "mañ2";
-            this.mañ2.Size = new System.Drawing.Size(112, 39);
-            this.mañ2.TabIndex = 13;
-            this.mañ2.Tag = "turno";
-            this.mañ2.Text = "08:30";
-            this.mañ2.UseVisualStyleBackColor = false;
-            this.mañ2.Click += new System.EventHandler(this.button1_Click);
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label3.Location = new System.Drawing.Point(76, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 15);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Turno Disponible";
             // 
-            // mañ4
+            // label4
             // 
-            this.mañ4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mañ4.BackColor = System.Drawing.Color.Gray;
-            this.mañ4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ4.Location = new System.Drawing.Point(377, 41);
-            this.mañ4.Margin = new System.Windows.Forms.Padding(4);
-            this.mañ4.Name = "mañ4";
-            this.mañ4.Size = new System.Drawing.Size(112, 39);
-            this.mañ4.TabIndex = 24;
-            this.mañ4.Tag = "turno";
-            this.mañ4.Text = "09:30";
-            this.mañ4.UseVisualStyleBackColor = false;
-            this.mañ4.Click += new System.EventHandler(this.button1_Click);
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Gold;
+            this.label4.Location = new System.Drawing.Point(232, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(161, 15);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Sobre Turno Disponible";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(430, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 15);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Horario Completo";
             // 
             // frmABMTurnos
             // 
@@ -683,6 +719,7 @@
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
             this.pnlBotones.ResumeLayout(false);
+            this.pnlBotones.PerformLayout();
             this.tpBaja.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).EndInit();
             this.tpMod.ResumeLayout(false);
@@ -732,5 +769,8 @@
         private System.Windows.Forms.Button mañ1;
         private System.Windows.Forms.Button mañ4;
         private System.Windows.Forms.Button mañ2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

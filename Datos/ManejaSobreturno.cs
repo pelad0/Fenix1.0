@@ -24,7 +24,7 @@ namespace Datos
                 clsSobreturno tur = (clsSobreturno)entidad;
                 try
                 {
-                    manager.ejecutar("Insert into sobreturno(idpaciente,idmedico,fecha,costo,estado,idusuario) values('" + tur.IdPaciente + "','" + tur.IdPaciente + "'," + tur.Fecha + "," + tur.Costo + "," + tur.Estado + "," + tur.IdUsuario + ");SELECT @@identity;");
+                    manager.ejecutar("Insert into sobreturno(idpaciente,idmedico,fecha,costo,estado,idusuario) values(" + tur.IdPaciente + "," + tur.IdMedico + ",'" + tur.Fecha + "'," + 0 + "," + 0 + "," + tur.IdUsuario + ");SELECT @@identity;");
                 }
                 catch (Exception ex)
                 {
