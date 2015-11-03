@@ -155,7 +155,7 @@ namespace Fenix1._0
                     //CREO LA RELACION HORARIOS POR MEDICO
                     
 
-                    if(modifi == 0)
+                    if(modifi == 0)         //ACTUALIZO MAÑANA Y TARDE
                     {
                         horarioMT.IdMedico = med.Id;
                         horarioTC.IdMedico = med.Id;
@@ -163,12 +163,12 @@ namespace Fenix1._0
                     }
                     else
                     {
-                        if(modifi == 1)
+                        if(modifi == 1)             //ACTUALIZO MAÑANA
                         {
                             horarioMT.IdMedico = med.Id;
                             reposHorario.Modificacion(horarioMT, 1);
                         }
-                        if(modifi == 2)
+                        if(modifi == 2)             //ACTUALIZO TARDE
                         {
                             horarioMT.IdMedico = med.Id;
                             reposHorario.Modificacion(horarioMT, 2);
@@ -178,42 +178,9 @@ namespace Fenix1._0
 
 
 
-                    ////CREO LA RELACION HORARIO POR MEDICO.
 
-                    //long dni = medico.Dni;
-
-                    //medico = reposMedico.BuscarPorDni(dni);     //NECESITO ESTE METODO PARA PODER CONSEGUIR EL ID DEL MEDICO.....
-
-
-
-                    //if (horaTrabajo == 3)    //QUE TRABAJA MAÑANA Y TARDE.
-                    //{
-                    //    HorariosMT.IdMedico = medico.Id;
-                    //    HorariosTC.IdMedico = medico.Id;
-                    //    reposHorario.Alta(HorariosMT, HorariosTC);
-                    //}
-                    //else
-                    //{
-                    //    if (horaTrabajo == 1)       //QUE TRABAJA MAÑANA.
-                    //    {
-                    //        HorariosMT.IdMedico = medico.Id;
-                    //        reposHorario.Alta(HorariosMT, 1);
-                    //    }
-                    //    else                        //QUE TRABAJA TARDE.
-                    //    {
-                    //        if (horaTrabajo == 2)
-                    //        {
-                    //            HorariosMT.IdMedico = medico.Id;
-                    //            reposHorario.Alta(HorariosMT, 2);
-                    //        }
-
-                    //    }
-
-                    //}
-
-
-                    ////CREO LA RELACION HORARIO OBRA POR MEDICO.
-
+                    //CREO RELACION NUEVA ENTRE OBRAS Y MEDICO
+                    
                     //List<string> listaNombresObra = new List<string>();
 
                     //foreach (Object item in clbObraSocial.CheckedItems)      //CARGO TODAS LAS OBRAS SOCIALES SELECCIONADAS.
@@ -243,7 +210,7 @@ namespace Fenix1._0
                     //}
 
                     //MessageBox.Show("Médico dado de alta");
-                    //LimpiarControles();
+                
 
 
 
