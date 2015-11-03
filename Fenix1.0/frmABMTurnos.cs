@@ -245,7 +245,8 @@ namespace Fenix1._0
             DialogResult res = MessageBox.Show("Confirme turno: Medico "+med.Apellido+" paciente, "+pac.nomCompleto()+" "+fecha.ToLongDateString()+" "+btn.Text, "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (res == DialogResult.OK)
             {
-                
+                DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0,2)), Convert.ToInt32(btn.Text.Substring(3,2)),0);
+                clsTurno t = new clsTurno(med.Id, pac.Id, d, )
             }
         }
 
