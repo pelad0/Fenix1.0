@@ -63,7 +63,7 @@ namespace Datos
             try
             {
                 aux = manager.consultar("select * from horarioMañana where idmedico=" + id + "and activo=1");
-                esp.IdMedico = Convert.ToInt32(aux.Rows[0]["id"]);
+                esp.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
                 esp.LunesEntrada = Convert.ToDateTime(aux.Rows[0]["lunesentrada"]);
                 esp.LunesSalida = Convert.ToDateTime(aux.Rows[0]["lunessalida"]);
                 esp.MartesEntrada = Convert.ToDateTime(aux.Rows[0]["martesentrada"]);
