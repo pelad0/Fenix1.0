@@ -118,9 +118,7 @@ namespace logica
 
             return lista;
 
-        }
-
-    
+        }    
 
         public List<clsSobreturno> obtenerSobreturno(int id, DateTime fecha)//implementar
         {

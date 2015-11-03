@@ -132,7 +132,7 @@ namespace logica
 
         }
 
-        public List<clsMedico> Busca(string pag)//buscar por especialidad
+        public List<clsMedico> Busca(string esp)//buscar por especialidad
         {
             DataTable tabla;
             List<clsMedico> lista = new List<clsMedico>();
@@ -140,7 +140,7 @@ namespace logica
             clsEspecialidad aux3;
             try
             {
-                aux3 = (clsEspecialidad)manejaEspecialidad.buscaPorNombre(pag);
+                aux3 = (clsEspecialidad)manejaEspecialidad.buscaPorNombre(esp);
                 tabla = manejaMedico.Busca(aux3.Id);
 
                 foreach (DataRow aux in tabla.Rows)
@@ -151,10 +151,8 @@ namespace logica
                     med.Nombre = aux["nombre"].ToString();
                     med.Apellido = aux["apellido"].ToString();
                     med.Dni = Convert.ToInt64(aux["dni"]);
-                    med.Matricula = Convert.ToInt32(aux["matricula"]);
-                    
-                    aux2 = (clsEspecialidad)manejaEspecialidad.buscaPorId(med.Id);
-                    med.Especialidad = aux2.Descripcion;
+                    med.Matricula = Convert.ToInt32(aux["matricula"]);                                       
+                    med.Especialidad = esp;
 
                     lista.Add(med);
 
