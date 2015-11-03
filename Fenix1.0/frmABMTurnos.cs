@@ -69,17 +69,15 @@ namespace Fenix1._0
             sobreTurno.Clear();
             turnos = rt.obtenerTurno(med.Id, dtpFecha.Value);//no tocar
             sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value);
-
+            turnosDados(turnos);
+            sobreTurnosDados(sobreTurno);
             mañana = rm.BuscarHorarioMañana(med.Id);
             tarde = rm.BuscarHorarioTarde(med.Id);
 
             botonesDisponibles();
 
             pnlBotones.Enabled = true;
-
-
         }
-
 
         private void btnAnt_Click(object sender, EventArgs e)
         {
@@ -157,10 +155,6 @@ namespace Fenix1._0
             dgvEliminar.DataSource = rt.Todo(pagina);
         }
 
-        private void dgvEliminar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         public void horariosMañana(bool estado)
         {
@@ -168,15 +162,10 @@ namespace Fenix1._0
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
-                    if (btn.Tag.ToString() == "mañana")
+                    if (btn.Name.Contains("mañ"))
                     {
                         btn.Enabled = true;
                         btn.BackColor = Color.LimeGreen;
-                    }
-                    else
-                    {
-                        btn.Enabled = false;
-                        btn.BackColor = Color.Gray;
                     }
                 }
             }
@@ -188,15 +177,10 @@ namespace Fenix1._0
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
-                    if (btn.Tag.ToString() == "tarde")
+                    if (btn.Name.Contains("tar"))
                     {
                         btn.Enabled = true;
                         btn.BackColor = Color.LimeGreen;
-                    }
-                    else
-                    {
-                        btn.Enabled = false;
-                        btn.BackColor = Color.Gray;
                     }
                 }
             }
@@ -206,11 +190,12 @@ namespace Fenix1._0
         {
             foreach (clsTurno turno in turnos)
             {
-                foreach (Button btn in this.Controls)
+                foreach (Button btn in pnlBotones.Controls)
                 {
                     if (turno.Fecha.ToShortTimeString().Contains(btn.Text))
                     {
                         btn.BackColor = Color.Gold;
+                        btn.Tag = "sobreTurno";
                     }
                 }
             }
@@ -220,7 +205,7 @@ namespace Fenix1._0
         {
             foreach (clsSobreturno sturno in sobreTurnos)
             {
-                foreach (Button btn in this.Controls)
+                foreach (Button btn in pnlBotones.Controls)
                 {
                     if (sturno.Fecha.ToShortTimeString().Contains(btn.Text))
                     {
@@ -256,6 +241,11 @@ namespace Fenix1._0
                     MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void dgvEliminar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
     }
