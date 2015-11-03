@@ -271,7 +271,7 @@ namespace logica
             {
                 aux = manejaMedico.BuscarHorarioMañana(id);
 
-                esp.IdMedico = Convert.ToInt32(aux.Rows[0]["id"]);
+                esp.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
                 esp.LunesEntrada = Convert.ToDateTime(aux.Rows[0]["lunesentrada"]);
                 esp.LunesSalida = Convert.ToDateTime(aux.Rows[0]["lunessalida"]);
                 esp.MartesEntrada = Convert.ToDateTime(aux.Rows[0]["martesentrada"]);
@@ -307,7 +307,7 @@ namespace logica
             {
                     aux= manejaMedico.BuscarHorarioTarde(id);                            
                    
-                    esp.IdMedico = Convert.ToInt32(aux.Rows[0]["id"]);
+                    esp.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
                     esp.LunesEntrada = Convert.ToDateTime(aux.Rows[0]["lunesentrada"]);
                     esp.LunesSalida = Convert.ToDateTime(aux.Rows[0]["lunessalida"]);
                     esp.MartesEntrada = Convert.ToDateTime(aux.Rows[0]["martesentrada"]);

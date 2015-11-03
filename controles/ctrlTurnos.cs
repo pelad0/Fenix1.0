@@ -27,23 +27,35 @@ namespace controles
                 foreach (Button btn in this.Controls)
                 {
                     if (btn.Tag.ToString() == "mañana")
+                    {
                         btn.Enabled = true;
+                        btn.BackColor = Color.LimeGreen;
+                    }
                     else
+                    {
                         btn.Enabled = false;
+                        btn.BackColor = Color.Gray;
+                    }
                 }
             }
         }
 
         public void tarde(bool estado)
         {
-            if(estado)
+            if (estado)
             {
                 foreach (Button btn in this.Controls)
                 {
                     if (btn.Tag.ToString() == "tarde")
+                    {
                         btn.Enabled = true;
+                        btn.BackColor = Color.LimeGreen;
+                    }
                     else
+                    {
                         btn.Enabled = false;
+                        btn.BackColor = Color.Gray;
+                    }
                 }
             }
         }
@@ -75,6 +87,18 @@ namespace controles
                     }
                 }
             }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if ((sender as Button).BackColor == Color.LimeGreen)
+            {
+                clsTurno t = new clsTurno();
+            }
+            else if ((sender as Button).BackColor == Color.Gold)
+	        {
+                clsSobreturno st = new clsSobreturno();
+	        }
         }
     }
 }

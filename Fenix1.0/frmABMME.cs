@@ -483,6 +483,8 @@ namespace Fenix1._0
                 dgvMedicosAlta.Rows.Remove(row);               
             }
 
+
+
             dgvMedicosAlta.Columns.Remove("idTurno");
             dgvMedicosAlta.Columns.Remove("Matricula");
             dgvMedicosAlta.Columns.Remove("Apellido");
@@ -497,16 +499,13 @@ namespace Fenix1._0
 
             if(dgvObrasSocialesAlta.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
             {
-                dgvObrasSocialesAlta.Columns.Remove("Nombre");  
-            }
-  
+                dgvObrasSocialesAlta.Columns.Remove("Nombre");
 
-            foreach (DataGridViewRow row in dgvObrasSocialesAlta.Rows)
-            {
-                dgvObrasSocialesAlta.Rows.Remove(row);
-            }
-
-                    
+                foreach (DataGridViewRow row in dgvObrasSocialesAlta.Rows)
+                {
+                    dgvObrasSocialesAlta.Rows.Remove(row);
+                }
+            }                   
 
             medicos.Clear();
 
@@ -541,11 +540,35 @@ namespace Fenix1._0
             else
             {
                 pagina--;
-               
-                dgvMedicosBaja.DataSource = null;
-                tbEspecialidadBaja.Clear();  
-                dgvObrasSocialesBaja.DataSource = null;
-     
+
+                
+
+                //LIMPIO TODO DEL DGVMEDICOSBAJA.
+                foreach (DataGridViewRow row in dgvMedicosBaja.Rows)
+                {
+                    dgvMedicosBaja.Rows.Remove(row);
+                }
+
+                dgvMedicosBaja.Columns.Remove("idTurno");
+                dgvMedicosBaja.Columns.Remove("Matricula");
+                dgvMedicosBaja.Columns.Remove("Apellido");
+
+                //LIMPIO EL TBESPECIALIDAD
+
+                tbEspecialidadBaja.Clear();
+
+
+                //LIMPIO TODO DEL DGVOBRASSOCIALES
+
+
+                if (dgvObrasSocialesBaja.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
+                {
+                    dgvObrasSocialesBaja.Columns.Remove("Nombre");
+                    foreach (DataGridViewRow row in dgvObrasSocialesBaja.Rows)
+                    {
+                        dgvObrasSocialesBaja.Rows.Remove(row);
+                    }
+                }
 
 
                 medicos.Clear();
@@ -555,19 +578,17 @@ namespace Fenix1._0
 
                 //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.
 
-       
-
                 dgvMedicosBaja.Columns.Add("idTurno", "idTurno");
                 dgvMedicosBaja.Columns["idTurno"].Visible = false;
                 dgvMedicosBaja.Columns.Add("Matricula", "Matricula");
                 dgvMedicosBaja.Columns.Add("Apellido", "Apellido");
 
-
-         
                 foreach (clsMedico med in medicos)
                 {
                     dgvMedicosBaja.Rows.Add(med.Id, med.Matricula, med.Apellido);
+
                 }
+
 
 
             }
@@ -577,10 +598,34 @@ namespace Fenix1._0
         {
             pagina++;
 
-            dgvMedicosBaja.DataSource = null;
-            tbEspecialidadBaja.Clear();
-            dgvObrasSocialesBaja.DataSource = null;
+            //LIMPIO TODO DEL DGVMEDICOSBAJA.
 
+            foreach (DataGridViewRow row in dgvMedicosBaja.Rows)
+            {
+                dgvMedicosBaja.Rows.Remove(row);
+            }
+
+
+
+
+            dgvMedicosBaja.Columns.Remove("idTurno");
+            dgvMedicosBaja.Columns.Remove("Matricula");
+            dgvMedicosBaja.Columns.Remove("Apellido");
+
+            //LIMPIO EL TBESPECIALIDAD
+
+            tbEspecialidadBaja.Clear();
+
+
+            if (dgvObrasSocialesBaja.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
+            {
+                dgvObrasSocialesBaja.Columns.Remove("Nombre");
+
+                foreach (DataGridViewRow row in dgvObrasSocialesBaja.Rows)
+                {
+                    dgvObrasSocialesBaja.Rows.Remove(row);
+                }
+            }
 
 
             medicos.Clear();
@@ -614,14 +659,40 @@ namespace Fenix1._0
             {
                 MessageBox.Show("No hay registros anteriores para mostrar", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
 
-            }
+            }         
+
             else
             {
                 pagina--;
 
-                dgvMedicosModi.DataSource = null;
-                tbEspecialidadModi.Clear();           
-                dgvObrasSocialesModi.DataSource = null;
+                
+                    
+                //LIMPIO TODO DEL DGVMEDICOSBAJA.
+                foreach (DataGridViewRow row in dgvMedicosModi.Rows)
+                {
+                    dgvMedicosModi.Rows.Remove(row);
+                }
+
+                dgvMedicosModi.Columns.Remove("idTurno");
+                dgvMedicosModi.Columns.Remove("Matricula");
+                dgvMedicosModi.Columns.Remove("Apellido");
+
+                //LIMPIO EL TBESPECIALIDAD
+
+                tbEspecialidadModi.Clear();
+                    
+                    
+                //LIMPIO TODO DEL DGVOBRASSOCIALES
+
+
+                if (dgvObrasSocialesModi.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
+                {
+                    dgvObrasSocialesModi.Columns.Remove("Nombre");
+                    foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
+                    {
+                        dgvObrasSocialesModi.Rows.Remove(row);
+                    }
+                }
 
 
                 medicos.Clear();
@@ -629,8 +700,7 @@ namespace Fenix1._0
                 medicos = reposMedico.Todo(pagina);
 
 
-                //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.            
-
+                //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.
 
                 dgvMedicosModi.Columns.Add("idTurno", "idTurno");
                 dgvMedicosModi.Columns["idTurno"].Visible = false;
@@ -640,6 +710,7 @@ namespace Fenix1._0
                 foreach (clsMedico med in medicos)
                 {
                     dgvMedicosModi.Rows.Add(med.Id, med.Matricula, med.Apellido);
+
                 }
             }
         }
@@ -648,9 +719,35 @@ namespace Fenix1._0
         {
             pagina++;
 
-            dgvMedicosModi.DataSource = null;
+            //LIMPIO TODO DEL DGVMEDICOSMODI.
+
+            foreach (DataGridViewRow row in dgvMedicosModi.Rows)
+            {
+                dgvMedicosModi.Rows.Remove(row);
+            }
+
+
+
+
+            dgvMedicosModi.Columns.Remove("idTurno");
+            dgvMedicosModi.Columns.Remove("Matricula");
+            dgvMedicosModi.Columns.Remove("Apellido");
+
+            //LIMPIO EL TBESPECIALIDAD
+
             tbEspecialidadModi.Clear();
-            dgvObrasSocialesModi.DataSource = null;
+
+
+
+            if (dgvObrasSocialesModi.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
+            {
+                dgvObrasSocialesModi.Columns.Remove("Nombre");
+
+                foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
+                {
+                    dgvObrasSocialesModi.Rows.Remove(row);
+                }
+            }
 
 
             medicos.Clear();
@@ -658,13 +755,16 @@ namespace Fenix1._0
             medicos = reposMedico.Todo(pagina);
 
 
-            //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.            
+            //Muesto solamente matricula y apellido de cada médico en cada dgv y escondo ID.
+
 
 
             dgvMedicosModi.Columns.Add("idTurno", "idTurno");
             dgvMedicosModi.Columns["idTurno"].Visible = false;
             dgvMedicosModi.Columns.Add("Matricula", "Matricula");
             dgvMedicosModi.Columns.Add("Apellido", "Apellido");
+
+
 
             foreach (clsMedico med in medicos)
             {
@@ -711,7 +811,7 @@ namespace Fenix1._0
             int idMed = int.Parse(dgvMedicosAlta.Rows[dgvMedicosAlta.CurrentRow.Index].Cells[0].Value.ToString());            
 
 
-            obraXmed = repoObraPorMed.Todo(0); 
+            obraXmed = repoObraPorMed.TodasObras(idMed); 
 
             clsObraSocial obraSocial;
 
@@ -737,12 +837,24 @@ namespace Fenix1._0
         private void dgvMedicosBaja_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            dgvObrasSocialesBaja.DataSource = null;
+            if (dgvObrasSocialesBaja.Columns.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE HA CREANDO ATNES.
+            {
+                dgvObrasSocialesBaja.Columns.Remove("Nombre");
+                foreach (DataGridViewRow row in dgvObrasSocialesBaja.Rows)
+                {
+                    dgvObrasSocialesBaja.Rows.Remove(row);
+                }
+            }
+
             tbEspecialidadBaja.Clear();
 
             dgvObrasSocialesBaja.Columns.Add("Nombre", "Nombre");
 
-            int idMed = int.Parse(dgvObrasSocialesBaja.Rows[dgvObrasSocialesBaja.CurrentRow.Index].Cells[0].Value.ToString());
+            
+
+            //CARGO OBRAS SOCIALES
+
+            int idMed = int.Parse(dgvMedicosBaja.Rows[dgvMedicosBaja.CurrentRow.Index].Cells[0].Value.ToString());
 
             obraXmed = repoObraPorMed.TodasObras(idMed);
 
@@ -758,21 +870,33 @@ namespace Fenix1._0
 
             med = reposMedico.buscarPorId(idMed);
 
-            tbEspecialidadAlta.Text = med.Especialidad; 
-
-
-
+            tbEspecialidadBaja.Text = med.Especialidad; 
 
         }
 
         private void dgvMedicosModi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {          
-            dgvObrasSocialesModi.DataSource = null;
+        {
+
+
+            if (dgvObrasSocialesModi.Columns.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE HA CREANDO ATNES.
+            {
+                dgvObrasSocialesModi.Columns.Remove("Nombre");
+                foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
+                {
+                    dgvObrasSocialesModi.Rows.Remove(row);
+                }
+            }
+
             tbEspecialidadModi.Clear();
 
             dgvObrasSocialesModi.Columns.Add("Nombre", "Nombre");
 
-            int idMed = int.Parse(dgvObrasSocialesModi.Rows[dgvObrasSocialesModi.CurrentRow.Index].Cells[0].Value.ToString());
+
+
+            //CARGO OBRAS SOCIALES
+
+
+            int idMed = int.Parse(dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[0].Value.ToString());
 
             obraXmed = repoObraPorMed.TodasObras(idMed);
 
@@ -789,6 +913,7 @@ namespace Fenix1._0
             med = reposMedico.buscarPorId(idMed);
 
             tbEspecialidadModi.Text = med.Especialidad; 
+            
         }
 
         private void tpAlta_Click(object sender, EventArgs e)
@@ -828,7 +953,8 @@ namespace Fenix1._0
                 cbEspecialidades.Items.Add(es.Descripcion);
             }
         }
-        
+
+      
         
     }
 }

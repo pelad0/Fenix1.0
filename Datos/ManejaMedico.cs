@@ -164,7 +164,7 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                aux = manager.consultar("select * from horarioManiana where idmedico="+id+" and activo=1");
+                aux = manager.consultar("select * from horarioMañana where idmedico="+id+" and activo=1");
             }
             catch(Exception ex)
             {
