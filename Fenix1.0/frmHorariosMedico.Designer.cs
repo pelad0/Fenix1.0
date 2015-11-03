@@ -849,9 +849,11 @@
             this.Controls.Add(this.rbAmbos);
             this.Controls.Add(this.rbMT);
             this.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmHorariosMedico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmHorariosMedico";
             this.Load += new System.EventHandler(this.frmHorariosMedico_Load);
             this.pnlMedioTiempo.ResumeLayout(false);
             this.pnlMedioTiempo.PerformLayout();

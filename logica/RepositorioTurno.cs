@@ -51,12 +51,12 @@ namespace logica
             }
         }
 
-        public void Modificacion(IEntidad turno,int id)
+        public void Modificacion(IEntidad turno)
         {
             try
             {
 
-                manejaTurno.Modificacion(turno, id);
+                manejaTurno.Modificacion(turno);
             }
             catch (SqlException ex)
             {
