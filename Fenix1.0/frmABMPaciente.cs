@@ -183,8 +183,15 @@ namespace Fenix1._0
 
         private void btnDarTurno_Click(object sender, EventArgs e)
         {
-            frmABMTurnos t = new frmABMTurnos(u, pacientes[dgvAlta.CurrentRow.Index]);
-            t.ShowDialog();
+            if (string.IsNullOrWhiteSpace(pacientes[dgvAlta.CurrentRow.Index].Nombre))
+            {
+                frmABMTurnos t = new frmABMTurnos(u, pacientes[dgvAlta.CurrentRow.Index]);
+                t.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione paciente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
         }
 
         private void iniciar()
