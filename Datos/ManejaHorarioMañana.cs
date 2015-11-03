@@ -35,7 +35,7 @@ namespace Datos
             clsHorario esp = (clsHorario)entidad;
             try
             {
-                manager.ejecutar("update horarioManiana set activo=0 where idmedico=" + esp.IdMedico);
+                manager.ejecutar("update horarioMañana set activo=0 where idmedico=" + esp.IdMedico);
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace Datos
             clsHorario esp = (clsHorario)entidad;
             try
             {
-                manager.ejecutar("update horarioManiana set lunesentrada='" + esp.LunesEntrada+"',lunessalida='"+esp.LunesSalida+"',martesentrada='"+esp.MartesEntrada+"',martessalida='"+esp.MartesSalida+"',miercolesentrada='"+esp.MiercolesEntrada+"',miercolessalida='"+esp.MiercolesSalida+"',juevesentrada='"+esp.JuevesEntrada+"',juevessalida='"+esp.JuevesSalida+"',viernesentrada='"+esp.ViernesEntrada+"',viernessalida='"+esp.ViernesSalida+"',sabadoentrada='"+esp.SabadoEntrada+"',sabadosalida='"+esp.SabadoSalida+"',domingoentrada='"+esp.DomingoEntrada+"',domingosalida='"+esp.DomingoSalida+",");
+                manager.ejecutar("update horarioMañana set lunesentrada='" + esp.LunesEntrada+"',lunessalida='"+esp.LunesSalida+"',martesentrada='"+esp.MartesEntrada+"',martessalida='"+esp.MartesSalida+"',miercolesentrada='"+esp.MiercolesEntrada+"',miercolessalida='"+esp.MiercolesSalida+"',juevesentrada='"+esp.JuevesEntrada+"',juevessalida='"+esp.JuevesSalida+"',viernesentrada='"+esp.ViernesEntrada+"',viernessalida='"+esp.ViernesSalida+"',sabadoentrada='"+esp.SabadoEntrada+"',sabadosalida='"+esp.SabadoSalida+"',domingoentrada='"+esp.DomingoEntrada+"',domingosalida='"+esp.DomingoSalida+",");
             }
             catch (Exception ex)
             {
@@ -62,7 +62,7 @@ namespace Datos
             clsHorario esp = new clsHorario();
             try
             {
-                aux = manager.consultar("select * from horarioManiana where idmedico=" + id + "and activo=1");
+                aux = manager.consultar("select * from horarioMañana where idmedico=" + id + "and activo=1");
                 esp.IdMedico = Convert.ToInt32(aux.Rows[0]["id"]);
                 esp.LunesEntrada = Convert.ToDateTime(aux.Rows[0]["lunesentrada"]);
                 esp.LunesSalida = Convert.ToDateTime(aux.Rows[0]["lunessalida"]);
@@ -92,7 +92,7 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                aux = manager.consultar("select * from horarioManiana where activo=1");
+                aux = manager.consultar("select * from horarioMañana where activo=1");
                 //aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM especialidad) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN" + pagina * 10 + "AND" + (pagina * 10) + 10);
             }
             catch (Exception ex)
