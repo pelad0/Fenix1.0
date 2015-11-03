@@ -33,14 +33,14 @@ namespace entidades
             this.estado = estado;
         }
 
-        public clsTurno(int idMedico, int idPaciente, DateTime fecha, double costo, int idUsuario,bool estado)
+        public clsTurno(int idMedico, int idPaciente, DateTime fecha, int idUsuario)
         {
             this.idMedico = idMedico;
             this.idPaciente = idPaciente;
             this.fecha = fecha;
-            this.costo = costo;
+            this.costo = 0;
             this.idUsuario = idUsuario;
-            this.estado = estado;
+            this.estado = false;
 
         }
         public int Id
