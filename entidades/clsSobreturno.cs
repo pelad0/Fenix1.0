@@ -83,5 +83,17 @@ namespace entidades
             get { return estado; }
             set { estado = value; }
         }
+
+        public bool equal(clsSobreturno t)
+        {
+            if (this.Fecha == t.fecha && this.idMedico == t.idMedico)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

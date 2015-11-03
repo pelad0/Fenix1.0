@@ -25,8 +25,8 @@ namespace Fenix1._0
         RepositorioTurno rt = new RepositorioTurno();
         RepositorioSobreturno rst = new RepositorioSobreturno();
         List<clsMedico> medicos = new List<clsMedico>();
-        List<clsTurno> turnos = new List<clsTurno>();
-        List<clsSobreturno> sobreTurno = new List<clsSobreturno>();
+        List<clsTurnoVista> turnos = new List<clsTurnoVista>();
+        List<clsSobreTurnoVista> sobreTurno = new List<clsSobreTurnoVista>();
         List<string> especialidades = new List<string>();
         clsHorario mañana = new clsHorario();
         clsHorario tarde = new clsHorario();
@@ -112,7 +112,7 @@ namespace Fenix1._0
                 horariosMañana(true);
                 horariosTarde(true);
             }
-            foreach (clsTurno tur in turnos)
+            foreach (clsTurnoVista tur in turnos)
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
@@ -127,7 +127,7 @@ namespace Fenix1._0
                     }
                 }
             }
-            foreach (clsSobreturno sobTur in sobreTurno)
+            foreach (clsSobreTurnoVista sobTur in sobreTurno)
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
@@ -154,7 +154,6 @@ namespace Fenix1._0
             dgvEliminar.DataSource = null;
             dgvEliminar.DataSource = rt.Todo(pagina);
         }
-
 
         public void horariosMañana(bool estado)
         {
@@ -186,9 +185,9 @@ namespace Fenix1._0
             }
         }
 
-        public void turnosDados(List<clsTurno> turnos)
+        public void turnosDados(List<clsTurnoVista> turnos)
         {
-            foreach (clsTurno turno in turnos)
+            foreach (clsTurnoVista turno in turnos)
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
@@ -201,9 +200,9 @@ namespace Fenix1._0
             }
         }
 
-        public void sobreTurnosDados(List<clsSobreturno> sobreTurnos)
+        public void sobreTurnosDados(List<clsSobreTurnoVista> sobreTurnos)
         {
-            foreach (clsSobreturno sturno in sobreTurnos)
+            foreach (clsSobreTurnoVista sturno in sobreTurnos)
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
@@ -230,8 +229,12 @@ namespace Fenix1._0
             DialogResult res = MessageBox.Show("Confirme turno: Medico "+med.Apellido+" paciente, "+pac.nomCompleto()+" "+fecha.ToLongDateString()+" "+btn.Text, "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (res == DialogResult.OK)
             {
-                DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0,2)), Convert.ToInt32(btn.Text.Substring(3,2)),0);
+                DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0,2)), Convert.ToInt32(btn.Text.Substring(3,2)),0);        
                 clsTurno t = new clsTurno(med.Id, pac.Id, d, u.Id);
+                if (!rt.obtenerTurno(med.Id, t.Fecha.Date).Contains(t))
+                {
+                    
+                }
                 try
                 {
                     rt.Alta(t);

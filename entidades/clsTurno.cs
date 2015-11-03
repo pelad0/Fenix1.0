@@ -85,6 +85,17 @@ namespace entidades
             set { estado = value; }
         }
 
+        public bool equal(clsTurno t)
+        {
+            if (this.Fecha==t.fecha && this.idMedico==t.idMedico)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
                
     }
 }
