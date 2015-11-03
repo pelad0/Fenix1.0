@@ -372,8 +372,6 @@ namespace Fenix1._0
         {
             clsMedico medico = new clsMedico();
            
-            //List<string> obra = new List<string>();
-
 
             //TOMO EL ID DEL MEDICO SELECCIONADO Y TRAIGO SUS DATOS CON METODO BUSCAR POR ID
             int id = int.Parse(dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[0].Value.ToString());
@@ -385,14 +383,8 @@ namespace Fenix1._0
 
             frmEditarMedico editarMedico = new frmEditarMedico(medico);
             editarMedico.ShowDialog();
+            Actualizar();
 
-
-            //foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
-            //{
-            //    obra.Add(row.Cells[0].Value.ToString());
-            //}
-              
-            //medico.ObraSocial = obra;
 
 
 
