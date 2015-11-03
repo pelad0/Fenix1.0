@@ -247,7 +247,7 @@ namespace Fenix1._0
                     }
 
 
-
+                    medNuevo.Id = med.Id;
                     repoMedico.Modificacion(medNuevo);
 
                     MessageBox.Show("Médico modificado con éxito");
