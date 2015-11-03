@@ -63,7 +63,7 @@ namespace Datos
             clsMedicoDatos med = (clsMedicoDatos)entidad;
             try
             {
-                manager.ejecutar("update medico set nombre="+med.Nombre+",apellido="+med.Apellido+",dni="+med.Dni+",especialidad="+med.Especialidad+",matricula="+med.Matricula+ "where id=" + med.Id);
+                manager.ejecutar("update medico set nombre='"+med.Nombre+"',apellido='"+med.Apellido+"',dni="+med.Dni+",especialidad="+med.Especialidad+",matricula="+med.Matricula+ "where id=" + med.Id);
             }
             catch (Exception ex)
             {
