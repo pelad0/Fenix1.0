@@ -67,8 +67,8 @@ namespace Fenix1._0
             
             turnos.Clear();
             sobreTurno.Clear();
-            turnos = rt.obtenerTurno(med.Id, dtpFecha.Value);//no tocar
-            sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value);
+            turnos = rt.obtenerTurnoVista(med.Id, dtpFecha.Value);//no tocar
+            sobreTurno = rst.obtenerSobreTurnoVista(med.Id, dtpFecha.Value);
             turnosDados(turnos);
             sobreTurnosDados(sobreTurno);
             mañana = rm.BuscarHorarioMañana(med.Id);
@@ -231,10 +231,8 @@ namespace Fenix1._0
             {
                 DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0,2)), Convert.ToInt32(btn.Text.Substring(3,2)),0);        
                 clsTurno t = new clsTurno(med.Id, pac.Id, d, u.Id);
-                if (!rt.obtenerTurno(med.Id, t.Fecha.Date).Contains(t))
-                {
-                    
-                }
+                List<clsTurno> lt = rt.obtenerTurno(med.Id, t.Fecha);
+
                 try
                 {
                     rt.Alta(t);
