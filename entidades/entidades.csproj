@@ -54,6 +54,7 @@
     <Compile Include="clsRecibo.cs" />
     <Compile Include="clsSobreturno.cs" />
     <Compile Include="clsTurno.cs" />
+    <Compile Include="clsTurnoVista.cs" />
     <Compile Include="clsUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
