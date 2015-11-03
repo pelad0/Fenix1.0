@@ -47,7 +47,7 @@ namespace Datos
 
         public void Baja(IEntidad entidad)
         {
-            clsMedico med = (clsMedico)entidad;
+            clsMedicoDatos med = (clsMedicoDatos)entidad;
             try
             {
                 manager.ejecutar("update medico set activo=0 where id=" + med.Id);
@@ -60,7 +60,7 @@ namespace Datos
 
         public void Modificacion(IEntidad entidad)
         {
-            clsMedico med = (clsMedico)entidad;
+            clsMedicoDatos med = (clsMedicoDatos)entidad;
             try
             {
                 manager.ejecutar("update medico set nombre="+med.Nombre+",apellido="+med.Apellido+",dni="+med.Dni+",especialidad="+med.Especialidad+",matricula="+med.Matricula+ "where id=" + med.Id);
