@@ -14,12 +14,13 @@ namespace logica
     public class RepositorioTurno
     {
         ManejaTurno manejaTurno = new ManejaTurno();
+        ManejaMedico manejamedico = new ManejaMedico();
+        ManejaPaciente manejapaciente = new ManejaPaciente();
         
         public void Alta(IEntidad turno)
         {
             try
-            {
-               
+            {               
                 manejaTurno.Alta(turno);
             }
             catch (SqlException ex)
@@ -124,7 +125,8 @@ namespace logica
         {
             DataTable tabla;
             List<clsTurno> lista = new List<clsTurno>();
-
+            clsMedico aux;
+            clsPaciente aux2;
             try
             {
                 tabla = manejaTurno.BuscarTurnoPorMedico(id,fecha.ToShortDateString());
@@ -135,7 +137,7 @@ namespace logica
                         turno.Id = Convert.ToInt32(aux["id"]);
                         turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
                         turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
-                        turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                        turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);  
                         turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                         turno.Estado = Convert.ToBoolean(aux["estado"]);
 
