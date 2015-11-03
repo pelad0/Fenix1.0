@@ -219,7 +219,6 @@ namespace logica
             return paciente;
         }
 
-
         public List<clsSobreturno> obtenerSobreturno(int id, DateTime fecha)//implementar
         {
             DataTable tabla;
