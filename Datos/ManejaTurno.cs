@@ -23,7 +23,7 @@ namespace Datos
             clsTurno tur = (clsTurno)entidad;
             try
             {
-                manager.ejecutar("Insert into turno(idpaciente,idmedico,fecha,costo,estado,idusuario) values('" + tur.IdPaciente + "','" + tur.IdPaciente + "'," + tur.Fecha + "," + tur.Costo + "," + tur.Estado +","+tur.IdUsuario+");SELECT @@identity;");
+                manager.ejecutar("Insert into turno(idpaciente,idmedico,fecha,costo,estado,idusuario) values(" + tur.IdPaciente + "," + tur.IdMedico + ",'" + tur.Fecha + "'," + tur.Costo + "," + 0 +","+tur.IdUsuario+");SELECT @@identity;");
             }
             catch (Exception ex)
             {
