@@ -90,35 +90,26 @@ namespace Fenix1._0
 
             //CARGO TODAS LAS OBRAS SOCIALES Y TAMBIEN ME FIJO SI ESTAN EN EL MEDICO A EDITAR, SI ESO PASA, LAS CHECKEO EN TRUE.
 
-            foreach (clsObraXMedico obramed in obraXmed)        //POR CADA OBRA DEL MEDICO
+
+            int i = 0;
+            foreach(clsObraSocial obr in listaObras)        //POR CADA OBRA EXISTENTE
             {
-                obraSocial = reposObraSocial.buscarPorId(obramed.IdObra);
-                clbObraSocial.Items.Add(obraSocial.Nombre);
 
-                foreach(clsObraSocial obr in listaObras)            //POR CADA OBRA EXISTENTE
-                {                   
+                clbObraSocial.Items.Add(obr.Nombre);
+                obrasBajas.Add(obr);
 
-                    if(obraSocial.Nombre == obr.Nombre)             //SI LOS NOMBRES SON IGUALES
+                foreach(clsObraXMedico obramed in obraXmed)
+                {
+                    obraSocial = reposObraSocial.buscarPorId(obramed.IdObra);
+             
+                    if(obr.Nombre == obraSocial.Nombre)
                     {
-                        
-                        obrasBajas.Add(obr);
-
-                        for (int i = 0; i < clbObraSocial.Items.Count; i++)
-                        {
-                            if(clbObraSocial.Items[i].ToString() == obraSocial.Nombre)
-                            {
-                                clbObraSocial.SetItemChecked(i, true);
-                            }
-                        }
-
+                        clbObraSocial.SetItemChecked(i, true);
                     }
-                    
                 }
+                i++;
 
-              
             }
-
-
 
             
 
