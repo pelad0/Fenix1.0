@@ -299,7 +299,7 @@ namespace Fenix1._0
             if (res == DialogResult.OK)
             {
                 DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0, 2)), Convert.ToInt32(btn.Text.Substring(3, 2)), 0);
-                clsSobreturno t = new clsSobreturno( ) //(med.Id, pac.Id, d, u.Id);
+                clsSobreturno t = new clsSobreturno(med.Id, pac.Id, d, u.Id);
                 List<clsTurno> lt = rt.obtenerTurno(med.Id, t.Fecha);
 
                 try
