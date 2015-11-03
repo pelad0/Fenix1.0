@@ -384,6 +384,7 @@ namespace Fenix1._0
             //LLAMO AL FORMULARIO QUE EDITA EL MEDICO, CON TODOS LOS DATOS ACTUALES DE EL MEDICO A EDITAR.
 
             frmEditarMedico editarMedico = new frmEditarMedico(medico);
+            editarMedico.ShowDialog();
 
 
             //foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
@@ -784,7 +785,9 @@ namespace Fenix1._0
 
             reposMedico.Baja(med);
 
-            MessageBox.Show("Médico dado de alta");
+            MessageBox.Show("Médico dado de baja");
+
+            Actualizar();
 
         }
 
