@@ -14,12 +14,12 @@ namespace logica
     public class RepositorioSobreturno
     {       
         ManejaSobreturno manejaTurno = new ManejaSobreturno();
-        public void Alta(IEntidad turno, int id)
+        public void Alta(IEntidad turno)
         {
             try
             {
 
-                manejaTurno.Alta(turno, id);
+                manejaTurno.Alta(turno);
             }
             catch (SqlException ex)
             {
@@ -50,12 +50,12 @@ namespace logica
             }
         }
 
-        public void Modificacion(IEntidad turno, int id)
+        public void Modificacion(IEntidad turno)
         {
             try
             {
 
-                manejaTurno.Modificacion(turno, id);
+                manejaTurno.Modificacion(turno);
             }
             catch (SqlException ex)
             {

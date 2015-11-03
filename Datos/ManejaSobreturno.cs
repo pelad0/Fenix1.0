@@ -19,12 +19,12 @@ namespace Datos
             {
                 manager = new BdMetodos();
             }
-            public void Alta(IEntidad entidad, int idusuario)
+            public void Alta(IEntidad entidad)
             {
                 clsSobreturno tur = (clsSobreturno)entidad;
                 try
                 {
-                    manager.ejecutar("Insert into sobreturno(idpaciente,idmedico,fecha,costo,estado,idusuario) values('" + tur.IdPaciente + "','" + tur.IdPaciente + "'," + tur.Fecha + "," + tur.Costo + "," + tur.Estado + "," + idusuario + ");SELECT @@identity;");
+                    manager.ejecutar("Insert into sobreturno(idpaciente,idmedico,fecha,costo,estado,idusuario) values('" + tur.IdPaciente + "','" + tur.IdPaciente + "'," + tur.Fecha + "," + tur.Costo + "," + tur.Estado + "," + tur.IdUsuario + ");SELECT @@identity;");
                 }
                 catch (Exception ex)
                 {
@@ -49,12 +49,12 @@ namespace Datos
                 }
             }
 
-            public void Modificacion(IEntidad entidad, int idusuario)
+            public void Modificacion(IEntidad entidad)
             {
                 clsSobreturno tur = (clsSobreturno)entidad;
                 try
                 {
-                    manager.ejecutar("update sobreturno set idpaciente=" + tur.IdPaciente + ",idmedico=" + tur.IdMedico + ",fecha=" + tur.Fecha + ",costo=" + tur.Costo + ",estado=" + tur.Estado + ",idusuario= " + idusuario + "where id=" + tur.Id);
+                    manager.ejecutar("update sobreturno set idpaciente=" + tur.IdPaciente + ",idmedico=" + tur.IdMedico + ",fecha=" + tur.Fecha + ",costo=" + tur.Costo + ",estado=" + tur.Estado + ",idusuario= " + tur.IdUsuario + "where id=" + tur.Id);
                 }
                 catch (Exception ex)
                 {
@@ -130,15 +130,7 @@ namespace Datos
             }
 
 
-            public void Alta(IEntidad entidad)
-            {
-                throw new NotImplementedException();
-            }
 
-            public void Modificacion(IEntidad entidad)
-            {
-                throw new NotImplementedException();
-            }
         }
     }
 

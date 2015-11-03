@@ -144,7 +144,7 @@ namespace Fenix1._0
 
                     }
 
-                    MessageBox.Show("Médico dado de alta");
+                    MessageBox.Show("Médico dado de alta","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     LimpiarControles();
 
                 }
@@ -153,7 +153,7 @@ namespace Fenix1._0
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error al cargar al médico: "+ex.Message);
+                MessageBox.Show("Se ha producido el Sgte. error al cargar al médico: "+ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             
         }

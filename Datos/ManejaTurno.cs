@@ -53,7 +53,7 @@ namespace Datos
             clsTurno tur = (clsTurno)entidad;
             try
             {
-                manager.ejecutar("update turno set idpaciente=" + tur.IdPaciente + ",idmedico=" + tur.IdMedico + ",fecha=" + tur.Fecha+ ",costo=" +tur.Costo + ",estado=" + tur.Estado +",idusuario= "+tur.IdUsuario+"where id=" + tur.Id);
+                manager.ejecutar("update turno set idpaciente=" + tur.IdPaciente + ",idmedico=" + tur.IdMedico + ",fecha='" + tur.Fecha+ "',costo=" +tur.Costo + ",estado=" + tur.Estado +",idusuario= "+tur.IdUsuario+"where id=" + tur.Id);
             }
             catch (Exception ex)
             {
