@@ -36,6 +36,9 @@
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
             this.pnlBotones = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tar10 = new System.Windows.Forms.Button();
             this.tar5 = new System.Windows.Forms.Button();
             this.mañ10 = new System.Windows.Forms.Button();
@@ -73,9 +76,6 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.pnlBotones.SuspendLayout();
@@ -101,7 +101,10 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.Controls.Add(this.label5);
+            this.tpAlta.Controls.Add(this.label4);
             this.tpAlta.Controls.Add(this.pnlBotones);
+            this.tpAlta.Controls.Add(this.label3);
             this.tpAlta.Controls.Add(this.btnTurnoXDia);
             this.tpAlta.Controls.Add(this.dtpFecha);
             this.tpAlta.Controls.Add(this.label2);
@@ -118,9 +121,6 @@
             // 
             // pnlBotones
             // 
-            this.pnlBotones.Controls.Add(this.label5);
-            this.pnlBotones.Controls.Add(this.label4);
-            this.pnlBotones.Controls.Add(this.label3);
             this.pnlBotones.Controls.Add(this.tar10);
             this.pnlBotones.Controls.Add(this.tar5);
             this.pnlBotones.Controls.Add(this.mañ10);
@@ -146,17 +146,47 @@
             this.pnlBotones.Controls.Add(this.mañ2);
             this.pnlBotones.Controls.Add(this.mañ1);
             this.pnlBotones.Enabled = false;
-            this.pnlBotones.Location = new System.Drawing.Point(6, 125);
+            this.pnlBotones.Location = new System.Drawing.Point(6, 156);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(624, 314);
+            this.pnlBotones.Size = new System.Drawing.Size(624, 283);
             this.pnlBotones.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(436, 129);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 15);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Horario Completo";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Gold;
+            this.label4.Location = new System.Drawing.Point(238, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(161, 15);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Sobre Turno Disponible";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label3.Location = new System.Drawing.Point(82, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 15);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Turno Disponible";
             // 
             // tar10
             // 
             this.tar10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar10.BackColor = System.Drawing.Color.Gray;
             this.tar10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar10.Location = new System.Drawing.Point(498, 193);
+            this.tar10.Location = new System.Drawing.Point(498, 177);
             this.tar10.Margin = new System.Windows.Forms.Padding(4);
             this.tar10.Name = "tar10";
             this.tar10.Size = new System.Drawing.Size(112, 39);
@@ -171,7 +201,7 @@
             this.tar5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar5.BackColor = System.Drawing.Color.Gray;
             this.tar5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar5.Location = new System.Drawing.Point(498, 151);
+            this.tar5.Location = new System.Drawing.Point(498, 135);
             this.tar5.Margin = new System.Windows.Forms.Padding(4);
             this.tar5.Name = "tar5";
             this.tar5.Size = new System.Drawing.Size(112, 39);
@@ -186,7 +216,7 @@
             this.mañ10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mañ10.BackColor = System.Drawing.Color.Gray;
             this.mañ10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ10.Location = new System.Drawing.Point(498, 83);
+            this.mañ10.Location = new System.Drawing.Point(498, 67);
             this.mañ10.Margin = new System.Windows.Forms.Padding(4);
             this.mañ10.Name = "mañ10";
             this.mañ10.Size = new System.Drawing.Size(112, 39);
@@ -201,7 +231,7 @@
             this.mañ5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mañ5.BackColor = System.Drawing.Color.Gray;
             this.mañ5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ5.Location = new System.Drawing.Point(498, 41);
+            this.mañ5.Location = new System.Drawing.Point(498, 25);
             this.mañ5.Margin = new System.Windows.Forms.Padding(4);
             this.mañ5.Name = "mañ5";
             this.mañ5.Size = new System.Drawing.Size(112, 39);
@@ -216,7 +246,7 @@
             this.tar14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar14.BackColor = System.Drawing.Color.Gray;
             this.tar14.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar14.Location = new System.Drawing.Point(437, 235);
+            this.tar14.Location = new System.Drawing.Point(437, 219);
             this.tar14.Margin = new System.Windows.Forms.Padding(4);
             this.tar14.Name = "tar14";
             this.tar14.Size = new System.Drawing.Size(112, 39);
@@ -231,7 +261,7 @@
             this.tar9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar9.BackColor = System.Drawing.Color.Gray;
             this.tar9.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar9.Location = new System.Drawing.Point(377, 193);
+            this.tar9.Location = new System.Drawing.Point(377, 177);
             this.tar9.Margin = new System.Windows.Forms.Padding(4);
             this.tar9.Name = "tar9";
             this.tar9.Size = new System.Drawing.Size(112, 39);
@@ -246,7 +276,7 @@
             this.tar4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar4.BackColor = System.Drawing.Color.Gray;
             this.tar4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar4.Location = new System.Drawing.Point(377, 151);
+            this.tar4.Location = new System.Drawing.Point(377, 135);
             this.tar4.Margin = new System.Windows.Forms.Padding(4);
             this.tar4.Name = "tar4";
             this.tar4.Size = new System.Drawing.Size(112, 39);
@@ -261,7 +291,7 @@
             this.mañ9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mañ9.BackColor = System.Drawing.Color.Gray;
             this.mañ9.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ9.Location = new System.Drawing.Point(377, 83);
+            this.mañ9.Location = new System.Drawing.Point(377, 67);
             this.mañ9.Margin = new System.Windows.Forms.Padding(4);
             this.mañ9.Name = "mañ9";
             this.mañ9.Size = new System.Drawing.Size(112, 39);
@@ -276,7 +306,7 @@
             this.tar13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar13.BackColor = System.Drawing.Color.Gray;
             this.tar13.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar13.Location = new System.Drawing.Point(316, 235);
+            this.tar13.Location = new System.Drawing.Point(316, 219);
             this.tar13.Margin = new System.Windows.Forms.Padding(4);
             this.tar13.Name = "tar13";
             this.tar13.Size = new System.Drawing.Size(112, 39);
@@ -291,7 +321,7 @@
             this.mañ4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mañ4.BackColor = System.Drawing.Color.Gray;
             this.mañ4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ4.Location = new System.Drawing.Point(377, 41);
+            this.mañ4.Location = new System.Drawing.Point(377, 25);
             this.mañ4.Margin = new System.Windows.Forms.Padding(4);
             this.mañ4.Name = "mañ4";
             this.mañ4.Size = new System.Drawing.Size(112, 39);
@@ -306,7 +336,7 @@
             this.tar12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar12.BackColor = System.Drawing.Color.Gray;
             this.tar12.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar12.Location = new System.Drawing.Point(195, 235);
+            this.tar12.Location = new System.Drawing.Point(195, 219);
             this.tar12.Margin = new System.Windows.Forms.Padding(4);
             this.tar12.Name = "tar12";
             this.tar12.Size = new System.Drawing.Size(112, 39);
@@ -321,7 +351,7 @@
             this.tar8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar8.BackColor = System.Drawing.Color.Gray;
             this.tar8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar8.Location = new System.Drawing.Point(256, 193);
+            this.tar8.Location = new System.Drawing.Point(256, 177);
             this.tar8.Margin = new System.Windows.Forms.Padding(4);
             this.tar8.Name = "tar8";
             this.tar8.Size = new System.Drawing.Size(112, 39);
@@ -336,7 +366,7 @@
             this.tar7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar7.BackColor = System.Drawing.Color.Gray;
             this.tar7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar7.Location = new System.Drawing.Point(135, 193);
+            this.tar7.Location = new System.Drawing.Point(135, 177);
             this.tar7.Margin = new System.Windows.Forms.Padding(4);
             this.tar7.Name = "tar7";
             this.tar7.Size = new System.Drawing.Size(112, 39);
@@ -351,7 +381,7 @@
             this.tar3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar3.BackColor = System.Drawing.Color.Gray;
             this.tar3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar3.Location = new System.Drawing.Point(256, 151);
+            this.tar3.Location = new System.Drawing.Point(256, 135);
             this.tar3.Margin = new System.Windows.Forms.Padding(4);
             this.tar3.Name = "tar3";
             this.tar3.Size = new System.Drawing.Size(112, 39);
@@ -366,7 +396,7 @@
             this.tar2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar2.BackColor = System.Drawing.Color.Gray;
             this.tar2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar2.Location = new System.Drawing.Point(135, 151);
+            this.tar2.Location = new System.Drawing.Point(135, 135);
             this.tar2.Margin = new System.Windows.Forms.Padding(4);
             this.tar2.Name = "tar2";
             this.tar2.Size = new System.Drawing.Size(112, 39);
@@ -381,7 +411,7 @@
             this.tar11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar11.BackColor = System.Drawing.Color.Gray;
             this.tar11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar11.Location = new System.Drawing.Point(74, 235);
+            this.tar11.Location = new System.Drawing.Point(74, 219);
             this.tar11.Margin = new System.Windows.Forms.Padding(4);
             this.tar11.Name = "tar11";
             this.tar11.Size = new System.Drawing.Size(112, 39);
@@ -396,7 +426,7 @@
             this.mañ8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mañ8.BackColor = System.Drawing.Color.Gray;
             this.mañ8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ8.Location = new System.Drawing.Point(256, 83);
+            this.mañ8.Location = new System.Drawing.Point(256, 67);
             this.mañ8.Margin = new System.Windows.Forms.Padding(4);
             this.mañ8.Name = "mañ8";
             this.mañ8.Size = new System.Drawing.Size(112, 39);
@@ -411,7 +441,7 @@
             this.tar6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar6.BackColor = System.Drawing.Color.Gray;
             this.tar6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar6.Location = new System.Drawing.Point(14, 193);
+            this.tar6.Location = new System.Drawing.Point(14, 177);
             this.tar6.Margin = new System.Windows.Forms.Padding(4);
             this.tar6.Name = "tar6";
             this.tar6.Size = new System.Drawing.Size(112, 39);
@@ -426,7 +456,7 @@
             this.mañ7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mañ7.BackColor = System.Drawing.Color.Gray;
             this.mañ7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ7.Location = new System.Drawing.Point(135, 83);
+            this.mañ7.Location = new System.Drawing.Point(135, 67);
             this.mañ7.Margin = new System.Windows.Forms.Padding(4);
             this.mañ7.Name = "mañ7";
             this.mañ7.Size = new System.Drawing.Size(112, 39);
@@ -441,7 +471,7 @@
             this.tar1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tar1.BackColor = System.Drawing.Color.Gray;
             this.tar1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tar1.Location = new System.Drawing.Point(14, 151);
+            this.tar1.Location = new System.Drawing.Point(14, 135);
             this.tar1.Margin = new System.Windows.Forms.Padding(4);
             this.tar1.Name = "tar1";
             this.tar1.Size = new System.Drawing.Size(112, 39);
@@ -456,7 +486,7 @@
             this.mañ3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mañ3.BackColor = System.Drawing.Color.Gray;
             this.mañ3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ3.Location = new System.Drawing.Point(256, 41);
+            this.mañ3.Location = new System.Drawing.Point(256, 25);
             this.mañ3.Margin = new System.Windows.Forms.Padding(4);
             this.mañ3.Name = "mañ3";
             this.mañ3.Size = new System.Drawing.Size(112, 39);
@@ -471,7 +501,7 @@
             this.mañ6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mañ6.BackColor = System.Drawing.Color.Gray;
             this.mañ6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ6.Location = new System.Drawing.Point(14, 83);
+            this.mañ6.Location = new System.Drawing.Point(14, 67);
             this.mañ6.Margin = new System.Windows.Forms.Padding(4);
             this.mañ6.Name = "mañ6";
             this.mañ6.Size = new System.Drawing.Size(112, 39);
@@ -486,7 +516,7 @@
             this.mañ2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mañ2.BackColor = System.Drawing.Color.Gray;
             this.mañ2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ2.Location = new System.Drawing.Point(135, 41);
+            this.mañ2.Location = new System.Drawing.Point(135, 25);
             this.mañ2.Margin = new System.Windows.Forms.Padding(4);
             this.mañ2.Name = "mañ2";
             this.mañ2.Size = new System.Drawing.Size(112, 39);
@@ -501,7 +531,7 @@
             this.mañ1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mañ1.BackColor = System.Drawing.Color.Gray;
             this.mañ1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mañ1.Location = new System.Drawing.Point(14, 41);
+            this.mañ1.Location = new System.Drawing.Point(14, 25);
             this.mañ1.Margin = new System.Windows.Forms.Padding(4);
             this.mañ1.Name = "mañ1";
             this.mañ1.Size = new System.Drawing.Size(112, 39);
@@ -673,36 +703,6 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label3.Location = new System.Drawing.Point(76, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 15);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Turno Disponible";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Gold;
-            this.label4.Location = new System.Drawing.Point(232, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(161, 15);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Sobre Turno Disponible";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(430, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 15);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Horario Completo";
-            // 
             // frmABMTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -719,7 +719,6 @@
             this.tpAlta.ResumeLayout(false);
             this.tpAlta.PerformLayout();
             this.pnlBotones.ResumeLayout(false);
-            this.pnlBotones.PerformLayout();
             this.tpBaja.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEliminar)).EndInit();
             this.tpMod.ResumeLayout(false);
