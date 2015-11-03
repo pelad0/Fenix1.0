@@ -164,6 +164,7 @@ namespace Fenix1._0
                     }
                     catch (Exception ex)
                     {
+                        MessageBox.Show(ex.Message);
                     }
 
                     try
@@ -173,6 +174,8 @@ namespace Fenix1._0
                     }
                     catch (Exception ex)
                     {
+                        MessageBox.Show(ex.Message);
+
                     }
 
 
