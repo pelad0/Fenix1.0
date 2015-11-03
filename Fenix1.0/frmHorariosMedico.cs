@@ -926,6 +926,7 @@ namespace Fenix1._0
                 }
                 catch(Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
                 }
 
                 try
@@ -935,6 +936,7 @@ namespace Fenix1._0
                 }
                 catch(Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
                 }
 
                 if(mañana == true && tarde == true)     //QUE TRABAJA LOS DOS DIAS
