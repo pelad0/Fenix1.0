@@ -1171,12 +1171,12 @@ namespace Fenix1._0
                             dtpSalidaMT_Sabado.Value = horariosMañana.SabadoSalida.Value;
 
 
-                            cbViernes.Checked = true;
+                            cbSabado.Checked = true;
 
                         }
                         else
                         {
-                            cbViernes.Checked = false;
+                            cbSabado.Checked = false;
                         }
 
 
@@ -1294,12 +1294,12 @@ namespace Fenix1._0
 
                             dtpSalidaTC_Sabado.Value = horariosTarde.SabadoSalida.Value;
 
-                            cbViernes.Checked = true;
+                            cbSabado.Checked = true;
 
                         }
                         else
                         {
-                            cbViernes.Checked = false;
+                            cbSabado.Checked = false;
                         }
 
 
