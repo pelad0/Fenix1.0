@@ -162,6 +162,8 @@ namespace logica
 
         }
 
+
+
         private clsMedico metodoM(IEntidad med2)
         {
             clsMedicoDatos med = (clsMedicoDatos)med2;
@@ -219,6 +221,43 @@ namespace logica
             return paciente;
         }
 
+
+        public List<clsSobreturno> obtenerSobreturno(int id, DateTime fecha)//implementar
+        {
+            DataTable tabla;
+            List<clsSobreturno> lista = new List<clsSobreturno>();
+
+            try
+            {
+                tabla = manejaTurno.BuscarTurnoPorMedico(id, fecha.ToShortDateString());
+                foreach (DataRow aux in tabla.Rows)
+                {
+
+                    clsSobreturno turno = new clsSobreturno();
+                    turno.Id = Convert.ToInt32(aux["id"]);
+                    turno.Id = Convert.ToInt32(aux["idMedico"]);
+                    turno.IdMedico =Convert.ToInt32(aux["idMedico"]);
+                    turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
+                    turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                    turno.Estado = Convert.ToBoolean(aux["estado"]);
+
+                    lista.Add(turno);
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lista;
+
+        }
         public List<clsSobreturno> obtenerSobreturnoPaciente(int id, DateTime fecha)//implementar
         {
             DataTable tabla;

@@ -123,7 +123,7 @@ namespace logica
 
         }
 
-        public List<clsTurnoVista> obtenerTurno(int id,DateTime fecha)//turno de los medicos
+        public List<clsTurnoVista> obtenerTurnoVista(int id,DateTime fecha)//turno de los medicos
         {
             DataTable tabla;
             List<clsTurnoVista> lista = new List<clsTurnoVista>();
@@ -217,6 +217,44 @@ namespace logica
 
 
             return paciente;
+        }
+
+        public List<clsTurno> obtenerTurno(int id, DateTime fecha)//turno de los medicos
+        {
+            DataTable tabla;
+            List<clsTurno> lista = new List<clsTurno>();
+
+            try
+            {
+                tabla = manejaTurno.BuscarTurnoPorMedico(id, fecha.ToShortDateString());
+                foreach (DataRow aux in tabla.Rows)
+                {
+
+                    clsTurno turno = new clsTurno();
+
+                    turno.Id = Convert.ToInt32(aux["id"]);
+                    turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
+                    turno.IdPaciente =Convert.ToInt32(aux["idPaciente"]);
+                    turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                    turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                    turno.Estado = Convert.ToBoolean(aux["estado"]);
+
+                    lista.Add(turno);
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lista;
+
         }
 
         public List<clsTurno> obtenerTurnoPaciente(int id)//turno de un paciente
