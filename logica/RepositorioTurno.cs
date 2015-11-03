@@ -15,12 +15,12 @@ namespace logica
     {
         ManejaTurno manejaTurno = new ManejaTurno();
         
-        public void Alta(IEntidad turno,int id)
+        public void Alta(IEntidad turno)
         {
             try
             {
                
-                manejaTurno.Alta(turno, id);
+                manejaTurno.Alta(turno);
             }
             catch (SqlException ex)
             {
