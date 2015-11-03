@@ -162,8 +162,6 @@ namespace logica
 
         }
 
-
-
         private clsMedico metodoM(IEntidad med2)
         {
             clsMedicoDatos med = (clsMedicoDatos)med2;
