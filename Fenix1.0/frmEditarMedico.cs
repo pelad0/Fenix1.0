@@ -153,10 +153,26 @@ namespace Fenix1._0
 
 
                     //CREO LA RELACION HORARIOS POR MEDICO
+                    
 
                     if(modifi == 0)
                     {
-                       
+                        horarioMT.IdMedico = med.Id;
+                        horarioTC.IdMedico = med.Id;
+                        reposHorario.Modificacion(horarioMT, horarioTC);
+                    }
+                    else
+                    {
+                        if(modifi == 1)
+                        {
+                            horarioMT.IdMedico = med.Id;
+                            reposHorario.Modificacion(horarioMT, 1);
+                        }
+                        if(modifi == 2)
+                        {
+                            horarioMT.IdMedico = med.Id;
+                            reposHorario.Modificacion(horarioMT, 2);
+                        }
                     }
 
 
