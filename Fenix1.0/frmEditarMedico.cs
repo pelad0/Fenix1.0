@@ -23,6 +23,7 @@ namespace Fenix1._0
         List<clsObraSocial> listaObras = new List<clsObraSocial>();
         RepositorioObraPorMedico repoObraPorMed = new RepositorioObraPorMedico();
         RepositorioObraSocial reposObraSocial = new RepositorioObraSocial();
+        RepositorioEspecialidad reposEspe = new RepositorioEspecialidad();
 
         public frmEditarMedico(clsMedico med)
         {
@@ -36,29 +37,45 @@ namespace Fenix1._0
             tbApellidoModi.Text = med.Apellido;
             tbDniModi.Text = med.Dni.ToString();
             tbMatriculaModi.Text = med.Matricula.ToString();
-            tbEspecialidadModi.Text = med.Especialidad;
+            cbEspecialidadModi.Text = med.Especialidad;
             
+
+       
+
+            //CARGO ESPECIALIDADES A CB;
+
+            List<clsEspecialidad> listaEspe = new List<clsEspecialidad>(); 
+
+            listaEspe = reposEspe.Todo();
+
+            foreach(clsEspecialidad es in listaEspe)
+            {
+                cbEspecialidadModi.Items.Add(es.Descripcion);
+            }
+
+
+            //CARGO OBRAS SOCIALES.
 
             obraXmed = repoObraPorMed.TodasObras(med.Id);
 
-            clsObraSocial obraSocial;
-
-            //CARGO TODAS LAS OBRAS SOCIALES PARA DESPUES COMPARARLAS CON LAS CHECKEADAS.
+            clsObraSocial obraSocial;           
 
             listaObras = reposObraSocial.Todo(0);
 
 
             //CARGO TODAS LAS OBRAS SOCIALES Y TAMBIEN ME FIJO SI ESTAN EN EL MEDICO A EDITAR, SI ESO PASA, LAS CHECKEO EN TRUE.
-            foreach (clsObraXMedico obramed in obraXmed)
+
+            foreach (clsObraXMedico obramed in obraXmed)        //POR CADA OBRA DEL MEDICO
             {
                 obraSocial = reposObraSocial.buscarPorId(obramed.IdObra);
 
-                foreach(clsObraSocial obr in listaObras)
-                {
-                    clbObraSocial.Items.Add(obr.Nombre);
+                foreach(clsObraSocial obr in listaObras)            //POR CADA OBRA EXISTENTE
+                {                   
 
-                    if(obraSocial.Nombre == obr.Nombre)
-                    {                        
+                    if(obraSocial.Nombre == obr.Nombre)             //SI LOS NOMBRES SON IGUALES
+                    {
+                        clbObraSocial.Items.Add(obr.Nombre);
+
                         for (int i = 0; i < clbObraSocial.Items.Count; i++)
                         {
                             if(clbObraSocial.Items[i].ToString() == obraSocial.Nombre)
@@ -88,7 +105,8 @@ namespace Fenix1._0
 
         private void btnEditarHorarios_Click(object sender, EventArgs e)
         {
-
+            frmHorariosMedico horariosMed = new frmHorariosMedico(med, this);
+            horariosMed.ShowDialog();
         }
     }
 }

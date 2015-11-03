@@ -14,14 +14,30 @@ namespace Fenix1._0
 {
     public partial class frmHorariosMedico : Form
     {
-
+        
         frmABMME FormMaestro;
+        frmEditarMedico formEditarMedico;
+
+        int valor = 0;
+        clsMedico medicoEditar;
+
+        RepositorioHorario reposHorario = new RepositorioHorario();
 
         public frmHorariosMedico(frmABMME frmQueViene)
         {
             InitializeComponent();
             FormMaestro = frmQueViene;
         }
+
+        public frmHorariosMedico(clsMedico med, frmEditarMedico fo)
+        {
+            InitializeComponent();
+            medicoEditar = med;
+            valor = 1;
+            formEditarMedico = fo;
+
+        }
+
 
         clsHorario horario = new clsHorario();
         clsHorario horarioTC = new clsHorario();
@@ -548,7 +564,17 @@ namespace Fenix1._0
 
         private void frmHorariosMedico_Load(object sender, EventArgs e)
         {
-            
+            if(valor == 1)
+            {
+                clsHorario horariosMañana = new clsHorario();
+                clsHorario horariosTarde = new clsHorario();
+
+                horariosMañana = reposHorario.buscarPorId(medicoEditar.Id, 1);
+                horariosTarde = reposHorario.buscarPorId(medicoEditar.Id, 2);
+
+                MessageBox.Show("asd");
+
+            }
         }
 
         private void dtpEntradaMT_Lunes_ValueChanged(object sender, EventArgs e)
