@@ -62,7 +62,7 @@ namespace Fenix1._0
             tbApellidoModi.Text = med.Apellido;
             tbDniModi.Text = med.Dni.ToString();
             tbMatriculaModi.Text = med.Matricula.ToString();
-            cbEspecialidadModi.Text = med.Especialidad;
+
             
 
        
@@ -77,7 +77,7 @@ namespace Fenix1._0
             {
                 cbEspecialidadModi.Items.Add(es.Descripcion);
             }
-
+            cbEspecialidadModi.Text = med.Especialidad;
 
             //CARGO OBRAS SOCIALES.
 
@@ -93,13 +93,14 @@ namespace Fenix1._0
             foreach (clsObraXMedico obramed in obraXmed)        //POR CADA OBRA DEL MEDICO
             {
                 obraSocial = reposObraSocial.buscarPorId(obramed.IdObra);
+                clbObraSocial.Items.Add(obraSocial.Nombre);
 
                 foreach(clsObraSocial obr in listaObras)            //POR CADA OBRA EXISTENTE
                 {                   
 
                     if(obraSocial.Nombre == obr.Nombre)             //SI LOS NOMBRES SON IGUALES
                     {
-                        clbObraSocial.Items.Add(obr.Nombre);
+                        
                         obrasBajas.Add(obr);
 
                         for (int i = 0; i < clbObraSocial.Items.Count; i++)
@@ -153,63 +154,105 @@ namespace Fenix1._0
 
 
                     //CREO LA RELACION HORARIOS POR MEDICO
-                    
+
+                    //PRIMERO DOY DE BAJA LAS RELACIONES DE HORARIOS
+
+                    bool mañana = false;
+                    bool tarde = false;
+
+                    clsHorario horariosMañana = new clsHorario();
+                    clsHorario horariosTarde = new clsHorario();
+
+                    try
+                    {
+                        horariosMañana = reposHorario.buscarPorId(med.Id, 1);
+                        mañana = true;
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+
+                    try
+                    {
+                        horariosTarde = reposHorario.buscarPorId(med.Id, 2);
+                        tarde = true;
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+
+
+                    if(mañana && tarde)
+                    {
+                        reposHorario.Baja(horariosMañana, horariosTarde);
+                    }
+                    else
+                    {
+                        if(mañana)
+                        {
+                            reposHorario.Baja(horariosMañana, 1);
+
+                        }
+                        if(tarde)
+                        {
+                            reposHorario.Baja(horariosTarde, 2);
+                        }
+                    }
+
+
 
                     if(modifi == 0)         //ACTUALIZO MAÑANA Y TARDE
                     {
                         horarioMT.IdMedico = med.Id;
                         horarioTC.IdMedico = med.Id;
-                        reposHorario.Modificacion(horarioMT, horarioTC);
+                        reposHorario.Alta(horarioMT, horarioTC);
                     }
                     else
                     {
                         if(modifi == 1)             //ACTUALIZO MAÑANA
                         {
                             horarioMT.IdMedico = med.Id;
-                            reposHorario.Modificacion(horarioMT, 1);
+                            reposHorario.Alta(horarioMT, 1);
                         }
                         if(modifi == 2)             //ACTUALIZO TARDE
                         {
                             horarioMT.IdMedico = med.Id;
-                            reposHorario.Modificacion(horarioMT, 2);
+                            reposHorario.Alta(horarioMT, 2);
                         }
                     }
-
-
-
-
-
-                    //CREO RELACION NUEVA ENTRE OBRAS Y MEDICO
                     
-                    //List<string> listaNombresObra = new List<string>();
+                    //CREO RELACION NUEVA ENTRE OBRAS Y MEDICO
+                         
 
-                    //foreach (Object item in clbObraSocial.CheckedItems)      //CARGO TODAS LAS OBRAS SOCIALES SELECCIONADAS.
-                    //{
-                    //    listaNombresObra.Add(item.ToString());
-                    //}
+                    List<string> listaNombresObra = new List<string>();
 
-                    //List<clsObraSocial> obr = new List<clsObraSocial>();        //Variable con todas mis obras
+                    foreach (Object item in clbObraSocial.CheckedItems)      //CARGO TODAS LAS OBRAS SOCIALES SELECCIONADAS.
+                    {
+                        listaNombresObra.Add(item.ToString());
+                    }
 
-                    //obr = reposObraSocial.Todo(0);          //le doy todas las obras
+                    List<clsObraSocial> obr = new List<clsObraSocial>();        //Variable con todas mis obras
 
-                    //foreach (clsObraSocial obrita in obr)        //por cada obra existente
-                    //{
-                    //    foreach (string obra in listaNombresObra)        //por cada obra seleccionada
-                    //    {
-                    //        if (obrita.Nombre == obra)           //si el nombre es igual obtengo el id y creo la relacion
-                    //        {
-                    //            clsObraXMedico obraPormed = new clsObraXMedico();
-                    //            obraPormed.IdMedico = medico.Id;
-                    //            obraPormed.IdObra = obrita.Id;
+                    obr = reposObraSocial.Todo(0);          //le doy todas las obras
 
-                    //            repoObraPorMed.Alta(obraPormed);
-                    //        }
-                    //    }
+                    foreach (clsObraSocial obrita in obr)        //por cada obra existente
+                    {
+                        foreach (string obra in listaNombresObra)        //por cada obra seleccionada
+                        {
+                            if (obrita.Nombre == obra)           //si el nombre es igual obtengo el id y creo la relacion
+                            {
+                                clsObraXMedico obraPormed = new clsObraXMedico();
+                                obraPormed.IdMedico = med.Id;
+                                obraPormed.IdObra = obrita.Id;
+
+                                repoObraPorMed.Alta(obraPormed);
+                            }
+                        }
 
 
-                    //}
+                    }
 
-                    //MessageBox.Show("Médico dado de alta");
+                    MessageBox.Show("Médico modificado con éxito");
                 
 
 
@@ -238,7 +281,7 @@ namespace Fenix1._0
 
         public bool verificarMedico()
         {
-            if (string.IsNullOrWhiteSpace(tbNombreModi.Text) == false || string.IsNullOrWhiteSpace(tbApellidoModi.Text) == false)
+            if (string.IsNullOrWhiteSpace(tbNombreModi.Text)    || string.IsNullOrWhiteSpace(tbApellidoModi.Text))
             {
                 return false;
             }
