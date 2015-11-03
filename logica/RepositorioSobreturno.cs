@@ -125,7 +125,7 @@ namespace logica
 
         }
 
-        public List<clsSobreTurnoVista> obtenerSobreturno(int id, DateTime fecha)//implementar
+        public List<clsSobreTurnoVista> obtenerSobreturnoVista(int id, DateTime fecha)//implementar
         {
             DataTable tabla;
             List<clsSobreTurnoVista> lista = new List<clsSobreTurnoVista>();
