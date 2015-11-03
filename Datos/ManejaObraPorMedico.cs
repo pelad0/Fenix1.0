@@ -49,7 +49,7 @@ namespace Datos
 
             try
             {
-                manager.ejecutar("update obraXmedico set idobra=" + ob.IdObra + "," +" idmedico="+ob.IdMedico);
+                manager.ejecutar("update obraXmedico set idobra=" + ob.IdObra + "," + " idmedico=" + ob.IdMedico + "' where idmedico=" + ob.IdMedico + " and activo=1");
             }
             catch (Exception ex)
             {
