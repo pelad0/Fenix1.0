@@ -53,6 +53,7 @@
     <Compile Include="clsPlanesXObra.cs" />
     <Compile Include="clsRecibo.cs" />
     <Compile Include="clsSobreturno.cs" />
+    <Compile Include="clsSobreTurnoVista.cs" />
     <Compile Include="clsTurno.cs" />
     <Compile Include="clsTurnoVista.cs" />
     <Compile Include="clsUsuario.cs" />
