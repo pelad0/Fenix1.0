@@ -174,6 +174,7 @@
             // 
             // cbEspecialidadModi
             // 
+            this.cbEspecialidadModi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEspecialidadModi.FormattingEnabled = true;
             this.cbEspecialidadModi.Location = new System.Drawing.Point(113, 255);
             this.cbEspecialidadModi.Name = "cbEspecialidadModi";

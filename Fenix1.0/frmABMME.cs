@@ -311,7 +311,7 @@ namespace Fenix1._0
                 dgvMedicosModi.Columns.Add("Apellido", "Apellido");
 
                 foreach (clsMedico med in medicos)
-                {
+                {                    
                     dgvMedicosAlta.Rows.Add(med.Id, med.Matricula, med.Apellido);
                     dgvMedicosBaja.Rows.Add(med.Id, med.Matricula, med.Apellido);
                     dgvMedicosModi.Rows.Add(med.Id, med.Matricula, med.Apellido);
@@ -813,6 +813,7 @@ namespace Fenix1._0
 
             int idMed = int.Parse(dgvMedicosAlta.Rows[dgvMedicosAlta.CurrentRow.Index].Cells[0].Value.ToString());            
 
+            
 
             obraXmed = repoObraPorMed.TodasObras(idMed); 
 
@@ -939,6 +940,7 @@ namespace Fenix1._0
             tbApellidoAlta.Clear();
             tbDniAlta.Clear();
             tbMatriculaAlta.Clear();
+            tbNombreAlta.Focus();
 
             Actualizar();
            
