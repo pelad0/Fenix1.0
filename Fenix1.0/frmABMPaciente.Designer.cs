@@ -82,6 +82,7 @@
             this.tbDniMod = new controles.TextBoxNumeros();
             this.tbApellidoMod = new controles.TextBoxLetras();
             this.tbNombreMod = new controles.TextBoxLetras();
+            this.lblPaciente = new System.Windows.Forms.Label();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlta)).BeginInit();
@@ -108,6 +109,7 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.Controls.Add(this.lblPaciente);
             this.tpAlta.Controls.Add(this.btnBuscar);
             this.tpAlta.Controls.Add(this.label11);
             this.tpAlta.Controls.Add(this.tbBuscar);
@@ -241,6 +243,7 @@
             this.dgvAlta.Size = new System.Drawing.Size(400, 309);
             this.dgvAlta.TabIndex = 0;
             this.dgvAlta.TabStop = false;
+            this.dgvAlta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlta_CellClick);
             // 
             // cbOSAlta
             // 
@@ -608,6 +611,15 @@
             this.tbNombreMod.Size = new System.Drawing.Size(162, 23);
             this.tbNombreMod.TabIndex = 1;
             // 
+            // lblPaciente
+            // 
+            this.lblPaciente.AutoSize = true;
+            this.lblPaciente.Location = new System.Drawing.Point(192, 379);
+            this.lblPaciente.Name = "lblPaciente";
+            this.lblPaciente.Size = new System.Drawing.Size(63, 15);
+            this.lblPaciente.TabIndex = 7;
+            this.lblPaciente.Text = "Paciente";
+            // 
             // frmABMPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -676,5 +688,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label11;
         private controles.TextBoxNumeros tbBuscar;
+        private System.Windows.Forms.Label lblPaciente;
     }
 }
