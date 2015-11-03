@@ -21,9 +21,26 @@ namespace Datos
         public void Alta(IEntidad entidad)
         {
             clsHorario ent = (clsHorario)entidad;
+            DataTable aux = new DataTable();
+
             try
             {
-                manager.ejecutar("Insert into horarioTarde(idmedico,lunesentrada,lunessalida,martesentrada,martessalida,miercolesentrada,miercolessalida,juevesentrada,juevessalida,viernesentrada,viernessalida,sabadoentrada,sabadosalida,domingoentrada,domingosalida) values(" + ent.IdMedico + ",'" + ent.LunesEntrada + "','" + ent.LunesSalida + "','" + ent.MartesEntrada + "','" + ent.MartesSalida + "','" + ent.MiercolesEntrada + "','" + ent.MiercolesSalida + "','" + ent.JuevesEntrada + "','" + ent.JuevesSalida + "','" + ent.ViernesEntrada + "','" + ent.ViernesSalida + "','" + ent.SabadoEntrada + "','" + ent.SabadoSalida + "','" + ent.DomingoEntrada + "','" + ent.DomingoSalida + "')");
+                 aux = manager.consultar("select * from horarioTarde where idmedico=" + ent.IdMedico);
+
+                 if (aux.Rows.Count == 0)
+                 {
+                     manager.ejecutar("Insert into horarioTarde(idmedico,lunesentrada,lunessalida,martesentrada,martessalida,miercolesentrada,miercolessalida,juevesentrada,juevessalida,viernesentrada,viernessalida,sabadoentrada,sabadosalida,domingoentrada,domingosalida) values(" + ent.IdMedico + ",'" + ent.LunesEntrada + "','" + ent.LunesSalida + "','" + ent.MartesEntrada + "','" + ent.MartesSalida + "','" + ent.MiercolesEntrada + "','" + ent.MiercolesSalida + "','" + ent.JuevesEntrada + "','" + ent.JuevesSalida + "','" + ent.ViernesEntrada + "','" + ent.ViernesSalida + "','" + ent.SabadoEntrada + "','" + ent.SabadoSalida + "','" + ent.DomingoEntrada + "','" + ent.DomingoSalida + "')");
+                 }
+                 else
+                 {
+                     if (Convert.ToInt32(aux.Rows[0]["activo"]) == 0)
+                     {
+                         manager.ejecutar("update horarioTarde set activo=1 where idmedico=" + ent.IdMedico);
+                         manager.ejecutar("update horarioTarde set lunesentrada='" + ent.LunesEntrada + "',lunessalida='" + ent.LunesSalida + "',martesentrada='" + ent.MartesEntrada + "',martessalida='" + ent.MartesSalida + "',miercolesentrada='" + ent.MiercolesEntrada + "',miercolessalida='" + ent.MiercolesSalida + "',juevesentrada='" + ent.JuevesEntrada + "',juevessalida='" + ent.JuevesSalida + "',viernesentrada='" + ent.ViernesEntrada + "',viernessalida='" + ent.ViernesSalida + "',sabadoentrada='" + ent.SabadoEntrada + "',sabadosalida='" + ent.SabadoSalida + "',domingoentrada='" + ent.DomingoEntrada + "',domingosalida='" + ent.DomingoSalida + "' where idmedico=" + ent.IdMedico);
+
+                     }
+                 }
+
             }
             catch (Exception ex)
             {
