@@ -18,6 +18,8 @@ namespace Fenix1._0
         int pagina = 0;
         clsUsuario u = new clsUsuario();
         clsPaciente pac = new clsPaciente();
+        clsMedico med = new clsMedico();
+        DateTime fecha = new DateTime();
         RepositorioEspecialidad re = new RepositorioEspecialidad();
         RepositorioMedico rm = new RepositorioMedico();
         RepositorioTurno rt = new RepositorioTurno();
@@ -34,6 +36,7 @@ namespace Fenix1._0
             InitializeComponent();
             this.u = usu;
             this.pac = pac;
+            this.Text = pac.nomCompleto();
         }
 
         private void frmABM_Load(object sender, EventArgs e)
@@ -43,24 +46,40 @@ namespace Fenix1._0
 
         private void cbEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<string> medicos = new List<string>();
-            foreach (clsMedico med in rm.Busca(cbEspecialidades.SelectedItem.ToString()))
+            List<string> m = new List<string>();
+            medicos.Clear();
+            medicos = rm.Busca(cbEspecialidades.SelectedItem.ToString());
+            foreach (clsMedico med in medicos)
             {
-		        medicos.Add(med.Apellido+" "+med.Nombre);
+		        m.Add(med.Apellido+" "+med.Nombre);
             }
-            cbMedicos.DataSource= medicos;
+            cbMedicos.DataSource= m;
+            if (cbMedicos.Items.Count>0)
+            {
+                cbMedicos.SelectedIndex = 0;
+            }
         }
 
         private void btnTurnoXDia_Click(object sender, EventArgs e)
         {
-            clsMedico med = medicos[cbMedicos.SelectedIndex];
-            turnos.Clear();
-            turnos = rt.obtenerTurno(med.Id, dtpFecha.Value);//no tocar
+            med = medicos[cbMedicos.SelectedIndex];
+            fecha = dtpFecha.Value.Date;
             
+            turnos.Clear();
+            sobreTurno.Clear();
+            turnos = rt.obtenerTurno(med.Id, dtpFecha.Value);//no tocar
+            sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value);
+
             mañana = rm.BuscarHorarioMañana(med.Id);
             tarde = rm.BuscarHorarioTarde(med.Id);
 
+            botonesDisponibles();
+
+            pnlBotones.Enabled = true;
+
+
         }
+
 
         private void btnAnt_Click(object sender, EventArgs e)
         {
@@ -80,6 +99,49 @@ namespace Fenix1._0
             }
         }
 
+        private void botonesDisponibles()
+        {
+            if (string.IsNullOrWhiteSpace(mañana.IdMedico.ToString()))
+            {
+                horariosMañana(false);
+            }
+            else if (string.IsNullOrWhiteSpace(tarde.IdMedico.ToString()))
+            {
+                horariosTarde(false);
+            }
+            else
+            {
+                horariosMañana(true);
+                horariosTarde(true);
+            }
+            foreach (clsTurno tur in turnos)
+            {
+                foreach (Button btn in pnlBotones.Controls)
+                {
+                    if (tur.Fecha.TimeOfDay.ToString().Contains(btn.Text))
+                    {
+                        btn.BackColor = Color.Gold;
+                        btn.Tag = "sobreTurno";
+                    }
+                    else
+                    {
+                        btn.Tag = "turno";
+                    }
+                }
+            }
+            foreach (clsSobreturno sobTur in sobreTurno)
+            {
+                foreach (Button btn in pnlBotones.Controls)
+                {
+                    if (sobTur.Fecha.TimeOfDay.ToString().Contains(btn.Text))
+                    {
+                        btn.BackColor = Color.Red;
+                        btn.Enabled = false;
+                    }
+                }
+            }
+        }
+
         private void iniciar()
         {
             foreach (clsEspecialidad esp in re.Todo())
@@ -88,6 +150,7 @@ namespace Fenix1._0
             }
             cbEspecialidades.DataSource = especialidades;
             cbMedicos.DataSource = null;
+            cbEspecialidades.SelectedIndex = 0;
             medicos.Clear();
             medicos = rm.Busca(cbEspecialidades.SelectedItem.ToString());
             dgvEliminar.DataSource = null;
@@ -168,6 +231,23 @@ namespace Fenix1._0
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if((sender as Button).Tag.ToString() == "turno")
+            {
+                Button btn = (sender as Button);
+                darTurno(btn);
+            }
+        }
+
+        private void darTurno(Button btn)
+        {
+            DialogResult res = MessageBox.Show("Confirme turno: Medico "+med.Apellido+" paciente, "+pac.nomCompleto()+" "+fecha.ToLongDateString()+" "+btn.Text, "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                
+            }
+        }
 
     }
 }
