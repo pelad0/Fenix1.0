@@ -183,7 +183,7 @@ namespace Fenix1._0
 
         private void btnDarTurno_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(pacientes[dgvAlta.CurrentRow.Index].Nombre))
+            if (lblPaciente.Text != "Paciente")
             {
                 frmABMTurnos t = new frmABMTurnos(u, pacientes[dgvAlta.CurrentRow.Index]);
                 t.ShowDialog();
@@ -317,6 +317,11 @@ namespace Fenix1._0
                 cbOSMod.SelectedItem = pacientes[pos].ObraSocial;
             }
 
+        }
+
+        private void dgvAlta_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblPaciente.Text = pacientes[dgvAlta.CurrentRow.Index].nomCompleto();
         }
 
     }
