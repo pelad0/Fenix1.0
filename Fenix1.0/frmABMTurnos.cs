@@ -68,8 +68,8 @@ namespace Fenix1._0
             turnos.Clear();
             sobreTurno.Clear();
             turnos = rt.obtenerTurnoVista(med.Id, dtpFecha.Value);//no tocar
-            
-            sobreTurno = rst.obtenerSobreTurnoVista(med.Id, dtpFecha.Value);
+
+            sobreTurno = rst.obtenerSobreturnoVista(med.Id, dtpFecha.Value);
             turnosDados(turnos);
             sobreTurnosDados(sobreTurno);
             mañana = rm.BuscarHorarioMañana(med.Id);
