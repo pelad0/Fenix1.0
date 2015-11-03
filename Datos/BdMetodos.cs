@@ -14,10 +14,10 @@ namespace Datos
          //comment 
 
          SqlConnection cnn;
-         string usuario = "vicente";
-         string con = "vicente";
-         string based = "Parcial2";
-         string server = "VICEN-PC\\SQLEXPRESS";
+         //string usuario = "vicente";
+         //string con = "vicente";
+         //string based = "Parcial2";
+         //string server = "VICEN-PC\\SQLEXPRESS";
          //////tocar estos datoooooooooooooooooooooooooooooooooooooooooooooooooooooos
 
          string usuario = "pelad0";
