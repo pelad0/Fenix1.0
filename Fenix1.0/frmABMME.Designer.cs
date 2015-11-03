@@ -469,7 +469,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMedicosBaja.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvMedicosBaja.Location = new System.Drawing.Point(31, 86);
+            this.dgvMedicosBaja.Location = new System.Drawing.Point(52, 86);
             this.dgvMedicosBaja.MultiSelect = false;
             this.dgvMedicosBaja.Name = "dgvMedicosBaja";
             this.dgvMedicosBaja.ReadOnly = true;

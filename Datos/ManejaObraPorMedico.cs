@@ -19,10 +19,20 @@ namespace Datos
         public void Alta(IEntidad entidad)
         {
             clsObraXMedico ob = (clsObraXMedico)entidad;
+            DataTable aux = new DataTable();
 
             try
             {
-                manager.ejecutar("Insert into obraXmedico(idmedico,idobra) values(" + ob.IdMedico + "," + ob.IdObra + ")");
+                aux = manager.consultar("select * from obraxmedico where idmedico=" + ob.IdMedico + "and idobra=" + ob.IdObra);//
+
+                if (aux.Rows.Count == 0)
+                {
+                    manager.ejecutar("Insert into obraXmedico(idmedico,idobra) values(" + ob.IdMedico + "," + ob.IdObra + ")");
+                }
+                else
+                {
+                    manager.ejecutar("update obraXmedico set activo=1 where idmedico=" + ob.IdMedico + "and idobra=" + ob.IdObra);//
+                }
             }
             catch (Exception ex)
             {
@@ -49,7 +59,7 @@ namespace Datos
 
             try
             {
-                manager.ejecutar("update obraXmedico set idobra=" + ob.IdObra + "," +" idmedico="+ob.IdMedico);
+                manager.ejecutar("update obraXmedico set idobra=" + ob.IdObra + "," + " idmedico=" + ob.IdMedico + "' where idmedico=" + ob.IdMedico + " and activo=1");
             }
             catch (Exception ex)
             {

@@ -85,22 +85,31 @@ namespace logica
         {
             DataTable tabla;
             List<clsUsuario> lista = new List<clsUsuario>();
-           
-            tabla = manejaUsuario.Todo(pag);
-            foreach (DataRow aux in tabla.Rows)
+            try
             {
+                tabla = manejaUsuario.Todo(pag);
+                foreach (DataRow aux in tabla.Rows)
+                {
 
-                clsUsuario usu = new clsUsuario();
-                usu.Id = Convert.ToInt32(aux["id"]);
-                usu.Usuario = aux["usuario"].ToString();
-                usu.Clave = aux["pass"].ToString();
-                usu.Seguridad = aux["seguridad"].ToString();
+                    clsUsuario usu = new clsUsuario();
+                    usu.Id = Convert.ToInt32(aux["id"]);
+                    usu.Usuario = aux["usuario"].ToString();
+                    usu.Clave = aux["pass"].ToString();
+                    usu.Seguridad = aux["seguridad"].ToString();
 
-                lista.Add(usu);
-                
+                    lista.Add(usu);
 
-
+                }
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
 
             return lista;
 

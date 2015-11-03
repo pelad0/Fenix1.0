@@ -10,22 +10,22 @@ namespace entidades
     public class clsHorario : IEntidad
     {
         int idMedico;        
-        DateTime lunesEntrada;
-        DateTime lunesSalida;
-        DateTime martesEntrada;
-        DateTime martesSalida;
-        DateTime miercolesEntrada;
-        DateTime miercolesSalida;
-        DateTime juevesEntrada;
-        DateTime juevesSalida;
-        DateTime viernesEntrada; 
-        DateTime viernesSalida;
-        DateTime sabadoEntrada;
-        DateTime sabadoSalida;
-        DateTime domingoEntrada;
-        DateTime domingoSalida;
+        DateTime? lunesEntrada;
+        DateTime? lunesSalida;
+        DateTime? martesEntrada;
+        DateTime? martesSalida;
+        DateTime? miercolesEntrada;
+        DateTime? miercolesSalida;
+        DateTime? juevesEntrada;
+        DateTime? juevesSalida;
+        DateTime? viernesEntrada;
+        DateTime? viernesSalida;
+        DateTime? sabadoEntrada;
+        DateTime? sabadoSalida;
+        DateTime? domingoEntrada;
+        DateTime? domingoSalida;
 
-        public clsHorario(int idMedico, DateTime lunesEntrada, DateTime lunesSalida, DateTime martesEntrada, DateTime martesSalida, DateTime miercolesEntrada, DateTime miercolesSalida, DateTime juevesEntrada, DateTime juevesSalida, DateTime viernesEntrada, DateTime viernesSalida, DateTime sabadoEntrada, DateTime sabadoSalida, DateTime domingoEntrada, DateTime domingoSalida)
+        public clsHorario(int idMedico, DateTime? lunesEntrada, DateTime? lunesSalida, DateTime? martesEntrada, DateTime? martesSalida, DateTime? miercolesEntrada, DateTime? miercolesSalida, DateTime? juevesEntrada, DateTime? juevesSalida, DateTime? viernesEntrada, DateTime? viernesSalida, DateTime? sabadoEntrada, DateTime? sabadoSalida, DateTime? domingoEntrada, DateTime? domingoSalida)
         {
             this.idMedico = idMedico;
             this.lunesEntrada =lunesEntrada;
@@ -44,7 +44,7 @@ namespace entidades
             this.domingoSalida = domingoSalida;
         }
 
-        public clsHorario(DateTime lunesEntrada, DateTime lunesSalida, DateTime martesEntrada, DateTime martesSalida, DateTime miercolesEntrada, DateTime miercolesSalida, DateTime juevesEntrada, DateTime juevesSalida, DateTime viernesEntrada, DateTime viernesSalida, DateTime sabadoEntrada, DateTime sabadoSalida, DateTime domingoEntrada, DateTime domingoSalida)
+        public clsHorario(DateTime? lunesEntrada, DateTime? lunesSalida, DateTime? martesEntrada, DateTime? martesSalida, DateTime? miercolesEntrada, DateTime? miercolesSalida, DateTime? juevesEntrada, DateTime? juevesSalida, DateTime? viernesEntrada, DateTime? viernesSalida, DateTime? sabadoEntrada, DateTime? sabadoSalida, DateTime? domingoEntrada, DateTime? domingoSalida)
         {
             this.lunesEntrada = lunesEntrada;
             this.lunesSalida = lunesSalida;
@@ -73,98 +73,98 @@ namespace entidades
             set { idMedico = value; }
         }
 
-        public DateTime LunesEntrada
+        public DateTime? LunesEntrada
         {
             get { return lunesEntrada; }
             set { lunesEntrada = value; }
         }
         
 
-        public DateTime LunesSalida
+        public DateTime? LunesSalida
         {
             get { return lunesSalida; }
             set { lunesSalida = value; }
         }
-        
 
-        public DateTime MartesEntrada
+
+        public DateTime? MartesEntrada
         {
             get { return martesEntrada; }
             set { martesEntrada = value; }
         }
-        
 
-        public DateTime MartesSalida
+
+        public DateTime? MartesSalida
         {
             get { return martesSalida; }
             set { martesSalida = value; }
         }
-        
 
-        public DateTime MiercolesEntrada
+
+        public DateTime? MiercolesEntrada
         {
             get { return miercolesEntrada; }
             set { miercolesEntrada = value; }
         }
-        
 
-        public DateTime MiercolesSalida
+
+        public DateTime? MiercolesSalida
         {
             get { return miercolesSalida; }
             set { miercolesSalida = value; }
         }
-        
 
-        public DateTime JuevesEntrada
+
+        public DateTime? JuevesEntrada
         {
             get { return juevesEntrada; }
             set { juevesEntrada = value; }
         }
-        
 
-        public DateTime JuevesSalida
+
+        public DateTime? JuevesSalida
         {
             get { return juevesSalida; }
             set { juevesSalida = value; }
         }
-        
 
-        public DateTime ViernesEntrada
+
+        public DateTime? ViernesEntrada
         {
             get { return viernesEntrada; }
             set { viernesEntrada = value; }
         }
-        
 
-        public DateTime ViernesSalida
+
+        public DateTime? ViernesSalida
         {
             get { return viernesSalida; }
             set { viernesSalida = value; }
         }
-        
 
-        public DateTime SabadoEntrada
+
+        public DateTime? SabadoEntrada
         {
             get { return sabadoEntrada; }
             set { sabadoEntrada = value; }
         }
-        
 
-        public DateTime SabadoSalida
+
+        public DateTime? SabadoSalida
         {
             get { return sabadoSalida; }
             set { sabadoSalida = value; }
         }
-        
 
-        public DateTime DomingoEntrada
+
+        public DateTime? DomingoEntrada
         {
             get { return domingoEntrada; }
             set { domingoEntrada = value; }
         }
-        
 
-        public DateTime DomingoSalida
+
+        public DateTime? DomingoSalida
         {
             get { return domingoSalida; }
             set { domingoSalida = value; }

@@ -47,7 +47,7 @@ namespace Datos
 
         public void Baja(IEntidad entidad)
         {
-            clsMedico med = (clsMedico)entidad;
+            clsMedicoDatos med = (clsMedicoDatos)entidad;
             try
             {
                 manager.ejecutar("update medico set activo=0 where id=" + med.Id);
@@ -60,7 +60,7 @@ namespace Datos
 
         public void Modificacion(IEntidad entidad)
         {
-            clsMedico med = (clsMedico)entidad;
+            clsMedicoDatos med = (clsMedicoDatos)entidad;
             try
             {
                 manager.ejecutar("update medico set nombre="+med.Nombre+",apellido="+med.Apellido+",dni="+med.Dni+",especialidad="+med.Especialidad+",matricula="+med.Matricula+ "where id=" + med.Id);
@@ -164,7 +164,7 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                aux = manager.consultar("select * from horarioManiana where idmedico="+id+" and activo=1");
+                aux = manager.consultar("select * from horarioMañana where idmedico="+id+" and activo=1");
             }
             catch(Exception ex)
             {

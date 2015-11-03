@@ -42,11 +42,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditarHorarios = new System.Windows.Forms.Button();
-            this.tbEspecialidadModi = new System.Windows.Forms.TextBox();
+            this.cbEspecialidadModi = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // clbObraSocial
             // 
+            this.clbObraSocial.CheckOnClick = true;
             this.clbObraSocial.FormattingEnabled = true;
             this.clbObraSocial.Location = new System.Drawing.Point(416, 222);
             this.clbObraSocial.Name = "clbObraSocial";
@@ -74,17 +75,23 @@
             // 
             // tbDniModi
             // 
+            this.tbDniModi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbDniModi.Location = new System.Drawing.Point(113, 160);
             this.tbDniModi.Name = "tbDniModi";
-            this.tbDniModi.Size = new System.Drawing.Size(163, 23);
+            this.tbDniModi.ReadOnly = true;
+            this.tbDniModi.Size = new System.Drawing.Size(163, 16);
             this.tbDniModi.TabIndex = 14;
+            this.tbDniModi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbMatriculaModi
             // 
+            this.tbMatriculaModi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbMatriculaModi.Location = new System.Drawing.Point(416, 160);
             this.tbMatriculaModi.Name = "tbMatriculaModi";
-            this.tbMatriculaModi.Size = new System.Drawing.Size(159, 23);
+            this.tbMatriculaModi.ReadOnly = true;
+            this.tbMatriculaModi.Size = new System.Drawing.Size(159, 16);
             this.tbMatriculaModi.TabIndex = 16;
+            this.tbMatriculaModi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbApellidoModi
             // 
@@ -165,16 +172,14 @@
             this.btnEditarHorarios.UseVisualStyleBackColor = true;
             this.btnEditarHorarios.Click += new System.EventHandler(this.btnEditarHorarios_Click);
             // 
-            // tbEspecialidadModi
+            // cbEspecialidadModi
             // 
-            this.tbEspecialidadModi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbEspecialidadModi.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic);
-            this.tbEspecialidadModi.Location = new System.Drawing.Point(113, 258);
-            this.tbEspecialidadModi.Name = "tbEspecialidadModi";
-            this.tbEspecialidadModi.ReadOnly = true;
-            this.tbEspecialidadModi.Size = new System.Drawing.Size(151, 19);
-            this.tbEspecialidadModi.TabIndex = 25;
-            this.tbEspecialidadModi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbEspecialidadModi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEspecialidadModi.FormattingEnabled = true;
+            this.cbEspecialidadModi.Location = new System.Drawing.Point(113, 255);
+            this.cbEspecialidadModi.Name = "cbEspecialidadModi";
+            this.cbEspecialidadModi.Size = new System.Drawing.Size(163, 23);
+            this.cbEspecialidadModi.TabIndex = 25;
             // 
             // frmEditarMedico
             // 
@@ -182,7 +187,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(644, 452);
-            this.Controls.Add(this.tbEspecialidadModi);
+            this.Controls.Add(this.cbEspecialidadModi);
             this.Controls.Add(this.btnEditarHorarios);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.clbObraSocial);
@@ -223,6 +228,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEditarHorarios;
-        private System.Windows.Forms.TextBox tbEspecialidadModi;
+        private System.Windows.Forms.ComboBox cbEspecialidadModi;
     }
 }
