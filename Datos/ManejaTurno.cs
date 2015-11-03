@@ -104,7 +104,7 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                aux = manager.consultar("select * from turno where idmedico=" + id + "and activo=1 and fecha='" +fecha+"'");
+                aux = manager.consultar("select * from turno where idmedico=" + id + "and activo=1 and convert(nvarchar , fecha, 103)='" + fecha + "'");
             }
             catch (Exception ex)
             {

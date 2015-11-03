@@ -25,8 +25,11 @@ namespace Fenix1._0
         RepositorioTurno rt = new RepositorioTurno();
         RepositorioSobreturno rst = new RepositorioSobreturno();
         List<clsMedico> medicos = new List<clsMedico>();
-        List<clsTurnoVista> turnos = new List<clsTurnoVista>();
-        List<clsSobreTurnoVista> sobreTurno = new List<clsSobreTurnoVista>();
+        List<clsTurnoVista> turnosVista = new List<clsTurnoVista>();
+        List<clsSobreTurnoVista> sobreTurnoVista = new List<clsSobreTurnoVista>();
+        List<clsTurno> turnos = new List<clsTurno>();
+        List<clsSobreturno> sobreTurno = new List<clsSobreturno>();
+               
         List<string> especialidades = new List<string>();
         clsHorario mañana = new clsHorario();
         clsHorario tarde = new clsHorario();
@@ -60,26 +63,6 @@ namespace Fenix1._0
             }
         }
 
-        private void btnTurnoXDia_Click(object sender, EventArgs e)
-        {
-            med = medicos[cbMedicos.SelectedIndex];
-            fecha = dtpFecha.Value.Date;
-            
-            turnos.Clear();
-            sobreTurno.Clear();
-            turnos = rt.obtenerTurnoVista(med.Id, dtpFecha.Value);//no tocar
-
-            sobreTurno = rst.obtenerSobreturnoVista(med.Id, dtpFecha.Value);
-            turnosDados(turnos);
-            sobreTurnosDados(sobreTurno);
-            mañana = rm.BuscarHorarioMañana(med.Id);
-            tarde = rm.BuscarHorarioTarde(med.Id);
-
-            botonesDisponibles();
-
-            pnlBotones.Enabled = true;
-        }
-
         private void btnAnt_Click(object sender, EventArgs e)
         {
             if (pagina > 0)
@@ -100,20 +83,26 @@ namespace Fenix1._0
 
         private void botonesDisponibles()
         {
-            if (string.IsNullOrWhiteSpace(mañana.IdMedico.ToString()))
+            if (string.IsNullOrWhiteSpace(mañana.LunesEntrada.ToString()))
             {
                 horariosMañana(false);
             }
-            else if (string.IsNullOrWhiteSpace(tarde.IdMedico.ToString()))
+            else
+            {
+                horariosMañana(true);
+            }
+            if (string.IsNullOrWhiteSpace(tarde.LunesEntrada.ToString()))
             {
                 horariosTarde(false);
             }
             else
             {
-                horariosMañana(true);
                 horariosTarde(true);
             }
-            foreach (clsTurnoVista tur in turnos)
+            
+            turnos = rt.obtenerTurno(med.Id, dtpFecha.Value.Date);
+
+            foreach (clsTurno tur in turnos)
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
@@ -128,7 +117,8 @@ namespace Fenix1._0
                     }
                 }
             }
-            foreach (clsSobreTurnoVista sobTur in sobreTurno)
+            sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value.Date);
+            foreach (clsSobreturno sobTur in sobreTurno)
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
@@ -150,11 +140,37 @@ namespace Fenix1._0
             cbEspecialidades.DataSource = especialidades;
             cbMedicos.DataSource = null;
             cbEspecialidades.SelectedIndex = 0;
-            medicos.Clear();
-            medicos = rm.Busca(cbEspecialidades.SelectedItem.ToString());
             dgvEliminar.DataSource = null;
             dgvEliminar.DataSource = rt.Todo(pagina);
+            dgvEliminar.Columns[0].Visible = false;
         }
+
+        private void btnTurnoXDia_Click(object sender, EventArgs e)
+        {
+            med = medicos[cbMedicos.SelectedIndex];
+            fecha = dtpFecha.Value.Date;
+
+            //turnosVista.Clear();
+            //sobreTurnoVista.Clear();
+            //turnosVista = rt.obtenerTurnoVista(med.Id, dtpFecha.Value);
+            //sobreTurnoVista = rst.obtenerSobreturnoVista(med.Id, dtpFecha.Value);
+            turnos.Clear();
+            sobreTurno.Clear();
+            turnos = rt.obtenerTurno(med.Id, dtpFecha.Value.Date);
+            sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value.Date);
+            turnosDados(turnos);
+            sobreTurnosDados(sobreTurno);
+            mañana = rm.BuscarHorarioMañana(med.Id);
+            tarde = rm.BuscarHorarioTarde(med.Id);
+
+            botonesDisponibles();
+
+            pnlBotones.Enabled = true;
+        }
+
+
+
+
 
         public void horariosMañana(bool estado)
         {
@@ -168,6 +184,18 @@ namespace Fenix1._0
                         btn.BackColor = Color.LimeGreen;
                     }
                 }
+            }
+            if (!estado)
+            {
+                                foreach (Button btn in pnlBotones.Controls)
+                {
+                    if (btn.Name.Contains("mañ"))
+                    {
+                        btn.Enabled = false;
+                        btn.BackColor = Color.Gray;
+                    }
+                }
+
             }
         }
 
@@ -184,11 +212,23 @@ namespace Fenix1._0
                     }
                 }
             }
+            if (!estado)
+            {
+                foreach (Button btn in pnlBotones.Controls)
+                {
+                    if (btn.Name.Contains("tar"))
+                    {
+                        btn.Enabled = false;
+                        btn.BackColor = Color.Gray;
+                    }
+                }
+
+            }
         }
 
-        public void turnosDados(List<clsTurnoVista> turnos)
+        public void turnosDados(List<clsTurno> turnos)
         {
-            foreach (clsTurnoVista turno in turnos)
+            foreach (clsTurno turno in turnos)
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
@@ -201,9 +241,9 @@ namespace Fenix1._0
             }
         }
 
-        public void sobreTurnosDados(List<clsSobreTurnoVista> sobreTurnos)
+        public void sobreTurnosDados(List<clsSobreturno> sobreTurnos)
         {
-            foreach (clsSobreTurnoVista sturno in sobreTurnos)
+            foreach (clsSobreturno sturno in sobreTurnos)
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
@@ -222,6 +262,7 @@ namespace Fenix1._0
             {
                 Button btn = (sender as Button);
                 darTurno(btn);
+                pnlBotones.Enabled = false;
             }
         }
 
