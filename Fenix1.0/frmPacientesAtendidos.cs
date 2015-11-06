@@ -20,9 +20,12 @@ namespace frmABMME
         RepositorioMedico reposMedico = new RepositorioMedico();
         RepositorioTurno reposTurno = new RepositorioTurno();
         RepositorioPaciente reposPaciente = new RepositorioPaciente();
+        RepositorioSobreturno reposSobreTurno = new RepositorioSobreturno();
+
         bool columnas = false;
         bool columnasTurno = false;
         List<clsTurno> listaTurnos = new List<clsTurno>();
+        List<clsSobreturno> listaSobreTurnos = new List<clsSobreturno>();
 
         public frmPacientesAtendidos()
         {
@@ -84,8 +87,6 @@ namespace frmABMME
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
 
-            //obtenerTurnoMedico(idMedico);     Me retorna todos los turnos de un medico determinado.
-
             if(checkBoxMedico.Checked)
             {
                 if(string.IsNullOrWhiteSpace(cbMedico.Text))
@@ -118,14 +119,17 @@ namespace frmABMME
                             medicoSeleccionado = med;
                     }                                                       //Encuentro el medico seleccionado y traigo todos sus turnos
 
-                    listaTurnos = reposTurno.obtenerTurnoMedico(medicoSeleccionado.Id);     //Traigo todos los turnos dados por ese medico
+                    listaTurnos = reposTurno.obtenerTurnoMedico(medicoSeleccionado.Id);         //Traigo todos los turnos dados por ese medico
+                    listaSobreTurnos = reposSobreTurno.obtenerTurnoMedico(medicoSeleccionado.Id);        //Traigo todos los sobre turnos dados por ese medico
+
+
+                    clsPaciente pas = new clsPaciente();        //Variable a la que se le asigna el paciente de cada turno.
 
 
                     foreach(clsTurno turn in listaTurnos)   //Recorro todos los turnos obteniendo el paciente de cada uno.
                     {
                         if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
-                        {
-                            clsPaciente pas = new clsPaciente();
+                        {                            
                             pas = reposPaciente.buscarPorId(turn.IdPaciente);
                             
                             if(pas != null)         //Pregunto por si el paciente fue dado de baja.
@@ -140,6 +144,23 @@ namespace frmABMME
 
                     }
 
+                    foreach(clsSobreturno turn in listaSobreTurnos)
+                    {
+                        if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
+                        {
+                            
+                            pas = reposPaciente.buscarPorId(turn.IdPaciente);
+
+                            if(pas != null)
+                            {
+                                dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
+                            }
+
+                        }
+
+
+                    }
+
 
 
                 }
@@ -147,7 +168,11 @@ namespace frmABMME
             else                //QUE EL CHECK BOX DE MEDICO NO FUE SELECCIONADO
             {
                 List<clsTurno> listaTurnos = new List<clsTurno>();
-                listaTurnos = reposTurno.RetornaTurnosEntre(dtpDesde.Value, dtpHasta.Value);    //Guardo todos los turnos existentes entre las fechas seleccionadas.
+                listaTurnos = reposTurno.TurnosEntreFechas(dtpDesde.Value, dtpHasta.Value);    //Guardo todos los turnos existentes entre las fechas seleccionadas.
+
+                List<clsSobreturno> listaSobreTurnos = new List<clsSobreturno>();
+                listaSobreTurnos = reposSobreTurno.SobreTurnosEntreFechas(dtpDesde.Value, dtpHasta.Value);
+
 
                 clsPaciente pas = new clsPaciente(); //Variable para ir asignando pacientes y mostrarlos
 
@@ -155,18 +180,31 @@ namespace frmABMME
                 {
                     if (turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
                     {
-                        if(pas != null)
-                        {
-                            pas = reposPaciente.buscarPorId(turn.Id);
+                        pas = reposPaciente.buscarPorId(turn.Id);
 
-                            dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
-                        
+                        if(pas != null)
+                        {                          
+                            dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);                        
                             
                         }
                         
                     }
                 }
 
+
+                foreach(clsSobreturno turn in listaSobreTurnos)
+                {
+                    if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
+                    {
+                        pas = reposPaciente.buscarPorId(turn.Id);
+
+                        if(pas != null)
+                        {
+                            dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);                        
+
+                        }
+                    }
+                }
 
         
 
@@ -234,13 +272,21 @@ namespace frmABMME
             int idPas = int.Parse(dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells[0].Value.ToString());
 
 
-            List<clsTurno> ListaTurnos = reposTurno.obtenerTurnoPaciente(idPas);
+            List<clsTurno> ListaTur = reposTurno.obtenerTurnoPaciente(idPas);
+            List<clsSobreturno> ListaSobreTur = reposSobreTurno.obtenerSobreturnoPaciente(idPas);
 
-            foreach(clsTurno turn in listaTurnos)
+
+            foreach(clsTurno turn in ListaTur)
             {
-                dgvTurnos.Rows.Add(turn.Fecha);
-                dgvTurnos.Rows.Add(turn.Costo);
+                dgvTurnos.Rows.Add(turn.Fecha, turn.Costo);
             }
+
+            foreach(clsSobreturno sobr in listaSobreTurnos)
+            {
+                dgvTurnos.Rows.Add(sobr.Fecha, sobr.Costo);
+            }
+
+
 
         }
 
