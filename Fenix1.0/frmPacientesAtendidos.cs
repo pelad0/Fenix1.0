@@ -21,6 +21,7 @@ namespace frmABMME
         RepositorioTurno reposTurno = new RepositorioTurno();
         RepositorioPaciente reposPaciente = new RepositorioPaciente();
         bool columnas = false;
+        bool columnasTurno = false;
         List<clsTurno> listaTurnos = new List<clsTurno>();
 
         public frmPacientesAtendidos()
@@ -145,9 +146,30 @@ namespace frmABMME
             }
             else                //QUE EL CHECK BOX DE MEDICO NO FUE SELECCIONADO
             {
+                List<clsTurno> listaTurnos = new List<clsTurno>();
+                listaTurnos = reposTurno.RetornaTurnosEntre(dtpDesde.Value, dtpHasta.Value);    //Guardo todos los turnos existentes entre las fechas seleccionadas.
 
-                //ACA LLAMO METODO QUE ME RETORNA TODOS LOS TURNOS ENTRE DOS FECHAS Y DE ESOS TURNOS SACO LOS
-                // PACIENTES QUE VOY A MOSTRAR.
+                clsPaciente pas = new clsPaciente(); //Variable para ir asignando pacientes y mostrarlos
+
+                foreach(clsTurno turn in listaTurnos)
+                {
+                    if (turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
+                    {
+                        if(pas != null)
+                        {
+                            pas = reposPaciente.buscarPorId(turn.Id);
+
+                            dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
+                        
+                            
+                        }
+                        
+                    }
+                }
+
+
+        
+
 
             }
 
@@ -188,6 +210,48 @@ namespace frmABMME
 
             columnas = true;
 
+        }
+
+        private void dgvPacientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if(!columnasTurno)
+            {
+                CrearColumnasTurno();
+            }
+
+            if (dgvTurnos.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvTurnos.Rows)
+                {
+                    dgvTurnos.Rows.Remove(row);
+                }
+            }
+            
+
+
+            //TOMO EL ID DEL PACIENTE SELECCIONADO
+            int idPas = int.Parse(dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells[0].Value.ToString());
+
+
+            List<clsTurno> ListaTurnos = reposTurno.obtenerTurnoPaciente(idPas);
+
+            foreach(clsTurno turn in listaTurnos)
+            {
+                dgvTurnos.Rows.Add(turn.Fecha);
+                dgvTurnos.Rows.Add(turn.Costo);
+            }
+
+        }
+
+
+        public void CrearColumnasTurno()
+        {
+            dgvTurnos.Columns.Add("Fecha", "Fecha");
+            dgvTurnos.Columns.Add("Costo", "Costo");
+
+            columnasTurno = true;
+      
         }
 
 
