@@ -213,7 +213,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMedicosAlta.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMedicosAlta.Location = new System.Drawing.Point(93, 303);
+            this.dgvMedicosAlta.Location = new System.Drawing.Point(86, 303);
             this.dgvMedicosAlta.MultiSelect = false;
             this.dgvMedicosAlta.Name = "dgvMedicosAlta";
             this.dgvMedicosAlta.ReadOnly = true;

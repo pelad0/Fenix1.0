@@ -257,7 +257,7 @@ namespace logica
 
         }
 
-        public List<clsTurno> obtenerTurnoPaciente(int id)//turno de un paciente
+        public List<clsTurno> obtenerTurnoPaciente(int id)//turno de un paciente cambiar
         {
             DataTable tabla;
             List<clsTurno> lista = new List<clsTurno>();
@@ -292,6 +292,26 @@ namespace logica
 
             return lista;
 
+        }
+
+        public List<clsTurnoVista>TurnoEntreFechas(DateTime desde,DateTime Hasta)
+        {
+            List<clsTurnoVista> lista=new List<clsTurnoVista>();
+            return lista;
+        }//completar
+
+        public clsTurnoVista primerTurno() //completar
+        {
+
+            clsTurnoVista turno = new clsTurnoVista();
+            return turno;
+        }
+
+        public clsTurnoVista ultimoTurno() //completar
+        {
+
+            clsTurnoVista turno=new clsTurnoVista();
+            return turno;
         }
         
     }
