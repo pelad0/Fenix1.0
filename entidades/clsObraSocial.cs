@@ -11,19 +11,22 @@ namespace entidades
     {
         private int id;
         string nombre;
+        double monto;
 
         public clsObraSocial()
         { }
         
-        public clsObraSocial(int id, string nombre)
+        public clsObraSocial(int id, string nombre, double monto)
         {
             this.id = id;
             this.nombre = nombre;
+            this.monto = monto;
         }
-        
-        public clsObraSocial(string nombre)
+
+        public clsObraSocial(string nombre, double monto)
         {
             this.nombre = nombre;
+            this.monto = monto;
         }
 
         public string Nombre
