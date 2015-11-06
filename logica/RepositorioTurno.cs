@@ -296,21 +296,21 @@ namespace logica
 
         public List<clsTurnoVista>TurnoEntreFechas(DateTime desde,DateTime Hasta)
         {
-            List<clsTurnoVista> lista;
+            List<clsTurnoVista> lista=new List<clsTurnoVista>();
             return lista;
         }//completar
 
         public clsTurnoVista primerTurno() //completar
         {
 
-            clsTurnoVista turno;
+            clsTurnoVista turno = new clsTurnoVista();
             return turno;
         }
 
         public clsTurnoVista ultimoTurno() //completar
         {
 
-            clsTurnoVista turno;
+            clsTurnoVista turno=new clsTurnoVista();
             return turno;
         }
         

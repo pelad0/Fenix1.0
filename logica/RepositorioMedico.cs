@@ -346,7 +346,7 @@ namespace logica
 
         public List<clsMedico> obtenerMedicos() //completar
         {
-            clsMedico med;
+            List<clsMedico> med = new List<clsMedico>();
 
             return med;
 
