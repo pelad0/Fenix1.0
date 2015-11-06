@@ -219,7 +219,7 @@ namespace logica
             return paciente;
         }
 
-        public List<clsSobreturno> obtenerSobreturno(int id, DateTime fecha)//implementar
+        public List<clsSobreTurnoVista> obtenerSobreturno(int id, DateTime fecha)//implementar
         {
             DataTable tabla;
             List<clsSobreturno> lista = new List<clsSobreturno>();
@@ -255,7 +255,7 @@ namespace logica
             return lista;
 
         }
-        public List<clsSobreturno> obtenerSobreturnoPaciente(int id, DateTime fecha)//implementar
+        public List<clsSobreTurnoVista> obtenerSobreturnoPaciente(int id)//implementar
         {
             DataTable tabla;
             List<clsSobreturno> lista = new List<clsSobreturno>();
@@ -290,6 +290,26 @@ namespace logica
 
             return lista;
 
+        }
+
+        public List<clsSobreTurnoVista> TurnoEntreFechas(DateTime desde, DateTime Hasta)
+        {
+            List<clsSobreTurnoVista> lista;
+            return lista;
+        }//completar
+
+        public clsSobreTurnoVista primerTurno() //completar
+        {
+
+            clsSobreTurnoVista turno;
+            return turno;
+        }
+
+        public clsSobreTurnoVista ultimoTurno() //completar
+        {
+
+            clsSobreTurnoVista turno;
+            return turno;
         }
 
     }
