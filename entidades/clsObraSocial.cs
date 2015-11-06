@@ -41,6 +41,11 @@ namespace entidades
             set { id = value; }
         }
 
+        public double Monto
+        {
+            get { return monto; }
+            set { monto = value; }
+        }
       
     }
 }
