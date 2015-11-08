@@ -34,6 +34,7 @@ namespace frmABMME
 
         private void frmPacientesAtendidos_Load(object sender, EventArgs e)
         {
+            /*
             checkBoxMedico.Checked = false;
 
             if (!columnas)   //Para que se creeen una sola vez y no tener que borrarlas
@@ -45,7 +46,7 @@ namespace frmABMME
 
             CargarMedicos();        //Carga todos los medicos al combo box;
             EstablecerFechas();     //Establece las fechas en los dateTimepicker, la menor es la del primer turno, la mayor del ultimo.
-
+            */
         }
 
 
@@ -53,6 +54,7 @@ namespace frmABMME
 
         public void CargarMedicos()         //CARGA TODOS LOS MEDICOS EN EL COMBO BOX.
         {
+            /*
             List<clsMedico> listaMedicos = new List<clsMedico>();
 
             listaMedicos = reposMedico.ObtenerMedicos();        //Metodo que me trae todos los medicos
@@ -61,7 +63,7 @@ namespace frmABMME
             {
                 cbMedico.Items.Add(med.Apellido);
             }
-
+            */
 
 
         }
@@ -69,7 +71,7 @@ namespace frmABMME
 
         public void EstablecerFechas()
         {
-
+            /*
             clsTurno primerTurno = new clsTurno();
             clsTurno ultimoTurno = new clsTurno();
 
@@ -81,12 +83,12 @@ namespace frmABMME
 
             dtpDesde.Value = primerTurno.Fecha;
             dtpHasta.Value = ultimoTurno.Fecha;
-
+            */
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-
+            /*
             if(checkBoxMedico.Checked)
             {
                 if(string.IsNullOrWhiteSpace(cbMedico.Text))
@@ -212,7 +214,7 @@ namespace frmABMME
             }
 
 
-
+            */
 
 
         }
@@ -223,6 +225,7 @@ namespace frmABMME
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            /*
             if (!checkBoxMedico.Checked)
             {
                 cbMedico.Enabled = false;
@@ -231,11 +234,11 @@ namespace frmABMME
             {
                 cbMedico.Enabled = true;
             }
-
+            */
         }
 
         public void CrearColumnas()
-        {
+        {/*
 
             dgvPacientes.Columns.Add("id", "id");
             dgvPacientes.Columns["id"].Visible = false;
@@ -247,12 +250,12 @@ namespace frmABMME
             
 
             columnas = true;
-
+            */
         }
 
         private void dgvPacientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            /*
             if(!columnasTurno)
             {
                 CrearColumnasTurno();
@@ -286,18 +289,18 @@ namespace frmABMME
                 dgvTurnos.Rows.Add(sobr.Fecha, sobr.Costo);
             }
 
-
+            */
 
         }
 
 
         public void CrearColumnasTurno()
-        {
+        {/*
             dgvTurnos.Columns.Add("Fecha", "Fecha");
             dgvTurnos.Columns.Add("Costo", "Costo");
 
             columnasTurno = true;
-      
+      */
         }
 
 
