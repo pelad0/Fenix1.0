@@ -132,7 +132,7 @@ namespace logica
 
         }
 
-        public List<clsMedico> Busca(string esp)//buscar por especialidad
+        public List<clsMedico> BuscaPorEspecialidad(string esp)//buscar por especialidad
         {
             DataTable tabla;
             List<clsMedico> lista = new List<clsMedico>();
