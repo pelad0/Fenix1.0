@@ -20,6 +20,7 @@ namespace Fenix1._0
 
         RepositorioUsuario ru = new RepositorioUsuario();
         List<clsUsuario> usuarios = new List<clsUsuario>();
+        clsUsuario u = new clsUsuario();
         public frmInicio()
         {
             InitializeComponent();

@@ -13,7 +13,7 @@ namespace Datos
     {
          //comment 
 
-        //SqlConnection cnn;
+        SqlConnection cnn;
         //string usuario = "vicente";
         //string con = "vicente";
         //string based = "Parcial2";
