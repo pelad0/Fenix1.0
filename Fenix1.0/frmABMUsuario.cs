@@ -220,16 +220,20 @@ namespace Fenix1._0
                 }
                 cbEspecialidades.DataSource = especialiades;
                 cbEspecialidades.Visible = true;
+                lblEspecialidad.Visible = true;
+
             }
         }
 
         private void cbEspecialidades_SelectedValueChanged(object sender, EventArgs e)
         {
-            foreach(clsMedico m in rm.Busca(cbEspecialidades.Text))
+            foreach(clsMedico m in rm.BuscaPorEspecialidad(cbEspecialidades.Text))
             {
                 medicos.Add(m.nombreCompleto());
             }
             cbMedicos.Visible = true;
+            lblMedicos.Visible = true;
+
         }
 
     }

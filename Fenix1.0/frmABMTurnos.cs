@@ -51,7 +51,7 @@ namespace Fenix1._0
         {
             List<string> m = new List<string>();
             medicos.Clear();
-            medicos = rm.Busca(cbEspecialidades.SelectedItem.ToString());
+            medicos = rm.BuscaPorEspecialidad(cbEspecialidades.SelectedItem.ToString());
             foreach (clsMedico med in medicos)
             {
 		        m.Add(med.Apellido+" "+med.Nombre);
