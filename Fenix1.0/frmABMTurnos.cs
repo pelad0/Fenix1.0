@@ -28,7 +28,7 @@ namespace Fenix1._0
         List<clsTurnoVista> turnosVista = new List<clsTurnoVista>();
         List<clsSobreTurnoVista> sobreTurnoVista = new List<clsSobreTurnoVista>();
         List<clsTurno> turnos = new List<clsTurno>();
-        List<clsSobreturno> sobreTurno = new List<clsSobreturno>();
+        List<clsSobreTurnoVista> sobreTurno = new List<clsSobreTurnoVista>();
                
         List<string> especialidades = new List<string>();
         clsHorario mañana = new clsHorario();
@@ -126,7 +126,7 @@ namespace Fenix1._0
 
             sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value.Date);
 
-            foreach (clsSobreturno sobTur in sobreTurno)
+            foreach (clsSobreTurnoVista sobTur in sobreTurno)
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
@@ -250,9 +250,9 @@ namespace Fenix1._0
             }
         }
 
-        public void sobreTurnosDados(List<clsSobreturno> sobreTurnos)
+        public void sobreTurnosDados(List<clsSobreTurnoVista> sobreTurnos)
         {
-            foreach (clsSobreturno sturno in sobreTurnos)
+            foreach (clsSobreTurnoVista sturno in sobreTurnos)
             {
                 foreach (Button btn in pnlBotones.Controls)
                 {
@@ -330,7 +330,7 @@ namespace Fenix1._0
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
-            rt.obtenerTurno
+            //rt.obtenerTurno
         }
 
         private void cbMedicos_SelectedIndexChanged(object sender, EventArgs e)
