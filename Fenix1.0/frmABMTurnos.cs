@@ -83,6 +83,10 @@ namespace Fenix1._0
 
         private void botonesDisponibles()
         {
+            clsHorario h = new clsHorario();
+            RepositorioHorario rh = new RepositorioHorario();
+            h = rh.buscarPorId(med.Id, 1);//var 1 es mañana y var=2 es tarde
+
             if (string.IsNullOrWhiteSpace(mañana.LunesEntrada.ToString()))
             {
                 horariosMañana(false);
@@ -101,6 +105,7 @@ namespace Fenix1._0
                 horariosTarde(true);
             }
             
+
             turnos = rt.obtenerTurno(med.Id, dtpFecha.Value.Date);
 
             foreach (clsTurno tur in turnos)
@@ -143,15 +148,14 @@ namespace Fenix1._0
             cbEspecialidades.DataSource = especialidades;
             cbMedicos.DataSource = null;
             cbEspecialidades.SelectedIndex = 0;
-            dgvEliminar.DataSource = null;
-            dgvEliminar.DataSource = rt.Todo(pagina);
-            dgvEliminar.Columns[0].Visible = false;
+            dgvEliminarTurnos.DataSource = null;
+            dgvEliminarTurnos.DataSource = rt.Todo(pagina);
+            dgvEliminarTurnos.Columns[0].Visible = false;
         }
 
         private void btnTurnoXDia_Click(object sender, EventArgs e)
         {
-            med = medicos[cbMedicos.SelectedIndex];
-            fecha = dtpFecha.Value.Date;
+//            fecha = dtpFecha.Value.Date;
 
             //turnosVista.Clear();
             //sobreTurnoVista.Clear();
@@ -322,6 +326,16 @@ namespace Fenix1._0
         private void dgvEliminar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            rt.obtenerTurno
+        }
+
+        private void cbMedicos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            med = medicos[cbMedicos.SelectedIndex];
         }
 
     }

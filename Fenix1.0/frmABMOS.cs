@@ -32,7 +32,7 @@ namespace Fenix1._0
         {
             if (!string.IsNullOrWhiteSpace(tbOS.Text))
             {
-                DialogResult res = MessageBox.Show("Agregar a " + tbOS.Text +"con un máximo de cobertura de "+tbMontoPesos.Text+"."+tbMontoCent.Text+" al sistema?", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult res = MessageBox.Show("Agregar a " + tbOS.Text +"con un máximo de cobertura de "+ tbPesosAlta.Text+"."+tbCentAlta.Text+" al sistema?", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (res == DialogResult.OK)
                 {
                     double monto = Convert.ToDouble(tbPesosAlta.Text) + (Convert.ToDouble(tbCentAlta.Text) / 100);
@@ -130,11 +130,6 @@ namespace Fenix1._0
 
             tbModifOS.Clear();
             tbOS.Clear();
-        }
-
-        private void textBoxNumeros2_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
     }

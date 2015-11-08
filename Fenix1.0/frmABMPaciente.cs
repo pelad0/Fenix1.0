@@ -39,7 +39,16 @@ namespace Fenix1._0
         {
             if (comprobarCamposAlta())
             {
-                clsPaciente p = new clsPaciente(tbNombreAlta.Text, tbApellidoAlta.Text, Convert.ToInt64(tbDniAlta.Text), cbOSAlta.SelectedItem.ToString(), Convert.ToInt64(tbTelALta.Text));
+                clsPaciente p;
+                if (cbOSAlta.SelectedItem == "Ninguna")
+                {
+                    clsObraSocial ninguna = new clsObraSocial("Ninguna", 0);
+                    p = new clsPaciente(tbNombreAlta.Text, tbApellidoAlta.Text, Convert.ToInt64(tbDniAlta.Text), ninguna.Nombre, Convert.ToInt64(tbTelALta.Text));
+                }
+                else
+                {
+                    p = new clsPaciente(tbNombreAlta.Text, tbApellidoAlta.Text, Convert.ToInt64(tbDniAlta.Text), cbOSAlta.SelectedItem.ToString(), Convert.ToInt64(tbTelALta.Text));
+                }
                 try
                 {
                     rp.Alta(p);
@@ -217,6 +226,7 @@ namespace Fenix1._0
             {
                 OS.Add(obra.Nombre);
             }
+            OS.Add("Ninguna");
             cbOSAlta.DataSource = OS;
             cbOSMod.DataSource = OS;
 
