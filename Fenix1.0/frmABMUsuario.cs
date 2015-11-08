@@ -17,8 +17,11 @@ namespace Fenix1._0
     public partial class frmABMUsuario : Form
     {
         RepositorioUsuario ru = new RepositorioUsuario();
+        RepositorioMedico rm = new RepositorioMedico();
+        RepositorioEspecialidad re = new RepositorioEspecialidad();
         List<clsUsuario> usuarios = new List<clsUsuario>();
-        
+        List<string> especialiades = new List<string>();
+        List<string> medicos = new List<string>();
         public frmABMUsuario()
         {
             InitializeComponent();
@@ -205,6 +208,28 @@ namespace Fenix1._0
 
             }
 
+        }
+
+        private void cbSeguridad_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbSeguridad.Text == "Medico")
+            {
+                foreach (clsEspecialidad esp in re.Todo())
+                {
+                    especialiades.Add(esp.Descripcion);
+                }
+                cbEspecialidades.DataSource = especialiades;
+                cbEspecialidades.Visible = true;
+            }
+        }
+
+        private void cbEspecialidades_SelectedValueChanged(object sender, EventArgs e)
+        {
+            foreach(clsMedico m in rm.Busca(cbEspecialidades.Text))
+            {
+                medicos.Add(m.nombreCompleto());
+            }
+            cbMedicos.Visible = true;
         }
 
     }

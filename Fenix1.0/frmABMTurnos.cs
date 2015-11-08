@@ -338,5 +338,10 @@ namespace Fenix1._0
             med = medicos[cbMedicos.SelectedIndex];
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

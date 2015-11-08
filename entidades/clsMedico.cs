@@ -78,6 +78,11 @@ namespace entidades
             set { especialidad = value; }
         }
 
+        public string nombreCompleto()
+        {
+            return nombre + " " + apellido;
+        }
+
       
     }
 }
