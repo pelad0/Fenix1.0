@@ -92,7 +92,7 @@ namespace logica
                     clsObraSocial os = new clsObraSocial();
                     os.Id = Convert.ToInt32(aux["id"]);
                     os.Nombre = aux["nombre"].ToString();
-
+                    os.Monto = Convert.ToDouble(aux["canon"]);
                     lista.Add(os);
 
                 }
