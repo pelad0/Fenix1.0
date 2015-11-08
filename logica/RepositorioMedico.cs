@@ -344,7 +344,13 @@ namespace logica
             return esp;
         }
 
-         
+        public List<clsMedico> obtenerMedicos() //completar
+        {
+            List<clsMedico> med = new List<clsMedico>();
+
+            return med;
+
+        }
 
     }
 }

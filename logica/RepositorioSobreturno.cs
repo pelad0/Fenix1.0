@@ -219,10 +219,10 @@ namespace logica
             return paciente;
         }
 
-        public List<clsSobreturno> obtenerSobreturno(int id, DateTime fecha)//implementar
+        public List<clsSobreTurnoVista> obtenerSobreturno(int id, DateTime fecha)//implementar
         {
             DataTable tabla;
-            List<clsSobreturno> lista = new List<clsSobreturno>();
+            List<clsSobreTurnoVista> lista = new List<clsSobreTurnoVista>();
 
             try
             {
@@ -238,7 +238,7 @@ namespace logica
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
 
-                    lista.Add(turno);
+                   // lista.Add(turno);
 
 
                 }
@@ -255,10 +255,10 @@ namespace logica
             return lista;
 
         }
-        public List<clsSobreturno> obtenerSobreturnoPaciente(int id, DateTime fecha)//implementar
+        public List<clsSobreTurnoVista> obtenerSobreturnoPaciente(int id)//implementar
         {
             DataTable tabla;
-            List<clsSobreturno> lista = new List<clsSobreturno>();
+            List<clsSobreTurnoVista> lista = new List<clsSobreTurnoVista>();
 
             try
             {
@@ -274,7 +274,7 @@ namespace logica
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
 
-                    lista.Add(turno);
+                  //  lista.Add(turno);
 
 
                 }
@@ -290,6 +290,26 @@ namespace logica
 
             return lista;
 
+        }
+
+        public List<clsSobreTurnoVista> TurnoEntreFechas(DateTime desde, DateTime Hasta)
+        {
+            List<clsSobreTurnoVista> lista= new List<clsSobreTurnoVista>();
+            return lista;
+        }//completar
+
+        public clsSobreTurnoVista primerTurno() //completar
+        {
+
+            clsSobreTurnoVista turno = new clsSobreTurnoVista(); ;
+            return turno;
+        }
+
+        public clsSobreTurnoVista ultimoTurno() //completar
+        {
+
+            clsSobreTurnoVista turno = new clsSobreTurnoVista();
+            return turno;
         }
 
     }
