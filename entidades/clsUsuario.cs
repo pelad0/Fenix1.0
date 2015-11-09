@@ -12,6 +12,7 @@ namespace entidades
         int id;        
         string usuario;
         string clave;
+        int idMedico;
         string seguridad;
 
         public clsUsuario()
@@ -58,5 +59,12 @@ namespace entidades
           get { return seguridad; }
           set { seguridad = value; }
         }
+
+        public int IdMedico
+        {
+            get { return idMedico; }
+            set { idMedico = value; }
+        }
+
     }
 }
