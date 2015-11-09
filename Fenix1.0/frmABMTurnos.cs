@@ -33,6 +33,7 @@ namespace Fenix1._0
         List<string> especialidades = new List<string>();
         clsHorario mañana = new clsHorario();
         clsHorario tarde = new clsHorario();
+        bool eligio = false;
 
         public frmABMTurnos( clsUsuario usu, clsPaciente pac)
         {
@@ -169,20 +170,29 @@ namespace Fenix1._0
             //sobreTurnoVista.Clear();
             //turnosVista = rt.obtenerTurnoVista(med.Id, dtpFecha.Value);
             //sobreTurnoVista = rst.obtenerSobreturnoVista(med.Id, dtpFecha.Value);
-            turnos.Clear();
-            sobreTurno.Clear();
-            turnos = rt.obtenerTurno(med.Id, dtpFecha.Value.Date);
-            sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value.Date);
-            turnosDados(turnos);
-            sobreTurnosDados(sobreTurno);
-            mañana = rm.BuscarHorarioMañana(med.Id);
-            tarde = rm.BuscarHorarioTarde(med.Id);
+            if (cbMedicos.SelectedIndex > -1)
+            {
 
-            botonesDisponibles();
 
-            pnlBotones.Enabled = true;
+                turnos.Clear();
+                sobreTurno.Clear();
+                turnos = rt.obtenerTurno(med.Id, dtpFecha.Value.Date);
+                sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value.Date);
+                turnosDados(turnos);
+                sobreTurnosDados(sobreTurno);
+                mañana = rm.BuscarHorarioMañana(med.Id);
+                tarde = rm.BuscarHorarioTarde(med.Id);
 
-            btnTurnoXDia.Focus();
+                botonesDisponibles();
+
+                pnlBotones.Enabled = true;
+
+                btnTurnoXDia.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione medico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
 
@@ -343,7 +353,11 @@ namespace Fenix1._0
 
         private void cbMedicos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            med = medicos[cbMedicos.SelectedIndex];
+            if (cbMedicos.SelectedIndex > -1)
+            {
+                med = medicos[cbMedicos.SelectedIndex];
+
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
