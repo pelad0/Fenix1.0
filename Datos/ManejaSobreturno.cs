@@ -62,6 +62,17 @@ namespace Datos
                 }
             }
 
+            public void ActualizarAsistencia(int id)
+            {
+                try
+                {
+                    manager.ejecutar("update sobreturno set estado=" + true + "where id=" + id);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
             public IEntidad buscaPorId(int id)
             {
                 DataTable aux = new DataTable();

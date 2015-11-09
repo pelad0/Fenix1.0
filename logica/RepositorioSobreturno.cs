@@ -312,5 +312,20 @@ namespace logica
             return turno;
         }
 
+        public void ActualizarAsistencia(int id)
+        {
+            try
+            {
+                manejaTurno.ActualizarAsistencia(id);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
