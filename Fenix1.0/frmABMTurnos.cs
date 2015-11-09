@@ -86,7 +86,15 @@ namespace Fenix1._0
             clsHorario h = new clsHorario();
             RepositorioHorario rh = new RepositorioHorario();
             h = rh.buscarPorId(med.Id, 1);//var 1 es mañana y var=2 es tarde
+            string dia = dtpFecha.Value.DayOfWeek.ToString();
 
+            switch (dia)
+            {
+                case "":
+
+                    break;
+
+            }
             if (string.IsNullOrWhiteSpace(mañana.LunesEntrada.ToString()))
             {
                 horariosMañana(false);
