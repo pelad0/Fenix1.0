@@ -13,7 +13,7 @@ namespace Datos
     {
 
         iBdMetodos manager;
-
+     
         public ManejaEspecialidad()
         {                                                                                                                                                                                                               
             manager = new BdMetodos();
