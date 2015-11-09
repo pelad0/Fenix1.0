@@ -22,7 +22,7 @@ namespace Datos
             clsUsuario us = (clsUsuario)entidad;
             try
             {
-                manager.ejecutar("Insert into usuario(usuario,pass,seguridad) values('"+us.Usuario+"','"+us.Clave+"','"+us.Seguridad+"');SELECT @@identity;");
+                manager.ejecutar("Insert into usuario(usuario,pass,seguridad,idmedico) values('"+us.Usuario+"','"+us.Clave+"','"+us.Seguridad+"',"+us.IdMedico+");SELECT @@identity;");
             }
             catch (Exception ex)
             {
@@ -49,7 +49,7 @@ namespace Datos
             clsUsuario us = (clsUsuario)entidad;
             try
             {
-                manager.ejecutar("update usuario set usuario='"+us.Usuario+"',pass='"+us.Clave+"',seguridad='"+us.Seguridad+"' where id="+us.Id);
+                manager.ejecutar("update usuario set usuario='"+us.Usuario+"',pass='"+us.Clave+"',seguridad='"+us.Seguridad+"',idmedico="+us.IdMedico +"where id="+us.Id);
 
             }
             catch (Exception ex)
@@ -70,6 +70,7 @@ namespace Datos
                     us.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                     us.Seguridad = aux.Rows[0]["seguridad"].ToString();
                     us.Clave = aux.Rows[0]["pass"].ToString();
+                    us.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
                     us.Usuario = aux.Rows[0]["usuario"].ToString();
                    
                 }
