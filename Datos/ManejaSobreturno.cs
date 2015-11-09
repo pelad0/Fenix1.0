@@ -104,7 +104,7 @@ namespace Datos
                 DataTable aux = new DataTable();
                 try
                 {
-                    aux = manager.consultar("select * from sobreturno where idmedico=" + id + "and activo=1 and convert(nvarchar , fecha, 103)='" + fecha + "'");
+                    aux = manager.consultar("select * from sobreturno where idmedico=" + id + " and activo=1 and convert(nvarchar , fecha, 103)='" + fecha + "'");
                 }
                 catch (Exception ex)
                 {
@@ -119,7 +119,7 @@ namespace Datos
                 DataTable aux = new DataTable();
                 try
                 {
-                    aux = manager.consultar("select * from sobreturno where idpaciente=" + id + "and activo=1");
+                    aux = manager.consultar("select * from sobreturno where idpaciente=" + id + " and activo=1");
                 }
                 catch (Exception ex)
                 {
@@ -128,7 +128,21 @@ namespace Datos
 
                 return aux;
             }
+            public DataTable TurnosEntreFechas(DateTime desde, DateTime hasta)
+            {
+                DataTable aux = new DataTable();
+                try
+                {
+                    aux = manager.consultar("select * from sobreturno where fecha between '" + desde + "' and '" + hasta + "'");
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
 
+
+                return aux;
+            }
 
 
         }
