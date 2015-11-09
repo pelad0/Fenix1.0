@@ -26,11 +26,11 @@ namespace Datos
                 aux = manager.consultar("select * from obrasocial where nombre='" + ob.Nombre + "'");
                 if (aux.Rows.Count == 0)
                 {
-                    manager.ejecutar("Insert into obrasocial(nombre) values('" + ob.Nombre + "',"+ob.Monto+");SELECT @@identity;");
+                    manager.ejecutar("Insert into obrasocial(nombre,canon) values('" + ob.Nombre + "',"+ob.Monto+");SELECT @@identity;");
                 }
                 else
                 {
-                    manager.ejecutar("update obrasocial set activo=1 where nombre='" + ob.Nombre+"'");
+                    manager.ejecutar("update obrasocial set activo=1,canon="+ob.Monto+" where nombre='" + ob.Nombre+"'");
                 }
             }
             catch (Exception ex)
@@ -66,7 +66,7 @@ activo bit default 1
 
             try
             {
-                manager.ejecutar("update obrasocial set nombre='" + ob.Nombre +"', canon='" +ob.Monto +" where id="+ob.Id+" and activo=1");
+                manager.ejecutar("update obrasocial set nombre='" + ob.Nombre +"', canon=" +ob.Monto +" where id="+ob.Id+" and activo=1");
             }
             catch (Exception ex)
             {
