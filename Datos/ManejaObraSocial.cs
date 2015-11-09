@@ -86,7 +86,7 @@ activo bit default 1
                 {
                     pac.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                     pac.Nombre = aux.Rows[0]["nombre"].ToString();
-                    pac.Monto = Convert.ToDouble(aux.Rows[0]["monto"]);
+                    pac.Monto = Convert.ToDouble(aux.Rows[0]["canon"]);
                 }
             }
             catch (Exception ex)
@@ -123,7 +123,7 @@ activo bit default 1
                 aux = manager.consultar("select * from obrasocial where nombre='" + nombre + "' and activo=1");
                 pac.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 pac.Nombre = aux.Rows[0]["nombre"].ToString();
-                pac.Monto = Convert.ToDouble(aux.Rows[0]["monto"]);
+                pac.Monto = Convert.ToDouble(aux.Rows[0]["canon"]);
             }
             catch (Exception ex)
             {
