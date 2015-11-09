@@ -143,7 +143,7 @@ namespace logica
                     turno.Paciente = metodoP((clsPacienteDatos)manejapaciente.buscaPorId(Convert.ToInt32(aux["idPaciente"])));
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-
+                    turno.Costo = Convert.ToDouble(aux["costo"]);
                     lista.Add(turno);
 
 
@@ -219,10 +219,10 @@ namespace logica
             return paciente;
         }
 
-        public List<clsSobreTurnoVista> obtenerSobreturno(int id, DateTime fecha)//implementar
+        public List<clsSobreturno> obtenerSobreturno(int id, DateTime fecha)//implementar
         {
             DataTable tabla;
-            List<clsSobreTurnoVista> lista = new List<clsSobreTurnoVista>();
+            List<clsSobreturno> lista = new List<clsSobreturno>();
 
             try
             {
@@ -232,13 +232,12 @@ namespace logica
 
                     clsSobreturno turno = new clsSobreturno();
                     turno.Id = Convert.ToInt32(aux["id"]);
-                    turno.Id = Convert.ToInt32(aux["idMedico"]);
                     turno.IdMedico =Convert.ToInt32(aux["idMedico"]);
                     turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-
-                   // lista.Add(turno);
+                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                    lista.Add(turno);
 
 
                 }
@@ -273,8 +272,9 @@ namespace logica
                     turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-
-                  //  lista.Add(turno);
+                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                  
+                   // lista.Add(turno);
 
 
                 }
