@@ -15,7 +15,7 @@ namespace Datos
         iBdMetodos manager;
 
         public ManejaEspecialidad()
-        {
+        {                                                                                                                                                                                                               
             manager = new BdMetodos();
         }
         public void Alta(IEntidad entidad)
@@ -23,7 +23,7 @@ namespace Datos
             clsEspecialidad ent = (clsEspecialidad)entidad;
             try
             {
-                manager.ejecutar("Insert into especialidad(descripcion) values('"+ent.Descripcion+"');SELECT @@identity;");
+                manager.ejecutar("Insert into especialidad(descripcion,canon) values('"+ent.Descripcion+"',"+ent.Canon+");SELECT @@identity;");
             }
             catch (Exception ex)
             {
@@ -49,7 +49,7 @@ namespace Datos
             clsEspecialidad esp = (clsEspecialidad)entidad;
             try
             {
-                manager.ejecutar("update especialidad set descripcion='"+esp.Descripcion+"' where id="+esp.Id);
+                manager.ejecutar("update especialidad set descripcion='"+esp.Descripcion+"',set canon="+esp.Canon+ "where id="+esp.Id);
             }
             catch (Exception ex)
             {
@@ -66,6 +66,7 @@ namespace Datos
                 aux = manager.consultar("select * from especialidad where id=" + id + "and activo=1");
                 esp.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 esp.Descripcion = aux.Rows[0]["descripcion"].ToString();
+                esp.Canon =(float) Convert.ToDecimal(aux.Rows[0]["canon"]);
                
             }
             catch (Exception ex)
@@ -102,6 +103,7 @@ namespace Datos
                 aux = manager.consultar("select * from especialidad where descripcion='" + nombre + "' and activo=1");
                 esp.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 esp.Descripcion = aux.Rows[0]["descripcion"].ToString();
+                esp.Canon = (float)Convert.ToDecimal(aux.Rows[0]["canon"]);
 
             }
             catch (Exception ex)
