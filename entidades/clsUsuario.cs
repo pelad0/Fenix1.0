@@ -20,19 +20,22 @@ namespace entidades
 
         }
 
-        public clsUsuario(string usuario, string clave, string seguridad)
+        public clsUsuario(string usuario, string clave, string seguridad, int idMedico)
         {
             this.usuario = usuario;
             this.clave = clave;
             this.seguridad = seguridad;
+            this.idMedico = idMedico;
         }
 
-        public clsUsuario(int id, string usuario, string clave, string seguridad)
+        public clsUsuario(int id, string usuario, string clave, string seguridad, int idMedico)
         {
             this.id = id;
             this.usuario = usuario;
             this.clave = clave;
             this.seguridad = seguridad;
+            this.idMedico = idMedico;
+
 
         }
 

@@ -62,7 +62,7 @@
             this.btnAlta = new System.Windows.Forms.Button();
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAsistencia = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSobreTurnos = new System.Windows.Forms.DataGridView();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlta)).BeginInit();
             this.tcABM.SuspendLayout();
             this.tpAsistencia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSobreTurnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -386,7 +386,7 @@
             this.tpAsistencia.Controls.Add(this.label7);
             this.tpAsistencia.Controls.Add(this.label6);
             this.tpAsistencia.Controls.Add(this.dgvTurnos);
-            this.tpAsistencia.Controls.Add(this.dataGridView1);
+            this.tpAsistencia.Controls.Add(this.dgvSobreTurnos);
             this.tpAsistencia.Location = new System.Drawing.Point(4, 34);
             this.tpAsistencia.Name = "tpAsistencia";
             this.tpAsistencia.Size = new System.Drawing.Size(636, 447);
@@ -394,13 +394,13 @@
             this.tpAsistencia.Text = "Asistencia";
             this.tpAsistencia.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvSobreTurnos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 259);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(630, 185);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvSobreTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSobreTurnos.Location = new System.Drawing.Point(3, 259);
+            this.dgvSobreTurnos.Name = "dgvSobreTurnos";
+            this.dgvSobreTurnos.Size = new System.Drawing.Size(630, 185);
+            this.dgvSobreTurnos.TabIndex = 0;
             // 
             // dgvTurnos
             // 
@@ -474,7 +474,7 @@
             this.tcABM.ResumeLayout(false);
             this.tpAsistencia.ResumeLayout(false);
             this.tpAsistencia.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSobreTurnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).EndInit();
             this.ResumeLayout(false);
 
@@ -504,7 +504,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvTurnos;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSobreTurnos;
         private System.Windows.Forms.Button btnSigAlta;
         private System.Windows.Forms.Button btnAntAlta;
 

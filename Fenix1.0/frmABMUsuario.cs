@@ -48,6 +48,27 @@ namespace Fenix1._0
         {
             if (!string.IsNullOrWhiteSpace(tbUsuAlta.Text) && !string.IsNullOrWhiteSpace(tbContAlta1.Text) && !string.IsNullOrWhiteSpace(tbContAlta2.Text) && cbSeguridad.SelectedIndex > -1)
             {
+                if (cbSeguridad.SelectedItem.ToString() == "Medico")
+                {
+                    if (cbEspecialidades.SelectedIndex > -1 && cbMedicos.SelectedIndex > -1)
+                    {
+                        clsUsuario u = new clsUsuario(tbUsuAlta.Text, tbContAlta1.Text, cbSeguridad.SelectedItem.ToString());
+                        try
+                        {
+                            ru.Alta(u);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Se ha pruducido el Sgte. error: "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            iniciar();
+                        }
+
+                    }
+                }
+
                 if (tbContAlta1.Text == tbContAlta2.Text)
                 {
                     clsUsuario u = new clsUsuario(tbUsuAlta.Text, tbContAlta1.Text, cbSeguridad.SelectedItem.ToString());
