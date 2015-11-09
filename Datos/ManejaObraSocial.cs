@@ -26,7 +26,7 @@ namespace Datos
                 aux = manager.consultar("select * from obrasocial where nombre='" + ob.Nombre + "'");
                 if (aux.Rows.Count == 0)
                 {
-                    manager.ejecutar("Insert into obrasocial(nombre,canon) values('" + ob.Nombre + "',"+ob.Monto+");SELECT @@identity;");
+                    manager.ejecutar("Insert into obrasocial(nombre, canon) values('" + ob.Nombre + "',"+(decimal)ob.Monto+");SELECT @@identity;");
                 }
                 else
                 {

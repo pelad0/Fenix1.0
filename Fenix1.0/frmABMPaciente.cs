@@ -40,7 +40,7 @@ namespace Fenix1._0
             if (comprobarCamposAlta())
             {
                 clsPaciente p;
-                if (cbOSAlta.SelectedItem == "Ninguna")
+                if (cbOSAlta.SelectedItem.ToString() == "Ninguna")
                 {
                     clsObraSocial ninguna = new clsObraSocial("Ninguna", 0);
                     p = new clsPaciente(tbNombreAlta.Text, tbApellidoAlta.Text, Convert.ToInt64(tbDniAlta.Text), ninguna.Nombre, Convert.ToInt64(tbTelALta.Text));
