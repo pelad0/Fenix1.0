@@ -114,12 +114,12 @@ namespace Datos
                 return aux;
             }
 
-            public DataTable BuscarTurnoPorPaciente(int id)
+            public DataTable BuscarTurnoPorPaciente(int id,DateTime fecha)
             {
                 DataTable aux = new DataTable();
                 try
                 {
-                    aux = manager.consultar("select * from sobreturno where idpaciente=" + id + " and activo=1");
+                    aux = manager.consultar("select * from sobreturno where idpaciente=" + id + " and activo=1 and fecha='"+fecha+"'");
                 }
                 catch (Exception ex)
                 {
