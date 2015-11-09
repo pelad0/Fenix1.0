@@ -40,6 +40,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.lblMedicos = new System.Windows.Forms.Label();
+            this.lblEspecialidad = new System.Windows.Forms.Label();
+            this.cbEspecialidades = new System.Windows.Forms.ComboBox();
+            this.cbMedicos = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbSeguridad = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,10 +67,6 @@
             this.tbContMod = new System.Windows.Forms.TextBox();
             this.tbUsuMod = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.cbMedicos = new System.Windows.Forms.ComboBox();
-            this.cbEspecialidades = new System.Windows.Forms.ComboBox();
-            this.lblEspecialidad = new System.Windows.Forms.Label();
-            this.lblMedicos = new System.Windows.Forms.Label();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             this.tpBaja.SuspendLayout();
@@ -112,6 +112,45 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
+            // 
+            // lblMedicos
+            // 
+            this.lblMedicos.AutoSize = true;
+            this.lblMedicos.Location = new System.Drawing.Point(479, 339);
+            this.lblMedicos.Name = "lblMedicos";
+            this.lblMedicos.Size = new System.Drawing.Size(56, 15);
+            this.lblMedicos.TabIndex = 7;
+            this.lblMedicos.Text = "Medicos";
+            this.lblMedicos.Visible = false;
+            // 
+            // lblEspecialidad
+            // 
+            this.lblEspecialidad.AutoSize = true;
+            this.lblEspecialidad.Location = new System.Drawing.Point(462, 275);
+            this.lblEspecialidad.Name = "lblEspecialidad";
+            this.lblEspecialidad.Size = new System.Drawing.Size(91, 15);
+            this.lblEspecialidad.TabIndex = 7;
+            this.lblEspecialidad.Text = "Especialidad";
+            this.lblEspecialidad.Visible = false;
+            // 
+            // cbEspecialidades
+            // 
+            this.cbEspecialidades.FormattingEnabled = true;
+            this.cbEspecialidades.Location = new System.Drawing.Point(446, 306);
+            this.cbEspecialidades.Name = "cbEspecialidades";
+            this.cbEspecialidades.Size = new System.Drawing.Size(123, 23);
+            this.cbEspecialidades.TabIndex = 5;
+            this.cbEspecialidades.Visible = false;
+            this.cbEspecialidades.SelectedValueChanged += new System.EventHandler(this.cbEspecialidades_SelectedValueChanged);
+            // 
+            // cbMedicos
+            // 
+            this.cbMedicos.FormattingEnabled = true;
+            this.cbMedicos.Location = new System.Drawing.Point(446, 363);
+            this.cbMedicos.Name = "cbMedicos";
+            this.cbMedicos.Size = new System.Drawing.Size(123, 23);
+            this.cbMedicos.TabIndex = 6;
+            this.cbMedicos.Visible = false;
             // 
             // label7
             // 
@@ -191,7 +230,7 @@
             this.btnAlta.Location = new System.Drawing.Point(281, 376);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 23);
-            this.btnAlta.TabIndex = 5;
+            this.btnAlta.TabIndex = 7;
             this.btnAlta.Text = "Cargar";
             this.btnAlta.UseVisualStyleBackColor = true;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
@@ -418,45 +457,6 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // cbMedicos
-            // 
-            this.cbMedicos.FormattingEnabled = true;
-            this.cbMedicos.Location = new System.Drawing.Point(446, 363);
-            this.cbMedicos.Name = "cbMedicos";
-            this.cbMedicos.Size = new System.Drawing.Size(123, 23);
-            this.cbMedicos.TabIndex = 6;
-            this.cbMedicos.Visible = false;
-            // 
-            // cbEspecialidades
-            // 
-            this.cbEspecialidades.FormattingEnabled = true;
-            this.cbEspecialidades.Location = new System.Drawing.Point(446, 306);
-            this.cbEspecialidades.Name = "cbEspecialidades";
-            this.cbEspecialidades.Size = new System.Drawing.Size(123, 23);
-            this.cbEspecialidades.TabIndex = 6;
-            this.cbEspecialidades.Visible = false;
-            this.cbEspecialidades.SelectedValueChanged += new System.EventHandler(this.cbEspecialidades_SelectedValueChanged);
-            // 
-            // lblEspecialidad
-            // 
-            this.lblEspecialidad.AutoSize = true;
-            this.lblEspecialidad.Location = new System.Drawing.Point(462, 275);
-            this.lblEspecialidad.Name = "lblEspecialidad";
-            this.lblEspecialidad.Size = new System.Drawing.Size(91, 15);
-            this.lblEspecialidad.TabIndex = 7;
-            this.lblEspecialidad.Text = "Especialidad";
-            this.lblEspecialidad.Visible = false;
-            // 
-            // lblMedicos
-            // 
-            this.lblMedicos.AutoSize = true;
-            this.lblMedicos.Location = new System.Drawing.Point(479, 339);
-            this.lblMedicos.Name = "lblMedicos";
-            this.lblMedicos.Size = new System.Drawing.Size(56, 15);
-            this.lblMedicos.TabIndex = 7;
-            this.lblMedicos.Text = "Medicos";
-            this.lblMedicos.Visible = false;
             // 
             // frmABMUsuario
             // 

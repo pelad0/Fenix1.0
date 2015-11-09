@@ -24,6 +24,8 @@ namespace Fenix1._0
 
         List<clsPaciente> pacientes = new List<clsPaciente>();
         List<clsHistorial> historiales = new List<clsHistorial>();
+        List<clsTurnoVista> turnos = new List<clsTurnoVista>();
+        List<clsSobreTurnoVista> sobreTurnos = new List<clsSobreTurnoVista>();
         RepositorioPaciente rp = new RepositorioPaciente();
         RepositorioHistorial rh = new RepositorioHistorial();
         RepositorioTurno rt = new RepositorioTurno();
@@ -132,12 +134,23 @@ namespace Fenix1._0
             dtpFechaAlta.Value = System.DateTime.Today;
             lblPac.Text = "Paciente";
 
-            dgvTurnos.DataSource = rt.obtenerTurno(i.U.IdMedico, DateTime.Now);
-            dgvTurnos.Columns[0].Visible = false;
-            
+            turnos.Clear();
+            turnos = rt.obtenerTurnoVista(i.U.IdMedico, DateTime.Now);
+            dgvTurnos.DataSource = turnos;
 
-            dgvSobreTurnos.DataSource = rst.obtenerSobreturno(i.U.IdMedico, DateTime.Now);
+            dgvTurnos.Columns[0].Visible = false;
+            dgvTurnos.Columns[2].Visible = false;
+            dgvTurnos.Columns[4].Visible = false;
+            dgvTurnos.Columns[5].Visible = false;
+
+            sobreTurnos.Clear();
+            sobreTurnos = rst.obtenerSobreturnoVista(i.U.IdMedico, DateTime.Now);
+            dgvSobreTurnos.DataSource = sobreTurnos;
+            
             dgvSobreTurnos.Columns[0].Visible = false;
+            dgvSobreTurnos.Columns[2].Visible = false;
+            dgvSobreTurnos.Columns[4].Visible = false;
+            dgvSobreTurnos.Columns[5].Visible = false;
 
         }
 
@@ -145,6 +158,36 @@ namespace Fenix1._0
         {
             i.limpiar();
             i.Show();
+        }
+
+        private void dgvTurnos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if((sender as DataGridView).Name == "dgvTurnos")
+            {
+                rt.ActualizarAsistencia(turnos[dgvTurnos.CurrentRow.Index].Id);
+                turnos.Clear();
+                turnos = rt.obtenerTurnoVista(i.U.IdMedico, DateTime.Now);
+                dgvTurnos.DataSource = turnos;
+
+                dgvTurnos.Columns[0].Visible = false;
+                dgvTurnos.Columns[2].Visible = false;
+                dgvTurnos.Columns[4].Visible = false;
+                dgvTurnos.Columns[5].Visible = false;
+            }
+            else
+            {
+                rst.ActualizarAsistencia(turnos[dgvTurnos.CurrentRow.Index].Id);
+
+                sobreTurnos.Clear();
+                sobreTurnos = rst.obtenerSobreturnoVista(i.U.IdMedico, DateTime.Now);
+                dgvSobreTurnos.DataSource = sobreTurnos;
+
+                dgvSobreTurnos.Columns[0].Visible = false;
+                dgvSobreTurnos.Columns[2].Visible = false;
+                dgvSobreTurnos.Columns[4].Visible = false;
+                dgvSobreTurnos.Columns[5].Visible = false;
+
+            }
         }
 
     }
