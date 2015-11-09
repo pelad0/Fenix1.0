@@ -84,37 +84,304 @@ namespace Fenix1._0
 
         private void botonesDisponibles()
         {
-            clsHorario h = new clsHorario();
+            clsHorario hm = new clsHorario();
+            clsHorario ht = new clsHorario();
             RepositorioHorario rh = new RepositorioHorario();
-            h = rh.buscarPorId(med.Id, 1);//var 1 es mañana y var=2 es tarde
+            hm = rh.buscarPorId(med.Id, 1);//var 1 es mañana y var=2 es tarde
+            ht = rh.buscarPorId(med.Id, 2);
             string dia = dtpFecha.Value.DayOfWeek.ToString();
-
+            horariosMañana(true);
+            horariosTarde(true);
             switch (dia)
             {
-                case "":
-
+                case "Monday":
+                    if (hm.LunesEntrada.Value.Year == 1900)
+                    {
+                        horariosMañana(false);
+                    }
+                    if (ht.LunesSalida.Value.Year == 1900)
+                    {
+                        horariosTarde(false);
+                    }
+                    else
+                    {
+                        foreach (Button b in pnlBotones.Controls)
+                        {
+                            if (hm.LunesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0,2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (hm.LunesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0,2)) && Convert.ToInt32(b.Text.Substring(0,2)) < 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.LunesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0,2)) && Convert.ToInt32(b.Text.Substring(0,2)) >= 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.LunesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0,2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else
+                            {
+                                b.Enabled = true;
+                            }
+                            
+                        }
+                    }
                     break;
-
+                case "Tuesday":
+                    if (hm.MartesEntrada.Value.Year == 1900)
+                    {
+                        horariosMañana(false);
+                    }
+                    if (ht.MartesSalida.Value.Year == 1900)
+                    {
+                        horariosTarde(false);
+                    }
+                    else
+                    {
+                        foreach (Button b in pnlBotones.Controls)
+                        {
+                            if (hm.MartesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (hm.MartesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.MartesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.MartesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else
+                            {
+                                b.Enabled = true;
+                            }
+                            
+                        }
+                    }
+                    break;
+                case "Wednesday":
+                        if (hm.MiercolesEntrada.Value.Year == 1900)
+                    {
+                        horariosMañana(false);
+                    }
+                        if (ht.MiercolesSalida.Value.Year == 1900)
+                    {
+                        horariosTarde(false);
+                    }
+                    else
+                    {
+                        foreach (Button b in pnlBotones.Controls)
+                        {
+                            if (hm.MiercolesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (hm.MiercolesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.MiercolesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.MiercolesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else
+                            {
+                                b.Enabled = true;
+                            }
+                            
+                        }
+                    }
+                    break;
+                case "Thursday":
+                        if (hm.JuevesEntrada.Value.Year == 1900)
+                    {
+                        horariosMañana(false);
+                    }
+                        if (ht.JuevesSalida.Value.Year == 1900)
+                    {
+                        horariosTarde(false);
+                    }
+                    else
+                    {
+                        foreach (Button b in pnlBotones.Controls)
+                        {
+                            if (hm.JuevesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (hm.JuevesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.JuevesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.JuevesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else
+                            {
+                                b.Enabled = true;
+                            }
+                            
+                        }
+                    }
+                    break;
+                case "Friday":
+                        if (hm.ViernesEntrada.Value.Year == 1900)
+                    {
+                        horariosMañana(false);
+                    }
+                        if (ht.ViernesSalida.Value.Year == 1900)
+                    {
+                        horariosTarde(false);
+                    }
+                    else
+                    {
+                        foreach (Button b in pnlBotones.Controls)
+                        {
+                            if (hm.ViernesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (hm.ViernesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.ViernesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.ViernesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else
+                            {
+                                b.Enabled = true;
+                            }
+                            
+                        }
+                    }
+                    break;
+                case "Saturday":
+                        if (hm.SabadoEntrada.Value.Year == 1900)
+                    {
+                        horariosMañana(false);
+                    }
+                        if (ht.SabadoSalida.Value.Year == 1900)
+                    {
+                        horariosTarde(false);
+                    }
+                    else
+                    {
+                        foreach (Button b in pnlBotones.Controls)
+                        {
+                            if (hm.SabadoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (hm.SabadoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.SabadoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.SabadoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else
+                            {
+                                b.Enabled = true;
+                            }
+                            
+                        }
+                    }
+                    break;
+                case "Sunday":
+                    if (hm.DomingoEntrada.Value.Year == 1900)
+                    {
+                        horariosMañana(false);
+                    }
+                    if (ht.DomingoSalida.Value.Year == 1900)
+                    {
+                        horariosTarde(false);
+                    }
+                    else
+                    {
+                        foreach (Button b in pnlBotones.Controls)
+                        {
+                            if (hm.DomingoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (hm.DomingoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.DomingoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else if (ht.DomingoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                            {
+                                b.Enabled = false;
+                                b.BackColor = Color.Gray;
+                            }
+                            else
+                            {
+                                b.Enabled = true;
+                            }
+                            
+                        }
+                    }
+                    break;
             }
-            if (string.IsNullOrWhiteSpace(mañana.LunesEntrada.ToString()))
-            {
-                horariosMañana(false);
-            }
-            else
-            {
-                horariosMañana(true);
-            }
-
-            if (string.IsNullOrWhiteSpace(tarde.LunesEntrada.ToString()))
-            {
-                horariosTarde(false);
-            }
-            else
-            {
-                horariosTarde(true);
-            }
-            
-
             turnos = rt.obtenerTurno(med.Id, dtpFecha.Value.Date);
 
             foreach (clsTurno tur in turnos)
@@ -133,7 +400,7 @@ namespace Fenix1._0
                 }
             }
 
-            sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value.Date);
+            sobreTurno = rst.obtenerSobreturnoVista(med.Id, dtpFecha.Value.Date);
 
             foreach (clsSobreTurnoVista sobTur in sobreTurno)
             {
@@ -164,26 +431,23 @@ namespace Fenix1._0
 
         private void btnTurnoXDia_Click(object sender, EventArgs e)
         {
-//            fecha = dtpFecha.Value.Date;
-
-            //turnosVista.Clear();
-            //sobreTurnoVista.Clear();
-            //turnosVista = rt.obtenerTurnoVista(med.Id, dtpFecha.Value);
-            //sobreTurnoVista = rst.obtenerSobreturnoVista(med.Id, dtpFecha.Value);
+            
             if (cbMedicos.SelectedIndex > -1)
             {
+                fecha = dtpFecha.Value.Date;
 
+                turnosVista.Clear();
+                sobreTurnoVista.Clear();
+                turnosVista = rt.obtenerTurnoVista(med.Id, dtpFecha.Value);
+                sobreTurnoVista = rst.obtenerSobreturnoVista(med.Id, dtpFecha.Value);
+                botonesDisponibles();
 
-                turnos.Clear();
-                sobreTurno.Clear();
-                turnos = rt.obtenerTurno(med.Id, dtpFecha.Value.Date);
-                sobreTurno = rst.obtenerSobreturno(med.Id, dtpFecha.Value.Date);
                 turnosDados(turnos);
+                
                 sobreTurnosDados(sobreTurno);
+                
                 mañana = rm.BuscarHorarioMañana(med.Id);
                 tarde = rm.BuscarHorarioTarde(med.Id);
-
-                botonesDisponibles();
 
                 pnlBotones.Enabled = true;
 
@@ -194,10 +458,6 @@ namespace Fenix1._0
                 MessageBox.Show("Seleccione medico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
-
-
-
 
         public void horariosMañana(bool estado)
         {
