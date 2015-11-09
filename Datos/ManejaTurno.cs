@@ -66,7 +66,7 @@ namespace Datos
         {
              try
             {
-                manager.ejecutar("update turno set estado=" + true + "where id=" + id);
+                manager.ejecutar("update turno set estado=" + true + " where id=" + id);
             }
             catch (Exception ex)
             {
@@ -80,7 +80,7 @@ namespace Datos
             clsTurno tur = new clsTurno();
             try
             {
-                aux=manager.consultar("select * from turno where id="+id+"and activo=1");
+                aux=manager.consultar("select * from turno where id="+id+" and activo=1");
                 tur.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 tur.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
                 tur.IdPaciente = Convert.ToInt32(aux.Rows[0]["idpaciente"]);
@@ -117,7 +117,7 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                aux = manager.consultar("select * from turno where idmedico=" + id + "and activo=1 and convert(nvarchar , fecha, 103)='" + fecha + "'");
+                aux = manager.consultar("select * from turno where idmedico=" + id + " and activo=1 and convert(nvarchar , fecha, 103)='" + fecha + "'");
             }
             catch (Exception ex)
             {
@@ -131,7 +131,7 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                aux = manager.consultar("select * from turno where idpaciente=" + id + "and activo=1");
+                aux = manager.consultar("select * from turno where idpaciente=" + id + " and activo=1");
             }
             catch (Exception ex)
             {
@@ -140,7 +140,21 @@ namespace Datos
 
             return aux;
         }
+        public DataTable TurnosEntreFechas(DateTime desde,DateTime hasta)
+        {
+            DataTable aux = new DataTable();
+            try
+            {
+                aux = manager.consultar("select * from turno where fecha between '"+desde+"' and '"+hasta+"'");
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
 
+
+            return aux;
+        }
       
 
       
