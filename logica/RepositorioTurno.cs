@@ -329,18 +329,5 @@ namespace logica
             clsTurnoVista turno=new clsTurnoVista();
             return turno;
         }
-        
-        public void asistenciaTurno(int idTurno)
-        {
-            clsTurno t = (clsTurno)manejaTurno.buscaPorId(idTurno);
-            if (t.Estado)
-            {
-                t.Estado = false;
-            }
-            else
-            {
-                t.Estado = true;
-            }
-        }
     }
 }
