@@ -26,6 +26,8 @@ namespace Fenix1._0
         List<clsHistorial> historiales = new List<clsHistorial>();
         RepositorioPaciente rp = new RepositorioPaciente();
         RepositorioHistorial rh = new RepositorioHistorial();
+        RepositorioTurno rt = new RepositorioTurno();
+        RepositorioSobreturno rst = new RepositorioSobreturno();
         int pagina = 0;
         
         private void frmABMHistorial_Load(object sender, EventArgs e)
@@ -129,6 +131,14 @@ namespace Fenix1._0
 
             dtpFechaAlta.Value = System.DateTime.Today;
             lblPac.Text = "Paciente";
+
+            dgvTurnos.DataSource = rt.obtenerTurno(i.U.IdMedico, DateTime.Now);
+            dgvTurnos.Columns[0].Visible = false;
+            
+
+            dgvSobreTurnos.DataSource = rst.obtenerSobreturno(i.U.IdMedico, DateTime.Now);
+            dgvSobreTurnos.Columns[0].Visible = false;
+
         }
 
         private void frmABMHistorial_FormClosed(object sender, FormClosedEventArgs e)

@@ -21,6 +21,7 @@ namespace Fenix1._0
         RepositorioUsuario ru = new RepositorioUsuario();
         List<clsUsuario> usuarios = new List<clsUsuario>();
         clsUsuario u = new clsUsuario();
+
         public frmInicio()
         {
             InitializeComponent();
@@ -70,5 +71,12 @@ namespace Fenix1._0
             tbUsuario.Clear();
             tbUsuario.Focus();
         }
+
+        public clsUsuario U
+        {
+            get { return u; }
+            set { u = value; }
+        }
+
     }
 }

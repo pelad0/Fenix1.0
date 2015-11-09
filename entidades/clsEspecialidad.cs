@@ -12,6 +12,13 @@ namespace entidades
     {
         int id;
         string descripcion;
+        float canon;
+
+        public float Canon
+        {
+            get { return canon; }
+            set { canon = value; }
+        }
 
         public clsEspecialidad() 
         {

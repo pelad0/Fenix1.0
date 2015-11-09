@@ -190,7 +190,6 @@ namespace logica
 
             return medico;
         }
-
         private clsPaciente metodoP(IEntidad pac2)
         {
             clsPacienteDatos pac = (clsPacienteDatos)pac2;
@@ -220,14 +219,14 @@ namespace logica
             return paciente;
         }
 
-        public List<clsTurno> obtenerTurno(int idmedico, DateTime fecha)//turno de los medicos
+        public List<clsTurno> obtenerTurno(int id, DateTime fecha)//turno de los medicos
         {
             DataTable tabla;
             List<clsTurno> lista = new List<clsTurno>();
 
             try
             {
-                tabla = manejaTurno.BuscarTurnoPorMedico(idmedico, fecha.ToShortDateString());
+                tabla = manejaTurno.BuscarTurnoPorMedico(id, fecha.ToShortDateString());
                 foreach (DataRow aux in tabla.Rows)
                 {
 
@@ -258,14 +257,14 @@ namespace logica
 
         }
 
-        public List<clsTurno> obtenerTurnoPaciente(int idpaciente)//turno de un paciente cambiar
+        public List<clsTurno> obtenerTurnoPaciente(int id)//turno de un paciente cambiar
         {
             DataTable tabla;
             List<clsTurno> lista = new List<clsTurno>();
 
             try
             {
-                tabla = manejaTurno.BuscarTurnoPorPaciente(idpaciente);
+                tabla = manejaTurno.BuscarTurnoPorPaciente(id);
                 foreach (DataRow aux in tabla.Rows)
                 {
 
@@ -324,14 +323,11 @@ namespace logica
             }
         }
 
-        
         public clsTurnoVista ultimoTurno() //completar
         {
 
             clsTurnoVista turno=new clsTurnoVista();
             return turno;
         }
-        
-        
     }
 }
