@@ -20,6 +20,7 @@ namespace Fenix1._0
         RepositorioMedico rm = new RepositorioMedico();
         RepositorioEspecialidad re = new RepositorioEspecialidad();
         List<clsUsuario> usuarios = new List<clsUsuario>();
+        List<clsMedico> medicosEnt = new List<clsMedico>();
         List<string> especialiades = new List<string>();
         List<string> medicos = new List<string>();
         public frmABMUsuario()
@@ -52,26 +53,39 @@ namespace Fenix1._0
                 {
                     if (cbEspecialidades.SelectedIndex > -1 && cbMedicos.SelectedIndex > -1)
                     {
-                        clsUsuario u = new clsUsuario(tbUsuAlta.Text, tbContAlta1.Text, cbSeguridad.SelectedItem.ToString());
-                        try
+                        if (tbContAlta1.Text == tbContAlta2.Text)
                         {
-                            ru.Alta(u);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Se ha pruducido el Sgte. error: "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            iniciar();
-                        }
 
+                            clsUsuario u = new clsUsuario(tbUsuAlta.Text, tbContAlta1.Text, cbSeguridad.SelectedItem.ToString(), rm.BuscaPorEspecialidad(cbEspecialidades.Text)[cbMedicos.SelectedIndex].Id);
+                            try
+                            {
+                                ru.Alta(u);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                iniciar();
+                            }
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Las contraseñas ingresadas no coinciden.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            return;
+                        }
                     }
-                }
-
-                if (tbContAlta1.Text == tbContAlta2.Text)
+                    else
+                    {
+                        MessageBox.Show("Seleccione Especialidad y Medico para continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                } 
+                else if (tbContAlta1.Text == tbContAlta2.Text)
                 {
-                    clsUsuario u = new clsUsuario(tbUsuAlta.Text, tbContAlta1.Text, cbSeguridad.SelectedItem.ToString());
+                    clsUsuario u = new clsUsuario(tbUsuAlta.Text, tbContAlta1.Text, cbSeguridad.Text, 0);
                     try
                     {
                         ru.Alta(u);
@@ -192,21 +206,24 @@ namespace Fenix1._0
             dgvEliminar.DataSource = usuarios;
             dgvEliminar.Columns[0].Visible = false;
             dgvEliminar.Columns[2].Visible = false;
-
+            dgvEliminar.Columns[3].Visible = false;
+            dgvEliminar.Columns[4].Visible = false;
+            
             dgvModif.DataSource = null;
             dgvModif.DataSource = usuarios;
             dgvModif.Columns[0].Visible = false;
             dgvModif.Columns[2].Visible = false;
-
+            dgvModif.Columns[3].Visible = false;
+            dgvModif.Columns[4].Visible = false;
+            
             tbContAlta1.Clear();
             tbContAlta2.Clear();
             tbUsuAlta.Clear();
             cbSeguridad.SelectedIndex = -1;
             cbSegMod.SelectedIndex = -1;
-
+            cbEspecialidades.Visible = false;
+            cbMedicos.Visible = false;
             tbUsuAlta.Focus();
-
-
         }
 
         private void dgvModif_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -244,16 +261,37 @@ namespace Fenix1._0
                 lblEspecialidad.Visible = true;
 
             }
+            else
+            {
+                cbEspecialidades.Visible = false;
+                lblEspecialidad.Visible = false;
+                cbMedicos.Visible = false;
+                lblMedicos.Visible = false;
+            }
         }
 
         private void cbEspecialidades_SelectedValueChanged(object sender, EventArgs e)
         {
-            foreach(clsMedico m in rm.BuscaPorEspecialidad(cbEspecialidades.Text))
+            medicos.Clear();
+            
+            medicosEnt = rm.BuscaPorEspecialidad(cbEspecialidades.Text);
+            if (medicosEnt.Count > 0)
             {
-                medicos.Add(m.nombreCompleto());
+                foreach (clsMedico m in medicosEnt)
+                {
+                    medicos.Add(m.nombreCompleto());
+                }
+                cbMedicos.DataSource = medicos;
+                cbMedicos.Visible = true;
+                lblMedicos.Visible = true;
+
             }
-            cbMedicos.Visible = true;
-            lblMedicos.Visible = true;
+            else
+            {
+                cbMedicos.DataSource = null;
+                cbMedicos.Visible = false;
+                lblMedicos.Visible = false;
+            }
 
         }
 
