@@ -43,6 +43,11 @@ namespace Fenix1._0
             this.Text = pac.nomCompleto();
         }
 
+        public frmABMTurnos()
+        {
+            InitializeComponent();
+        }
+
         private void frmABM_Load(object sender, EventArgs e)
         {
             iniciar();            
