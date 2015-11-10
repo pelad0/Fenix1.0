@@ -202,7 +202,7 @@ namespace Fenix1._0
         {
             if(editar == true)
             {
-                if (!string.IsNullOrWhiteSpace(tbEspecialidaModi.Text) && string.IsNullOrWhiteSpace(tbCostoModi.Text))
+                if (string.IsNullOrWhiteSpace(tbEspecialidaModi.Text) == false && string.IsNullOrWhiteSpace(tbCostoModi.Text) == false)
                 {
                     esEditar.Descripcion = tbEspecialidaModi.Text;
                     esEditar.Canon = float.Parse(tbCostoModi.Text.ToString());
