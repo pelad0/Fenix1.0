@@ -49,7 +49,7 @@ namespace Datos
             clsEspecialidad esp = (clsEspecialidad)entidad;
             try
             {
-                manager.ejecutar("update especialidad set descripcion='"+esp.Descripcion+"',set canon="+esp.Canon+ "where id="+esp.Id);
+                manager.ejecutar("update especialidad set descripcion='"+esp.Descripcion+"', canon="+esp.Canon+ "where id="+esp.Id);
             }
             catch (Exception ex)
             {

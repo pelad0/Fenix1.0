@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbCostoAlta = new controles.TextBoxNumeros();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvEspecialidadesAlta = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,11 +50,16 @@
             this.dgvEspecialidadesBaja = new System.Windows.Forms.DataGridView();
             this.btnBaja = new System.Windows.Forms.Button();
             this.tpMod = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbCostoModi = new controles.TextBoxNumeros();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.tbEspecialidaModi = new controles.TextBoxLetras();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvEspecialidadesModificar = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.tbEspecialidaModi = new controles.TextBoxLetras();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidadesAlta)).BeginInit();
@@ -79,6 +87,9 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.Controls.Add(this.label6);
+            this.tpAlta.Controls.Add(this.label5);
+            this.tpAlta.Controls.Add(this.tbCostoAlta);
             this.tpAlta.Controls.Add(this.label2);
             this.tpAlta.Controls.Add(this.dgvEspecialidadesAlta);
             this.tpAlta.Controls.Add(this.label1);
@@ -92,10 +103,37 @@
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(450, 176);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(14, 15);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "€";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(452, 155);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(126, 15);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Costo de atención";
+            // 
+            // tbCostoAlta
+            // 
+            this.tbCostoAlta.Location = new System.Drawing.Point(444, 173);
+            this.tbCostoAlta.MaxLength = 4;
+            this.tbCostoAlta.Name = "tbCostoAlta";
+            this.tbCostoAlta.Size = new System.Drawing.Size(156, 23);
+            this.tbCostoAlta.TabIndex = 2;
+            this.tbCostoAlta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(240, 86);
+            this.label2.Location = new System.Drawing.Point(208, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(168, 15);
             this.label2.TabIndex = 4;
@@ -108,53 +146,53 @@
             this.dgvEspecialidadesAlta.AllowUserToResizeColumns = false;
             this.dgvEspecialidadesAlta.AllowUserToResizeRows = false;
             this.dgvEspecialidadesAlta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEspecialidadesAlta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecialidadesAlta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvEspecialidadesAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEspecialidadesAlta.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEspecialidadesAlta.Location = new System.Drawing.Point(208, 114);
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEspecialidadesAlta.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvEspecialidadesAlta.Location = new System.Drawing.Point(180, 30);
             this.dgvEspecialidadesAlta.MultiSelect = false;
             this.dgvEspecialidadesAlta.Name = "dgvEspecialidadesAlta";
             this.dgvEspecialidadesAlta.ReadOnly = true;
             this.dgvEspecialidadesAlta.RowHeadersVisible = false;
-            this.dgvEspecialidadesAlta.Size = new System.Drawing.Size(231, 283);
+            this.dgvEspecialidadesAlta.Size = new System.Drawing.Size(231, 354);
             this.dgvEspecialidadesAlta.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(228, 13);
+            this.label1.Location = new System.Drawing.Point(496, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 15);
+            this.label1.Size = new System.Drawing.Size(49, 15);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Nombre de la especialidad";
+            this.label1.Text = "Nombre";
             // 
             // tbEspecialidadAlta
             // 
-            this.tbEspecialidadAlta.Location = new System.Drawing.Point(221, 31);
+            this.tbEspecialidadAlta.Location = new System.Drawing.Point(444, 48);
             this.tbEspecialidadAlta.Name = "tbEspecialidadAlta";
-            this.tbEspecialidadAlta.Size = new System.Drawing.Size(201, 23);
+            this.tbEspecialidadAlta.Size = new System.Drawing.Size(156, 23);
             this.tbEspecialidadAlta.TabIndex = 1;
             // 
             // btnAltaEspecialidad
             // 
-            this.btnAltaEspecialidad.Location = new System.Drawing.Point(280, 60);
+            this.btnAltaEspecialidad.Location = new System.Drawing.Point(481, 238);
             this.btnAltaEspecialidad.Name = "btnAltaEspecialidad";
             this.btnAltaEspecialidad.Size = new System.Drawing.Size(75, 23);
-            this.btnAltaEspecialidad.TabIndex = 0;
+            this.btnAltaEspecialidad.TabIndex = 3;
             this.btnAltaEspecialidad.Text = "Cargar";
             this.btnAltaEspecialidad.UseVisualStyleBackColor = true;
             this.btnAltaEspecialidad.Click += new System.EventHandler(this.btnAltaEspecialidad_Click);
@@ -191,23 +229,23 @@
             this.dgvEspecialidadesBaja.AllowUserToResizeColumns = false;
             this.dgvEspecialidadesBaja.AllowUserToResizeRows = false;
             this.dgvEspecialidadesBaja.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEspecialidadesBaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecialidadesBaja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvEspecialidadesBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEspecialidadesBaja.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEspecialidadesBaja.DefaultCellStyle = dataGridViewCellStyle21;
             this.dgvEspecialidadesBaja.Location = new System.Drawing.Point(205, 54);
             this.dgvEspecialidadesBaja.MultiSelect = false;
             this.dgvEspecialidadesBaja.Name = "dgvEspecialidadesBaja";
@@ -230,11 +268,16 @@
             // 
             // tpMod
             // 
+            this.tpMod.Controls.Add(this.label10);
+            this.tpMod.Controls.Add(this.label9);
+            this.tpMod.Controls.Add(this.label8);
+            this.tpMod.Controls.Add(this.label7);
+            this.tpMod.Controls.Add(this.tbCostoModi);
             this.tpMod.Controls.Add(this.btnGuardar);
-            this.tpMod.Controls.Add(this.tbEspecialidaModi);
             this.tpMod.Controls.Add(this.label4);
             this.tpMod.Controls.Add(this.dgvEspecialidadesModificar);
             this.tpMod.Controls.Add(this.btnModificar);
+            this.tpMod.Controls.Add(this.tbEspecialidaModi);
             this.tpMod.Location = new System.Drawing.Point(4, 34);
             this.tpMod.Name = "tpMod";
             this.tpMod.Size = new System.Drawing.Size(636, 433);
@@ -242,9 +285,54 @@
             this.tpMod.Text = "Modificación";
             this.tpMod.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(516, 136);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 15);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Costo";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(516, 58);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 15);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Nombre";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(489, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 15);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Valores nuevos";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(472, 157);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(14, 15);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "€";
+            // 
+            // tbCostoModi
+            // 
+            this.tbCostoModi.Location = new System.Drawing.Point(467, 154);
+            this.tbCostoModi.MaxLength = 4;
+            this.tbCostoModi.Name = "tbCostoModi";
+            this.tbCostoModi.Size = new System.Drawing.Size(137, 23);
+            this.tbCostoModi.TabIndex = 13;
+            this.tbCostoModi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(284, 72);
+            this.btnGuardar.Location = new System.Drawing.Point(503, 242);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 12;
@@ -252,17 +340,10 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // tbEspecialidaModi
-            // 
-            this.tbEspecialidaModi.Location = new System.Drawing.Point(244, 43);
-            this.tbEspecialidaModi.Name = "tbEspecialidaModi";
-            this.tbEspecialidaModi.Size = new System.Drawing.Size(167, 23);
-            this.tbEspecialidaModi.TabIndex = 10;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(241, 25);
+            this.label4.Location = new System.Drawing.Point(250, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(168, 15);
             this.label4.TabIndex = 9;
@@ -275,39 +356,39 @@
             this.dgvEspecialidadesModificar.AllowUserToResizeColumns = false;
             this.dgvEspecialidadesModificar.AllowUserToResizeRows = false;
             this.dgvEspecialidadesModificar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEspecialidadesModificar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecialidadesModificar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvEspecialidadesModificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEspecialidadesModificar.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvEspecialidadesModificar.Location = new System.Drawing.Point(208, 104);
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEspecialidadesModificar.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvEspecialidadesModificar.Location = new System.Drawing.Point(208, 46);
             this.dgvEspecialidadesModificar.MultiSelect = false;
             this.dgvEspecialidadesModificar.Name = "dgvEspecialidadesModificar";
             this.dgvEspecialidadesModificar.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEspecialidadesModificar.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecialidadesModificar.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvEspecialidadesModificar.RowHeadersVisible = false;
             this.dgvEspecialidadesModificar.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvEspecialidadesModificar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEspecialidadesModificar.Size = new System.Drawing.Size(231, 283);
+            this.dgvEspecialidadesModificar.Size = new System.Drawing.Size(231, 341);
             this.dgvEspecialidadesModificar.TabIndex = 2;
             // 
             // btnModificar
@@ -319,6 +400,13 @@
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // tbEspecialidaModi
+            // 
+            this.tbEspecialidaModi.Location = new System.Drawing.Point(467, 76);
+            this.tbEspecialidaModi.Name = "tbEspecialidaModi";
+            this.tbEspecialidaModi.Size = new System.Drawing.Size(137, 23);
+            this.tbEspecialidaModi.TabIndex = 10;
             // 
             // frmABMES
             // 
@@ -366,5 +454,13 @@
         private System.Windows.Forms.Label label4;
         private controles.TextBoxLetras tbEspecialidaModi;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private controles.TextBoxNumeros tbCostoAlta;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private controles.TextBoxNumeros tbCostoModi;
     }
 }

@@ -14,27 +14,25 @@ namespace entidades
         string descripcion;
         float canon;
 
-        public float Canon
-        {
-            get { return canon; }
-            set { canon = value; }
-        }
+       
 
         public clsEspecialidad() 
         {
         
         }
 
-        public clsEspecialidad(int id,string descripcion)
+        public clsEspecialidad(int id,string descripcion, float canon)
         {
             this.id = id;
             this.descripcion = descripcion;
+            this.canon = canon;
         }
 
-        public clsEspecialidad(string descripcion)
+        public clsEspecialidad(string descripcion, float canon)
         {
             
             this.descripcion = descripcion;
+            this.canon = canon;
         }
 
         public int Id
@@ -50,6 +48,11 @@ namespace entidades
             set { descripcion = value; }
         }
 
+        public float Canon
+        {
+            get { return canon; }
+            set { canon = value; }
+        }
 
                
     }

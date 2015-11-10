@@ -41,6 +41,7 @@
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(100, 26);
             this.tbUsuario.TabIndex = 1;
+            this.tbUsuario.Text = "admin";
             this.tbUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbClave
@@ -49,6 +50,7 @@
             this.tbClave.Name = "tbClave";
             this.tbClave.Size = new System.Drawing.Size(100, 26);
             this.tbClave.TabIndex = 2;
+            this.tbClave.Text = "admin";
             this.tbClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbClave.UseSystemPasswordChar = true;
             // 
