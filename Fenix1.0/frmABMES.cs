@@ -35,12 +35,12 @@ namespace Fenix1._0
         private void btnAltaEspecialidad_Click(object sender, EventArgs e)
         {
             
-            if(!string.IsNullOrWhiteSpace(tbEspecialidadAlta.Text))
+            if(string.IsNullOrWhiteSpace(tbEspecialidadAlta.Text) == false && string.IsNullOrWhiteSpace(tbCostoAlta.Text) == false)
             {
 
                 try
                 {
-                    clsEspecialidad es = new clsEspecialidad(tbEspecialidadAlta.Text);
+                    clsEspecialidad es = new clsEspecialidad(tbEspecialidadAlta.Text, float.Parse(tbCostoAlta.Text));
                     reposEspe.Alta(es);
                     Actualizar();
                     tbEspecialidadAlta.Clear();
@@ -65,14 +65,25 @@ namespace Fenix1._0
         {
 
 
+            try
+            {
+                int id = int.Parse(dgvEspecialidadesModificar.Rows[dgvEspecialidadesModificar.CurrentRow.Index].Cells[0].Value.ToString());
 
-            int id = int.Parse(dgvEspecialidadesModificar.Rows[dgvEspecialidadesModificar.CurrentRow.Index].Cells[0].Value.ToString());
+                esEditar = reposEspe.buscarPorId(id);
+
+                tbEspecialidaModi.Text = esEditar.Descripcion;
+                tbCostoModi.Text = esEditar.Canon.ToString();
+               
+
+                editar = true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
              
-            esEditar = reposEspe.buscarPorId(id);
-
-            tbEspecialidaModi.Text = esEditar.Descripcion;
-
-            editar = true;
+           
 
 
         }
@@ -90,6 +101,7 @@ namespace Fenix1._0
             {
                 dgvEspecialidadesAlta.Columns.Remove("idEspecialidad");
                 dgvEspecialidadesAlta.Columns.Remove("Descripcion");
+                dgvEspecialidadesAlta.Columns.Remove("Costo");
 
                 foreach (DataGridViewRow row in dgvEspecialidadesAlta.Rows)
                 {
@@ -103,6 +115,7 @@ namespace Fenix1._0
             {
                 dgvEspecialidadesBaja.Columns.Remove("idEspecialidad");
                 dgvEspecialidadesBaja.Columns.Remove("Descripcion");
+                dgvEspecialidadesBaja.Columns.Remove("Costo");
 
                 foreach (DataGridViewRow row in dgvEspecialidadesBaja.Rows)
                 {
@@ -115,6 +128,7 @@ namespace Fenix1._0
             {
                 dgvEspecialidadesModificar.Columns.Remove("idEspecialidad");
                 dgvEspecialidadesModificar.Columns.Remove("Descripcion");
+                dgvEspecialidadesModificar.Columns.Remove("Costo");
 
                 foreach (DataGridViewRow row in dgvEspecialidadesModificar.Rows)
                 {
@@ -132,22 +146,31 @@ namespace Fenix1._0
             dgvEspecialidadesAlta.Columns.Add("idEspecialidad", "idEspecialidad");
             dgvEspecialidadesAlta.Columns["idEspecialidad"].Visible = false;
             dgvEspecialidadesAlta.Columns.Add("Descripcion", "Descripcion");
+            dgvEspecialidadesAlta.Columns.Add("Costo", "Costo");
+            dgvEspecialidadesAlta.Columns["Costo"].DefaultCellStyle.Format = "c";
+           
 
             
             dgvEspecialidadesBaja.Columns.Add("idEspecialidad", "idEspecialidad");
             dgvEspecialidadesBaja.Columns["idEspecialidad"].Visible = false;
             dgvEspecialidadesBaja.Columns.Add("Descripcion", "Descripcion");
+            dgvEspecialidadesBaja.Columns.Add("Costo", "Costo");
+            dgvEspecialidadesBaja.Columns["Costo"].DefaultCellStyle.Format = "c";
 
             dgvEspecialidadesModificar.Columns.Add("idEspecialidad", "idEspecialidad");
             dgvEspecialidadesModificar.Columns["idEspecialidad"].Visible = false;
             dgvEspecialidadesModificar.Columns.Add("Descripcion", "Descripcion");
+            dgvEspecialidadesModificar.Columns.Add("Costo", "Costo");
+            dgvEspecialidadesModificar.Columns["Costo"].DefaultCellStyle.Format = "c";
+            
+
 
 
             foreach (clsEspecialidad espe in especialidades)
             {
-                dgvEspecialidadesAlta.Rows.Add(espe.Id, espe.Descripcion);
-                dgvEspecialidadesBaja.Rows.Add(espe.Id, espe.Descripcion);
-                dgvEspecialidadesModificar.Rows.Add(espe.Id, espe.Descripcion);
+                dgvEspecialidadesAlta.Rows.Add(espe.Id, espe.Descripcion, espe.Canon);
+                dgvEspecialidadesBaja.Rows.Add(espe.Id, espe.Descripcion, espe.Canon);
+                dgvEspecialidadesModificar.Rows.Add(espe.Id, espe.Descripcion, espe.Canon);
 
             }
 
@@ -179,12 +202,14 @@ namespace Fenix1._0
         {
             if(editar == true)
             {
-                if (!string.IsNullOrWhiteSpace(tbEspecialidaModi.Text))
+                if (!string.IsNullOrWhiteSpace(tbEspecialidaModi.Text) && string.IsNullOrWhiteSpace(tbCostoModi.Text))
                 {
                     esEditar.Descripcion = tbEspecialidaModi.Text;
+                    esEditar.Canon = float.Parse(tbCostoModi.Text.ToString());
                     reposEspe.Modificacion(esEditar);
                     MessageBox.Show("Especialidad modificada");
                     tbEspecialidaModi.Clear();
+                    tbCostoModi.Clear();
                     Actualizar();
 
                 }
