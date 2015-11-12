@@ -142,7 +142,6 @@ namespace logica
                    hr=(clsHorario) manejamañana.buscaPorId(id);
                 else
                     hr=(clsHorario)manejatarde.buscaPorId(id);
-
             }
             catch (SqlException ex)
             {
@@ -152,7 +151,6 @@ namespace logica
             {
                 throw ex;
             }
-
             return hr;
         }
 

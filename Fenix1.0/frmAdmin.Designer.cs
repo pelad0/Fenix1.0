@@ -32,11 +32,12 @@
             this.btnMedicos = new System.Windows.Forms.Button();
             this.btnObraSocial = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnTurnos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPacientes
             // 
-            this.btnPacientes.Location = new System.Drawing.Point(29, 26);
+            this.btnPacientes.Location = new System.Drawing.Point(32, 26);
             this.btnPacientes.Name = "btnPacientes";
             this.btnPacientes.Size = new System.Drawing.Size(144, 23);
             this.btnPacientes.TabIndex = 1;
@@ -46,7 +47,7 @@
             // 
             // btnMedicos
             // 
-            this.btnMedicos.Location = new System.Drawing.Point(173, 26);
+            this.btnMedicos.Location = new System.Drawing.Point(177, 26);
             this.btnMedicos.Name = "btnMedicos";
             this.btnMedicos.Size = new System.Drawing.Size(144, 23);
             this.btnMedicos.TabIndex = 2;
@@ -56,7 +57,7 @@
             // 
             // btnObraSocial
             // 
-            this.btnObraSocial.Location = new System.Drawing.Point(317, 26);
+            this.btnObraSocial.Location = new System.Drawing.Point(322, 26);
             this.btnObraSocial.Name = "btnObraSocial";
             this.btnObraSocial.Size = new System.Drawing.Size(144, 23);
             this.btnObraSocial.TabIndex = 3;
@@ -66,7 +67,7 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(461, 26);
+            this.btnUsuarios.Location = new System.Drawing.Point(467, 26);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(144, 23);
             this.btnUsuarios.TabIndex = 4;
@@ -74,11 +75,21 @@
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
+            // btnTurnos
+            // 
+            this.btnTurnos.Location = new System.Drawing.Point(612, 26);
+            this.btnTurnos.Name = "btnTurnos";
+            this.btnTurnos.Size = new System.Drawing.Size(144, 23);
+            this.btnTurnos.TabIndex = 4;
+            this.btnTurnos.Text = "Turnos";
+            this.btnTurnos.UseVisualStyleBackColor = true;
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 74);
+            this.ClientSize = new System.Drawing.Size(789, 74);
+            this.Controls.Add(this.btnTurnos);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnMedicos);
             this.Controls.Add(this.btnObraSocial);
@@ -101,5 +112,6 @@
         private System.Windows.Forms.Button btnMedicos;
         private System.Windows.Forms.Button btnObraSocial;
         private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnTurnos;
     }
 }

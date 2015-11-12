@@ -205,5 +205,12 @@ namespace logica
 
             return paciente;
         }
+
+        public List<clsPaciente> obtenerAlfabeticamente(string letra)
+        {
+            List<clsPaciente> pacientes = new List<clsPaciente>();
+
+            return pacientes;
+        }
     }
 }
