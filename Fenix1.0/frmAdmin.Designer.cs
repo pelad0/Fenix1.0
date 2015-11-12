@@ -83,6 +83,7 @@
             this.btnTurnos.TabIndex = 4;
             this.btnTurnos.Text = "Turnos";
             this.btnTurnos.UseVisualStyleBackColor = true;
+            this.btnTurnos.Click += new System.EventHandler(this.btnTurnos_Click);
             // 
             // frmAdmin
             // 

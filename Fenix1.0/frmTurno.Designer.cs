@@ -28,16 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.rbPacientes = new System.Windows.Forms.RadioButton();
             this.rbMedicos = new System.Windows.Forms.RadioButton();
+            this.cbAlfa = new System.Windows.Forms.ComboBox();
             this.cbPacientes = new System.Windows.Forms.ComboBox();
             this.cbEspecialidades = new System.Windows.Forms.ComboBox();
             this.cbMedicos = new System.Windows.Forms.ComboBox();
             this.dgvSobreturnos = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnRepTurn = new System.Windows.Forms.Button();
+            this.btnRepSobreTur = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSobreturnos)).BeginInit();
@@ -45,10 +57,43 @@
             // 
             // dgvTurnos
             // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTurnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTurnos.ColumnHeadersVisible = false;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTurnos.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvTurnos.Location = new System.Drawing.Point(1, 95);
+            this.dgvTurnos.MultiSelect = false;
             this.dgvTurnos.Name = "dgvTurnos";
-            this.dgvTurnos.Size = new System.Drawing.Size(642, 192);
+            this.dgvTurnos.ReadOnly = true;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTurnos.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvTurnos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTurnos.Size = new System.Drawing.Size(526, 192);
             this.dgvTurnos.TabIndex = 0;
             // 
             // panel1
@@ -56,7 +101,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.rbPacientes);
             this.panel1.Controls.Add(this.rbMedicos);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbAlfa);
             this.panel1.Controls.Add(this.cbPacientes);
             this.panel1.Controls.Add(this.cbEspecialidades);
             this.panel1.Controls.Add(this.cbMedicos);
@@ -83,7 +128,6 @@
             this.rbPacientes.TabIndex = 2;
             this.rbPacientes.Text = "Pacientes";
             this.rbPacientes.UseVisualStyleBackColor = true;
-            this.rbPacientes.CheckedChanged += new System.EventHandler(this.rbPacientes_CheckedChanged);
             // 
             // rbMedicos
             // 
@@ -96,14 +140,53 @@
             this.rbMedicos.UseVisualStyleBackColor = true;
             this.rbMedicos.CheckedChanged += new System.EventHandler(this.rbMedicos_CheckedChanged);
             // 
+            // cbAlfa
+            // 
+            this.cbAlfa.Enabled = false;
+            this.cbAlfa.FormattingEnabled = true;
+            this.cbAlfa.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "Ñ",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.cbAlfa.Location = new System.Drawing.Point(418, 50);
+            this.cbAlfa.Name = "cbAlfa";
+            this.cbAlfa.Size = new System.Drawing.Size(47, 21);
+            this.cbAlfa.TabIndex = 1;
+            this.cbAlfa.SelectedIndexChanged += new System.EventHandler(this.cbAlfa_SelectedIndexChanged);
+            // 
             // cbPacientes
             // 
             this.cbPacientes.Enabled = false;
             this.cbPacientes.FormattingEnabled = true;
-            this.cbPacientes.Location = new System.Drawing.Point(476, 50);
+            this.cbPacientes.Location = new System.Drawing.Point(475, 50);
             this.cbPacientes.Name = "cbPacientes";
             this.cbPacientes.Size = new System.Drawing.Size(154, 21);
             this.cbPacientes.TabIndex = 1;
+            this.cbPacientes.SelectedIndexChanged += new System.EventHandler(this.cbPacientes_SelectedIndexChanged);
             // 
             // cbEspecialidades
             // 
@@ -113,38 +196,86 @@
             this.cbEspecialidades.Name = "cbEspecialidades";
             this.cbEspecialidades.Size = new System.Drawing.Size(194, 21);
             this.cbEspecialidades.TabIndex = 1;
+            this.cbEspecialidades.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidades_SelectedIndexChanged);
             // 
             // cbMedicos
             // 
             this.cbMedicos.Enabled = false;
             this.cbMedicos.FormattingEnabled = true;
-            this.cbMedicos.Location = new System.Drawing.Point(223, 50);
+            this.cbMedicos.Location = new System.Drawing.Point(214, 50);
             this.cbMedicos.Name = "cbMedicos";
             this.cbMedicos.Size = new System.Drawing.Size(194, 21);
             this.cbMedicos.TabIndex = 1;
+            this.cbMedicos.SelectedIndexChanged += new System.EventHandler(this.cbMedicos_SelectedIndexChanged);
             // 
             // dgvSobreturnos
             // 
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvSobreturnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSobreturnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvSobreturnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSobreturnos.ColumnHeadersVisible = false;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSobreturnos.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvSobreturnos.Location = new System.Drawing.Point(1, 293);
+            this.dgvSobreturnos.MultiSelect = false;
             this.dgvSobreturnos.Name = "dgvSobreturnos";
-            this.dgvSobreturnos.Size = new System.Drawing.Size(642, 192);
+            this.dgvSobreturnos.ReadOnly = true;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSobreturnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvSobreturnos.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvSobreturnos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvSobreturnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSobreturnos.Size = new System.Drawing.Size(526, 192);
             this.dgvSobreturnos.TabIndex = 0;
             // 
-            // comboBox1
+            // btnRepTurn
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(423, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(47, 21);
-            this.comboBox1.TabIndex = 1;
+            this.btnRepTurn.Location = new System.Drawing.Point(546, 152);
+            this.btnRepTurn.Name = "btnRepTurn";
+            this.btnRepTurn.Size = new System.Drawing.Size(84, 87);
+            this.btnRepTurn.TabIndex = 2;
+            this.btnRepTurn.Text = "Generar Reporte Turnos";
+            this.btnRepTurn.UseVisualStyleBackColor = true;
+            this.btnRepTurn.Click += new System.EventHandler(this.btnRepTurn_Click);
+            // 
+            // btnRepSobreTur
+            // 
+            this.btnRepSobreTur.Location = new System.Drawing.Point(546, 353);
+            this.btnRepSobreTur.Name = "btnRepSobreTur";
+            this.btnRepSobreTur.Size = new System.Drawing.Size(84, 87);
+            this.btnRepSobreTur.TabIndex = 2;
+            this.btnRepSobreTur.Text = "Generar Reporte Sobre Turnos";
+            this.btnRepSobreTur.UseVisualStyleBackColor = true;
+            this.btnRepSobreTur.Click += new System.EventHandler(this.btnRepSobreTur_Click);
             // 
             // frmTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 485);
+            this.Controls.Add(this.btnRepSobreTur);
+            this.Controls.Add(this.btnRepTurn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvSobreturnos);
             this.Controls.Add(this.dgvTurnos);
@@ -174,7 +305,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbEspecialidades;
         private System.Windows.Forms.DataGridView dgvSobreturnos;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbAlfa;
+        private System.Windows.Forms.Button btnRepTurn;
+        private System.Windows.Forms.Button btnRepSobreTur;
 
     }
 }

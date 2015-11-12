@@ -71,12 +71,12 @@ namespace logica
             }
         }
 
-        public clsTurno buscarPorId(int id)
+        public clsTurno buscarPorId(int idTurno)
         {
             clsTurno med;         
             try
             {
-                med = (clsTurno)manejaTurno.buscaPorId(id);
+                med = (clsTurno)manejaTurno.buscaPorId(idTurno);
             }
             catch (SqlException ex)
             {
@@ -123,14 +123,14 @@ namespace logica
 
         }
 
-        public List<clsTurnoVista> obtenerTurnoVista(int id,DateTime fecha)//turno de los medicos
+        public List<clsTurnoVista> obtenerTurnoVista(int idMedico,DateTime fecha)//turno de los medicos
         {
             DataTable tabla;
             List<clsTurnoVista> lista = new List<clsTurnoVista>();
           
             try
             {
-                tabla = manejaTurno.BuscarTurnoPorMedico(id,fecha.ToShortDateString());
+                tabla = manejaTurno.BuscarTurnoPorMedico(idMedico,fecha.ToShortDateString());
                 foreach (DataRow aux in tabla.Rows)
                 {
                                       
@@ -160,7 +160,6 @@ namespace logica
             return lista;
 
         }
-
       
         private clsMedico metodoM(IEntidad med2)
         {
@@ -190,6 +189,7 @@ namespace logica
 
             return medico;
         }
+
         private clsPaciente metodoP(IEntidad pac2)
         {
             clsPacienteDatos pac = (clsPacienteDatos)pac2;
@@ -219,14 +219,14 @@ namespace logica
             return paciente;
         }
 
-        public List<clsTurno> obtenerTurno(int id, DateTime fecha)//turno de los medicos
+        public List<clsTurno> obtenerTurno(int idMedico, DateTime fecha)//turno de los medicos
         {
             DataTable tabla;
             List<clsTurno> lista = new List<clsTurno>();
 
             try
             {
-                tabla = manejaTurno.BuscarTurnoPorMedico(id, fecha.ToShortDateString());
+                tabla = manejaTurno.BuscarTurnoPorMedico(idMedico, fecha.ToShortDateString());
                 foreach (DataRow aux in tabla.Rows)
                 {
 
@@ -257,14 +257,14 @@ namespace logica
 
         }
 
-        public List<clsTurno> obtenerTurnoPaciente(int id)//turno de un paciente cambiar
+        public List<clsTurno> obtenerTurnoPaciente(int idPaciente)//turno de un paciente cambiar
         {
             DataTable tabla;
             List<clsTurno> lista = new List<clsTurno>();
 
             try
             {
-                tabla = manejaTurno.BuscarTurnoPorPaciente(id);
+                tabla = manejaTurno.BuscarTurnoPorPaciente(idPaciente);
                 foreach (DataRow aux in tabla.Rows)
                 {
 
@@ -307,11 +307,11 @@ namespace logica
             return turno;
         }
 
-        public void ActualizarAsistencia(int id)
+        public void ActualizarAsistencia(int idTurno)
         {
             try
             {
-                manejaTurno.ActualizarAsistencia(id);
+                manejaTurno.ActualizarAsistencia(idTurno);
             }
             catch (SqlException ex)
             {
@@ -328,6 +328,13 @@ namespace logica
 
             clsTurnoVista turno=new clsTurnoVista();
             return turno;
+        }
+
+        public List<clsTurnoVista> obtenerTurnoMedico(int idMedico)
+        {
+            List<clsTurnoVista> turnos = new List<clsTurnoVista>();
+
+            return turnos;
         }
     }
 }
