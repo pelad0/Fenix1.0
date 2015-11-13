@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using entidades;
 
 namespace frmABMME
 {
-    public partial class frmReporte : Form
+    public partial class frmReporteTurnosMedico : Form
     {
-        public frmReporte()
+        List<clsTurnoVista> turnos = new List<clsTurnoVista>();
+        public frmReporteTurnosMedico(List<clsTurnoVista> turnos)
         {
             InitializeComponent();
+            this.turnos = turnos;
+            
         }
     }
 }

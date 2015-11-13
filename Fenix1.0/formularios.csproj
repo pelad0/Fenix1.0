@@ -61,11 +61,11 @@
       <DependentUpon>crPagos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrystalReport1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CrystalReport1.Designer.cs">
-      <DependentUpon>CrystalReport1.cs</DependentUpon>
+    <Compile Include="crTurnoMedico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crTurnoMedico.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -75,6 +75,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteTurnosMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteTurnosMedico.Designer.cs">
+      <DependentUpon>frmReporteTurnosMedico.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTurno.cs">
       <SubType>Form</SubType>
@@ -172,12 +178,6 @@
     <Compile Include="frmRegistroDePago.Designer.cs">
       <DependentUpon>frmRegistroDePago.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReporte.Designer.cs">
-      <DependentUpon>frmReporte.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -185,20 +185,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="reportesTurnos.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>reportesTurnos.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="crPagos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crPagos.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.resx">
-      <DependentUpon>CrystalReport1.cs</DependentUpon>
+    <EmbeddedResource Include="crTurnoMedico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crTurnoMedico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteTurnosMedico.resx">
+      <DependentUpon>frmReporteTurnosMedico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTurno.resx">
       <DependentUpon>frmTurno.cs</DependentUpon>
@@ -248,16 +246,9 @@
     <EmbeddedResource Include="frmRegistroDePago.resx">
       <DependentUpon>frmRegistroDePago.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReporte.resx">
-      <DependentUpon>frmReporte.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="reportesTurnos.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>reportesTurnos.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

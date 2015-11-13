@@ -11,6 +11,7 @@ using controles;
 using logica;
 using entidades;
 
+
 namespace Fenix1._0
 {
     public partial class frmTurno : Form
@@ -187,7 +188,7 @@ namespace Fenix1._0
 
         private void btnRepTurn_Click(object sender, EventArgs e)
         {
-
+             
         }
 
         private void btnRepSobreTur_Click(object sender, EventArgs e)
