@@ -78,7 +78,6 @@ namespace logica
 
             try
             {
-
                 med = (clsSobreturno)manejaTurno.buscaPorId(idSobreTurno);
             }
             catch (SqlException ex)
@@ -257,7 +256,7 @@ namespace logica
 
         }
 
-        public List<clsSobreTurnoVista> obtenerSobreturnoPaciente(int idPaciente)//implementar
+        public List<clsSobreTurnoVista> obtenerSobreturnoPaciente(int idPaciente)
         {
             DataTable tabla;
             List<clsSobreTurnoVista> lista = new List<clsSobreTurnoVista>();
@@ -268,20 +267,20 @@ namespace logica
                 foreach (DataRow aux in tabla.Rows)
                 {
 
-                    clsSobreturno turno = new clsSobreturno();
+                    clsSobreTurnoVista turno = new clsSobreTurnoVista();
                     turno.Id = Convert.ToInt32(aux["id"]);
-                    turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
-                    turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
-                    turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                    turno.Id = Convert.ToInt32(aux["idMedico"]);
+                    turno.Medico = metodoM((clsMedicoDatos)manejamedico.buscaPorId(Convert.ToInt32(aux["idMedico"])));
+                    turno.Paciente = metodoP((clsPacienteDatos)manejapaciente.buscaPorId(Convert.ToInt32(aux["idPaciente"])));
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
                     turno.Costo = Convert.ToDouble(aux["costo"]);
-                  
-                   // lista.Add(turno);
+                    lista.Add(turno);
 
 
                 }
             }
+         
             catch (SqlException ex)
             {
                 throw ex;

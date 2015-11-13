@@ -257,10 +257,10 @@ namespace logica
 
         }
 
-        public List<clsTurno> obtenerTurnoPaciente(int idPaciente)//turno de un paciente cambiar turno vistaaaaaaaaaaa
+        public List<clsTurnoVista> obtenerTurnoPaciente(int idPaciente)//turno de un paciente cambiar turno vistaaaaaaaaaaa
         {
             DataTable tabla;
-            List<clsTurno> lista = new List<clsTurno>();
+            List<clsTurnoVista> lista = new List<clsTurnoVista>();
 
             try
             {
@@ -268,10 +268,11 @@ namespace logica
                 foreach (DataRow aux in tabla.Rows)
                 {
 
-                    clsTurno turno = new clsTurno();
+                    clsTurnoVista turno = new clsTurnoVista();
+
                     turno.Id = Convert.ToInt32(aux["id"]);
-                    turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
-                    turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
+                    turno.Medico = metodoM((clsMedicoDatos)manejamedico.buscaPorId(Convert.ToInt32(aux["idMedico"])));
+                    turno.Paciente = metodoP((clsPacienteDatos)manejapaciente.buscaPorId(Convert.ToInt32(aux["idPaciente"])));
                     turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
@@ -280,7 +281,7 @@ namespace logica
 
 
                 }
-            }
+            }         
             catch (SqlException ex)
             {
                 throw ex;
