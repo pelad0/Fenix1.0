@@ -143,12 +143,16 @@ namespace Fenix1._0
                     if (medicos.Count > 0)
                     {
                         m = medicos[cbMedicos.SelectedIndex];
-                        dgvTurnos.DataSource = rt.obtenerTurnoMedico(m.Id);
+                        turnos.Clear();
+                        turnos= rt.obtenerTurnoMedico(m.Id);
+                        dgvTurnos.DataSource = turnos;
                         //dgvTurnos.Columns[].Visible = false;
                         //dgvTurnos.Columns[].Visible = false;
                         //dgvTurnos.Columns[].Visible = false;
                         //dgvTurnos.Columns[].Visible = false;
-                        dgvSobreturnos.DataSource = rst.obtenerSobreTurnoMedico(m.Id);
+                        sobreTurnos.Clear();
+                        sobreTurnos = rst.obtenerSobreTurnoMedico(m.Id);
+                        dgvSobreturnos.DataSource = sobreTurnos;
                         //dgvSobreturnos.Columns[].Visible = false;
                         //dgvSobreturnos.Columns[].Visible = false;
                         //dgvSobreturnos.Columns[].Visible = false;

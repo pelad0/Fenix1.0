@@ -226,7 +226,7 @@ namespace Fenix1._0
             {
                 OS.Add(obra.Nombre);
             }
-            OS.Add("Ninguna");
+            //OS.Add("Ninguna");
             cbOSAlta.DataSource = OS;
             cbOSMod.DataSource = OS;
 
