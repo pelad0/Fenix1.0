@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using controles;
 using logica;
 using entidades;
-
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace Fenix1._0
 {
@@ -23,12 +23,15 @@ namespace Fenix1._0
         RepositorioEspecialidad re = new RepositorioEspecialidad();
         List<clsMedico> medicos = new List<clsMedico>();
         List<clsPaciente> pacientes = new List<clsPaciente>();
+        List<clsTurnoVista> turnos = new List<clsTurnoVista>();
+        List<clsSobreTurnoVista> sobreTurnos = new List<clsSobreTurnoVista>();
         List<string> esp = new List<string>();
         List<string> med = new List<string>();
         List<string> pac = new List<string>();
         clsMedico m = new clsMedico();
         clsPaciente p = new clsPaciente();
         clsUsuario u = new clsUsuario();
+        
 
         public frmTurno(clsUsuario u)
         {
@@ -168,12 +171,16 @@ namespace Fenix1._0
                 try
                 {
                     p = pacientes[cbPacientes.SelectedIndex];
-                    dgvTurnos.DataSource = rt.obtenerTurnoPaciente(p.Id);
+                    turnos.Clear();
+                    turnos = rt.obtenerTurnoPaciente(p.Id);
+                    dgvTurnos.DataSource = turnos;
                     //dgvTurnos.Columns[].Visible = false;
                     //dgvTurnos.Columns[].Visible = false;
                     //dgvTurnos.Columns[].Visible = false;
                     //dgvTurnos.Columns[].Visible = false;
-                    dgvSobreturnos.DataSource = rst.obtenerSobreturnoPaciente(p.Id); 
+                    sobreTurnos.Clear();
+                    sobreTurnos = rst.obtenerSobreturnoPaciente(p.Id);
+                    dgvSobreturnos.DataSource = sobreTurnos; 
                     //dgvSobreturnos.Columns[].Visible = false;
                     //dgvSobreturnos.Columns[].Visible = false;
                     //dgvSobreturnos.Columns[].Visible = false;
@@ -188,7 +195,9 @@ namespace Fenix1._0
 
         private void btnRepTurn_Click(object sender, EventArgs e)
         {
-             
+            rptTurnosMedico rep = new rptTurnosMedico();
+            rep.SetDataSource=
+            
         }
 
         private void btnRepSobreTur_Click(object sender, EventArgs e)

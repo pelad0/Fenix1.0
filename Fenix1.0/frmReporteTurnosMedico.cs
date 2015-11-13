@@ -8,17 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using entidades;
+using CrystalDecisions.CrystalReports.Engine;
 
-namespace frmABMME
+namespace Fenix1._0
 {
     public partial class frmReporteTurnosMedico : Form
     {
-        List<clsTurnoVista> turnos = new List<clsTurnoVista>();
-        public frmReporteTurnosMedico(List<clsTurnoVista> turnos)
+        public frmReporteTurnosMedico(ReportDocument rd)
         {
             InitializeComponent();
-            this.turnos = turnos;
-            
+            crReporteMedico.ReportSource = rd;
         }
     }
 }

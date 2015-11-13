@@ -1,4 +1,4 @@
-﻿namespace frmABMME
+﻿namespace Fenix1._0
 {
     partial class frmReporteTurnosMedico
     {
@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-
+         
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -34,13 +34,12 @@
             // 
             // crReporteMedico
             // 
-            this.crReporteMedico.ActiveViewIndex = 0;
+            this.crReporteMedico.ActiveViewIndex = -1;
             this.crReporteMedico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crReporteMedico.Cursor = System.Windows.Forms.Cursors.Default;
             this.crReporteMedico.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crReporteMedico.Location = new System.Drawing.Point(0, 0);
             this.crReporteMedico.Name = "crReporteMedico";
-            this.crReporteMedico.ReportSource = this.crTurnoMedico1;
             this.crReporteMedico.Size = new System.Drawing.Size(644, 485);
             this.crReporteMedico.TabIndex = 0;
             // 
