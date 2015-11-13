@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.crReporteMedico = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.crTurnoMedico1 = new frmABMME.crTurnoMedico();
             this.SuspendLayout();
             // 
             // crReporteMedico
@@ -59,6 +58,5 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crReporteMedico;
-        private crTurnoMedico crTurnoMedico1;
     }
 }

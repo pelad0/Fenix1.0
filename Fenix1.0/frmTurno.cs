@@ -196,14 +196,17 @@ namespace Fenix1._0
         private void btnRepTurn_Click(object sender, EventArgs e)
         {
             rptTurnosMedico rep = new rptTurnosMedico();
-            rep.SetDataSource=
-            
+            rep.SetDataSource(turnos);
+            frmReporteTurnosMedico rtm = new frmReporteTurnosMedico(rep);
+            rtm.ShowDialog();
         }
 
         private void btnRepSobreTur_Click(object sender, EventArgs e)
         {
-
+            rptTurnosMedico rep = new rptTurnosMedico();
+            rep.SetDataSource(sobreTurnos);
+            frmReporteTurnosMedico rtm = new frmReporteTurnosMedico(rep);
+            rtm.ShowDialog();
         }
-
     }
 }
