@@ -18,15 +18,20 @@ namespace frmABMME
         {
             InitializeComponent();
         }
-
+        RepositorioRecibo reposRecibo = new RepositorioRecibo(); 
         RepositorioMedico reposMedico = new RepositorioMedico();
         RepositorioTurno reposTurno = new RepositorioTurno();
         RepositorioPaciente reposPaciente = new RepositorioPaciente();
         RepositorioSobreturno reposSobreTurno = new RepositorioSobreturno();
         RepositorioFactura reposFac = new RepositorioFactura();
+        RepositorioObraSocial reposObra = new RepositorioObraSocial();
+        RepositorioEspecialidad reposEspe = new RepositorioEspecialidad();
         bool columnasTurno = false;
         bool columnasTurnosAPagar = false;
         int pagina = 0;
+        clsPaciente PacienteActual = new clsPaciente();
+
+        float total = 0;
 
 
         private void dgvPacientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -45,13 +50,21 @@ namespace frmABMME
                 }
             }
 
+            if(dgvTurnosAPagar.Rows.Count > 0)      //Borro todos los posibles turnos a pagar previamente seleccionados.
+            {
+                foreach(DataGridViewRow row in dgvTurnosAPagar.Rows)
+                {
+                    dgvTurnosAPagar.Rows.Remove(row);
+                }
+            }
+
 
 
             //TOMO EL ID DEL PACIENTE SELECCIONADO
             int idPas = int.Parse(dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells[0].Value.ToString());
 
 
-            clsPaciente PacienteActual = reposPaciente.buscarPorId(idPas);
+            PacienteActual = reposPaciente.buscarPorId(idPas);
 
 
             List<clsTurno> ListaTurnos = reposTurno.obtenerTurnoPaciente(idPas);
@@ -256,20 +269,103 @@ namespace frmABMME
 
                 
                 List<clsRecibo> listaRecibos = new List<clsRecibo>();
-                clsRecibo recibo = new clsRecibo(); 
+                clsRecibo recibo = new clsRecibo();
+                clsObraSocial obrita = new clsObraSocial();
+                clsEspecialidad especiali = new clsEspecialidad();
+                clsMedico med = new clsMedico();
 
                 //Creo la lista de recibos para turnos
                 
                 foreach (clsTurno turnito in turnoReporte)
                 {
-                    //recibo.IdFactura = reposFac.ultimoID() + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
+                    recibo.IdFactura = reposFac.ultimoID() + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
                     recibo.IdTurno = turnito.Id;
-                    recibo.Fecha = turnito.Fecha;
-                   
-                   
-                    //Tengo que verificar la cobertura de la obra social de este paciente
+                    recibo.IdSobreTurno = null;                    //SI TIENE TURNO, SOBRE TURNO ES NULL.
+                    recibo.Fecha = turnito.Fecha;       
+                
+                    if(PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
+                    {
+                        obrita = reposObra.buscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
+                        recibo.Cobertura = obrita.Monto;
+                    }
+                    else
+                    {
+                        recibo.Cobertura = null;                //SI NO TIENE OBRA SOCIAL, NO TIENE COBERTURA.
+                    }
+
+                    //CARGO EL MONTO DE LA CONSULTA.
+
+                    clsTurno t = new clsTurno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
+
+                    t = reposTurno.buscarPorId(turnito.IdMedico);       //Le asigno todos sus valores propios.
+
+                    string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
+                        
+                    especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
+
+                    recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+
+                    recibo.Detalle = es;
+
+                    if(recibo.Importe - recibo.Cobertura > 0)           //Si lo que me cubre la obra social es menor a lo que me sale la consulta entonces agrego esa diferencia al total.
+                    {
+                        total += (float)recibo.Importe - (float)recibo.Cobertura;
+                    }
+
+                    reposRecibo.Alta(recibo);
+                    
 
                 }
+
+                //Creo la lista de recibos para turnos
+
+                foreach(clsSobreturno sobrTurnito in sobreTurnosReporte)
+                {
+                    recibo.IdFactura = reposFac.ultimoID() + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
+                    recibo.IdTurno = null;                          //SI TIENE SOBRETURNO, TURNO ES NULL.
+                    recibo.IdSobreTurno = sobrTurnito.Id;
+                    recibo.Fecha = sobrTurnito.Fecha;
+
+                    if (PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
+                    {
+                        obrita = reposObra.buscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
+                        recibo.Cobertura = obrita.Monto;
+                    }
+                    else
+                    {
+                        recibo.Cobertura = null;                //SI NO TIENE OBRA SOCIAL, NO TIENE COBERTURA.
+                    }
+
+                    //CARGO EL MONTO DE LA CONSULTA.
+
+                    clsTurno t = new clsTurno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
+
+                    t = reposTurno.buscarPorId(sobrTurnito.IdMedico);       //Le asigno todos sus valores propios.
+
+                    string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
+
+                    especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
+
+                    recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+
+                    recibo.Detalle = es;
+
+                    if (recibo.Importe - recibo.Cobertura > 0)           //Si lo que me cubre la obra social es menor a lo que me sale la consulta entonces agrego esa diferencia al total.
+                    {
+                        total += (float)recibo.Importe - (float)recibo.Cobertura;
+                    }
+
+                    reposRecibo.Alta(recibo);
+
+                }
+
+
+                //ACA LE ASIGNO LOS DATOS A LA FACTURA
+
+
+
+
+              
 
 
 

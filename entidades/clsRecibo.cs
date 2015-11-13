@@ -11,11 +11,10 @@ namespace entidades
     {
         int id;
         int idFactura;
-        int idSobreTurno;     
-        int idTurno;
-        DateTime fecha;
-        
-        double cobertura;
+        int? idSobreTurno;     
+        int? idTurno;
+        DateTime fecha;        
+        double? cobertura;
         double importe;
         string detalle;
 
@@ -26,7 +25,7 @@ namespace entidades
 
         }
 
-        public clsRecibo(int id, int idFactura, int idSobreTurno, int idTurno, DateTime fecha, double cobertura, double importe, string detalle)
+        public clsRecibo(int id, int idFactura, int? idSobreTurno, int? idTurno, DateTime fecha, double? cobertura, double importe, string detalle)
         {
             this.id = id;
             this.idFactura = idFactura;
@@ -38,7 +37,7 @@ namespace entidades
             this.detalle = detalle;
         }
 
-        public clsRecibo(int idFactura, int idSobreTurno, int idTurno, DateTime fecha, double cobertura, double importe, string detalle)
+        public clsRecibo(int idFactura, int? idSobreTurno, int? idTurno, DateTime fecha, double? cobertura, double importe, string detalle)
         {
             this.idFactura = idFactura;
             this.idSobreTurno = idSobreTurno;
@@ -52,7 +51,7 @@ namespace entidades
 
 
 
-        public int IdSobreTurno
+        public int? IdSobreTurno
         {
             get { return idSobreTurno; }
             set { idSobreTurno = value; }
@@ -60,7 +59,7 @@ namespace entidades
 
 
 
-        public int IdTurno
+        public int? IdTurno
         {
             get { return idTurno; }
             set { idTurno = value; }
@@ -81,7 +80,7 @@ namespace entidades
         }
        
 
-        public double Cobertura
+        public double? Cobertura
         {
             get { return cobertura; }
             set { cobertura = value; }
