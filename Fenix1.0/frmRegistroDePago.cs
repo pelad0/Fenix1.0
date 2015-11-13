@@ -67,15 +67,15 @@ namespace frmABMME
             PacienteActual = reposPaciente.buscarPorId(idPas);
 
 
-            List<clsTurno> ListaTurnos = reposTurno.obtenerTurnoPaciente(idPas);
-            List<clsSobreturno> ListaSobreTurnos = reposSobreTurno.obtenerSobreturnoPaciente(idPas);
+            List<clsTurnoVista> ListaTurnos = reposTurno.obtenerTurnoPaciente(idPas);
+            List<clsSobreTurnoVista> ListaSobreTurnos = reposSobreTurno.obtenerSobreturnoPaciente(idPas);
 
-            foreach (clsTurno turn in ListaTurnos)
+            foreach (clsTurnoVista turn in ListaTurnos)
             {
                 dgvTurnos.Rows.Add(turn.Id, turn.Fecha, turn.Costo, "Turno");
             }
 
-            foreach(clsSobreturno sobr in ListaSobreTurnos)
+            foreach(clsSobreTurnoVista sobr in ListaSobreTurnos)
             {
                 dgvTurnos.Rows.Add(sobr.Id, sobr.Fecha, sobr.Costo, "SobreTurno");
             }
@@ -183,7 +183,7 @@ namespace frmABMME
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Seleccione un turno antes de realizar esta operacion", "¡Advertencia!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (dgvTurnos.Rows[dgvTurnos.CurrentRow.Index].Cells[3].Value.ToString() == "Turno") //Si quiere pasar un turno
@@ -278,14 +278,14 @@ namespace frmABMME
                 
                 foreach (clsTurno turnito in turnoReporte)
                 {
-                    recibo.IdFactura = reposFac.ultimoID() + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
+                    //recibo.IdFactura = reposFac.ultimoID() + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
                     recibo.IdTurno = turnito.Id;
                     recibo.IdSobreTurno = null;                    //SI TIENE TURNO, SOBRE TURNO ES NULL.
                     recibo.Fecha = turnito.Fecha;       
                 
                     if(PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
                     {
-                        obrita = reposObra.buscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
+                    //    obrita = reposObra.buscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
                         recibo.Cobertura = obrita.Monto;
                     }
                     else
@@ -301,7 +301,7 @@ namespace frmABMME
 
                     string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
                         
-                    especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
+                    //especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
 
                     recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
 
@@ -321,14 +321,14 @@ namespace frmABMME
 
                 foreach(clsSobreturno sobrTurnito in sobreTurnosReporte)
                 {
-                    recibo.IdFactura = reposFac.ultimoID() + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
+                    //recibo.IdFactura = reposFac.ultimoID() + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
                     recibo.IdTurno = null;                          //SI TIENE SOBRETURNO, TURNO ES NULL.
                     recibo.IdSobreTurno = sobrTurnito.Id;
                     recibo.Fecha = sobrTurnito.Fecha;
 
                     if (PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
                     {
-                        obrita = reposObra.buscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
+                    //    obrita = reposObra.buscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
                         recibo.Cobertura = obrita.Monto;
                     }
                     else
@@ -344,7 +344,7 @@ namespace frmABMME
 
                     string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
 
-                    especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
+                    //especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
 
                     recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
 
@@ -386,7 +386,7 @@ namespace frmABMME
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Seleccione un turno antes de realizar esta operacion", "¡Advertencia!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
