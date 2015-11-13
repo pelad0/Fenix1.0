@@ -332,9 +332,39 @@ namespace logica
 
         public List<clsSobreTurnoVista> obtenerSobreTurnoMedico(int idMedico)
         {
-            List<clsSobreTurnoVista> sobreTurnos = new List<clsSobreTurnoVista>();
+            DataTable tabla;
+            List<clsSobreTurnoVista> lista = new List<clsSobreTurnoVista>();
 
-            return sobreTurnos;
+            try
+            {
+                tabla = manejaTurno.BuscarTurnoPorMedico(idMedico);
+                foreach (DataRow aux in tabla.Rows)
+                {
+
+                    clsSobreTurnoVista turno = new clsSobreTurnoVista();
+
+                    turno.Id = Convert.ToInt32(aux["id"]);
+                    turno.Medico = metodoM((clsMedicoDatos)manejamedico.buscaPorId(Convert.ToInt32(aux["idMedico"])));
+                    turno.Paciente = metodoP((clsPacienteDatos)manejapaciente.buscaPorId(Convert.ToInt32(aux["idPaciente"])));
+                    turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                    turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                    turno.Estado = Convert.ToBoolean(aux["estado"]);
+
+                    lista.Add(turno);
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lista;
         }
     }
 }
