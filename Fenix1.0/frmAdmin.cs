@@ -51,5 +51,11 @@ namespace Fenix1._0
             i.limpiar();
             i.Show();
         }
+
+        private void btnTurnos_Click(object sender, EventArgs e)
+        {
+            frmTurno frmT = new frmTurno(u);
+            frmT.ShowDialog();
+        }
     }
 }
