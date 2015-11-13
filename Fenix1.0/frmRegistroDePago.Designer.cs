@@ -159,7 +159,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPacientes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPacientes.Location = new System.Drawing.Point(46, 31);
+            this.dgvPacientes.Location = new System.Drawing.Point(46, 18);
             this.dgvPacientes.MultiSelect = false;
             this.dgvPacientes.Name = "dgvPacientes";
             this.dgvPacientes.ReadOnly = true;
@@ -238,7 +238,6 @@
             this.pnlTurno.Name = "pnlTurno";
             this.pnlTurno.Size = new System.Drawing.Size(832, 334);
             this.pnlTurno.TabIndex = 27;
-            this.pnlTurno.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTurno_Paint);
             // 
             // cbMetodoDePago
             // 
