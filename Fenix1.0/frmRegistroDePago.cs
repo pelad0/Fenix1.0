@@ -228,7 +228,6 @@ namespace frmABMME
 
             if (dgvTurnosAPagar.Rows.Count > 0)
             {
-                int i = 0;
                 foreach (DataGridViewRow row in dgvTurnosAPagar.Rows)
                 {
                     turn.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
@@ -263,7 +262,7 @@ namespace frmABMME
                 
                 foreach (clsTurno turnito in turnoReporte)
                 {
-                    recibo.IdFactura = reposFac.ultimoID() + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
+                    //recibo.IdFactura = reposFac.ultimoID() + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
                     recibo.IdTurno = turnito.Id;
                     recibo.Fecha = turnito.Fecha;
                    

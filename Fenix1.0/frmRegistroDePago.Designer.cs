@@ -78,10 +78,10 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblNumeroPagina);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnSiguiente);
             this.panel1.Controls.Add(this.btnAnterior);
             this.panel1.Controls.Add(this.dgvPacientes);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-2, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(832, 224);
@@ -159,7 +159,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPacientes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPacientes.Location = new System.Drawing.Point(46, 18);
+            this.dgvPacientes.Location = new System.Drawing.Point(46, 35);
             this.dgvPacientes.MultiSelect = false;
             this.dgvPacientes.Name = "dgvPacientes";
             this.dgvPacientes.ReadOnly = true;
@@ -173,7 +173,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(316, 6);
+            this.label1.Location = new System.Drawing.Point(289, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(200, 22);
             this.label1.TabIndex = 9;
