@@ -16,8 +16,6 @@ namespace Datos
         {
             manager = new BdMetodos();
         }
-
-
         public void Alta(IEntidad entidad)
         {
             clsPacienteDatos pac = (clsPacienteDatos)entidad;
@@ -49,8 +47,6 @@ namespace Datos
 
             }
         }
-
-
         public void Baja(IEntidad entidad)
         {
             clsPacienteDatos pac = (clsPacienteDatos)entidad;
@@ -64,7 +60,6 @@ namespace Datos
             }
 
         }
-
         public void Modificacion(IEntidad entidad)
         {
             clsPacienteDatos pac = (clsPacienteDatos)entidad;
@@ -78,7 +73,6 @@ namespace Datos
                 throw ex;
             }
         }
-
         public IEntidad buscaPorId(int id)
         {
             DataTable aux = new DataTable();
@@ -100,8 +94,6 @@ namespace Datos
             }
             return pac;
         }
-        
-
         public DataTable Todo(int pagina)
         {
             DataTable aux = new DataTable();
@@ -118,7 +110,6 @@ namespace Datos
 
             return aux;
         }
-
         public clsPacienteDatos BuscarPorDni (int dni)
         {
             clsPacienteDatos pac = new clsPacienteDatos();
@@ -141,7 +132,6 @@ namespace Datos
             }
             return pac;
         }
-
         public DataTable BuscarNombrePorLetra (String letra)
         {
             DataTable aux = new DataTable();

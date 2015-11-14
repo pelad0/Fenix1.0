@@ -56,7 +56,6 @@ namespace Datos
                 throw ex;
             }
         }
-
         public IEntidad buscaPorId(int id)
         {
             DataTable aux = new DataTable();
@@ -75,7 +74,6 @@ namespace Datos
             }
             return esp;
         }
-
         public System.Data.DataTable Todo()
         {
             DataTable aux = new DataTable();
@@ -92,8 +90,6 @@ namespace Datos
             return aux;
 
         }
-
-
         public IEntidad buscaPorNombre(string nombre)
         {
             DataTable aux = new DataTable();
