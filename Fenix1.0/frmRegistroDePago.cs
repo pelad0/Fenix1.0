@@ -171,9 +171,7 @@ namespace Fenix1._0
 
         private void btnPasar_Click(object sender, EventArgs e)
         {
-            int idTurn = 0;
-
-            
+            int idTurn = 0;          
 
             if (!columnasTurnosAPagar)
             {
@@ -226,8 +224,6 @@ namespace Fenix1._0
 
 
 
-
-
         }
 
   
@@ -250,7 +246,6 @@ namespace Fenix1._0
                 {
                     if (cbTipoFactura.Text == "A")
                     {
-
 
                         foreach (DataGridViewRow row in dgvTurnosAPagar.Rows)
                         {
@@ -377,16 +372,8 @@ namespace Fenix1._0
                         Factura.Fecha = DateTime.Now;
                         Factura.IdUsuario = usuario.Id;
                         Factura.Cliente = tbCliente.Text;
-
-
-
-                        //TERMINAR ESTO QUE ESTA MAL
-                        //TERMINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
-                        //TERMINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
-                        //TERMINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
-                        //TERMINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
-                        //TERMINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR        
-
+                        Factura.PagoEfectivo = float.Parse(tbCantidadEfectivo.Text);
+                        
 
 
                     }
@@ -428,6 +415,8 @@ namespace Fenix1._0
                 clsTurno turn = reposTurno.buscarPorId(idTurn);
 
                 dgvTurnos.Rows.Add(turn.Id, turn.Fecha, turn.Costo, "Turno");
+
+                ActualizarPrecio();
             
             }
             else
@@ -439,6 +428,8 @@ namespace Fenix1._0
                     clsSobreturno Sobrturn = reposSobreTurno.buscarPorId(idTurn);
 
                     dgvTurnos.Rows.Add(Sobrturn.Id, Sobrturn.Fecha, Sobrturn.Costo, "SobreTurno");
+
+                    ActualizarPrecio();
                 }
                 
             }
@@ -512,6 +503,7 @@ namespace Fenix1._0
         public void ActualizarPrecio()
         {
             total = 0;
+            totalDescuento = 0;
 
             List<clsTurno> turnoReporte = new List<clsTurno>();
             List<clsSobreturno> sobreTurnosReporte = new List<clsSobreturno>();
@@ -595,12 +587,6 @@ namespace Fenix1._0
 
             lblTotal.Text = total.ToString();
             tbCantidadTarjeta.Text = total.ToString();
-            
-
-
-
-
-
         }
 
       
