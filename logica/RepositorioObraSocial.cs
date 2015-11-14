@@ -110,5 +110,25 @@ namespace logica
             return lista;
 
         }
+
+        public clsObraSocial BuscarPorNombre(string nombre)
+        {
+
+            clsObraSocial os;
+            try
+            {
+                os = (clsObraSocial)manejaOs.buscaPorNombre(nombre);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return os;
+
+        }
     }
 }

@@ -296,9 +296,39 @@ namespace logica
 
         public List<clsSobreTurnoVista> TurnoEntreFechas(DateTime desde, DateTime Hasta)
         {
-            List<clsSobreTurnoVista> lista= new List<clsSobreTurnoVista>();
+            DataTable tabla;
+            List<clsSobreTurnoVista> lista = new List<clsSobreTurnoVista>();
+
+            try
+            {
+                tabla = manejaTurno.TurnosEntreFechas(desde,Hasta);
+                foreach (DataRow aux in tabla.Rows)
+                {
+
+                    clsSobreTurnoVista turno = new clsSobreTurnoVista();
+                    turno.Id = Convert.ToInt32(aux["id"]);
+                    turno.Id = Convert.ToInt32(aux["idMedico"]);
+                    turno.Medico = metodoM((clsMedicoDatos)manejamedico.buscaPorId(Convert.ToInt32(aux["idMedico"])));
+                    turno.Paciente = metodoP((clsPacienteDatos)manejapaciente.buscaPorId(Convert.ToInt32(aux["idPaciente"])));
+                    turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                    turno.Estado = Convert.ToBoolean(aux["estado"]);
+                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                    lista.Add(turno);
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             return lista;
-        }//completar
+        }
 
         public clsSobreTurnoVista primerTurno() //completar
         {
