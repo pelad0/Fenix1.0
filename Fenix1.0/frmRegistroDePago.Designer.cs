@@ -40,10 +40,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblNumeroPagina = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlTurno = new System.Windows.Forms.Panel();
@@ -54,6 +54,10 @@
             this.btnPasar = new System.Windows.Forms.Button();
             this.dgvTurnosAPagar = new System.Windows.Forms.DataGridView();
             this.btnPagar = new System.Windows.Forms.Button();
+            this.cbTipoFactura = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbCuit = new controles.TextBoxNumeros();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
@@ -115,6 +119,16 @@
             this.label3.TabIndex = 23;
             this.label3.Text = "Pag";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(289, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(200, 22);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Seleccione paciente";
+            // 
             // btnSiguiente
             // 
             this.btnSiguiente.Location = new System.Drawing.Point(533, 193);
@@ -169,16 +183,6 @@
             this.dgvPacientes.TabIndex = 20;
             this.dgvPacientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacientes_CellContentDoubleClick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(289, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 22);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Seleccione paciente";
-            // 
             // dgvTurnos
             // 
             this.dgvTurnos.AllowUserToAddRows = false;
@@ -225,6 +229,10 @@
             // pnlTurno
             // 
             this.pnlTurno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTurno.Controls.Add(this.label9);
+            this.pnlTurno.Controls.Add(this.tbCuit);
+            this.pnlTurno.Controls.Add(this.label8);
+            this.pnlTurno.Controls.Add(this.cbTipoFactura);
             this.pnlTurno.Controls.Add(this.cbMetodoDePago);
             this.pnlTurno.Controls.Add(this.label7);
             this.pnlTurno.Controls.Add(this.btnTraer);
@@ -236,7 +244,7 @@
             this.pnlTurno.Controls.Add(this.label4);
             this.pnlTurno.Location = new System.Drawing.Point(-2, 310);
             this.pnlTurno.Name = "pnlTurno";
-            this.pnlTurno.Size = new System.Drawing.Size(832, 334);
+            this.pnlTurno.Size = new System.Drawing.Size(832, 373);
             this.pnlTurno.TabIndex = 27;
             // 
             // cbMetodoDePago
@@ -245,18 +253,18 @@
             this.cbMetodoDePago.Items.AddRange(new object[] {
             "Efectivo",
             "Tarjeta de crédito"});
-            this.cbMetodoDePago.Location = new System.Drawing.Point(380, 240);
+            this.cbMetodoDePago.Location = new System.Drawing.Point(171, 231);
             this.cbMetodoDePago.Name = "cbMetodoDePago";
-            this.cbMetodoDePago.Size = new System.Drawing.Size(143, 23);
+            this.cbMetodoDePago.Size = new System.Drawing.Size(125, 23);
             this.cbMetodoDePago.TabIndex = 31;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(269, 243);
+            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(24, 231);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 15);
+            this.label7.Size = new System.Drawing.Size(135, 19);
             this.label7.TabIndex = 26;
             this.label7.Text = "Método de pago";
             // 
@@ -278,7 +286,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(545, 22);
+            this.label6.Location = new System.Drawing.Point(550, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 22);
             this.label6.TabIndex = 29;
@@ -337,7 +345,7 @@
             this.btnPagar.Enabled = false;
             this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPagar.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagar.Location = new System.Drawing.Point(342, 303);
+            this.btnPagar.Location = new System.Drawing.Point(342, 309);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(125, 26);
             this.btnPagar.TabIndex = 26;
@@ -345,11 +353,52 @@
             this.btnPagar.UseVisualStyleBackColor = true;
             this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
+            // cbTipoFactura
+            // 
+            this.cbTipoFactura.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoFactura.FormattingEnabled = true;
+            this.cbTipoFactura.Items.AddRange(new object[] {
+            "A",
+            "B"});
+            this.cbTipoFactura.Location = new System.Drawing.Point(473, 228);
+            this.cbTipoFactura.Name = "cbTipoFactura";
+            this.cbTipoFactura.Size = new System.Drawing.Size(45, 27);
+            this.cbTipoFactura.TabIndex = 32;
+            this.cbTipoFactura.SelectedIndexChanged += new System.EventHandler(this.cbTipoFactura_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(323, 231);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(144, 19);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Tipo de factura";
+            // 
+            // tbCuit
+            // 
+            this.tbCuit.Location = new System.Drawing.Point(598, 227);
+            this.tbCuit.MaxLength = 11;
+            this.tbCuit.Name = "tbCuit";
+            this.tbCuit.Size = new System.Drawing.Size(175, 23);
+            this.tbCuit.TabIndex = 34;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(547, 231);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 19);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Cuit";
+            // 
             // frmRegistroDePago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 656);
+            this.ClientSize = new System.Drawing.Size(825, 695);
             this.Controls.Add(this.pnlTurno);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -390,6 +439,10 @@
         private System.Windows.Forms.Button btnTraer;
         private System.Windows.Forms.ComboBox cbMetodoDePago;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbTipoFactura;
+        private System.Windows.Forms.Label label9;
+        private controles.TextBoxNumeros tbCuit;
 
     }
 }
