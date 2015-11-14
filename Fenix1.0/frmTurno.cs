@@ -297,7 +297,10 @@ namespace Fenix1._0
             {
                 if (rbMedicos.Checked)
                 {
-                    crTurnosMedico
+                    crTurnosMedico crtm = new crTurnosMedico();
+                    crtm.SetDataSource(tur);
+                    crtm.SetParameterValue("Medico", m);
+                    frmReporteTurnosMedico frt = new frmReporteTurnosMedico(crtm);
                 }
             }
             else
