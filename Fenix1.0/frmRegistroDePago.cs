@@ -74,10 +74,10 @@ namespace Fenix1._0
             PacienteActual = reposPaciente.buscarPorId(idPas);
 
 
-            List<clsTurno> ListaTurnos = reposTurno.obtenerTurnoPaciente(idPas);
+            List<clsTurnoVista> ListaTurnos = reposTurno.obtenerTurnoPaciente(idPas);
             List<clsSobreTurnoVista> ListaSobreTurnos = reposSobreTurno.obtenerSobreturnoPaciente(idPas);
 
-            foreach (clsTurno turn in ListaTurnos)
+            foreach (clsTurnoVista turn in ListaTurnos)
             {
                 dgvTurnos.Rows.Add(turn.Id, turn.Fecha, turn.Costo, "Turno");
             }
@@ -166,11 +166,7 @@ namespace Fenix1._0
 
 
             }
-
-
-
         }
-
         
 
         private void btnPasar_Click(object sender, EventArgs e)
@@ -250,10 +246,13 @@ namespace Fenix1._0
 
             if (dgvTurnosAPagar.Rows.Count > 0)
             {
-                if (string.IsNullOrWhiteSpace(cbTipoFactura.Text) != false)
+                if (string.IsNullOrWhiteSpace(cbTipoFactura.Text) && string.IsNullOrWhiteSpace(tbCliente.Text) && string.IsNullOrWhiteSpace(tbCuit.Text))
                 {
                     if (cbTipoFactura.Text == "A" && string.IsNullOrWhiteSpace(tbCuit.Text))
                     {
+                        if(//carajo aca pregunto si los tb llegan al monto)
+
+
                         foreach (DataGridViewRow row in dgvTurnosAPagar.Rows)
                         {
                             turn.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
@@ -318,18 +317,6 @@ namespace Fenix1._0
 
                             recibo.Detalle = es;
 
-                            if(recibo.Cobertura != null)
-                            {
-                                if (recibo.Importe - recibo.Cobertura > 0)           //Si lo que me cubre la obra social es menor a lo que me sale la consulta entonces agrego esa diferencia al total.
-                                {
-                                    total += (float)recibo.Importe - (float)recibo.Cobertura;
-                                }
-                            }
-                            else
-                            {
-                                total += (float)recibo.Importe;
-                            }
-
                             
 
                             reposRecibo.Alta(recibo);
@@ -368,20 +355,7 @@ namespace Fenix1._0
 
                             recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
 
-                            recibo.Detalle = es;
-
-                            if(recibo.Cobertura != null)
-                            {
-                                if (recibo.Importe - recibo.Cobertura > 0)           //Si lo que me cubre la obra social es menor a lo que me sale la consulta entonces agrego esa diferencia al total.
-                                {
-                                    total += (float)recibo.Importe - (float)recibo.Cobertura;
-                                }
-                            }
-                            else
-                            {
-                                total += (float)recibo.Importe;
-                            }
-
+                            recibo.Detalle = es;                            
                             
 
                             reposRecibo.Alta(recibo);
@@ -395,7 +369,7 @@ namespace Fenix1._0
                         Factura.TipoFactura = char.Parse(cbTipoFactura.Text);
 
                         //Traigo los datos de mi clinica para signarle los datos.
-                        clini = reposClinica.traerDatos();
+                        clini = reposClinica.Todo(1);
 
                         Factura.RazonSocial = clini.RazonSocial;
                         Factura.Terminal = usuario.Usuario;
@@ -403,6 +377,7 @@ namespace Fenix1._0
                         Factura.Fecha = DateTime.Now;
                         Factura.IdUsuario = usuario.Id;
                         Factura.Cliente = tbCliente.Text;
+                        
 
 
                         //TERMINAR ESTO QUE ESTA MAL
@@ -569,10 +544,11 @@ namespace Fenix1._0
                 }
             }
 
-
-            float total = 0;
+            
 
             clsEspecialidad especiali = new clsEspecialidad();
+            
+            clsObraSocial obrita = reposObra.BuscarPorNombre(PacienteActual.ObraSocial);
 
             foreach(clsTurno turnito in turnoReporte)
             {
@@ -584,7 +560,16 @@ namespace Fenix1._0
 
                 especiali = reposEspe.BuscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
 
-                total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+                if(total - obrita.Monto > 0)
+                {
+                    total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+                }
+                else
+                {
+                    total += 0;
+                }
+
+
 
             
             }
@@ -599,7 +584,14 @@ namespace Fenix1._0
 
                 especiali = reposEspe.BuscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
 
-                total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+                if (total - obrita.Monto > 0)
+                {
+                    total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+                }
+                else
+                {
+                    total += 0;
+                }
 
              
             }
