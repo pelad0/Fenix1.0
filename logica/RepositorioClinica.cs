@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace logica
 {
-    public class RepositorioClinica:iBdMetodos
+    public class RepositorioClinica
     {
 
         ManejaClinica manejaclinica = new ManejaClinica();
