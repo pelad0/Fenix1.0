@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistroDePago));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -63,11 +63,20 @@
             this.dgvTurnosAPagar = new System.Windows.Forms.DataGridView();
             this.btnPagar = new System.Windows.Forms.Button();
             this.tbCantidadEfectivo = new controles.TextBoxNumeros();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbCantidadTarjeta = new controles.TextBoxNumeros();
+            this.pnlPago = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.pnlTurno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnosAPagar)).BeginInit();
+            this.pnlPago.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -160,24 +169,24 @@
             this.dgvPacientes.AllowUserToDeleteRows = false;
             this.dgvPacientes.AllowUserToResizeRows = false;
             this.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPacientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPacientes.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPacientes.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPacientes.Location = new System.Drawing.Point(46, 35);
             this.dgvPacientes.MultiSelect = false;
             this.dgvPacientes.Name = "dgvPacientes";
@@ -194,24 +203,24 @@
             this.dgvTurnos.AllowUserToDeleteRows = false;
             this.dgvTurnos.AllowUserToResizeRows = false;
             this.dgvTurnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnos.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTurnos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTurnos.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgvTurnos.Location = new System.Drawing.Point(46, 47);
             this.dgvTurnos.MultiSelect = false;
             this.dgvTurnos.Name = "dgvTurnos";
@@ -234,34 +243,25 @@
             // pnlTurno
             // 
             this.pnlTurno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlTurno.Controls.Add(this.tbCantidadEfectivo);
-            this.pnlTurno.Controls.Add(this.lblTotal);
-            this.pnlTurno.Controls.Add(this.label12);
-            this.pnlTurno.Controls.Add(this.label11);
-            this.pnlTurno.Controls.Add(this.label10);
-            this.pnlTurno.Controls.Add(this.tbCliente);
-            this.pnlTurno.Controls.Add(this.label9);
-            this.pnlTurno.Controls.Add(this.tbCuit);
+            this.pnlTurno.Controls.Add(this.pnlPago);
             this.pnlTurno.Controls.Add(this.label8);
             this.pnlTurno.Controls.Add(this.cbTipoFactura);
-            this.pnlTurno.Controls.Add(this.label7);
             this.pnlTurno.Controls.Add(this.btnTraer);
             this.pnlTurno.Controls.Add(this.label6);
             this.pnlTurno.Controls.Add(this.btnPasar);
             this.pnlTurno.Controls.Add(this.dgvTurnosAPagar);
-            this.pnlTurno.Controls.Add(this.btnPagar);
             this.pnlTurno.Controls.Add(this.dgvTurnos);
             this.pnlTurno.Controls.Add(this.label4);
             this.pnlTurno.Location = new System.Drawing.Point(-2, 310);
             this.pnlTurno.Name = "pnlTurno";
-            this.pnlTurno.Size = new System.Drawing.Size(832, 389);
+            this.pnlTurno.Size = new System.Drawing.Size(832, 419);
             this.pnlTurno.TabIndex = 27;
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(486, 223);
+            this.lblTotal.Location = new System.Drawing.Point(506, 46);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(18, 19);
             this.lblTotal.TabIndex = 40;
@@ -271,7 +271,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(462, 223);
+            this.label12.Location = new System.Drawing.Point(482, 46);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(18, 19);
             this.label12.TabIndex = 39;
@@ -281,34 +281,34 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(325, 223);
+            this.label11.Location = new System.Drawing.Point(475, 20);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(135, 19);
+            this.label11.Size = new System.Drawing.Size(54, 19);
             this.label11.TabIndex = 38;
-            this.label11.Text = "Total a pagar:";
+            this.label11.Text = "Total";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(29, 321);
+            this.label10.Location = new System.Drawing.Point(87, 10);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(135, 19);
+            this.label10.Size = new System.Drawing.Size(72, 19);
             this.label10.TabIndex = 37;
-            this.label10.Text = "Nombre cliente";
+            this.label10.Text = "Cliente";
             // 
             // tbCliente
             // 
-            this.tbCliente.Location = new System.Drawing.Point(176, 321);
+            this.tbCliente.Location = new System.Drawing.Point(36, 32);
             this.tbCliente.Name = "tbCliente";
-            this.tbCliente.Size = new System.Drawing.Size(136, 23);
+            this.tbCliente.Size = new System.Drawing.Size(175, 23);
             this.tbCliente.TabIndex = 36;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(552, 272);
+            this.label9.Location = new System.Drawing.Point(326, 10);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 19);
             this.label9.TabIndex = 35;
@@ -316,7 +316,7 @@
             // 
             // tbCuit
             // 
-            this.tbCuit.Location = new System.Drawing.Point(603, 268);
+            this.tbCuit.Location = new System.Drawing.Point(261, 32);
             this.tbCuit.MaxLength = 11;
             this.tbCuit.Name = "tbCuit";
             this.tbCuit.Size = new System.Drawing.Size(175, 23);
@@ -326,11 +326,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(328, 272);
+            this.label8.Location = new System.Drawing.Point(350, 220);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 19);
+            this.label8.Size = new System.Drawing.Size(117, 19);
             this.label8.TabIndex = 33;
-            this.label8.Text = "Tipo de factura";
+            this.label8.Text = "Factura tipo";
             // 
             // cbTipoFactura
             // 
@@ -339,7 +339,7 @@
             this.cbTipoFactura.Items.AddRange(new object[] {
             "A",
             "B"});
-            this.cbTipoFactura.Location = new System.Drawing.Point(478, 269);
+            this.cbTipoFactura.Location = new System.Drawing.Point(390, 242);
             this.cbTipoFactura.Name = "cbTipoFactura";
             this.cbTipoFactura.Size = new System.Drawing.Size(45, 27);
             this.cbTipoFactura.TabIndex = 32;
@@ -349,11 +349,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(42, 227);
+            this.label7.Location = new System.Drawing.Point(83, 73);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 19);
+            this.label7.Size = new System.Drawing.Size(81, 19);
             this.label7.TabIndex = 26;
-            this.label7.Text = "En efectivo";
+            this.label7.Text = "Efectivo";
             // 
             // btnTraer
             // 
@@ -399,24 +399,24 @@
             this.dgvTurnosAPagar.AllowUserToDeleteRows = false;
             this.dgvTurnosAPagar.AllowUserToResizeRows = false;
             this.dgvTurnosAPagar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTurnosAPagar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTurnosAPagar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvTurnosAPagar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnosAPagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTurnosAPagar.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTurnosAPagar.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvTurnosAPagar.Location = new System.Drawing.Point(471, 47);
             this.dgvTurnosAPagar.MultiSelect = false;
             this.dgvTurnosAPagar.Name = "dgvTurnosAPagar";
@@ -432,9 +432,9 @@
             this.btnPagar.Enabled = false;
             this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPagar.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagar.Location = new System.Drawing.Point(347, 350);
+            this.btnPagar.Location = new System.Drawing.Point(510, 90);
             this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(125, 26);
+            this.btnPagar.Size = new System.Drawing.Size(130, 26);
             this.btnPagar.TabIndex = 26;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = true;
@@ -442,10 +442,106 @@
             // 
             // tbCantidadEfectivo
             // 
-            this.tbCantidadEfectivo.Location = new System.Drawing.Point(177, 223);
+            this.tbCantidadEfectivo.Location = new System.Drawing.Point(36, 95);
             this.tbCantidadEfectivo.Name = "tbCantidadEfectivo";
-            this.tbCantidadEfectivo.Size = new System.Drawing.Size(133, 23);
+            this.tbCantidadEfectivo.Size = new System.Drawing.Size(175, 23);
             this.tbCantidadEfectivo.TabIndex = 41;
+            this.tbCantidadEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(312, 73);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 19);
+            this.label13.TabIndex = 42;
+            this.label13.Text = "Tarjeta";
+            // 
+            // tbCantidadTarjeta
+            // 
+            this.tbCantidadTarjeta.Location = new System.Drawing.Point(261, 95);
+            this.tbCantidadTarjeta.Name = "tbCantidadTarjeta";
+            this.tbCantidadTarjeta.Size = new System.Drawing.Size(175, 23);
+            this.tbCantidadTarjeta.TabIndex = 43;
+            this.tbCantidadTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // pnlPago
+            // 
+            this.pnlPago.Controls.Add(this.label17);
+            this.pnlPago.Controls.Add(this.label18);
+            this.pnlPago.Controls.Add(this.label16);
+            this.pnlPago.Controls.Add(this.label15);
+            this.pnlPago.Controls.Add(this.label14);
+            this.pnlPago.Controls.Add(this.btnPagar);
+            this.pnlPago.Controls.Add(this.tbCantidadTarjeta);
+            this.pnlPago.Controls.Add(this.label7);
+            this.pnlPago.Controls.Add(this.label13);
+            this.pnlPago.Controls.Add(this.tbCuit);
+            this.pnlPago.Controls.Add(this.tbCantidadEfectivo);
+            this.pnlPago.Controls.Add(this.label9);
+            this.pnlPago.Controls.Add(this.lblTotal);
+            this.pnlPago.Controls.Add(this.tbCliente);
+            this.pnlPago.Controls.Add(this.label12);
+            this.pnlPago.Controls.Add(this.label10);
+            this.pnlPago.Controls.Add(this.label11);
+            this.pnlPago.Enabled = false;
+            this.pnlPago.Location = new System.Drawing.Point(-1, 275);
+            this.pnlPago.Name = "pnlPago";
+            this.pnlPago.Size = new System.Drawing.Size(815, 131);
+            this.pnlPago.TabIndex = 44;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label14.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(267, 97);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(18, 19);
+            this.label14.TabIndex = 44;
+            this.label14.Text = "€";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label15.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(43, 97);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(18, 19);
+            this.label15.TabIndex = 45;
+            this.label15.Text = "€";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(589, 20);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(135, 19);
+            this.label16.TabIndex = 46;
+            this.label16.Text = "Descuento obra";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(656, 46);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(18, 19);
+            this.label17.TabIndex = 48;
+            this.label17.Text = "0";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(632, 46);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(18, 19);
+            this.label18.TabIndex = 47;
+            this.label18.Text = "€";
             // 
             // frmRegistroDePago
             // 
@@ -466,6 +562,8 @@
             this.pnlTurno.ResumeLayout(false);
             this.pnlTurno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnosAPagar)).EndInit();
+            this.pnlPago.ResumeLayout(false);
+            this.pnlPago.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,6 +599,14 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private controles.TextBoxNumeros tbCantidadEfectivo;
+        private System.Windows.Forms.Panel pnlPago;
+        private controles.TextBoxNumeros tbCantidadTarjeta;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label16;
 
     }
 }
