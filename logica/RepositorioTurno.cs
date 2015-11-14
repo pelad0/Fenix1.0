@@ -123,6 +123,43 @@ namespace logica
 
         }
 
+        public List<clsTurnoVista> Todo(int pag)
+        {
+            DataTable tabla;
+            List<clsTurnoVista> lista = new List<clsTurnoVista>();
+
+            try
+            {
+                tabla = manejaTurno.Todo(pag);
+                foreach (DataRow aux in tabla.Rows)
+                {
+
+                    clsTurnoVista turno = new clsTurnoVista();
+
+                    turno.Id = Convert.ToInt32(aux["id"]);
+                    turno.Medico = metodoM((clsMedicoDatos)manejamedico.buscaPorId(Convert.ToInt32(aux["idMedico"])));
+                    turno.Paciente = metodoP((clsPacienteDatos)manejapaciente.buscaPorId(Convert.ToInt32(aux["idPaciente"])));
+                    turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                    turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                    turno.Estado = Convert.ToBoolean(aux["estado"]);
+
+                    lista.Add(turno);
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lista;
+        }
+
         public List<clsTurnoVista> obtenerTurnoVista(int idMedico,DateTime fecha)//turno de los medicos
         {
             DataTable tabla;
