@@ -124,5 +124,44 @@ namespace logica
             return lista;
 
         }
+
+        public clsFactura ultimoId()
+        {
+            DataTable tabla;
+            clsFactura fac = new clsFactura();
+            try
+            {
+                tabla = manejafactura.ultimoID();
+
+                foreach (DataRow aux in tabla.Rows)
+                {
+                    
+
+                    fac.Id = Convert.ToInt32(aux["id"]);
+                    fac.Cuitcliente = aux["cuitcliente"].ToString();
+                    fac.NumeroFactura = Convert.ToInt32(aux["numerofactura"]);
+                    fac.RazonSocial = aux["razonsocial"].ToString();
+                    fac.Terminal = aux["numeroterminal"].ToString();
+                    fac.Total = Convert.ToDouble(aux["total"]);
+                    fac.Fecha = Convert.ToDateTime(aux["fecha"]);
+                    fac.IdUsuario = Convert.ToInt32(aux["idusuario"]);
+                    fac.Cliente = aux["cliente"].ToString();
+                    fac.PagoEfectivo = Convert.ToDouble(aux["pagoefectivo"]);
+                    fac.PagoTarjeta = Convert.ToDouble(aux["pagotarjeta"]);
+
+                    
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return fac;
+        }
     }
 }
