@@ -186,5 +186,35 @@ namespace Datos
             return aux;
         }
 
+        public DataTable UltimoTurno()
+        {
+            DataTable aux = new DataTable();
+            try
+            {
+                aux = manager.consultar("select TOP 1 * from turno where activo=1");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return aux;
+        }
+        public DataTable PrimerTurno()
+        {
+
+            DataTable aux = new DataTable();
+            try
+            {
+                aux = manager.consultar("select TOP 1 * from turno where activo=1 order by id desc");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return aux;
+        }
+
     }
 }
