@@ -257,7 +257,7 @@ namespace logica
 
         }
 
-        public List<clsTurnoVista> obtenerTurnoPaciente(int idPaciente)//turno de un paciente cambiar turno vistaaaaaaaaaaa
+        public List<clsTurnoVista> obtenerTurnoPaciente(int idPaciente)//turno de un paciente 
         {
             DataTable tabla;
             List<clsTurnoVista> lista = new List<clsTurnoVista>();

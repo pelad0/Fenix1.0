@@ -19,7 +19,7 @@ namespace logica
         public void Alta(IEntidad paciente)
         {
             try
-            {             
+            {
 
                 manejaPaciente.Alta(metodoS(paciente));
             }
@@ -31,14 +31,14 @@ namespace logica
             {
                 throw ex;
             }
-           
-        }           
+
+        }
 
         public void Baja(IEntidad paciente)
         {
-            
-          try
-            {             
+
+            try
+            {
 
                 manejaPaciente.Baja(metodoS(paciente));
             }
@@ -56,7 +56,7 @@ namespace logica
         public void Modificacion(IEntidad paciente)
         {
             try
-            {              
+            {
 
                 manejaPaciente.Modificacion(metodoS(paciente));
             }
@@ -77,7 +77,7 @@ namespace logica
             try
             {
                 paciente = (clsPacienteDatos)manejaPaciente.buscaPorId(id);
-                pac=metodoL(paciente);
+                pac = metodoL(paciente);
 
             }
             catch (SqlException ex)
@@ -88,7 +88,7 @@ namespace logica
             {
                 throw ex;
             }
-            
+
 
             return pac;
         }
@@ -111,8 +111,8 @@ namespace logica
             {
                 throw ex;
             }
-                      
-            
+
+
             return pac;
         }
 
@@ -121,12 +121,12 @@ namespace logica
             DataTable tabla;
             List<clsPaciente> lista = new List<clsPaciente>();
             clsObraSocial aux2;
-           
+
             tabla = manejaPaciente.Todo(pag);
             foreach (DataRow aux in tabla.Rows)
             {
                 aux2 = (clsObraSocial)manejaOs.buscaPorId(Convert.ToInt32(aux["obra"]));
-                if(aux2!=null)
+                if (aux2 != null)
                 {
                     clsPaciente pac = new clsPaciente();
 
@@ -141,7 +141,7 @@ namespace logica
 
                     lista.Add(pac);
                 }
-                
+
             }
 
             return lista;
@@ -182,7 +182,7 @@ namespace logica
             clsPacienteDatos pac = (clsPacienteDatos)pac2;
             clsObraSocial aux;
             clsPaciente paciente = new clsPaciente();
-           
+
             try
             {
                 paciente.Id = pac.Id;
@@ -208,9 +208,33 @@ namespace logica
 
         public List<clsPaciente> obtenerAlfabeticamente(string letra)
         {
-            List<clsPaciente> pacientes = new List<clsPaciente>();
+            DataTable tabla;
+            List<clsPaciente> lista = new List<clsPaciente>();
+            clsObraSocial aux2;
 
-            return pacientes;
+            tabla = manejaPaciente.BuscarApellidoPorLetra(letra);
+
+            foreach (DataRow aux in tabla.Rows)
+            {
+                aux2 = (clsObraSocial)manejaOs.buscaPorId(Convert.ToInt32(aux["obra"]));
+                if (aux2 != null)
+                {
+                    clsPaciente pac = new clsPaciente();
+
+                    pac.Id = Convert.ToInt32(aux["id"]);
+                    pac.Nombre = aux["nombre"].ToString();
+                    pac.Apellido = aux["apellido"].ToString();
+                    pac.Dni = Convert.ToInt64(aux["dni"]);
+
+                    pac.ObraSocial = aux2.Nombre;
+                    pac.Telefono = Convert.ToInt64(aux["telefono"]);
+
+
+                    lista.Add(pac);
+                }
+
+            }
+            return lista;
         }
     }
 }
