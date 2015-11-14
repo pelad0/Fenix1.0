@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class ManejaClinica: iMetodos
+    public class ManejaClinica: iMetodos
     {
         iBdMetodos manager;
         public ManejaClinica()
