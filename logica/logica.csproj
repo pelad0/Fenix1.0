@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioClinica.cs" />
     <Compile Include="RepositorioFactura.cs" />
     <Compile Include="RepositorioHistorial.cs" />
     <Compile Include="RepositorioHorario.cs" />
