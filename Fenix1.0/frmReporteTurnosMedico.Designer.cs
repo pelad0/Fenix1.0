@@ -1,6 +1,6 @@
-﻿namespace frmABMME
+﻿namespace Fenix1._0
 {
-    partial class frmReporte
+    partial class frmReporteTurnosMedico
     {
         /// <summary>
         /// Required designer variable.
@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-
+         
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,34 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crReporteMedico = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // crReporteMedico
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(891, 528);
-            this.crystalReportViewer1.TabIndex = 0;
+            this.crReporteMedico.ActiveViewIndex = -1;
+            this.crReporteMedico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crReporteMedico.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crReporteMedico.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crReporteMedico.Location = new System.Drawing.Point(0, 0);
+            this.crReporteMedico.Name = "crReporteMedico";
+            this.crReporteMedico.Size = new System.Drawing.Size(644, 485);
+            this.crReporteMedico.TabIndex = 0;
             // 
-            // frmReporte
+            // frmReporteTurnosMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 528);
-            this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "frmReporte";
-            this.Text = "frmReporte";
+            this.ClientSize = new System.Drawing.Size(644, 485);
+            this.Controls.Add(this.crReporteMedico);
+            this.Name = "frmReporteTurnosMedico";
+            this.ShowIcon = false;
+            this.Text = "Informe por Medico";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crReporteMedico;
     }
 }

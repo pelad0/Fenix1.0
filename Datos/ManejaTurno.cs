@@ -170,7 +170,21 @@ namespace Datos
 
             return aux;
         }
+        
+        public DataTable BuscarTurnoPorMedico(int id)
+        {
+            DataTable aux = new DataTable();
+            try
+            {
+                aux = manager.consultar("select * from turno where idmedico=" + id + " and activo=1");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
-      
+            return aux;
+        }
+
     }
 }

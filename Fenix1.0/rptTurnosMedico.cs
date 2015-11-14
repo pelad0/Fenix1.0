@@ -16,14 +16,14 @@ namespace frmABMME {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class reportesTurnos : ReportClass {
+    public class rptTurnosMedico : ReportClass {
         
-        public reportesTurnos() {
+        public rptTurnosMedico() {
         }
         
         public override string ResourceName {
             get {
-                return "reportesTurnos.rpt";
+                return "rptTurnosMedico.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace frmABMME {
         
         public override string FullResourceName {
             get {
-                return "frmABMME.reportesTurnos.rpt";
+                return "frmABMME.rptTurnosMedico.rpt";
             }
             set {
                 // Do nothing
@@ -87,20 +87,12 @@ namespace frmABMME {
                 return this.ReportDefinition.Sections[4];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Paciente {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedreportesTurnos : Component, ICachedReport {
+    public class CachedrptTurnosMedico : Component, ICachedReport {
         
-        public CachedreportesTurnos() {
+        public CachedrptTurnosMedico() {
         }
         
         [Browsable(false)]
@@ -137,7 +129,7 @@ namespace frmABMME {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            reportesTurnos rpt = new reportesTurnos();
+            rptTurnosMedico rpt = new rptTurnosMedico();
             rpt.Site = this.Site;
             return rpt;
         }

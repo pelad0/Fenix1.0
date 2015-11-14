@@ -29,6 +29,7 @@ namespace Fenix1._0
         List<clsSobreTurnoVista> sobreTurnoVista = new List<clsSobreTurnoVista>();
         List<clsTurno> turnos = new List<clsTurno>();
         List<clsSobreTurnoVista> sobreTurno = new List<clsSobreTurnoVista>();
+        List<clsEspecialidad> espec = new List<clsEspecialidad>();
                
         List<string> especialidades = new List<string>();
         clsHorario mañana = new clsHorario();
@@ -422,16 +423,33 @@ namespace Fenix1._0
 
         private void iniciar()
         {
-            foreach (clsEspecialidad esp in re.Todo())
+            bool inicio = false;
+            try
             {
-                especialidades.Add(esp.Descripcion);
+                foreach (clsEspecialidad esp in re.Todo())
+                {
+                    especialidades.Add(esp.Descripcion);
+                    espec.Add(esp);
+                    inicio = true;
+                }
             }
-            cbEspecialidades.DataSource = especialidades;
-            cbMedicos.DataSource = null;
-            cbEspecialidades.SelectedIndex = 0;
-            dgvEliminarTurnos.DataSource = null;
-            dgvEliminarTurnos.DataSource = rt.Todo(pagina);
-            dgvEliminarTurnos.Columns[0].Visible = false;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (inicio)
+            {
+                cbEspecialidades.DataSource = especialidades;
+                cbMedicos.DataSource = null;
+                cbEspecialidades.SelectedIndex = 0;
+                dgvEliminarTurnos.DataSource = null;
+                dgvEliminarTurnos.DataSource = rt.Todo(pagina);
+                dgvEliminarTurnos.Columns[0].Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Se ha producido un error al iniciar, por favor, cierre la aplicación e iniciela nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnTurnoXDia_Click(object sender, EventArgs e)
@@ -580,7 +598,7 @@ namespace Fenix1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -591,7 +609,7 @@ namespace Fenix1._0
             if (res == DialogResult.OK)
             {
                 DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0, 2)), Convert.ToInt32(btn.Text.Substring(3, 2)), 0);
-                clsSobreturno t = new clsSobreturno(med.Id, pac.Id, d, u.Id);
+                clsSobreturno t = new clsSobreturno(med.Id, pac.Id, d, espec[cbEspecialidades.SelectedIndex].Canon,u.Id, false);
                 List<clsTurno> lt = rt.obtenerTurno(med.Id, t.Fecha);
 
                 try
@@ -600,7 +618,7 @@ namespace Fenix1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
             }

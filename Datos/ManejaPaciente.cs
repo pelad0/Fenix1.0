@@ -142,7 +142,36 @@ namespace Datos
             return pac;
         }
 
+        public DataTable BuscarNombrePorLetra (String letra)
+        {
+            DataTable aux = new DataTable();
+          
+            try
+            {
 
+                aux = manager.consultar("select * from paciente where nombre like '" + letra + "%' and activo=1");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return aux;
+        }
+        public DataTable BuscarApellidoPorLetra(String letra)
+        {
+            DataTable aux = new DataTable();
+
+            try
+            {
+
+                aux = manager.consultar("select * from paciente where apellido like '" + letra + "%' and activo=1");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return aux;
+        }
 
        /*
          SELECT descripcion

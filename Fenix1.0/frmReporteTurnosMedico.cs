@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using entidades;
+using CrystalDecisions.CrystalReports.Engine;
 
-namespace frmABMME
+namespace Fenix1._0
 {
-    public partial class frmReporte : Form
+    public partial class frmReporteTurnosMedico : Form
     {
-        public frmReporte()
+        public frmReporteTurnosMedico(ReportDocument rd)
         {
             InitializeComponent();
+            crReporteMedico.ReportSource = rd;
         }
     }
 }

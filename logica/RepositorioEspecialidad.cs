@@ -17,7 +17,7 @@ namespace logica
         ManejaEspecialidad manejaEspecialidad = new ManejaEspecialidad();
         public void Alta(IEntidad especialidad)
         {
-                        
+
             try
             {
                 manejaEspecialidad.Alta(especialidad);
@@ -36,7 +36,7 @@ namespace logica
         public void Baja(IEntidad especialidad)
         {
             try
-            {                                
+            {
                 manejaEspecialidad.Baja(especialidad);
             }
             catch (SqlException ex)
@@ -54,7 +54,7 @@ namespace logica
         {
             try
             {
-               manejaEspecialidad.Modificacion(especialidad);
+                manejaEspecialidad.Modificacion(especialidad);
             }
             catch (SqlException ex)
             {
@@ -73,7 +73,7 @@ namespace logica
             clsEspecialidad esp = new clsEspecialidad();
             try
             {
-                
+
                 esp = (clsEspecialidad)manejaEspecialidad.buscaPorId(id);
             }
             catch (SqlException ex)
@@ -92,7 +92,7 @@ namespace logica
         {
             DataTable tabla;
             List<clsEspecialidad> lista = new List<clsEspecialidad>();
-           
+
             tabla = manejaEspecialidad.Todo();
             foreach (DataRow aux in tabla.Rows)
             {
@@ -105,6 +105,25 @@ namespace logica
 
             return lista;
 
+        }
+        public clsEspecialidad BuscarPorNombre(string nombre)
+        {
+            clsEspecialidad esp = new clsEspecialidad();
+            try
+            {
+
+                esp = (clsEspecialidad)manejaEspecialidad.buscaPorNombre(nombre);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return esp;
         }
     }
 }
