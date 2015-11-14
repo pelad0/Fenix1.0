@@ -12,8 +12,8 @@ namespace entidades
         int id;
         
         DateTime fechaInicioActividades;        
-        string cuit;        
-        float ingresosBrutos;        
+        string cuit;
+        double ingresosBrutos;        
         string nombreFantasia;        
         string razonSocial;        
         string domicilioComercial;        
@@ -60,7 +60,7 @@ namespace entidades
             set { nombreFantasia = value; }
         }
 
-        public float IngresosBrutos
+        public double IngresosBrutos
         {
             get { return ingresosBrutos; }
             set { ingresosBrutos = value; }
