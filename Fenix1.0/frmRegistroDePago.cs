@@ -313,7 +313,7 @@ namespace Fenix1._0
 
                             clsTurno t = new clsTurno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
 
-                            t = reposTurno.buscarPorId(turnito.IdMedico);       //Le asigno todos sus valores propios.
+                            t = reposTurno.buscarPorId(turnito.Id);       //Le asigno todos sus valores propios.                            
 
                             string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
 
@@ -354,11 +354,11 @@ namespace Fenix1._0
 
                             //CARGO EL MONTO DE LA CONSULTA.
 
-                            clsTurno t = new clsTurno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
+                            clsSobreturno t = new clsSobreturno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
 
-                            t = reposTurno.buscarPorId(sobrTurnito.IdMedico);       //Le asigno todos sus valores propios.
-
-                            string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
+                            t = reposSobreTurno.buscarPorId(sobrTurnito.IdMedico);       //Le asigno todos sus valores propios.
+                            
+                            string es = reposMedico.buscarPorId(t.Id).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
 
                             especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
 
@@ -391,6 +391,15 @@ namespace Fenix1._0
                         Factura.IdUsuario = usuario.Id;
                         Factura.Cliente = tbCliente.Text;
 
+
+                        //TERMINAR ESTO QUE ESTA MAL
+                        //TERMINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
+                        //TERMINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
+                        //TERMINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
+                        //TERMINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
+                        //TERMINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
+
+
                         if(cbMetodoDePago.Text == "Efectivo")
                         {
                             
@@ -400,16 +409,7 @@ namespace Fenix1._0
 
                         }
 
-                            
-
-
-                        
-
-
-
-
-
-                        //ACA LEASIGNO LOS DATOS A LA FACTURA
+                         
 
 
 
@@ -556,22 +556,43 @@ namespace Fenix1._0
                 }
             }
 
-            clsTurno t = new clsTurno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
 
-            t = reposTurno.buscarPorId(turnito.IdMedico);       //Le asigno todos sus valores propios.
+            float total = 0;
 
-            string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
+            clsEspecialidad especiali = new clsEspecialidad();
 
-            especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
-
-            recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
-
-            recibo.Detalle = es;
-
-            if (recibo.Importe - recibo.Cobertura > 0)           //Si lo que me cubre la obra social es menor a lo que me sale la consulta entonces agrego esa diferencia al total.
+            foreach(clsTurno turnito in turnoReporte)
             {
-                total += (float)recibo.Importe - (float)recibo.Cobertura;
+                clsTurno t = new clsTurno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
+
+                t = reposTurno.buscarPorId(turnito.IdMedico);       //Le asigno todos sus valores propios.
+
+                string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
+
+                especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
+
+                total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+
+            
             }
+
+            foreach (clsSobreturno sobrTurnito in sobreTurnosReporte)
+            {
+                clsSobreturno t = new clsSobreturno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
+
+                t = reposSobreTurno.buscarPorId(sobrTurnito.IdMedico);       //Le asigno todos sus valores propios.
+
+                string es = reposMedico.buscarPorId(t.Id).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
+
+                especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
+
+                total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+
+             
+            }
+
+            lblTotal.Text = total.ToString();
+            
 
 
 
