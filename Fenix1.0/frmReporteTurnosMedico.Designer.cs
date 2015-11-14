@@ -28,35 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crReporteMedico = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crvForm = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // crReporteMedico
+            // crvForm
             // 
-            this.crReporteMedico.ActiveViewIndex = -1;
-            this.crReporteMedico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crReporteMedico.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crReporteMedico.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crReporteMedico.Location = new System.Drawing.Point(0, 0);
-            this.crReporteMedico.Name = "crReporteMedico";
-            this.crReporteMedico.Size = new System.Drawing.Size(644, 485);
-            this.crReporteMedico.TabIndex = 0;
+            this.crvForm.ActiveViewIndex = -1;
+            this.crvForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crvForm.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crvForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crvForm.Location = new System.Drawing.Point(0, 0);
+            this.crvForm.Name = "crvForm";
+            this.crvForm.ShowGotoPageButton = false;
+            this.crvForm.ShowGroupTreeButton = false;
+            this.crvForm.ShowLogo = false;
+            this.crvForm.ShowParameterPanelButton = false;
+            this.crvForm.ShowRefreshButton = false;
+            this.crvForm.ShowTextSearchButton = false;
+            this.crvForm.Size = new System.Drawing.Size(644, 485);
+            this.crvForm.TabIndex = 0;
             // 
             // frmReporteTurnosMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 485);
-            this.Controls.Add(this.crReporteMedico);
+            this.Controls.Add(this.crvForm);
             this.Name = "frmReporteTurnosMedico";
             this.ShowIcon = false;
             this.Text = "Informe por Medico";
+            this.Load += new System.EventHandler(this.frmReporteTurnosMedico_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crReporteMedico;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvForm;
+
     }
 }

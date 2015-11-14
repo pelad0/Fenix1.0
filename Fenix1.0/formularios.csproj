@@ -61,6 +61,12 @@
       <DependentUpon>crPagos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="crTurnosMedico.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crTurnosMedico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -179,17 +185,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="rptTurnosMedico.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptTurnosMedico.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="crPagos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crPagos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crTurnosMedico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crTurnosMedico.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteTurnosMedico.resx">
       <DependentUpon>frmReporteTurnosMedico.cs</DependentUpon>
@@ -245,10 +249,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rptTurnosMedico.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptTurnosMedico.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

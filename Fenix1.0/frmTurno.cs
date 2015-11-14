@@ -295,7 +295,10 @@ namespace Fenix1._0
         {
             if (tur.Count > 0)
             {
-                
+                if (rbMedicos.Checked)
+                {
+                    crTurnosMedico
+                }
             }
             else
             {
