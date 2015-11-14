@@ -26,6 +26,9 @@ namespace frmABMME
         RepositorioFactura reposFac = new RepositorioFactura();
         RepositorioObraSocial reposObra = new RepositorioObraSocial();
         RepositorioEspecialidad reposEspe = new RepositorioEspecialidad();
+        RepositorioClinica repoClinica = new RepositorioClinica();
+       
+
         bool columnasTurno = false;
         bool columnasTurnosAPagar = false;
         int pagina = 0;
@@ -244,34 +247,34 @@ namespace frmABMME
             {
                 if (string.IsNullOrWhiteSpace(cbMetodoDePago.Text) != false && string.IsNullOrWhiteSpace(cbTipoFactura.Text) != false)
                 {
-                        if (cbTipoFactura.Text == "A" && string.IsNullOrWhiteSpace(tbCuit.Text))
+                    if (cbTipoFactura.Text == "A" && string.IsNullOrWhiteSpace(tbCuit.Text))
+                    {
+                        foreach (DataGridViewRow row in dgvTurnosAPagar.Rows)
                         {
-                            foreach (DataGridViewRow row in dgvTurnosAPagar.Rows)
+                            turn.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
+                            sobreTarna.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
+
+                            turn.Fecha = DateTime.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[1].Value.ToString());
+                            sobreTarna.Fecha = DateTime.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[1].Value.ToString());
+
+                            turn.Costo = float.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[2].Value.ToString());
+                            sobreTarna.Costo = float.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[2].Value.ToString());
+
+                            if (dgvTurnosAPagar.Rows[row.Index].Cells[3].Value.ToString() == "Turno")
                             {
-                                turn.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
-                                sobreTarna.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
-
-                                turn.Fecha = DateTime.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[1].Value.ToString());
-                                sobreTarna.Fecha = DateTime.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[1].Value.ToString());
-
-                                turn.Costo = float.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[2].Value.ToString());
-                                sobreTarna.Costo = float.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[2].Value.ToString());
-
-                                if (dgvTurnosAPagar.Rows[row.Index].Cells[3].Value.ToString() == "Turno")
+                                turnoReporte.Add(turn);     //Cargo una lista con los turnos a pagar.
+                            }
+                            else
+                            {
+                                if (dgvTurnosAPagar.Rows[row.Index].Cells[3].Value.ToString() == "SobreTurno")
                                 {
-                                    turnoReporte.Add(turn);     //Cargo una lista con los turnos a pagar.
+                                    sobreTurnosReporte.Add(sobreTarna);
                                 }
-                                else
-                                {
-                                    if (dgvTurnosAPagar.Rows[row.Index].Cells[3].Value.ToString() == "SobreTurno")
-                                    {
-                                        sobreTurnosReporte.Add(sobreTarna);
-                                    }
-                                }
-
                             }
 
-                
+                        }
+
+
                         List<clsRecibo> listaRecibos = new List<clsRecibo>();
                         clsRecibo recibo = new clsRecibo();
                         clsObraSocial obrita = new clsObraSocial();
@@ -279,15 +282,15 @@ namespace frmABMME
                         clsMedico med = new clsMedico();
 
                         //Creo la lista de recibos para turnos
-                
+
                         foreach (clsTurno turnito in turnoReporte)
                         {
                             recibo.IdFactura = reposFac.ultimoID() + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
                             recibo.IdTurno = turnito.Id;
                             recibo.IdSobreTurno = null;                    //SI TIENE TURNO, SOBRE TURNO ES NULL.
-                            recibo.Fecha = turnito.Fecha;       
-                
-                            if(PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
+                            recibo.Fecha = turnito.Fecha;
+
+                            if (PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
                             {
                                 obrita = reposObra.buscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
                                 recibo.Cobertura = obrita.Monto;
@@ -304,26 +307,26 @@ namespace frmABMME
                             t = reposTurno.buscarPorId(turnito.IdMedico);       //Le asigno todos sus valores propios.
 
                             string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
-                        
+
                             especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
 
                             recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
 
                             recibo.Detalle = es;
 
-                            if(recibo.Importe - recibo.Cobertura > 0)           //Si lo que me cubre la obra social es menor a lo que me sale la consulta entonces agrego esa diferencia al total.
+                            if (recibo.Importe - recibo.Cobertura > 0)           //Si lo que me cubre la obra social es menor a lo que me sale la consulta entonces agrego esa diferencia al total.
                             {
                                 total += (float)recibo.Importe - (float)recibo.Cobertura;
                             }
 
                             reposRecibo.Alta(recibo);
-                    
+
 
                         }
 
                         //Creo la lista de recibos para turnos
 
-                        foreach(clsSobreturno sobrTurnito in sobreTurnosReporte)
+                        foreach (clsSobreturno sobrTurnito in sobreTurnosReporte)
                         {
                             recibo.IdFactura = reposFac.ultimoID() + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
                             recibo.IdTurno = null;                          //SI TIENE SOBRETURNO, TURNO ES NULL.
@@ -362,11 +365,21 @@ namespace frmABMME
                             reposRecibo.Alta(recibo);
 
                         }
+                        clsClinica clini = new clsClinica();
+
+                        Factura.Cuitcliente = tbCuit.Text;
+                        Factura.NumeroFactura = reposFac.ultimoID() + 1;
+                        Factura.TipoFactura = char.Parse(cbTipoFactura.Text);
+                        Factura.RazonSocial = reposClini
+
+
+
+
 
                         //ACA LEASIGNO LOS DATOS A LA FACTURA
 
 
-                        
+
                     }
                     else
                     {
@@ -379,17 +392,6 @@ namespace frmABMME
                     MessageBox.Show("Complete los campos para continuar.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
-
-                
-
-
-
-
-              
-
-
-
-
             }
 
 
