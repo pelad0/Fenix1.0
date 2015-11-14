@@ -85,6 +85,8 @@
             this.cbMedicos = new System.Windows.Forms.ComboBox();
             this.cbEspecialidades = new System.Windows.Forms.ComboBox();
             this.tpBaja = new System.Windows.Forms.TabPage();
+            this.rbSobreTurno = new System.Windows.Forms.RadioButton();
+            this.rbTurnos = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
@@ -586,7 +588,6 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 23);
             this.dtpFecha.TabIndex = 3;
-            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // label2
             // 
@@ -628,6 +629,8 @@
             // 
             // tpBaja
             // 
+            this.tpBaja.Controls.Add(this.rbSobreTurno);
+            this.tpBaja.Controls.Add(this.rbTurnos);
             this.tpBaja.Controls.Add(this.label7);
             this.tpBaja.Controls.Add(this.label6);
             this.tpBaja.Controls.Add(this.dtpHasta);
@@ -646,10 +649,33 @@
             this.tpBaja.Text = "Baja";
             this.tpBaja.UseVisualStyleBackColor = true;
             // 
+            // rbSobreTurno
+            // 
+            this.rbSobreTurno.AutoSize = true;
+            this.rbSobreTurno.Location = new System.Drawing.Point(267, 218);
+            this.rbSobreTurno.Name = "rbSobreTurno";
+            this.rbSobreTurno.Size = new System.Drawing.Size(102, 19);
+            this.rbSobreTurno.TabIndex = 10;
+            this.rbSobreTurno.Text = "Sobreturnos";
+            this.rbSobreTurno.UseVisualStyleBackColor = true;
+            // 
+            // rbTurnos
+            // 
+            this.rbTurnos.AutoSize = true;
+            this.rbTurnos.Checked = true;
+            this.rbTurnos.Location = new System.Drawing.Point(285, 6);
+            this.rbTurnos.Name = "rbTurnos";
+            this.rbTurnos.Size = new System.Drawing.Size(67, 19);
+            this.rbTurnos.TabIndex = 9;
+            this.rbTurnos.TabStop = true;
+            this.rbTurnos.Text = "Turnos";
+            this.rbTurnos.UseVisualStyleBackColor = true;
+            this.rbTurnos.CheckedChanged += new System.EventHandler(this.rbTurnos_CheckedChanged);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(357, 186);
+            this.label7.Location = new System.Drawing.Point(392, 194);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 15);
             this.label7.TabIndex = 8;
@@ -658,7 +684,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(71, 186);
+            this.label6.Location = new System.Drawing.Point(106, 194);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 15);
             this.label6.TabIndex = 8;
@@ -667,7 +693,7 @@
             // dtpHasta
             // 
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(476, 182);
+            this.dtpHasta.Location = new System.Drawing.Point(440, 188);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(90, 23);
             this.dtpHasta.TabIndex = 7;
@@ -675,7 +701,7 @@
             // dtpDesde
             // 
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(190, 182);
+            this.dtpDesde.Location = new System.Drawing.Point(154, 188);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(90, 23);
             this.dtpDesde.TabIndex = 7;
@@ -725,7 +751,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEliminarSobreTurnos.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEliminarSobreTurnos.Location = new System.Drawing.Point(3, 218);
+            this.dgvEliminarSobreTurnos.Location = new System.Drawing.Point(3, 243);
             this.dgvEliminarSobreTurnos.MultiSelect = false;
             this.dgvEliminarSobreTurnos.Name = "dgvEliminarSobreTurnos";
             this.dgvEliminarSobreTurnos.ReadOnly = true;
@@ -739,11 +765,10 @@
             this.dgvEliminarSobreTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvEliminarSobreTurnos.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvEliminarSobreTurnos.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvEliminarSobreTurnos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvEliminarSobreTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEliminarSobreTurnos.Size = new System.Drawing.Size(630, 164);
+            this.dgvEliminarSobreTurnos.Size = new System.Drawing.Size(630, 154);
             this.dgvEliminarSobreTurnos.TabIndex = 1;
-            this.dgvEliminarSobreTurnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEliminar_CellContentClick);
             // 
             // dgvEliminarTurnos
             // 
@@ -770,7 +795,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEliminarTurnos.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvEliminarTurnos.Location = new System.Drawing.Point(3, 3);
+            this.dgvEliminarTurnos.Location = new System.Drawing.Point(3, 28);
             this.dgvEliminarTurnos.MultiSelect = false;
             this.dgvEliminarTurnos.Name = "dgvEliminarTurnos";
             this.dgvEliminarTurnos.ReadOnly = true;
@@ -784,11 +809,10 @@
             this.dgvEliminarTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvEliminarTurnos.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvEliminarTurnos.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvEliminarTurnos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvEliminarTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEliminarTurnos.Size = new System.Drawing.Size(630, 164);
+            this.dgvEliminarTurnos.Size = new System.Drawing.Size(630, 154);
             this.dgvEliminarTurnos.TabIndex = 1;
-            this.dgvEliminarTurnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEliminar_CellContentClick);
             // 
             // btnBaja
             // 
@@ -798,6 +822,7 @@
             this.btnBaja.TabIndex = 0;
             this.btnBaja.Text = "Eliminar";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // tpMod
             // 
@@ -945,7 +970,6 @@
             this.btnModificar.TabIndex = 0;
             this.btnModificar.Text = "Editar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // frmABMTurnos
             // 
@@ -1031,5 +1055,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.RadioButton rbSobreTurno;
+        private System.Windows.Forms.RadioButton rbTurnos;
     }
 }

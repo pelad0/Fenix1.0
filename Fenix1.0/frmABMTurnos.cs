@@ -30,13 +30,13 @@ namespace Fenix1._0
         List<clsTurno> turnos = new List<clsTurno>();
         List<clsSobreTurnoVista> sobreTurno = new List<clsSobreTurnoVista>();
         List<clsEspecialidad> espec = new List<clsEspecialidad>();
-               
+
         List<string> especialidades = new List<string>();
         clsHorario mañana = new clsHorario();
         clsHorario tarde = new clsHorario();
         bool eligio = false;
 
-        public frmABMTurnos( clsUsuario usu, clsPaciente pac)
+        public frmABMTurnos(clsUsuario usu, clsPaciente pac)
         {
             InitializeComponent();
             this.u = usu;
@@ -51,7 +51,16 @@ namespace Fenix1._0
 
         private void frmABM_Load(object sender, EventArgs e)
         {
-            iniciar();            
+            iniciar();
+            dgvEliminarTurnos.Columns.Add("Fecha", "Fecha");
+            dgvEliminarTurnos.Columns.Add("Medico", "Medico");
+            dgvEliminarTurnos.Columns.Add("Paciente", "Paciente");
+            dgvEliminarTurnos.Columns.Add("Costo", "Costo");
+
+            dgvEliminarSobreTurnos.Columns.Add("Fecha", "Fecha");
+            dgvEliminarSobreTurnos.Columns.Add("Medico", "Medico");
+            dgvEliminarSobreTurnos.Columns.Add("Paciente", "Paciente");
+            dgvEliminarSobreTurnos.Columns.Add("Costo", "Costo");
         }
 
         private void cbEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,10 +70,10 @@ namespace Fenix1._0
             medicos = rm.BuscaPorEspecialidad(cbEspecialidades.SelectedItem.ToString());
             foreach (clsMedico med in medicos)
             {
-		        m.Add(med.Apellido+" "+med.Nombre);
+                m.Add(med.Apellido + " " + med.Nombre);
             }
-            cbMedicos.DataSource= m;
-            if (cbMedicos.Items.Count>0)
+            cbMedicos.DataSource = m;
+            if (cbMedicos.Items.Count > 0)
             {
                 cbMedicos.SelectedIndex = 0;
             }
@@ -75,16 +84,16 @@ namespace Fenix1._0
             if (pagina > 0)
             {
                 pagina--;
-                iniciar();
+                cargarGrillas();
             }
         }
 
         private void btnSig_Click(object sender, EventArgs e)
         {
-            if (rt.Todo(pagina + 1).Count>0)
+            if (rt.Todo(pagina + 1).Count > 0)
             {
                 pagina++;
-                iniciar();
+                cargarGrillas();
             }
         }
 
@@ -113,22 +122,22 @@ namespace Fenix1._0
                     {
                         foreach (Button b in pnlBotones.Controls)
                         {
-                            if (hm.LunesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0,2)))
+                            if (hm.LunesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
                             {
                                 b.Enabled = false;
                                 b.BackColor = Color.Gray;
                             }
-                            else if (hm.LunesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0,2)) && Convert.ToInt32(b.Text.Substring(0,2)) < 14)
+                            else if (hm.LunesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
                             {
                                 b.Enabled = false;
                                 b.BackColor = Color.Gray;
                             }
-                            else if (ht.LunesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0,2)) && Convert.ToInt32(b.Text.Substring(0,2)) >= 14)
+                            else if (ht.LunesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
                             {
                                 b.Enabled = false;
                                 b.BackColor = Color.Gray;
                             }
-                            else if (ht.LunesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0,2)))
+                            else if (ht.LunesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
                             {
                                 b.Enabled = false;
                                 b.BackColor = Color.Gray;
@@ -137,7 +146,7 @@ namespace Fenix1._0
                             {
                                 b.Enabled = true;
                             }
-                            
+
                         }
                     }
                     break;
@@ -178,16 +187,16 @@ namespace Fenix1._0
                             {
                                 b.Enabled = true;
                             }
-                            
+
                         }
                     }
                     break;
                 case "Wednesday":
-                        if (hm.MiercolesEntrada.Value.Year == 1900)
+                    if (hm.MiercolesEntrada.Value.Year == 1900)
                     {
                         horariosMañana(false);
                     }
-                        if (ht.MiercolesSalida.Value.Year == 1900)
+                    if (ht.MiercolesSalida.Value.Year == 1900)
                     {
                         horariosTarde(false);
                     }
@@ -219,16 +228,16 @@ namespace Fenix1._0
                             {
                                 b.Enabled = true;
                             }
-                            
+
                         }
                     }
                     break;
                 case "Thursday":
-                        if (hm.JuevesEntrada.Value.Year == 1900)
+                    if (hm.JuevesEntrada.Value.Year == 1900)
                     {
                         horariosMañana(false);
                     }
-                        if (ht.JuevesSalida.Value.Year == 1900)
+                    if (ht.JuevesSalida.Value.Year == 1900)
                     {
                         horariosTarde(false);
                     }
@@ -260,16 +269,16 @@ namespace Fenix1._0
                             {
                                 b.Enabled = true;
                             }
-                            
+
                         }
                     }
                     break;
                 case "Friday":
-                        if (hm.ViernesEntrada.Value.Year == 1900)
+                    if (hm.ViernesEntrada.Value.Year == 1900)
                     {
                         horariosMañana(false);
                     }
-                        if (ht.ViernesSalida.Value.Year == 1900)
+                    if (ht.ViernesSalida.Value.Year == 1900)
                     {
                         horariosTarde(false);
                     }
@@ -301,16 +310,16 @@ namespace Fenix1._0
                             {
                                 b.Enabled = true;
                             }
-                            
+
                         }
                     }
                     break;
                 case "Saturday":
-                        if (hm.SabadoEntrada.Value.Year == 1900)
+                    if (hm.SabadoEntrada.Value.Year == 1900)
                     {
                         horariosMañana(false);
                     }
-                        if (ht.SabadoSalida.Value.Year == 1900)
+                    if (ht.SabadoSalida.Value.Year == 1900)
                     {
                         horariosTarde(false);
                     }
@@ -342,7 +351,7 @@ namespace Fenix1._0
                             {
                                 b.Enabled = true;
                             }
-                            
+
                         }
                     }
                     break;
@@ -383,7 +392,7 @@ namespace Fenix1._0
                             {
                                 b.Enabled = true;
                             }
-                            
+
                         }
                     }
                     break;
@@ -432,29 +441,28 @@ namespace Fenix1._0
                     espec.Add(esp);
                     inicio = true;
                 }
+                if (inicio)
+                {
+                    cbEspecialidades.DataSource = especialidades;
+                    cbMedicos.DataSource = null;
+                    cbEspecialidades.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Se ha producido un error al iniciar, por favor, cierre la aplicación e iniciela nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (inicio)
-            {
-                cbEspecialidades.DataSource = especialidades;
-                cbMedicos.DataSource = null;
-                cbEspecialidades.SelectedIndex = 0;
-                dgvEliminarTurnos.DataSource = null;
-                dgvEliminarTurnos.DataSource = rt.Todo(pagina);
-                dgvEliminarTurnos.Columns[0].Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("Se ha producido un error al iniciar, por favor, cierre la aplicación e iniciela nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            cargarGrillas();
         }
 
         private void btnTurnoXDia_Click(object sender, EventArgs e)
         {
-            
+
             if (cbMedicos.SelectedIndex > -1)
             {
                 fecha = dtpFecha.Value.Date;
@@ -466,9 +474,9 @@ namespace Fenix1._0
                 botonesDisponibles();
 
                 turnosDados(turnos);
-                
+
                 sobreTurnosDados(sobreTurno);
-                
+
                 mañana = rm.BuscarHorarioMañana(med.Id);
                 tarde = rm.BuscarHorarioTarde(med.Id);
 
@@ -497,7 +505,7 @@ namespace Fenix1._0
             }
             if (!estado)
             {
-                                foreach (Button btn in pnlBotones.Controls)
+                foreach (Button btn in pnlBotones.Controls)
                 {
                     if (btn.Name.Contains("mañ"))
                     {
@@ -568,7 +576,7 @@ namespace Fenix1._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if((sender as Button).Tag.ToString() == "turno")
+            if ((sender as Button).Tag.ToString() == "turno")
             {
                 Button btn = (sender as Button);
                 darTurno(btn);
@@ -585,10 +593,10 @@ namespace Fenix1._0
 
         private void darTurno(Button btn)
         {
-            DialogResult res = MessageBox.Show("Confirme turno: Medico "+med.Apellido+" paciente, "+pac.nomCompleto()+" "+fecha.ToLongDateString()+" "+btn.Text, "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult res = MessageBox.Show("Confirme turno: Medico " + med.Apellido + " paciente, " + pac.nomCompleto() + " " + fecha.ToLongDateString() + " " + btn.Text, "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (res == DialogResult.OK)
             {
-                DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0,2)), Convert.ToInt32(btn.Text.Substring(3,2)),0);        
+                DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0, 2)), Convert.ToInt32(btn.Text.Substring(3, 2)), 0);
                 clsTurno t = new clsTurno(med.Id, pac.Id, d, u.Id);
                 List<clsTurno> lt = rt.obtenerTurno(med.Id, t.Fecha);
 
@@ -609,7 +617,7 @@ namespace Fenix1._0
             if (res == DialogResult.OK)
             {
                 DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0, 2)), Convert.ToInt32(btn.Text.Substring(3, 2)), 0);
-                clsSobreturno t = new clsSobreturno(med.Id, pac.Id, d, espec[cbEspecialidades.SelectedIndex].Canon,u.Id, false);
+                clsSobreturno t = new clsSobreturno(med.Id, pac.Id, d, espec[cbEspecialidades.SelectedIndex].Canon, u.Id, false);
                 List<clsTurno> lt = rt.obtenerTurno(med.Id, t.Fecha);
 
                 try
@@ -620,18 +628,8 @@ namespace Fenix1._0
                 {
                     MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
             }
-        }
-
-        private void dgvEliminar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dtpFecha_ValueChanged(object sender, EventArgs e)
-        {
-            //rt.obtenerTurno
         }
 
         private void cbMedicos_SelectedIndexChanged(object sender, EventArgs e)
@@ -639,14 +637,82 @@ namespace Fenix1._0
             if (cbMedicos.SelectedIndex > -1)
             {
                 med = medicos[cbMedicos.SelectedIndex];
-
             }
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnBaja_Click(object sender, EventArgs e)
         {
-
+            //if (rbTurnos.Checked)
+            //{
+            //    if ()
+            //    {
+            //        string exOS = OS[dgvOSBaja.CurrentRow.Index].Nombre;
+            //        DialogResult res = MessageBox.Show("Desea eliminar a " + exOS + " del registro?", "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            //        if (res == DialogResult.OK)
+            //        {
+            //            try
+            //            {
+            //                ros.Baja(OS[dgvOSBaja.CurrentRow.Index]);
+            //                iniciar();
+            //                MessageBox.Show(exOS + " se elimino con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Seleccione Obra Social a eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            //    }
+            //}
         }
 
+        private void rbTurnos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbTurnos.Checked)
+            {
+                dgvEliminarTurnos.Enabled = true;
+                dgvEliminarSobreTurnos.Enabled = false;
+            }
+            else
+            {
+                dgvEliminarTurnos.Enabled = false;
+                dgvEliminarSobreTurnos.Enabled = true;
+            }
+        }
+
+        private void cargarGrillas()
+        {
+            dgvEliminarTurnos.Rows.Clear();
+            dgvEliminarSobreTurnos.Rows.Clear();
+            try
+            {
+                if (rt.Todo(pagina).Count > 0)
+                {
+                    turnosVista.Clear();
+                    turnosVista = rt.TodoVista(pagina);
+                    foreach (clsTurnoVista t in turnosVista)
+                    {
+                        dgvEliminarTurnos.Rows.Add(t.Fecha, t.Medico.nombreCompleto(), t.Paciente.nomCompleto(), t.Costo);
+                    }
+                }
+                if (rst.Todo(pagina).Count > 0)
+                {
+                    sobreTurnoVista.Clear();
+                    sobreTurnoVista = rst.TodoVista(pagina);
+                    foreach (clsSobreTurnoVista st in sobreTurnoVista)
+                    {
+                        dgvEliminarSobreTurnos.Rows.Add(st.Fecha, st.Medico.nombreCompleto(), st.Paciente.nomCompleto(), st.Costo);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
+
