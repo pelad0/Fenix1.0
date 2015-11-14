@@ -125,7 +125,7 @@ namespace logica
 
         }
 
-        public List<clsSobreTurnoVista> Todo(int pag)
+        public List<clsSobreTurnoVista> TodoVista(int pag)
         {
             DataTable tabla;
             List<clsSobreTurnoVista> lista = new List<clsSobreTurnoVista>();

@@ -123,7 +123,7 @@ namespace logica
 
         }
 
-        public List<clsTurnoVista> Todo(int pag)
+        public List<clsTurnoVista> TodoVista(int pag)
         {
             DataTable tabla;
             List<clsTurnoVista> lista = new List<clsTurnoVista>();
