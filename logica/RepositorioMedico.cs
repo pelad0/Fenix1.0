@@ -346,9 +346,41 @@ namespace logica
 
         public List<clsMedico> obtenerMedicos() //completar
         {
-            List<clsMedico> med = new List<clsMedico>();
+            DataTable tabla;
+            List<clsMedico> lista = new List<clsMedico>();
+            clsEspecialidad aux2;
+            try
+            {
+                tabla = manejaMedico.obtenerMedicos();
+                foreach (DataRow aux in tabla.Rows)
+                {
 
-            return med;
+                    clsMedico med = new clsMedico();
+                    med.Id = Convert.ToInt32(aux["id"]);
+                    med.Nombre = aux["nombre"].ToString();
+                    med.Apellido = aux["apellido"].ToString();
+                    med.Dni = Convert.ToInt64(aux["dni"]);
+                    med.Matricula = Convert.ToInt32(aux["matricula"]);
+                    aux2 = (clsEspecialidad)manejaEspecialidad.buscaPorId(Convert.ToInt32(aux["especialidad"]));
+                    med.Especialidad = aux2.Descripcion;
+
+                    lista.Add(med);
+
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+            return lista;
+
 
         }
 
