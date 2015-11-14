@@ -332,10 +332,36 @@ namespace logica
             return lista;
         }
 
-        public clsTurnoVista primerTurno() //completar
+        public clsTurno primerTurno() 
         {
 
-            clsTurnoVista turno = new clsTurnoVista();
+            DataTable tabla;
+
+            clsTurno turno = new clsTurno();
+
+            try
+            {
+                tabla = manejaTurno.PrimerTurno();
+                foreach (DataRow aux in tabla.Rows)
+                {
+
+                    turno.Id = Convert.ToInt32(aux["id"]);
+                    turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
+                    turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
+                    turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                    turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                    turno.Estado = Convert.ToBoolean(aux["estado"]);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             return turno;
         }
 
@@ -355,10 +381,36 @@ namespace logica
             }
         }
 
-        public clsTurnoVista ultimoTurno() //completar
+        public clsTurno ultimoTurno() 
         {
 
-            clsTurnoVista turno=new clsTurnoVista();
+            DataTable tabla;
+
+            clsTurno turno = new clsTurno();
+
+            try
+            {
+                tabla = manejaTurno.UltimoTurno();
+                foreach (DataRow aux in tabla.Rows)
+                {
+
+                    turno.Id = Convert.ToInt32(aux["id"]);
+                    turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
+                    turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
+                    turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                    turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                    turno.Estado = Convert.ToBoolean(aux["estado"]);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             return turno;
         }
 
