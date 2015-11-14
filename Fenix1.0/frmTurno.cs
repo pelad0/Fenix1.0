@@ -25,9 +25,9 @@ namespace Fenix1._0
         List<clsPaciente> pacientes = new List<clsPaciente>();
         List<clsTurnoVista> turnos = new List<clsTurnoVista>();
         List<clsSobreTurnoVista> sobreTurnos = new List<clsSobreTurnoVista>();
+        List<clsReporteTurnos> tur = new List<clsReporteTurnos>();
+        List<clsReporteTurnos> stur = new List<clsReporteTurnos>();
         List<string> esp = new List<string>();
-        List<string> med = new List<string>();
-        List<string> pac = new List<string>();
         clsMedico m = new clsMedico();
         clsPaciente p = new clsPaciente();
         clsUsuario u = new clsUsuario();
@@ -93,20 +93,19 @@ namespace Fenix1._0
                     string Espe = cbEspecialidades.SelectedItem.ToString();
                     if (rm.BuscaPorEspecialidad(Espe).Count > 0)
                     {
-                        med.Clear();
-                        List<clsMedico> listMed = rm.BuscaPorEspecialidad(Espe);
-                        foreach (clsMedico me in listMed)
+                        cbMedicos.Items.Clear();
+                        foreach (clsMedico me in rm.BuscaPorEspecialidad(Espe))
                         {
-                            med.Add(me.nombreCompleto());
+                            cbMedicos.Items.Add(me.nombreCompleto());
                         }
-                        
-                        cbMedicos.DataSource = med;
                         cbMedicos.Enabled = true;
+                        cbMedicos.SelectedIndex = 0;
                         cbMedicos.Focus();
                     }
                     else
                     {
-                        cbMedicos.DataSource = null;
+                        cbMedicos.Items.Clear();
+                        cbMedicos.SelectedIndex = -1;
                     }
                 }
                 catch (Exception ex)
@@ -126,14 +125,20 @@ namespace Fenix1._0
                     pacientes = rp.obtenerAlfabeticamente(cbAlfa.Text);
                     if (pacientes.Count > 0)
                     {
-                        pac.Clear();
+                        cbPacientes.Items.Clear();
+
                         foreach (clsPaciente pa in pacientes)
                         {
-                            pac.Add(pa.nomCompleto());
+                            cbPacientes.Items.Add(pa.nomCompleto());
                         }
-                        cbPacientes.DataSource = pac;
                         cbPacientes.Enabled = true;
+                        cbPacientes.SelectedIndex = 0;
                         cbPacientes.Focus();
+                    }
+                    else
+                    {
+                        cbPacientes.Items.Clear();
+                        cbPacientes.SelectedIndex = -1;
                     }
                 }
                 catch (Exception ex)
@@ -162,8 +167,10 @@ namespace Fenix1._0
 
         private void actualizoXmedico()
         {
+
             m = medicos[cbMedicos.SelectedIndex];
             turnos.Clear();
+            tur.Clear();
             turnos = rt.obtenerTurnoMedico(m.Id);
             if (turnos.Count > 0)
             {
@@ -173,11 +180,12 @@ namespace Fenix1._0
                     if (t.Estado)
                     {
                         dgvTurnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "SI");
-
+                        tur.Add(new clsReporteTurnos(t.Paciente.nomCompleto(), t.Fecha, "SI"));
                     }
                     else
                     {
                         dgvTurnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "NO");
+                        tur.Add(new clsReporteTurnos(t.Paciente.nomCompleto(), t.Fecha, "NO"));
                     }
                 }
             }
@@ -187,6 +195,7 @@ namespace Fenix1._0
             }
 
             sobreTurnos.Clear();
+            stur.Clear();
             sobreTurnos = rst.obtenerSobreTurnoMedico(m.Id);
             if (sobreTurnos.Count > 0)
             {
@@ -196,10 +205,12 @@ namespace Fenix1._0
                     if (t.Estado)
                     {
                         dgvSobreturnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "SI");
+                        stur.Add(new clsReporteTurnos(t.Paciente.nomCompleto(), t.Fecha, "SI"));
                     }
                     else
                     {
                         dgvSobreturnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "NO");
+                        stur.Add(new clsReporteTurnos(t.Paciente.nomCompleto(), t.Fecha, "NO"));
                     }
                 }
             }
@@ -228,7 +239,8 @@ namespace Fenix1._0
             if (pacientes.Count > 0)
             {
                 p = pacientes[cbPacientes.SelectedIndex];
-                sobreTurnos.Clear();
+                turnos.Clear();
+                tur.Clear();
                 turnos = rt.obtenerTurnoPaciente(p.Id);
                 if (turnos.Count > 0)
                 {
@@ -237,11 +249,13 @@ namespace Fenix1._0
                     {
                         if (t.Estado)
                         {
-                            dgvSobreturnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "SI");
+                            dgvTurnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "SI");
+                            tur.Add(new clsReporteTurnos(t.Paciente.nomCompleto(), t.Fecha, "SI"));
                         }
                         else
                         {
-                            dgvSobreturnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "NO");
+                            dgvTurnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "NO");
+                            tur.Add(new clsReporteTurnos(t.Paciente.nomCompleto(), t.Fecha, "NO"));
                         }
                     }
                 }
@@ -251,6 +265,7 @@ namespace Fenix1._0
                 }
 
                 sobreTurnos.Clear();
+                stur.Clear();
                 sobreTurnos = rst.obtenerSobreturnoPaciente(p.Id);
                 if (sobreTurnos.Count > 0)
                 {
@@ -259,11 +274,13 @@ namespace Fenix1._0
                     {
                         if (t.Estado)
                         {
-
+                            dgvSobreturnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "SI");
+                            stur.Add(new clsReporteTurnos(t.Paciente.nomCompleto(), t.Fecha, "SI"));
                         }
                         else
                         {
-
+                            dgvSobreturnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "NO");
+                            stur.Add(new clsReporteTurnos(t.Paciente.nomCompleto(), t.Fecha, "NO"));
                         }
                     }
                 }
@@ -276,18 +293,34 @@ namespace Fenix1._0
 
         private void btnRepTurn_Click(object sender, EventArgs e)
         {
-            rptTurnosMedico rep = new rptTurnosMedico();
-            rep.SetDataSource(turnos);
-            frmReporteTurnosMedico rtm = new frmReporteTurnosMedico(rep);
-            rtm.ShowDialog();
+            if (tur.Count > 0)
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("No se registran turnos para realizar el reporte", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //rptTurnosMedico rep = new rptTurnosMedico();
+            //rep.SetDataSource(turnos);
+            //frmReporteTurnosMedico rtm = new frmReporteTurnosMedico(rep);
+            //rtm.ShowDialog();
         }
 
         private void btnRepSobreTur_Click(object sender, EventArgs e)
         {
-            rptTurnosMedico rep = new rptTurnosMedico();
-            rep.SetDataSource(sobreTurnos);
-            frmReporteTurnosMedico rtm = new frmReporteTurnosMedico(rep);
-            rtm.ShowDialog();
+            if (stur.Count > 0)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("No se registran sobreturnos para realizar el reporte", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //rptTurnosMedico rep = new rptTurnosMedico();
+            //rep.SetDataSource(sobreTurnos);
+            //frmReporteTurnosMedico rtm = new frmReporteTurnosMedico(rep);
+            //rtm.ShowDialog();
         }
     }
 }
