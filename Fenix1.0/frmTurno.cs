@@ -31,7 +31,6 @@ namespace Fenix1._0
         clsMedico m = new clsMedico();
         clsPaciente p = new clsPaciente();
         clsUsuario u = new clsUsuario();
-        
 
         public frmTurno(clsUsuario u)
         {
@@ -52,8 +51,17 @@ namespace Fenix1._0
             }
             catch (Exception ex)
             {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
+            dgvTurnos.Columns.Add("Paciente", "Paciente");
+            dgvTurnos.Columns.Add("Fecha", "Fecha");
+            dgvTurnos.Columns.Add("Asistio", "Asistió");
+
+            dgvSobreturnos.Columns.Add("Paciente", "Paciente");
+            dgvSobreturnos.Columns.Add("Fecha", "Fecha");
+            dgvSobreturnos.Columns.Add("Asistio", "Asistió");
+            
         }
 
         private void rbMedicos_CheckedChanged(object sender, EventArgs e)
@@ -63,7 +71,6 @@ namespace Fenix1._0
                 cbEspecialidades.Enabled = true;
                 cbAlfa.Enabled = false;
                 cbPacientes.Enabled = false;
-                cbPacientes.DataSource = null;
                 dgvTurnos.DataSource = null;
                 dgvSobreturnos.DataSource = null;
             }
@@ -72,7 +79,6 @@ namespace Fenix1._0
                 cbEspecialidades.Enabled = false;
                 cbMedicos.Enabled = false;
                 cbAlfa.Enabled = true;
-                cbMedicos.DataSource = null;
                 dgvTurnos.DataSource = null;
                 dgvSobreturnos.DataSource = null;
             }
@@ -84,21 +90,28 @@ namespace Fenix1._0
             {
                 try
                 {
-                    if (rm.BuscaPorEspecialidad(cbEspecialidades.Text).Count > 0)
+                    string Espe = cbEspecialidades.SelectedItem.ToString();
+                    if (rm.BuscaPorEspecialidad(Espe).Count > 0)
                     {
                         med.Clear();
-                        cbMedicos.DataSource = null;
-                        foreach (clsMedico me in rm.BuscaPorEspecialidad(cbEspecialidades.Text))
+                        List<clsMedico> listMed = rm.BuscaPorEspecialidad(Espe);
+                        foreach (clsMedico me in listMed)
                         {
                             med.Add(me.nombreCompleto());
                         }
+                        
                         cbMedicos.DataSource = med;
                         cbMedicos.Enabled = true;
+                        cbMedicos.Focus();
+                    }
+                    else
+                    {
+                        cbMedicos.DataSource = null;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -114,81 +127,149 @@ namespace Fenix1._0
                     if (pacientes.Count > 0)
                     {
                         pac.Clear();
-                        cbPacientes.DataSource = null;
                         foreach (clsPaciente pa in pacientes)
                         {
                             pac.Add(pa.nomCompleto());
                         }
                         cbPacientes.DataSource = pac;
                         cbPacientes.Enabled = true;
+                        cbPacientes.Focus();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private void cbMedicos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(cbMedicos.Text))
+            try
             {
-                dgvTurnos.DataSource = null;
-                dgvSobreturnos.DataSource = null;
-                try
+                medicos.Clear();
+                medicos = rm.BuscaPorEspecialidad(cbEspecialidades.Text);
+                if (medicos.Count > 0)
                 {
-                    medicos.Clear();
-                    medicos = rm.BuscaPorEspecialidad(cbEspecialidades.Text);
-                    if (medicos.Count > 0)
+                    actualizoXmedico();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void actualizoXmedico()
+        {
+            m = medicos[cbMedicos.SelectedIndex];
+            turnos.Clear();
+            turnos = rt.obtenerTurnoMedico(m.Id);
+            if (turnos.Count > 0)
+            {
+                dgvTurnos.Rows.Clear();
+                foreach (clsTurnoVista t in turnos)
+                {
+                    if (t.Estado)
                     {
-                        m = medicos[cbMedicos.SelectedIndex];
-                        dgvTurnos.DataSource = rt.obtenerTurnoMedico(m.Id);
-                        //dgvTurnos.Columns[].Visible = false;
-                        //dgvTurnos.Columns[].Visible = false;
-                        //dgvTurnos.Columns[].Visible = false;
-                        //dgvTurnos.Columns[].Visible = false;
-                        dgvSobreturnos.DataSource = rst.obtenerSobreTurnoMedico(m.Id);
-                        //dgvSobreturnos.Columns[].Visible = false;
-                        //dgvSobreturnos.Columns[].Visible = false;
-                        //dgvSobreturnos.Columns[].Visible = false;
-                        //dgvSobreturnos.Columns[].Visible = false;
+                        dgvTurnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "SI");
+
+                    }
+                    else
+                    {
+                        dgvTurnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "NO");
                     }
                 }
-                catch (Exception ex)
+            }
+            else
+            {
+                dgvTurnos.Rows.Clear();
+            }
+
+            sobreTurnos.Clear();
+            sobreTurnos = rst.obtenerSobreTurnoMedico(m.Id);
+            if (sobreTurnos.Count > 0)
+            {
+                dgvSobreturnos.Rows.Clear();
+                foreach (clsSobreTurnoVista t in sobreTurnos)
                 {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (t.Estado)
+                    {
+                        dgvSobreturnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "SI");
+                    }
+                    else
+                    {
+                        dgvSobreturnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "NO");
+                    }
                 }
+            }
+            else
+            {
+                dgvSobreturnos.Rows.Clear();
             }
         }
 
         private void cbPacientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(cbPacientes.Text))
+            try
             {
-                dgvTurnos.DataSource = null;
-                dgvSobreturnos.DataSource = null;
-                try
+                pacientes.Clear();
+                pacientes = rp.obtenerAlfabeticamente(cbAlfa.Text);
+                actualizoXpaciente();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void actualizoXpaciente()
+        {
+            if (pacientes.Count > 0)
+            {
+                p = pacientes[cbPacientes.SelectedIndex];
+                sobreTurnos.Clear();
+                turnos = rt.obtenerTurnoPaciente(p.Id);
+                if (turnos.Count > 0)
                 {
-                    p = pacientes[cbPacientes.SelectedIndex];
-                    turnos.Clear();
-                    turnos = rt.obtenerTurnoPaciente(p.Id);
-                    dgvTurnos.DataSource = turnos;
-                    //dgvTurnos.Columns[].Visible = false;
-                    //dgvTurnos.Columns[].Visible = false;
-                    //dgvTurnos.Columns[].Visible = false;
-                    //dgvTurnos.Columns[].Visible = false;
-                    sobreTurnos.Clear();
-                    sobreTurnos = rst.obtenerSobreturnoPaciente(p.Id);
-                    dgvSobreturnos.DataSource = sobreTurnos; 
-                    //dgvSobreturnos.Columns[].Visible = false;
-                    //dgvSobreturnos.Columns[].Visible = false;
-                    //dgvSobreturnos.Columns[].Visible = false;
-                    //dgvSobreturnos.Columns[].Visible = false;
+                    dgvTurnos.Rows.Clear();
+                    foreach (clsTurnoVista t in turnos)
+                    {
+                        if (t.Estado)
+                        {
+                            dgvSobreturnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "SI");
+                        }
+                        else
+                        {
+                            dgvSobreturnos.Rows.Add(t.Paciente.nomCompleto(), t.Fecha, "NO");
+                        }
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dgvTurnos.Rows.Clear();
+                }
+
+                sobreTurnos.Clear();
+                sobreTurnos = rst.obtenerSobreturnoPaciente(p.Id);
+                if (sobreTurnos.Count > 0)
+                {
+                    dgvSobreturnos.Rows.Clear();
+                    foreach (clsSobreTurnoVista t in sobreTurnos)
+                    {
+                        if (t.Estado)
+                        {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
+                else
+                {
+                    dgvSobreturnos.Rows.Clear();
                 }
             }
         }
