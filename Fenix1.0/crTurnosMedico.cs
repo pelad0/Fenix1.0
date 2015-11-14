@@ -8,7 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace frmABMME {
+namespace Fenix1._0
+{
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +17,14 @@ namespace frmABMME {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptTurnosMedico : ReportClass {
+    public class crTurnosMedico : ReportClass {
         
-        public rptTurnosMedico() {
+        public crTurnosMedico() {
         }
         
         public override string ResourceName {
             get {
-                return "rptTurnosMedico.rpt";
+                return "crTurnosMedico.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +42,7 @@ namespace frmABMME {
         
         public override string FullResourceName {
             get {
-                return "frmABMME.rptTurnosMedico.rpt";
+                return "frmABMME.crTurnosMedico.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +88,20 @@ namespace frmABMME {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Medico {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptTurnosMedico : Component, ICachedReport {
+    public class CachedcrTurnosMedico : Component, ICachedReport {
         
-        public CachedrptTurnosMedico() {
+        public CachedcrTurnosMedico() {
         }
         
         [Browsable(false)]
@@ -129,7 +138,7 @@ namespace frmABMME {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptTurnosMedico rpt = new rptTurnosMedico();
+            crTurnosMedico rpt = new crTurnosMedico();
             rpt.Site = this.Site;
             return rpt;
         }

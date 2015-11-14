@@ -14,10 +14,17 @@ namespace Fenix1._0
 {
     public partial class frmReporteTurnosMedico : Form
     {
+
+
         public frmReporteTurnosMedico(ReportDocument rd)
         {
             InitializeComponent();
-            crReporteMedico.ReportSource = rd;
+            crvForm.ReportSource = rd;
+        }
+
+        private void frmReporteTurnosMedico_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
