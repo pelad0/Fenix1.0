@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BdMetodos.cs" />
+    <Compile Include="ManejaClinica.cs" />
     <Compile Include="ManejaEspecialidad.cs" />
     <Compile Include="ManejaFactura.cs" />
     <Compile Include="ManejaHistorial.cs" />
