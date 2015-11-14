@@ -33,6 +33,7 @@
             this.btnObraSocial = new System.Windows.Forms.Button();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.btnTurnos = new System.Windows.Forms.Button();
+            this.btnRegistroPago = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMedicos
@@ -75,11 +76,22 @@
             this.btnTurnos.UseVisualStyleBackColor = true;
             this.btnTurnos.Click += new System.EventHandler(this.btnTurnos_Click);
             // 
+            // btnRegistroPago
+            // 
+            this.btnRegistroPago.Location = new System.Drawing.Point(741, 24);
+            this.btnRegistroPago.Name = "btnRegistroPago";
+            this.btnRegistroPago.Size = new System.Drawing.Size(175, 23);
+            this.btnRegistroPago.TabIndex = 6;
+            this.btnRegistroPago.Text = "Registrar pago";
+            this.btnRegistroPago.UseVisualStyleBackColor = true;
+            this.btnRegistroPago.Click += new System.EventHandler(this.btnRegistroPago_Click);
+            // 
             // frmRecepcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 70);
+            this.ClientSize = new System.Drawing.Size(958, 70);
+            this.Controls.Add(this.btnRegistroPago);
             this.Controls.Add(this.btnTurnos);
             this.Controls.Add(this.btnMedicos);
             this.Controls.Add(this.btnObraSocial);
@@ -101,5 +113,6 @@
         private System.Windows.Forms.Button btnObraSocial;
         private System.Windows.Forms.Button btnPacientes;
         private System.Windows.Forms.Button btnTurnos;
+        private System.Windows.Forms.Button btnRegistroPago;
     }
 }

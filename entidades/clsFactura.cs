@@ -17,6 +17,7 @@ namespace entidades
         string terminal;
         string cuitcliente;
 
+
         public string Cuitcliente
         {
             get { return cuitcliente; }

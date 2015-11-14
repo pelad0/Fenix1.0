@@ -7,9 +7,10 @@ using interfaces;
 
 namespace entidades
 {
-    class clsClinica : IEntidad
+    public class clsClinica:IEntidad
     {
-
+        int id;
+        
         DateTime fechaInicioActividades;        
         string cuit;        
         float ingresosBrutos;        
@@ -75,6 +76,12 @@ namespace entidades
         {
             get { return fechaInicioActividades; }
             set { fechaInicioActividades = value; }
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
         }
 
 

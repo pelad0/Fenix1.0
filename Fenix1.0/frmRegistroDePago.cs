@@ -10,14 +10,17 @@ using System.Windows.Forms;
 using logica;
 using entidades;
 
-namespace frmABMME
+namespace Fenix1._0
 {
     public partial class frmRegistroDePago : Form
     {
-        public frmRegistroDePago()
+        clsUsuario usuario = new clsUsuario();
+        public frmRegistroDePago(clsUsuario u)
         {
             InitializeComponent();
+            usuario = u;
         }
+
         RepositorioRecibo reposRecibo = new RepositorioRecibo(); 
         RepositorioMedico reposMedico = new RepositorioMedico();
         RepositorioTurno reposTurno = new RepositorioTurno();
@@ -26,7 +29,7 @@ namespace frmABMME
         RepositorioFactura reposFac = new RepositorioFactura();
         RepositorioObraSocial reposObra = new RepositorioObraSocial();
         RepositorioEspecialidad reposEspe = new RepositorioEspecialidad();
-        RepositorioClinica repoClinica = new RepositorioClinica();
+        RepositorioClinica reposClinica = new RepositorioClinica();
        
 
         bool columnasTurno = false;
@@ -174,6 +177,7 @@ namespace frmABMME
         {
             int idTurn = 0;
 
+            
 
             if (!columnasTurnosAPagar)
             {
@@ -199,6 +203,8 @@ namespace frmABMME
 
                 dgvTurnosAPagar.Rows.Add(turn.Id, turn.Fecha, turn.Costo, "Turno");      //La paso al otro dgv
 
+                ActualizarPrecio();
+
 
 
 
@@ -212,6 +218,8 @@ namespace frmABMME
                     clsSobreturno Sobrturn = reposSobreTurno.buscarPorId(idTurn);
 
                     dgvTurnosAPagar.Rows.Add(Sobrturn.Id, Sobrturn.Fecha, Sobrturn.Costo, "SobreTurno");
+
+                    ActualizarPrecio();
                 }
 
             }
@@ -221,6 +229,8 @@ namespace frmABMME
                 cbMetodoDePago.Visible = true;
                 btnPagar.Enabled = true;
             }
+
+
 
 
 
@@ -271,7 +281,6 @@ namespace frmABMME
                                     sobreTurnosReporte.Add(sobreTarna);
                                 }
                             }
-
                         }
 
 
@@ -366,11 +375,35 @@ namespace frmABMME
 
                         }
                         clsClinica clini = new clsClinica();
+                       
 
                         Factura.Cuitcliente = tbCuit.Text;
                         Factura.NumeroFactura = reposFac.ultimoID() + 1;
                         Factura.TipoFactura = char.Parse(cbTipoFactura.Text);
-                        Factura.RazonSocial = reposClini
+
+                        //Traigo los datos de mi clinica para signarle los datos.
+                        clini = reposClinica.traerDatos();
+
+                        Factura.RazonSocial = clini.RazonSocial;
+                        Factura.Terminal = usuario.Usuario;
+                        Factura.Total = total;
+                        Factura.Fecha = DateTime.Now;
+                        Factura.IdUsuario = usuario.Id;
+                        Factura.Cliente = tbCliente.Text;
+
+                        if(cbMetodoDePago.Text == "Efectivo")
+                        {
+                            
+                        }
+                        else
+                        {
+
+                        }
+
+                            
+
+
+                        
 
 
 
@@ -489,6 +522,66 @@ namespace frmABMME
         }
         
       
+        public void ActualizarPrecio()
+        {
+
+            List<clsTurno> turnoReporte = new List<clsTurno>();
+            List<clsSobreturno> sobreTurnosReporte = new List<clsSobreturno>();
+
+            clsTurno turn = new clsTurno();
+            clsSobreturno sobreTarna = new clsSobreturno();
+
+
+            foreach (DataGridViewRow row in dgvTurnosAPagar.Rows)
+            {
+                turn.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
+                sobreTarna.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
+
+                turn.Fecha = DateTime.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[1].Value.ToString());
+                sobreTarna.Fecha = DateTime.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[1].Value.ToString());
+
+                turn.Costo = float.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[2].Value.ToString());
+                sobreTarna.Costo = float.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[2].Value.ToString());
+
+                if (dgvTurnosAPagar.Rows[row.Index].Cells[3].Value.ToString() == "Turno")
+                {
+                    turnoReporte.Add(turn);     //Cargo una lista con los turnos a pagar.
+                }
+                else
+                {
+                    if (dgvTurnosAPagar.Rows[row.Index].Cells[3].Value.ToString() == "SobreTurno")
+                    {
+                        sobreTurnosReporte.Add(sobreTarna);
+                    }
+                }
+            }
+
+            clsTurno t = new clsTurno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
+
+            t = reposTurno.buscarPorId(turnito.IdMedico);       //Le asigno todos sus valores propios.
+
+            string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
+
+            especiali = reposEspe.buscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
+
+            recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+
+            recibo.Detalle = es;
+
+            if (recibo.Importe - recibo.Cobertura > 0)           //Si lo que me cubre la obra social es menor a lo que me sale la consulta entonces agrego esa diferencia al total.
+            {
+                total += (float)recibo.Importe - (float)recibo.Cobertura;
+            }
+
+
+
+
+
+        }
+
+
+
+
 
 
     }

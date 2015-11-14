@@ -52,5 +52,11 @@ namespace Fenix1._0
             frmTurno frmT = new frmTurno(u);
             frmT.ShowDialog();
         }
+
+        private void btnRegistroPago_Click(object sender, EventArgs e)
+        {
+            frmRegistroDePago frmRe = new frmRegistroDePago(u);
+            frmRe.ShowDialog();
+        }
     }
 }
