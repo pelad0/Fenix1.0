@@ -642,31 +642,38 @@ namespace Fenix1._0
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            //if (rbTurnos.Checked)
-            //{
-            //    if ()
-            //    {
-            //        string exOS = OS[dgvOSBaja.CurrentRow.Index].Nombre;
-            //        DialogResult res = MessageBox.Show("Desea eliminar a " + exOS + " del registro?", "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            //        if (res == DialogResult.OK)
-            //        {
-            //            try
-            //            {
-            //                ros.Baja(OS[dgvOSBaja.CurrentRow.Index]);
-            //                iniciar();
-            //                MessageBox.Show(exOS + " se elimino con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //            }
-            //            catch (Exception ex)
-            //            {
-            //                MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //            }
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Seleccione Obra Social a eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            //    }
-            //}
+            if (rbTurnos.Checked)
+            {
+                if (!string.IsNullOrWhiteSpace(turnosVista[dgvEliminarTurnos.CurrentRow.Index].Medico.Id.ToString()))
+                {
+                    try
+                    {
+
+                        rt.Baja(turnosVista[dgvEliminarTurnos.CurrentRow.Index]);
+                        MessageBox.Show("El turno se elimino con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                if (!string.IsNullOrWhiteSpace(sobreTurnoVista[dgvEliminarSobreTurnos.CurrentRow.Index].Medico.Id.ToString()))
+                {
+                    try
+                    {
+                        rst.Baja(sobreTurnoVista[dgvEliminarTurnos.CurrentRow.Index]);
+                        MessageBox.Show("El turno se elimino con éxito", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void rbTurnos_CheckedChanged(object sender, EventArgs e)
@@ -713,6 +720,7 @@ namespace Fenix1._0
                 MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
 
