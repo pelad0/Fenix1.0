@@ -206,7 +206,7 @@ namespace Datos
                 DataTable aux = new DataTable();
                 try
                 {
-                    aux = manager.consultar("select TOP 1 * from sobreturno where estado=1 order by id desc");
+                    aux = manager.consultar("select TOP 1 * from sobreturno where activo=1 order by id desc");
                 }
                 catch (Exception ex)
                 {

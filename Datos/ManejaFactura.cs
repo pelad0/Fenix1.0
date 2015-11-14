@@ -22,7 +22,7 @@ namespace Datos
             clsFactura fack = (clsFactura)entidad;
             try
             {
-                manager.ejecutar("Insert into factura(cuitcliente,numerofactura,tipofactura,razonsocial,numeroterminal,total,fecha,idusuario,cliente,pagoefectivo,pagotarjeta) values('" +fack.Cuitcliente + "'," + fack.NumeroFactura + ",'" + fack.TipoFactura + "','" + fack.RazonSocial +"','"+fack.Terminal+"',"+fack.Total+","+fack.Fecha+","+fack.IdUsuario+",'"+fack.Cliente+"',"+fack.PagoEfectivo+","+fack.PagoTarjeta+");SELECT @@identity;");
+                manager.ejecutar("Insert into factura(cuitcliente,numerofactura,tipofactura,razonsocial,numeroterminal,total,fecha,idusuario,cliente,pagoefectivo,pagotarjeta) values('" +fack.Cuitcliente + "'," + fack.NumeroFactura + ",'" + fack.TipoFactura + "','" + fack.RazonSocial +"','"+fack.Terminal+"',"+fack.Total+",'"+fack.Fecha+"',"+fack.IdUsuario+",'"+fack.Cliente+"',"+fack.PagoEfectivo+","+fack.PagoTarjeta+");SELECT @@identity;");
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace Datos
             clsFactura fack = (clsFactura)entidad;
             try
             {                                                                                                                                                          //razonsocial,numeroterminal,total,fecha,idusuario,cliente,pagoefectivo,pagotarjeta)
-                manager.ejecutar("update factura set cuitcliente='" + fack.Cuitcliente + "',numerofactura=" + fack.NumeroFactura + ",tipofactura='" + fack.TipoFactura + "',razonsocial='" + fack.RazonSocial + "',numeroterminal='" + fack.Terminal + "',total=" + fack.Total + ",fecha=" + fack.Fecha + ",idusuario=" + fack.IdUsuario + "',cliente='" + fack.Cliente + "',pagoefectivo=" + fack.PagoEfectivo + ",pagotarjeta=" + fack.PagoTarjeta + " where id=" + fack.Id);
+                manager.ejecutar("update factura set cuitcliente='" + fack.Cuitcliente + "',numerofactura=" + fack.NumeroFactura + ",tipofactura='" + fack.TipoFactura + "',razonsocial='" + fack.RazonSocial + "',numeroterminal='" + fack.Terminal + "',total=" + fack.Total + ",fecha='" + fack.Fecha + "',idusuario=" + fack.IdUsuario + "',cliente='" + fack.Cliente + "',pagoefectivo=" + fack.PagoEfectivo + ",pagotarjeta=" + fack.PagoTarjeta + " where id=" + fack.Id);
 
             }
             catch (Exception ex)
@@ -94,6 +94,22 @@ namespace Datos
             {
 
                 aux = manager.consultar(" SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY ID) AS RowNum FROM factura) AS tabla WHERE activo=1 and  tabla.RowNum BETWEEN " + pagina * 10 + " AND " + (pagina * 10) + 10);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return aux;
+        }
+
+        public DataTable ultimoID()
+        {
+            DataTable aux = new DataTable();
+            try
+            {
+
+                aux = manager.consultar("select TOP 1 id from factura where activo=1 order by id desc ");
             }
             catch (Exception ex)
             {
