@@ -51,7 +51,7 @@ namespace Fenix1._0
             }
             catch (Exception ex)
             {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             dgvTurnos.Columns.Add("Paciente", "Paciente");
@@ -99,6 +99,7 @@ namespace Fenix1._0
                         {
                             med.Add(me.nombreCompleto());
                         }
+                        
                         cbMedicos.DataSource = med;
                         cbMedicos.Enabled = true;
                         cbMedicos.Focus();
@@ -110,7 +111,7 @@ namespace Fenix1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -137,7 +138,7 @@ namespace Fenix1._0
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -155,7 +156,7 @@ namespace Fenix1._0
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -218,7 +219,7 @@ namespace Fenix1._0
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se ha pruducido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

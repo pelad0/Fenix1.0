@@ -25,7 +25,14 @@ namespace Fenix1._0
         public frmInicio()
         {
             InitializeComponent();
-            usuarios = ru.Todo(0);
+            try
+            {
+                usuarios = ru.Todo(0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
