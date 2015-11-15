@@ -265,10 +265,11 @@ namespace Fenix1._0
 
             if (dgvTurnos.Rows.Count > 0)
             {
-                foreach (DataGridViewRow row in dgvTurnos.Rows)
-                {
-                    dgvTurnos.Rows.Remove(row);
-                }
+                //foreach (DataGridViewRow row in dgvTurnos.Rows)
+                //{
+                //    dgvTurnos.Rows.Remove(row);
+                //}
+                dgvTurnos.Rows.Clear();
             }
             
 
@@ -300,6 +301,7 @@ namespace Fenix1._0
         {
             dgvTurnos.Columns.Add("Fecha", "Fecha");
             dgvTurnos.Columns.Add("Costo", "Costo");
+            dgvTurnos.Columns["Costo"].DefaultCellStyle.Format = "c";
 
             columnasTurno = true;
       
