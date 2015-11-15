@@ -324,8 +324,10 @@ namespace Fenix1._0
 
 
 
-                            reposRecibo.Alta(recibo);
+                            reposRecibo.Alta(recibo);       //Doy de alta el recibo:
+                            reposTurno.ActualizarAsistencia(turnito.Id);        //Paso el estado del turno a true.
 
+                            
 
                         }
 
@@ -364,6 +366,7 @@ namespace Fenix1._0
 
 
                             reposRecibo.Alta(recibo);
+                            reposSobreTurno.ActualizarAsistencia(sobrTurnito.Id);
 
                         }
 

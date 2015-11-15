@@ -68,7 +68,6 @@ namespace Fenix1._0
 
         }
 
-
         public void EstablecerFechas()
         {
             try
@@ -79,8 +78,8 @@ namespace Fenix1._0
                 primerTurno = reposTurno.primerTurno();     //Me retorna el primer turno dado.
                 ultimoTurno = reposTurno.ultimoTurno();     //Me retorna el ultimo turno dado.
 
-                dtpDesde.MinDate = primerTurno.Fecha;
-                dtpHasta.MaxDate = ultimoTurno.Fecha;
+                dtpDesde.MinDate = primerTurno.Fecha.Add(new TimeSpan(-24, 0, 0));
+                dtpHasta.MaxDate = ultimoTurno.Fecha.Add(new TimeSpan(24, 0, 0));
 
                 dtpDesde.Value = primerTurno.Fecha;
                 dtpHasta.Value = ultimoTurno.Fecha;
@@ -143,7 +142,7 @@ namespace Fenix1._0
                             
                             if(pas != null)         //Pregunto por si el paciente fue dado de baja.
                             {
-                                dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
+                                dgvPacientes.Rows.Add(pas.Id,pas.Nombre, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
                                                             
                             }
 
@@ -162,7 +161,7 @@ namespace Fenix1._0
 
                             if(pas != null)
                             {
-                                dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
+                                dgvPacientes.Rows.Add(pas.Id,pas.Nombre, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
                             }
 
                         }
@@ -189,11 +188,11 @@ namespace Fenix1._0
                 {
                     if (turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
                     {
-                        pas = reposPaciente.buscarPorId(turn.Id);
+                        pas = reposPaciente.buscarPorId(turn.Paciente.Id);
 
                         if(pas != null)
                         {                          
-                            dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);                        
+                            dgvPacientes.Rows.Add(pas.Id,pas.Nombre, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);                        
                             
                         }
                         
@@ -205,11 +204,11 @@ namespace Fenix1._0
                 {
                     if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
                     {
-                        pas = reposPaciente.buscarPorId(turn.Id);
+                        pas = reposPaciente.buscarPorId(turn.Paciente.Id);
 
                         if(pas != null)
                         {
-                            dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);                        
+                            dgvPacientes.Rows.Add(pas.Id,pas.Nombre, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);                        
 
                         }
                     }
@@ -225,10 +224,6 @@ namespace Fenix1._0
 
 
         }
-
-
-
-
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
