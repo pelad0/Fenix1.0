@@ -99,7 +99,7 @@ namespace logica
                 clsEspecialidad esp = new clsEspecialidad();
                 esp.Id = Convert.ToInt32(aux["id"].ToString());
                 esp.Descripcion = aux["descripcion"].ToString();
-                esp.Canon = Convert.ToSingle(aux["canon"].ToString());
+                esp.Canon = float.Parse(aux["canon"].ToString());
                 lista.Add(esp);
             }
 

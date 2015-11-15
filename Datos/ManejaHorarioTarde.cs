@@ -79,23 +79,25 @@ namespace Datos
             DataTable aux = new DataTable();
             clsHorario esp = new clsHorario();
             try
-            {
-                aux = manager.consultar("select * from horarioTarde where idmedico=" + id + " and activo=1");
-                esp.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
-                esp.LunesEntrada = Convert.ToDateTime(aux.Rows[0]["lunesentrada"]);
-                esp.LunesSalida = Convert.ToDateTime(aux.Rows[0]["lunessalida"]);
-                esp.MartesEntrada = Convert.ToDateTime(aux.Rows[0]["martesentrada"]);
-                esp.MartesSalida= Convert.ToDateTime(aux.Rows[0]["martessalida"]);
-                esp.MiercolesEntrada = Convert.ToDateTime(aux.Rows[0]["miercolesentrada"]);
-                esp.MiercolesSalida = Convert.ToDateTime(aux.Rows[0]["miercolessalida"]);
-                esp.JuevesEntrada = Convert.ToDateTime(aux.Rows[0]["juevesentrada"]);
-                esp.JuevesSalida = Convert.ToDateTime(aux.Rows[0]["juevessalida"]);
-                esp.ViernesEntrada = Convert.ToDateTime(aux.Rows[0]["viernesentrada"]);
-                esp.ViernesSalida = Convert.ToDateTime(aux.Rows[0]["viernessalida"]);
-                esp.SabadoEntrada = Convert.ToDateTime(aux.Rows[0]["sabadoentrada"]);
-                esp.SabadoSalida = Convert.ToDateTime(aux.Rows[0]["sabadosalida"]);
-                esp.DomingoEntrada = Convert.ToDateTime(aux.Rows[0]["domingoentrada"]);
-                esp.DomingoSalida= Convert.ToDateTime(aux.Rows[0]["domingosalida"]);
+            { 
+                   aux = manager.consultar("select * from horarioTarde where idmedico=" + id + " and activo=1");
+           
+                    esp.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);                
+                    esp.LunesEntrada = Convert.ToDateTime(aux.Rows[0]["lunesentrada"]);
+                    esp.LunesSalida = Convert.ToDateTime(aux.Rows[0]["lunessalida"]);
+                    esp.MartesEntrada = Convert.ToDateTime(aux.Rows[0]["martesentrada"]);
+                    esp.MartesSalida = Convert.ToDateTime(aux.Rows[0]["martessalida"]);
+                    esp.MiercolesEntrada = Convert.ToDateTime(aux.Rows[0]["miercolesentrada"]);
+                    esp.MiercolesSalida = Convert.ToDateTime(aux.Rows[0]["miercolessalida"]);
+                    esp.JuevesEntrada = Convert.ToDateTime(aux.Rows[0]["juevesentrada"]);
+                    esp.JuevesSalida = Convert.ToDateTime(aux.Rows[0]["juevessalida"]);
+                    esp.ViernesEntrada = Convert.ToDateTime(aux.Rows[0]["viernesentrada"]);
+                    esp.ViernesSalida = Convert.ToDateTime(aux.Rows[0]["viernessalida"]);
+                    esp.SabadoEntrada = Convert.ToDateTime(aux.Rows[0]["sabadoentrada"]);
+                    esp.SabadoSalida = Convert.ToDateTime(aux.Rows[0]["sabadosalida"]);
+                    esp.DomingoEntrada = Convert.ToDateTime(aux.Rows[0]["domingoentrada"]);
+                    esp.DomingoSalida = Convert.ToDateTime(aux.Rows[0]["domingosalida"]);
+                               
 
             }
             catch (Exception ex)

@@ -44,6 +44,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAlta = new System.Windows.Forms.TabPage();
+            this.lblPaciente = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.tbBuscar = new controles.TextBoxNumeros();
@@ -82,7 +83,6 @@
             this.tbDniMod = new controles.TextBoxNumeros();
             this.tbApellidoMod = new controles.TextBoxLetras();
             this.tbNombreMod = new controles.TextBoxLetras();
-            this.lblPaciente = new System.Windows.Forms.Label();
             this.tcABM.SuspendLayout();
             this.tpAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlta)).BeginInit();
@@ -135,6 +135,15 @@
             this.tpAlta.TabIndex = 0;
             this.tpAlta.Text = "Alta";
             this.tpAlta.UseVisualStyleBackColor = true;
+            // 
+            // lblPaciente
+            // 
+            this.lblPaciente.AutoSize = true;
+            this.lblPaciente.Location = new System.Drawing.Point(115, 379);
+            this.lblPaciente.Name = "lblPaciente";
+            this.lblPaciente.Size = new System.Drawing.Size(63, 15);
+            this.lblPaciente.TabIndex = 7;
+            this.lblPaciente.Text = "Paciente";
             // 
             // btnBuscar
             // 
@@ -610,15 +619,6 @@
             this.tbNombreMod.Name = "tbNombreMod";
             this.tbNombreMod.Size = new System.Drawing.Size(162, 23);
             this.tbNombreMod.TabIndex = 1;
-            // 
-            // lblPaciente
-            // 
-            this.lblPaciente.AutoSize = true;
-            this.lblPaciente.Location = new System.Drawing.Point(192, 379);
-            this.lblPaciente.Name = "lblPaciente";
-            this.lblPaciente.Size = new System.Drawing.Size(63, 15);
-            this.lblPaciente.TabIndex = 7;
-            this.lblPaciente.Text = "Paciente";
             // 
             // frmABMPaciente
             // 
