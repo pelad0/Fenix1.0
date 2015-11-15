@@ -107,6 +107,7 @@ namespace logica
                     turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
+                    turno.Costo = Convert.ToDouble(aux["costo"]);
 
                     lista.Add(turno);
                 }
@@ -144,7 +145,7 @@ namespace logica
                     turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-
+                    turno.Costo = Convert.ToDouble(aux["costo"]);
                     lista.Add(turno);
 
 
@@ -366,17 +367,72 @@ namespace logica
             return lista;
         }
 
-        public clsSobreTurnoVista primerTurno() //completar
+        public clsSobreturno primerTurno() 
         {
 
-            clsSobreTurnoVista turno = new clsSobreTurnoVista(); ;
+
+            DataTable tabla;
+
+            clsSobreturno turno = new clsSobreturno();
+
+            try
+            {
+                tabla = manejaTurno.PrimerTurno();
+                foreach (DataRow aux in tabla.Rows)
+                {
+
+                    turno.Id = Convert.ToInt32(aux["id"]);
+                    turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
+                    turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
+                    turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                    turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                    turno.Estado = Convert.ToBoolean(aux["estado"]);
+                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             return turno;
         }
 
-        public clsSobreTurnoVista ultimoTurno() //completar
+        public clsSobreturno ultimoTurno() 
         {
 
-            clsSobreTurnoVista turno = new clsSobreTurnoVista();
+            DataTable tabla;
+
+            clsSobreturno turno = new clsSobreturno();
+
+            try
+            {
+                tabla = manejaTurno.UltimoTurno();
+                foreach (DataRow aux in tabla.Rows)
+                {
+
+                    turno.Id = Convert.ToInt32(aux["id"]);
+                    turno.IdMedico = Convert.ToInt32(aux["idMedico"]);
+                    turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
+                    turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
+                    turno.Fecha = Convert.ToDateTime(aux["fecha"]);
+                    turno.Estado = Convert.ToBoolean(aux["estado"]);
+                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             return turno;
         }
 
@@ -415,7 +471,7 @@ namespace logica
                     turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-
+                    turno.Costo = Convert.ToDouble(aux["costo"]);
                     lista.Add(turno);
 
 
