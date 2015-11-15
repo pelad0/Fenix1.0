@@ -119,11 +119,11 @@ namespace Fenix1._0
             switch (dia)
             {
                 case "Monday":
-                    if (hm.LunesEntrada.Value.Year == 1900)
+                    if (hm.LunesEntrada == null)
                     {
                         horariosMañana(false);
                     }
-                    if (ht.LunesSalida.Value.Year == 1900)
+                    if (ht.LunesSalida == null)
                     {
                         horariosTarde(false);
                     }
@@ -160,11 +160,11 @@ namespace Fenix1._0
                     }
                     break;
                 case "Tuesday":
-                    if (hm.MartesEntrada.Value.Year == 1900)
+                    if (hm.MartesEntrada == null)
                     {
                         horariosMañana(false);
                     }
-                    if (ht.MartesSalida.Value.Year == 1900)
+                    if (ht.MartesSalida == null)
                     {
                         horariosTarde(false);
                     }
@@ -201,11 +201,11 @@ namespace Fenix1._0
                     }
                     break;
                 case "Wednesday":
-                    if (hm.MiercolesEntrada.Value.Year == 1900)
+                    if (hm.MiercolesEntrada == null)
                     {
                         horariosMañana(false);
                     }
-                    if (ht.MiercolesSalida.Value.Year == 1900)
+                    if (ht.MiercolesSalida == null)
                     {
                         horariosTarde(false);
                     }
@@ -242,11 +242,11 @@ namespace Fenix1._0
                     }
                     break;
                 case "Thursday":
-                    if (hm.JuevesEntrada.Value.Year == 1900)
+                    if (hm.JuevesEntrada == null)
                     {
                         horariosMañana(false);
                     }
-                    if (ht.JuevesSalida.Value.Year == 1900)
+                    if (ht.JuevesSalida == null)
                     {
                         horariosTarde(false);
                     }
@@ -283,11 +283,11 @@ namespace Fenix1._0
                     }
                     break;
                 case "Friday":
-                    if (hm.ViernesEntrada.Value.Year == 1900)
+                    if (hm.ViernesEntrada == null)
                     {
                         horariosMañana(false);
                     }
-                    if (ht.ViernesSalida.Value.Year == 1900)
+                    if (ht.ViernesSalida == null)
                     {
                         horariosTarde(false);
                     }
@@ -324,11 +324,11 @@ namespace Fenix1._0
                     }
                     break;
                 case "Saturday":
-                    if (hm.SabadoEntrada.Value.Year == 1900)
+                    if (hm.SabadoEntrada == null)
                     {
                         horariosMañana(false);
                     }
-                    if (ht.SabadoSalida.Value.Year == 1900)
+                    if (ht.SabadoSalida == null)
                     {
                         horariosTarde(false);
                     }
@@ -365,11 +365,11 @@ namespace Fenix1._0
                     }
                     break;
                 case "Sunday":
-                    if (hm.DomingoEntrada.Value.Year == 1900)
+                    if (hm.DomingoEntrada == null)
                     {
                         horariosMañana(false);
                     }
-                    if (ht.DomingoSalida.Value.Year == 1900)
+                    if (ht.DomingoSalida == null)
                     {
                         horariosTarde(false);
                     }
