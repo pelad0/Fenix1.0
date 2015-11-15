@@ -110,7 +110,7 @@ namespace Fenix1._0
                 BorrarColumnasPacientes();
 
                 pagina--;
-                lblNumeroPagina.Text = pagina.ToString();
+                lblNumeroPagina.Text = (pagina +1 ).ToString();
 
                 List<clsPaciente> listPas = new List<clsPaciente>();
 
@@ -134,6 +134,18 @@ namespace Fenix1._0
         {
             ArmarColumnas();
             pnlTurno.Enabled = false;
+            List<clsPaciente> listPas = new List<clsPaciente>();
+
+            listPas = reposPaciente.Todo(pagina);
+
+            foreach (clsPaciente pas in listPas)
+            {
+                dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
+            }
+
+            lblNumeroPagina.Text = (pagina + 1).ToString();
+
+            
         }
 
 
@@ -154,7 +166,7 @@ namespace Fenix1._0
             BorrarColumnasPacientes();
 
             pagina++;
-            lblNumeroPagina.Text = pagina.ToString();
+            lblNumeroPagina.Text = (pagina + 1).ToString();
 
             List<clsPaciente> listPas = new List<clsPaciente>();
 
@@ -163,9 +175,8 @@ namespace Fenix1._0
             foreach (clsPaciente pas in listPas)
             {
                 dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
-
-
             }
+
         }
         
 
@@ -599,6 +610,7 @@ namespace Fenix1._0
             tbCantidadTarjeta.Text = (valorT - valorE).ToString();
         }
 
+       
         
 
         

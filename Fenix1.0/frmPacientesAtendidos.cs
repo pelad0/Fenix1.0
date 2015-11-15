@@ -11,7 +11,7 @@ using logica;
 using entidades;
 
 
-namespace frmABMME
+namespace Fenix1._0
 {
     public partial class frmPacientesAtendidos : Form
     {
@@ -24,8 +24,8 @@ namespace frmABMME
 
         bool columnas = false;
         bool columnasTurno = false;
-        List<clsTurno> listaTurnos = new List<clsTurno>();
-        List<clsSobreturno> listaSobreTurnos = new List<clsSobreturno>();
+        List<clsTurnoVista> listaTurnos = new List<clsTurnoVista>();
+        List<clsSobreTurnoVista> listaSobreTurnos = new List<clsSobreTurnoVista>();
 
         public frmPacientesAtendidos()
         {
@@ -34,7 +34,7 @@ namespace frmABMME
 
         private void frmPacientesAtendidos_Load(object sender, EventArgs e)
         {
-            /*
+            
             checkBoxMedico.Checked = false;
 
             if (!columnas)   //Para que se creeen una sola vez y no tener que borrarlas
@@ -46,7 +46,7 @@ namespace frmABMME
 
             CargarMedicos();        //Carga todos los medicos al combo box;
             EstablecerFechas();     //Establece las fechas en los dateTimepicker, la menor es la del primer turno, la mayor del ultimo.
-            */
+            
         }
 
 
@@ -54,16 +54,16 @@ namespace frmABMME
 
         public void CargarMedicos()         //CARGA TODOS LOS MEDICOS EN EL COMBO BOX.
         {
-            /*
+            
             List<clsMedico> listaMedicos = new List<clsMedico>();
 
-            listaMedicos = reposMedico.ObtenerMedicos();        //Metodo que me trae todos los medicos
+            listaMedicos = reposMedico.obtenerMedicos();        //Metodo que me trae todos los medicos
 
             foreach(clsMedico med in listaMedicos)
             {
                 cbMedico.Items.Add(med.Apellido);
             }
-            */
+            
 
 
         }
@@ -71,24 +71,31 @@ namespace frmABMME
 
         public void EstablecerFechas()
         {
-            /*
-            clsTurno primerTurno = new clsTurno();
-            clsTurno ultimoTurno = new clsTurno();
+            try
+            {
+                clsTurno primerTurno = new clsTurno();
+                clsTurno ultimoTurno = new clsTurno();
 
-            primerTurno = reposTurno.Primero();     //Me retorna el primer turno dado.
-            ultimoTurno =  reposTurno.Ultimo();     //Me retorna el ultimo turno dado.
+                primerTurno = reposTurno.primerTurno();     //Me retorna el primer turno dado.
+                ultimoTurno = reposTurno.ultimoTurno();     //Me retorna el ultimo turno dado.
 
-            dtpDesde.MinDate = primerTurno.Fecha;
-            dtpHasta.MaxDate = ultimoTurno.Fecha;
+                dtpDesde.MinDate = primerTurno.Fecha;
+                dtpHasta.MaxDate = ultimoTurno.Fecha;
 
-            dtpDesde.Value = primerTurno.Fecha;
-            dtpHasta.Value = ultimoTurno.Fecha;
-            */
+                dtpDesde.Value = primerTurno.Fecha;
+                dtpHasta.Value = ultimoTurno.Fecha;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Actualmente no hay turnos en el sistema.");
+            }
+            
+            
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            /*
+            
             if(checkBoxMedico.Checked)
             {
                 if(string.IsNullOrWhiteSpace(cbMedico.Text))
@@ -113,7 +120,7 @@ namespace frmABMME
 
                     List<clsMedico> listaMedicos = new List<clsMedico>();
 
-                    listaMedicos = reposMedico.ObtenerMedicos();            //Traigo todos los medicos
+                    listaMedicos = reposMedico.obtenerMedicos();            //Traigo todos los medicos
 
                     foreach(clsMedico med in listaMedicos)
                     {
@@ -122,17 +129,17 @@ namespace frmABMME
                     }                                                       //Encuentro el medico seleccionado y traigo todos sus turnos
 
                     listaTurnos = reposTurno.obtenerTurnoMedico(medicoSeleccionado.Id);         //Traigo todos los turnos dados por ese medico
-                    listaSobreTurnos = reposSobreTurno.obtenerTurnoMedico(medicoSeleccionado.Id);        //Traigo todos los sobre turnos dados por ese medico
+                    listaSobreTurnos = reposSobreTurno.obtenerSobreTurnoMedico(medicoSeleccionado.Id);        //Traigo todos los sobre turnos dados por ese medico
 
 
                     clsPaciente pas = new clsPaciente();        //Variable a la que se le asigna el paciente de cada turno.
 
 
-                    foreach(clsTurno turn in listaTurnos)   //Recorro todos los turnos obteniendo el paciente de cada uno.
+                    foreach(clsTurnoVista turn in listaTurnos)   //Recorro todos los turnos obteniendo el paciente de cada uno.
                     {
                         if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
                         {                            
-                            pas = reposPaciente.buscarPorId(turn.IdPaciente);
+                            pas = reposPaciente.buscarPorId(turn.Paciente.Id);
                             
                             if(pas != null)         //Pregunto por si el paciente fue dado de baja.
                             {
@@ -146,12 +153,12 @@ namespace frmABMME
 
                     }
 
-                    foreach(clsSobreturno turn in listaSobreTurnos)
+                    foreach(clsSobreTurnoVista turn in listaSobreTurnos)
                     {
                         if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
                         {
                             
-                            pas = reposPaciente.buscarPorId(turn.IdPaciente);
+                            pas = reposPaciente.buscarPorId(turn.Paciente.Id);
 
                             if(pas != null)
                             {
@@ -169,16 +176,16 @@ namespace frmABMME
             }
             else                //QUE EL CHECK BOX DE MEDICO NO FUE SELECCIONADO
             {
-                List<clsTurno> listaTurnos = new List<clsTurno>();
-                listaTurnos = reposTurno.TurnosEntreFechas(dtpDesde.Value, dtpHasta.Value);    //Guardo todos los turnos existentes entre las fechas seleccionadas.
+                List<clsTurnoVista> listaTurnos = new List<clsTurnoVista>();
+                listaTurnos = reposTurno.TurnoEntreFechas(dtpDesde.Value, dtpHasta.Value);    //Guardo todos los turnos existentes entre las fechas seleccionadas.
 
-                List<clsSobreturno> listaSobreTurnos = new List<clsSobreturno>();
-                listaSobreTurnos = reposSobreTurno.SobreTurnosEntreFechas(dtpDesde.Value, dtpHasta.Value);
+                List<clsSobreTurnoVista> listaSobreTurnos = new List<clsSobreTurnoVista>();
+                listaSobreTurnos = reposSobreTurno.TurnoEntreFechas(dtpDesde.Value, dtpHasta.Value);
 
 
                 clsPaciente pas = new clsPaciente(); //Variable para ir asignando pacientes y mostrarlos
 
-                foreach(clsTurno turn in listaTurnos)
+                foreach(clsTurnoVista turn in listaTurnos)
                 {
                     if (turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
                     {
@@ -194,7 +201,7 @@ namespace frmABMME
                 }
 
 
-                foreach(clsSobreturno turn in listaSobreTurnos)
+                foreach(clsSobreTurnoVista turn in listaSobreTurnos)
                 {
                     if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
                     {
@@ -214,7 +221,7 @@ namespace frmABMME
             }
 
 
-            */
+            
 
 
         }
@@ -225,7 +232,7 @@ namespace frmABMME
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            /*
+            
             if (!checkBoxMedico.Checked)
             {
                 cbMedico.Enabled = false;
@@ -234,11 +241,11 @@ namespace frmABMME
             {
                 cbMedico.Enabled = true;
             }
-            */
+            
         }
 
         public void CrearColumnas()
-        {/*
+        {
 
             dgvPacientes.Columns.Add("id", "id");
             dgvPacientes.Columns["id"].Visible = false;
@@ -250,12 +257,12 @@ namespace frmABMME
             
 
             columnas = true;
-            */
+            
         }
 
         private void dgvPacientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*
+            
             if(!columnasTurno)
             {
                 CrearColumnasTurno();
@@ -275,32 +282,32 @@ namespace frmABMME
             int idPas = int.Parse(dgvPacientes.Rows[dgvPacientes.CurrentRow.Index].Cells[0].Value.ToString());
 
 
-            List<clsTurno> ListaTur = reposTurno.obtenerTurnoPaciente(idPas);
-            List<clsSobreturno> ListaSobreTur = reposSobreTurno.obtenerSobreturnoPaciente(idPas);
+            List<clsTurnoVista> ListaTur = reposTurno.obtenerTurnoPaciente(idPas);
+            List<clsSobreTurnoVista> ListaSobreTur = reposSobreTurno.obtenerSobreturnoPaciente(idPas);
 
 
-            foreach(clsTurno turn in ListaTur)
+            foreach(clsTurnoVista turn in ListaTur)
             {
                 dgvTurnos.Rows.Add(turn.Fecha, turn.Costo);
             }
 
-            foreach(clsSobreturno sobr in listaSobreTurnos)
+            foreach (clsSobreTurnoVista sobr in listaSobreTurnos)
             {
                 dgvTurnos.Rows.Add(sobr.Fecha, sobr.Costo);
             }
 
-            */
+            
 
         }
 
 
         public void CrearColumnasTurno()
-        {/*
+        {
             dgvTurnos.Columns.Add("Fecha", "Fecha");
             dgvTurnos.Columns.Add("Costo", "Costo");
 
             columnasTurno = true;
-      */
+      
         }
 
 

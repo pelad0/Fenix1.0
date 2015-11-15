@@ -1,4 +1,4 @@
-﻿namespace frmABMME
+﻿namespace Fenix1._0
 {
     partial class frmPacientesAtendidos
     {

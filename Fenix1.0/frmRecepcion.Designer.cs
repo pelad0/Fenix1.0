@@ -34,6 +34,7 @@
             this.btnPacientes = new System.Windows.Forms.Button();
             this.btnTurnos = new System.Windows.Forms.Button();
             this.btnRegistroPago = new System.Windows.Forms.Button();
+            this.btnPacientesAtendidos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMedicos
@@ -86,11 +87,22 @@
             this.btnRegistroPago.UseVisualStyleBackColor = true;
             this.btnRegistroPago.Click += new System.EventHandler(this.btnRegistroPago_Click);
             // 
+            // btnPacientesAtendidos
+            // 
+            this.btnPacientesAtendidos.Location = new System.Drawing.Point(33, 55);
+            this.btnPacientesAtendidos.Name = "btnPacientesAtendidos";
+            this.btnPacientesAtendidos.Size = new System.Drawing.Size(175, 23);
+            this.btnPacientesAtendidos.TabIndex = 7;
+            this.btnPacientesAtendidos.Text = "Pacientes atendidos";
+            this.btnPacientesAtendidos.UseVisualStyleBackColor = true;
+            this.btnPacientesAtendidos.Click += new System.EventHandler(this.btnPacientesAtendidos_Click);
+            // 
             // frmRecepcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 70);
+            this.ClientSize = new System.Drawing.Size(958, 90);
+            this.Controls.Add(this.btnPacientesAtendidos);
             this.Controls.Add(this.btnRegistroPago);
             this.Controls.Add(this.btnTurnos);
             this.Controls.Add(this.btnMedicos);
@@ -114,5 +126,6 @@
         private System.Windows.Forms.Button btnPacientes;
         private System.Windows.Forms.Button btnTurnos;
         private System.Windows.Forms.Button btnRegistroPago;
+        private System.Windows.Forms.Button btnPacientesAtendidos;
     }
 }
