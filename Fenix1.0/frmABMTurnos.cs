@@ -110,8 +110,7 @@ namespace Fenix1._0
             }
             catch(Exception ex)
             { 
-
-}
+            }
             
             string dia = dtpFecha.Value.DayOfWeek.ToString();
             horariosMañana(true);
