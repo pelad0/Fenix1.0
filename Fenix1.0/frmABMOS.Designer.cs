@@ -114,7 +114,7 @@
             this.pnlMonto.Location = new System.Drawing.Point(479, 41);
             this.pnlMonto.Name = "pnlMonto";
             this.pnlMonto.Size = new System.Drawing.Size(134, 33);
-            this.pnlMonto.TabIndex = 13;
+            this.pnlMonto.TabIndex = 2;
             // 
             // tbCentAlta
             // 
@@ -123,7 +123,7 @@
             this.tbCentAlta.MaxLength = 2;
             this.tbCentAlta.Name = "tbCentAlta";
             this.tbCentAlta.Size = new System.Drawing.Size(25, 25);
-            this.tbCentAlta.TabIndex = 3;
+            this.tbCentAlta.TabIndex = 2;
             this.tbCentAlta.Text = "00";
             // 
             // label3
@@ -141,7 +141,7 @@
             this.tbPesosAlta.Location = new System.Drawing.Point(24, 4);
             this.tbPesosAlta.Name = "tbPesosAlta";
             this.tbPesosAlta.Size = new System.Drawing.Size(59, 25);
-            this.tbPesosAlta.TabIndex = 2;
+            this.tbPesosAlta.TabIndex = 1;
             this.tbPesosAlta.Text = "00";
             this.tbPesosAlta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -214,7 +214,7 @@
             this.btnAlta.Location = new System.Drawing.Point(281, 400);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 23);
-            this.btnAlta.TabIndex = 4;
+            this.btnAlta.TabIndex = 3;
             this.btnAlta.Text = "Cargar";
             this.btnAlta.UseVisualStyleBackColor = true;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);

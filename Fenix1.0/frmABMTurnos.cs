@@ -440,7 +440,8 @@ namespace Fenix1._0
                 {
                     especialidades.Add(esp.Descripcion);
                     espec.Add(esp);
-                    inicio = true;
+                    if(!inicio)
+                        inicio = true;
                 }
                 if (inicio)
                 {
@@ -597,13 +598,20 @@ namespace Fenix1._0
             DialogResult res = MessageBox.Show("Confirme turno: Medico " + med.Apellido + " paciente, " + pac.nomCompleto() + " " + fecha.ToLongDateString() + " " + btn.Text, "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (res == DialogResult.OK)
             {
-                DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0, 2)), Convert.ToInt32(btn.Text.Substring(3, 2)), 0);
+                DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0, 2)), Convert.ToInt32(btn.Text.Substring(3, 2)),0 );
                 clsTurno t = new clsTurno(med.Id, pac.Id, d, u.Id);
-                List<clsTurno> lt = rt.obtenerTurno(med.Id, t.Fecha);
-
+                foreach (clsEspecialidad e in espec)
+                {
+                    if (e.Descripcion == med.Especialidad)
+                    {
+                        t.Costo = e.Canon;
+                    }
+                }
+                //List<clsTurno> lt = rt.obtenerTurno(med.Id, t.Fecha);
                 try
                 {
                     rt.Alta(t);
+                    cargarGrillas();
                 }
                 catch (Exception ex)
                 {
@@ -619,11 +627,19 @@ namespace Fenix1._0
             {
                 DateTime d = new DateTime(fecha.Year, fecha.Month, fecha.Day, Convert.ToInt32(btn.Text.Substring(0, 2)), Convert.ToInt32(btn.Text.Substring(3, 2)), 0);
                 clsSobreturno t = new clsSobreturno(med.Id, pac.Id, d, espec[cbEspecialidades.SelectedIndex].Canon, u.Id, false);
-                List<clsTurno> lt = rt.obtenerTurno(med.Id, t.Fecha);
+                foreach (clsEspecialidad e in espec)
+                {
+                    if (e.Descripcion == med.Especialidad)
+                    {
+                        t.Costo = e.Canon;
+                    }
+                }
+                //List<clsTurno> lt = rt.obtenerTurno(med.Id, t.Fecha);
 
                 try
                 {
                     rst.Alta(t);
+                    cargarGrillas();
                 }
                 catch (Exception ex)
                 {
