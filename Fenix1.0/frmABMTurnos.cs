@@ -51,7 +51,6 @@ namespace Fenix1._0
 
         private void frmABM_Load(object sender, EventArgs e)
         {
-            iniciar();
             dgvEliminarTurnos.Columns.Add("Fecha", "Fecha");
             dgvEliminarTurnos.Columns.Add("Medico", "Medico");
             dgvEliminarTurnos.Columns.Add("Paciente", "Paciente");
@@ -61,6 +60,8 @@ namespace Fenix1._0
             dgvEliminarSobreTurnos.Columns.Add("Medico", "Medico");
             dgvEliminarSobreTurnos.Columns.Add("Paciente", "Paciente");
             dgvEliminarSobreTurnos.Columns.Add("Costo", "Costo");
+
+            iniciar();
         }
 
         private void cbEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
