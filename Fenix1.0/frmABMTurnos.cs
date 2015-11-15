@@ -106,12 +106,22 @@ namespace Fenix1._0
             try
             {
                 hm = rh.buscarPorId(med.Id, 1);//var 1 es mañana y var=2 es tarde
-                ht = rh.buscarPorId(med.Id, 2);
+               
             }
             catch(Exception ex)
             { 
 
-}
+            }
+
+            try
+            {
+                ht = rh.buscarPorId(med.Id, 2);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
             
             string dia = dtpFecha.Value.DayOfWeek.ToString();
             horariosMañana(true);
@@ -131,30 +141,39 @@ namespace Fenix1._0
                     {
                         foreach (Button b in pnlBotones.Controls)
                         {
-                            if (hm.LunesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            if (hm.LunesEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (hm.LunesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (hm.LunesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
                             }
-                            else if (hm.LunesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            else if(ht.LunesEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.LunesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.LunesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (ht.LunesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (ht.LunesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+
                             }
                             else
                             {
                                 b.Enabled = true;
                             }
+                            
+                            
 
                         }
                     }
@@ -172,26 +191,33 @@ namespace Fenix1._0
                     {
                         foreach (Button b in pnlBotones.Controls)
                         {
-                            if (hm.MartesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+
+                            if(hm.MartesEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (hm.MartesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (hm.MartesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
                             }
-                            else if (hm.MartesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            else if(ht.MartesEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.MartesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.MartesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
+                                if (ht.MartesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (ht.MartesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                            }                     
                             else
                             {
                                 b.Enabled = true;
@@ -213,25 +239,31 @@ namespace Fenix1._0
                     {
                         foreach (Button b in pnlBotones.Controls)
                         {
-                            if (hm.MiercolesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            if(hm.MiercolesEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (hm.MiercolesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (hm.MiercolesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
                             }
-                            else if (hm.MiercolesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            else if(ht.MiercolesEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.MiercolesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.MiercolesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (ht.MiercolesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (ht.MiercolesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
                             }
                             else
                             {
@@ -254,25 +286,32 @@ namespace Fenix1._0
                     {
                         foreach (Button b in pnlBotones.Controls)
                         {
-                            if (hm.JuevesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            if(hm.JuevesEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (hm.JuevesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (hm.JuevesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                            
                             }
-                            else if (hm.JuevesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            else if(ht.JuevesEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.JuevesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.JuevesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (ht.JuevesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (ht.JuevesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
                             }
                             else
                             {
@@ -295,26 +334,32 @@ namespace Fenix1._0
                     {
                         foreach (Button b in pnlBotones.Controls)
                         {
-                            if (hm.ViernesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            if(hm.ViernesEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (hm.ViernesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (hm.ViernesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
                             }
-                            else if (hm.ViernesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            else if(ht.ViernesEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.ViernesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.ViernesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
+                                if (ht.ViernesEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (ht.ViernesSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                            }                         
                             else
                             {
                                 b.Enabled = true;
@@ -336,26 +381,34 @@ namespace Fenix1._0
                     {
                         foreach (Button b in pnlBotones.Controls)
                         {
-                            if (hm.SabadoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            if(hm.SabadoEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (hm.SabadoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (hm.SabadoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                            
                             }
-                            else if (hm.SabadoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            else if(ht.SabadoEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (ht.SabadoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (ht.SabadoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
                             }
-                            else if (ht.SabadoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.SabadoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
+                            
                             else
                             {
                                 b.Enabled = true;
@@ -377,26 +430,34 @@ namespace Fenix1._0
                     {
                         foreach (Button b in pnlBotones.Controls)
                         {
-                            if (hm.DomingoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                            if(hm.DomingoEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (hm.DomingoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (hm.DomingoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                            
                             }
-                            else if (hm.DomingoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) < 14)
+                            else if(ht.DomingoEntrada != null)
                             {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
+                                if (ht.DomingoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
+                                else if (ht.DomingoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
+                                {
+                                    b.Enabled = false;
+                                    b.BackColor = Color.Gray;
+                                }
                             }
-                            else if (ht.DomingoEntrada.Value.Hour > Convert.ToInt32(b.Text.Substring(0, 2)) && Convert.ToInt32(b.Text.Substring(0, 2)) >= 14)
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
-                            else if (ht.DomingoSalida.Value.Hour <= Convert.ToInt32(b.Text.Substring(0, 2)))
-                            {
-                                b.Enabled = false;
-                                b.BackColor = Color.Gray;
-                            }
+                            
                             else
                             {
                                 b.Enabled = true;
