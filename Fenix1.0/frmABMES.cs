@@ -43,8 +43,11 @@ namespace Fenix1._0
                     clsEspecialidad es = new clsEspecialidad(tbEspecialidadAlta.Text, float.Parse(tbCostoAlta.Text));
                     reposEspe.Alta(es);
                     Actualizar();
+                    tbCostoAlta.Clear();
                     tbEspecialidadAlta.Clear();
                     tbEspecialidadAlta.Focus();
+
+
                 }
                 catch(Exception ex)
                 {
@@ -147,8 +150,7 @@ namespace Fenix1._0
             dgvEspecialidadesAlta.Columns["idEspecialidad"].Visible = false;
             dgvEspecialidadesAlta.Columns.Add("Descripcion", "Descripcion");
             dgvEspecialidadesAlta.Columns.Add("Costo", "Costo");
-            dgvEspecialidadesAlta.Columns["Costo"].DefaultCellStyle.Format = "c";
-           
+            dgvEspecialidadesAlta.Columns["Costo"].DefaultCellStyle.Format = "c";           
 
             
             dgvEspecialidadesBaja.Columns.Add("idEspecialidad", "idEspecialidad");
@@ -230,9 +232,7 @@ namespace Fenix1._0
 
         private void tcABM_Click(object sender, EventArgs e)
         {
-            dgvEspecialidadesAlta.Rows[0].Selected = false;
-            dgvEspecialidadesBaja.Rows[0].Selected = false;
-            dgvEspecialidadesModificar.Rows[0].Selected = false;
+            
         }
 
    

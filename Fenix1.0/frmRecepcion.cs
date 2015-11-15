@@ -58,5 +58,13 @@ namespace Fenix1._0
             frmRegistroDePago frmRe = new frmRegistroDePago(u);
             frmRe.ShowDialog();
         }
+
+        private void btnPacientesAtendidos_Click(object sender, EventArgs e)
+        {
+            frmPacientesAtendidos frmP = new frmPacientesAtendidos();
+            frmP.ShowDialog();
+        }
+
+        
     }
 }
