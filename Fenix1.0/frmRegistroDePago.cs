@@ -25,6 +25,8 @@ namespace Fenix1._0
         
         DataSet1 ds1 = new DataSet1();
       
+        
+
         RepositorioRecibo reposRecibo = new RepositorioRecibo(); 
         RepositorioMedico reposMedico = new RepositorioMedico();
         RepositorioTurno reposTurno = new RepositorioTurno();
