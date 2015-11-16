@@ -20,6 +20,7 @@ namespace Fenix1._0
             InitializeComponent();
             usuario = u;
         }
+        DataSet1 ds1 = new DataSet1();
 
         RepositorioRecibo reposRecibo = new RepositorioRecibo(); 
         RepositorioMedico reposMedico = new RepositorioMedico();
@@ -40,7 +41,12 @@ namespace Fenix1._0
 
         float total = 0;
         float totalDescuento = 0;
+        
+        
+        
+        
 
+        
         private void dgvPacientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (!columnasTurno)     //Si todavia no tengo columnas en losturnos sin pagar las creo.
@@ -391,6 +397,12 @@ namespace Fenix1._0
                             Factura.IdUsuario = usuario.Id;
                             Factura.Cliente = tbCliente.Text;
                             Factura.PagoEfectivo = float.Parse(tbCantidadEfectivo.Text);
+                        
+
+                            
+                            
+
+                            
                         }
                         else
                         {
@@ -457,6 +469,7 @@ namespace Fenix1._0
                     dgvTurnos.Rows.Add(Sobrturn.Id, Sobrturn.Fecha, Sobrturn.Costo, "SobreTurno");
 
                     ActualizarPrecio();
+                   
                 }
                 
             }

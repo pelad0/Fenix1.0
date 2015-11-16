@@ -1,10 +1,4 @@
-﻿namespace frmABMME {
-    
-    
-    public partial class DataSet1 {
-    }
-}
-namespace frmABMME {
+﻿namespace Fenix1._0 {
     
     
     public partial class DataSet1 {
