@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistroDePago));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,10 +54,14 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnPagar = new System.Windows.Forms.Button();
+            this.tbCantidadTarjeta = new controles.TextBoxNumeros();
             this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.tbCuit = new controles.TextBoxNumeros();
+            this.tbCantidadEfectivo = new controles.TextBoxNumeros();
             this.label9 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.tbCliente = new controles.TextBoxLetras();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -67,10 +71,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnPasar = new System.Windows.Forms.Button();
             this.dgvTurnosAPagar = new System.Windows.Forms.DataGridView();
-            this.tbCantidadTarjeta = new controles.TextBoxNumeros();
-            this.tbCuit = new controles.TextBoxNumeros();
-            this.tbCantidadEfectivo = new controles.TextBoxNumeros();
-            this.tbCliente = new controles.TextBoxLetras();
+            this.tbDireccion = new controles.TextBoxLetras();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
@@ -168,24 +170,24 @@
             this.dgvPacientes.AllowUserToDeleteRows = false;
             this.dgvPacientes.AllowUserToResizeRows = false;
             this.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPacientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPacientes.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPacientes.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvPacientes.Location = new System.Drawing.Point(46, 35);
             this.dgvPacientes.MultiSelect = false;
             this.dgvPacientes.Name = "dgvPacientes";
@@ -202,24 +204,24 @@
             this.dgvTurnos.AllowUserToDeleteRows = false;
             this.dgvTurnos.AllowUserToResizeRows = false;
             this.dgvTurnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnos.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTurnos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTurnos.DefaultCellStyle = dataGridViewCellStyle22;
             this.dgvTurnos.Location = new System.Drawing.Point(46, 47);
             this.dgvTurnos.MultiSelect = false;
             this.dgvTurnos.Name = "dgvTurnos";
@@ -253,11 +255,13 @@
             this.pnlTurno.Controls.Add(this.label4);
             this.pnlTurno.Location = new System.Drawing.Point(-2, 310);
             this.pnlTurno.Name = "pnlTurno";
-            this.pnlTurno.Size = new System.Drawing.Size(832, 419);
+            this.pnlTurno.Size = new System.Drawing.Size(832, 447);
             this.pnlTurno.TabIndex = 27;
             // 
             // pnlPago
             // 
+            this.pnlPago.Controls.Add(this.tbDireccion);
+            this.pnlPago.Controls.Add(this.label19);
             this.pnlPago.Controls.Add(this.label17);
             this.pnlPago.Controls.Add(this.label18);
             this.pnlPago.Controls.Add(this.label16);
@@ -278,7 +282,7 @@
             this.pnlPago.Enabled = false;
             this.pnlPago.Location = new System.Drawing.Point(-1, 275);
             this.pnlPago.Name = "pnlPago";
-            this.pnlPago.Size = new System.Drawing.Size(815, 131);
+            this.pnlPago.Size = new System.Drawing.Size(815, 171);
             this.pnlPago.TabIndex = 44;
             // 
             // label17
@@ -316,7 +320,7 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label15.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(43, 97);
+            this.label15.Location = new System.Drawing.Point(291, 111);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(18, 19);
             this.label15.TabIndex = 45;
@@ -327,7 +331,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label14.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(267, 97);
+            this.label14.Location = new System.Drawing.Point(290, 49);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(18, 19);
             this.label14.TabIndex = 44;
@@ -347,11 +351,22 @@
             this.btnPagar.UseVisualStyleBackColor = true;
             this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
+            // tbCantidadTarjeta
+            // 
+            this.tbCantidadTarjeta.Enabled = false;
+            this.tbCantidadTarjeta.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCantidadTarjeta.Location = new System.Drawing.Point(284, 46);
+            this.tbCantidadTarjeta.Name = "tbCantidadTarjeta";
+            this.tbCantidadTarjeta.Size = new System.Drawing.Size(123, 26);
+            this.tbCantidadTarjeta.TabIndex = 43;
+            this.tbCantidadTarjeta.Text = "0";
+            this.tbCantidadTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(83, 73);
+            this.label7.Location = new System.Drawing.Point(308, 87);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 19);
             this.label7.TabIndex = 26;
@@ -361,17 +376,37 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(312, 73);
+            this.label13.Location = new System.Drawing.Point(312, 24);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(72, 19);
             this.label13.TabIndex = 42;
             this.label13.Text = "Tarjeta";
             // 
+            // tbCuit
+            // 
+            this.tbCuit.Location = new System.Drawing.Point(36, 83);
+            this.tbCuit.MaxLength = 11;
+            this.tbCuit.Name = "tbCuit";
+            this.tbCuit.Size = new System.Drawing.Size(175, 23);
+            this.tbCuit.TabIndex = 34;
+            // 
+            // tbCantidadEfectivo
+            // 
+            this.tbCantidadEfectivo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCantidadEfectivo.Location = new System.Drawing.Point(284, 109);
+            this.tbCantidadEfectivo.Name = "tbCantidadEfectivo";
+            this.tbCantidadEfectivo.Size = new System.Drawing.Size(123, 26);
+            this.tbCantidadEfectivo.TabIndex = 41;
+            this.tbCantidadEfectivo.Text = "0";
+            this.tbCantidadEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbCantidadEfectivo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbCantidadEfectivo_MouseClick);
+            this.tbCantidadEfectivo.TextChanged += new System.EventHandler(this.tbCantidadEfectivo_TextChanged);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(326, 10);
+            this.label9.Location = new System.Drawing.Point(101, 61);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 19);
             this.label9.TabIndex = 35;
@@ -386,6 +421,13 @@
             this.lblTotal.Size = new System.Drawing.Size(18, 19);
             this.lblTotal.TabIndex = 40;
             this.lblTotal.Text = "0";
+            // 
+            // tbCliente
+            // 
+            this.tbCliente.Location = new System.Drawing.Point(36, 32);
+            this.tbCliente.Name = "tbCliente";
+            this.tbCliente.Size = new System.Drawing.Size(175, 23);
+            this.tbCliente.TabIndex = 36;
             // 
             // label12
             // 
@@ -486,24 +528,24 @@
             this.dgvTurnosAPagar.AllowUserToDeleteRows = false;
             this.dgvTurnosAPagar.AllowUserToResizeRows = false;
             this.dgvTurnosAPagar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTurnosAPagar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTurnosAPagar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dgvTurnosAPagar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnosAPagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTurnosAPagar.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTurnosAPagar.DefaultCellStyle = dataGridViewCellStyle24;
             this.dgvTurnosAPagar.Location = new System.Drawing.Point(471, 47);
             this.dgvTurnosAPagar.MultiSelect = false;
             this.dgvTurnosAPagar.Name = "dgvTurnosAPagar";
@@ -513,42 +555,22 @@
             this.dgvTurnosAPagar.Size = new System.Drawing.Size(302, 151);
             this.dgvTurnosAPagar.TabIndex = 27;
             // 
-            // tbCantidadTarjeta
+            // tbDireccion
             // 
-            this.tbCantidadTarjeta.Enabled = false;
-            this.tbCantidadTarjeta.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCantidadTarjeta.Location = new System.Drawing.Point(261, 95);
-            this.tbCantidadTarjeta.Name = "tbCantidadTarjeta";
-            this.tbCantidadTarjeta.Size = new System.Drawing.Size(175, 26);
-            this.tbCantidadTarjeta.TabIndex = 43;
-            this.tbCantidadTarjeta.Text = "0";
-            this.tbCantidadTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbDireccion.Location = new System.Drawing.Point(36, 131);
+            this.tbDireccion.Name = "tbDireccion";
+            this.tbDireccion.Size = new System.Drawing.Size(175, 23);
+            this.tbDireccion.TabIndex = 49;
             // 
-            // tbCuit
+            // label19
             // 
-            this.tbCuit.Location = new System.Drawing.Point(261, 32);
-            this.tbCuit.MaxLength = 11;
-            this.tbCuit.Name = "tbCuit";
-            this.tbCuit.Size = new System.Drawing.Size(175, 23);
-            this.tbCuit.TabIndex = 34;
-            // 
-            // tbCantidadEfectivo
-            // 
-            this.tbCantidadEfectivo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCantidadEfectivo.Location = new System.Drawing.Point(36, 95);
-            this.tbCantidadEfectivo.Name = "tbCantidadEfectivo";
-            this.tbCantidadEfectivo.Size = new System.Drawing.Size(175, 26);
-            this.tbCantidadEfectivo.TabIndex = 41;
-            this.tbCantidadEfectivo.Text = "0";
-            this.tbCantidadEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tbCantidadEfectivo.TextChanged += new System.EventHandler(this.tbCantidadEfectivo_TextChanged);
-            // 
-            // tbCliente
-            // 
-            this.tbCliente.Location = new System.Drawing.Point(36, 32);
-            this.tbCliente.Name = "tbCliente";
-            this.tbCliente.Size = new System.Drawing.Size(175, 23);
-            this.tbCliente.TabIndex = 36;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(87, 109);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(90, 19);
+            this.label19.TabIndex = 50;
+            this.label19.Text = "Direccion";
             // 
             // frmRegistroDePago
             // 
@@ -614,6 +636,8 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
+        private controles.TextBoxLetras tbDireccion;
+        private System.Windows.Forms.Label label19;
 
     }
 }

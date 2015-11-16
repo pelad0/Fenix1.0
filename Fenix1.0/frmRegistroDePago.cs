@@ -64,19 +64,12 @@ namespace Fenix1._0
 
             if (dgvTurnos.Rows.Count > 0)           //Si tengo algunas cargadas en los turnos sin pagar, las borro.
             {
-                foreach (DataGridViewRow row in dgvTurnos.Rows)
-                {
-                    dgvTurnos.Rows.Remove(row);
-
-                }
+                dgvTurnos.Rows.Clear();
             }
 
             if(dgvTurnosAPagar.Rows.Count > 0)      //Borro todos los posibles turnos a pagar previamente seleccionados.
             {
-                foreach(DataGridViewRow row in dgvTurnosAPagar.Rows)
-                {
-                    dgvTurnosAPagar.Rows.Remove(row);
-                }
+                dgvTurnosAPagar.Rows.Clear();
             }
 
 
@@ -271,163 +264,162 @@ namespace Fenix1._0
 
             if (dgvTurnosAPagar.Rows.Count > 0)
             {
-                if (string.IsNullOrWhiteSpace(cbTipoFactura.Text) == false && string.IsNullOrWhiteSpace(tbCliente.Text) == false && string.IsNullOrWhiteSpace(tbCuit.Text) == false)
+                if (string.IsNullOrWhiteSpace(cbTipoFactura.Text) && string.IsNullOrWhiteSpace(tbCliente.Text) && string.IsNullOrWhiteSpace(tbCuit.Text) && string.IsNullOrWhiteSpace(tbDireccion.Text))
                 {
                     if (cbTipoFactura.Text == "A")
                     {
-                        if(!string.IsNullOrWhiteSpace(tbCuit.Text))
+                        if(string.IsNullOrWhiteSpace(tbCantidadEfectivo.Text))
                         {
-                            foreach (DataGridViewRow row in dgvTurnosAPagar.Rows)
-                            {
-                                turn.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
-                                sobreTarna.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
-
-                                turn.Fecha = DateTime.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[1].Value.ToString());
-                                sobreTarna.Fecha = DateTime.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[1].Value.ToString());
-
-                                turn.Costo = float.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[2].Value.ToString());
-                                sobreTarna.Costo = float.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[2].Value.ToString());
-
-                                if (dgvTurnosAPagar.Rows[row.Index].Cells[3].Value.ToString() == "Turno")
-                                {
-                                    turnoReporte.Add(turn);     //Cargo una lista con los turnos a pagar.
-                                }
-                                else
-                                {
-                                    if (dgvTurnosAPagar.Rows[row.Index].Cells[3].Value.ToString() == "SobreTurno")
-                                    {
-                                        sobreTurnosReporte.Add(sobreTarna);
-                                    }
-                                }
-                            }
-
-
-                            List<clsRecibo> listaRecibos = new List<clsRecibo>();
-                            clsRecibo recibo = new clsRecibo();
-                            clsObraSocial obrita = new clsObraSocial();
-                            clsEspecialidad especiali = new clsEspecialidad();
-                            clsMedico med = new clsMedico();
-
-                            //Creo la lista de recibos para turnos
-
-                            foreach (clsTurno turnito in turnoReporte)
-                            {
-                                recibo.IdFactura = reposFac.ultimoId().Id + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
-                                recibo.IdTurno = turnito.Id;
-                                recibo.IdSobreTurno = null;                    //SI TIENE TURNO, SOBRE TURNO ES NULL.
-                                recibo.Fecha = turnito.Fecha;
-
-                                if (PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
-                                {
-                                    obrita = reposObra.BuscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
-                                    recibo.Cobertura = obrita.Monto;
-                                }
-                                else
-                                {
-                                    recibo.Cobertura = null;                //SI NO TIENE OBRA SOCIAL, NO TIENE COBERTURA.
-                                }
-
-                                //CARGO EL MONTO DE LA CONSULTA.
-
-                                clsTurno t = new clsTurno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
-
-                                t = reposTurno.buscarPorId(turnito.Id);       //Le asigno todos sus valores propios.                            
-
-                                string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
-
-                                especiali = reposEspe.BuscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
-
-                                recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
-
-                                recibo.Detalle = es;
-
-
-
-                                reposRecibo.Alta(recibo);       //Doy de alta el recibo:
-                                reposTurno.ActualizarAsistencia(turnito.Id);        //Paso el estado del turno a true.
-
-
-
-                            }
-
-                            //Creo la lista de recibos para sobreturnos
-
-                            foreach (clsSobreturno sobrTurnito in sobreTurnosReporte)
-                            {
-                                recibo.IdFactura = reposFac.ultimoId().Id + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
-                                recibo.IdTurno = null;                          //SI TIENE SOBRETURNO, TURNO ES NULL.
-                                recibo.IdSobreTurno = sobrTurnito.Id;
-                                recibo.Fecha = sobrTurnito.Fecha;
-
-                                if (PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
-                                {
-                                    obrita = reposObra.BuscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
-                                    recibo.Cobertura = obrita.Monto;
-                                }
-                                else
-                                {
-                                    recibo.Cobertura = null;                //SI NO TIENE OBRA SOCIAL, NO TIENE COBERTURA.
-                                }
-
-                                //CARGO EL MONTO DE LA CONSULTA.
-
-                                clsSobreturno t = new clsSobreturno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
-
-                                t = reposSobreTurno.buscarPorId(sobrTurnito.IdMedico);       //Le asigno todos sus valores propios.
-
-                                string es = reposMedico.buscarPorId(t.Id).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
-
-                                especiali = reposEspe.BuscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
-
-                                recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
-
-                                recibo.Detalle = es;
-
-
-                                reposRecibo.Alta(recibo);
-                                reposSobreTurno.ActualizarAsistencia(sobrTurnito.Id);
-
-                            }
-
-                            clsClinica clini = new clsClinica();
-
-
-                            Factura.Cuitcliente = tbCuit.Text;
-                            Factura.NumeroFactura = reposFac.ultimoId().Id + 1;
-                            Factura.TipoFactura = char.Parse(cbTipoFactura.Text);
-
-                            //Traigo los datos de mi clinica para signarle los datos.
-                            clini = reposClinica.Todo(1);
-
-                            Factura.RazonSocial = clini.RazonSocial;
-                            Factura.Terminal = usuario.Usuario;
-                            Factura.Total = total;
-                            Factura.Fecha = DateTime.Now;
-                            Factura.IdUsuario = usuario.Id;
-                            Factura.Cliente = tbCliente.Text;
-                            Factura.PagoEfectivo = float.Parse(tbCantidadEfectivo.Text);
-
-                            crPagos pago = new crPagos();
-
-                            
-                            
-                            
-
-
-                        
-                            
-
-                            
+                            tbCantidadEfectivo.Text = "0";
                         }
-                        else
+                      
+                        foreach (DataGridViewRow row in dgvTurnosAPagar.Rows)
                         {
-                            MessageBox.Show("Ingrese el CUIT para continuar.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            turn.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
+                            sobreTarna.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
+
+                            turn.Fecha = DateTime.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[1].Value.ToString());
+                            sobreTarna.Fecha = DateTime.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[1].Value.ToString());
+
+                            turn.Costo = float.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[2].Value.ToString());
+                            sobreTarna.Costo = float.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[2].Value.ToString());
+
+                            if (dgvTurnosAPagar.Rows[row.Index].Cells[3].Value.ToString() == "Turno")
+                            {
+                                turnoReporte.Add(turn);     //Cargo una lista con los turnos a pagar.
+                            }
+                            else
+                            {
+                                if (dgvTurnosAPagar.Rows[row.Index].Cells[3].Value.ToString() == "SobreTurno")
+                                {
+                                    sobreTurnosReporte.Add(sobreTarna);
+                                }
+                            }
+                        }
+
+
+                        List<clsRecibo> listaRecibos = new List<clsRecibo>();
+                        clsRecibo recibo = new clsRecibo();
+                        clsObraSocial obrita = new clsObraSocial();
+                        clsEspecialidad especiali = new clsEspecialidad();
+                        clsMedico med = new clsMedico();
+
+                        //Creo la lista de recibos para turnos
+
+                        foreach (clsTurno turnito in turnoReporte)
+                        {
+                            recibo.IdFactura = reposFac.ultimoId().Id + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
+                            recibo.IdTurno = turnito.Id;
+                            recibo.IdSobreTurno = null;                    //SI TIENE TURNO, SOBRE TURNO ES NULL.
+                            recibo.Fecha = turnito.Fecha;
+
+                            if (PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
+                            {
+                                obrita = reposObra.BuscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
+                                recibo.Cobertura = obrita.Monto;
+                            }
+                            else
+                            {
+                                recibo.Cobertura = null;                //SI NO TIENE OBRA SOCIAL, NO TIENE COBERTURA.
+                            }
+
+                            //CARGO EL MONTO DE LA CONSULTA.
+
+                            clsTurno t = new clsTurno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
+
+                            t = reposTurno.buscarPorId(turnito.Id);       //Le asigno todos sus valores propios.                            
+
+                            string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
+
+                            especiali = reposEspe.BuscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
+
+                            recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+
+                            recibo.Detalle = es;
+
+
+
+                            reposRecibo.Alta(recibo);       //Doy de alta el recibo:
+                            reposTurno.ActualizarAsistencia(turnito.Id);        //Paso el estado del turno a true.
+
+
 
                         }
+
+                        //Creo la lista de recibos para sobreturnos
+
+                        foreach (clsSobreturno sobrTurnito in sobreTurnosReporte)
+                        {
+                            recibo.IdFactura = reposFac.ultimoId().Id + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
+                            recibo.IdTurno = null;                          //SI TIENE SOBRETURNO, TURNO ES NULL.
+                            recibo.IdSobreTurno = sobrTurnito.Id;
+                            recibo.Fecha = sobrTurnito.Fecha;
+
+                            if (PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
+                            {
+                                obrita = reposObra.BuscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
+                                recibo.Cobertura = obrita.Monto;
+                            }
+                            else
+                            {
+                                recibo.Cobertura = null;                //SI NO TIENE OBRA SOCIAL, NO TIENE COBERTURA.
+                            }
+
+                            //CARGO EL MONTO DE LA CONSULTA.
+
+                            clsSobreturno t = new clsSobreturno();                //Variable auxiliar de turno, es el turno en el que estoy ahora.
+
+                            t = reposSobreTurno.buscarPorId(sobrTurnito.IdMedico);       //Le asigno todos sus valores propios.
+
+                            string es = reposMedico.buscarPorId(t.Id).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
+
+                            especiali = reposEspe.BuscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
+
+                            recibo.Importe = especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+
+                            recibo.Detalle = es;
+
+
+                            reposRecibo.Alta(recibo);
+                            reposSobreTurno.ActualizarAsistencia(sobrTurnito.Id);
+
+                        }
+
+                        clsClinica clini = new clsClinica();
+
+
+                        Factura.Cuitcliente = tbCuit.Text;
+                        Factura.NumeroFactura = reposFac.ultimoId().Id + 1;
+                        Factura.TipoFactura = char.Parse(cbTipoFactura.Text);
+
+                        //Traigo los datos de mi clinica para signarle los datos.
+                        clini = reposClinica.Todo(1);
+
+                        Factura.RazonSocial = clini.RazonSocial;
+                        Factura.Terminal = usuario.Usuario;
+                        Factura.Total = total;
+                        Factura.Fecha = DateTime.Now;
+                        Factura.IdUsuario = usuario.Id;
+                        Factura.Cliente = tbCliente.Text;
+                        Factura.PagoEfectivo = float.Parse(tbCantidadEfectivo.Text);
+                        Factura.PagoTarjeta = float.Parse(tbCantidadTarjeta.Text);
+
+                        crPagos pago = new crPagos();
+
+                        pago.SetDataSource(dataSetDatos.Tables[0]);
+
+                        pago.SetParameterValue("Fecha", DateTime.Now);
+                        pago.SetParameterValue("Cliente", tbCliente.Text);
+                        pago.SetParameterValue("Domicilio", tbDireccion.Text);
+                        pago.SetParameterValue("CUIT", tbCuit.Text);
+
+                        frmView frmV = new frmView(pago);
+                        frmV.ShowDialog();
+
                     }
-                    else if(cbTipoFactura.Text == "B")
+                    else if (cbTipoFactura.Text == "B")
                     {
-                       //ACA VA TODO PARA LA FACTURA B
+                        //ACA VA TODO PARA LA FACTURA B
                     }
                     else
                     {
@@ -654,6 +646,7 @@ namespace Fenix1._0
 
         private void tbCantidadEfectivo_TextChanged(object sender, EventArgs e)
         {
+
             float valorE = 0;
             float valorT = float.Parse(tbCantidadTarjeta.Text);
             if(string.IsNullOrEmpty(tbCantidadEfectivo.Text) == false && string.IsNullOrWhiteSpace(tbCantidadEfectivo.Text) == false )
@@ -663,6 +656,14 @@ namespace Fenix1._0
             }
 
             tbCantidadTarjeta.Text = (total - valorE).ToString();
+        }
+
+        private void tbCantidadEfectivo_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(tbCantidadEfectivo.Text == "0" )
+            {
+                tbCantidadEfectivo.Clear();
+            }
         }
 
       
