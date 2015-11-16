@@ -11,20 +11,18 @@ using logica;
 using entidades;
 using frmABMME;
 
-
 namespace Fenix1._0
 {
+   
     public partial class frmRegistroDePago : Form
     {
-        clsUsuario usuario = new clsUsuario();
-        public frmRegistroDePago(clsUsuario u)
-        {
-            InitializeComponent();
-            usuario = u;
-        }
         
-        DataSet1 ds1 = new DataSet1();
-      
+
+        clsUsuario usuario = new clsUsuario();
+        DataSet1 dataSetDatos = new DataSet1();
+     
+
+
         RepositorioRecibo reposRecibo = new RepositorioRecibo(); 
         RepositorioMedico reposMedico = new RepositorioMedico();
         RepositorioTurno reposTurno = new RepositorioTurno();
@@ -44,14 +42,21 @@ namespace Fenix1._0
 
         float total = 0;
         float totalDescuento = 0;
-        
-        
-        
-        
+
+
+
+
+        public frmRegistroDePago(clsUsuario u)
+        {
+            InitializeComponent();
+            usuario = u;
+        }     
 
         
         private void dgvPacientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+           
             if (!columnasTurno)     //Si todavia no tengo columnas en losturnos sin pagar las creo.
             {
                 CrearColumnasTurno();
@@ -253,10 +258,7 @@ namespace Fenix1._0
         
 
         private void btnPagar_Click(object sender, EventArgs e)
-        {
- 
-            
-            
+        {        
           
             //creo una lista de turno y otra de sobre para separar a los seleccionados por el usuario
             // y asignarle sus ids al recibo.
@@ -404,7 +406,13 @@ namespace Fenix1._0
                             Factura.IdUsuario = usuario.Id;
                             Factura.Cliente = tbCliente.Text;
                             Factura.PagoEfectivo = float.Parse(tbCantidadEfectivo.Text);
-                        
+
+                            crPagos pago = new crPagos();
+
+                            
+                            
+                            
+
 
                         
                             
