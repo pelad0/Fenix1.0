@@ -78,11 +78,14 @@ namespace Fenix1._0
                 primerTurno = reposTurno.primerTurno();     //Me retorna el primer turno dado.
                 ultimoTurno = reposTurno.ultimoTurno();     //Me retorna el ultimo turno dado.
 
-                dtpDesde.MinDate = primerTurno.Fecha.Add(new TimeSpan(-24, 0, 0));
-                dtpHasta.MaxDate = ultimoTurno.Fecha.Add(new TimeSpan(24, 0, 0));
+                DateTime h1 = primerTurno.Fecha.Add(new TimeSpan(-24, 0, 0));
+                DateTime h2 = ultimoTurno.Fecha.Add(new TimeSpan(24, 0, 0));
 
-                dtpDesde.Value = primerTurno.Fecha;
-                dtpHasta.Value = ultimoTurno.Fecha;
+                dtpDesde.MinDate = h1;
+                dtpHasta.MaxDate = h2;
+
+                dtpDesde.Value = h1;
+                dtpHasta.Value = h2;
             }
             catch(Exception ex)
             {
@@ -107,10 +110,7 @@ namespace Fenix1._0
                     //Borro todas las filas.
                     if (dgvPacientes.Rows.Count > 0)
                     {
-                        foreach (DataGridViewRow row in dgvPacientes.Rows)
-                        {
-                            dgvPacientes.Rows.Remove(row);
-                        }
+                        dgvPacientes.Rows.Clear();
                     }
 
 
@@ -175,6 +175,14 @@ namespace Fenix1._0
             }
             else                //QUE EL CHECK BOX DE MEDICO NO FUE SELECCIONADO
             {
+
+                //Borro todas las filas.
+                if (dgvPacientes.Rows.Count > 0)
+                {
+                    dgvPacientes.Rows.Clear();
+                }
+
+
                 List<clsTurnoVista> listaTurnos = new List<clsTurnoVista>();
                 listaTurnos = reposTurno.TurnoEntreFechas(dtpDesde.Value, dtpHasta.Value);    //Guardo todos los turnos existentes entre las fechas seleccionadas.
 
