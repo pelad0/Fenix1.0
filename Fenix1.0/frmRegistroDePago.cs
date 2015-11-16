@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using logica;
 using entidades;
 
+
 namespace Fenix1._0
 {
     public partial class frmRegistroDePago : Form
@@ -21,7 +22,7 @@ namespace Fenix1._0
             usuario = u;
         }
         DataSet1 ds1 = new DataSet1();
-
+      
         RepositorioRecibo reposRecibo = new RepositorioRecibo(); 
         RepositorioMedico reposMedico = new RepositorioMedico();
         RepositorioTurno reposTurno = new RepositorioTurno();
@@ -251,6 +252,10 @@ namespace Fenix1._0
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
+ 
+
+
+          
             //creo una lista de turno y otra de sobre para separar a los seleccionados por el usuario
             // y asignarle sus ids al recibo.
 
@@ -399,7 +404,7 @@ namespace Fenix1._0
                             Factura.PagoEfectivo = float.Parse(tbCantidadEfectivo.Text);
                         
 
-                            
+                        
                             
 
                             
