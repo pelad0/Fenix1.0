@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using controles;
 using logica;
 using entidades;
-using CrystalDecisions.CrystalReports.Engine;
+using frmABMME;
+
 
 namespace Fenix1._0
 {
     public partial class frmTurno : Form
     {
+       
         RepositorioTurno rt = new RepositorioTurno();
         RepositorioSobreturno rst = new RepositorioSobreturno();
         RepositorioMedico rm = new RepositorioMedico();
