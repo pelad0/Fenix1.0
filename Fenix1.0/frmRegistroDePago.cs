@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using logica;
 using entidades;
+using frmABMME;
 
 
 namespace Fenix1._0
@@ -21,6 +22,7 @@ namespace Fenix1._0
             InitializeComponent();
             usuario = u;
         }
+        
         DataSet1 ds1 = new DataSet1();
       
         RepositorioRecibo reposRecibo = new RepositorioRecibo(); 
@@ -253,8 +255,8 @@ namespace Fenix1._0
         private void btnPagar_Click(object sender, EventArgs e)
         {
  
-
-
+            
+            
           
             //creo una lista de turno y otra de sobre para separar a los seleccionados por el usuario
             // y asignarle sus ids al recibo.
