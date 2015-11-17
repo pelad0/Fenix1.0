@@ -43,9 +43,19 @@ namespace Fenix1._0
             }
 
 
+            try
+            {
+                CargarMedicos();        //Carga todos los medicos al combo box;
+                EstablecerFechas();     //Establece las fechas en los dateTimepicker, la menor es la del primer turno, la mayor del ultimo.
 
-            CargarMedicos();        //Carga todos los medicos al combo box;
-            EstablecerFechas();     //Establece las fechas en los dateTimepicker, la menor es la del primer turno, la mayor del ultimo.
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No hay turnos en el sistema.");
+                return;
+            }               
+                
             
         }
 
@@ -89,7 +99,7 @@ namespace Fenix1._0
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Actualmente no hay turnos en el sistema.");
+                throw ex;
             }
             
             
