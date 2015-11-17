@@ -378,15 +378,25 @@ namespace Fenix1._0
                             recibo.IdSobreTurno = sobrTurnito.Id;
                             recibo.Fecha = sobrTurnito.Fecha;
 
-                            if (PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
+                            List<clsObraXMedico> obrasDelMed = new List<clsObraXMedico>();
+
+                            obrasDelMed = reposObraPorMed.TodasObras(sobrTurnito.IdMedico);     //TRAIGO TODAS LAS OBRAS DEL MEDICO.
+
+                            foreach (clsObraXMedico obritaDelMedico in obrasDelMed)
                             {
-                                obrita = reposObra.BuscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
-                                recibo.Cobertura = obrita.Monto;
-                                totalDescuento += obrita.Monto;
-                            }
-                            else
-                            {
-                                recibo.Cobertura = null;                //SI NO TIENE OBRA SOCIAL, NO TIENE COBERTURA.
+                                if (PacienteActual.ObraSocial != null)   //PREGUNTO SI EL PACIENTE TIENE OBRA SOCIAL.
+                                {
+                                    if (reposObra.buscarPorId(obritaDelMedico.IdObra).Nombre == PacienteActual.ObraSocial)
+                                    {
+                                        obrita = reposObra.BuscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
+                                        recibo.Cobertura += obrita.Monto;
+                                        totalDescuento += obrita.Monto;
+                                    }
+                                }
+                                else
+                                {
+                                    recibo.Cobertura = null;                //SI NO TIENE OBRA SOCIAL, NO TIENE COBERTURA.
+                                }
                             }
 
                             //CARGO EL MONTO DE LA CONSULTA.
@@ -669,16 +679,39 @@ namespace Fenix1._0
                 string es = reposMedico.buscarPorId(t.IdMedico).Especialidad;   //le asigno a "es" la especialidad del medico de este turno
 
                 especiali = reposEspe.BuscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
+
+
+
+                
+                List<clsObraXMedico> obrasDelMed = new List<clsObraXMedico>();
+
+                obrasDelMed = reposObraPorMed.TodasObras(turnito.IdMedico);     //TRAIGO TODAS LAS OBRAS DEL MEDICO.
+
+                foreach (clsObraXMedico obritaDelMedico in obrasDelMed)
+                {
+
+                    if (reposObra.buscarPorId(obritaDelMedico.IdObra).Nombre == obrita.Nombre)
+                    {
+                        if ((obrita.Monto - especiali.Canon) > 0)
+                        {
+                            total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+                        }
+                        else
+                        {
+                            total += 0;
+                        }
+
+                        totalDescuento += obrita.Monto;
+                    }
+
+                }
+                    
+                        
                 
 
-                if(especiali.Canon - obrita.Monto > 0)
-                {
-                    total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
-                }
-                else
-                {
-                    total += 0;
-                }            
+
+
+                          
             }
 
 
@@ -692,13 +725,27 @@ namespace Fenix1._0
 
                 especiali = reposEspe.BuscarPorNombre(es);          //busco todos los datos de esa especialidad por su nombre
 
-                if (especiali.Canon - obrita.Monto > 0)
+                List<clsObraXMedico> obrasDelMed = new List<clsObraXMedico>();
+
+                obrasDelMed = reposObraPorMed.TodasObras(sobrTurnito.IdMedico);     //TRAIGO TODAS LAS OBRAS DEL MEDICO.
+
+                foreach (clsObraXMedico obritaDelMedico in obrasDelMed)
                 {
-                    total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
-                }
-                else
-                {
-                    total += 0;
+
+                    if (reposObra.buscarPorId(obritaDelMedico.IdObra).Nombre == obrita.Nombre)
+                    {
+                        if ((obrita.Monto - especiali.Canon) > 0)
+                        {
+                            total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+                        }
+                        else
+                        {
+                            total += 0;
+                        }
+
+                        totalDescuento += obrita.Monto;
+                    }
+
                 }
 
              
