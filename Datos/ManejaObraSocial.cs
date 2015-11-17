@@ -119,11 +119,14 @@ activo bit default 1
             clsObraSocial pac = new clsObraSocial();
             try
             {
-
                 aux = manager.consultar("select * from obrasocial where nombre='" + nombre + "' and activo=1");
-                pac.Id = Convert.ToInt32(aux.Rows[0]["id"]);
-                pac.Nombre = aux.Rows[0]["nombre"].ToString();
-                pac.Monto = Convert.ToDouble(aux.Rows[0]["canon"]);
+                if(aux.Rows.Count!=0)
+                {
+                    pac.Id = Convert.ToInt32(aux.Rows[0]["id"]);
+                    pac.Nombre = aux.Rows[0]["nombre"].ToString();
+                    pac.Monto = Convert.ToDouble(aux.Rows[0]["canon"]);
+                }
+               
             }
             catch (Exception ex)
             {

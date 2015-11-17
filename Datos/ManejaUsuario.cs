@@ -67,11 +67,15 @@ namespace Datos
                 {
 
                     aux = manager.consultar("select * from usuario where id=" + id + " and activo=1");
-                    us.Id = Convert.ToInt32(aux.Rows[0]["id"]);
-                    us.Seguridad = aux.Rows[0]["seguridad"].ToString();
-                    us.Clave = aux.Rows[0]["pass"].ToString();
-                    us.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
-                    us.Usuario = aux.Rows[0]["usuario"].ToString();
+                    if(aux.Rows.Count!=0)
+                    {
+                        us.Id = Convert.ToInt32(aux.Rows[0]["id"]);
+                        us.Seguridad = aux.Rows[0]["seguridad"].ToString();
+                        us.Clave = aux.Rows[0]["pass"].ToString();
+                        us.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
+                        us.Usuario = aux.Rows[0]["usuario"].ToString();
+                    }
+                   
                    
                 }
                 catch (Exception ex)

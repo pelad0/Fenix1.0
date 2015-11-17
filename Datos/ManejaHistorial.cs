@@ -63,10 +63,14 @@ namespace Datos
             try
             {
                 aux = manager.consultar("select * from historial where idpaciente=" + id + " and activo=1");
-                hist.Id = Convert.ToInt32(aux.Rows[0]["idpaciente"]);
-                hist.Diagnostico = aux.Rows[0]["diagnostico"].ToString();
-                hist.Observaciones= aux.Rows[0]["observaciones"].ToString();
-                hist.Fecha = Convert.ToDateTime(aux.Rows[0]["fecha"]);
+                if(aux.Rows.Count!=0)
+                {
+                    hist.Id = Convert.ToInt32(aux.Rows[0]["idpaciente"]);
+                    hist.Diagnostico = aux.Rows[0]["diagnostico"].ToString();
+                    hist.Observaciones = aux.Rows[0]["observaciones"].ToString();
+                    hist.Fecha = Convert.ToDateTime(aux.Rows[0]["fecha"]);
+                }
+              
                
             }
             catch (Exception ex)

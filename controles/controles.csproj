@@ -69,9 +69,6 @@
     <EmbeddedResource Include="frmABM.resx">
       <DependentUpon>frmABM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TextBoxNumeros.resx">
-      <DependentUpon>TextBoxNumeros.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\entidades\entidades.csproj">

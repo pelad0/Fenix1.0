@@ -77,7 +77,7 @@ namespace Datos
                 fack.PagoEfectivo = Convert.ToDouble(aux.Rows[0]["pagoefectivo"]);
                 fack.PagoTarjeta = Convert.ToDouble(aux.Rows[0]["pagotarjeta"]);
            
-
+                
 
             }
             catch (Exception ex)

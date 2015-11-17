@@ -75,8 +75,12 @@ namespace Datos
             {
 
                 aux = manager.consultar("select * from obraxmedico where idmedico=" + id + " and activo=1");
-                ob.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
-                ob.IdObra = Convert.ToInt32(aux.Rows[0]["idobra"]);
+                if(aux.Rows.Count!=0)
+                {
+                    ob.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
+                    ob.IdObra = Convert.ToInt32(aux.Rows[0]["idobra"]);
+                }
+                
             }
             catch (Exception ex)
             {
