@@ -25,8 +25,14 @@ namespace Fenix1._0
         public frmInicio()
         {
             InitializeComponent();
+            iniciar();
+        }
+
+        public void iniciar()
+        {
             try
             {
+                usuarios.Clear();
                 usuarios = ru.Todo(0);
             }
             catch (Exception ex)
