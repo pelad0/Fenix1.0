@@ -43,6 +43,8 @@ namespace Fenix1._0
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            bool paso = false;
+            string seg = "";
             if (!string.IsNullOrWhiteSpace(tbUsuario.Text) && !string.IsNullOrWhiteSpace(tbClave.Text))
             {
                 foreach (clsUsuario u in usuarios)
@@ -51,32 +53,43 @@ namespace Fenix1._0
                     {
                         if (u.Clave == tbClave.Text)
                         {
-                            string seg = u.Seguridad;
-                            switch (seg)
-                            {
-                                case "Administracion":
-                                        frmAdmin a = new frmAdmin(u, this);
-                                        this.Hide();
-                                        a.ShowDialog();
-                                    break;
+                            seg = u.Seguridad;
 
-                                case "Recepcion":
-                                        frmRecepcion r = new frmRecepcion(u, this);
-                                        this.Hide();
-                                        r.ShowDialog();
-                                    break;
-                                
-                                case "Medico":
-                                        frmABMHistorial h = new frmABMHistorial(this);
-                                        this.Hide();
-                                        h.ShowDialog();
-                                    break;
-                            }
+                            paso = true;
                         }
                     }
                 }
             }
+            if (paso)
+            {
+                ingresar(seg);
+            }
         }
+
+        private void ingresar(string seg)
+        {
+            switch (seg)
+            {
+                case "Administracion":
+                    frmAdmin a = new frmAdmin(u, this);
+                    this.Hide();
+                    a.ShowDialog();
+                    break;
+
+                case "Recepcion":
+                    frmRecepcion r = new frmRecepcion(u, this);
+                    this.Hide();
+                    r.ShowDialog();
+                    break;
+
+                case "Medico":
+                    frmABMHistorial h = new frmABMHistorial(this);
+                    this.Hide();
+                    h.ShowDialog();
+                    break;
+            }
+        }
+
 
         public void limpiar()
         {
