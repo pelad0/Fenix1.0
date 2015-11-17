@@ -113,6 +113,11 @@ namespace Fenix1._0
                         dgvPacientes.Rows.Clear();
                     }
 
+                    if(dgvTurnos.Rows.Count > 0)
+                    {
+                        dgvTurnos.Rows.Clear();
+                    }
+
 
 
                     clsMedico medicoSeleccionado = new clsMedico();

@@ -23,16 +23,15 @@ namespace Datos
             try
             {
                if(rec.IdSobreTurno == null)
-               {
-                   
+               {                  
                    manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + ",null," + rec.IdTurno + ",'" + rec.Fecha + "'," + rec.Cobertura + "," + rec.Importe + ",'" + rec.Detalle + "');SELECT @@identity;");
 
                }
                else
                {
+                   manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + "," + rec.IdSobreTurno + ",null,'" + rec.Fecha + "'," + rec.Cobertura + "," + rec.Importe + ",'" + rec.Detalle + "');SELECT @@identity;");
 
                }
-                manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + "," + rec.IdSobreTurno + ",null,'" + rec.Fecha + "'," + rec.Cobertura + "," + rec.Importe + ",'" + rec.Detalle + "');SELECT @@identity;");
 
             }
             catch (Exception ex)
