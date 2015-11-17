@@ -43,14 +43,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tpBaja = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,16 +66,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.rtbDiagAlta = new System.Windows.Forms.RichTextBox();
             this.rtbObserAlta = new System.Windows.Forms.RichTextBox();
+            this.btnSigAlta = new System.Windows.Forms.Button();
+            this.btnAntAlta = new System.Windows.Forms.Button();
             this.dgvAlta = new System.Windows.Forms.DataGridView();
             this.btnAlta = new System.Windows.Forms.Button();
             this.tcABM = new System.Windows.Forms.TabControl();
             this.tpAsistencia = new System.Windows.Forms.TabPage();
-            this.dgvSobreTurnos = new System.Windows.Forms.DataGridView();
-            this.dgvTurnos = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnSigAlta = new System.Windows.Forms.Button();
-            this.btnAntAlta = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dgvTurnos = new System.Windows.Forms.DataGridView();
+            this.dgvSobreTurnos = new System.Windows.Forms.DataGridView();
             this.tpBaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistBaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacBaja)).BeginInit();
@@ -83,12 +83,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlta)).BeginInit();
             this.tcABM.SuspendLayout();
             this.tpAsistencia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSobreTurnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSobreTurnos)).BeginInit();
             this.SuspendLayout();
             // 
             // tpBaja
             // 
+            this.tpBaja.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpBaja.Controls.Add(this.label5);
             this.tpBaja.Controls.Add(this.label4);
             this.tpBaja.Controls.Add(this.btnSigBaja);
@@ -238,6 +239,7 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpAlta.Controls.Add(this.dtpFechaAlta);
             this.tpAlta.Controls.Add(this.lblPac);
             this.tpAlta.Controls.Add(this.label2);
@@ -318,6 +320,28 @@
             this.rtbObserAlta.TabIndex = 2;
             this.rtbObserAlta.Text = "";
             // 
+            // btnSigAlta
+            // 
+            this.btnSigAlta.Location = new System.Drawing.Point(467, 182);
+            this.btnSigAlta.Name = "btnSigAlta";
+            this.btnSigAlta.Size = new System.Drawing.Size(93, 23);
+            this.btnSigAlta.TabIndex = 8;
+            this.btnSigAlta.TabStop = false;
+            this.btnSigAlta.Text = "Siguiente>>";
+            this.btnSigAlta.UseVisualStyleBackColor = true;
+            this.btnSigAlta.Click += new System.EventHandler(this.btnSigAlta_Click);
+            // 
+            // btnAntAlta
+            // 
+            this.btnAntAlta.Location = new System.Drawing.Point(76, 182);
+            this.btnAntAlta.Name = "btnAntAlta";
+            this.btnAntAlta.Size = new System.Drawing.Size(90, 23);
+            this.btnAntAlta.TabIndex = 7;
+            this.btnAntAlta.TabStop = false;
+            this.btnAntAlta.Text = "<<Anterior";
+            this.btnAntAlta.UseVisualStyleBackColor = true;
+            this.btnAntAlta.Click += new System.EventHandler(this.btnAntAlta_Click);
+            // 
             // dgvAlta
             // 
             this.dgvAlta.AllowUserToAddRows = false;
@@ -391,6 +415,7 @@
             // 
             // tpAsistencia
             // 
+            this.tpAsistencia.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpAsistencia.Controls.Add(this.label7);
             this.tpAsistencia.Controls.Add(this.label6);
             this.tpAsistencia.Controls.Add(this.dgvTurnos);
@@ -402,46 +427,23 @@
             this.tpAsistencia.Text = "Asistencia";
             this.tpAsistencia.UseVisualStyleBackColor = true;
             // 
-            // dgvSobreTurnos
+            // label7
             // 
-            this.dgvSobreTurnos.AllowUserToAddRows = false;
-            this.dgvSobreTurnos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvSobreTurnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
-            this.dgvSobreTurnos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvSobreTurnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSobreTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
-            this.dgvSobreTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSobreTurnos.DefaultCellStyle = dataGridViewCellStyle22;
-            this.dgvSobreTurnos.Location = new System.Drawing.Point(3, 259);
-            this.dgvSobreTurnos.Name = "dgvSobreTurnos";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSobreTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
-            this.dgvSobreTurnos.RowHeadersVisible = false;
-            this.dgvSobreTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSobreTurnos.Size = new System.Drawing.Size(630, 185);
-            this.dgvSobreTurnos.TabIndex = 0;
-            this.dgvSobreTurnos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellDoubleClick);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(273, 241);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 15);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Sobre Turnos";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(294, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 15);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Turnos";
             // 
             // dgvTurnos
             // 
@@ -484,45 +486,46 @@
             this.dgvTurnos.TabIndex = 0;
             this.dgvTurnos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellDoubleClick);
             // 
-            // label6
+            // dgvSobreTurnos
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(294, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 15);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Turnos";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(273, 241);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 15);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Sobre Turnos";
-            // 
-            // btnSigAlta
-            // 
-            this.btnSigAlta.Location = new System.Drawing.Point(467, 182);
-            this.btnSigAlta.Name = "btnSigAlta";
-            this.btnSigAlta.Size = new System.Drawing.Size(93, 23);
-            this.btnSigAlta.TabIndex = 8;
-            this.btnSigAlta.TabStop = false;
-            this.btnSigAlta.Text = "Siguiente>>";
-            this.btnSigAlta.UseVisualStyleBackColor = true;
-            this.btnSigAlta.Click += new System.EventHandler(this.btnSigAlta_Click);
-            // 
-            // btnAntAlta
-            // 
-            this.btnAntAlta.Location = new System.Drawing.Point(76, 182);
-            this.btnAntAlta.Name = "btnAntAlta";
-            this.btnAntAlta.Size = new System.Drawing.Size(90, 23);
-            this.btnAntAlta.TabIndex = 7;
-            this.btnAntAlta.TabStop = false;
-            this.btnAntAlta.Text = "<<Anterior";
-            this.btnAntAlta.UseVisualStyleBackColor = true;
-            this.btnAntAlta.Click += new System.EventHandler(this.btnAntAlta_Click);
+            this.dgvSobreTurnos.AllowUserToAddRows = false;
+            this.dgvSobreTurnos.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvSobreTurnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvSobreTurnos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvSobreTurnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSobreTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            this.dgvSobreTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSobreTurnos.DefaultCellStyle = dataGridViewCellStyle22;
+            this.dgvSobreTurnos.Location = new System.Drawing.Point(3, 259);
+            this.dgvSobreTurnos.Name = "dgvSobreTurnos";
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSobreTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvSobreTurnos.RowHeadersVisible = false;
+            this.dgvSobreTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSobreTurnos.Size = new System.Drawing.Size(630, 185);
+            this.dgvSobreTurnos.TabIndex = 0;
+            this.dgvSobreTurnos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellDoubleClick);
             // 
             // frmABMHistorial
             // 
@@ -548,8 +551,8 @@
             this.tcABM.ResumeLayout(false);
             this.tpAsistencia.ResumeLayout(false);
             this.tpAsistencia.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSobreTurnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSobreTurnos)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -86,6 +86,7 @@
             // rbMT
             // 
             this.rbMT.AutoSize = true;
+            this.rbMT.BackColor = System.Drawing.Color.Transparent;
             this.rbMT.Checked = true;
             this.rbMT.Location = new System.Drawing.Point(217, 27);
             this.rbMT.Name = "rbMT";
@@ -93,23 +94,25 @@
             this.rbMT.TabIndex = 7;
             this.rbMT.TabStop = true;
             this.rbMT.Text = "Mañana";
-            this.rbMT.UseVisualStyleBackColor = true;
+            this.rbMT.UseVisualStyleBackColor = false;
             this.rbMT.CheckedChanged += new System.EventHandler(this.rbMT_CheckedChanged);
             // 
             // rbAmbos
             // 
             this.rbAmbos.AutoSize = true;
+            this.rbAmbos.BackColor = System.Drawing.Color.Transparent;
             this.rbAmbos.Location = new System.Drawing.Point(620, 27);
             this.rbAmbos.Name = "rbAmbos";
             this.rbAmbos.Size = new System.Drawing.Size(60, 19);
             this.rbAmbos.TabIndex = 8;
             this.rbAmbos.Text = "Ambos";
-            this.rbAmbos.UseVisualStyleBackColor = true;
+            this.rbAmbos.UseVisualStyleBackColor = false;
             this.rbAmbos.CheckedChanged += new System.EventHandler(this.rbTC_CheckedChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Location = new System.Drawing.Point(180, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 15);
@@ -119,6 +122,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Location = new System.Drawing.Point(305, 57);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 15);
@@ -336,6 +340,7 @@
             // cbLunes
             // 
             this.cbLunes.AutoSize = true;
+            this.cbLunes.BackColor = System.Drawing.Color.Transparent;
             this.cbLunes.Checked = true;
             this.cbLunes.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbLunes.Location = new System.Drawing.Point(28, 98);
@@ -344,12 +349,13 @@
             this.cbLunes.TabIndex = 24;
             this.cbLunes.Tag = "1";
             this.cbLunes.Text = "Lunes";
-            this.cbLunes.UseVisualStyleBackColor = true;
+            this.cbLunes.UseVisualStyleBackColor = false;
             this.cbLunes.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
             // cbMartes
             // 
             this.cbMartes.AutoSize = true;
+            this.cbMartes.BackColor = System.Drawing.Color.Transparent;
             this.cbMartes.Checked = true;
             this.cbMartes.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbMartes.Location = new System.Drawing.Point(28, 152);
@@ -358,12 +364,13 @@
             this.cbMartes.TabIndex = 25;
             this.cbMartes.Tag = "2";
             this.cbMartes.Text = "Martes";
-            this.cbMartes.UseVisualStyleBackColor = true;
+            this.cbMartes.UseVisualStyleBackColor = false;
             this.cbMartes.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
             // cbMiercoles
             // 
             this.cbMiercoles.AutoSize = true;
+            this.cbMiercoles.BackColor = System.Drawing.Color.Transparent;
             this.cbMiercoles.Checked = true;
             this.cbMiercoles.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbMiercoles.Location = new System.Drawing.Point(28, 204);
@@ -372,12 +379,13 @@
             this.cbMiercoles.TabIndex = 26;
             this.cbMiercoles.Tag = "3";
             this.cbMiercoles.Text = "Miércoles";
-            this.cbMiercoles.UseVisualStyleBackColor = true;
+            this.cbMiercoles.UseVisualStyleBackColor = false;
             this.cbMiercoles.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
             // cbJueves
             // 
             this.cbJueves.AutoSize = true;
+            this.cbJueves.BackColor = System.Drawing.Color.Transparent;
             this.cbJueves.Checked = true;
             this.cbJueves.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbJueves.Location = new System.Drawing.Point(28, 256);
@@ -386,12 +394,13 @@
             this.cbJueves.TabIndex = 27;
             this.cbJueves.Tag = "4";
             this.cbJueves.Text = "Jueves";
-            this.cbJueves.UseVisualStyleBackColor = true;
+            this.cbJueves.UseVisualStyleBackColor = false;
             this.cbJueves.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
             // cbViernes
             // 
             this.cbViernes.AutoSize = true;
+            this.cbViernes.BackColor = System.Drawing.Color.Transparent;
             this.cbViernes.Checked = true;
             this.cbViernes.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbViernes.Location = new System.Drawing.Point(28, 308);
@@ -400,12 +409,13 @@
             this.cbViernes.TabIndex = 28;
             this.cbViernes.Tag = "5";
             this.cbViernes.Text = "Viernes";
-            this.cbViernes.UseVisualStyleBackColor = true;
+            this.cbViernes.UseVisualStyleBackColor = false;
             this.cbViernes.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
             // cbSabado
             // 
             this.cbSabado.AutoSize = true;
+            this.cbSabado.BackColor = System.Drawing.Color.Transparent;
             this.cbSabado.Checked = true;
             this.cbSabado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbSabado.Location = new System.Drawing.Point(28, 360);
@@ -414,12 +424,13 @@
             this.cbSabado.TabIndex = 29;
             this.cbSabado.Tag = "6";
             this.cbSabado.Text = "Sábado";
-            this.cbSabado.UseVisualStyleBackColor = true;
+            this.cbSabado.UseVisualStyleBackColor = false;
             this.cbSabado.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
             // cbDomingo
             // 
             this.cbDomingo.AutoSize = true;
+            this.cbDomingo.BackColor = System.Drawing.Color.Transparent;
             this.cbDomingo.Checked = true;
             this.cbDomingo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbDomingo.Location = new System.Drawing.Point(28, 412);
@@ -428,7 +439,7 @@
             this.cbDomingo.TabIndex = 30;
             this.cbDomingo.Tag = "7";
             this.cbDomingo.Text = "Domingo";
-            this.cbDomingo.UseVisualStyleBackColor = true;
+            this.cbDomingo.UseVisualStyleBackColor = false;
             this.cbDomingo.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
             // dtpSalidaMT_Domingo
@@ -449,6 +460,7 @@
             // 
             // pnlMedioTiempo
             // 
+            this.pnlMedioTiempo.BackColor = System.Drawing.Color.Transparent;
             this.pnlMedioTiempo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMedioTiempo.Controls.Add(this.label3);
             this.pnlMedioTiempo.Controls.Add(this.cbRepetirMT);
@@ -494,6 +506,7 @@
             // 
             // pnlTiempoCompleto
             // 
+            this.pnlTiempoCompleto.BackColor = System.Drawing.Color.Transparent;
             this.pnlTiempoCompleto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTiempoCompleto.Controls.Add(this.label4);
             this.pnlTiempoCompleto.Controls.Add(this.dtpEntradaTC_Lunes);
@@ -765,6 +778,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(558, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 15);
@@ -774,6 +788,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(432, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 15);
@@ -794,6 +809,7 @@
             // cbTodos
             // 
             this.cbTodos.AutoSize = true;
+            this.cbTodos.BackColor = System.Drawing.Color.Transparent;
             this.cbTodos.Checked = true;
             this.cbTodos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbTodos.Location = new System.Drawing.Point(28, 56);
@@ -802,12 +818,13 @@
             this.cbTodos.TabIndex = 37;
             this.cbTodos.Tag = "10";
             this.cbTodos.Text = "Todos";
-            this.cbTodos.UseVisualStyleBackColor = true;
+            this.cbTodos.UseVisualStyleBackColor = false;
             this.cbTodos.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(324, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 15);
@@ -817,18 +834,20 @@
             // rbTarde
             // 
             this.rbTarde.AutoSize = true;
+            this.rbTarde.BackColor = System.Drawing.Color.Transparent;
             this.rbTarde.Location = new System.Drawing.Point(491, 27);
             this.rbTarde.Name = "rbTarde";
             this.rbTarde.Size = new System.Drawing.Size(60, 19);
             this.rbTarde.TabIndex = 39;
             this.rbTarde.Text = "Tarde";
-            this.rbTarde.UseVisualStyleBackColor = true;
+            this.rbTarde.UseVisualStyleBackColor = false;
             this.rbTarde.CheckedChanged += new System.EventHandler(this.rbTarde_CheckedChanged);
             // 
             // frmHorariosMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(692, 486);
             this.Controls.Add(this.rbTarde);
             this.Controls.Add(this.label5);
@@ -854,6 +873,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmHorariosMedico";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmHorariosMedico_Load);
             this.pnlMedioTiempo.ResumeLayout(false);

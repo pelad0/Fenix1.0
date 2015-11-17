@@ -87,6 +87,7 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpAlta.Controls.Add(this.label6);
             this.tpAlta.Controls.Add(this.label5);
             this.tpAlta.Controls.Add(this.tbCostoAlta);
@@ -199,6 +200,7 @@
             // 
             // tpBaja
             // 
+            this.tpBaja.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpBaja.Controls.Add(this.label3);
             this.tpBaja.Controls.Add(this.dgvEspecialidadesBaja);
             this.tpBaja.Controls.Add(this.btnBaja);
@@ -268,6 +270,7 @@
             // 
             // tpMod
             // 
+            this.tpMod.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpMod.Controls.Add(this.label10);
             this.tpMod.Controls.Add(this.label9);
             this.tpMod.Controls.Add(this.label8);

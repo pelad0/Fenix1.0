@@ -84,6 +84,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Consolas", 26.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(236, 9);
@@ -94,6 +95,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblNumeroPagina);
@@ -243,6 +245,7 @@
             // 
             // pnlTurno
             // 
+            this.pnlTurno.BackColor = System.Drawing.Color.Transparent;
             this.pnlTurno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTurno.Controls.Add(this.pnlPago);
             this.pnlTurno.Controls.Add(this.label8);
@@ -359,7 +362,7 @@
             this.btnPagar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPagar.Enabled = false;
             this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPagar.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagar.Location = new System.Drawing.Point(510, 90);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(130, 26);
@@ -507,7 +510,7 @@
             this.btnTraer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTraer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTraer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTraer.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraer.Location = new System.Drawing.Point(380, 144);
             this.btnTraer.Name = "btnTraer";
             this.btnTraer.Size = new System.Drawing.Size(68, 34);
@@ -531,7 +534,7 @@
             this.btnPasar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPasar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPasar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPasar.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPasar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPasar.Location = new System.Drawing.Point(380, 63);
             this.btnPasar.Name = "btnPasar";
             this.btnPasar.Size = new System.Drawing.Size(68, 34);
@@ -576,7 +579,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 741);
+            this.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
+            this.ClientSize = new System.Drawing.Size(825, 737);
             this.Controls.Add(this.pnlTurno);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);

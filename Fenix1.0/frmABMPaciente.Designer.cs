@@ -109,6 +109,7 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpAlta.Controls.Add(this.lblPaciente);
             this.tpAlta.Controls.Add(this.btnBuscar);
             this.tpAlta.Controls.Add(this.label11);
@@ -356,6 +357,7 @@
             // 
             // tpBaja
             // 
+            this.tpBaja.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpBaja.Controls.Add(this.btnSig);
             this.tpBaja.Controls.Add(this.btnAnt);
             this.tpBaja.Controls.Add(this.dgvBaja);
@@ -439,6 +441,7 @@
             // 
             // tpMod
             // 
+            this.tpMod.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpMod.Controls.Add(this.button1);
             this.tpMod.Controls.Add(this.button2);
             this.tpMod.Controls.Add(this.dgvPacMod);

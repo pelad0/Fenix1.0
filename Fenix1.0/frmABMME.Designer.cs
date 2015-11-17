@@ -117,6 +117,7 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpAlta.Controls.Add(this.btnAdministrarEspe);
             this.tpAlta.Controls.Add(this.tbEspecialidadAlta);
             this.tpAlta.Controls.Add(this.cbEspecialidades);
@@ -416,6 +417,7 @@
             // 
             // tpBaja
             // 
+            this.tpBaja.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpBaja.Controls.Add(this.tbEspecialidadBaja);
             this.tpBaja.Controls.Add(this.dgvMedicosBaja);
             this.tpBaja.Controls.Add(this.label13);
@@ -580,6 +582,7 @@
             // 
             // tpMod
             // 
+            this.tpMod.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpMod.Controls.Add(this.tbEspecialidadModi);
             this.tpMod.Controls.Add(this.dgvMedicosModi);
             this.tpMod.Controls.Add(this.label16);

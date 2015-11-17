@@ -91,6 +91,7 @@
             // 
             // tpAlta
             // 
+            this.tpAlta.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpAlta.Controls.Add(this.pnlMonto);
             this.tpAlta.Controls.Add(this.dgvOSAlta);
             this.tpAlta.Controls.Add(this.label5);
@@ -221,6 +222,7 @@
             // 
             // tpBaja
             // 
+            this.tpBaja.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpBaja.Controls.Add(this.dgvOSBaja);
             this.tpBaja.Controls.Add(this.btnBaja);
             this.tpBaja.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,6 +279,7 @@
             // 
             // tpMod
             // 
+            this.tpMod.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.tpMod.Controls.Add(this.panel1);
             this.tpMod.Controls.Add(this.label8);
             this.tpMod.Controls.Add(this.dgvOSModif);
