@@ -87,12 +87,20 @@ namespace Fenix1._0
 
             foreach (clsTurnoVista turn in ListaTurnos)
             {
-                dgvTurnos.Rows.Add(turn.Id, turn.Fecha, turn.Costo, "Turno");
+                if(turn.Estado == false)
+                {
+                    dgvTurnos.Rows.Add(turn.Id, turn.Fecha, turn.Costo, "Turno");       //LO AGREGO SI NO HAN SIDO PAGADOS AÚN
+                }
+           
             }
 
             foreach (clsSobreTurnoVista sobr in ListaSobreTurnos)
             {
-                dgvTurnos.Rows.Add(sobr.Id, sobr.Fecha, sobr.Costo, "SobreTurno");
+                if(sobr.Estado == false)
+                {
+                    dgvTurnos.Rows.Add(sobr.Id, sobr.Fecha, sobr.Costo, "SobreTurno");  //LO AGREGO SI NO HAN SIDO PAGADOS AÚN
+                }
+
             }
 
 
@@ -460,8 +468,9 @@ namespace Fenix1._0
                             reposSobreTurno.ActualizarAsistencia(idST);
                         }
 
-                         
+                        MessageBox.Show("La Factura fue creada con éxito junto con los Recibos");
 
+                        /*
                         crPagos pago = new crPagos();
 
                         pago.SetDataSource(dataSetDatos.Tables[0]);
@@ -473,7 +482,7 @@ namespace Fenix1._0
 
                         frmView frmV = new frmView(pago);
                         frmV.ShowDialog();
-
+                        */
 
 
 
