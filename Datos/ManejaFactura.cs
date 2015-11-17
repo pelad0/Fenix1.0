@@ -110,8 +110,7 @@ namespace Datos
             try
             {
 
-                aux = manager.consultar("select TOP 1 id from factura where activo=1 order by id desc ");
-               
+                aux = manager.consultar("select TOP 1 * from factura where activo=1 order by id desc ");
             }
             catch (Exception ex)
             {

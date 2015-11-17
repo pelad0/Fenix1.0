@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace frmABMME {
+namespace Fenix1._0 {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
