@@ -11,7 +11,7 @@ namespace entidades
     {
         private int id;
         string nombre;
-      float monto;
+        float monto;
 
         public clsObraSocial()
         { }

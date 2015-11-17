@@ -12,7 +12,7 @@ namespace entidades
         int idMedico;
         int idPaciente;
         DateTime fecha;
-        double costo;
+        float costo;
         int idUsuario;
         bool estado;
                  
@@ -21,7 +21,7 @@ namespace entidades
 
         }
 
-        public clsSobreturno(int id,int idMedico,int idPaciente,DateTime fecha,double costo,int idUsuario,bool estado)
+        public clsSobreturno(int id,int idMedico,int idPaciente,DateTime fecha,float costo,int idUsuario,bool estado)
         {
             this.id = id;
             this.idMedico = idMedico;
@@ -32,7 +32,7 @@ namespace entidades
             this.estado = estado;
         }
 
-        public clsSobreturno(int idMedico, int idPaciente, DateTime fecha, double costo, int idUsuario, bool estado)
+        public clsSobreturno(int idMedico, int idPaciente, DateTime fecha, float costo, int idUsuario, bool estado)
         {
             this.idMedico = idMedico;
             this.idPaciente = idPaciente;
@@ -66,7 +66,7 @@ namespace entidades
             set { fecha = value; }
         }        
 
-        public double Costo
+        public float Costo
         {
             get { return costo; }
             set { costo = value; }

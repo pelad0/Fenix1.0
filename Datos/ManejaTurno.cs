@@ -24,7 +24,7 @@ namespace Datos
             try
             {
                // manager.ejecutar("Insert into turno(idpaciente,idmedico,fecha,costo,estado,idusuario) values(" + tur.IdPaciente + "," + tur.IdMedico + ",'" + tur.Fecha + "'," + tur.Costo + "," + 0 +","+tur.IdUsuario+");SELECT @@identity;");
-                manager.ejecutar("exec insertarTurno "+tur.IdPaciente+","+tur.IdMedico+",'"+tur.Fecha+"',"+tur.Costo+","+0+","+tur.IdUsuario);
+                manager.ejecutar("exec insertarTurno "+tur.IdPaciente+","+tur.IdMedico+",'"+tur.Fecha+"',"+tur.Costo.ToString().Replace(',','.')+","+0+","+tur.IdUsuario);
             }
             catch (Exception ex)
             {
@@ -54,14 +54,13 @@ namespace Datos
             clsTurno tur = (clsTurno)entidad;
             try
             {
-                manager.ejecutar("update turno set idpaciente=" + tur.IdPaciente + ",idmedico=" + tur.IdMedico + ",fecha='" + tur.Fecha+ "',costo=" +tur.Costo + ",estado=" + tur.Estado +",idusuario= "+tur.IdUsuario+"where id=" + tur.Id);
+                manager.ejecutar("update turno set idpaciente=" + tur.IdPaciente + ",idmedico=" + tur.IdMedico + ",fecha='" + tur.Fecha + "',costo=" + tur.Costo.ToString().Replace(',', '.') + ",estado=" + tur.Estado + ",idusuario= " + tur.IdUsuario + "where id=" + tur.Id);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
 
         public void ActualizarAsistencia(int id)
         {
@@ -86,7 +85,7 @@ namespace Datos
                 tur.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
                 tur.IdPaciente = Convert.ToInt32(aux.Rows[0]["idpaciente"]);
                 tur.Fecha = Convert.ToDateTime(aux.Rows[0]["fecha"]);
-                tur.Costo = Convert.ToDouble(aux.Rows[0]["costo"]);
+                tur.Costo = float.Parse(aux.Rows[0]["costo"].ToString());
                 tur.Estado=Convert.ToBoolean(aux.Rows[0]["estado"]);
             }
             catch(Exception ex)
@@ -112,7 +111,6 @@ namespace Datos
             return aux;
         }
 
-
         public DataTable BuscarTurnoPorMedico(int id,string fecha)
         {
             DataTable aux = new DataTable();
@@ -127,6 +125,7 @@ namespace Datos
 
             return aux;
         }
+
         public DataTable BuscarTurnoPorPaciente(int id,DateTime fecha)
         {
             DataTable aux = new DataTable();
@@ -141,6 +140,7 @@ namespace Datos
 
             return aux;
         }
+
         public DataTable TurnosEntreFechas(DateTime desde,DateTime hasta)
         {
             DataTable aux = new DataTable();
@@ -201,6 +201,7 @@ namespace Datos
 
             return aux;
         }
+
         public DataTable PrimerTurno()
         {
 
