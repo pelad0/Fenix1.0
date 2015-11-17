@@ -129,6 +129,11 @@ namespace Fenix1._0
             dgvOSModif.Columns[1].Visible = false;
 
             tbModifOS.Clear();
+            tbPesosAlta.Text = "00";
+            tbPesosMod.Text = "00";
+            tbCentAlta.Text = "00";
+            tbCentMov.Text = "00";
+
             tbOS.Clear();
         }
 
