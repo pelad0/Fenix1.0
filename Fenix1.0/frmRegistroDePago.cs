@@ -264,15 +264,25 @@ namespace Fenix1._0
 
             if (dgvTurnosAPagar.Rows.Count > 0)
             {
-                if (string.IsNullOrWhiteSpace(cbTipoFactura.Text) && string.IsNullOrWhiteSpace(tbCliente.Text) && string.IsNullOrWhiteSpace(tbCuit.Text) && string.IsNullOrWhiteSpace(tbDireccion.Text))
+                if (string.IsNullOrWhiteSpace(cbTipoFactura.Text) == false && string.IsNullOrWhiteSpace(tbCliente.Text) == false && string.IsNullOrWhiteSpace(tbCuit.Text) == false && string.IsNullOrWhiteSpace(tbDireccion.Text) == false)
                 {
                     if (cbTipoFactura.Text == "A")
                     {
+                        //LISTA DE RECIBOS A DAR DE ALTA.
+                        List<clsRecibo> listaRecibosAInsertar = new List<clsRecibo>();
+
+                        //LISTA DE ID'S DE TURNOS A SER ACTUALIZADOS.
+                        List<int> idsDeTurnosAActualizar = new List<int>();
+
+                        //LISTA DE ID'S DE SOBRETURNOS A SER ACTUALIZADOS.
+                        List<int> idsDeSobreTurnosAActualizar = new List<int>();
+
+
                         if(string.IsNullOrWhiteSpace(tbCantidadEfectivo.Text))
                         {
                             tbCantidadEfectivo.Text = "0";
-                        }
-                      
+                        }                                 
+                        
                         foreach (DataGridViewRow row in dgvTurnosAPagar.Rows)
                         {
                             turn.Id = int.Parse(dgvTurnosAPagar.Rows[row.Index].Cells[0].Value.ToString());
@@ -308,7 +318,7 @@ namespace Fenix1._0
 
                         foreach (clsTurno turnito in turnoReporte)
                         {
-                            recibo.IdFactura = reposFac.ultimoId().Id + 1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
+                            recibo.IdFactura = reposFac.ultimoId().Id +1;    //METODO QUE ME TRAE EL ULTIMO ID DE FACTURA    
                             recibo.IdTurno = turnito.Id;
                             recibo.IdSobreTurno = null;                    //SI TIENE TURNO, SOBRE TURNO ES NULL.
                             recibo.Fecha = turnito.Fecha;
@@ -339,8 +349,8 @@ namespace Fenix1._0
 
 
 
-                            reposRecibo.Alta(recibo);       //Doy de alta el recibo:
-                            reposTurno.ActualizarAsistencia(turnito.Id);        //Paso el estado del turno a true.
+                            listaRecibosAInsertar.Add(recibo);          //Lista de recibos para ser dados de alta
+                            idsDeTurnosAActualizar.Add(turnito.Id);     //Lista de turnos para ser actualizadps.
 
 
 
@@ -380,29 +390,53 @@ namespace Fenix1._0
                             recibo.Detalle = es;
 
 
-                            reposRecibo.Alta(recibo);
-                            reposSobreTurno.ActualizarAsistencia(sobrTurnito.Id);
+                            listaRecibosAInsertar.Add(recibo);              //Lista de recibos para ser dados de alta
+                            reposSobreTurno.ActualizarAsistencia(sobrTurnito.Id);       //Lista de id de sobre turnos a ser actualizado.
 
                         }
 
                         clsClinica clini = new clsClinica();
 
-
+                   
                         Factura.Cuitcliente = tbCuit.Text;
                         Factura.NumeroFactura = reposFac.ultimoId().Id + 1;
-                        Factura.TipoFactura = char.Parse(cbTipoFactura.Text);
+                        Factura.TipoFactura = "A";
 
                         //Traigo los datos de mi clinica para signarle los datos.
                         clini = reposClinica.Todo(1);
 
                         Factura.RazonSocial = clini.RazonSocial;
-                        Factura.Terminal = usuario.Usuario;
+                        Factura.Terminal = usuario.Id;
                         Factura.Total = total;
                         Factura.Fecha = DateTime.Now;
                         Factura.IdUsuario = usuario.Id;
                         Factura.Cliente = tbCliente.Text;
                         Factura.PagoEfectivo = float.Parse(tbCantidadEfectivo.Text);
                         Factura.PagoTarjeta = float.Parse(tbCantidadTarjeta.Text);
+
+                        reposFac.Alta(Factura);
+
+
+                        //INSERTO TODOS LOS RECIBOS
+                        foreach(clsRecibo re in listaRecibosAInsertar)
+                        {
+                            reposRecibo.Alta(re);
+                        }
+
+                        //ACTUALIZO TODOS LOS TURNOS A TRUE
+                        foreach(int idT in idsDeTurnosAActualizar)
+                        {
+                            reposTurno.ActualizarAsistencia(idT);
+                        }
+
+
+                        //ACTUALIZO TODOS LOS SOBRETURNOS A TRUE
+                        foreach(int idST in idsDeSobreTurnosAActualizar)
+                        {
+                            reposSobreTurno.ActualizarAsistencia(idST);
+                        }
+
+
 
                         crPagos pago = new crPagos();
 
@@ -415,6 +449,13 @@ namespace Fenix1._0
 
                         frmView frmV = new frmView(pago);
                         frmV.ShowDialog();
+
+
+
+
+
+
+
 
                     }
                     else if (cbTipoFactura.Text == "B")

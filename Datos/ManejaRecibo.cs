@@ -22,7 +22,9 @@ namespace Datos
             clsRecibo rec = (clsRecibo)entidad;
             try
             {
-                manager.ejecutar("Insert into recibo(Idfactura,cobertura,importe,detalle) values('" + rec.IdFactura + "','" + rec.Cobertura + "'," + rec.Importe + "," + rec.Detalle + ");SELECT @@identity;");
+                //manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + "," + rec.IdSobreTurno + "," + rec.IdTurno + ",'" + rec.Fecha + "'," + rec.Cobertura + "," + rec.Importe + ",'" + rec.Detalle + "');SELECT @@identity;");
+                manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + "," + null + "," + rec.IdTurno + ",'" + rec.Fecha + "'," + 100 + "," + 200 + ",'" + rec.Detalle + "');SELECT @@identity;");
+
             }
             catch (Exception ex)
             {
@@ -48,7 +50,7 @@ namespace Datos
             clsRecibo rec = (clsRecibo)entidad;
             try
             {
-                manager.ejecutar("update recibo set idfactura=" + rec.IdFactura + ",cobertura=" + rec.Cobertura + ",importe=" + rec.Importe +",detalle='"+rec.Detalle+ "' where id=" + rec.Id);
+                manager.ejecutar("update recibo set idfactura=" + rec.IdFactura + ",idsobreturno=" + rec.IdSobreTurno + ",idturno=" + rec.IdTurno + ",fecha=" + rec.Fecha + ",cobertura=" + rec.Cobertura + ",importe=" + rec.Importe + ",detalle='" + rec.Detalle + "' where id=" + rec.Id);
             }
             catch (Exception ex)
             {
@@ -63,10 +65,13 @@ namespace Datos
             try
             {
                 aux = manager.consultar("select * from recibo where Id=" + id + " and activo=1");
-               rec.IdFactura = Convert.ToInt32(aux.Rows[0]["Idfactura"]);
                 rec.Id = Convert.ToInt32( aux.Rows[0]["id"]);
-                rec.Cobertura =Convert.ToDouble( aux.Rows[0]["cobertura"]);
-                rec.Importe = Convert.ToDouble(aux.Rows[0]["importe"]);
+                rec.IdFactura = Convert.ToInt32(aux.Rows[0]["idfactura"]);
+                rec.IdSobreTurno = Convert.ToInt32(aux.Rows[0]["idsobreturno"]);
+                rec.IdTurno = Convert.ToInt32(aux.Rows[0]["idturno"]);
+                rec.Fecha = Convert.ToDateTime(aux.Rows[0]["fecha"]);                
+                rec.Cobertura =float.Parse( aux.Rows[0]["cobertura"].ToString());
+                rec.Importe = float.Parse(aux.Rows[0]["importe"].ToString());
                 rec.Detalle = aux.Rows[0]["detalle"].ToString();
 
             }

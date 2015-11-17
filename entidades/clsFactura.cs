@@ -11,11 +11,17 @@ namespace entidades
     public class clsFactura : IEntidad
     {
         int id;
-        int numeroFactura;
-        char tipoFactura;
-        string razonSocial;
-        string terminal;
         string cuitcliente;
+        int numeroFactura;
+        string tipoFactura;
+        string razonSocial;
+        int terminal;        
+        float total;
+        DateTime fecha;
+        int idUsuario;
+        string cliente;
+        float pagoEfectivo;
+        float pagoTarjeta;
 
 
         public string Cuitcliente
@@ -25,17 +31,12 @@ namespace entidades
         }
 
 
-        public string Terminal
+        public int Terminal
         {
             get { return terminal; }
             set { terminal = value; }
         }
-        double total;
-        DateTime fecha;
-        int idUsuario;
-        string cliente;
-        double pagoEfectivo;
-        double pagoTarjeta;
+        
 
 
         public int Id
@@ -52,7 +53,7 @@ namespace entidades
         }
        
 
-        public char TipoFactura
+        public string TipoFactura
         {
             get { return tipoFactura; }
             set { tipoFactura = value; }
@@ -66,7 +67,7 @@ namespace entidades
         }
         
 
-        public double Total
+        public float Total
         {
             get { return total; }
             set { total = value; }
@@ -94,14 +95,14 @@ namespace entidades
         }
        
 
-        public double PagoEfectivo
+        public float PagoEfectivo
         {
             get { return pagoEfectivo; }
             set { pagoEfectivo = value; }
         }
        
 
-        public double PagoTarjeta
+        public float PagoTarjeta
         {
             get { return pagoTarjeta; }
             set { pagoTarjeta = value; }
@@ -112,25 +113,31 @@ namespace entidades
 
         }
 
-        public clsFactura(int id, int numeroFactura,char tipoFactura,string razonSocial,double total, DateTime fecha,int idUsuario,string cliente,double pagoEfectivo, double pagoTarjeta)
+        public clsFactura(int id, int numeroFactura,string tipoFactura,string razonSocial,int terminal, string cuitcliente, float total, DateTime fecha,int idUsuario,string cliente,float pagoEfectivo, float pagoTarjeta)
         {
             this.id = id;
             this.numeroFactura = numeroFactura;
             this.tipoFactura = tipoFactura;
             this.razonSocial = razonSocial;
+            this.terminal = terminal;
+            this.cuitcliente = cuitcliente;
             this.total = total;
             this.fecha = fecha;
             this.idUsuario = idUsuario;
             this.cliente = cliente;
             this.pagoEfectivo = pagoEfectivo;
             this.pagoTarjeta = pagoTarjeta;
+
+
         }
-        public clsFactura(int numeroFactura, char tipoFactura, string razonSocial, double total, DateTime fecha, int idUsuario, string cliente, double pagoEfectivo, double pagoTarjeta)
+        public clsFactura(int numeroFactura, string tipoFactura, string razonSocial, int terminal, string cuitcliente, float total, DateTime fecha, int idUsuario, string cliente, float pagoEfectivo, float pagoTarjeta)
         {
-            
+
             this.numeroFactura = numeroFactura;
             this.tipoFactura = tipoFactura;
             this.razonSocial = razonSocial;
+            this.terminal = terminal;
+            this.cuitcliente = cuitcliente;
             this.total = total;
             this.fecha = fecha;
             this.idUsuario = idUsuario;

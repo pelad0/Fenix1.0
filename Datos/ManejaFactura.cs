@@ -22,7 +22,7 @@ namespace Datos
             clsFactura fack = (clsFactura)entidad;
             try
             {
-                manager.ejecutar("Insert into factura(cuitcliente,numerofactura,tipofactura,razonsocial,numeroterminal,total,fecha,idusuario,cliente,pagoefectivo,pagotarjeta) values('" +fack.Cuitcliente + "'," + fack.NumeroFactura + ",'" + fack.TipoFactura + "','" + fack.RazonSocial +"','"+fack.Terminal+"',"+fack.Total+",'"+fack.Fecha+"',"+fack.IdUsuario+",'"+fack.Cliente+"',"+fack.PagoEfectivo+","+fack.PagoTarjeta+");SELECT @@identity;");
+                manager.ejecutar("Insert into factura(cuitcliente,numerofactura,tipofactura,razonsocial,numeroterminal,total,fecha,idusuario,cliente,pagoefectivo,pagotarjeta) values('" +fack.Cuitcliente + "'," + fack.NumeroFactura + ",'" + fack.TipoFactura + "','" + fack.RazonSocial +"',"+fack.Terminal+","+fack.Total+",'"+fack.Fecha+"',"+fack.IdUsuario+",'"+fack.Cliente+"',"+fack.PagoEfectivo+","+fack.PagoTarjeta+");SELECT @@identity;");
             }
             catch (Exception ex)
             {
@@ -68,14 +68,15 @@ namespace Datos
                 fack.Id = Convert.ToInt32(aux.Rows[0]["id"]);
                 fack.Cuitcliente = aux.Rows[0]["cuitcliente"].ToString();
                 fack.NumeroFactura =Convert.ToInt32( aux.Rows[0]["numerofactura"]);
+                fack.TipoFactura = aux.Rows[0]["tipofactura"].ToString();
                 fack.RazonSocial = aux.Rows[0]["razonsocial"].ToString();
-                fack.Terminal = aux.Rows[0]["numeroterminal"].ToString();
-                fack.Total = Convert.ToDouble(aux.Rows[0]["total"]);
+                fack.Terminal = Convert.ToInt32(aux.Rows[0]["numeroterminal"]);
+                fack.Total = float.Parse(aux.Rows[0]["total"].ToString());
                 fack.Fecha = Convert.ToDateTime(aux.Rows[0]["fecha"]);
                 fack.IdUsuario = Convert.ToInt32(aux.Rows[0]["idusuario"]);
                 fack.Cliente = aux.Rows[0]["cliente"].ToString();
-                fack.PagoEfectivo = Convert.ToDouble(aux.Rows[0]["pagoefectivo"]);
-                fack.PagoTarjeta = Convert.ToDouble(aux.Rows[0]["pagotarjeta"]);
+                fack.PagoEfectivo = float.Parse(aux.Rows[0]["pagoefectivo"].ToString());
+                fack.PagoTarjeta = float.Parse(aux.Rows[0]["pagotarjeta"].ToString());
            
                 
 
@@ -109,7 +110,7 @@ namespace Datos
             try
             {
 
-                aux = manager.consultar("select TOP 1 id from factura where activo=1 order by id desc ");
+                aux = manager.consultar("select TOP 1 * from factura where activo=1 order by id desc ");
             }
             catch (Exception ex)
             {

@@ -89,13 +89,12 @@ namespace logica
             {
                 tabla = manejaclinica.Todo(pag);
                 foreach (DataRow aux in tabla.Rows)
-                {
-                    cl.Id= Convert.ToInt32(aux["id"]);
+                {                    
                     cl.FechaInicioActividades = Convert.ToDateTime(aux["fia"]);
                     cl.Cuit=aux["cuit"].ToString();
                     cl.IngresosBrutos = Convert.ToDouble(aux["iibb"]);
                     cl.NombreFantasia = aux["nombrefantasia"].ToString();
-                    cl.NombreFantasia = aux["razonsocial"].ToString();
+                    cl.RazonSocial = aux["razonsocial"].ToString();
                     cl.DomicilioComercial=aux["domiciliocom"].ToString();
                     cl.DomicilioFiscal = aux["domiciliofisc"].ToString();
                 }        
