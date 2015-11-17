@@ -78,7 +78,7 @@ namespace Datos
                 fack.PagoEfectivo = float.Parse(aux.Rows[0]["pagoefectivo"].ToString());
                 fack.PagoTarjeta = float.Parse(aux.Rows[0]["pagotarjeta"].ToString());
            
-
+                
 
             }
             catch (Exception ex)

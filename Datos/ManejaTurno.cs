@@ -67,7 +67,7 @@ namespace Datos
         {
              try
             {
-                manager.ejecutar("update turno set estado=" + true + " where id=" + id);
+                manager.ejecutar("update turno set estado=" + 1 + " where id=" + id);
             }
             catch (Exception ex)
             {
@@ -156,6 +156,7 @@ namespace Datos
 
             return aux;
         }
+
         public DataTable BuscarTurnoPorPaciente(int id)
         {
             DataTable aux = new DataTable();
@@ -191,7 +192,7 @@ namespace Datos
             DataTable aux = new DataTable();
             try
             {
-                aux = manager.consultar("select TOP 1 * from turno where activo=1");
+                aux = manager.consultar("select TOP 1 * from turno where activo=1 order by id desc");
             }
             catch (Exception ex)
             {
@@ -205,8 +206,9 @@ namespace Datos
 
             DataTable aux = new DataTable();
             try
-            {
-                aux = manager.consultar("select TOP 1 * from turno where activo=1 order by id desc");
+            { 
+                aux = manager.consultar("select TOP 1 * from turno where activo=1");
+              
             }
             catch (Exception ex)
             {

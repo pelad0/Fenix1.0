@@ -63,9 +63,13 @@ namespace Datos
             try
             {
                 aux = manager.consultar("select * from especialidad where id=" + id + "and activo=1");
-                esp.Id = Convert.ToInt32(aux.Rows[0]["id"]);
-                esp.Descripcion = aux.Rows[0]["descripcion"].ToString();
-                esp.Canon =(float) Convert.ToDecimal(aux.Rows[0]["canon"]);
+                if (aux.Rows.Count != 0)
+                {
+                    esp.Id = Convert.ToInt32(aux.Rows[0]["id"]);
+                    esp.Descripcion = aux.Rows[0]["descripcion"].ToString();
+                    esp.Canon = (float)Convert.ToDecimal(aux.Rows[0]["canon"]);
+                }
+               
                
             }
             catch (Exception ex)
@@ -97,9 +101,13 @@ namespace Datos
             try
             {
                 aux = manager.consultar("select * from especialidad where descripcion='" + nombre + "' and activo=1");
-                esp.Id = Convert.ToInt32(aux.Rows[0]["id"]);
-                esp.Descripcion = aux.Rows[0]["descripcion"].ToString();
-                esp.Canon = (float)Convert.ToDecimal(aux.Rows[0]["canon"]);
+                if(aux.Rows.Count!=0)
+                {
+                    esp.Id = Convert.ToInt32(aux.Rows[0]["id"]);
+                    esp.Descripcion = aux.Rows[0]["descripcion"].ToString();
+                    esp.Canon = (float)Convert.ToDecimal(aux.Rows[0]["canon"]);
+                }
+                
 
             }
             catch (Exception ex)
