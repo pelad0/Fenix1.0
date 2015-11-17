@@ -24,16 +24,15 @@ namespace Datos
             {
                if(rec.IdSobreTurno == null)
                {
-                   string hola;
-                   hola = DBNull.Value;
-                   manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + "," + rec.IdSobreTurno + "," + rec.IdTurno + ",'" + rec.Fecha + "'," + rec.Cobertura + "," + rec.Importe + ",'" + rec.Detalle + "');SELECT @@identity;");
+                   
+                   manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + ",null," + rec.IdTurno + ",'" + rec.Fecha + "'," + rec.Cobertura + "," + rec.Importe + ",'" + rec.Detalle + "');SELECT @@identity;");
 
                }
                else
                {
 
                }
-                manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + "," + rec.IdSobreTurno + "," + rec.IdTurno + ",'" + rec.Fecha + "'," + rec.Cobertura + "," + rec.Importe + ",'" + rec.Detalle + "');SELECT @@identity;");
+                manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + "," + rec.IdSobreTurno + ",null,'" + rec.Fecha + "'," + rec.Cobertura + "," + rec.Importe + ",'" + rec.Detalle + "');SELECT @@identity;");
 
             }
             catch (Exception ex)
