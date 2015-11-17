@@ -190,7 +190,7 @@ namespace logica
                 paciente.Apellido = pac.Apellido;
                 paciente.Dni = pac.Dni;
                 paciente.Telefono = pac.Telefono;
-                aux = (clsObraSocial)manejaOs.buscaPorId(pac2.Id);
+                aux = (clsObraSocial)manejaOs.buscaPorId(pac.ObraSocial);
                 paciente.ObraSocial = aux.Nombre;
             }
             catch (SqlException ex)

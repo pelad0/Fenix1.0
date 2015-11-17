@@ -117,7 +117,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(147, 30);
             this.label5.TabIndex = 25;
-            this.label5.Text = "*Doble click \r\npara ver sus turnos.\r\n";
+            this.label5.Text = "*Click \r\npara ver sus turnos.\r\n";
             // 
             // lblNumeroPagina
             // 
@@ -198,6 +198,7 @@
             this.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPacientes.Size = new System.Drawing.Size(727, 151);
             this.dgvPacientes.TabIndex = 20;
+            this.dgvPacientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacientes_CellContentClick);
             this.dgvPacientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacientes_CellContentDoubleClick);
             // 
             // dgvTurnos
@@ -224,7 +225,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTurnos.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvTurnos.Location = new System.Drawing.Point(46, 47);
+            this.dgvTurnos.Location = new System.Drawing.Point(46, 27);
             this.dgvTurnos.MultiSelect = false;
             this.dgvTurnos.Name = "dgvTurnos";
             this.dgvTurnos.ReadOnly = true;
@@ -237,7 +238,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(110, 22);
+            this.label4.Location = new System.Drawing.Point(110, 2);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 22);
             this.label4.TabIndex = 26;
@@ -283,7 +284,7 @@
             this.pnlPago.Controls.Add(this.label10);
             this.pnlPago.Controls.Add(this.label11);
             this.pnlPago.Enabled = false;
-            this.pnlPago.Location = new System.Drawing.Point(3, 255);
+            this.pnlPago.Location = new System.Drawing.Point(3, 233);
             this.pnlPago.Name = "pnlPago";
             this.pnlPago.Size = new System.Drawing.Size(815, 171);
             this.pnlPago.TabIndex = 44;
@@ -365,7 +366,7 @@
             this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagar.Location = new System.Drawing.Point(510, 90);
             this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(130, 26);
+            this.btnPagar.Size = new System.Drawing.Size(130, 38);
             this.btnPagar.TabIndex = 26;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = true;
@@ -381,6 +382,7 @@
             this.tbCantidadTarjeta.TabIndex = 43;
             this.tbCantidadTarjeta.Text = "0";
             this.tbCantidadTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbCantidadTarjeta.TextChanged += new System.EventHandler(this.tbCantidadTarjeta_TextChanged);
             // 
             // label7
             // 
@@ -484,7 +486,7 @@
             this.label8.AutoSize = true;
             this.label8.Enabled = false;
             this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(350, 200);
+            this.label8.Location = new System.Drawing.Point(350, 178);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 19);
             this.label8.TabIndex = 33;
@@ -498,7 +500,7 @@
             this.cbTipoFactura.Items.AddRange(new object[] {
             "A",
             "B"});
-            this.cbTipoFactura.Location = new System.Drawing.Point(390, 222);
+            this.cbTipoFactura.Location = new System.Drawing.Point(390, 200);
             this.cbTipoFactura.Name = "cbTipoFactura";
             this.cbTipoFactura.Size = new System.Drawing.Size(45, 27);
             this.cbTipoFactura.TabIndex = 32;
@@ -511,7 +513,7 @@
             this.btnTraer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTraer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTraer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraer.Location = new System.Drawing.Point(380, 144);
+            this.btnTraer.Location = new System.Drawing.Point(377, 121);
             this.btnTraer.Name = "btnTraer";
             this.btnTraer.Size = new System.Drawing.Size(68, 34);
             this.btnTraer.TabIndex = 30;
@@ -522,7 +524,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(550, 22);
+            this.label6.Location = new System.Drawing.Point(550, 2);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 22);
             this.label6.TabIndex = 29;
@@ -535,7 +537,7 @@
             this.btnPasar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPasar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPasar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPasar.Location = new System.Drawing.Point(380, 63);
+            this.btnPasar.Location = new System.Drawing.Point(377, 40);
             this.btnPasar.Name = "btnPasar";
             this.btnPasar.Size = new System.Drawing.Size(68, 34);
             this.btnPasar.TabIndex = 28;
@@ -566,7 +568,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTurnosAPagar.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvTurnosAPagar.Location = new System.Drawing.Point(471, 47);
+            this.dgvTurnosAPagar.Location = new System.Drawing.Point(471, 27);
             this.dgvTurnosAPagar.MultiSelect = false;
             this.dgvTurnosAPagar.Name = "dgvTurnosAPagar";
             this.dgvTurnosAPagar.ReadOnly = true;

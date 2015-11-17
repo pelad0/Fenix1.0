@@ -306,7 +306,6 @@ namespace logica
 
                     clsSobreTurnoVista turno = new clsSobreTurnoVista();
                     turno.Id = Convert.ToInt32(aux["id"]);
-                    turno.Id = Convert.ToInt32(aux["idMedico"]);
                     turno.Medico = metodoM((clsMedicoDatos)manejamedico.buscaPorId(Convert.ToInt32(aux["idMedico"])));
                     turno.Paciente = metodoP((clsPacienteDatos)manejapaciente.buscaPorId(Convert.ToInt32(aux["idPaciente"])));
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
