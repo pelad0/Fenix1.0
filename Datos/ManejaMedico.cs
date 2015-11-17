@@ -50,7 +50,8 @@ namespace Datos
             clsMedicoDatos med = (clsMedicoDatos)entidad;
             try
             {
-                manager.ejecutar("update medico set activo=0 where id=" + med.Id);
+               // manager.ejecutar("update medico set activo=0 where id=" + med.Id);
+                manager.ejecutar("exec borrarMedico1 " + med.Id);
             }
             catch(Exception ex)
             {

@@ -107,7 +107,7 @@ namespace logica
                     turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                    turno.Costo = float.Parse(aux["costo"].ToString());
 
                     lista.Add(turno);
                 }
@@ -145,7 +145,7 @@ namespace logica
                     turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                    turno.Costo = float.Parse(aux["costo"].ToString());
                     lista.Add(turno);
 
 
@@ -180,7 +180,7 @@ namespace logica
                     turno.Paciente = metodoP((clsPacienteDatos)manejapaciente.buscaPorId(Convert.ToInt32(aux["idPaciente"])));
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                    turno.Costo = float.Parse(aux["costo"].ToString());
                     lista.Add(turno);
 
 
@@ -274,7 +274,7 @@ namespace logica
                     turno.IdPaciente = Convert.ToInt32(aux["idPaciente"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                    turno.Costo = float.Parse(aux["costo"].ToString());
                     lista.Add(turno);
 
 
@@ -311,7 +311,7 @@ namespace logica
                     turno.Paciente = metodoP((clsPacienteDatos)manejapaciente.buscaPorId(Convert.ToInt32(aux["idPaciente"])));
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                    turno.Costo = float.Parse(aux["costo"].ToString());
                     lista.Add(turno);
 
 
@@ -349,7 +349,7 @@ namespace logica
                     turno.Paciente = metodoP((clsPacienteDatos)manejapaciente.buscaPorId(Convert.ToInt32(aux["idPaciente"])));
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                    turno.Costo = float.Parse(aux["costo"].ToString());
                     lista.Add(turno);
 
 
@@ -387,7 +387,7 @@ namespace logica
                     turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                    turno.Costo = float.Parse(aux["costo"].ToString());
                 }
             }
             catch (SqlException ex)
@@ -421,7 +421,7 @@ namespace logica
                     turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                    turno.Costo = float.Parse(aux["costo"].ToString());
                 }
             }
             catch (SqlException ex)
@@ -471,7 +471,7 @@ namespace logica
                     turno.IdUsuario = Convert.ToInt32(aux["idUsuario"]);
                     turno.Fecha = Convert.ToDateTime(aux["fecha"]);
                     turno.Estado = Convert.ToBoolean(aux["estado"]);
-                    turno.Costo = Convert.ToDouble(aux["costo"]);
+                    turno.Costo = float.Parse(aux["costo"].ToString());
                     lista.Add(turno);
 
 

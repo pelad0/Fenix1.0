@@ -36,7 +36,8 @@ namespace Datos
             clsEspecialidad esp = (clsEspecialidad)entidad;
             try
             {
-                manager.ejecutar("update especialidad set activo=0 where id=" + esp.Id);
+               // manager.ejecutar("update especialidad set activo=0 where id=" + esp.Id);
+                manager.ejecutar("exec borrarEspecialidad " + esp.Id);
             }
             catch (Exception ex)
             {
