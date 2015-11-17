@@ -52,7 +52,8 @@ namespace Datos
             clsPacienteDatos pac = (clsPacienteDatos)entidad;
             try
             {
-                manager.ejecutar("update paciente set activo=0 where id=" + pac.Id);
+                //manager.ejecutar("update paciente set activo=0 where id=" + pac.Id);
+                manager.ejecutar("exec borrarPaciente " + pac.Id); 
             }
             catch(Exception ex)
             {

@@ -14,7 +14,7 @@ namespace entidades
         clsMedico medico;
         clsPaciente paciente;
         DateTime fecha;
-        double costo;
+       float costo;
         int idUsuario;
         bool estado;
                  
@@ -23,7 +23,7 @@ namespace entidades
 
         }
 
-        public clsTurnoVista(int id, clsMedico medico, clsPaciente paciente, DateTime fecha, double costo, int idUsuario, bool estado)
+        public clsTurnoVista(int id, clsMedico medico, clsPaciente paciente, DateTime fecha, float costo, int idUsuario, bool estado)
         {
             this.id = id;
             this.medico = medico;
@@ -70,7 +70,7 @@ namespace entidades
             set { fecha = value; }
         }        
 
-        public double Costo
+        public float Costo
         {
             get { return costo; }
             set { costo = value; }

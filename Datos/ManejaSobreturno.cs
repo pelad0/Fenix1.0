@@ -26,7 +26,7 @@ namespace Datos
                 {
                    // manager.ejecutar("Insert into sobreturno(idpaciente,idmedico,fecha,costo,estado,idusuario) values(" + tur.IdPaciente + "," + tur.IdMedico + ",'" + tur.Fecha + "'," + 0 + "," + 0 + "," + tur.IdUsuario + ");SELECT @@identity;");
 
-                    manager.ejecutar("exec insertarSobreTurno " + tur.IdPaciente + "," + tur.IdMedico + ",'" + tur.Fecha + "'," + tur.Costo + "," + 0 + "," + tur.IdUsuario);
+                    manager.ejecutar("exec insertarSobreTurno " + tur.IdPaciente + "," + tur.IdMedico + ",'" + tur.Fecha + "'," + tur.Costo.ToString().Replace(',','.') + "," + 0 + "," + tur.IdUsuario);
                 }
                 catch (Exception ex)
                 {
@@ -56,7 +56,7 @@ namespace Datos
                 clsSobreturno tur = (clsSobreturno)entidad;
                 try
                 {
-                    manager.ejecutar("update sobreturno set idpaciente=" + tur.IdPaciente + ",idmedico=" + tur.IdMedico + ",fecha=" + tur.Fecha + ",costo=" + tur.Costo + ",estado=" + tur.Estado + ",idusuario= " + tur.IdUsuario + "where id=" + tur.Id);
+                    manager.ejecutar("update sobreturno set idpaciente=" + tur.IdPaciente + ",idmedico=" + tur.IdMedico + ",fecha=" + tur.Fecha + ",costo=" + tur.Costo.ToString().Replace(',', '.') + ",estado=" + tur.Estado + ",idusuario= " + tur.IdUsuario + "where id=" + tur.Id);
                 }
                 catch (Exception ex)
                 {
@@ -68,7 +68,7 @@ namespace Datos
             {
                 try
                 {
-                    manager.ejecutar("update sobreturno set estado=" + true + "where id=" + id);
+                    manager.ejecutar("update sobreturno set estado=" + 1 + "where id=" + id);
                 }
                 catch (Exception ex)
                 {
@@ -86,7 +86,7 @@ namespace Datos
                     tur.IdMedico = Convert.ToInt32(aux.Rows[0]["idmedico"]);
                     tur.IdPaciente = Convert.ToInt32(aux.Rows[0]["idpaciente"]);
                     tur.Fecha = Convert.ToDateTime(aux.Rows[0]["fecha"]);
-                    tur.Costo = Convert.ToDouble(aux.Rows[0]["costo"]);
+                    tur.Costo = float.Parse(aux.Rows[0]["costo"].ToString());
                     tur.Estado = Convert.ToBoolean(aux.Rows[0]["estado"]);
                 }
                 catch (Exception ex)

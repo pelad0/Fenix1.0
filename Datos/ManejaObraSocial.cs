@@ -26,7 +26,7 @@ namespace Datos
                 aux = manager.consultar("select * from obrasocial where nombre='" + ob.Nombre + "'");
                 if (aux.Rows.Count == 0)
                 {
-                    manager.ejecutar("Insert into obrasocial(nombre, canon) values('" + ob.Nombre + "',"+(decimal)ob.Monto+");SELECT @@identity;");
+                    manager.ejecutar("Insert into obrasocial(nombre, canon) values('" + ob.Nombre + "',"+ob.Monto.ToString().Replace(',','.')+");SELECT @@identity;");
                 }
                 else
                 {
@@ -52,7 +52,8 @@ activo bit default 1
             clsObraSocial ob = (clsObraSocial)entidad;
             try
             {
-                manager.ejecutar("update obrasocial set activo=0 where id=" + ob.Id);
+               // manager.ejecutar("update obrasocial set activo=0 where id=" + ob.Id);
+                manager.ejecutar("exec borrarObrasocial1 " + ob.Id);
             }
             catch (Exception ex)
             {
@@ -66,7 +67,7 @@ activo bit default 1
 
             try
             {
-                manager.ejecutar("update obrasocial set nombre='" + ob.Nombre +"', canon=" +ob.Monto +" where id="+ob.Id+" and activo=1");
+                manager.ejecutar("update obrasocial set nombre='" + ob.Nombre + "', canon=" + ob.Monto.ToString().Replace(',', '.') + " where id=" + ob.Id + " and activo=1");
             }
             catch (Exception ex)
             {
