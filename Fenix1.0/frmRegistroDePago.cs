@@ -436,7 +436,7 @@ namespace Fenix1._0
                             reposSobreTurno.ActualizarAsistencia(idST);
                         }
 
-
+                         
 
                         crPagos pago = new crPagos();
 
