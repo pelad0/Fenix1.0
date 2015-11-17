@@ -338,7 +338,10 @@ namespace Fenix1._0
 
                 foreach (clsObraSocial obr in listaObraSocial)
                 {
-                    clbObraSocial.Items.Add(obr.Nombre);
+                    if (!obr.Nombre.Equals("NINGUNA"))
+                    {
+                        clbObraSocial.Items.Add(obr.Nombre);
+                    }
                 }
 
 
