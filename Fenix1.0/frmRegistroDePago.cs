@@ -460,7 +460,7 @@ namespace Fenix1._0
                         {
                             reposTurno.ActualizarAsistencia(idT);
                         }
-
+                            
                           
                         //ACTUALIZO TODOS LOS SOBRETURNOS A TRUE
                         foreach(int idST in idsDeSobreTurnosAActualizar)
