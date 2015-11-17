@@ -163,15 +163,14 @@ namespace Fenix1._0
             {
                 if(dgvMedicosAlta.Rows.Count > 0)
                 {
+                    dgvMedicosAlta.Columns.Clear();
                     dgvMedicosAlta.Rows.Clear();
 
                 }
                 
                 if(dgvMedicosBaja.Rows.Count > 0)
                 {
-                    dgvMedicosBaja.Columns.Remove("idTurno");
-                    dgvMedicosBaja.Columns.Remove("Matricula");
-                    dgvMedicosBaja.Columns.Remove("Apellido");
+                    dgvMedicosBaja.Columns.Clear();
 
                     foreach (DataGridViewRow row in dgvMedicosBaja.Rows)
                     {
@@ -181,9 +180,7 @@ namespace Fenix1._0
 
                 if(dgvMedicosModi.Rows.Count > 0)
                 {
-                    dgvMedicosModi.Columns.Remove("idTurno");
-                    dgvMedicosModi.Columns.Remove("Matricula");
-                    dgvMedicosModi.Columns.Remove("Apellido");
+                    dgvMedicosModi.Columns.Clear();
 
                     foreach (DataGridViewRow row in dgvMedicosModi.Rows)
                     {
@@ -197,7 +194,7 @@ namespace Fenix1._0
 
                 if (dgvObrasSocialesAlta.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
                 {
-                    dgvObrasSocialesAlta.Columns.Remove("Nombre");
+                    dgvObrasSocialesAlta.Columns.Clear();
 
                     foreach (DataGridViewRow row in dgvObrasSocialesAlta.Rows)
                     {
@@ -207,7 +204,7 @@ namespace Fenix1._0
 
                 if (dgvObrasSocialesBaja.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
                 {
-                    dgvObrasSocialesBaja.Columns.Remove("Nombre");
+                    dgvObrasSocialesBaja.Columns.Clear();
 
                     foreach (DataGridViewRow row in dgvObrasSocialesBaja.Rows)
                     {
@@ -217,7 +214,7 @@ namespace Fenix1._0
 
                 if (dgvObrasSocialesModi.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
                 {
-                    dgvObrasSocialesModi.Columns.Remove("Nombre");
+                    dgvObrasSocialesModi.Columns.Clear();
 
                     foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
                     {
