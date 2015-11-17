@@ -581,7 +581,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmRegistroDePago";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRegistroDePago";
             this.Load += new System.EventHandler(this.frmRegistroDePago_Load);
             this.panel1.ResumeLayout(false);

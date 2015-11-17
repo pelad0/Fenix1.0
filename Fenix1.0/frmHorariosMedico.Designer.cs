@@ -782,9 +782,10 @@
             // 
             // btnTerminar
             // 
-            this.btnTerminar.Location = new System.Drawing.Point(361, 452);
+            this.btnTerminar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerminar.Location = new System.Drawing.Point(341, 453);
             this.btnTerminar.Name = "btnTerminar";
-            this.btnTerminar.Size = new System.Drawing.Size(75, 23);
+            this.btnTerminar.Size = new System.Drawing.Size(103, 29);
             this.btnTerminar.TabIndex = 36;
             this.btnTerminar.Text = "Terminar";
             this.btnTerminar.UseVisualStyleBackColor = true;
@@ -828,7 +829,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 478);
+            this.ClientSize = new System.Drawing.Size(692, 486);
             this.Controls.Add(this.rbTarde);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbTodos);

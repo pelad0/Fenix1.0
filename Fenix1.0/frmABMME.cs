@@ -197,14 +197,7 @@ namespace Fenix1._0
 
                 if(dgvMedicosAlta.Rows.Count > 0)
                 {
-                    dgvMedicosAlta.Columns.Remove("idTurno");
-                    dgvMedicosAlta.Columns.Remove("Matricula");
-                    dgvMedicosAlta.Columns.Remove("Apellido");
-
-                    foreach (DataGridViewRow row in dgvMedicosAlta.Rows)
-                    {
-                        dgvMedicosAlta.Rows.Remove(row);
-                    }
+                    dgvMedicosAlta.Rows.Clear();
 
                 }
 

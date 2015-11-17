@@ -652,19 +652,6 @@ namespace Fenix1._0
                 }
             }
 
-            //if (PacienteActual.ObraSocial != null)          //PREGUNTO SI EL PACIENTE TIENE O NO OBRA SOCIAL PARA CALCULAR EL MONTO DE COBERTURA.
-            //{
-            //    obrita = reposObra.BuscarPorNombre(PacienteActual.ObraSocial);   //METODO QUE ME RETORNA LA OBRA POR EL NOMBRE.
-            //    recibo.Cobertura = obrita.Monto;
-            //    totalDescuento += obrita.Monto;
-            //}            
-
-
-
-
-
-
-
             clsEspecialidad especiali = new clsEspecialidad();
             
             clsObraSocial obrita = reposObra.BuscarPorNombre(PacienteActual.ObraSocial);
