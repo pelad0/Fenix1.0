@@ -47,5 +47,23 @@ namespace entidades
             set { monto = value; }
         }
       
+        public int pesos()
+        {
+            return (int)monto;
+        }
+
+        public int cent()
+        {
+            string numStr = monto.ToString();
+            if (numStr.Split('.').Count() > 1)
+            {
+                int cent = int.Parse(numStr.Split('.')[1]);
+                return cent;
+            }
+            else
+            {
+                return 00;
+            }
+        }
     }
 }
