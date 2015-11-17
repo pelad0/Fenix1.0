@@ -174,9 +174,9 @@
             this.lblAccion.Font = new System.Drawing.Font("DejaVu Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccion.Location = new System.Drawing.Point(82, 352);
             this.lblAccion.Name = "lblAccion";
-            this.lblAccion.Size = new System.Drawing.Size(21, 22);
+            this.lblAccion.Size = new System.Drawing.Size(17, 22);
             this.lblAccion.TabIndex = 10;
-            this.lblAccion.Text = "*";
+            this.lblAccion.Text = " ";
             // 
             // frmRecepcion
             // 
