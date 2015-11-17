@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblAccion = new System.Windows.Forms.Label();
+            this.btnInformesOS = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPacientes
@@ -45,7 +46,7 @@
             this.btnPacientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPacientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPacientes.Font = new System.Drawing.Font("DejaVu Serif", 14.25F, System.Drawing.FontStyle.Italic);
-            this.btnPacientes.Location = new System.Drawing.Point(178, 201);
+            this.btnPacientes.Location = new System.Drawing.Point(92, 234);
             this.btnPacientes.Name = "btnPacientes";
             this.btnPacientes.Size = new System.Drawing.Size(175, 37);
             this.btnPacientes.TabIndex = 4;
@@ -62,7 +63,7 @@
             this.btnMedicos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMedicos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMedicos.Font = new System.Drawing.Font("DejaVu Serif", 14.25F, System.Drawing.FontStyle.Italic);
-            this.btnMedicos.Location = new System.Drawing.Point(85, 107);
+            this.btnMedicos.Location = new System.Drawing.Point(92, 141);
             this.btnMedicos.Name = "btnMedicos";
             this.btnMedicos.Size = new System.Drawing.Size(175, 37);
             this.btnMedicos.TabIndex = 1;
@@ -79,7 +80,7 @@
             this.btnObraSocial.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnObraSocial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnObraSocial.Font = new System.Drawing.Font("DejaVu Serif", 14.25F, System.Drawing.FontStyle.Italic);
-            this.btnObraSocial.Location = new System.Drawing.Point(297, 107);
+            this.btnObraSocial.Location = new System.Drawing.Point(307, 141);
             this.btnObraSocial.Name = "btnObraSocial";
             this.btnObraSocial.Size = new System.Drawing.Size(175, 37);
             this.btnObraSocial.TabIndex = 2;
@@ -96,7 +97,7 @@
             this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUsuarios.Font = new System.Drawing.Font("DejaVu Serif", 14.25F, System.Drawing.FontStyle.Italic);
-            this.btnUsuarios.Location = new System.Drawing.Point(409, 201);
+            this.btnUsuarios.Location = new System.Drawing.Point(307, 234);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(175, 37);
             this.btnUsuarios.TabIndex = 5;
@@ -113,7 +114,7 @@
             this.btnTurnos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTurnos.Font = new System.Drawing.Font("DejaVu Serif", 14.25F, System.Drawing.FontStyle.Italic);
-            this.btnTurnos.Location = new System.Drawing.Point(516, 107);
+            this.btnTurnos.Location = new System.Drawing.Point(522, 141);
             this.btnTurnos.Name = "btnTurnos";
             this.btnTurnos.Size = new System.Drawing.Size(175, 37);
             this.btnTurnos.TabIndex = 3;
@@ -132,7 +133,7 @@
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(123, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 43);
+            this.label1.Size = new System.Drawing.Size(254, 44);
             this.label1.TabIndex = 11;
             this.label1.Text = "Bienvenido";
             // 
@@ -144,7 +145,7 @@
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.Location = new System.Drawing.Point(412, 33);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(210, 43);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(220, 44);
             this.lblNombreUsuario.TabIndex = 10;
             this.lblNombreUsuario.Text = "NombreU";
             // 
@@ -159,6 +160,23 @@
             this.lblAccion.TabIndex = 12;
             this.lblAccion.Text = " ";
             // 
+            // btnInformesOS
+            // 
+            this.btnInformesOS.BackColor = System.Drawing.Color.Transparent;
+            this.btnInformesOS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInformesOS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInformesOS.Font = new System.Drawing.Font("DejaVu Serif", 14.25F, System.Drawing.FontStyle.Italic);
+            this.btnInformesOS.Location = new System.Drawing.Point(522, 234);
+            this.btnInformesOS.Name = "btnInformesOS";
+            this.btnInformesOS.Size = new System.Drawing.Size(175, 37);
+            this.btnInformesOS.TabIndex = 5;
+            this.btnInformesOS.Tag = "6";
+            this.btnInformesOS.Text = "Informes OS";
+            this.btnInformesOS.UseVisualStyleBackColor = false;
+            this.btnInformesOS.Click += new System.EventHandler(this.btnInformesOS_Click);
+            this.btnInformesOS.MouseEnter += new System.EventHandler(this.btnMedicos_MouseEnter);
+            this.btnInformesOS.MouseLeave += new System.EventHandler(this.btnMedicos_MouseLeave);
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -170,6 +188,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.btnTurnos);
+            this.Controls.Add(this.btnInformesOS);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnMedicos);
             this.Controls.Add(this.btnObraSocial);
@@ -200,5 +219,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Label lblAccion;
+        private System.Windows.Forms.Button btnInformesOS;
     }
 }

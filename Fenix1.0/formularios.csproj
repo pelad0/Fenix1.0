@@ -85,6 +85,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmReporteOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteOS.Designer.cs">
+      <DependentUpon>frmReporteOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReporteTurnosMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     <EmbeddedResource Include="crTurnosMedico.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crTurnosMedico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteOS.resx">
+      <DependentUpon>frmReporteOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteTurnosMedico.resx">
       <DependentUpon>frmReporteTurnosMedico.cs</DependentUpon>

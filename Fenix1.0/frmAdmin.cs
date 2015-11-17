@@ -59,6 +59,12 @@ namespace Fenix1._0
             frmT.ShowDialog();
         }
 
+        private void btnInformesOS_Click(object sender, EventArgs e)
+        {
+            frmReporteOS ros = new frmReporteOS();
+            ros.ShowDialog();
+        }
+
         private void btnMedicos_MouseEnter(object sender, EventArgs e)
         {
             if ((sender as Button).Tag.ToString() == "1")
@@ -81,6 +87,11 @@ namespace Fenix1._0
             {
                 lblAccion.Text = "*Administración de Obras Sociales en la Clínica.";
             }
+            if ((sender as Button).Tag.ToString() == "6")
+            {
+                lblAccion.Text = "*Generación de reportes para Obras Sociales.";
+            }
+
             
         }
 
@@ -93,5 +104,6 @@ namespace Fenix1._0
         {
             lblNombreUsuario.Text = u.Usuario;
         }
+
     }
 }
