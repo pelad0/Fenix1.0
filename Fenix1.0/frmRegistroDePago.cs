@@ -126,7 +126,7 @@ namespace Fenix1._0
 
                 foreach (clsPaciente pas in listPas)
                 {
-                    dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
+                    dgvPacientes.Rows.Add(pas.Id, pas.Nombre, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
                 }
 
             }
@@ -182,7 +182,7 @@ namespace Fenix1._0
 
             foreach (clsPaciente pas in listPas)
             {
-                dgvPacientes.Rows.Add(pas.Id, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
+                dgvPacientes.Rows.Add(pas.Id, pas.Nombre, pas.Apellido, pas.Dni, pas.ObraSocial, pas.Telefono);
             }
 
         }
@@ -567,10 +567,7 @@ namespace Fenix1._0
         {
             if (dgvPacientes.Rows.Count > 0)
             {
-                foreach (DataGridViewRow row in dgvPacientes.Rows)
-                {
-                    dgvPacientes.Rows.Remove(row);
-                }
+                dgvPacientes.Rows.Clear();
             }
         }
 
@@ -679,9 +676,9 @@ namespace Fenix1._0
 
                     if (reposObra.buscarPorId(obritaDelMedico.IdObra).Nombre == obrita.Nombre)
                     {
-                        if ((obrita.Monto - especiali.Canon) > 0)
+                        if ((especiali.Canon - obrita.Monto) > 0)
                         {
-                            total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+                            total += (especiali.Canon - obrita.Monto);               //Cargo el importe con el valor de la especialidad.
                         }
                         else
                         {
@@ -721,9 +718,9 @@ namespace Fenix1._0
 
                     if (reposObra.buscarPorId(obritaDelMedico.IdObra).Nombre == obrita.Nombre)
                     {
-                        if ((obrita.Monto - especiali.Canon) > 0)
+                        if ((especiali.Canon - obrita.Monto) > 0)
                         {
-                            total += especiali.Canon;               //Cargo el importe con el valor de la especialidad.
+                            total += (especiali.Canon - obrita.Monto);               //Cargo el importe con el valor de la especialidad.
                         }
                         else
                         {
