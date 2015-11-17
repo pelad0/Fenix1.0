@@ -54,7 +54,7 @@ namespace Fenix1._0
                         if (u.Clave == tbClave.Text)
                         {
                             seg = u.Seguridad;
-
+                            this.u = u;
                             paso = true;
                         }
                     }

@@ -163,14 +163,8 @@ namespace Fenix1._0
             {
                 if(dgvMedicosAlta.Rows.Count > 0)
                 {
-                    dgvMedicosAlta.Columns.Remove("idTurno");
-                    dgvMedicosAlta.Columns.Remove("Matricula");
-                    dgvMedicosAlta.Columns.Remove("Apellido");
+                    dgvMedicosAlta.Rows.Clear();
 
-                    foreach (DataGridViewRow row in dgvMedicosAlta.Rows)
-                    {
-                        dgvMedicosAlta.Rows.Remove(row);
-                    }
                 }
                 
                 if(dgvMedicosBaja.Rows.Count > 0)
@@ -547,9 +541,9 @@ namespace Fenix1._0
             int id = int.Parse(dgvMedicosBaja.Rows[dgvMedicosBaja.CurrentRow.Index].Cells[0].Value.ToString());
             try
             {
-                med = reposMedico.buscarPorId(id);
-                reposMedico.Baja(med);
-                MessageBox.Show("Médico dado de baja");
+            med = reposMedico.buscarPorId(id);
+            reposMedico.Baja(med);
+            MessageBox.Show("Médico dado de baja");
             }
             catch (Exception ex)
             {
@@ -557,8 +551,8 @@ namespace Fenix1._0
             }
             finally
             {
-                Actualizar();
-            }
+            Actualizar();
+        }
         }
 
         private void dgvMedicosAlta_CellContentClick(object sender, DataGridViewCellEventArgs e)

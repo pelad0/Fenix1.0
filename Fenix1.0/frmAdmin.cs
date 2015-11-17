@@ -58,5 +58,40 @@ namespace Fenix1._0
             frmTurno frmT = new frmTurno(u);
             frmT.ShowDialog();
         }
+
+        private void btnMedicos_MouseEnter(object sender, EventArgs e)
+        {
+            if ((sender as Button).Tag.ToString() == "1")
+            {
+                lblAccion.Text = "*Administración de Pacientes y Turnos.";
+            }
+            if ((sender as Button).Tag.ToString() == "2")
+            {
+                lblAccion.Text = "*Administración Médicos y Especialidades.";
+            }
+            if ((sender as Button).Tag.ToString() == "3")
+            {
+                lblAccion.Text = "*Visualización de Turnos actuales, filtrados por paciente y Médico.";
+            }
+            if ((sender as Button).Tag.ToString() == "4")
+            {
+                lblAccion.Text = "*Visualización de Turnos ya Atendidos.";
+            }
+            if ((sender as Button).Tag.ToString() == "5")
+            {
+                lblAccion.Text = "*Administración de Obras Sociales en la Clínica.";
+            }
+            
+        }
+
+        private void btnMedicos_MouseLeave(object sender, EventArgs e)
+        {
+            lblAccion.Text = "";
+        }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+            lblNombreUsuario.Text = u.Usuario;
+        }
     }
 }
