@@ -273,7 +273,7 @@ namespace Fenix1._0
 
             if (dgvTurnosAPagar.Rows.Count > 0)
             {
-                if (string.IsNullOrWhiteSpace(cbTipoFactura.Text) == false && string.IsNullOrWhiteSpace(tbCliente.Text) == false && string.IsNullOrWhiteSpace(tbCuit.Text) == false && string.IsNullOrWhiteSpace(tbDireccion.Text) == false)
+                if (string.IsNullOrWhiteSpace(cbTipoFactura.Text) == false && string.IsNullOrWhiteSpace(tbCliente.Text) == false && string.IsNullOrWhiteSpace(tbCuit.Text) == false && string.IsNullOrWhiteSpace(tbDireccion.Text) == false && tbCuit.Text.Length == 11)
                 {
                     if (cbTipoFactura.Text == "A")
                     {
@@ -470,6 +470,21 @@ namespace Fenix1._0
 
                         MessageBox.Show("La Factura fue creada con éxito junto con los Recibos");
 
+                        if (dgvTurnosAPagar.Rows.Count > 0)
+                            dgvTurnosAPagar.Rows.Clear();
+
+                        tbCuit.Clear();
+                        tbCliente.Clear();
+                        tbDireccion.Clear();
+                        tbCantidadTarjeta.Text = "0";
+                        tbCantidadEfectivo.Text = "0";
+                        total = 0;
+                        totalDescuento = 0;
+                        lblTotal.Text = "0";
+                        lblDescuento.Text = "0";
+
+
+
                         /*
                         crPagos pago = new crPagos();
 
@@ -497,7 +512,7 @@ namespace Fenix1._0
                     }
                     else
                     {
-                        MessageBox.Show("Debe seleccionar un tipo de factiura.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Debe seleccionar un tipo de factura.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
 

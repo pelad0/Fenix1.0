@@ -283,7 +283,7 @@
             this.pnlPago.Controls.Add(this.label10);
             this.pnlPago.Controls.Add(this.label11);
             this.pnlPago.Enabled = false;
-            this.pnlPago.Location = new System.Drawing.Point(-1, 275);
+            this.pnlPago.Location = new System.Drawing.Point(3, 255);
             this.pnlPago.Name = "pnlPago";
             this.pnlPago.Size = new System.Drawing.Size(815, 171);
             this.pnlPago.TabIndex = 44;
@@ -484,7 +484,7 @@
             this.label8.AutoSize = true;
             this.label8.Enabled = false;
             this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(350, 220);
+            this.label8.Location = new System.Drawing.Point(350, 200);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 19);
             this.label8.TabIndex = 33;
@@ -498,7 +498,7 @@
             this.cbTipoFactura.Items.AddRange(new object[] {
             "A",
             "B"});
-            this.cbTipoFactura.Location = new System.Drawing.Point(390, 242);
+            this.cbTipoFactura.Location = new System.Drawing.Point(390, 222);
             this.cbTipoFactura.Name = "cbTipoFactura";
             this.cbTipoFactura.Size = new System.Drawing.Size(45, 27);
             this.cbTipoFactura.TabIndex = 32;
