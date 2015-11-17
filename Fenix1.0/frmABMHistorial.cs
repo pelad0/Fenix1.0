@@ -142,6 +142,7 @@ namespace Fenix1._0
             dgvTurnos.Columns[2].Visible = false;
             dgvTurnos.Columns[4].Visible = false;
             dgvTurnos.Columns[5].Visible = false;
+            dgvTurnos.Columns[6].HeaderText = "Asistió";
 
             sobreTurnos.Clear();
             sobreTurnos = rst.obtenerSobreturnoVista(i.U.IdMedico, DateTime.Now);
@@ -151,6 +152,7 @@ namespace Fenix1._0
             dgvSobreTurnos.Columns[2].Visible = false;
             dgvSobreTurnos.Columns[4].Visible = false;
             dgvSobreTurnos.Columns[5].Visible = false;
+            dgvSobreTurnos.Columns[6].HeaderText = "Asistió";
 
         }
 
