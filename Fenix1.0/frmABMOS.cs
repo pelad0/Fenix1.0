@@ -111,6 +111,16 @@ namespace Fenix1._0
         private void dgvOSMod_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             tbModifOS.Text = OS[dgvOSModif.CurrentRow.Index].Nombre;
+            tbPesosMod.Text = OS[dgvOSModif.CurrentRow.Index].pesos().ToString();
+
+            if (OS[dgvOSModif.CurrentRow.Index].cent().ToString() == "0")
+            {
+                tbCentMov.Text = "00";
+            }
+            else
+            {
+                tbCentMov.Text = OS[dgvOSModif.CurrentRow.Index].cent().ToString();
+            }
         }
 
         private void iniciar()
@@ -136,6 +146,7 @@ namespace Fenix1._0
 
             tbOS.Clear();
         }
+
 
     }
 }

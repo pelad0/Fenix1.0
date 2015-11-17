@@ -44,6 +44,7 @@ namespace Fenix1._0
         private void frmRecepcion_FormClosed(object sender, FormClosedEventArgs e)
         {
             i.limpiar();
+            i.iniciar();
             i.Show();
         }
 
