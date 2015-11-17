@@ -298,10 +298,14 @@ namespace Fenix1._0
             {
                 if (rbMedicos.Checked)
                 {
-                    crTurnosMedico crtm = new crTurnosMedico();
-                    crtm.SetDataSource(tur);
-                    crtm.SetParameterValue("Medico", m);
-                    frmReporteTurnosMedico frt = new frmReporteTurnosMedico(crtm);
+                    crTurnosMedico reporte = new crTurnosMedico();
+
+                    reporte.SetDataSource(tur);
+
+                    frmReporteTurnosMedico ofrm = new frmReporteTurnosMedico(reporte);
+
+                    ofrm.ShowDialog();
+
                 }
             }
             else
