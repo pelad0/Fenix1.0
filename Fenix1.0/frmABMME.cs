@@ -163,15 +163,14 @@ namespace Fenix1._0
             {
                 if(dgvMedicosAlta.Rows.Count > 0)
                 {
+                    dgvMedicosAlta.Columns.Clear();
                     dgvMedicosAlta.Rows.Clear();
 
                 }
-
+                
                 if(dgvMedicosBaja.Rows.Count > 0)
                 {
-                    dgvMedicosBaja.Columns.Remove("idTurno");
-                    dgvMedicosBaja.Columns.Remove("Matricula");
-                    dgvMedicosBaja.Columns.Remove("Apellido");
+                    dgvMedicosBaja.Columns.Clear();
 
                     foreach (DataGridViewRow row in dgvMedicosBaja.Rows)
                     {
@@ -181,9 +180,7 @@ namespace Fenix1._0
 
                 if(dgvMedicosModi.Rows.Count > 0)
                 {
-                    dgvMedicosModi.Columns.Remove("idTurno");
-                    dgvMedicosModi.Columns.Remove("Matricula");
-                    dgvMedicosModi.Columns.Remove("Apellido");
+                    dgvMedicosModi.Columns.Clear();
 
                     foreach (DataGridViewRow row in dgvMedicosModi.Rows)
                     {
@@ -197,7 +194,7 @@ namespace Fenix1._0
 
                 if (dgvObrasSocialesAlta.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
                 {
-                    dgvObrasSocialesAlta.Columns.Remove("Nombre");
+                    dgvObrasSocialesAlta.Columns.Clear();
 
                     foreach (DataGridViewRow row in dgvObrasSocialesAlta.Rows)
                     {
@@ -207,7 +204,7 @@ namespace Fenix1._0
 
                 if (dgvObrasSocialesBaja.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
                 {
-                    dgvObrasSocialesBaja.Columns.Remove("Nombre");
+                    dgvObrasSocialesBaja.Columns.Clear();
 
                     foreach (DataGridViewRow row in dgvObrasSocialesBaja.Rows)
                     {
@@ -217,7 +214,7 @@ namespace Fenix1._0
 
                 if (dgvObrasSocialesModi.Rows.Count > 0)     //PREGUNTO PARAQUE ELIMINE LA COLUMNA, SOLO SI SE AH CREANDO ATNES.
                 {
-                    dgvObrasSocialesModi.Columns.Remove("Nombre");
+                    dgvObrasSocialesModi.Columns.Clear();
 
                     foreach (DataGridViewRow row in dgvObrasSocialesModi.Rows)
                     {
@@ -296,7 +293,7 @@ namespace Fenix1._0
         private void btnModificar_Click(object sender, EventArgs e)
         {
             clsMedico medico = new clsMedico();
-           
+
             //TOMO EL ID DEL MEDICO SELECCIONADO Y TRAIGO SUS DATOS CON METODO BUSCAR POR ID
             int id = int.Parse(dgvMedicosModi.Rows[dgvMedicosModi.CurrentRow.Index].Cells[0].Value.ToString());
 
@@ -307,7 +304,7 @@ namespace Fenix1._0
             frmEditarMedico editarMedico = new frmEditarMedico(medico);
             editarMedico.ShowDialog();
             Actualizar();
-        }
+       }
 
         private void btnAnteriorAlta_Click(object sender, EventArgs e)
         {
@@ -332,7 +329,7 @@ namespace Fenix1._0
                 {
                     dgvObrasSocialesAlta.Columns.Remove("Nombre");
                     dgvObrasSocialesAlta.Rows.Clear();
-                    }
+                }
 
                 medicos.Clear();
 
@@ -367,7 +364,7 @@ namespace Fenix1._0
             {
                 dgvObrasSocialesAlta.Columns.Remove("Nombre");
                 dgvObrasSocialesAlta.Rows.Clear();
-                }
+            }                   
 
             medicos.Clear();
             medicos = reposMedico.Todo(pagina);
@@ -539,14 +536,20 @@ namespace Fenix1._0
             clsMedico med = new clsMedico();
 
             int id = int.Parse(dgvMedicosBaja.Rows[dgvMedicosBaja.CurrentRow.Index].Cells[0].Value.ToString());
-
+            try
+            {
             med = reposMedico.buscarPorId(id);
-
             reposMedico.Baja(med);
-
             MessageBox.Show("Médico dado de baja");
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
             Actualizar();
+        }
         }
 
         private void dgvMedicosAlta_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -680,5 +683,10 @@ namespace Fenix1._0
             }
         }
 
+        private void tpBaja_Click(object sender, EventArgs e)
+        {
+
+        }
+       
     }
 }
