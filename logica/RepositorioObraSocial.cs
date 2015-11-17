@@ -111,7 +111,7 @@ namespace logica
 
         }
 
-        public clsObraSocial BuscarPorNombre(string nombre)
+        public clsObraSocial BuscarPorNombre(string nombre)//
         {
 
             clsObraSocial os;
