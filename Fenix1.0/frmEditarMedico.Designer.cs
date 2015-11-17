@@ -206,8 +206,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmEditarMedico";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEditarMedico";
+            this.Text = "Editar Medico";
             this.Load += new System.EventHandler(this.frmEditarMedico_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

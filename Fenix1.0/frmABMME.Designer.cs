@@ -434,6 +434,7 @@
             this.tpBaja.TabIndex = 1;
             this.tpBaja.Text = "Baja";
             this.tpBaja.UseVisualStyleBackColor = true;
+            this.tpBaja.Click += new System.EventHandler(this.tpBaja_Click);
             // 
             // tbEspecialidadBaja
             // 

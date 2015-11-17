@@ -545,14 +545,20 @@ namespace Fenix1._0
             clsMedico med = new clsMedico();
 
             int id = int.Parse(dgvMedicosBaja.Rows[dgvMedicosBaja.CurrentRow.Index].Cells[0].Value.ToString());
-
-            med = reposMedico.buscarPorId(id);
-
-            reposMedico.Baja(med);
-
-            MessageBox.Show("Médico dado de baja");
-
-            Actualizar();
+            try
+            {
+                med = reposMedico.buscarPorId(id);
+                reposMedico.Baja(med);
+                MessageBox.Show("Médico dado de baja");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido el Sgte. error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Actualizar();
+            }
         }
 
         private void dgvMedicosAlta_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -684,6 +690,11 @@ namespace Fenix1._0
             {
                 cbEspecialidades.Items.Add(es.Descripcion);
             }
+        }
+
+        private void tpBaja_Click(object sender, EventArgs e)
+        {
+
         }
        
     }
