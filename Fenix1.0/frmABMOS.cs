@@ -35,7 +35,7 @@ namespace Fenix1._0
                 DialogResult res = MessageBox.Show("Agregar a " + tbOS.Text +" con un máximo de cobertura de $"+ tbPesosAlta.Text+"."+tbCentAlta.Text+" al sistema?", "Confirmar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (res == DialogResult.OK)
                 {
-                    double monto = Convert.ToDouble(tbPesosAlta.Text) + (Convert.ToDouble(tbCentAlta.Text) / 100);
+                    float monto = float.Parse(tbPesosAlta.Text) + (float.Parse(tbCentAlta.Text) / 100);
                     clsObraSocial OSoc = new clsObraSocial(tbOS.Text, monto);
                     try
                     {
@@ -90,7 +90,7 @@ namespace Fenix1._0
                     try
                     {
                         OS[pos].Nombre = tbModifOS.Text;
-                        OS[pos].Monto = Convert.ToDouble(tbPesosMod) + (Convert.ToDouble(tbCentMov) / 100);
+                        OS[pos].Monto = float.Parse(tbPesosMod.Text) + (float.Parse(tbCentMov.Text) / 100);
                         ros.Modificacion(OS[pos]);
                         iniciar();
                         tbModifOS.Focus();

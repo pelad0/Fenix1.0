@@ -11,19 +11,19 @@ namespace entidades
     {
         private int id;
         string nombre;
-        double monto;
+      float monto;
 
         public clsObraSocial()
         { }
         
-        public clsObraSocial(int id, string nombre, double monto)
+        public clsObraSocial(int id, string nombre, float monto)
         {
             this.id = id;
             this.nombre = nombre;
             this.monto = monto;
         }
 
-        public clsObraSocial(string nombre, double monto)
+        public clsObraSocial(string nombre, float monto)
         {
             this.nombre = nombre;
             this.monto = monto;
@@ -41,7 +41,7 @@ namespace entidades
             set { id = value; }
         }
 
-        public double Monto
+        public float Monto
         {
             get { return monto; }
             set { monto = value; }

@@ -99,8 +99,8 @@ namespace logica
                 rec.Id = Convert.ToInt32(aux["id"]);
                 rec.Detalle= aux["detalle"].ToString();
                 rec.IdFactura = Convert.ToInt32(aux["idFactura"]);
-                rec.Cobertura = Convert.ToInt64(aux["cobertura"]);
-                rec.Importe = Convert.ToDouble(aux["importe"]);
+                rec.Cobertura = float.Parse(aux["cobertura"].ToString());
+                rec.Importe = float.Parse(aux["importe"].ToString());
                 
                lista.Add(rec);
             }

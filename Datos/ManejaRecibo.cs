@@ -22,7 +22,9 @@ namespace Datos
             clsRecibo rec = (clsRecibo)entidad;
             try
             {
-                manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + "," + rec.IdSobreTurno + "," + rec.IdTurno + ",'" + rec.Fecha + "'," + rec.Cobertura + "," + rec.Importe + ",'" + rec.Detalle + "');SELECT @@identity;");
+                //manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + "," + rec.IdSobreTurno + "," + rec.IdTurno + ",'" + rec.Fecha + "'," + rec.Cobertura + "," + rec.Importe + ",'" + rec.Detalle + "');SELECT @@identity;");
+                manager.ejecutar("Insert into recibo(idfactura,idsobreturno,idturno,fecha,cobertura,importe,detalle) values(" + rec.IdFactura + "," + null + "," + rec.IdTurno + ",'" + rec.Fecha + "'," + 100 + "," + 200 + ",'" + rec.Detalle + "');SELECT @@identity;");
+
             }
             catch (Exception ex)
             {
@@ -68,8 +70,8 @@ namespace Datos
                 rec.IdSobreTurno = Convert.ToInt32(aux.Rows[0]["idsobreturno"]);
                 rec.IdTurno = Convert.ToInt32(aux.Rows[0]["idturno"]);
                 rec.Fecha = Convert.ToDateTime(aux.Rows[0]["fecha"]);                
-                rec.Cobertura =Convert.ToDouble( aux.Rows[0]["cobertura"]);
-                rec.Importe = Convert.ToDouble(aux.Rows[0]["importe"]);
+                rec.Cobertura =float.Parse( aux.Rows[0]["cobertura"].ToString());
+                rec.Importe = float.Parse(aux.Rows[0]["importe"].ToString());
                 rec.Detalle = aux.Rows[0]["detalle"].ToString();
 
             }
