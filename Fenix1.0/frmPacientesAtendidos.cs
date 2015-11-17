@@ -151,7 +151,7 @@ namespace Fenix1._0
 
                     foreach(clsTurnoVista turn in listaTurnos)   //Recorro todos los turnos obteniendo el paciente de cada uno.
                     {
-                        if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
+                        if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value && turn.Estado == true)
                         {                            
                             pas = reposPaciente.buscarPorId(turn.Paciente.Id);
                             
@@ -169,7 +169,7 @@ namespace Fenix1._0
 
                     foreach(clsSobreTurnoVista turn in listaSobreTurnos)
                     {
-                        if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
+                        if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value && turn.Estado == true)
                         {
                             
                             pas = reposPaciente.buscarPorId(turn.Paciente.Id);
@@ -209,7 +209,7 @@ namespace Fenix1._0
 
                 foreach(clsTurnoVista turn in listaTurnos)
                 {
-                    if (turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
+                    if (turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value && turn.Estado == true)
                     {
                         pas = reposPaciente.buscarPorId(turn.Paciente.Id);
 
@@ -225,7 +225,7 @@ namespace Fenix1._0
 
                 foreach(clsSobreTurnoVista turn in listaSobreTurnos)
                 {
-                    if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value)
+                    if(turn.Fecha > dtpDesde.Value && turn.Fecha < dtpHasta.Value && turn.Estado == true)
                     {
                         pas = reposPaciente.buscarPorId(turn.Paciente.Id);
 
