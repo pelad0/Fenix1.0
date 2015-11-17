@@ -1,7 +1,7 @@
 ﻿
 #pragma warning disable 1591
 
-namespace Fenix1._0
+namespace frmABMME
 {
 
 

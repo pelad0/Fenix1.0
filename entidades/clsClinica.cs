@@ -9,8 +9,8 @@ namespace entidades
 {
     public class clsClinica:IEntidad
     {
-        int id;
-        
+        int id;   //esta pintado
+     
         DateTime fechaInicioActividades;        
         string cuit;
         double ingresosBrutos;        

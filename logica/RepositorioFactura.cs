@@ -100,14 +100,15 @@ namespace logica
                     fac.Id = Convert.ToInt32(aux["id"]);
                     fac.Cuitcliente = aux["cuitcliente"].ToString();
                     fac.NumeroFactura = Convert.ToInt32(aux["numerofactura"]);
+                    fac.TipoFactura = aux["tipofactura"].ToString();
                     fac.RazonSocial = aux["razonsocial"].ToString();
-                    fac.Terminal = aux["numeroterminal"].ToString();
-                    fac.Total = Convert.ToDouble(aux["total"]);
+                    fac.Terminal = Convert.ToInt32(aux["numeroterminal"]);
+                    fac.Total = float.Parse(aux["total"].ToString());
                     fac.Fecha = Convert.ToDateTime(aux["fecha"]);
                     fac.IdUsuario = Convert.ToInt32(aux["idusuario"]);
                     fac.Cliente = aux["cliente"].ToString();
-                    fac.PagoEfectivo = Convert.ToDouble(aux["pagoefectivo"]);
-                    fac.PagoTarjeta = Convert.ToDouble(aux["pagotarjeta"]);
+                    fac.PagoEfectivo = float.Parse(aux["pagoefectivo"].ToString());
+                    fac.PagoTarjeta = float.Parse(aux["pagotarjeta"].ToString());
 
                     lista.Add(fac);
                 }
@@ -137,17 +138,18 @@ namespace logica
                 {
                     
 
-                    fac.Id = Convert.ToInt32(aux["id"]);
-                    fac.Cuitcliente = aux["cuitcliente"].ToString();
+                    fac.Id = Convert.ToInt32(aux["id"]);                    
                     fac.NumeroFactura = Convert.ToInt32(aux["numerofactura"]);
+                    fac.Cuitcliente = aux["cuitcliente"].ToString();
+                    fac.TipoFactura = aux["tipofactura"].ToString();
                     fac.RazonSocial = aux["razonsocial"].ToString();
-                    fac.Terminal = aux["numeroterminal"].ToString();
-                    fac.Total = Convert.ToDouble(aux["total"]);
+                    fac.Terminal = Convert.ToInt32(aux["numeroterminal"]);
+                    fac.Total = float.Parse(aux["total"].ToString());
                     fac.Fecha = Convert.ToDateTime(aux["fecha"]);
                     fac.IdUsuario = Convert.ToInt32(aux["idusuario"]);
                     fac.Cliente = aux["cliente"].ToString();
-                    fac.PagoEfectivo = Convert.ToDouble(aux["pagoefectivo"]);
-                    fac.PagoTarjeta = Convert.ToDouble(aux["pagotarjeta"]);
+                    fac.PagoEfectivo = float.Parse(aux["pagoefectivo"].ToString());
+                    fac.PagoTarjeta = float.Parse(aux["pagotarjeta"].ToString());
 
                     
                 }
