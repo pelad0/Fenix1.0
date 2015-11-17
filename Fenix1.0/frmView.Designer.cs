@@ -46,10 +46,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(566, 440);
             this.Controls.Add(this.crv);
             this.Name = "frmView";
-            this.Text = "frmView";
+            this.ShowIcon = false;
+            this.Text = "Vista";
             this.Load += new System.EventHandler(this.frmView_Load);
             this.ResumeLayout(false);
 

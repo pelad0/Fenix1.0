@@ -57,6 +57,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Location = new System.Drawing.Point(305, 258);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 15);
@@ -66,6 +67,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(197, 9);
             this.label8.Name = "label8";
@@ -110,6 +112,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(16, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 15);
@@ -119,6 +122,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(340, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 15);
@@ -128,6 +132,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(79, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 15);
@@ -137,6 +142,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(347, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 15);
@@ -146,6 +152,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(58, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 15);
@@ -186,6 +193,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(644, 452);
             this.Controls.Add(this.cbEspecialidadModi);
             this.Controls.Add(this.btnEditarHorarios);

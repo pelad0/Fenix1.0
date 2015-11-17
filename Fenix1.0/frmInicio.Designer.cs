@@ -86,6 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(368, 227);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.label2);

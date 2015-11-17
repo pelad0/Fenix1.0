@@ -52,6 +52,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(644, 485);
             this.Controls.Add(this.crvForm);
             this.Name = "frmReporteTurnosMedico";

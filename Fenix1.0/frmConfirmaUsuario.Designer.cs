@@ -64,6 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::frmABMME.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(331, 156);
             this.Controls.Add(this.btnConfirma);
             this.Controls.Add(this.label1);
